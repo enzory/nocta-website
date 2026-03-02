@@ -1,0 +1,118 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+---
+
+<Layout
+  title="NOCTA Private — Dîners privés & Chef à domicile · NOCTA"
+  description="NOCTA Private : dîners intimes, anniversaires d'exception, célébrations familiales et chef à domicile à Paris et en Île-de-France."
+>
+  <Header />
+
+  <main>
+
+    <!-- Hero -->
+    <section class="bg-nocta-cream pt-40 pb-24 lg:pt-52 lg:pb-32">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <a href="/prestations" class="inline-flex items-center gap-3 font-sans text-xs tracking-widest uppercase text-nocta-grey hover:text-nocta-black transition-colors duration-200 mb-12 animate-fade-up" style="animation-delay: 0.1s; opacity: 0;">
+          <span class="w-6 h-px bg-current inline-block"></span>
+          Nos Prestations
+        </a>
+        <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-grey mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
+          01
+        </p>
+        <h1 class="font-serif text-5xl lg:text-7xl xl:text-8xl font-light italic text-nocta-black leading-[1.05] mb-6 animate-fade-up" style="animation-delay: 0.35s; opacity: 0;">
+          NOCTA Private
+        </h1>
+        <p class="font-sans text-base lg:text-lg font-light text-nocta-grey animate-fade-up" style="animation-delay: 0.5s; opacity: 0;">
+          L'art de recevoir chez soi.
+        </p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="bg-nocta-black py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+
+          <div class="reveal">
+            <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-4">Notre approche</p>
+            <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-cream leading-tight">
+              Présents pour vous,<br/>
+              <em class="not-italic font-extralight">invisibles si besoin.</em>
+            </h2>
+          </div>
+
+          <div class="reveal" style="transition-delay: 0.15s">
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/60 mb-6">
+              NOCTA Private, c'est l'art de recevoir chez soi sans en porter le poids. Nous prenons en charge l'intégralité de l'expérience — conception du menu, mise en place, service, rangement — pour que vous soyez entièrement présent à vos invités.
+            </p>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/60">
+              Chaque dîner est pensé comme un événement unique, à votre image. Produits de saison sélectionnés avec soin, cuisine préparée sur place, service discret et attentif. L'excellence, sans l'ostentation.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Formats -->
+    <section class="bg-nocta-cream py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+        <div class="mb-16 reveal">
+          <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Nos formats</p>
+          <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight">
+            Ce que nous proposons.
+          </h2>
+        </div>
+
+        <div>
+          <div class="border-t border-nocta-black/10 py-7 flex items-center gap-8 reveal" style="transition-delay: 0.05s">
+            <span class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey w-8 shrink-0">01</span>
+            <span class="font-serif text-3xl lg:text-4xl font-light italic text-nocta-black">Dîner privé</span>
+          </div>
+          <div class="border-t border-nocta-black/10 py-7 flex items-center gap-8 reveal" style="transition-delay: 0.1s">
+            <span class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey w-8 shrink-0">02</span>
+            <span class="font-serif text-3xl lg:text-4xl font-light italic text-nocta-black">Anniversaire d'exception</span>
+          </div>
+          <div class="border-t border-nocta-black/10 py-7 flex items-center gap-8 reveal" style="transition-delay: 0.15s">
+            <span class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey w-8 shrink-0">03</span>
+            <span class="font-serif text-3xl lg:text-4xl font-light italic text-nocta-black">Célébration familiale</span>
+          </div>
+          <div class="border-t border-b border-nocta-black/10 py-7 flex items-center gap-8 reveal" style="transition-delay: 0.2s">
+            <span class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey w-8 shrink-0">04</span>
+            <span class="font-serif text-3xl lg:text-4xl font-light italic text-nocta-black">Chef à domicile</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-nocta-black py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal">
+        <h2 class="font-serif text-4xl lg:text-6xl font-light italic text-nocta-cream leading-tight mb-10">
+          Parlons de votre événement.
+        </h2>
+        <a href="/contact" class="inline-flex items-center font-sans text-sm font-light tracking-widest uppercase bg-nocta-cream text-nocta-black px-10 py-4 hover:bg-white transition-all duration-300">
+          Demander un devis
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-nocta-black border-t border-nocta-cream/10 py-10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-4">
+      <span class="font-serif text-lg tracking-[0.3em] text-nocta-cream/60 uppercase">NOCTA</span>
+      <p class="font-sans text-xs font-light text-nocta-cream/30 tracking-wide">
+        © 2025 NOCTA — H+E Catering SARL · Paris & Île-de-France
+      </p>
+      <a href="/mentions-legales" class="font-sans text-xs font-light tracking-widest uppercase text-nocta-cream/30 hover:text-nocta-cream/60 transition-colors">
+        Mentions légales
+      </a>
+    </div>
+  </footer>
+
+</Layout>

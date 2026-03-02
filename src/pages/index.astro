@@ -1,0 +1,166 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout>
+  <Header />
+
+  <main>
+
+    <section id="hero" class="relative min-h-screen flex flex-col justify-end bg-nocta-black overflow-hidden">
+      <div class="absolute inset-0 h-full">
+        <img
+          src="/images/hero-bg.jpg"
+          alt="NOCTA — Expérience culinaire d'exception"
+          class="w-full h-full object-cover opacity-70"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-nocta-black/80 via-nocta-black/20 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-20 lg:pb-28">
+        <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-cream/60 mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
+          Paris · Île-de-France
+        </p>
+        <h1 class="font-serif text-5xl lg:text-7xl xl:text-8xl font-light italic text-nocta-cream leading-[1.05] max-w-3xl mb-8 animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
+          L'art de recevoir,<br/>
+          <em class="not-italic font-extralight">sans compromis.</em>
+        </h1>
+        <p class="font-sans text-base lg:text-lg font-light text-nocta-cream/70 max-w-xl leading-relaxed mb-12 animate-fade-up" style="animation-delay: 0.6s; opacity: 0;">
+          NOCTA conçoit des expériences culinaires sur-mesure pour les entreprises
+          et les particuliers qui exigent l'excellence à chaque détail.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 animate-fade-up" style="animation-delay: 0.8s; opacity: 0;">
+          <a href="/contact" class="inline-flex items-center justify-center font-sans text-sm font-light tracking-widest uppercase bg-nocta-cream text-nocta-black px-8 py-4 transition-all duration-300 hover:bg-white">
+            Demander un devis
+          </a>
+          <a href="/prestations" class="inline-flex items-center justify-center font-sans text-sm font-light tracking-widest uppercase border border-nocta-cream/50 text-nocta-cream px-8 py-4 transition-all duration-300 hover:border-nocta-cream">
+            Découvrir nos prestations
+          </a>
+        </div>
+      </div>
+
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in" style="animation-delay: 1.2s; opacity: 0;" aria-hidden="true">
+        <span class="font-sans text-xs tracking-widest uppercase text-nocta-cream/40">Scroll</span>
+        <div class="w-px h-12 bg-nocta-cream/20 relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-1/2 bg-nocta-cream/60 animate-bounce"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-nocta-cream py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="max-w-2xl mb-20 reveal">
+          <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Notre approche</p>
+          <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight">
+            Gastronomie, service,<br/>
+            <em class="not-italic">expérience.</em>
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
+          <div class="reveal" style="transition-delay: 0.1s">
+            <div class="w-8 h-px bg-nocta-black mb-8"></div>
+            <h3 class="font-serif text-2xl font-light italic text-nocta-black mb-4">La cuisine comme langage</h3>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-grey">
+              Hugo et son équipe apportent une formation gastronomique rigoureuse, forgée dans les cuisines étoilées. Chaque assiette est une prise de position, jamais une concession.
+            </p>
+          </div>
+          <div class="reveal" style="transition-delay: 0.2s">
+            <div class="w-8 h-px bg-nocta-black mb-8"></div>
+            <h3 class="font-serif text-2xl font-light italic text-nocta-black mb-4">Le service comme mise en scène</h3>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-grey">
+              Ce qui élève un repas au rang d'expérience, c'est ce qui se passe autour de l'assiette. Gestuelle, rythme, présence discrète : nous en maîtrisons les codes depuis le premier jour.
+            </p>
+          </div>
+          <div class="reveal" style="transition-delay: 0.3s">
+            <div class="w-8 h-px bg-nocta-black mb-8"></div>
+            <h3 class="font-serif text-2xl font-light italic text-nocta-black mb-4">La sommellerie comme narration</h3>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-grey">
+              Les accords mets & vins ne sont pas une liste — ils sont une ligne directrice. Enzo compose chaque carte comme on écrit une partition : avec intention, cohérence et précision.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-nocta-black py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 reveal">
+          <div>
+            <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-4">Nos formats</p>
+            <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-cream leading-tight">
+              Trois univers,<br/>une seule exigence.
+            </h2>
+          </div>
+          <a href="/prestations" class="mt-8 lg:mt-0 font-sans text-sm font-light tracking-widest uppercase text-nocta-cream/60 hover:text-nocta-cream transition-colors duration-300 flex items-center gap-3">
+            Voir toutes les prestations
+            <span class="w-8 h-px bg-current inline-block"></span>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-px bg-nocta-cream/10">
+          <a href="/prestations/private" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.1s">
+            <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-8">01</p>
+            <h3 class="font-serif text-3xl font-light italic text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Private</h3>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/50 mb-10">
+              Dîners intimes, célébrations familiales, anniversaires d'exception. La relation humaine avant tout.
+            </p>
+            <span class="font-sans text-xs tracking-widest uppercase text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
+              Découvrir
+              <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
+            </span>
+          </a>
+          <a href="/prestations/corporate" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.2s">
+            <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-8">02</p>
+            <h3 class="font-serif text-3xl font-light italic text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Corporate</h3>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/50 mb-10">
+              Cocktails de lancement, dîners de gala, comités de direction. La gastronomie comme vecteur d'image.
+            </p>
+            <span class="font-sans text-xs tracking-widest uppercase text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
+              Découvrir
+              <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
+            </span>
+          </a>
+          <a href="/prestations/signature" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.3s">
+            <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-8">03</p>
+            <h3 class="font-serif text-3xl font-light italic text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Signature</h3>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/50 mb-10">
+              Expériences immersives où la gastronomie devient terrain d'expression. Notre vision la plus libre.
+            </p>
+            <span class="font-sans text-xs tracking-widest uppercase text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
+              Découvrir
+              <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-nocta-cream py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal">
+        <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-6">Votre prochain événement</p>
+        <h2 class="font-serif text-4xl lg:text-6xl font-light italic text-nocta-black leading-tight mb-10 max-w-2xl mx-auto">
+          Parlons de ce que vous avez en tête.
+        </h2>
+        <a href="/contact" class="inline-flex items-center font-sans text-sm font-light tracking-widest uppercase bg-nocta-black text-nocta-cream px-10 py-4 hover:bg-nocta-black/80 transition-all duration-300">
+          Demander un devis
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-nocta-black border-t border-nocta-cream/10 py-10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-4">
+      <span class="font-serif text-lg tracking-[0.3em] text-nocta-cream/60 uppercase">NOCTA</span>
+      <p class="font-sans text-xs font-light text-nocta-cream/30 tracking-wide">
+        © 2025 NOCTA — H+E Catering SARL · Paris & Île-de-France
+      </p>
+      <a href="/mentions-legales" class="font-sans text-xs font-light tracking-widest uppercase text-nocta-cream/30 hover:text-nocta-cream/60 transition-colors">
+        Mentions légales
+      </a>
+    </div>
+  </footer>
+
+</Layout>

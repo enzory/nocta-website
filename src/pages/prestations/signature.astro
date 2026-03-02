@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+---
+
+<Layout
+  title="NOCTA Signature — Expériences gastronomiques immersives · NOCTA"
+  description="NOCTA Signature : dîners immersifs, expériences œnologiques et soirées thématiques. La gastronomie comme terrain d'expression artistique à Paris."
+>
+  <Header />
+
+  <main>
+
+    <!-- Hero -->
+    <section class="bg-nocta-cream pt-40 pb-24 lg:pt-52 lg:pb-32">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <a href="/prestations" class="inline-flex items-center gap-3 font-sans text-xs tracking-widest uppercase text-nocta-grey hover:text-nocta-black transition-colors duration-200 mb-12 animate-fade-up" style="animation-delay: 0.1s; opacity: 0;">
+          <span class="w-6 h-px bg-current inline-block"></span>
+          Nos Prestations
+        </a>
+        <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-grey mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
+          03
+        </p>
+        <h1 class="font-serif text-5xl lg:text-7xl xl:text-8xl font-light italic text-nocta-black leading-[1.05] mb-6 animate-fade-up" style="animation-delay: 0.35s; opacity: 0;">
+          NOCTA Signature
+        </h1>
+        <p class="font-sans text-base lg:text-lg font-light text-nocta-grey animate-fade-up" style="animation-delay: 0.5s; opacity: 0;">
+          La création comme expérience.
+        </p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="bg-nocta-black py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+
+          <div class="reveal">
+            <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-4">Notre approche</p>
+            <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-cream leading-tight">
+              La gastronomie<br/>
+              <em class="not-italic font-extralight">comme medium d'expression.</em>
+            </h2>
+          </div>
+
+          <div class="reveal" style="transition-delay: 0.15s">
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/60 mb-6">
+              NOCTA Signature est notre format le plus libre. Ici, la gastronomie n'est plus un simple service — c'est un medium d'expression. Chaque expérience est conçue comme une œuvre : une dramaturgie, un propos, une émotion.
+            </p>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/60">
+              Nous travaillons en collaboration étroite avec nos clients pour définir ensemble un concept unique, où la cuisine, le vin, la scénographie et le rythme du service composent une narration cohérente et mémorable.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Formats -->
+    <section class="bg-nocta-cream py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+        <div class="mb-16 reveal">
+          <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Nos formats</p>
+          <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight">
+            Ce que nous proposons.
+          </h2>
+        </div>
+
+        <div>
+          <div class="border-t border-nocta-black/10 py-7 flex items-center gap-8 reveal" style="transition-delay: 0.05s">
+            <span class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey w-8 shrink-0">01</span>
+            <span class="font-serif text-3xl lg:text-4xl font-light italic text-nocta-black">Dîner immersif</span>
+          </div>
+          <div class="border-t border-nocta-black/10 py-7 flex items-center gap-8 reveal" style="transition-delay: 0.1s">
+            <span class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey w-8 shrink-0">02</span>
+            <span class="font-serif text-3xl lg:text-4xl font-light italic text-nocta-black">Expérience œnologique</span>
+          </div>
+          <div class="border-t border-b border-nocta-black/10 py-7 flex items-center gap-8 reveal" style="transition-delay: 0.15s">
+            <span class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey w-8 shrink-0">03</span>
+            <span class="font-serif text-3xl lg:text-4xl font-light italic text-nocta-black">Soirée thématique</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-nocta-black py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal">
+        <h2 class="font-serif text-4xl lg:text-6xl font-light italic text-nocta-cream leading-tight mb-10">
+          Parlons de votre événement.
+        </h2>
+        <a href="/contact" class="inline-flex items-center font-sans text-sm font-light tracking-widest uppercase bg-nocta-cream text-nocta-black px-10 py-4 hover:bg-white transition-all duration-300">
+          Demander un devis
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-nocta-black border-t border-nocta-cream/10 py-10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-4">
+      <span class="font-serif text-lg tracking-[0.3em] text-nocta-cream/60 uppercase">NOCTA</span>
+      <p class="font-sans text-xs font-light text-nocta-cream/30 tracking-wide">
+        © 2025 NOCTA — H+E Catering SARL · Paris & Île-de-France
+      </p>
+      <a href="/mentions-legales" class="font-sans text-xs font-light tracking-widest uppercase text-nocta-cream/30 hover:text-nocta-cream/60 transition-colors">
+        Mentions légales
+      </a>
+    </div>
+  </footer>
+
+</Layout>

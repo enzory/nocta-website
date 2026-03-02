@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout
+  title="Mentions légales · NOCTA"
+  description="Mentions légales de NOCTA — H+E Catering SARL, Paris & Île-de-France."
+>
+  <Header />
+
+  <main class="bg-nocta-cream min-h-screen">
+
+    <!-- Hero -->
+    <section class="pt-40 pb-16 lg:pt-52 lg:pb-20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-grey mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
+          Informations légales
+        </p>
+        <h1 class="font-serif text-5xl lg:text-7xl font-light italic text-nocta-black leading-[1.05] animate-fade-up" style="animation-delay: 0.35s; opacity: 0;">
+          Mentions légales
+        </h1>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="pb-28 lg:pb-40">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="max-w-2xl">
+
+          <div class="border-t border-nocta-black/10 py-10 reveal">
+            <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-5">Éditeur du site</p>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-black/80">
+              SARL H+E Catering, au capital de 1 000 €<br />
+              Siège social : 2 bis rue Edith Cavell, 92400 Courbevoie<br />
+              Téléphone : 06 50 01 16 16<br />
+              Email : contact@noctaparis.fr<br />
+              SIRET : 943 364 463 00019<br />
+              N° TVA intracommunautaire : FR61943364463<br />
+              Directeurs de la publication : Enzo Ryon et Hugo Vinatier
+            </p>
+          </div>
+
+          <div class="border-t border-nocta-black/10 py-10 reveal">
+            <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-5">Hébergement</p>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-black/80">
+              Vercel Inc.<br />
+              340 Pine Street Suite 701<br />
+              San Francisco, CA 94104, États-Unis
+            </p>
+          </div>
+
+          <div class="border-t border-nocta-black/10 py-10 reveal">
+            <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-5">Propriété intellectuelle</p>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-black/80">
+              L'ensemble des contenus présents sur ce site (textes, visuels, identité graphique) sont la propriété exclusive de NOCTA CATERING. Toute reproduction, même partielle, est strictement interdite sans accord écrit préalable.
+            </p>
+          </div>
+
+          <div class="border-t border-nocta-black/10 py-10 reveal">
+            <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-5">Données personnelles (RGPD)</p>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-black/80">
+              Les données collectées via le formulaire de contact sont utilisées exclusivement pour répondre à vos demandes. Elles ne sont transmises à aucun tiers. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits : contact@noctaparis.fr
+            </p>
+          </div>
+
+          <div class="border-t border-b border-nocta-black/10 py-10 reveal">
+            <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-5">Droit applicable</p>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-black/80">
+              Le présent site est soumis au droit français. Tout litige relatif à son utilisation relève de la compétence exclusive des tribunaux français.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-nocta-black border-t border-nocta-cream/10 py-10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-4">
+      <span class="font-serif text-lg tracking-[0.3em] text-nocta-cream/60 uppercase">NOCTA</span>
+      <p class="font-sans text-xs font-light text-nocta-cream/30 tracking-wide">
+        © 2025 NOCTA — H+E Catering SARL · Paris & Île-de-France
+      </p>
+      <a href="/mentions-legales" class="font-sans text-xs font-light tracking-widest uppercase text-nocta-cream/60">
+        Mentions légales
+      </a>
+    </div>
+  </footer>
+
+</Layout>
