@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout
@@ -21,14 +22,14 @@ import Header from '../components/Header.astro';
           loading="eager"
           fetchpriority="high"
         />
-        <div class="absolute inset-0 bg-black/45"></div>
+        <div class="absolute inset-0 bg-black/50"></div>
       </div>
 
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-20 lg:pb-28">
         <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-cream/60 mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
           Notre Maison
         </p>
-        <h1 class="font-serif text-4xl lg:text-6xl xl:text-7xl font-light italic text-nocta-cream leading-[1.1] max-w-4xl animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
+        <h1 class="font-serif text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-light italic text-nocta-cream leading-[1.1] max-w-4xl animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
           Une maison née de la conviction que la gastronomie est un art de vivre.
         </h1>
       </div>
@@ -41,7 +42,7 @@ import Header from '../components/Header.astro';
 
           <div class="reveal">
             <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Notre histoire</p>
-            <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight mb-8">
+            <h2 class="font-serif text-2xl md:text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight mb-8">
               Formés à l'exigence,<br/>
               <em class="not-italic font-extralight">libérés du protocole.</em>
             </h2>
@@ -70,7 +71,7 @@ import Header from '../components/Header.astro';
 
         <div class="mb-16 reveal">
           <p class="font-sans text-xs tracking-widest uppercase text-nocta-cream/60 mb-4">L'équipe</p>
-          <h2 class="font-serif text-4xl font-light italic text-nocta-cream leading-tight">
+          <h2 class="font-serif text-2xl md:text-4xl font-light italic text-nocta-cream leading-tight">
             Deux parcours. Une exigence commune.
           </h2>
         </div>
@@ -78,7 +79,7 @@ import Header from '../components/Header.astro';
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-4xl items-start">
 
           <!-- Hugo Vinatier -->
-          <div class="reveal" style="transition-delay: 0.1s">
+          <div class="reveal flex flex-col items-center lg:items-start text-center lg:text-left" style="transition-delay: 0.1s">
             <div class="overflow-hidden" style="width: 300px; height: 380px;">
               <img
                 src="/images/hugo-vinatier-chef.jpg"
@@ -98,7 +99,7 @@ import Header from '../components/Header.astro';
           </div>
 
           <!-- Enzo Ryon -->
-          <div class="reveal" style="transition-delay: 0.2s">
+          <div class="reveal flex flex-col items-center lg:items-start text-center lg:text-left" style="transition-delay: 0.2s">
             <div class="overflow-hidden" style="width: 300px; height: 380px;">
               <img
                 src="/images/nocta-corporate-enzo.jpg"
@@ -128,7 +129,7 @@ import Header from '../components/Header.astro';
 
         <div class="max-w-2xl mb-20 reveal">
           <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-4">Ce qui nous définit</p>
-          <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-cream leading-tight">
+          <h2 class="font-serif text-2xl md:text-4xl lg:text-5xl font-light italic text-nocta-cream leading-tight">
             Trois convictions,<br/>
             <em class="not-italic font-extralight">une même exigence.</em>
           </h2>
@@ -165,10 +166,10 @@ import Header from '../components/Header.astro';
     <section class="bg-nocta-cream py-24 lg:py-36">
       <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal">
         <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-6">Travaillons ensemble</p>
-        <h2 class="font-serif text-4xl lg:text-6xl font-light italic text-nocta-black leading-tight mb-10 max-w-2xl mx-auto">
+        <h2 class="font-serif text-2xl md:text-4xl lg:text-6xl font-light italic text-nocta-black leading-tight mb-10 max-w-2xl mx-auto">
           Une vision, un projet, une envie ?
         </h2>
-        <a href="/contact" class="inline-flex items-center font-sans text-sm font-light tracking-widest uppercase bg-nocta-black text-nocta-cream px-10 py-4 hover:bg-nocta-black/80 transition-all duration-300">
+        <a href="/contact" class="inline-flex items-center font-sans text-sm font-light tracking-widest uppercase bg-nocta-black text-nocta-cream px-8 py-3 hover:bg-nocta-black/80 transition-all duration-300">
           Demander un devis
         </a>
       </div>
@@ -176,16 +177,6 @@ import Header from '../components/Header.astro';
 
   </main>
 
-  <footer class="bg-nocta-black border-t border-nocta-cream/10 py-10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-4">
-      <span class="font-serif text-lg tracking-[0.3em] text-nocta-cream/60 uppercase">NOCTA</span>
-      <p class="font-sans text-xs font-light text-nocta-cream/30 tracking-wide">
-        © 2025 NOCTA — H+E Catering SARL · Paris & Île-de-France
-      </p>
-      <a href="/mentions-legales" class="font-sans text-xs font-light tracking-widest uppercase text-nocta-cream/30 hover:text-nocta-cream/60 transition-colors">
-        Mentions légales
-      </a>
-    </div>
-  </footer>
+  <Footer />
 
 </Layout>

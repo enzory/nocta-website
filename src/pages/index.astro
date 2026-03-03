@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 const carouselImages = [
   { src: '/images/nocta-assiette-hero1.jpg', alt: 'NOCTA — Assiette signature' },
@@ -21,7 +22,7 @@ const carouselImages = [
       <div id="carousel" class="absolute inset-0 h-full">
         {carouselImages.map((img, i) => (
           <div
-            class="carousel-slide absolute inset-0 h-full transition-opacity duration-[800ms] ease-in-out"
+            class="carousel-slide absolute inset-0 h-full transition-opacity duration-[600ms] ease-in-out"
             data-index={i}
             style={i === 0 ? 'opacity: 1;' : 'opacity: 0;'}
           >
@@ -40,7 +41,7 @@ const carouselImages = [
       <!-- Prev arrow -->
       <button
         id="carousel-prev"
-        class="carousel-arrow absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center opacity-0 transition-opacity duration-300"
+        class="carousel-arrow absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 hidden md:flex items-center justify-center opacity-0 transition-opacity duration-300"
         aria-label="Image précédente"
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
@@ -51,7 +52,7 @@ const carouselImages = [
       <!-- Next arrow -->
       <button
         id="carousel-next"
-        class="carousel-arrow absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center opacity-0 transition-opacity duration-300"
+        class="carousel-arrow absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 hidden md:flex items-center justify-center opacity-0 transition-opacity duration-300"
         aria-label="Image suivante"
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
@@ -64,7 +65,7 @@ const carouselImages = [
         <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-cream/60 mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
           Paris · Île-de-France
         </p>
-        <h1 class="font-serif text-5xl lg:text-7xl xl:text-8xl font-light italic text-nocta-cream leading-[1.05] max-w-3xl mb-8 animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
+        <h1 class="font-serif text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-light italic text-nocta-cream leading-[1.05] max-w-3xl mb-8 animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
           L'art de recevoir,<br/>
           <em class="not-italic font-extralight">sans compromis.</em>
         </h1>
@@ -73,10 +74,10 @@ const carouselImages = [
           et les particuliers qui exigent l'excellence à chaque détail.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 animate-fade-up" style="animation-delay: 0.8s; opacity: 0;">
-          <a href="/contact" class="inline-flex items-center justify-center font-sans text-sm font-light tracking-widest uppercase bg-nocta-cream text-nocta-black px-8 py-4 transition-all duration-300 hover:bg-white">
+          <a href="/contact" class="inline-flex items-center justify-center font-sans text-sm font-light tracking-widest uppercase bg-nocta-cream text-nocta-black px-8 py-3 transition-all duration-300 hover:bg-white">
             Demander un devis
           </a>
-          <a href="/prestations" class="inline-flex items-center justify-center font-sans text-sm font-light tracking-widest uppercase border border-nocta-cream/50 text-nocta-cream px-8 py-4 transition-all duration-300 hover:border-nocta-cream">
+          <a href="/prestations" class="inline-flex items-center justify-center font-sans text-sm font-light tracking-widest uppercase border border-nocta-cream/50 text-nocta-cream px-8 py-3 transition-all duration-300 hover:border-nocta-cream">
             Découvrir nos prestations
           </a>
         </div>
@@ -86,7 +87,7 @@ const carouselImages = [
       <div id="carousel-dots" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5" aria-hidden="true">
         {carouselImages.map((_, i) => (
           <button
-            class="carousel-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300"
+            class="carousel-dot w-3 h-3 rounded-full bg-white/40 transition-all duration-300"
             data-index={i}
             aria-label={`Slide ${i + 1}`}
           />
@@ -197,7 +198,7 @@ const carouselImages = [
 
         <div class="mb-16 reveal">
           <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Nos réalisations</p>
-          <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight">
+          <h2 class="font-serif text-2xl md:text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight">
             Chaque événement,<br/>une signature.
           </h2>
         </div>
@@ -249,10 +250,10 @@ const carouselImages = [
     <section class="bg-nocta-cream py-24 lg:py-36 border-t border-nocta-black/10">
       <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal">
         <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-6">Votre prochain événement</p>
-        <h2 class="font-serif text-4xl lg:text-6xl font-light italic text-nocta-black leading-tight mb-10 max-w-2xl mx-auto">
+        <h2 class="font-serif text-2xl md:text-4xl lg:text-6xl font-light italic text-nocta-black leading-tight mb-10 max-w-2xl mx-auto">
           Parlons de ce que vous avez en tête.
         </h2>
-        <a href="/contact" class="inline-flex items-center font-sans text-sm font-light tracking-widest uppercase bg-nocta-black text-nocta-cream px-10 py-4 hover:bg-nocta-black/80 transition-all duration-300">
+        <a href="/contact" class="inline-flex items-center font-sans text-sm font-light tracking-widest uppercase bg-nocta-black text-nocta-cream px-8 py-3 hover:bg-nocta-black/80 transition-all duration-300">
           Demander un devis
         </a>
       </div>
@@ -260,17 +261,7 @@ const carouselImages = [
 
   </main>
 
-  <footer class="bg-nocta-black border-t border-nocta-cream/10 py-10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-4">
-      <span class="font-serif text-lg tracking-[0.3em] text-nocta-cream/60 uppercase">NOCTA</span>
-      <p class="font-sans text-xs font-light text-nocta-cream/30 tracking-wide">
-        © 2025 NOCTA — H+E Catering SARL · Paris & Île-de-France
-      </p>
-      <a href="/mentions-legales" class="font-sans text-xs font-light tracking-widest uppercase text-nocta-cream/30 hover:text-nocta-cream/60 transition-colors">
-        Mentions légales
-      </a>
-    </div>
-  </footer>
+  <Footer />
 
 </Layout>
 

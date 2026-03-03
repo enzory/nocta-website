@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout
@@ -17,7 +18,7 @@ import Header from '../components/Header.astro';
         <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-grey mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
           Informations légales
         </p>
-        <h1 class="font-serif text-5xl lg:text-7xl font-light italic text-nocta-black leading-[1.05] animate-fade-up" style="animation-delay: 0.35s; opacity: 0;">
+        <h1 class="font-serif text-3xl md:text-5xl lg:text-7xl font-light italic text-nocta-black leading-[1.05] animate-fade-up" style="animation-delay: 0.35s; opacity: 0;">
           Mentions légales
         </h1>
       </div>
@@ -77,16 +78,6 @@ import Header from '../components/Header.astro';
 
   </main>
 
-  <footer class="bg-nocta-black border-t border-nocta-cream/10 py-10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-4">
-      <span class="font-serif text-lg tracking-[0.3em] text-nocta-cream/60 uppercase">NOCTA</span>
-      <p class="font-sans text-xs font-light text-nocta-cream/30 tracking-wide">
-        © 2025 NOCTA — H+E Catering SARL · Paris & Île-de-France
-      </p>
-      <a href="/mentions-legales" class="font-sans text-xs font-light tracking-widest uppercase text-nocta-cream/60">
-        Mentions légales
-      </a>
-    </div>
-  </footer>
+  <Footer />
 
 </Layout>

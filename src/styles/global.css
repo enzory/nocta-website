@@ -71,3 +71,22 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Accessibilité — préférence pour les animations réduites */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-in {
+    animation: none;
+    opacity: 1;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
