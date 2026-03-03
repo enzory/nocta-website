@@ -12,16 +12,16 @@ import Header from '../components/Header.astro';
   <main>
 
     <!-- Hero -->
-    <section class="relative min-h-[60vh] flex flex-col justify-end bg-nocta-black overflow-hidden">
+    <section class="relative min-h-[70vh] flex flex-col justify-end bg-nocta-black overflow-hidden">
       <div class="absolute inset-0">
         <img
-          src="/images/maison-hero.jpg"
+          src="/images/bougie-bois-maison.jpg"
           alt="NOCTA — Notre Maison"
-          class="w-full h-full object-cover opacity-50"
+          class="w-full h-full object-cover"
           loading="eager"
           fetchpriority="high"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-nocta-black/90 via-nocta-black/30 to-transparent"></div>
+        <div class="absolute inset-0 bg-black/45"></div>
       </div>
 
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-20 lg:pb-28">
@@ -41,13 +41,10 @@ import Header from '../components/Header.astro';
 
           <div class="reveal">
             <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Notre histoire</p>
-            <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight">
+            <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight mb-8">
               Formés à l'exigence,<br/>
               <em class="not-italic font-extralight">libérés du protocole.</em>
             </h2>
-          </div>
-
-          <div class="reveal" style="transition-delay: 0.15s">
             <p class="font-sans text-sm font-light leading-relaxed text-nocta-grey mb-6">
               Nous sommes issus de la grande gastronomie et de l'hôtellerie de luxe. Hugo s'est formé dans des cuisines étoilées, où chaque geste est dicté par l'exigence et la répétition du juste. Enzo apporte quatorze années d'expérience en hôtellerie de prestige, forgées entre la salle et la cave, avec une expertise en sommellerie qui fait de chaque accord un langage à part entière.
             </p>
@@ -56,7 +53,72 @@ import Header from '../components/Header.astro';
             </p>
           </div>
 
+          <div class="reveal" style="transition-delay: 0.15s">
+            <div class="aspect-square max-w-[480px] overflow-hidden">
+              <img src="/images/nocta-table-haussmann.jpg" alt="NOCTA — Hugo et Enzo" class="w-full h-full object-cover" style="object-position: center 40%;" />
+            </div>
+          </div>
+
         </div>
+
+      </div>
+    </section>
+
+    <!-- L'équipe -->
+    <section class="bg-nocta-black py-24 lg:py-32">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+        <div class="mb-16 reveal">
+          <p class="font-sans text-xs tracking-widest uppercase text-nocta-cream/60 mb-4">L'équipe</p>
+          <h2 class="font-serif text-4xl font-light italic text-nocta-cream leading-tight">
+            Deux parcours. Une exigence commune.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-4xl items-start">
+
+          <!-- Hugo Vinatier -->
+          <div class="reveal" style="transition-delay: 0.1s">
+            <div class="overflow-hidden" style="width: 300px; height: 380px;">
+              <img
+                src="/images/hugo-vinatier-chef.jpg"
+                alt="Hugo Vinatier — Chef NOCTA"
+                class="w-full h-full object-cover"
+                style="object-position: center 8%;"
+              />
+            </div>
+            <p class="font-sans text-sm font-light tracking-widest uppercase text-nocta-cream mt-4">Hugo Vinatier</p>
+            <p class="font-serif text-lg font-light italic text-nocta-cream/80">Chef</p>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/60 mt-3">
+              Formé dans les cuisines étoilées parisiennes — L'Astrance 3*, Akrame 1*, aux côtés de Thierry Marx. Hugo a affiné son exigence entre Paris et la Méditerranée avant de fonder NOCTA.
+            </p>
+            <p class="font-sans text-xs tracking-widest uppercase text-nocta-cream/30 mt-4">
+              L'ASTRANCE 3* · AKRAME 1* · MAISON VEROT
+            </p>
+          </div>
+
+          <!-- Enzo Ryon -->
+          <div class="reveal" style="transition-delay: 0.2s">
+            <div class="overflow-hidden" style="width: 300px; height: 380px;">
+              <img
+                src="/images/nocta-corporate-enzo.jpg"
+                alt="Enzo Ryon — Maître d'hôtel & Sommelier NOCTA"
+                class="w-full h-full object-cover"
+                style="object-position: center 12%;"
+              />
+            </div>
+            <p class="font-sans text-sm font-light tracking-widest uppercase text-nocta-cream mt-4">Enzo Ryon</p>
+            <p class="font-serif text-lg font-light italic text-nocta-cream/80">Maître d'hôtel & Sommelier</p>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/60 mt-3">
+              14 ans dans la haute gastronomie. Directeur de salle chez Akrame*, sommelier au Sur Mesure by Thierry Marx 2*. Enzo apporte à chaque événement la précision du service palace, libérée de sa rigidité.
+            </p>
+            <p class="font-sans text-xs tracking-widest uppercase text-nocta-cream/30 mt-4">
+              SUR MESURE 2* · AKRAME 1* · SCÈNE THÉLÈME 1*
+            </p>
+          </div>
+
+        </div>
+
       </div>
     </section>
 

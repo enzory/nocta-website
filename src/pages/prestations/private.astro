@@ -12,19 +12,30 @@ import Header from '../../components/Header.astro';
   <main>
 
     <!-- Hero -->
-    <section class="bg-nocta-cream pt-40 pb-24 lg:pt-52 lg:pb-32">
-      <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <a href="/prestations" class="inline-flex items-center gap-3 font-sans text-xs tracking-widest uppercase text-nocta-grey hover:text-nocta-black transition-colors duration-200 mb-12 animate-fade-up" style="animation-delay: 0.1s; opacity: 0;">
+    <section class="relative min-h-[70vh] flex flex-col justify-end bg-nocta-black overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src="/images/nocta-table-haussmann.jpg"
+          alt="NOCTA Private"
+          class="w-full h-full object-cover"
+          style="object-position: center 35%;"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-black/35"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-20 lg:pb-28 w-full">
+        <a href="/prestations" class="inline-flex items-center gap-3 font-sans text-xs tracking-widest uppercase text-nocta-cream/60 hover:text-nocta-cream transition-colors duration-200 mb-12 animate-fade-up" style="animation-delay: 0.1s; opacity: 0;">
           <span class="w-6 h-px bg-current inline-block"></span>
           Nos Prestations
         </a>
-        <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-grey mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
+        <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-cream/60 mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
           01
         </p>
-        <h1 class="font-serif text-5xl lg:text-7xl xl:text-8xl font-light italic text-nocta-black leading-[1.05] mb-6 animate-fade-up" style="animation-delay: 0.35s; opacity: 0;">
+        <h1 class="font-serif text-5xl lg:text-7xl xl:text-8xl font-light italic text-nocta-cream leading-[1.05] mb-6 animate-fade-up" style="animation-delay: 0.35s; opacity: 0;">
           NOCTA Private
         </h1>
-        <p class="font-sans text-base lg:text-lg font-light text-nocta-grey animate-fade-up" style="animation-delay: 0.5s; opacity: 0;">
+        <p class="font-sans text-base lg:text-lg font-light text-nocta-cream/70 animate-fade-up" style="animation-delay: 0.5s; opacity: 0;">
           L'art de recevoir chez soi.
         </p>
       </div>
@@ -37,19 +48,22 @@ import Header from '../../components/Header.astro';
 
           <div class="reveal">
             <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-4">Notre approche</p>
-            <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-cream leading-tight">
+            <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-cream leading-tight mb-8">
               Présents pour vous,<br/>
               <em class="not-italic font-extralight">invisibles si besoin.</em>
             </h2>
-          </div>
-
-          <div class="reveal" style="transition-delay: 0.15s">
             <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/60 mb-6">
               NOCTA Private, c'est l'art de recevoir chez soi sans en porter le poids. Nous prenons en charge l'intégralité de l'expérience — conception du menu, mise en place, service, rangement — pour que vous soyez entièrement présent à vos invités.
             </p>
             <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/60">
               Chaque dîner est pensé comme un événement unique, à votre image. Produits de saison sélectionnés avec soin, cuisine préparée sur place, service discret et attentif. L'excellence, sans l'ostentation.
             </p>
+          </div>
+
+          <div class="reveal" style="transition-delay: 0.15s">
+            <div class="overflow-hidden" style="max-width: 360px; aspect-ratio: 4/5;">
+              <img src="/images/nocta-bouche-private.jpg" alt="NOCTA Private — Mise en bouche" class="w-full h-full object-cover object-center" />
+            </div>
           </div>
 
         </div>

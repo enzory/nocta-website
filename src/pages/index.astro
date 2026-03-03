@@ -1,6 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+
+const carouselImages = [
+  { src: '/images/nocta-assiette-hero1.jpg', alt: 'NOCTA — Assiette signature' },
+  { src: '/images/nocta-pancetta-hero4.jpg', alt: 'NOCTA — Pancetta' },
+  { src: '/images/nocta-fleur-courgette-hero3.jpg', alt: 'NOCTA — Fleur de courgette' },
+];
 ---
 
 <Layout>
@@ -8,18 +14,52 @@ import Header from '../components/Header.astro';
 
   <main>
 
+    <!-- HERO CAROUSEL -->
     <section id="hero" class="relative min-h-screen flex flex-col justify-end bg-nocta-black overflow-hidden">
-      <div class="absolute inset-0 h-full">
-        <img
-          src="/images/hero-bg.jpg"
-          alt="NOCTA — Expérience culinaire d'exception"
-          class="w-full h-full object-cover opacity-70"
-          loading="eager"
-          fetchpriority="high"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-nocta-black/80 via-nocta-black/20 to-transparent"></div>
+
+      <!-- Slides -->
+      <div id="carousel" class="absolute inset-0 h-full">
+        {carouselImages.map((img, i) => (
+          <div
+            class="carousel-slide absolute inset-0 h-full transition-opacity duration-[800ms] ease-in-out"
+            data-index={i}
+            style={i === 0 ? 'opacity: 1;' : 'opacity: 0;'}
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              class="w-full h-full object-cover opacity-70"
+              loading={i === 0 ? 'eager' : 'lazy'}
+              fetchpriority={i === 0 ? 'high' : 'auto'}
+            />
+          </div>
+        ))}
+        <div class="absolute inset-0 bg-gradient-to-t from-nocta-black/80 via-nocta-black/20 to-transparent pointer-events-none"></div>
       </div>
 
+      <!-- Prev arrow -->
+      <button
+        id="carousel-prev"
+        class="carousel-arrow absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center opacity-0 transition-opacity duration-300"
+        aria-label="Image précédente"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+
+      <!-- Next arrow -->
+      <button
+        id="carousel-next"
+        class="carousel-arrow absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center opacity-0 transition-opacity duration-300"
+        aria-label="Image suivante"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+
+      <!-- Hero text -->
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-20 lg:pb-28">
         <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-cream/60 mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
           Paris · Île-de-France
@@ -42,7 +82,19 @@ import Header from '../components/Header.astro';
         </div>
       </div>
 
-      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-in" style="animation-delay: 1.2s; opacity: 0;" aria-hidden="true">
+      <!-- Dot indicators -->
+      <div id="carousel-dots" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5" aria-hidden="true">
+        {carouselImages.map((_, i) => (
+          <button
+            class="carousel-dot w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300"
+            data-index={i}
+            aria-label={`Slide ${i + 1}`}
+          />
+        ))}
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 right-6 lg:right-12 flex flex-col items-center gap-2 animate-fade-in" style="animation-delay: 1.2s; opacity: 0;" aria-hidden="true">
         <span class="font-sans text-xs tracking-widest uppercase text-nocta-cream/40">Scroll</span>
         <div class="w-px h-12 bg-nocta-cream/20 relative overflow-hidden">
           <div class="absolute top-0 left-0 w-full h-1/2 bg-nocta-cream/60 animate-bounce"></div>
@@ -50,11 +102,12 @@ import Header from '../components/Header.astro';
       </div>
     </section>
 
-    <section class="bg-nocta-cream py-24 lg:py-36">
+    <!-- APPROCHE -->
+    <section class="bg-nocta-cream py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <div class="max-w-2xl mb-20 reveal">
+        <div class="max-w-2xl mb-14 reveal">
           <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Notre approche</p>
-          <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight">
+          <h2 class="font-serif text-3xl lg:text-4xl font-light italic text-nocta-black leading-tight">
             Gastronomie, service,<br/>
             <em class="not-italic">expérience.</em>
           </h2>
@@ -85,12 +138,13 @@ import Header from '../components/Header.astro';
       </div>
     </section>
 
-    <section class="bg-nocta-black py-24 lg:py-36">
+    <!-- FORMATS -->
+    <section class="bg-nocta-black py-16 lg:py-20">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 reveal">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12 reveal">
           <div>
             <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-4">Nos formats</p>
-            <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-cream leading-tight">
+            <h2 class="font-serif text-3xl lg:text-4xl font-light italic text-nocta-cream leading-tight">
               Trois univers,<br/>une seule exigence.
             </h2>
           </div>
@@ -137,7 +191,62 @@ import Header from '../components/Header.astro';
       </div>
     </section>
 
+    <!-- PHOTO GALLERY -->
     <section class="bg-nocta-cream py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+        <div class="mb-16 reveal">
+          <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Nos réalisations</p>
+          <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight">
+            Chaque événement,<br/>une signature.
+          </h2>
+        </div>
+
+        <!-- 2-row grid: 2 top + 3 bottom -->
+        <div class="grid grid-cols-2 gap-3 lg:gap-4 mb-3 lg:mb-4">
+          <div class="overflow-hidden reveal aspect-square" style="transition-delay: 0.05s">
+            <img
+              src="/images/nocta-assiette-poireau.jpg"
+              alt="NOCTA — Assiette poireau"
+              class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
+            />
+          </div>
+          <div class="overflow-hidden reveal aspect-square" style="transition-delay: 0.1s">
+            <img
+              src="/images/nocta-celeri-marche.jpg"
+              alt="NOCTA — Céleri marché"
+              class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
+            />
+          </div>
+        </div>
+        <div class="grid grid-cols-3 gap-3 lg:gap-4">
+          <div class="overflow-hidden reveal aspect-square" style="transition-delay: 0.15s">
+            <img
+              src="/images/nocta-madeleine-canele.jpg"
+              alt="NOCTA — Madeleine & Canelé"
+              class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
+            />
+          </div>
+          <div class="overflow-hidden reveal aspect-square" style="transition-delay: 0.2s">
+            <img
+              src="/images/nocta-assiette-tomate.jpg"
+              alt="NOCTA — Assiette tomate"
+              class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
+            />
+          </div>
+          <div class="overflow-hidden reveal aspect-square" style="transition-delay: 0.25s">
+            <img
+              src="/images/sainttropez-petitdejeuner-private.jpg"
+              alt="NOCTA — Petit-déjeuner Saint-Tropez"
+              class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-nocta-cream py-24 lg:py-36 border-t border-nocta-black/10">
       <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal">
         <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-6">Votre prochain événement</p>
         <h2 class="font-serif text-4xl lg:text-6xl font-light italic text-nocta-black leading-tight mb-10 max-w-2xl mx-auto">
@@ -164,3 +273,70 @@ import Header from '../components/Header.astro';
   </footer>
 
 </Layout>
+
+<style>
+  /* Show arrows when hero is hovered */
+  #hero:hover .carousel-arrow {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  const slides = document.querySelectorAll<HTMLElement>('.carousel-slide');
+  const dots   = document.querySelectorAll<HTMLElement>('.carousel-dot');
+  const hero   = document.getElementById('hero');
+  let current  = 0;
+  let timer: ReturnType<typeof setInterval>;
+
+  function goTo(index: number) {
+    slides[current].style.opacity = '0';
+    dots[current].style.backgroundColor = 'rgba(255,255,255,0.4)';
+    dots[current].style.transform = 'scale(1)';
+
+    current = (index + slides.length) % slides.length;
+
+    slides[current].style.opacity = '1';
+    dots[current].style.backgroundColor = 'rgba(255,255,255,0.9)';
+    dots[current].style.transform = 'scale(1.3)';
+  }
+
+  function startTimer() {
+    timer = setInterval(() => goTo(current + 1), 5000);
+  }
+
+  function stopTimer() {
+    clearInterval(timer);
+  }
+
+  // Init first dot as active
+  goTo(0);
+
+  // Auto-play
+  startTimer();
+
+  // Pause on hover
+  hero?.addEventListener('mouseenter', stopTimer);
+  hero?.addEventListener('mouseleave', startTimer);
+
+  // Arrow controls
+  document.getElementById('carousel-prev')?.addEventListener('click', () => {
+    stopTimer();
+    goTo(current - 1);
+    startTimer();
+  });
+
+  document.getElementById('carousel-next')?.addEventListener('click', () => {
+    stopTimer();
+    goTo(current + 1);
+    startTimer();
+  });
+
+  // Dot controls
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      stopTimer();
+      goTo(i);
+      startTimer();
+    });
+  });
+</script>

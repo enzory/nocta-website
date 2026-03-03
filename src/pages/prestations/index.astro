@@ -11,13 +11,24 @@ import Header from '../../components/Header.astro';
 
   <main>
 
-    <!-- Hero minimal -->
-    <section class="bg-nocta-cream pt-40 pb-24 lg:pt-52 lg:pb-32">
-      <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-grey mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
+    <!-- Hero -->
+    <section class="relative flex flex-col justify-end bg-nocta-black overflow-hidden" style="min-height: 50vh;">
+      <div class="absolute inset-0">
+        <img
+          src="/images/nocta-table-fleure-2.jpg"
+          alt="NOCTA — Nos Prestations"
+          class="w-full h-full object-cover"
+          style="object-position: center center;"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-black/50"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-40 pb-16 lg:pt-52 lg:pb-20 w-full">
+        <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-cream/60 mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
           Nos Prestations
         </p>
-        <h1 class="font-serif text-5xl lg:text-7xl xl:text-8xl font-light italic text-nocta-black leading-[1.05] max-w-4xl animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
+        <h1 class="font-serif text-5xl lg:text-7xl xl:text-8xl font-light italic text-nocta-cream leading-[1.05] max-w-4xl animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
           Trois formats.<br/>
           <em class="not-italic font-extralight">Une seule exigence.</em>
         </h1>
@@ -30,7 +41,7 @@ import Header from '../../components/Header.astro';
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-px bg-nocta-black/15">
 
           <!-- 01 — NOCTA Private -->
-          <a href="/prestations/private" class="group flex flex-col bg-nocta-cream p-10 hover:bg-nocta-black/[.03] transition-colors duration-300 reveal">
+          <a href="/prestations/private" class="group flex flex-col bg-nocta-cream p-8 hover:bg-nocta-black/[.03] transition-colors duration-300 reveal">
             <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-10">01</p>
             <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-black leading-[1.1] mb-6">
               NOCTA<br/>Private
@@ -47,7 +58,7 @@ import Header from '../../components/Header.astro';
           </a>
 
           <!-- 02 — NOCTA Corporate -->
-          <a href="/prestations/corporate" class="group flex flex-col bg-nocta-cream p-10 hover:bg-nocta-black/[.03] transition-colors duration-300 reveal" style="transition-delay: 0.1s">
+          <a href="/prestations/corporate" class="group flex flex-col bg-nocta-cream p-8 hover:bg-nocta-black/[.03] transition-colors duration-300 reveal" style="transition-delay: 0.1s">
             <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-10">02</p>
             <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-black leading-[1.1] mb-6">
               NOCTA<br/>Corporate
@@ -64,7 +75,7 @@ import Header from '../../components/Header.astro';
           </a>
 
           <!-- 03 — NOCTA Signature -->
-          <a href="/prestations/signature" class="group flex flex-col bg-nocta-cream p-10 hover:bg-nocta-black/[.03] transition-colors duration-300 reveal" style="transition-delay: 0.2s">
+          <a href="/prestations/signature" class="group flex flex-col bg-nocta-cream p-8 hover:bg-nocta-black/[.03] transition-colors duration-300 reveal" style="transition-delay: 0.2s">
             <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-10">03</p>
             <h2 class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-black leading-[1.1] mb-6">
               NOCTA<br/>Signature
