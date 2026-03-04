@@ -2,9 +2,8 @@
 import '../styles/global.css';
 
 const {
-  title = 'NOCTA — Traiteur de luxe & Chef privé à Paris',
-  description = 'NOCTA conçoit des expériences culinaires sur-mesure pour événements d\'entreprise et réceptions privées à Paris et en Île-de-France.',
-  image = '/og-image.jpg'
+  title = 'NOCTA — Traiteur, Chef privé & Sommelier à Paris',
+  description = "NOCTA, maison de catering haut de gamme à Paris. Dîners privés, événements corporate, expériences immersives. Chef étoilé, sommelier, service sur-mesure en France et à l'étranger.",
 } = Astro.props;
 
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : null;
@@ -16,6 +15,8 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : null
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="NOCTA Catering" />
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
@@ -31,12 +32,33 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : null
     <meta name="twitter:image" content="https://www.noctaparis.fr/images/og-image.jpeg" />
 
     <!-- Canonical -->
-   {canonicalURL && <link rel="canonical" href={canonicalURL} />}
+    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
     <meta name="theme-color" content="#0A0A0A" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FoodEstablishment",
+        "name": "NOCTA Catering",
+        "description": "Maison de catering haut de gamme à Paris. Dîners privés, événements corporate, expériences immersives.",
+        "url": "https://www.noctaparis.fr",
+        "telephone": "",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Courbevoie",
+          "addressRegion": "Île-de-France",
+          "addressCountry": "FR"
+        },
+        "servesCuisine": "Gastronomie française",
+        "priceRange": "€€€€",
+        "areaServed": "Paris, Île-de-France, France"
+      }
+    </script>
 
     <title>{title}</title>
   </head>
