@@ -1,0 +1,120 @@
+---
+import levisSrc          from '../assets/logos/levis.svg?url';
+import biologiqueSrc     from '../assets/logos/biologique-recherche.svg?url';
+import galionSrc         from '../assets/logos/the-galion.svg?url';
+import columbusSrc       from '../assets/logos/colombus-consulting.svg?url';
+import jusMundiSrc       from '../assets/logos/jus-mundi.svg?url';
+import aaConseilSrc      from '../assets/logos/aa-conseil.svg?url';
+
+const logos = [
+  { src: levisSrc,       alt: "Levi's",              key: '' },
+  { src: biologiqueSrc,  alt: 'Biologique Recherche', key: 'biologique' },
+  { src: galionSrc,      alt: 'The Galion',           key: '' },
+  { src: columbusSrc,    alt: 'Colombus Consulting',  key: '' },
+  { src: jusMundiSrc,    alt: 'Jus Mundi',            key: 'jus-mundi' },
+  { src: aaConseilSrc,   alt: 'AA Conseil',           key: 'aa-conseil' },
+];
+---
+
+<section class="bg-[#0A0A0A] border-t border-nocta-cream/10 border-b py-16">
+  <p class="font-sans text-xs tracking-widest uppercase text-nocta-cream/40 text-center mb-10">
+    ILS NOUS FONT CONFIANCE
+  </p>
+
+  <div class="logo-slider-outer">
+    <div class="logo-track">
+      <!-- SET 1 -->
+      {logos.map((logo) => (
+        <div class={`logo-item`}>
+          <img src={logo.src} alt={logo.alt} data-logo={logo.key || undefined} loading="lazy" draggable="false" />
+        </div>
+      ))}
+      <!-- SET 2 — copie identique pour boucle seamless -->
+      {logos.map((logo) => (
+        <div class={`logo-item`} aria-hidden="true">
+          <img src={logo.src} alt={logo.alt} data-logo={logo.key || undefined} loading="lazy" draggable="false" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scroll-logos {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .logo-slider-outer {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .logo-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: scroll-logos 30s linear infinite;
+  }
+
+  .logo-track:hover {
+    animation-play-state: paused;
+  }
+
+  .logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 70px;
+    flex-shrink: 0;
+  }
+
+  .logo-item img {
+    height: 56px;
+    width: auto;
+    max-width: 90px;
+    object-fit: contain;
+    filter: grayscale(1) invert(1) brightness(2);
+    mix-blend-mode: screen;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .logo-item:hover img {
+    opacity: 1;
+  }
+
+  img[data-logo="biologique"] {
+    height: 40px;
+    max-width: 70px;
+  }
+
+  img[data-logo="aa-conseil"],
+  img[data-logo="jus-mundi"] {
+    height: 72px;
+  }
+
+  @media (max-width: 768px) {
+    .logo-item {
+      height: 36px;
+      margin: 0 24px;
+    }
+    .logo-item img {
+      height: 32px;
+      max-width: 100px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-track {
+      animation: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      gap: 40px;
+      padding: 0 24px;
+    }
+  }
+</style>

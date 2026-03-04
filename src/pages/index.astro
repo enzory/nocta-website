@@ -1,7 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import LogoSlider from '../components/LogoSlider.astro';
 
 const carouselImages = [
   { src: '/images/nocta-assiette-hero1.jpg', alt: 'NOCTA — Assiette signature' },
@@ -191,6 +192,8 @@ const carouselImages = [
         </div>
       </div>
     </section>
+
+    <LogoSlider />
 
     <!-- PHOTO GALLERY -->
     <section class="bg-nocta-cream py-24 lg:py-36">
