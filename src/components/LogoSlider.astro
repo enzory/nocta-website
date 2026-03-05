@@ -80,6 +80,11 @@ const logos = [
     transition: opacity 0.3s ease;
     user-select: none;
     -webkit-user-drag: none;
+    /* GPU acceleration — résout le flou Safari/iOS */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
   .logo-item:hover img {
