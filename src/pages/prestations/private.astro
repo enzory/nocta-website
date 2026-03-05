@@ -2,6 +2,7 @@
 import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/Footer.astro';
+import privateHeroSrc from '../../assets/images/private-hero.jpg?url';
 ---
 
 <Layout
@@ -16,10 +17,9 @@ import Footer from '../../components/Footer.astro';
     <section class="relative min-h-[50vh] lg:min-h-[70vh] flex flex-col justify-end bg-nocta-black overflow-hidden">
       <div class="absolute inset-0">
         <img
-          src="/images/nocta-table-haussmann.jpg"
+          src={privateHeroSrc}
           alt="NOCTA Private"
-          class="w-full h-full object-cover"
-          style="object-position: center 35%;"
+          class="w-full h-full object-cover object-center"
           loading="eager"
           fetchpriority="high"
         />
