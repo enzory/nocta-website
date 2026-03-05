@@ -55,6 +55,8 @@ const logos = [
     align-items: center;
     width: max-content;
     animation: scroll-logos 30s linear infinite;
+    isolation: isolate;
+    will-change: transform;
   }
 
   .logo-track:hover {
@@ -75,16 +77,22 @@ const logos = [
     max-width: 90px;
     object-fit: contain;
     filter: grayscale(1) invert(1) brightness(2);
-    mix-blend-mode: screen;
     opacity: 0.5;
     transition: opacity 0.3s ease;
     user-select: none;
     -webkit-user-drag: none;
-    /* GPU acceleration — résout le flou Safari/iOS */
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+  }
+
+  /* Safari/iOS : supprime mix-blend-mode, filtre simplifié sans artefacts */
+  @supports (-webkit-touch-callout: none) {
+    .logo-item img {
+      filter: grayscale(1) brightness(0) invert(1);
+      mix-blend-mode: normal;
+    }
   }
 
   .logo-item:hover img {
