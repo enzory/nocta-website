@@ -6,7 +6,7 @@ import Footer from '../components/Footer.astro';
 
 <Layout
   title="Contact — Demande de devis · NOCTA"
-  description="Contactez NOCTA pour votre événement privé ou d'entreprise à Paris et en Île-de-France. Réponse sous 24 heures."
+  description="Contactez NOCTA pour votre événement privé ou d'entreprise à Paris et en Île-de-France. Réponse sous 48 heures."
 >
   <Header />
 
@@ -22,7 +22,7 @@ import Footer from '../components/Footer.astro';
           Parlons de votre événement.
         </h1>
         <p class="font-sans text-base lg:text-lg font-light text-nocta-grey max-w-xl animate-fade-up" style="animation-delay: 0.5s; opacity: 0;">
-          Répondons à toutes vos questions et construisons ensemble votre expérience.
+          Nous répondons à toutes les demandes dans les 48 heures.
         </p>
       </div>
     </section>
@@ -52,13 +52,18 @@ import Footer from '../components/Footer.astro';
 
             <div class="border-t border-nocta-black/10 pt-8">
               <p class="font-sans text-sm font-light leading-relaxed text-nocta-grey">
-                Nous répondons à chaque demande dans les 24 heures.
+                Nous répondons à chaque demande dans les 48 heures.
               </p>
             </div>
           </div>
 
           <!-- Right: form -->
-          <form class="reveal flex flex-col gap-8" style="transition-delay: 0.15s">
+          <form
+            action="https://formspree.io/f/maqpwebj"
+            method="POST"
+            class="reveal flex flex-col gap-8"
+            style="transition-delay: 0.15s"
+          >
 
             <!-- Prénom & Nom -->
             <div class="grid grid-cols-2 gap-4 lg:gap-6">
@@ -161,6 +166,12 @@ import Footer from '../components/Footer.astro';
                 class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-light text-nocta-black transition-colors duration-200 resize-none"
               ></textarea>
             </div>
+
+            <!-- Honeypot anti-spam -->
+            <input type="text" name="_gotcha" style="display:none" />
+
+            <!-- Redirection après envoi -->
+            <input type="hidden" name="_next" value="https://www.noctaparis.fr/merci" />
 
             <!-- Submit -->
             <button
