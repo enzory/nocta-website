@@ -16,8 +16,8 @@ const logos = [
 ];
 ---
 
-<section class="bg-[#0A0A0A] border-t border-nocta-cream/10 border-b py-16">
-  <p class="font-sans text-xs tracking-widest uppercase text-nocta-cream/40 text-center mb-10">
+<section class="bg-[#E8E4D9] border-t border-[#0A0A0A]/10 border-b py-16">
+  <p class="font-sans text-xs tracking-widest uppercase text-[#0A0A0A]/40 text-center mb-10">
     ILS NOUS FONT CONFIANCE
   </p>
 
@@ -76,7 +76,6 @@ const logos = [
     width: auto;
     max-width: 90px;
     object-fit: contain;
-    filter: grayscale(1) invert(1) brightness(2);
     opacity: 0.5;
     transition: opacity 0.3s ease;
     user-select: none;
@@ -85,14 +84,6 @@ const logos = [
     transform: translateZ(0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-  }
-
-  /* Safari/iOS : supprime mix-blend-mode, filtre simplifié sans artefacts */
-  @supports (-webkit-touch-callout: none) {
-    .logo-item img {
-      filter: grayscale(1) brightness(0) invert(1);
-      mix-blend-mode: normal;
-    }
   }
 
   .logo-item:hover img {
