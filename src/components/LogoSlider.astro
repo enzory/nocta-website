@@ -26,13 +26,13 @@ const logos = [
       <!-- SET 1 -->
       {logos.map((logo) => (
         <div class="logo-item">
-          <img src={logo.src} alt={logo.alt} style={`height: ${logo.h}px`} loading="lazy" draggable="false" />
+          <img src={logo.src} alt={logo.alt} width="160" height="60" style={`height: ${logo.h}px`} loading="lazy" draggable="false" />
         </div>
       ))}
       <!-- SET 2 — copie identique pour boucle seamless -->
       {logos.map((logo) => (
         <div class="logo-item" aria-hidden="true">
-          <img src={logo.src} alt={logo.alt} style={`height: ${logo.h}px`} loading="lazy" draggable="false" />
+          <img src={logo.src} alt={logo.alt} width="160" height="60" style={`height: ${logo.h}px`} loading="lazy" draggable="false" />
         </div>
       ))}
     </div>
