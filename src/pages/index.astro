@@ -3,27 +3,6 @@ import Layout from '../layouts/layout.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/Footer.astro';
 import LogoSlider from '../components/LogoSlider.astro';
-
-const carouselImages = [
-  {
-    src:    '/images/nocta-assiette-hero1-800w.webp',
-    alt:    'Assiette gastronomique chef privé Paris — dressage NOCTA',
-    w: 800, h: 600,
-    srcset: '/images/nocta-assiette-hero1-800w.webp 800w, /images/nocta-assiette-hero1-1200w.webp 1200w, /images/nocta-assiette-hero1.webp 2400w',
-  },
-  {
-    src:    '/images/nocta-pancetta-hero4-800w.webp',
-    alt:    'Pancetta croustillante dressée par le chef — catering haut de gamme Paris',
-    w: 800, h: 1067,
-    srcset: '/images/nocta-pancetta-hero4-800w.webp 800w, /images/nocta-pancetta-hero4-1200w.webp 1200w, /images/nocta-pancetta-hero4.webp 2400w',
-  },
-  {
-    src:    '/images/nocta-fleur-courgette-hero3-800w.webp',
-    alt:    'Fleur de courgette farcie — chef privé traiteur Paris Île-de-France',
-    w: 800, h: 1067,
-    srcset: '/images/nocta-fleur-courgette-hero3-800w.webp 800w, /images/nocta-fleur-courgette-hero3-1200w.webp 1200w, /images/nocta-fleur-courgette-hero3.webp 2400w',
-  },
-];
 ---
 
 <Layout>
@@ -31,33 +10,67 @@ const carouselImages = [
 
   <main>
 
-    <!-- HERO CAROUSEL -->
+    <!-- HERO -->
     <section id="hero" class="relative min-h-screen flex flex-col justify-end bg-nocta-black overflow-hidden">
 
-      <!-- Slides -->
-      <div id="carousel" class="absolute inset-0 h-full">
-        {carouselImages.map((img, i) => (
-          <div
-            class="carousel-slide absolute inset-0 h-full transition-opacity duration-[600ms] ease-in-out"
-            data-index={i}
-            style={i === 0 ? 'opacity: 1;' : 'opacity: 0;'}
-          >
-            <img
-              src={img.src}
-              srcset={img.srcset}
-              sizes="100vw"
-              alt={img.alt}
-              width={img.w}
-              height={img.h}
-              class="w-full h-full object-cover opacity-70"
-              style={i === 1 ? 'object-position: center 60%;' : 'object-position: center center;'}
-              loading={i === 0 ? 'eager' : 'lazy'}
-              fetchpriority={i === 0 ? 'high' : 'auto'}
-            />
-          </div>
-        ))}
-        <div class="absolute inset-0 bg-gradient-to-t from-nocta-black/80 via-nocta-black/20 to-transparent pointer-events-none"></div>
+      <!-- PREMIÈRE IMAGE : élément statique, LCP cible — eager + high priority, hors carousel JS -->
+      <img
+        id="hero-lcp-image"
+        src="/images/nocta-assiette-hero1-800w.webp"
+        srcset="
+          /images/nocta-assiette-hero1-400w.webp  400w,
+          /images/nocta-assiette-hero1-800w.webp  800w,
+          /images/nocta-assiette-hero1-1200w.webp 1200w
+        "
+        sizes="100vw"
+        alt="Assiette gastronomique chef privé Paris — dressage NOCTA"
+        width="800"
+        height="600"
+        loading="eager"
+        fetchpriority="high"
+        class="absolute inset-0 w-full h-full object-cover opacity-70"
+      />
+
+      <!-- SLIDES 2 & 3 : chargées en lazy, animées par JS après le premier intervalle -->
+      <div id="carousel" class="absolute inset-0 h-full" aria-hidden="true">
+        <img
+          id="carousel-slide-1"
+          src="/images/nocta-pancetta-hero4-800w.webp"
+          srcset="
+            /images/nocta-pancetta-hero4-800w.webp  800w,
+            /images/nocta-pancetta-hero4-1200w.webp 1200w,
+            /images/nocta-pancetta-hero4.webp       2400w
+          "
+          sizes="100vw"
+          alt="Pancetta croustillante dressée par le chef — catering haut de gamme Paris"
+          width="800"
+          height="1067"
+          loading="lazy"
+          fetchpriority="auto"
+          class="absolute inset-0 w-full h-full object-cover"
+          style="opacity: 0; object-position: center 60%;"
+        />
+        <img
+          id="carousel-slide-2"
+          src="/images/nocta-fleur-courgette-hero3-800w.webp"
+          srcset="
+            /images/nocta-fleur-courgette-hero3-800w.webp  800w,
+            /images/nocta-fleur-courgette-hero3-1200w.webp 1200w,
+            /images/nocta-fleur-courgette-hero3.webp       2400w
+          "
+          sizes="100vw"
+          alt="Fleur de courgette farcie — chef privé traiteur Paris Île-de-France"
+          width="800"
+          height="1067"
+          loading="lazy"
+          fetchpriority="auto"
+          class="absolute inset-0 w-full h-full object-cover"
+          style="opacity: 0;"
+        />
       </div>
+
+      <!-- Gradient overlay — au-dessus des deux couches d'images -->
+      <div class="absolute inset-0 bg-gradient-to-t from-nocta-black/80 via-nocta-black/20 to-transparent pointer-events-none z-[1]"></div>
 
       <!-- Prev arrow -->
       <button
@@ -103,15 +116,11 @@ const carouselImages = [
         </div>
       </div>
 
-      <!-- Dot indicators -->
+      <!-- Dot indicators : 3 statiques (image LCP + 2 slides carousel) -->
       <div id="carousel-dots" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2.5" aria-hidden="true">
-        {carouselImages.map((_, i) => (
-          <button
-            class="carousel-dot w-3 h-3 rounded-full bg-white/40 transition-all duration-300"
-            data-index={i}
-            aria-label={`Slide ${i + 1}`}
-          />
-        ))}
+        <button class="carousel-dot w-3 h-3 rounded-full bg-white/40 transition-all duration-300" data-index="0" aria-label="Slide 1"></button>
+        <button class="carousel-dot w-3 h-3 rounded-full bg-white/40 transition-all duration-300" data-index="1" aria-label="Slide 2"></button>
+        <button class="carousel-dot w-3 h-3 rounded-full bg-white/40 transition-all duration-300" data-index="2" aria-label="Slide 3"></button>
       </div>
 
       <!-- Scroll indicator -->
@@ -330,23 +339,44 @@ const carouselImages = [
 </style>
 
 <script>
-  const slides = document.querySelectorAll<HTMLElement>('.carousel-slide');
-  const dots   = document.querySelectorAll<HTMLElement>('.carousel-dot');
-  const hero   = document.getElementById('hero');
-  let current  = 0;
+  // Carousel avec image LCP statique hors du carousel JS
+  // Position 0 = #hero-lcp-image (dans le DOM au chargement, eager, fetchpriority=high)
+  // Position 1 = #carousel-slide-1 (pancetta, lazy)
+  // Position 2 = #carousel-slide-2 (fleur-courgette, lazy)
+
+  const heroLcp = document.getElementById('hero-lcp-image') as HTMLImageElement | null;
+  const slide1  = document.getElementById('carousel-slide-1') as HTMLImageElement | null;
+  const slide2  = document.getElementById('carousel-slide-2') as HTMLImageElement | null;
+  const dots    = document.querySelectorAll<HTMLElement>('.carousel-dot');
+  const hero    = document.getElementById('hero');
+
+  if (!heroLcp || !slide1 || !slide2) throw new Error('Hero elements not found');
+
+  const allSlides: HTMLElement[] = [heroLcp, slide1, slide2];
+  const FADE = 'opacity 600ms ease-in-out';
+
+  let current = 0;
   let timer: ReturnType<typeof setInterval>;
 
   function goTo(index: number) {
-    slides[current].style.opacity = '0';
+    // Fade out current
+    allSlides[current].style.transition = FADE;
+    allSlides[current].style.opacity    = '0';
     dots[current].style.backgroundColor = 'rgba(255,255,255,0.4)';
-    dots[current].style.transform = 'scale(1)';
+    dots[current].style.transform       = 'scale(1)';
 
-    current = (index + slides.length) % slides.length;
+    current = ((index % 3) + 3) % 3;
 
-    slides[current].style.opacity = '1';
+    // Fade in new
+    allSlides[current].style.transition = FADE;
+    allSlides[current].style.opacity    = '0.7';
     dots[current].style.backgroundColor = 'rgba(255,255,255,0.9)';
-    dots[current].style.transform = 'scale(1.3)';
+    dots[current].style.transform       = 'scale(1.3)';
   }
+
+  // Init : activer le premier point sans animer (LCP image déjà visible via CSS)
+  dots[0].style.backgroundColor = 'rgba(255,255,255,0.9)';
+  dots[0].style.transform       = 'scale(1.3)';
 
   function startTimer() {
     timer = setInterval(() => goTo(current + 1), 5000);
@@ -355,9 +385,6 @@ const carouselImages = [
   function stopTimer() {
     clearInterval(timer);
   }
-
-  // Init first dot as active
-  goTo(0);
 
   // Auto-play
   startTimer();
