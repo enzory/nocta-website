@@ -40,7 +40,7 @@ articles.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
               });
               return (
                 <a
-                  href={`/journal/${article.id}`}
+                  href={`/journal/${article.id.replace(/\.md$/, '')}`}
                   class="group flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 py-10 hover:opacity-70 transition-opacity duration-300 reveal"
                 >
                   <div class="flex-1 max-w-2xl">
