@@ -193,7 +193,8 @@ import Footer from '../components/Footer.astro';
 
 </Layout>
 
-<style>
+<style is:inline>
+  /* Styles inline : pas de fichier CSS externe généré, pas de render blocking sur les autres pages */
   input[type="date"]::-webkit-calendar-picker-indicator {
     opacity: 0.4;
     cursor: pointer;
