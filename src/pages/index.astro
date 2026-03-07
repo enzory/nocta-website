@@ -19,16 +19,16 @@ import LogoSlider from '../components/LogoSlider.astro';
       <!-- PREMIÈRE IMAGE : élément statique, LCP cible — eager + high priority, hors carousel JS -->
       <img
         id="hero-lcp-image"
-        src="/images/nocta-assiette-hero1-1200w.webp"
+        src="/images/nocta-assiette-hero1.webp"
         srcset="
-          /images/nocta-assiette-hero1-400w.webp  400w,
           /images/nocta-assiette-hero1-800w.webp  800w,
-          /images/nocta-assiette-hero1-1200w.webp 1200w
+          /images/nocta-assiette-hero1-1200w.webp 1200w,
+          /images/nocta-assiette-hero1.webp       2400w
         "
         sizes="100vw"
         alt="Assiette gastronomique chef privé Paris — dressage NOCTA"
-        width="1200"
-        height="600"
+        width="2400"
+        height="3200"
         loading="eager"
         fetchpriority="high"
         class="absolute inset-0 w-full h-full object-cover"
