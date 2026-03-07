@@ -438,6 +438,17 @@ import LogoSlider from '../components/LogoSlider.astro';
 </script>
 
 <script>
-  // GLightbox init
-  const lightbox = GLightbox({ touchNavigation: true, loop: true });
+  document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.glightbox')) {
+      // GLightbox chargé en defer — on attend qu'il soit disponible
+      const initGlightbox = () => {
+        if (typeof GLightbox !== 'undefined') {
+          GLightbox({ touchNavigation: true, loop: false });
+        } else {
+          requestAnimationFrame(initGlightbox);
+        }
+      };
+      initGlightbox();
+    }
+  });
 </script>
