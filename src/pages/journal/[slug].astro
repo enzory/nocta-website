@@ -1,0 +1,116 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../../layouts/layout.astro';
+import Header from '../../components/header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('journal', ({ data }) => !data.draft);
+  return articles.map(article => ({
+    params: { slug: article.id },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await article.render();
+
+const formattedDate = article.data.date.toLocaleDateString('fr-FR', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<Layout title={`${article.data.title} — NOCTA`} description={article.data.description}>
+  <Header />
+
+  <main>
+
+    <!-- HERO ARTICLE -->
+    <section class="bg-nocta-black pt-40 pb-16">
+      <div class="max-w-3xl mx-auto px-6 lg:px-12">
+        <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-6 animate-fade-up" style="animation-delay: 0.1s; opacity: 0;">
+          {article.data.category} — {article.data.readTime} min de lecture
+        </p>
+        <h1 class="font-serif text-3xl md:text-5xl font-light italic text-nocta-cream leading-[1.1] mb-8 animate-fade-up" style="animation-delay: 0.3s; opacity: 0;">
+          {article.data.title}
+        </h1>
+        <p class="font-sans text-sm font-light text-nocta-cream/50 animate-fade-up" style="animation-delay: 0.5s; opacity: 0;">
+          {formattedDate}
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTENU ARTICLE -->
+    <section class="bg-nocta-cream py-16 lg:py-24">
+      <div class="max-w-3xl mx-auto px-6 lg:px-12">
+        <div class="prose prose-nocta font-sans font-light leading-relaxed text-nocta-black/80">
+          <Content />
+        </div>
+
+        <!-- RETOUR JOURNAL -->
+        <div class="mt-16 pt-12 border-t border-nocta-black/10">
+          <a href="/journal" class="inline-flex items-center gap-3 font-sans text-xs tracking-widest uppercase text-nocta-black/40 hover:text-nocta-black transition-colors duration-200">
+            <span class="w-6 h-px bg-current inline-block"></span>
+            Retour au Journal
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-nocta-black py-24">
+      <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+        <h2 class="font-serif text-2xl md:text-4xl font-light italic text-nocta-cream mb-8">
+          Parlons de votre événement.
+        </h2>
+        <a href="/contact" class="inline-flex items-center font-sans text-sm font-light tracking-widest uppercase bg-nocta-cream text-nocta-black px-8 py-3 hover:bg-white transition-all duration-300">
+          Demander un devis
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .prose-nocta h2 {
+    font-family: var(--font-serif, 'Cormorant Garamond', serif);
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #0A0A0A;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .prose-nocta p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .prose-nocta a {
+    color: #0A0A0A;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .prose-nocta a:hover {
+    opacity: 0.6;
+  }
+
+  .prose-nocta hr {
+    border: none;
+    border-top: 1px solid rgba(10,10,10,0.1);
+    margin: 2rem 0;
+  }
+
+  .prose-nocta em {
+    font-style: italic;
+  }
+</style>
