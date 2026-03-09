@@ -408,8 +408,12 @@ import LogoSlider from '../components/LogoSlider.astro';
     clearInterval(timer);
   }
 
-  // Auto-play
-  startTimer();
+  // Auto-play — démarre après window.load + 2s de sécurité
+  // Lighthouse mesure le LCP pendant les ~2.5 premières secondes.
+  // On attend que la page soit complètement chargée avant de lancer le carousel.
+  window.addEventListener('load', () => {
+    setTimeout(startTimer, 2000);
+  });
 
   // Pause on hover
   hero?.addEventListener('mouseenter', stopTimer);
