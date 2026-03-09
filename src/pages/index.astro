@@ -14,7 +14,7 @@ import LogoSlider from '../components/LogoSlider.astro';
   <main>
 
     <!-- HERO -->
-    <section id="hero" class="relative min-h-screen flex flex-col justify-end bg-nocta-black overflow-hidden">
+    <section id="hero" class="relative flex flex-col justify-end bg-nocta-black overflow-hidden" style="min-height: 100vh; height: 100vh;">
 
       <!-- PREMIÈRE IMAGE : élément statique, LCP cible — eager + high priority, hors carousel JS -->
       <img
@@ -32,7 +32,7 @@ import LogoSlider from '../components/LogoSlider.astro';
         height="3200"
         loading="eager"
         fetchpriority="high"
-        class="absolute inset-0 w-full h-full object-cover"
+        class="absolute inset-0 w-full h-full object-cover" style="contain: strict;"
       />
 
       <!-- SLIDES 2 & 3 : chargées en lazy, animées par JS après le premier intervalle -->
