@@ -191,98 +191,8 @@ import LogoSlider from '../components/LogoSlider.astro';
 
     <LogoSlider />
 
-    <!-- PHOTO GALLERY -->
-    <section class="bg-nocta-cream py-24 lg:py-36">
-      <div class="max-w-7xl mx-auto px-6 lg:px-12">
-
-        <div class="mb-16 reveal">
-          <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Nos réalisations</p>
-          <h2 class="font-serif text-2xl md:text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight">
-            Chaque événement,<br/>une signature.
-          </h2>
-          <p class="font-sans text-sm font-light text-nocta-grey mt-4">Quelques tables que nous avons dressées.</p>
-        </div>
-
-        <!-- 2-row grid: 2 top + 3 bottom -->
-        <div class="grid grid-cols-2 gap-3 lg:gap-4 mb-3 lg:mb-4">
-          <div class="overflow-hidden reveal aspect-square" style="transition-delay: 0.05s">
-            <a href="/images/nocta-assiette-poireau.webp" class="glightbox block w-full h-full" data-gallery="nocta">
-              <img
-                src="/images/nocta-assiette-poireau-800w.webp"
-                srcset="/images/nocta-assiette-poireau-400w.webp 400w, /images/nocta-assiette-poireau-800w.webp 800w, /images/nocta-assiette-poireau.webp 1355w"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                alt="Assiette poireau vinaigrette — dîner privé sur-mesure Paris"
-                width="800"
-                height="945"
-                loading="lazy"
-                class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
-              />
-            </a>
-          </div>
-          <div class="overflow-hidden reveal aspect-square" style="transition-delay: 0.1s">
-            <a href="/images/nocta-celeri-marche.webp" class="glightbox block w-full h-full" data-gallery="nocta">
-              <img
-                src="/images/nocta-celeri-marche-800w.webp"
-                srcset="/images/nocta-celeri-marche-400w.webp 400w, /images/nocta-celeri-marche-800w.webp 800w, /images/nocta-celeri-marche.webp 2400w"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                alt="Céleri du marché préparé en cuisine — traiteur événementiel Paris"
-                width="800"
-                height="1067"
-                loading="lazy"
-                class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
-              />
-            </a>
-          </div>
-        </div>
-        <div class="grid grid-cols-3 gap-3 lg:gap-4">
-          <div class="overflow-hidden reveal aspect-square" style="transition-delay: 0.15s">
-            <a href="/images/nocta-madeleine-canele.webp" class="glightbox block w-full h-full" data-gallery="nocta">
-              <img
-                src="/images/nocta-madeleine-canele-800w.webp"
-                srcset="/images/nocta-madeleine-canele-400w.webp 400w, /images/nocta-madeleine-canele-800w.webp 800w, /images/nocta-madeleine-canele.webp 1200w"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                alt="Madeleines et canelés maison — cocktail traiteur Paris"
-                width="800"
-                height="673"
-                loading="lazy"
-                class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
-              />
-            </a>
-          </div>
-          <div class="overflow-hidden reveal aspect-square" style="transition-delay: 0.2s">
-            <a href="/images/nocta-assiette-tomate.webp" class="glightbox block w-full h-full" data-gallery="nocta">
-              <img
-                src="/images/nocta-assiette-tomate-800w.webp"
-                srcset="/images/nocta-assiette-tomate-400w.webp 400w, /images/nocta-assiette-tomate-800w.webp 800w, /images/nocta-assiette-tomate.webp 2400w"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                alt="Assiette tomate ancienne — catering gastronomique Paris"
-                width="800"
-                height="1067"
-                loading="lazy"
-                class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
-              />
-            </a>
-          </div>
-          <div class="overflow-hidden reveal aspect-square" style="transition-delay: 0.25s">
-            <a href="/images/sainttropez-petitdejeuner-private.webp" class="glightbox block w-full h-full" data-gallery="nocta">
-              <img
-                src="/images/sainttropez-petitdejeuner-private-800w.webp"
-                srcset="/images/sainttropez-petitdejeuner-private-400w.webp 400w, /images/sainttropez-petitdejeuner-private-800w.webp 800w, /images/sainttropez-petitdejeuner-private.webp 1800w"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                alt="Petit-déjeuner de luxe à Saint-Tropez — NOCTA Private chef privé"
-                width="800"
-                height="1067"
-                loading="lazy"
-                class="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- APPROCHE -->
-    <section class="bg-nocta-cream py-16 lg:py-20">
+    <section class="bg-nocta-cream pt-24 lg:pt-36 pb-8 lg:pb-12">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="max-w-2xl mb-14 reveal">
           <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Notre approche</p>
@@ -316,6 +226,144 @@ import LogoSlider from '../components/LogoSlider.astro';
       </div>
     </section>
 
+    <!-- PHOTO GALLERY -->
+    <section class="bg-nocta-cream py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+        <div class="mb-16 reveal">
+          <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Nos réalisations</p>
+          <h2 class="font-serif text-2xl md:text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight">
+            Chaque événement,<br/>une signature.
+          </h2>
+          <p class="font-sans text-sm font-light text-nocta-grey mt-4">Quelques tables que nous avons dressées.</p>
+        </div>
+
+        <div class="gallery-masonry">
+
+          <!-- 1 — Poireau (existante) -->
+          <div class="gallery-item reveal">
+            <a href="/images/nocta-assiette-poireau.webp" class="glightbox block overflow-hidden" data-gallery="nocta">
+              <img src="/images/nocta-assiette-poireau-800w.webp"
+                srcset="/images/nocta-assiette-poireau-400w.webp 400w, /images/nocta-assiette-poireau-800w.webp 800w, /images/nocta-assiette-poireau.webp 1355w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Assiette poireau vinaigrette — dîner privé sur-mesure Paris"
+                width="800" height="945" loading="lazy"
+                class="w-full h-auto object-cover transition-transform duration-700 ease-out hover:scale-105" />
+            </a>
+          </div>
+
+          <!-- 2 — Foie gras (NOUVELLE) -->
+          <div class="gallery-item reveal">
+            <a href="/images/nocta-foie-gras.webp" class="glightbox block overflow-hidden" data-gallery="nocta">
+              <img src="/images/nocta-foie-gras-800w.webp"
+                srcset="/images/nocta-foie-gras-400w.webp 400w, /images/nocta-foie-gras-800w.webp 800w, /images/nocta-foie-gras.webp 1200w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Foie gras mi-cuit dressé sur porcelaine — dîner gastronomique NOCTA Paris"
+                width="1200" height="1600" loading="lazy"
+                class="w-full h-auto object-cover transition-transform duration-700 ease-out hover:scale-105" />
+            </a>
+          </div>
+
+          <!-- 3 — Céleri marché (existante) -->
+          <div class="gallery-item reveal">
+            <a href="/images/nocta-celeri-marche.webp" class="glightbox block overflow-hidden" data-gallery="nocta">
+              <img src="/images/nocta-celeri-marche-800w.webp"
+                srcset="/images/nocta-celeri-marche-400w.webp 400w, /images/nocta-celeri-marche-800w.webp 800w, /images/nocta-celeri-marche.webp 2400w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Céleri du marché préparé en cuisine — traiteur événementiel Paris"
+                width="800" height="1067" loading="lazy"
+                class="w-full h-auto object-cover transition-transform duration-700 ease-out hover:scale-105" />
+            </a>
+          </div>
+
+          <!-- 4 — Velouté Dubarry (NOUVELLE) -->
+          <div class="gallery-item reveal">
+            <a href="/images/nocta-veloute-dubarry.webp" class="glightbox block overflow-hidden" data-gallery="nocta">
+              <img src="/images/nocta-veloute-dubarry-800w.webp"
+                srcset="/images/nocta-veloute-dubarry-400w.webp 400w, /images/nocta-veloute-dubarry-800w.webp 800w, /images/nocta-veloute-dubarry.webp 1200w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Velouté Dubarry chou-fleur huile d'olive — cocktail traiteur NOCTA"
+                width="1200" height="1600" loading="lazy"
+                class="w-full h-auto object-cover transition-transform duration-700 ease-out hover:scale-105" />
+            </a>
+          </div>
+
+          <!-- 5 — Madeleine canelé (existante) -->
+          <div class="gallery-item reveal">
+            <a href="/images/nocta-madeleine-canele.webp" class="glightbox block overflow-hidden" data-gallery="nocta">
+              <img src="/images/nocta-madeleine-canele-800w.webp"
+                srcset="/images/nocta-madeleine-canele-400w.webp 400w, /images/nocta-madeleine-canele-800w.webp 800w, /images/nocta-madeleine-canele.webp 1200w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Madeleines et canelés maison — cocktail traiteur Paris"
+                width="800" height="673" loading="lazy"
+                class="w-full h-auto object-cover transition-transform duration-700 ease-out hover:scale-105" />
+            </a>
+          </div>
+
+          <!-- 6 — Main Hugo cuisine (NOUVELLE) -->
+          <div class="gallery-item reveal">
+            <a href="/images/nocta-main-hugo-cuisine.webp" class="glightbox block overflow-hidden" data-gallery="nocta">
+              <img src="/images/nocta-main-hugo-cuisine-800w.webp"
+                srcset="/images/nocta-main-hugo-cuisine-400w.webp 400w, /images/nocta-main-hugo-cuisine-800w.webp 800w, /images/nocta-main-hugo-cuisine.webp 1073w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Chef Hugo en cuisine — préparation coquillages et herbes NOCTA"
+                width="1073" height="1600" loading="lazy"
+                class="w-full h-auto object-cover transition-transform duration-700 ease-out hover:scale-105" />
+            </a>
+          </div>
+
+          <!-- 7 — Tomate (existante) -->
+          <div class="gallery-item reveal">
+            <a href="/images/nocta-assiette-tomate.webp" class="glightbox block overflow-hidden" data-gallery="nocta">
+              <img src="/images/nocta-assiette-tomate-800w.webp"
+                srcset="/images/nocta-assiette-tomate-400w.webp 400w, /images/nocta-assiette-tomate-800w.webp 800w, /images/nocta-assiette-tomate.webp 2400w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Assiette tomate ancienne — catering gastronomique Paris"
+                width="800" height="1067" loading="lazy"
+                class="w-full h-auto object-cover transition-transform duration-700 ease-out hover:scale-105" />
+            </a>
+          </div>
+
+          <!-- 8 — Amuses-bouches (NOUVELLE) -->
+          <div class="gallery-item reveal">
+            <a href="/images/nocta-amuses-bouches.webp" class="glightbox block overflow-hidden" data-gallery="nocta">
+              <img src="/images/nocta-amuses-bouches-800w.webp"
+                srcset="/images/nocta-amuses-bouches-400w.webp 400w, /images/nocta-amuses-bouches-800w.webp 800w, /images/nocta-amuses-bouches.webp 1200w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Amuses-bouches gougères et tartare — cocktail gastronomique NOCTA Paris"
+                width="1200" height="1600" loading="lazy"
+                class="w-full h-auto object-cover transition-transform duration-700 ease-out hover:scale-105" />
+            </a>
+          </div>
+
+          <!-- 9 — Mousse au chocolat (NOUVELLE) -->
+          <div class="gallery-item reveal">
+            <a href="/images/nocta-mousse-chocolat.webp" class="glightbox block overflow-hidden" data-gallery="nocta">
+              <img src="/images/nocta-mousse-chocolat-800w.webp"
+                srcset="/images/nocta-mousse-chocolat-400w.webp 400w, /images/nocta-mousse-chocolat-800w.webp 800w, /images/nocta-mousse-chocolat.webp 1200w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Mousse au chocolat en coupelles — dessert traiteur haut de gamme NOCTA"
+                width="1200" height="1600" loading="lazy"
+                class="w-full h-auto object-cover transition-transform duration-700 ease-out hover:scale-105" />
+            </a>
+          </div>
+
+          <!-- 10 — Saint-Tropez petit-déjeuner (existante) -->
+          <div class="gallery-item reveal">
+            <a href="/images/sainttropez-petitdejeuner-private.webp" class="glightbox block overflow-hidden" data-gallery="nocta">
+              <img src="/images/sainttropez-petitdejeuner-private-800w.webp"
+                srcset="/images/sainttropez-petitdejeuner-private-400w.webp 400w, /images/sainttropez-petitdejeuner-private-800w.webp 800w, /images/sainttropez-petitdejeuner-private.webp 1800w"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                alt="Petit-déjeuner de luxe à Saint-Tropez — NOCTA Private chef privé"
+                width="800" height="1067" loading="lazy"
+                class="w-full h-auto object-cover transition-transform duration-700 ease-out hover:scale-105" />
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="bg-nocta-cream py-24 lg:py-36 border-t border-nocta-black/10">
       <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal">
@@ -339,6 +387,33 @@ import LogoSlider from '../components/LogoSlider.astro';
   /* Show arrows when hero is hovered */
   #hero:hover .carousel-arrow {
     opacity: 1;
+  }
+
+  /* ── Masonry gallery ── */
+  .gallery-masonry {
+    columns: 1;
+    column-gap: 0.75rem;
+  }
+
+  .gallery-item {
+    break-inside: avoid;
+    margin-bottom: 0.75rem;
+  }
+
+  @media (min-width: 640px) {
+    .gallery-masonry {
+      columns: 2;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .gallery-masonry {
+      columns: 3;
+      column-gap: 1rem;
+    }
+    .gallery-item {
+      margin-bottom: 1rem;
+    }
   }
 </style>
 
