@@ -13,6 +13,7 @@ async function main() {
   const sources = files.filter(f =>
     f.endsWith('.webp') && !VARIANT_PATTERN.test(f) && !f.startsWith('.')
   );
+
   console.log(`\n📸 ${sources.length} images full-size trouvées\n`);
 
   for (const file of sources) {
@@ -27,7 +28,7 @@ async function main() {
 
     for (const width of WIDTHS) {
       if (width >= originalWidth) {
-        console.log(`   ⏭  ${width}w — skip`);
+        console.log(`   ⏭  ${width}w — skip (original = ${originalWidth}px)`);
         continue;
       }
       const outputPath = join(IMAGES_DIR, `${name}-${width}w.webp`);
@@ -36,12 +37,17 @@ async function main() {
         .sharpen(SHARPEN)
         .webp({ quality: QUALITY })
         .toFile(outputPath);
+
       const outputStat = await stat(outputPath);
-      console.log(`   ✅ ${width}w → ${(outputStat.size / 1024).toFixed(0)} KB`);
+      const sizeKB = (outputStat.size / 1024).toFixed(0);
+      console.log(`   ✅ ${width}w → ${sizeKB} KB`);
     }
     console.log('');
   }
   console.log('✨ Régénération terminée.\n');
 }
 
-main().catch(err => { console.error('❌', err.message); process.exit(1); });
+main().catch(err => {
+  console.error('❌ Erreur :', err.message);
+  process.exit(1);
+});
