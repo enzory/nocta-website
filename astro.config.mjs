@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.noctaparis.fr',
+  trailingSlash: 'never',
   redirects: {
     '/events': '/prestations',
     '/nocta-signature': '/prestations/signature',
