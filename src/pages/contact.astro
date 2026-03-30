@@ -175,6 +175,7 @@ import Footer from '../components/Footer.astro';
 
             <!-- Submit -->
             <button
+              id="submit-btn"
               type="submit"
               class="w-full font-sans text-sm font-light tracking-widest uppercase bg-nocta-black text-nocta-cream py-4 hover:bg-nocta-black/80 transition-all duration-300 mt-2"
             >
@@ -207,3 +208,15 @@ import Footer from '../components/Footer.astro';
     color: #000000;
   }
 </style>
+
+<script>
+  const form = document.querySelector('form');
+  const btn = document.getElementById('submit-btn');
+  if (form && btn) {
+    form.addEventListener('submit', () => {
+      btn.disabled = true;
+      btn.textContent = 'Envoi en cours…';
+      btn.classList.add('opacity-60', 'cursor-not-allowed');
+    });
+  }
+</script>
