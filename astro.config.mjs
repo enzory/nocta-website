@@ -15,6 +15,8 @@ export default defineConfig({
     '/demande-de-devis': '/contact',
     '/blog': '/journal',
     '/journal/traiteur-la-defense.md': '/journal/traiteur-la-defense',
+    '/events/diner-prive-saint-tropez': { status: 301, destination: '/prestations/private' },
+    '/mention-legal': { status: 301, destination: '/mentions-legales' },
   },
   integrations: [
     sitemap({
