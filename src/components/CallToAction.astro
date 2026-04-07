@@ -1,0 +1,44 @@
+---
+interface Props {
+  variant?: 'dark' | 'light';
+  subtitle?: string;
+  heading?: string;
+}
+
+const {
+  variant = 'dark',
+  subtitle,
+  heading = 'Parlons de votre événement.',
+} = Astro.props;
+
+const isDark = variant === 'dark';
+---
+
+<!-- CTA -->
+<section class:list={[
+  'py-24 lg:py-36',
+  isDark ? 'bg-nocta-black' : 'bg-nocta-cream border-t border-nocta-black/10',
+]}>
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal">
+    {subtitle && (
+      <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-6">{subtitle}</p>
+    )}
+    <h2 class:list={[
+      'font-serif text-2xl md:text-4xl lg:text-6xl font-light italic leading-tight mb-10',
+      isDark ? 'text-nocta-cream' : 'text-nocta-black max-w-2xl mx-auto',
+    ]}>
+      {heading}
+    </h2>
+    <a
+      href="/contact"
+      class:list={[
+        'inline-flex items-center font-sans text-sm font-light tracking-widest uppercase px-8 py-3 transition-all duration-300',
+        isDark
+          ? 'bg-nocta-cream text-nocta-black hover:bg-white'
+          : 'bg-nocta-black text-nocta-cream hover:bg-nocta-black/80',
+      ]}
+    >
+      Demander un devis
+    </a>
+  </div>
+</section>

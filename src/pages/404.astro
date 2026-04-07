@@ -1,11 +1,14 @@
 ---
 import Layout from '../layouts/layout.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout
   title="404 — Page introuvable · NOCTA"
   description="Cette page n'existe pas."
 >
+  <Header />
 
   <main class="bg-nocta-black min-h-screen flex flex-col items-center justify-center px-6 text-center">
 
@@ -34,4 +37,5 @@ import Layout from '../layouts/layout.astro';
 
   </main>
 
+  <Footer />
 </Layout>

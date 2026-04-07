@@ -1,11 +1,14 @@
 ---
 import Layout from '../layouts/layout.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout
   title="Merci — NOCTA"
   description="Votre demande a bien été envoyée. Nous revenons vers vous dans les 48 heures."
 >
+  <Header />
 
   <main class="bg-nocta-black min-h-screen flex flex-col items-center justify-center px-6 text-center">
 
@@ -31,4 +34,5 @@ import Layout from '../layouts/layout.astro';
 
   </main>
 
+  <Footer />
 </Layout>
