@@ -98,6 +98,72 @@ import Footer from '../../components/Footer.astro';
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="bg-nocta-cream border-t border-nocta-black/10 py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+        <div class="mb-16 reveal">
+          <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Questions fréquentes</p>
+          <h2 class="font-serif text-2xl md:text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight">
+            Ce que nos clients nous demandent.
+          </h2>
+        </div>
+
+        <div class="max-w-3xl">
+
+          <!-- Q1 -->
+          <div class="border-t border-nocta-black/10 py-8 reveal" style="transition-delay: 0.05s">
+            <h3 class="font-serif text-xl lg:text-2xl font-light italic text-nocta-black mb-4">Quel est le tarif par personne ?</h3>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-grey">
+              Tout dépend du format choisi. Le lieu, la présence de personnel de service, le type d'événement, la présence du chef sur place et les boissons font varier le prix. La location de matériel ou un menu avec des mets plus coûteux s'y ajoutent. Plutôt que de vous faire choisir dans un catalogue, nous travaillons sur mesure. Notre minimum de commande est de 500&nbsp;€&nbsp;HT, hors frais de livraison.
+            </p>
+          </div>
+
+          <!-- Q2 -->
+          <div class="border-t border-nocta-black/10 py-8 reveal" style="transition-delay: 0.1s">
+            <h3 class="font-serif text-xl lg:text-2xl font-light italic text-nocta-black mb-4">Vous déplacez-vous en dehors de Paris ?</h3>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-grey">
+              Oui, nous intervenons dans toute la France. Les frais de transport sont à la charge du client. Pour les événements nécessitant de rester sur place, les frais d'hébergement de notre équipe sont également à prévoir.
+            </p>
+          </div>
+
+          <!-- Q3 -->
+          <div class="border-t border-nocta-black/10 py-8 reveal" style="transition-delay: 0.15s">
+            <h3 class="font-serif text-xl lg:text-2xl font-light italic text-nocta-black mb-4">Fournissez-vous la vaisselle ?</h3>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-grey">
+              Oui, nous proposons un service de location. Nous pouvons fournir et apporter notre propre vaisselle, la verrerie ainsi que le linge de table.
+            </p>
+          </div>
+
+          <!-- Q4 -->
+          <div class="border-t border-nocta-black/10 py-8 reveal" style="transition-delay: 0.2s">
+            <h3 class="font-serif text-xl lg:text-2xl font-light italic text-nocta-black mb-4">Que devons-nous fournir ?</h3>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-grey">
+              Un maximum d'indications sur le lieu, sur la façon dont vous imaginez la soirée et sur vos attentes. C'est le plus important pour construire une prestation juste. Une fois cela établi, nous nous occupons de tout le reste.
+            </p>
+          </div>
+
+          <!-- Q5 -->
+          <div class="border-t border-nocta-black/10 py-8 reveal" style="transition-delay: 0.25s">
+            <h3 class="font-serif text-xl lg:text-2xl font-light italic text-nocta-black mb-4">Combien de temps à l'avance faut-il réserver ?</h3>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-grey">
+              Cela dépend du format. Pour un dîner privé de 5 à 8 couverts ou une livraison de plateaux-repas, nous pouvons intervenir sous 24 à 36 heures si notre planning le permet. Pour des événements plus conséquents, il faut anticiper davantage.
+            </p>
+          </div>
+
+          <!-- Q6 -->
+          <div class="border-t border-b border-nocta-black/10 py-8 reveal" style="transition-delay: 0.3s">
+            <h3 class="font-serif text-xl lg:text-2xl font-light italic text-nocta-black mb-4">Proposez-vous des menus adaptés aux régimes alimentaires ?</h3>
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-grey">
+              Oui, nous nous adaptons à tous les régimes et à toutes les allergies : végan, végétarien, sans gluten, sans porc, et tout autre besoin spécifique. Il suffit de nous le préciser lors de la prise de contact.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="bg-nocta-black py-24 lg:py-36">
       <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal">
@@ -113,5 +179,60 @@ import Footer from '../../components/Footer.astro';
   </main>
 
   <Footer />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quel est le tarif par personne pour un traiteur à Paris ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le tarif dépend du format choisi : lieu, personnel de service, type d'événement, présence du chef, boissons et location de matériel. NOCTA travaille sur mesure avec un minimum de commande de 500 € HT hors frais de livraison."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Le traiteur NOCTA se déplace-t-il en dehors de Paris ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, NOCTA intervient dans toute la France. Les frais de transport sont à la charge du client. Pour les événements nécessitant un séjour sur place, les frais d'hébergement de l'équipe sont également à prévoir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Le traiteur fournit-il la vaisselle et le linge de table ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, NOCTA propose un service de location incluant vaisselle, verrerie et linge de table."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Que doit-on fournir pour un dîner avec un traiteur ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un maximum d'indications sur le lieu, le déroulé souhaité et vos attentes. NOCTA s'occupe de tout le reste : cuisine, service, mise en place et rangement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien de temps à l'avance faut-il réserver un traiteur à Paris ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pour un dîner privé de 5 à 8 couverts ou une livraison de plateaux-repas, NOCTA peut intervenir sous 24 à 36 heures selon disponibilité. Pour des événements plus conséquents, il est recommandé d'anticiper davantage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Le traiteur propose-t-il des menus végétariens, végan ou sans gluten ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, NOCTA s'adapte à tous les régimes alimentaires et allergies : végan, végétarien, sans gluten, sans porc et tout autre besoin spécifique."
+        }
+      }
+    ]
+  })} />
 
 </Layout>
