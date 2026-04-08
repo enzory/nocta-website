@@ -45,7 +45,7 @@ Quatre dîners avec le même client, c'est une validation que peu de traiteurs o
 
 Les collectifs et les clubs privés parisiens sont un marché particulier. La recommandation y circule vite — dans les deux sens. Un faux pas, et l'information se propage dans le réseau avant même que vous ayez eu le temps de vous en expliquer. Une soirée réussie, et le téléphone sonne.
 
-Nous travaillons pour les dîners privés, les soirées de collectifs, les clubs d'entrepreneurs et les cercles d'affaires à Paris et en Île-de-France. Chaque prestation est construite pour durer — pas pour impressionner une fois.
+Nous travaillons pour les dîners privés via [NOCTA Private](/prestations/private), les soirées de collectifs, les clubs d'entrepreneurs et les cercles d'affaires à Paris et en Île-de-France. Chaque prestation est construite pour durer — pas pour impressionner une fois.
 
 Si vous organisez ce type d'événement et cherchez un partenaire qui s'améliore à chaque dîner, parlons-en.
 

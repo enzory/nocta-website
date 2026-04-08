@@ -42,7 +42,7 @@ Pour chaque événement, Enzo compose la sélection après avoir travaillé avec
 
 Le brief client entre aussi en compte : des convives majoritairement non-connaisseurs appellent des vins accessibles, expressifs, faciles à apprécier sans bagage. Des amateurs éclairés permettent d'aller chercher des flacons plus confidentiels, plus techniques, qui créent une autre forme de plaisir.
 
-Il n'y a pas de formule. Il y a une attention portée à chaque table.
+Il n'y a pas de formule. Il y a une attention portée à chaque table — c'est l'esprit de [NOCTA Signature](/prestations/signature).
 
 ---
 

@@ -45,7 +45,7 @@ Pas de compte à créer sur une plateforme. Pas de minimum de commande absurde. 
 
 Vous nous décrivez votre contexte — le nombre de personnes, les contraintes alimentaires, le budget par tête — et nous composons. La livraison est ponctuelle, la mise en place est incluse, le débarrassage aussi si vous le souhaitez.
 
-Nous intervenons à Paris, La Défense, Courbevoie et partout en Île-de-France. Pour une livraison ponctuelle comme pour un partenariat hebdomadaire.
+Nous intervenons à Paris, La Défense, Courbevoie et partout en Île-de-France via [NOCTA Corporate](/prestations/corporate). Pour une livraison ponctuelle comme pour un partenariat hebdomadaire.
 
 Si vous voulez qu'on parle de ce que nous pouvons faire pour votre équipe, c'est par ici.
 

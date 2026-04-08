@@ -40,9 +40,9 @@ Enzo compose chaque sélection spécifiquement pour l'événement. Un dîner de 
 
 ## Ce que nous retenons
 
-Les entreprises de La Défense qui nous font confiance ne cherchent pas un prestataire parmi d'autres. Elles cherchent quelqu'un à qui elles peuvent déléguer entièrement — la logistique, la cuisine, le service, les vins — et ne plus y penser.
+Les entreprises de La Défense qui nous font confiance ne cherchent pas un prestataire parmi d'autres. Elles cherchent quelqu'un à qui elles peuvent déléguer entièrement — la logistique, la cuisine, le service, les vins — et ne plus y penser. C'est exactement ce que [NOCTA Corporate](/prestations/corporate) a été construit pour faire.
 
-C'est exactement ce que NOCTA a été construit pour faire.
+Nous avons d'ailleurs consacré un article à ce format particulier : [organiser un dîner dans vos bureaux](/journal/diner-entreprise-bureaux-paris).
 
 ---
 

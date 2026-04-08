@@ -55,7 +55,7 @@ Et puis il y a ce que le cadre transformé fait à la perception. Un espace que 
 
 ## Ce que nous proposons
 
-NOCTA intervient pour les dîners de direction, les dîners d'équipe de 10 à 50 personnes, les cocktails de lancement et les séminaires sur une ou plusieurs journées. À Paris, La Défense, Courbevoie et partout en Île-de-France.
+[NOCTA Corporate](/prestations/corporate) intervient pour les dîners de direction, les dîners d'équipe de 10 à 50 personnes, les cocktails de lancement et les séminaires sur une ou plusieurs journées. À Paris, La Défense, Courbevoie et partout en Île-de-France — un quartier dont nous connaissons bien [les exigences spécifiques](/journal/traiteur-la-defense).
 
 Vendredi pour lundi, c'est possible. Nous l'avons fait.
 
