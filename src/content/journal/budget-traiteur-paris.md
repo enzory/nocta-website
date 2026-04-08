@@ -13,7 +13,7 @@ Ces chiffres viennent de notre expérience sur plus de 50 événements réalisé
 
 ## Dîner privé avec chef à domicile : 70 à 250 € par personne
 
-C'est le format le plus demandé chez NOCTA Private. Le chef cuisine chez vous, le service est assuré sur place, et le rangement est inclus. Le prix par personne dépend de trois facteurs : la complexité du menu, le nombre de convives, et les produits choisis.
+C'est le format le plus demandé chez [NOCTA Private](/prestations/private). Le chef cuisine chez vous, le service est assuré sur place, et le rangement est inclus. Le prix par personne dépend de trois facteurs : la complexité du menu, le nombre de convives, et les produits choisis.
 
 Un dîner en 3 temps avec des produits de saison se situe autour de 70 à 80 € par personne, chef et service compris. Un menu en 5 temps avec des produits d'exception (Saint-Jacques, ris de veau, truffe selon la saison) monte entre 150 et 250 € par personne.
 
@@ -25,7 +25,7 @@ Ce prix inclut systématiquement : la conception du menu sur-mesure, les courses
 
 Le cocktail est plus difficile à chiffrer au convive parce que tout dépend du nombre de pièces servies et de leur nature. Chez NOCTA, on travaille sur une base de 12 pièces par personne — 8 salées, 4 sucrées — ce qui constitue un cocktail dînatoire complet.
 
-À 4,50 € HT la pièce, cela représente environ 54 € HT par personne pour un cocktail de 12 pièces. Ce tarif couvre la préparation, le dressage et le service.
+À 4,50 € HT la pièce, cela représente environ 54 € HT par personne pour un cocktail de 12 pièces. Ce tarif couvre la préparation, le dressage et le service. Pour tout savoir sur ce format, consultez notre article dédié au [cocktail dînatoire à Paris](/journal/cocktail-dinatoire-traiteur-paris).
 
 Pour un cocktail plus léger (6-8 pièces, en apéritif avant un dîner assis par exemple), le budget descend mécaniquement. C'est un format très adapté aux lancements de produit, aux afterworks d'entreprise, ou aux vernissages.
 
@@ -33,7 +33,7 @@ Pour un cocktail plus léger (6-8 pièces, en apéritif avant un dîner assis pa
 
 Les tarifs sont similaires au dîner privé. La différence se joue sur la logistique : en entreprise, la location de matériel (assiettes, verres, mobilier) n'est généralement pas incluse et dépend du lieu. Certains espaces corporate disposent de leur propre matériel, d'autres non.
 
-NOCTA intervient régulièrement dans des contextes corporate exigeants : comités de direction, dîners de gala, cocktails de lancement. Nous gérons le timing serré, la confidentialité, et la logistique complexe — c'est notre métier depuis plus de 14 ans en haute gastronomie.
+[NOCTA Corporate](/prestations/corporate) intervient régulièrement dans des contextes corporate exigeants : comités de direction, dîners de gala, cocktails de lancement. Nous gérons le timing serré, la confidentialité, et la logistique complexe — c'est notre métier depuis plus de 14 ans en haute gastronomie.
 
 ## Plateaux-repas : à partir de 25 € HT
 

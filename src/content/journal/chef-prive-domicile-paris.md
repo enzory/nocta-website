@@ -45,7 +45,7 @@ Un dîner en 3 temps avec des produits de saison se situe autour de 70 à 80 €
 
 Le minimum de commande est de 500 € HT, sans minimum de convives. Un dîner pour 6 personnes à 85 € par personne est tout à fait réalisable.
 
-Pour un comparatif détaillé de tous les formats et budgets, consultez notre guide complet : Quel budget prévoir pour un traiteur à Paris en 2026 ?
+Pour un comparatif détaillé de tous les formats et budgets, consultez [notre guide des prix d'un traiteur à Paris en 2026](/journal/budget-traiteur-paris).
 
 ## Le délai de réservation
 
@@ -55,7 +55,7 @@ NOCTA peut intervenir avec un délai minimum de 3 jours. C'est rare dans le mét
 
 ## Pour quelles occasions faire appel à un chef privé
 
-Les occasions les plus fréquentes chez NOCTA Private : les anniversaires (30 ans, 40 ans, 50 ans — le format le plus demandé), les dîners entre amis quand on veut marquer le coup, les célébrations familiales (retrouvailles, fêtes de fin d'année), et les dîners à domicile pour des occasions professionnelles plus intimes qu'un événement corporate classique.
+Les occasions les plus fréquentes chez [NOCTA Private](/prestations/private) : les anniversaires (30 ans, 40 ans, 50 ans — le format le plus demandé), les dîners entre amis quand on veut marquer le coup, les célébrations familiales (retrouvailles, fêtes de fin d'année), et les dîners à domicile pour des occasions professionnelles plus intimes qu'un événement corporate classique.
 
 Nous intervenons aussi pour des séjours en villa — Saint-Tropez, Côte d'Azur, campagne — avec le chef sur place pour plusieurs jours (petit-déjeuner, déjeuner, dîner). Ce format est sur devis, le transport étant à la charge du client.
 
