@@ -74,6 +74,25 @@ const formattedDate = article.data.date.toLocaleDateString('fr-FR', {
   </main>
 
   <Footer />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": article.data.title,
+    "description": article.data.description,
+    "datePublished": article.data.date.toISOString().split('T')[0],
+    "author": [
+      {"@type": "Person", "name": "Hugo Vinatier"},
+      {"@type": "Person", "name": "Enzo Ryon"}
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "NOCTA Catering",
+      "url": "https://www.noctaparis.fr"
+    },
+    "mainEntityOfPage": `https://www.noctaparis.fr/journal/${article.id.replace(/\.md$/, '')}`
+  })} />
+
 </Layout>
 
 <style>

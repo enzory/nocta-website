@@ -160,4 +160,14 @@ import CallToAction from '../../components/CallToAction.astro';
 
   <Footer />
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "NOCTA Signature — Expériences gastronomiques immersives",
+    "description": "Expériences culinaires sur-mesure alliant cuisine, sommellerie et scénographie. Paris et Île-de-France.",
+    "provider": {"@type": "Organization", "name": "NOCTA Catering", "url": "https://www.noctaparis.fr"},
+    "areaServed": [{"@type": "City", "name": "Paris"}, {"@type": "AdministrativeArea", "name": "Île-de-France"}],
+    "serviceType": "Expérience gastronomique immersive"
+  })} />
+
 </Layout>

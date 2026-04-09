@@ -160,4 +160,15 @@ import privateHeroSrc from '../../assets/images/private-hero.webp?url';
 
   <Footer />
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "NOCTA Private — Chef privé à domicile à Paris",
+    "description": "Dîners privés à domicile, anniversaires et célébrations avec un chef formé en cuisine étoilée et un sommelier. Paris et Île-de-France.",
+    "provider": {"@type": "Organization", "name": "NOCTA Catering", "url": "https://www.noctaparis.fr"},
+    "areaServed": [{"@type": "City", "name": "Paris"}, {"@type": "AdministrativeArea", "name": "Île-de-France"}],
+    "serviceType": "Chef privé à domicile",
+    "offers": {"@type": "Offer", "priceCurrency": "EUR", "price": "55", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "55", "priceCurrency": "EUR", "unitText": "par personne", "description": "À partir de 55 € par personne, chef et service compris. Minimum de commande : 500 € HT."}}
+  })} />
+
 </Layout>

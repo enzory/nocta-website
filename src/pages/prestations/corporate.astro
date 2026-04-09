@@ -204,4 +204,15 @@ import CallToAction from '../../components/CallToAction.astro';
 
   <Footer />
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "NOCTA Corporate — Traiteur événementiel Paris",
+    "description": "Cocktails, dîners de gala, comités de direction, plateaux-repas et buffets pour entreprises à Paris et La Défense.",
+    "provider": {"@type": "Organization", "name": "NOCTA Catering", "url": "https://www.noctaparis.fr"},
+    "areaServed": [{"@type": "City", "name": "Paris"}, {"@type": "AdministrativeArea", "name": "La Défense"}, {"@type": "AdministrativeArea", "name": "Île-de-France"}],
+    "serviceType": "Traiteur événementiel corporate",
+    "offers": {"@type": "AggregateOffer", "priceCurrency": "EUR", "lowPrice": "25", "highPrice": "70", "description": "Plateaux-repas dès 25 € HT/pers., buffet dès 40 €, cocktail dès 54 €, dîner assis à partir de 70 €/pers."}
+  })} />
+
 </Layout>
