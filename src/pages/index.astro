@@ -9,6 +9,11 @@ import LogoSlider from '../components/LogoSlider.astro';
 <Layout
   title="Traiteur haut de gamme à Paris — Chef privé & Sommelier | NOCTA"
   description="Traiteur haut de gamme à Paris et Île-de-France. Chef privé à domicile, cocktails, dîners corporate, réceptions sur-mesure. Formés en cuisine étoilée. Devis gratuit sous 48h."
+  preloadHero={{
+    href: "/images/nocta-assiette-hero1-400w.webp",
+    srcset: "/images/nocta-assiette-hero1-400w.webp 400w, /images/nocta-assiette-hero1-800w.webp 800w, /images/nocta-assiette-hero1-1200w.webp 1200w",
+    sizes: "100vw"
+  }}
 >
   <Header />
 
