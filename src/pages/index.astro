@@ -457,6 +457,15 @@ import LogoSlider from '../components/LogoSlider.astro';
 
   <Footer />
 
+  <!-- GLightbox — chargé uniquement sur la homepage (galerie photos) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+    media="print"
+    onload="this.media='all'"
+  />
+  <script is:inline src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>
+
 </Layout>
 
 <style>
