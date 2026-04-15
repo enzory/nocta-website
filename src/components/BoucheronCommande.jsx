@@ -94,10 +94,11 @@ export default function BoucheronCommande() {
 
   const totalProtPieces = selected.proteine.reduce((s, id) => s + (quantities[id] || 0), 0);
   const totalVeggiePieces = selected.veggie.reduce((s, id) => s + (quantities[id] || 0), 0);
+  const isFullVeggie = totalProtPieces === 0;
   const volumeEqual = totalProtPieces === totalVeggiePieces;
   const hasAnyQty = totalPieces > 0;
 
-  const isBalanced = !proteineOverflow && !varietiesOverflow && (volumeEqual || !hasAnyQty);
+  const isBalanced = !proteineOverflow && !varietiesOverflow && (volumeEqual || isFullVeggie || !hasAnyQty);
 
   const alertMessages = [];
   if (proteineOverflow) {
@@ -110,9 +111,9 @@ export default function BoucheronCommande() {
       `Trop de variétés sélectionnées : ${totalSelected} sur ${tier.varietes} autorisées pour ce palier. Désélectionnez une référence ou augmentez les quantités pour débloquer plus de variétés.`
     );
   }
-  if (hasAnyQty && !volumeEqual) {
+  if (hasAnyQty && !volumeEqual && !isFullVeggie) {
     alertMessages.push(
-      `Volumes non équilibrés : ${totalProtPieces} pièce(s) protéinée(s) vs ${totalVeggiePieces} pièce(s) végétarienne(s). Les deux segments doivent avoir un total de pièces strictement identique.`
+      `Volumes non équilibrés : ${totalProtPieces} pièce(s) protéinée(s) vs ${totalVeggiePieces} pièce(s) végétarienne(s). Les deux segments doivent avoir un total de pièces strictement identique, ou la commande doit être 100 % végétarienne.`
     );
   }
 
