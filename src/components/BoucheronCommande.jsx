@@ -83,7 +83,8 @@ export default function BoucheronCommande() {
   const totalTTC = totalHT + montantTVA;
 
   /* ── Validation dynamique ── */
-  const selectionComplete = totalSelected === tier.varietes;
+  const MIN_VARIETES = 4;
+  const selectionComplete = totalSelected >= MIN_VARIETES;
   const proteineOverflow = selected.proteine.length > tier.maxProt;
   const varietiesOverflow = totalSelected > tier.varietes;
   const allHaveQty = [...selected.proteine, ...selected.veggie].every(
@@ -493,7 +494,7 @@ export default function BoucheronCommande() {
           )}
           {!selectionComplete && (
             <p style={{ ...styles.warning, backgroundColor: "rgba(26,26,26,0.04)", borderColor: "rgba(26,26,26,0.1)", color: "#1a1a1a" }}>
-              Sélectionnez {tier.varietes} variétés (max. {tier.maxProt} protéinées) pour ce palier — {totalSelected}/{tier.varietes} actuellement
+              Sélectionnez au moins 4 variétés pour valider — {totalSelected}/4 actuellement
             </p>
           )}
         </div>
