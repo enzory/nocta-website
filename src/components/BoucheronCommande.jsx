@@ -5,8 +5,20 @@ const PRIX_UNITAIRE = 2.9;
 const FRAIS_LIVRAISON = 20.0;
 const TVA = 0.1;
 const MINIMUM_HT = 250.0;
-const TOTAL_REQUIRED = 4;
-const MAX_PROTEINE = 2;
+const MIN_QTY_PER_ITEM = 20;
+
+const PALIERS = [
+  { min: 0,   max: 200, varietes: 4, maxProt: 2 },
+  { min: 200, max: 400, varietes: 6, maxProt: 3 },
+  { min: 400, max: Infinity, varietes: 8, maxProt: 4 },
+];
+
+const getTier = (totalPieces) => {
+  for (let i = PALIERS.length - 1; i >= 0; i--) {
+    if (totalPieces >= PALIERS[i].min) return PALIERS[i];
+  }
+  return PALIERS[0];
+};
 
 const CATALOGUE = {
   proteine: [
@@ -32,19 +44,26 @@ export default function BoucheronCommande() {
   const [commentaire, setCommentaire] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
+  const totalPieces = useMemo(
+    () => Object.values(quantities).reduce((s, v) => s + v, 0),
+    [quantities]
+  );
+
+  const tier = getTier(totalPieces);
   const totalSelected = selected.proteine.length + selected.veggie.length;
 
   const toggleItem = (segment, id) => {
     setSelected((prev) => {
       const current = prev[segment];
-      const total = prev.proteine.length + prev.veggie.length;
       if (current.includes(id)) {
         const next = current.filter((x) => x !== id);
         setQuantities((q) => { const nq = { ...q }; delete nq[id]; return nq; });
         return { ...prev, [segment]: next };
       }
-      if (total >= TOTAL_REQUIRED) return prev;
-      if (segment === "proteine" && current.length >= MAX_PROTEINE) return prev;
+      const total = prev.proteine.length + prev.veggie.length;
+      if (total >= tier.varietes) return prev;
+      if (segment === "proteine" && current.length >= tier.maxProt) return prev;
+      setQuantities((q) => ({ ...q, [id]: MIN_QTY_PER_ITEM }));
       return { ...prev, [segment]: [...current, id] };
     });
   };
@@ -53,27 +72,39 @@ export default function BoucheronCommande() {
     setQuantities((q) => {
       const cur = q[id] || 0;
       const next = cur + direction * 10;
-      return { ...q, [id]: Math.max(0, next) };
+      if (next < MIN_QTY_PER_ITEM) return { ...q, [id]: MIN_QTY_PER_ITEM };
+      return { ...q, [id]: next };
     });
   };
 
-  const totalPieces = useMemo(
-    () => Object.values(quantities).reduce((s, v) => s + v, 0),
-    [quantities]
-  );
   const sousTotal = totalPieces * PRIX_UNITAIRE;
   const totalHT = sousTotal + FRAIS_LIVRAISON;
   const montantTVA = totalHT * TVA;
   const totalTTC = totalHT + montantTVA;
 
-  const selectionComplete =
-    (selected.proteine.length + selected.veggie.length) === TOTAL_REQUIRED &&
-    selected.proteine.length <= MAX_PROTEINE;
+  /* ── Validation dynamique ── */
+  const selectionComplete = totalSelected === tier.varietes;
+  const proteineOverflow = selected.proteine.length > tier.maxProt;
+  const varietiesOverflow = totalSelected > tier.varietes;
   const allHaveQty = [...selected.proteine, ...selected.veggie].every(
-    (id) => (quantities[id] || 0) > 0
+    (id) => (quantities[id] || 0) >= MIN_QTY_PER_ITEM
   );
   const minimumOk = totalHT >= MINIMUM_HT;
-  const canSubmit = selectionComplete && allHaveQty && minimumOk;
+  const isBalanced = !proteineOverflow && !varietiesOverflow;
+
+  const alertMessages = [];
+  if (proteineOverflow) {
+    alertMessages.push(
+      `Déséquilibre détecté : vous avez ${selected.proteine.length} protéinée(s) sélectionnée(s), le maximum autorisé pour ce palier (${tier.min}–${tier.max === Infinity ? "∞" : tier.max} pièces) est de ${tier.maxProt}. Désélectionnez une protéinée ou augmentez les quantités pour passer au palier suivant.`
+    );
+  }
+  if (varietiesOverflow) {
+    alertMessages.push(
+      `Trop de variétés sélectionnées : ${totalSelected} sur ${tier.varietes} autorisées pour ce palier. Désélectionnez une référence ou augmentez les quantités pour débloquer plus de variétés.`
+    );
+  }
+
+  const canSubmit = selectionComplete && allHaveQty && minimumOk && isBalanced;
 
   const allItems = [...CATALOGUE.proteine, ...CATALOGUE.veggie];
   const getItemName = (id) => allItems.find((i) => i.id === id)?.nom || id;
@@ -280,11 +311,9 @@ export default function BoucheronCommande() {
 
   const renderSegment = (label, segment, items) => {
     const count = selected[segment].length;
-    const maxForSegment = segment === "proteine" ? MAX_PROTEINE : TOTAL_REQUIRED;
-    const totalSel = selected.proteine.length + selected.veggie.length;
-    const segmentFull = segment === "proteine" ? count >= MAX_PROTEINE : false;
-    const globalFull = totalSel >= TOTAL_REQUIRED;
-    const maxLabel = segment === "proteine" ? `${count}/${MAX_PROTEINE} max` : `${count}`;
+    const segmentFull = segment === "proteine" ? count >= tier.maxProt : false;
+    const globalFull = totalSelected >= tier.varietes;
+    const maxLabel = segment === "proteine" ? `${count}/${tier.maxProt} max` : `${count}`;
     return (
       <div style={styles.segment}>
         <div style={styles.segmentHeader}>
@@ -351,6 +380,14 @@ export default function BoucheronCommande() {
       <div style={styles.container}>
         <DualHeader subtitle="Bon de commande — Cocktail" />
 
+        {alertMessages.length > 0 && (
+          <div style={styles.alertBanner}>
+            {alertMessages.map((msg, i) => (
+              <p key={i} style={styles.alertText}>{msg}</p>
+            ))}
+          </div>
+        )}
+
         <div style={styles.ruleRow}>
           <span style={styles.ruleTag}>2,90 € HT / pièce</span>
           <span style={styles.ruleDot}>·</span>
@@ -360,7 +397,20 @@ export default function BoucheronCommande() {
         </div>
 
         <div style={styles.instructions}>
-          Sélectionnez exactement 4 références au total (max. 2 protéinées), puis indiquez les quantités souhaitées par paliers de 10.
+          Sélectionnez vos bouchées puis indiquez les quantités par paliers de 10 (min. 20 par variété).
+          Le nombre de variétés autorisées dépend du volume total commandé.
+        </div>
+
+        <div style={styles.tierInfo}>
+          <div style={styles.tierRow}>
+            <span style={{...styles.tierTag, ...(totalPieces < 200 ? styles.tierTagActive : {})}}>80–200 pcs → 4 variétés (max 2 prot.)</span>
+          </div>
+          <div style={styles.tierRow}>
+            <span style={{...styles.tierTag, ...(totalPieces >= 200 && totalPieces < 400 ? styles.tierTagActive : {})}}>200–400 pcs → 6 variétés (max 3 prot.)</span>
+          </div>
+          <div style={styles.tierRow}>
+            <span style={{...styles.tierTag, ...(totalPieces >= 400 ? styles.tierTagActive : {})}}>400+ pcs → 8 variétés (max 4 prot.)</span>
+          </div>
         </div>
 
         <div style={styles.dateRow}>
@@ -432,7 +482,7 @@ export default function BoucheronCommande() {
           )}
           {!selectionComplete && (
             <p style={{ ...styles.warning, backgroundColor: "rgba(26,26,26,0.04)", borderColor: "rgba(26,26,26,0.1)", color: "#1a1a1a" }}>
-              Sélectionnez 4 références au total (max. 2 protéinées) pour valider
+              Sélectionnez {tier.varietes} variétés (max. {tier.maxProt} protéinées) pour ce palier — {totalSelected}/{tier.varietes} actuellement
             </p>
           )}
         </div>
@@ -592,6 +642,29 @@ const styles = {
   footerText: {
     textAlign: "center", marginTop: 28, fontSize: 11,
     fontFamily: "'DM Sans', sans-serif", opacity: 0.25, letterSpacing: "0.06em",
+  },
+  alertBanner: {
+    backgroundColor: "#8B1A1A", color: "#fff", padding: "14px 18px",
+    borderRadius: 2, marginBottom: 20, lineHeight: 1.6,
+  },
+  alertText: {
+    fontSize: 13, fontFamily: "'DM Sans', sans-serif", fontWeight: 500,
+    margin: "0 0 4px",
+  },
+  tierInfo: {
+    display: "flex", flexDirection: "column", gap: 4,
+    marginBottom: 24, alignItems: "center",
+  },
+  tierRow: { display: "flex" },
+  tierTag: {
+    fontSize: 11, fontFamily: "'DM Sans', sans-serif", fontWeight: 400,
+    letterSpacing: "0.02em", padding: "3px 10px",
+    border: "1px solid rgba(26,26,26,0.08)", borderRadius: 2,
+    opacity: 0.4, transition: "all 0.2s ease",
+  },
+  tierTagActive: {
+    opacity: 1, fontWeight: 600,
+    border: "1px solid #1a1a1a", backgroundColor: "rgba(26,26,26,0.04)",
   },
   confirmBox: {
     textAlign: "center", padding: "56px 24px",
