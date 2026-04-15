@@ -3,6 +3,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.noctaparis.fr',
@@ -18,13 +20,12 @@ export default defineConfig({
     '/events/diner-prive-saint-tropez': { status: 301, destination: '/prestations/private' },
     '/mention-legal': { status: 301, destination: '/mentions-legales' },
   },
-  integrations: [
-    sitemap({
-      filter: (page) =>
-        !page.includes('/merci') &&
-        !page.includes('/mentions-legales'),
-    }),
-  ],
+  integrations: [sitemap({
+    filter: (page) =>
+      !page.includes('/merci') &&
+      !page.includes('/mentions-legales') &&
+      !page.includes('/commande/'),
+  }), react()],
   vite: {
     plugins: [tailwindcss()]
   }

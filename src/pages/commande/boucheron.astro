@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/layout.astro';
+import BoucheronCommande from '../../components/BoucheronCommande.jsx';
+---
+
+<Layout
+  title="Commande — Boucheron × NOCTA"
+  description="Bon de commande bouchées cocktail — Boucheron"
+>
+  <div id="commande-gate" style="display:none;">
+    <BoucheronCommande client:load />
+  </div>
+  <div id="commande-denied" style="min-height:100vh;display:flex;align-items:center;justify-content:center;background-color:#EEEBE3;">
+    <p style="font-family:Georgia,serif;color:#1a1a1a;opacity:0.4;font-size:16px;">Accès non autorisé</p>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('key') === 'boucheron2026') {
+      document.getElementById('commande-gate')!.style.display = 'block';
+      document.getElementById('commande-denied')!.style.display = 'none';
+    }
+  </script>
+</Layout>
