@@ -45,6 +45,7 @@ const fmt = (n) => n.toFixed(2).replace(".", ",") + " €";
 export default function BoucheronCommande() {
   const [selected, setSelected] = useState({ proteine: [], veggie: [] });
   const [quantities, setQuantities] = useState({});
+  const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
   const [commentaire, setCommentaire] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -122,7 +123,7 @@ export default function BoucheronCommande() {
     );
   }
 
-  const canSubmit = selectionComplete && allHaveQty && minimumOk && isBalanced;
+  const canSubmit = selectionComplete && allHaveQty && minimumOk && isBalanced && email.trim() !== "";
 
   const dateMinimum = (() => {
     const d = new Date();
@@ -265,7 +266,7 @@ export default function BoucheronCommande() {
           _subject: `Commande Boucheron — ${date || "Sans date"}`,
           message: body,
           _replyto: "myriana@boucheron.com",
-          _cc: "myriana@boucheron.com",
+          _cc: email,
         }),
       });
       setSubmitted(true);
@@ -315,7 +316,7 @@ export default function BoucheronCommande() {
               Nous reviendrons vers vous sous 24h pour confirmer la disponibilité.
             </p>
             <button
-              onClick={() => { setSubmitted(false); setSelected({ proteine: [], veggie: [] }); setQuantities({}); setDate(""); setCommentaire(""); }}
+              onClick={() => { setSubmitted(false); setSelected({ proteine: [], veggie: [] }); setQuantities({}); setEmail(""); setDate(""); setCommentaire(""); }}
               style={styles.newOrderBtn}
             >
               Nouvelle commande
@@ -427,6 +428,21 @@ export default function BoucheronCommande() {
           </div>
           <div style={styles.tierRow}>
             <span style={{...styles.tierTag, ...(totalPieces >= 400 ? styles.tierTagActive : {})}}>400+ pcs → 8 variétés (max 4 prot.)</span>
+          </div>
+        </div>
+
+        <div style={styles.emailRow}>
+          <label style={styles.fieldLabel}>Email de contact</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            placeholder="contact@exemple.com"
+            style={styles.emailInput}
+          />
+          <div style={styles.emailHint}>
+            Une copie de votre commande vous sera envoyée à cette adresse.
           </div>
         </div>
 
@@ -582,6 +598,20 @@ const styles = {
     fontSize: 13, fontFamily: "'DM Sans', sans-serif", padding: "8px 12px",
     border: "1px solid rgba(26,26,26,0.15)", borderRadius: 2,
     backgroundColor: "transparent", color: "#1a1a1a", outline: "none",
+  },
+  emailRow: {
+    marginBottom: 20,
+  },
+  emailInput: {
+    display: "block", width: "100%", marginTop: 8,
+    fontSize: 13, fontFamily: "'DM Sans', sans-serif", padding: "8px 12px",
+    border: "1px solid rgba(26,26,26,0.15)", borderRadius: 2,
+    backgroundColor: "transparent", color: "#1a1a1a", outline: "none",
+    boxSizing: "border-box",
+  },
+  emailHint: {
+    marginTop: 6, fontSize: 11, fontFamily: "'DM Sans', sans-serif",
+    color: "rgba(26,26,26,0.4)", letterSpacing: "0.01em",
   },
   segment: { marginBottom: 32 },
   segmentHeader: {
