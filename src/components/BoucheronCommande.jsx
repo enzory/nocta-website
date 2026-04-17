@@ -119,6 +119,12 @@ export default function BoucheronCommande() {
 
   const canSubmit = selectionComplete && allHaveQty && minimumOk && isBalanced;
 
+  const dateMinimum = (() => {
+    const d = new Date();
+    d.setDate(d.getDate() + 7);
+    return d.toISOString().split('T')[0];
+  })();
+
   const allItems = [...CATALOGUE.proteine, ...CATALOGUE.veggie];
   const getItemName = (id) => allItems.find((i) => i.id === id)?.nom || id;
 
@@ -262,6 +268,7 @@ export default function BoucheronCommande() {
           _subject: `Commande Boucheron — ${date || "Sans date"}`,
           message: body,
           _replyto: "myriana@boucheron.com",
+          _cc: "myriana@boucheron.com",
         }),
       });
       setSubmitted(true);
@@ -428,7 +435,7 @@ export default function BoucheronCommande() {
 
         <div style={styles.dateRow}>
           <label style={styles.fieldLabel}>Date souhaitée</label>
-          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} style={styles.dateInput} />
+          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} min={dateMinimum} style={styles.dateInput} />
         </div>
 
         {renderSegment("Bouchées protéinées", "proteine", CATALOGUE.proteine)}
