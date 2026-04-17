@@ -1,0 +1,228 @@
+# ============================================================
+# geo-queue.yaml
+# File d'attente des pages GEO à générer automatiquement
+# ============================================================
+# Le script seo-auto-generate.mjs pioche le premier `pending`
+# trié par priorité. Statuts possibles :
+#   - pending   : en file
+#   - published : publié en direct (score brand-check >= 8)
+#   - pr-review : PR créée, en attente de review Enzo
+#   - skipped   : rejeté (score < 8 sur 3 tentatives)
+# Ordre tri : priority DESC, puis ordre du fichier.
+# ============================================================
+
+topics:
+  # ---------- PARIS — arrondissements (priorité haute) ----------
+  - slug: traiteur-paris-16
+    zone: "Paris 16e arrondissement"
+    angle: "quartier résidentiel haut de gamme, dîners privés, réceptions"
+    type: arrondissement
+    priority: 10
+    status: pending
+
+  - slug: traiteur-paris-8
+    zone: "Paris 8e arrondissement"
+    angle: "siège sociaux, cocktails d'affaires, galas, Champs-Élysées"
+    type: arrondissement
+    priority: 10
+    status: pending
+
+  - slug: traiteur-paris-7
+    zone: "Paris 7e arrondissement"
+    angle: "hôtels particuliers, réceptions privées, Invalides, Tour Eiffel"
+    type: arrondissement
+    priority: 10
+    status: pending
+
+  - slug: traiteur-paris-6
+    zone: "Paris 6e arrondissement"
+    angle: "Saint-Germain-des-Prés, dîners intimistes, galeries"
+    type: arrondissement
+    priority: 9
+    status: pending
+
+  - slug: traiteur-paris-17
+    zone: "Paris 17e arrondissement"
+    angle: "Monceau, Ternes, Batignolles, événements familiaux"
+    type: arrondissement
+    priority: 9
+    status: pending
+
+  - slug: traiteur-paris-1
+    zone: "Paris 1er arrondissement"
+    angle: "Louvre, Vendôme, événements luxe, maisons de joaillerie"
+    type: arrondissement
+    priority: 9
+    status: pending
+
+  - slug: traiteur-paris-2
+    zone: "Paris 2e arrondissement"
+    angle: "Bourse, Opéra, cocktails d'entreprise, startups"
+    type: arrondissement
+    priority: 8
+    status: pending
+
+  - slug: traiteur-paris-9
+    zone: "Paris 9e arrondissement"
+    angle: "Opéra, Galeries Lafayette, sièges corporate"
+    type: arrondissement
+    priority: 8
+    status: pending
+
+  - slug: traiteur-paris-3
+    zone: "Paris 3e arrondissement"
+    angle: "Marais, espaces événementiels, showrooms"
+    type: arrondissement
+    priority: 7
+    status: pending
+
+  - slug: traiteur-paris-4
+    zone: "Paris 4e arrondissement"
+    angle: "Marais, Île Saint-Louis, événements culturels"
+    type: arrondissement
+    priority: 7
+    status: pending
+
+  - slug: traiteur-paris-15
+    zone: "Paris 15e arrondissement"
+    angle: "Porte de Versailles, salons professionnels, événements corporate"
+    type: arrondissement
+    priority: 6
+    status: pending
+
+  # ---------- COMMUNES 92 (priorité haute — cible corporate) ----------
+  - slug: traiteur-neuilly-sur-seine
+    zone: "Neuilly-sur-Seine"
+    angle: "résidentiel haut de gamme, sièges sociaux, dîners privés"
+    type: commune-92
+    priority: 10
+    status: pending
+
+  - slug: traiteur-levallois-perret
+    zone: "Levallois-Perret"
+    angle: "tertiaire, sièges corporate, événements internes"
+    type: commune-92
+    priority: 9
+    status: pending
+
+  - slug: traiteur-boulogne-billancourt
+    zone: "Boulogne-Billancourt"
+    angle: "tertiaire, studios, événements tech"
+    type: commune-92
+    priority: 9
+    status: pending
+
+  - slug: traiteur-courbevoie-la-defense
+    zone: "Courbevoie / La Défense"
+    angle: "business district, plateaux-repas, cocktails, galas corporate"
+    type: commune-92
+    priority: 10
+    status: pending
+    # NOTE : NOCTA est basée à Courbevoie. Page siège, très stratégique.
+
+  - slug: traiteur-puteaux
+    zone: "Puteaux"
+    angle: "La Défense, tours, événements corporate"
+    type: commune-92
+    priority: 8
+    status: pending
+
+  # ---------- OCCASIONS (requêtes longue traîne) ----------
+  - slug: traiteur-anniversaire-paris
+    zone: "Paris"
+    angle: "anniversaire privé, dîner à domicile, célébration intime"
+    type: occasion
+    priority: 8
+    status: pending
+
+  - slug: traiteur-cremaillere-paris
+    zone: "Paris"
+    angle: "crémaillère, emménagement, cocktail dînatoire à domicile"
+    type: occasion
+    priority: 7
+    status: pending
+
+  - slug: traiteur-fiancailles-paris
+    zone: "Paris"
+    angle: "fiançailles, dîner intimiste, célébration familiale"
+    type: occasion
+    priority: 7
+    status: pending
+
+  - slug: traiteur-bapteme-paris
+    zone: "Paris"
+    angle: "baptême, déjeuner familial, événement privé"
+    type: occasion
+    priority: 6
+    status: pending
+
+  - slug: traiteur-depart-retraite-paris
+    zone: "Paris"
+    angle: "départ retraite, cocktail corporate, dîner d'équipe"
+    type: occasion
+    priority: 6
+    status: pending
+
+  - slug: traiteur-cocktail-entreprise-paris
+    zone: "Paris"
+    angle: "cocktail d'entreprise, inauguration, remerciement clients"
+    type: occasion
+    priority: 9
+    status: pending
+
+  - slug: traiteur-seminaire-paris
+    zone: "Paris"
+    angle: "séminaire, comité de direction, offsite"
+    type: occasion
+    priority: 8
+    status: pending
+
+  - slug: traiteur-inauguration-paris
+    zone: "Paris"
+    angle: "inauguration boutique, lancement produit, opening"
+    type: occasion
+    priority: 8
+    status: pending
+
+  - slug: traiteur-vernissage-paris
+    zone: "Paris"
+    angle: "vernissage galerie, événement culturel, artisans du goût"
+    type: occasion
+    priority: 7
+    status: pending
+
+  # ---------- CHEF PRIVÉ — déclinaisons ----------
+  - slug: chef-prive-neuilly-sur-seine
+    zone: "Neuilly-sur-Seine"
+    angle: "chef à domicile, dîner privé, résidentiel 92"
+    type: chef-prive
+    priority: 8
+    status: pending
+
+  - slug: chef-prive-paris-16
+    zone: "Paris 16e"
+    angle: "chef à domicile, dîner privé, 16e arrondissement"
+    type: chef-prive
+    priority: 8
+    status: pending
+
+  - slug: chef-prive-paris-8
+    zone: "Paris 8e"
+    angle: "chef à domicile, dîner privé, 8e arrondissement"
+    type: chef-prive
+    priority: 7
+    status: pending
+
+  - slug: chef-prive-paris-7
+    zone: "Paris 7e"
+    angle: "chef à domicile, dîner privé, 7e arrondissement"
+    type: chef-prive
+    priority: 7
+    status: pending
+
+  - slug: chef-prive-boulogne-billancourt
+    zone: "Boulogne-Billancourt"
+    angle: "chef à domicile, dîner privé, 92"
+    type: chef-prive
+    priority: 6
+    status: pending

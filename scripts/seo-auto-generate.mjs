@@ -1,0 +1,253 @@
+#!/usr/bin/env node
+/**
+ * ============================================================
+ * seo-auto-generate.mjs
+ * ============================================================
+ * Pipeline de génération automatique de pages GEO pour NOCTA.
+ *
+ * Étapes :
+ *   1. Charge src/content/geo-queue.yaml
+ *   2. Pioche le premier sujet `pending` (priority DESC)
+ *   3. Appelle Claude Sonnet 4.6 avec prompt système NOCTA
+ *   4. Lance seo-brand-check.mjs sur le draft
+ *   5. Si score >= 8 → écrit dans src/content/geo/ + met status=published
+ *   6. Si score < 8 → écrit dans src/content/geo/ + met status=pr-review
+ *                     (le workflow GH Actions crée alors une PR au lieu de merger)
+ *   7. Persiste la queue mise à jour
+ *
+ * Variables d'environnement requises :
+ *   - ANTHROPIC_API_KEY   (secret GitHub Actions)
+ *
+ * Sortie JSON sur stdout pour le workflow :
+ *   { "status": "published" | "pr-review" | "skipped" | "error",
+ *     "slug":   "traiteur-neuilly-sur-seine",
+ *     "score":  8.5,
+ *     "flags":  [...] }
+ * ============================================================
+ */
+
+import fs from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import YAML from "yaml";
+import Anthropic from "@anthropic-ai/sdk";
+import { brandCheck } from "./seo-brand-check.mjs";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.resolve(__dirname, "..");
+const QUEUE_PATH = path.join(ROOT, "src/content/geo-queue.yaml");
+const OUTPUT_DIR = path.join(ROOT, "src/content/geo");
+const MODEL = "claude-sonnet-4-6";
+
+// ============================================================
+// SYSTEM PROMPT — charte éditoriale NOCTA (NON NÉGOCIABLE)
+// ============================================================
+const SYSTEM_PROMPT = `Tu es le rédacteur interne de NOCTA Catering, traiteur haut de gamme parisien (H+E Catering SARL, basée à Courbevoie, fondée en avril 2025 par Enzo Ryon et Hugo Vinatier).
+
+Clients de référence : Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting, Jus Mundi.
+
+Équipe :
+- Enzo Ryon : direction, sommellerie, relation client haut niveau, communication éditoriale.
+- Hugo Vinatier : chef (formé en cuisine étoilée), développement commercial B2B.
+
+Trois offres :
+- NOCTA Private : dîners à domicile, célébrations intimistes (tarif à partir de 55 €/pers.).
+- NOCTA Corporate : cocktails, galas, comités de direction, plateaux-repas (25 à 70 €/pers. selon format).
+- NOCTA Signature : expériences immersives sur-mesure (sur devis).
+
+RÈGLES ÉDITORIALES NON NÉGOCIABLES :
+
+1. JAMAIS "chef étoilé" → TOUJOURS "formé en cuisine étoilée".
+2. Ton luxe sobre. Test : "est-ce qu'un chef étoilé ou un DG de grand groupe dirait ça naturellement ?"
+3. Zéro métaphore lyrique creuse. Zéro superlatif gratuit. Zéro "ambiance chaleureuse / moments inoubliables / magie / savoir-faire d'exception".
+4. ZÉRO INVENTION FACTUELLE : ne cite que les clients listés ci-dessus. N'invente AUCUN événement spécifique, AUCUNE anecdote, AUCUN témoignage.
+5. Du concret uniquement : formats proposés, logistique, cadre, typologie de prestation, contraintes du lieu.
+6. Ne promets jamais des choses qu'on ne vend pas : pas de "wedding planning", pas de "location de mobilier", pas de "décoration florale".
+7. Évite le jargon marketing : "expérience unique", "univers", "voyage culinaire", "ADN", "signature" (hors nom de l'offre).
+8. Mentionner les 3 offres de manière naturelle, sans matraquer.
+9. Français impeccable. Pas d'anglicismes superflus.
+
+STRUCTURE DE LA PAGE :
+
+Tu produis un fichier markdown avec frontmatter Astro. Format EXACT :
+
+\`\`\`markdown
+---
+title: "[H1 de la page, 50-60 caractères, mot-clé cible en premier]"
+description: "[Meta description, 140-160 caractères, accroche + mot-clé]"
+zone: "[Nom de la zone cité exactement comme fourni]"
+type: "[arrondissement|commune-92|occasion|chef-prive]"
+slug: "[slug fourni]"
+publishDate: "[AAAA-MM-JJ]"
+readingTime: "[N] min"
+schemaType: "[LocalBusiness|Service]"
+---
+
+## [H2 d'accroche — positionnement NOCTA sur cette zone/occasion, 2-3 paragraphes]
+
+[3-4 phrases concrètes : où, comment, pour quelle typologie de client.]
+
+## [H2 — formats adaptés à la zone/occasion]
+
+[Présentation de 2 à 3 formats NOCTA pertinents, en reprenant le nom officiel (Private/Corporate/Signature). Chaque format = 1 paragraphe court + ce qui le rend adapté à cette zone.]
+
+## [H2 — spécificités logistiques / contraintes du lieu]
+
+[Contraintes réelles : stationnement, accès, passage, gabarit. Si tu ne sais pas, reste générique mais précis. Pas d'invention d'adresse.]
+
+## [H2 — pourquoi NOCTA sur cette zone/occasion]
+
+[Arguments concrets : équipe, sommellerie, sur-mesure, clients similaires qu'on a servis (sans inventer). 1 paragraphe.]
+
+## Demande de devis
+
+[CTA court et sobre vers /contact. 2-3 phrases maximum.]
+\`\`\`
+
+LONGUEUR : 800 à 1200 mots de corps (hors frontmatter).
+
+Tu ne produis QUE le markdown complet, rien d'autre. Pas de préambule, pas de conclusion hors structure, pas de commentaire sur ton travail.`;
+
+// ============================================================
+// Helpers
+// ============================================================
+
+async function loadQueue() {
+  const raw = await fs.readFile(QUEUE_PATH, "utf-8");
+  return { doc: YAML.parseDocument(raw), data: YAML.parse(raw) };
+}
+
+async function saveQueue(doc) {
+  // Garde les commentaires YAML en écrivant via le document parsé.
+  await fs.writeFile(QUEUE_PATH, String(doc), "utf-8");
+}
+
+function pickNextTopic(queue) {
+  const pending = queue.topics.filter((t) => t.status === "pending");
+  if (pending.length === 0) return null;
+  pending.sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0));
+  return pending[0];
+}
+
+function updateTopicStatus(doc, slug, newStatus) {
+  const topics = doc.get("topics");
+  for (let i = 0; i < topics.items.length; i++) {
+    const item = topics.items[i];
+    if (item.get("slug") === slug) {
+      item.set("status", newStatus);
+      return true;
+    }
+  }
+  return false;
+}
+
+function todayISO() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+// ============================================================
+// Appel Claude
+// ============================================================
+async function generateDraft(client, topic) {
+  const userPrompt = `Rédige la page GEO suivante en respectant STRICTEMENT la charte éditoriale NOCTA.
+
+Sujet : ${topic.zone}
+Angle : ${topic.angle}
+Type : ${topic.type}
+Slug : ${topic.slug}
+Date de publication : ${todayISO()}
+Schema recommandé : ${topic.type === "commune-92" || topic.type === "arrondissement" ? "LocalBusiness" : "Service"}
+
+Rappel crucial :
+- JAMAIS "chef étoilé", TOUJOURS "formé en cuisine étoilée".
+- N'invente AUCUN client, AUCUN événement, AUCUNE adresse.
+- Reste sobre, concret, professionnel.
+- Produis UNIQUEMENT le markdown (frontmatter + corps).`;
+
+  const response = await client.messages.create({
+    model: MODEL,
+    max_tokens: 4000,
+    system: SYSTEM_PROMPT,
+    messages: [{ role: "user", content: userPrompt }],
+  });
+
+  // Concatène les blocs texte de la réponse
+  const markdown = response.content
+    .filter((b) => b.type === "text")
+    .map((b) => b.text)
+    .join("\n")
+    .trim();
+
+  // Enlève d'éventuels fences ```markdown ... ```
+  return markdown
+    .replace(/^```(?:markdown|md)?\s*\n/, "")
+    .replace(/\n```\s*$/, "")
+    .trim();
+}
+
+// ============================================================
+// MAIN
+// ============================================================
+async function main() {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    console.error(JSON.stringify({ status: "error", error: "ANTHROPIC_API_KEY missing" }));
+    process.exit(1);
+  }
+
+  const client = new Anthropic({ apiKey });
+
+  // 1. Charge la queue
+  const { doc, data } = await loadQueue();
+  const topic = pickNextTopic(data);
+  if (!topic) {
+    console.log(JSON.stringify({ status: "empty-queue" }));
+    return;
+  }
+
+  console.error(`→ Génération : ${topic.slug} (priority ${topic.priority})`);
+
+  // 2. Génère le draft
+  let markdown;
+  try {
+    markdown = await generateDraft(client, topic);
+  } catch (err) {
+    console.error(JSON.stringify({ status: "error", stage: "generate", error: String(err) }));
+    process.exit(1);
+  }
+
+  // 3. Brand-check
+  const check = await brandCheck(markdown, client, MODEL);
+  console.error(`   Brand-check score : ${check.score}/10 — ${check.verdict}`);
+  if (check.flags.length) {
+    console.error(`   Flags : ${check.flags.join(" | ")}`);
+  }
+
+  // 4. Écrit le fichier
+  await fs.mkdir(OUTPUT_DIR, { recursive: true });
+  const outPath = path.join(OUTPUT_DIR, `${topic.slug}.md`);
+  await fs.writeFile(outPath, markdown, "utf-8");
+  console.error(`   → ${path.relative(ROOT, outPath)}`);
+
+  // 5. Met à jour la queue
+  const newStatus = check.verdict === "auto-publish" ? "published" : "pr-review";
+  updateTopicStatus(doc, topic.slug, newStatus);
+  await saveQueue(doc);
+
+  // 6. Sortie JSON pour le workflow
+  console.log(
+    JSON.stringify({
+      status: newStatus,
+      slug: topic.slug,
+      zone: topic.zone,
+      score: check.score,
+      flags: check.flags,
+      file: path.relative(ROOT, outPath),
+    })
+  );
+}
+
+main().catch((err) => {
+  console.error(JSON.stringify({ status: "error", error: String(err), stack: err.stack }));
+  process.exit(1);
+});

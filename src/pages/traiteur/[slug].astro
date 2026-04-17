@@ -1,0 +1,220 @@
+---
+// ============================================================
+// src/pages/traiteur/[slug].astro
+// Template pour les pages GEO auto-générées.
+// ============================================================
+// Lit la Content Collection "geo" (src/content/geo/*.md).
+// Rend un layout cream identique au Journal, avec un Schema
+// LocalBusiness ou Service selon le champ `schemaType` du
+// frontmatter.
+// ============================================================
+
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/layout.astro';
+import Header from '../../components/header.astro';
+import Footer from '../../components/Footer.astro';
+
+// Génère une page statique par entrée de la collection "geo"
+export async function getStaticPaths() {
+  const entries = await getCollection('geo');
+  return entries.map((entry) => ({
+    params: { slug: entry.id.replace(/\.md$/, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const d = entry.data;
+
+// Construction du Schema.org selon le type
+const siteUrl = 'https://www.noctaparis.fr';
+const pageUrl = `${siteUrl}/traiteur/${d.slug}`;
+
+const schema =
+  d.schemaType === 'LocalBusiness'
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'CateringService',
+        name: `NOCTA Catering — ${d.zone}`,
+        description: d.description,
+        url: pageUrl,
+        areaServed: {
+          '@type': 'Place',
+          name: d.zone,
+        },
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Courbevoie',
+          addressRegion: 'Île-de-France',
+          addressCountry: 'FR',
+        },
+        priceRange: '€€€',
+        serviceType: 'Traiteur événementiel haut de gamme',
+      }
+    : {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: d.title,
+        description: d.description,
+        url: pageUrl,
+        provider: {
+          '@type': 'Organization',
+          name: 'NOCTA Catering',
+          url: siteUrl,
+        },
+        areaServed: {
+          '@type': 'Place',
+          name: d.zone,
+        },
+      };
+---
+
+<Layout title={d.title} description={d.description}>
+  <!-- Schema.org injecté -->
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <Header />
+
+  <article class="geo-article">
+    <header class="geo-header">
+      <p class="geo-eyebrow">Zone desservie · {d.zone}</p>
+      <h1 class="geo-title">{d.title}</h1>
+      {d.readingTime && <p class="geo-reading">{d.readingTime} de lecture</p>}
+    </header>
+
+    <div class="geo-content">
+      <Content />
+    </div>
+
+    <!-- CTA réassurance / conversion -->
+    <section class="geo-cta">
+      <h2>Parlons de votre projet</h2>
+      <p>Un devis personnalisé sous 48 heures.</p>
+      <a href="/contact" class="geo-cta-btn">Demander un devis</a>
+    </section>
+
+    <!-- Maillage interne : 3 pages prestations -->
+    <section class="geo-related">
+      <h2>Nos prestations sur {d.zone}</h2>
+      <ul>
+        <li><a href="/prestations/private">NOCTA Private — dîners privés à domicile</a></li>
+        <li><a href="/prestations/corporate">NOCTA Corporate — cocktails, galas, plateaux-repas</a></li>
+        <li><a href="/prestations/signature">NOCTA Signature — expériences sur-mesure</a></li>
+      </ul>
+    </section>
+  </article>
+
+  <Footer />
+</Layout>
+
+<style>
+  .geo-article {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 4rem;
+    color: #2a2a2a;
+  }
+  .geo-header {
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 2rem;
+  }
+  .geo-eyebrow {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #6a6a6a;
+    margin-bottom: 0.75rem;
+  }
+  .geo-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    margin: 0 0 0.75rem;
+    color: #1a1a1a;
+  }
+  .geo-reading {
+    font-size: 0.9rem;
+    color: #8a8a8a;
+  }
+  .geo-content :global(h2) {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.65rem;
+    margin: 2.5rem 0 1rem;
+    color: #1a1a1a;
+  }
+  .geo-content :global(p) {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin: 0 0 1.1rem;
+  }
+  .geo-content :global(a) {
+    color: #8a6a3a;
+    border-bottom: 1px solid rgba(138, 106, 58, 0.3);
+    text-decoration: none;
+  }
+  .geo-content :global(a):hover {
+    border-bottom-color: #8a6a3a;
+  }
+
+  /* CTA inliné — pattern aligné avec journal/[slug].astro */
+  .geo-cta {
+    margin-top: 4rem;
+    padding: 4rem 2rem;
+    background: #0A0A0A;
+    color: #EEEBE3;
+    text-align: center;
+  }
+  .geo-cta h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    margin: 0 0 0.75rem;
+    color: #EEEBE3;
+  }
+  .geo-cta p {
+    font-size: 0.95rem;
+    margin: 0 0 2rem;
+    opacity: 0.7;
+  }
+  .geo-cta-btn {
+    display: inline-block;
+    background: #EEEBE3;
+    color: #0A0A0A;
+    padding: 0.85rem 2rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  .geo-cta-btn:hover {
+    background: #ffffff;
+  }
+
+  .geo-related {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: #EEEBE3;
+    border-radius: 4px;
+  }
+  .geo-related h2 {
+    margin: 0 0 1rem;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+  }
+  .geo-related ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .geo-related li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .geo-related li:last-child {
+    border-bottom: none;
+  }
+</style>

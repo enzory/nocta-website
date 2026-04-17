@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.40.1",
     "@astrojs/react": "^5.0.3",
     "@astrojs/sitemap": "^3.7.0",
     "@tailwindcss/vite": "^4.2.1",
@@ -18,7 +19,8 @@
     "jspdf": "^4.2.1",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "tailwindcss": "^4.2.1"
+    "tailwindcss": "^4.2.1",
+    "yaml": "^2.8.3"
   },
   "devDependencies": {
     "sharp": "^0.34.5"

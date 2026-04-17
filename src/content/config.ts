@@ -12,4 +12,18 @@ const journal = defineCollection({
   }),
 });
 
-export const collections = { journal };
+const geo = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string().max(70),
+    description: z.string().min(100).max(170),
+    zone: z.string(),
+    type: z.enum(['arrondissement', 'commune-92', 'occasion', 'chef-prive']),
+    slug: z.string(),
+    publishDate: z.coerce.date(),
+    readingTime: z.string().optional(),
+    schemaType: z.enum(['LocalBusiness', 'Service']).default('LocalBusiness'),
+  }),
+});
+
+export const collections = { journal, geo };
