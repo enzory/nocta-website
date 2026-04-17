@@ -18,7 +18,7 @@ topics:
     angle: "quartier résidentiel haut de gamme, dîners privés, réceptions"
     type: arrondissement
     priority: 10
-    status: pending
+    status: pr-review
 
   - slug: traiteur-paris-8
     zone: "Paris 8e arrondissement"
