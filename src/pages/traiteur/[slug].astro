@@ -29,7 +29,8 @@ const d = entry.data;
 
 // Construction du Schema.org selon le type
 const siteUrl = 'https://www.noctaparis.fr';
-const pageUrl = `${siteUrl}/traiteur/${d.slug}`;
+const entrySlug = entry.slug ?? entry.id.replace(/\.md$/, '');
+const pageUrl = `${siteUrl}/traiteur/${entrySlug}`;
 
 const schema =
   d.schemaType === 'LocalBusiness'

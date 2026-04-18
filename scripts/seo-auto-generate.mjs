@@ -77,7 +77,6 @@ title: "[H1 de la page, 50-60 caractères, mot-clé cible en premier]"
 description: "[Meta description, 140-160 caractères, accroche + mot-clé]"
 zone: "[Nom de la zone cité exactement comme fourni]"
 type: "[arrondissement|commune-92|occasion|chef-prive]"
-slug: "[slug fourni]"
 publishDate: "[AAAA-MM-JJ]"
 readingTime: "[N] min"
 schemaType: "[LocalBusiness|Service]"
@@ -154,7 +153,6 @@ async function generateDraft(client, topic) {
 Sujet : ${topic.zone}
 Angle : ${topic.angle}
 Type : ${topic.type}
-Slug : ${topic.slug}
 Date de publication : ${todayISO()}
 Schema recommandé : ${topic.type === "commune-92" || topic.type === "arrondissement" ? "LocalBusiness" : "Service"}
 
