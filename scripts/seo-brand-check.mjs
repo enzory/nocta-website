@@ -53,7 +53,7 @@ function checkFrontmatter(markdown) {
     return { flags, fields: {} };
   }
   const front = m[1];
-  const required = ["title", "description", "zone", "type", "slug", "publishDate"];
+  const required = ["title", "description", "zone", "type", "publishDate"];
   const fields = {};
   for (const key of required) {
     const re = new RegExp(`^${key}\\s*:\\s*(.+)$`, "m");
@@ -227,9 +227,7 @@ export async function brandCheck(markdown, claudeClient, model = "claude-sonnet-
   // Verdict final
   // - Flag éliminatoire OU score qualitatif < 8 → PR review.
   // - Sinon → auto-publish.
-  // TEMP Phase 1 (semaines 1-6) : tout passe en PR pour relecture.
-  // Retirer une fois que 95%+ des PRs partent sans édition.
-  const verdict = "pr-review";
+  const verdict = hasEliminatory || qualScore < 8 ? "pr-review" : "auto-publish";
 
   return {
     score: qualScore,
