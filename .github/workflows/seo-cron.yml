@@ -97,19 +97,14 @@ jobs:
           git commit -m "feat(seo): draft ${{ steps.gen.outputs.slug }} — review requise (score ${{ steps.gen.outputs.score }})"
           git push origin "$BRANCH"
 
+          SLUG="${{ steps.gen.outputs.slug }}"
+          SCORE="${{ steps.gen.outputs.score }}"
+          PR_BODY=$(printf 'Page GEO générée automatiquement, brand-check a flaggé des points à vérifier.\n\n**Slug** : %s\n**Score** : %s/10\n\nRelire le draft dans `src/content/geo/%s.md` avant merge.\n\n---\n_Généré automatiquement par seo-cron._' "$SLUG" "$SCORE" "$SLUG")
           gh pr create \
             --base main \
             --head "$BRANCH" \
-            --title "[SEO auto] ${{ steps.gen.outputs.slug }} — review requise" \
-            --body "Page GEO générée automatiquement mais le brand-check a flaggé des points à vérifier.
-
-**Slug** : ${{ steps.gen.outputs.slug }}
-**Score** : ${{ steps.gen.outputs.score }}/10
-
-Relire le draft dans \`src/content/geo/${{ steps.gen.outputs.slug }}.md\` avant merge.
-
----
-_Généré automatiquement par seo-cron._"
+            --title "[SEO auto] $SLUG — review requise" \
+            --body "$PR_BODY"
 
       # ---------- Log en cas de queue vide ----------
       - name: Empty queue notice
