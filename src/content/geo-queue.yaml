@@ -25,7 +25,7 @@ topics:
     angle: "siège sociaux, cocktails d'affaires, galas, Champs-Élysées"
     type: arrondissement
     priority: 10
-    status: pending
+    status: pr-review
 
   - slug: traiteur-paris-7
     zone: "Paris 7e arrondissement"
