@@ -32,7 +32,7 @@ topics:
     angle: "hôtels particuliers, réceptions privées, Invalides, Tour Eiffel"
     type: arrondissement
     priority: 10
-    status: pending
+    status: published
 
   - slug: traiteur-paris-6
     zone: "Paris 6e arrondissement"
