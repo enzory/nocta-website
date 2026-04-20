@@ -9,6 +9,7 @@ const journal = defineCollection({
     category: z.string(),
     readTime: z.number(),
     draft: z.boolean().default(false),
+    image: z.string().optional(),
   }),
 });
 

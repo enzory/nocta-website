@@ -81,7 +81,12 @@ const formattedDate = article.data.date.toLocaleDateString('fr-FR', {
     "headline": article.data.title,
     "description": article.data.description,
     "datePublished": article.data.date.toISOString(),
-    "image": article.data.image ? `https://www.noctaparis.fr${article.data.image}` : "https://www.noctaparis.fr/images/og-image.jpeg",
+    "image": {
+      "@type": "ImageObject",
+      "url": article.data.image ? `https://www.noctaparis.fr${article.data.image}` : "https://www.noctaparis.fr/images/og-image.jpeg",
+      "width": 1200,
+      "height": 630
+    },
     "author": [
       {"@type": "Person", "name": "Hugo Vinatier", "url": "https://www.noctaparis.fr/maison"},
       {"@type": "Person", "name": "Enzo Ryon", "url": "https://www.noctaparis.fr/maison"}
