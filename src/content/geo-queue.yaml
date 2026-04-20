@@ -96,7 +96,7 @@ topics:
     angle: "résidentiel haut de gamme, sièges sociaux, dîners privés"
     type: commune-92
     priority: 10
-    status: pending
+    status: published
 
   - slug: traiteur-levallois-perret
     zone: "Levallois-Perret"
