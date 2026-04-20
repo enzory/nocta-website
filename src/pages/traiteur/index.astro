@@ -1,0 +1,245 @@
+---
+// ============================================================
+// src/pages/traiteur/index.astro
+// Hub sobre listant les pages GEO auto-générées.
+// ============================================================
+// Lit la Content Collection "geo" et regroupe par type.
+// Aucune exposition dans la nav principale — maillage interne
+// piloté par un lien discret en footer + sitemap.
+// ============================================================
+
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/layout.astro';
+import Header from '../../components/header.astro';
+import Footer from '../../components/Footer.astro';
+
+const entries = await getCollection('geo');
+
+const ORDER = ['arrondissement', 'commune-92', 'occasion', 'chef-prive'] as const;
+type GeoType = typeof ORDER[number];
+
+const TYPE_LABELS: Record<GeoType, string> = {
+  'arrondissement': 'Paris — par arrondissement',
+  'commune-92': 'Hauts-de-Seine (92)',
+  'occasion': 'Occasions',
+  'chef-prive': 'Chef privé',
+};
+
+// Regroupe + tri alphabétique par titre dans chaque groupe
+const grouped: Record<GeoType, typeof entries> = {
+  'arrondissement': [],
+  'commune-92': [],
+  'occasion': [],
+  'chef-prive': [],
+};
+for (const e of entries) {
+  const t = e.data.type as GeoType;
+  if (grouped[t]) grouped[t].push(e);
+}
+for (const t of ORDER) {
+  grouped[t].sort((a, b) => a.data.title.localeCompare(b.data.title, 'fr'));
+}
+
+const siteUrl = 'https://www.noctaparis.fr';
+const pageTitle = 'Zones desservies — NOCTA Catering Paris & 92';
+const pageDescription = "NOCTA Catering intervient dans tout Paris et les Hauts-de-Seine pour dîners privés, événements corporate et expériences sur-mesure. Devis sous 48 heures.";
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Nos zones desservies',
+  description: pageDescription,
+  url: `${siteUrl}/traiteur`,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'NOCTA Catering',
+    url: siteUrl,
+  },
+};
+
+const slugOf = (e: typeof entries[number]) => e.slug ?? e.id.replace(/\.md$/, '');
+const hasAny = ORDER.some(t => grouped[t].length > 0);
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <Header />
+
+  <main class="geo-hub">
+    <header class="geo-hub-header">
+      <p class="geo-hub-eyebrow">Traiteur haut de gamme — Paris et Hauts-de-Seine</p>
+      <h1 class="geo-hub-title">Nos zones desservies</h1>
+      <p class="geo-hub-intro">
+        NOCTA intervient dans Paris intra-muros et la proche couronne ouest pour dîners privés, événements corporate et réceptions sur mesure. Chaque zone a ses contraintes propres — logistique, gabarits, configuration des lieux — nous les connaissons.
+      </p>
+    </header>
+
+    {hasAny ? (
+      <div class="geo-hub-sections">
+        {ORDER.map(type => grouped[type].length > 0 && (
+          <section class="geo-hub-section">
+            <h2 class="geo-hub-section-title">{TYPE_LABELS[type]}</h2>
+            <ul class="geo-hub-list">
+              {grouped[type].map(e => (
+                <li class="geo-hub-item">
+                  <a href={`/traiteur/${slugOf(e)}`} class="geo-hub-link">
+                    <span class="geo-hub-item-title">{e.data.title}</span>
+                    <span class="geo-hub-item-zone">{e.data.zone}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </div>
+    ) : (
+      <p class="geo-hub-empty">Nos pages de zones arrivent bientôt.</p>
+    )}
+
+    <section class="geo-hub-cta">
+      <h2>Votre zone n'apparaît pas&nbsp;?</h2>
+      <p>Nous intervenons dans toute l'Île-de-France sur demande. Devis personnalisé sous 48 heures.</p>
+      <a href="/contact" class="geo-hub-cta-btn">Demander un devis</a>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .geo-hub {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 4rem;
+    color: #2a2a2a;
+  }
+
+  /* --- En-tête --- */
+  .geo-hub-header {
+    margin-bottom: 4rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .geo-hub-eyebrow {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #6a6a6a;
+    margin: 0 0 1rem;
+  }
+  .geo-hub-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    line-height: 1.1;
+    margin: 0 0 1.25rem;
+    color: #1a1a1a;
+  }
+  .geo-hub-intro {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #3a3a3a;
+    max-width: 640px;
+    margin: 0;
+  }
+
+  /* --- Sections par type --- */
+  .geo-hub-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .geo-hub-section-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.5rem;
+    color: #1a1a1a;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .geo-hub-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  @media (min-width: 640px) {
+    .geo-hub-list {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 2rem;
+    }
+  }
+  .geo-hub-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  .geo-hub-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.9rem 0;
+    color: #2a2a2a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .geo-hub-link:hover {
+    color: #8a6a3a;
+  }
+  .geo-hub-item-title {
+    font-size: 0.98rem;
+    line-height: 1.4;
+  }
+  .geo-hub-item-zone {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #8a8a8a;
+  }
+
+  .geo-hub-empty {
+    font-size: 1rem;
+    color: #6a6a6a;
+    font-style: italic;
+  }
+
+  /* --- CTA (aligné avec [slug].astro) --- */
+  .geo-hub-cta {
+    margin-top: 5rem;
+    padding: 4rem 2rem;
+    background: #0A0A0A;
+    color: #EEEBE3;
+    text-align: center;
+  }
+  .geo-hub-cta h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    margin: 0 0 0.75rem;
+    color: #EEEBE3;
+  }
+  .geo-hub-cta p {
+    font-size: 0.95rem;
+    margin: 0 0 2rem;
+    opacity: 0.7;
+  }
+  .geo-hub-cta-btn {
+    display: inline-block;
+    background: #EEEBE3;
+    color: #0A0A0A;
+    padding: 0.85rem 2rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  .geo-hub-cta-btn:hover {
+    background: #ffffff;
+  }
+</style>
