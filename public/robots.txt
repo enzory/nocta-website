@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /merci
+Disallow: /mentions-legales
+Disallow: /commande/
 
 Sitemap: https://www.noctaparis.fr/sitemap-index.xml

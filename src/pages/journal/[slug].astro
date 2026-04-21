@@ -77,6 +77,16 @@ const formattedDate = article.data.date.toLocaleDateString('fr-FR', {
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.noctaparis.fr/"},
+      {"@type": "ListItem", "position": 2, "name": "Journal", "item": "https://www.noctaparis.fr/journal"},
+      {"@type": "ListItem", "position": 3, "name": article.data.title, "item": `https://www.noctaparis.fr/journal/${article.id.replace(/\.md$/, '')}`}
+    ]
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": article.data.title,
     "description": article.data.description,

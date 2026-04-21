@@ -170,4 +170,14 @@ import CallToAction from '../../components/CallToAction.astro';
     "serviceType": "Expérience gastronomique immersive"
   })} />
 
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.noctaparis.fr/"},
+      {"@type": "ListItem", "position": 2, "name": "Prestations", "item": "https://www.noctaparis.fr/prestations"},
+      {"@type": "ListItem", "position": 3, "name": "NOCTA Signature", "item": "https://www.noctaparis.fr/prestations/signature"}
+    ]
+  })} />
+
 </Layout>
