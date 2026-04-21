@@ -79,9 +79,9 @@ const formattedDate = article.data.date.toLocaleDateString('fr-FR', {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.noctaparis.fr/"},
-      {"@type": "ListItem", "position": 2, "name": "Journal", "item": "https://www.noctaparis.fr/journal"},
-      {"@type": "ListItem", "position": 3, "name": article.data.title, "item": `https://www.noctaparis.fr/journal/${article.id.replace(/\.md$/, '')}`}
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://noctaparis.fr/"},
+      {"@type": "ListItem", "position": 2, "name": "Journal", "item": "https://noctaparis.fr/journal"},
+      {"@type": "ListItem", "position": 3, "name": article.data.title, "item": `https://noctaparis.fr/journal/${article.id.replace(/\.md$/, '')}`}
     ]
   })} />
 
@@ -93,20 +93,20 @@ const formattedDate = article.data.date.toLocaleDateString('fr-FR', {
     "datePublished": article.data.date.toISOString(),
     "image": {
       "@type": "ImageObject",
-      "url": article.data.image ? `https://www.noctaparis.fr${article.data.image}` : "https://www.noctaparis.fr/images/og-image.jpeg",
+      "url": article.data.image ? `https://noctaparis.fr${article.data.image}` : "https://noctaparis.fr/images/og-image.jpeg",
       "width": 1200,
       "height": 630
     },
     "author": [
-      {"@type": "Person", "name": "Hugo Vinatier", "url": "https://www.noctaparis.fr/maison"},
-      {"@type": "Person", "name": "Enzo Ryon", "url": "https://www.noctaparis.fr/maison"}
+      {"@type": "Person", "name": "Hugo Vinatier", "url": "https://noctaparis.fr/maison"},
+      {"@type": "Person", "name": "Enzo Ryon", "url": "https://noctaparis.fr/maison"}
     ],
     "publisher": {
       "@type": "Organization",
       "name": "NOCTA Catering",
-      "url": "https://www.noctaparis.fr"
+      "url": "https://noctaparis.fr"
     },
-    "mainEntityOfPage": `https://www.noctaparis.fr/journal/${article.id.replace(/\.md$/, '')}`
+    "mainEntityOfPage": `https://noctaparis.fr/journal/${article.id.replace(/\.md$/, '')}`
   })} />
 
 </Layout>
