@@ -4,4 +4,4 @@ Disallow: /merci
 Disallow: /mentions-legales
 Disallow: /commande/
 
-Sitemap: https://noctaparis.fr/sitemap-index.xml
+Sitemap: https://www.noctaparis.fr/sitemap-index.xml

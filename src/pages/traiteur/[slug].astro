@@ -28,7 +28,7 @@ const { Content } = await entry.render();
 const d = entry.data;
 
 // Construction du Schema.org selon le type
-const siteUrl = 'https://noctaparis.fr';
+const siteUrl = 'https://www.noctaparis.fr';
 const entrySlug = entry.slug ?? entry.id.replace(/\.md$/, '');
 const pageUrl = `${siteUrl}/traiteur/${entrySlug}`;
 
@@ -78,8 +78,8 @@ const schema =
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://noctaparis.fr/"},
-      {"@type": "ListItem", "position": 2, "name": "Traiteur", "item": "https://noctaparis.fr/traiteur"},
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.noctaparis.fr/"},
+      {"@type": "ListItem", "position": 2, "name": "Traiteur", "item": "https://www.noctaparis.fr/traiteur"},
       {"@type": "ListItem", "position": 3, "name": d.title, "item": pageUrl}
     ]
   })} />

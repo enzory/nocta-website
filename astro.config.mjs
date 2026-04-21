@@ -7,7 +7,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://noctaparis.fr',
+  site: 'https://www.noctaparis.fr',
   trailingSlash: 'never',
   redirects: {
     '/events': '/prestations',
