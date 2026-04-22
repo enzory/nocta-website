@@ -117,7 +117,7 @@ topics:
     angle: "business district, plateaux-repas, cocktails, galas corporate"
     type: commune-92
     priority: 10
-    status: pending
+    status: published
     # NOTE : NOCTA est basée à Courbevoie. Page siège, très stratégique.
 
   - slug: traiteur-puteaux
