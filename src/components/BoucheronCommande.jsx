@@ -131,11 +131,10 @@ export default function BoucheronCommande() {
   const totalProtPieces = selected.proteine.reduce((s, id) => s + (quantities[id] || 0), 0);
   const totalVeggiePieces = selected.veggie.reduce((s, id) => s + (quantities[id] || 0), 0);
   const totalSweetPieces = piecesSucrees;
-  const isFullNonProt = totalProtPieces === 0;
-  const volumeBalanced = totalProtPieces === totalVeggiePieces + totalSweetPieces;
+  const volumeBalanced = totalProtPieces <= totalVeggiePieces + totalSweetPieces;
   const hasAnyQty = totalPieces > 0;
 
-  const isBalanced = !proteineOverflow && !varietiesOverflow && (volumeBalanced || isFullNonProt || !hasAnyQty);
+  const isBalanced = !proteineOverflow && !varietiesOverflow && (volumeBalanced || !hasAnyQty);
 
   const alertMessages = [];
   if (proteineOverflow) {
@@ -148,9 +147,9 @@ export default function BoucheronCommande() {
       `Trop de variétés sélectionnées : ${totalSelected} sur ${tier.varietes} autorisées pour ce palier. Désélectionnez une référence ou augmentez les quantités pour débloquer plus de variétés.`
     );
   }
-  if (hasAnyQty && !volumeBalanced && !isFullNonProt) {
+  if (hasAnyQty && !volumeBalanced) {
     alertMessages.push(
-      `Volumes non équilibrés : ${totalProtPieces} protéinée(s) vs ${totalVeggiePieces + totalSweetPieces} non-protéinée(s) (végé + sucrées). Les deux totaux doivent être strictement égaux, ou la commande doit être 100 % non-protéinée.`
+      `Trop de pièces protéinées : ${totalProtPieces} protéinée(s) pour ${totalVeggiePieces + totalSweetPieces} non-protéinée(s) (${totalVeggiePieces} végé + ${totalSweetPieces} sucrées). Le volume protéiné ne doit pas dépasser le cumul végé + sucrées.`
     );
   }
 
