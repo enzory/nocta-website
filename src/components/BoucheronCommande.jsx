@@ -40,7 +40,7 @@ const CATALOGUE = {
     { id: "v4", nom: "Finger végétarien : financier à l'olive noire, confit d'oignons et pickles" },
   ],
   sweet: [
-    { id: "mini-pavlova",  nom: "Mini pavlova en dôme, fruit de saison" },
+    { id: "mini-pavlova",  nom: "Mini pavlova, duo de fruits de saison" },
     { id: "mini-canneles", nom: "Mini cannelés" },
   ],
 };
@@ -121,8 +121,6 @@ export default function BoucheronCommande() {
   const totalTTC = totalHT + montantTVA;
 
   /* ── Validation dynamique ── */
-  const MIN_VARIETES = 4;
-  const selectionComplete = totalSelected >= MIN_VARIETES;
   const proteineOverflow = selected.proteine.length > tier.maxProt;
   const varietiesOverflow = totalSelected > tier.varietes;
   const allHaveQty = [...selected.proteine, ...selected.veggie, ...selected.sweet].every(
@@ -156,7 +154,7 @@ export default function BoucheronCommande() {
     );
   }
 
-  const canSubmit = selectionComplete && allHaveQty && minimumOk && isBalanced && email.trim() !== "";
+  const canSubmit = totalPieces > 0 && allHaveQty && minimumOk && isBalanced && email.trim() !== "";
 
   const dateMinimum = (() => {
     const d = new Date();
@@ -612,11 +610,6 @@ export default function BoucheronCommande() {
           {!minimumOk && totalPieces > 0 && (
             <p style={styles.warning}>
               Minimum de commande : 250,00 € HT — il manque {fmt(MINIMUM_HT - totalHT)}
-            </p>
-          )}
-          {!selectionComplete && (
-            <p style={{ ...styles.warning, backgroundColor: "rgba(26,26,26,0.04)", borderColor: "rgba(26,26,26,0.1)", color: "#1a1a1a" }}>
-              Sélectionnez au moins 4 variétés pour valider — {totalSelected}/4 actuellement
             </p>
           )}
         </div>
