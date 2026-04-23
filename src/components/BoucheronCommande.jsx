@@ -6,7 +6,8 @@ import { jsPDF } from "jspdf";
 // Le rendu UI utilise NoctaSvgLogo (SVG inline) — ne pas confondre.
 const LOGO_NOCTA_JPEG_B64 = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCADIAZADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEI/8QAFBABAAAAAAAAAAAAAAAAAAAAAP/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAKgAAAqAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKgAAAAAAAqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAKgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/9k=";
 
-const PRIX_UNITAIRE = 2.9;
+const PRIX_SALEES = 2.9;
+const PRIX_SUCREES = 3.5;
 const FRAIS_LIVRAISON = 20.0;
 const TVA = 0.1;
 const MINIMUM_HT = 250.0;
@@ -38,17 +39,42 @@ const CATALOGUE = {
     { id: "v3", nom: "Pic italien : tomate, olive et artichauts confits" },
     { id: "v4", nom: "Finger végétarien : financier à l'olive noire, confit d'oignons et pickles" },
   ],
+  sweet: [
+    { id: "mini-pavlova",  nom: "Mini pavlova en dôme, fruit de saison" },
+    { id: "mini-canneles", nom: "Mini cannelés" },
+  ],
+};
+
+const SWEET_IDS = new Set(CATALOGUE.sweet.map((i) => i.id));
+const getItemPrice = (id) => (SWEET_IDS.has(id) ? PRIX_SUCREES : PRIX_SALEES);
+
+const getNextOrderNumber = () => {
+  const today = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+  let prev = null;
+  try {
+    const raw = localStorage.getItem("nocta_boucheron_order_counter");
+    prev = raw ? JSON.parse(raw) : null;
+  } catch {}
+  const next = prev && prev.date === today ? prev.counter + 1 : 1;
+  try {
+    localStorage.setItem(
+      "nocta_boucheron_order_counter",
+      JSON.stringify({ date: today, counter: next })
+    );
+  } catch {}
+  return `BCH-${today}-${String(next).padStart(3, "0")}`;
 };
 
 const fmt = (n) => n.toFixed(2).replace(".", ",") + " €";
 
 export default function BoucheronCommande() {
-  const [selected, setSelected] = useState({ proteine: [], veggie: [] });
+  const [selected, setSelected] = useState({ proteine: [], veggie: [], sweet: [] });
   const [quantities, setQuantities] = useState({});
   const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
   const [commentaire, setCommentaire] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [orderNumber, setOrderNumber] = useState("");
 
   const totalPieces = useMemo(
     () => Object.values(quantities).reduce((s, v) => s + v, 0),
@@ -56,7 +82,7 @@ export default function BoucheronCommande() {
   );
 
   const tier = getTier(totalPieces);
-  const totalSelected = selected.proteine.length + selected.veggie.length;
+  const totalSelected = selected.proteine.length + selected.veggie.length + selected.sweet.length;
 
   const toggleItem = (segment, id) => {
     setSelected((prev) => {
@@ -66,7 +92,7 @@ export default function BoucheronCommande() {
         setQuantities((q) => { const nq = { ...q }; delete nq[id]; return nq; });
         return { ...prev, [segment]: next };
       }
-      const total = prev.proteine.length + prev.veggie.length;
+      const total = prev.proteine.length + prev.veggie.length + prev.sweet.length;
       if (total >= tier.varietes) return prev;
       if (segment === "proteine" && current.length >= tier.maxProt) return prev;
       setQuantities((q) => ({ ...q, [id]: MIN_QTY_PER_ITEM }));
@@ -77,13 +103,19 @@ export default function BoucheronCommande() {
   const stepQty = (id, direction) => {
     setQuantities((q) => {
       const cur = q[id] || 0;
-      const next = cur + direction * 10;
+      const next = cur + direction * 5;
       if (next < MIN_QTY_PER_ITEM) return { ...q, [id]: MIN_QTY_PER_ITEM };
       return { ...q, [id]: next };
     });
   };
 
-  const sousTotal = totalPieces * PRIX_UNITAIRE;
+  const piecesSalees =
+    selected.proteine.reduce((s, id) => s + (quantities[id] || 0), 0) +
+    selected.veggie.reduce((s, id) => s + (quantities[id] || 0), 0);
+  const piecesSucrees = selected.sweet.reduce((s, id) => s + (quantities[id] || 0), 0);
+  const sousTotalSalees = piecesSalees * PRIX_SALEES;
+  const sousTotalSucrees = piecesSucrees * PRIX_SUCREES;
+  const sousTotal = sousTotalSalees + sousTotalSucrees;
   const totalHT = sousTotal + FRAIS_LIVRAISON;
   const montantTVA = totalHT * TVA;
   const totalTTC = totalHT + montantTVA;
@@ -93,18 +125,19 @@ export default function BoucheronCommande() {
   const selectionComplete = totalSelected >= MIN_VARIETES;
   const proteineOverflow = selected.proteine.length > tier.maxProt;
   const varietiesOverflow = totalSelected > tier.varietes;
-  const allHaveQty = [...selected.proteine, ...selected.veggie].every(
+  const allHaveQty = [...selected.proteine, ...selected.veggie, ...selected.sweet].every(
     (id) => (quantities[id] || 0) >= MIN_QTY_PER_ITEM
   );
   const minimumOk = totalHT >= MINIMUM_HT;
 
   const totalProtPieces = selected.proteine.reduce((s, id) => s + (quantities[id] || 0), 0);
   const totalVeggiePieces = selected.veggie.reduce((s, id) => s + (quantities[id] || 0), 0);
-  const isFullVeggie = totalProtPieces === 0;
-  const volumeEqual = totalProtPieces === totalVeggiePieces;
+  const totalSweetPieces = piecesSucrees;
+  const isFullNonProt = totalProtPieces === 0;
+  const volumeBalanced = totalProtPieces === totalVeggiePieces + totalSweetPieces;
   const hasAnyQty = totalPieces > 0;
 
-  const isBalanced = !proteineOverflow && !varietiesOverflow && (volumeEqual || isFullVeggie || !hasAnyQty);
+  const isBalanced = !proteineOverflow && !varietiesOverflow && (volumeBalanced || isFullNonProt || !hasAnyQty);
 
   const alertMessages = [];
   if (proteineOverflow) {
@@ -117,9 +150,9 @@ export default function BoucheronCommande() {
       `Trop de variétés sélectionnées : ${totalSelected} sur ${tier.varietes} autorisées pour ce palier. Désélectionnez une référence ou augmentez les quantités pour débloquer plus de variétés.`
     );
   }
-  if (hasAnyQty && !volumeEqual && !isFullVeggie) {
+  if (hasAnyQty && !volumeBalanced && !isFullNonProt) {
     alertMessages.push(
-      `Volumes non équilibrés : ${totalProtPieces} pièce(s) protéinée(s) vs ${totalVeggiePieces} pièce(s) végétarienne(s). Les deux segments doivent avoir un total de pièces strictement identique, ou la commande doit être 100 % végétarienne.`
+      `Volumes non équilibrés : ${totalProtPieces} protéinée(s) vs ${totalVeggiePieces + totalSweetPieces} non-protéinée(s) (végé + sucrées). Les deux totaux doivent être strictement égaux, ou la commande doit être 100 % non-protéinée.`
     );
   }
 
@@ -131,36 +164,62 @@ export default function BoucheronCommande() {
     return d.toISOString().split('T')[0];
   })();
 
-  const allItems = [...CATALOGUE.proteine, ...CATALOGUE.veggie];
+  const allItems = [...CATALOGUE.proteine, ...CATALOGUE.veggie, ...CATALOGUE.sweet];
   const getItemName = (id) => allItems.find((i) => i.id === id)?.nom || id;
 
-  const buildRecap = () => {
-    const lines = [...selected.proteine, ...selected.veggie].map(
-      (id) => `• ${getItemName(id)} — ${quantities[id] || 0} pièces`
-    );
-    return [
+  const lineFor = (id) => {
+    const qty = quantities[id] || 0;
+    const price = getItemPrice(id);
+    return `• ${getItemName(id)} — ${qty} × ${fmt(price)} = ${fmt(qty * price)}`;
+  };
+
+  const buildRecap = (orderNum) => {
+    const protLines = selected.proteine.map(lineFor);
+    const veggieLines = selected.veggie.map(lineFor);
+    const sweetLines = selected.sweet.map(lineFor);
+    const out = [
       `COMMANDE BOUCHERON — NOCTA`,
+      orderNum ? `N° commande : ${orderNum}` : ``,
       `Date souhaitée : ${date || "Non précisée"}`,
       ``,
-      `Détail :`,
-      ...lines,
-      ``,
-      `${totalPieces} pièces × ${fmt(PRIX_UNITAIRE)} = ${fmt(sousTotal)}`,
+    ];
+    if (protLines.length) {
+      out.push(`Pièces protéinées :`, ...protLines, ``);
+    }
+    if (veggieLines.length) {
+      out.push(`Pièces végétariennes :`, ...veggieLines, ``);
+    }
+    if (sweetLines.length) {
+      out.push(`Pièces sucrées :`, ...sweetLines, ``);
+    }
+    out.push(
+      `Sous-total pièces salées (${piecesSalees}) : ${fmt(sousTotalSalees)}`,
+      `Sous-total pièces sucrées (${piecesSucrees}) : ${fmt(sousTotalSucrees)}`,
+      `Sous-total (${totalPieces} pièces) : ${fmt(sousTotal)}`,
       `Livraison : ${fmt(FRAIS_LIVRAISON)}`,
       `Total HT : ${fmt(totalHT)}`,
       `TVA 10% : ${fmt(montantTVA)}`,
       `Total TTC : ${fmt(totalTTC)}`,
-      commentaire ? `\nCommentaire : ${commentaire}` : "",
-    ].join("\n");
+      commentaire ? `\nCommentaire : ${commentaire}` : ""
+    );
+    return out.filter((l) => l !== undefined).join("\n");
   };
 
-  const generatePDF = () => {
+  const generatePDF = (orderNum) => {
     const doc = new jsPDF({ unit: "mm", format: "a4" });
     const pw = doc.internal.pageSize.getWidth();
     const margin = 24;
     let y = 15;
 
     doc.addImage(LOGO_NOCTA_JPEG_B64, 'JPEG', 15, 15, 40, 20);
+
+    if (orderNum) {
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(10);
+      doc.setTextColor(120, 120, 120);
+      doc.text(`N° ${orderNum}`, pw - margin, 22, { align: "right" });
+    }
+
     y = 38;
 
     doc.setDrawColor(200, 200, 200);
@@ -184,33 +243,41 @@ export default function BoucheronCommande() {
     }
     y += 6;
 
-    doc.setFont("helvetica", "bold");
-    doc.setFontSize(10);
-    doc.setTextColor(26, 26, 26);
-    doc.text("DÉTAIL DE LA COMMANDE", margin, y);
-    y += 8;
+    const renderCategory = (title, ids) => {
+      if (!ids.length) return;
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(10);
+      doc.setTextColor(26, 26, 26);
+      doc.text(title.toUpperCase(), margin, y);
+      y += 7;
 
-    const items = [...selected.proteine, ...selected.veggie];
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(9.5);
-    items.forEach((id) => {
-      const nom = getItemName(id);
-      const qty = quantities[id] || 0;
-      const lineTotal = qty * PRIX_UNITAIRE;
-      const lines = doc.splitTextToSize(nom, pw - margin * 2 - 50);
-      lines.forEach((line, i) => {
-        doc.setTextColor(26, 26, 26);
-        doc.text(line, margin, y);
-        if (i === 0) {
-          doc.setTextColor(80, 80, 80);
-          doc.text(`${qty} pcs  ${fmt(lineTotal)}`, pw - margin, y, { align: "right" });
-        }
-        y += 5;
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(9.5);
+      ids.forEach((id) => {
+        const nom = getItemName(id);
+        const qty = quantities[id] || 0;
+        const price = getItemPrice(id);
+        const lineTotal = qty * price;
+        const lines = doc.splitTextToSize(nom, pw - margin * 2 - 50);
+        lines.forEach((line, i) => {
+          doc.setTextColor(26, 26, 26);
+          doc.text(line, margin, y);
+          if (i === 0) {
+            doc.setTextColor(80, 80, 80);
+            doc.text(`${qty} pcs  ${fmt(lineTotal)}`, pw - margin, y, { align: "right" });
+          }
+          y += 5;
+        });
+        y += 2;
       });
-      y += 2;
-    });
+      y += 3;
+    };
 
-    y += 4;
+    renderCategory("Pièces protéinées", selected.proteine);
+    renderCategory("Pièces végétariennes", selected.veggie);
+    renderCategory("Pièces sucrées", selected.sweet);
+
+    y += 1;
     doc.setDrawColor(200, 200, 200);
     doc.line(margin, y, pw - margin, y);
     y += 8;
@@ -224,6 +291,12 @@ export default function BoucheronCommande() {
       y += bold ? 7 : 5.5;
     };
 
+    if (piecesSalees > 0) {
+      addTotalLine(`Sous-total salées (${piecesSalees} pcs × ${fmt(PRIX_SALEES)})`, fmt(sousTotalSalees));
+    }
+    if (piecesSucrees > 0) {
+      addTotalLine(`Sous-total sucrées (${piecesSucrees} pcs × ${fmt(PRIX_SUCREES)})`, fmt(sousTotalSucrees));
+    }
     addTotalLine(`Sous-total (${totalPieces} pièces)`, fmt(sousTotal));
     addTotalLine("Livraison", fmt(FRAIS_LIVRAISON));
     addTotalLine("Total HT", fmt(totalHT), true);
@@ -251,19 +324,23 @@ export default function BoucheronCommande() {
     doc.setTextColor(160, 160, 160);
     doc.text("NOCTA · H+E Catering SARL · Courbevoie · contact@noctaparis.fr", pw / 2, y, { align: "center" });
 
-    const dateStr = new Date().toISOString().slice(0, 10);
-    doc.save(`NOCTA-Commande-Boucheron-${dateStr}.pdf`);
+    const fileName = orderNum
+      ? `${orderNum}_Boucheron_Commande.pdf`
+      : `NOCTA-Commande-Boucheron-${new Date().toISOString().slice(0, 10)}.pdf`;
+    doc.save(fileName);
   };
 
   const handleSubmit = async () => {
-    const body = buildRecap();
-    generatePDF();
+    const orderNum = getNextOrderNumber();
+    setOrderNumber(orderNum);
+    const body = buildRecap(orderNum);
+    generatePDF(orderNum);
     try {
       await fetch("https://formspree.io/f/maqpwebj", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          _subject: `Commande Boucheron — ${date || "Sans date"}`,
+          _subject: `Commande Boucheron ${orderNum} — ${date || "Sans date"}`,
           message: body,
           _replyto: "myriana@boucheron.com",
           _cc: email,
@@ -312,11 +389,16 @@ export default function BoucheronCommande() {
             <p style={styles.confirmText}>
               Votre commande a bien été transmise à l'équipe NOCTA.
             </p>
+            {orderNumber && (
+              <p style={{ ...styles.confirmText, opacity: 0.7, marginTop: 12, fontSize: 13, fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.04em" }}>
+                N° de commande : <strong>{orderNumber}</strong>
+              </p>
+            )}
             <p style={{ ...styles.confirmText, opacity: 0.5, marginTop: 8, fontSize: 14 }}>
               Nous reviendrons vers vous sous 24h pour confirmer la disponibilité.
             </p>
             <button
-              onClick={() => { setSubmitted(false); setSelected({ proteine: [], veggie: [] }); setQuantities({}); setEmail(""); setDate(""); setCommentaire(""); }}
+              onClick={() => { setSubmitted(false); setSelected({ proteine: [], veggie: [], sweet: [] }); setQuantities({}); setEmail(""); setDate(""); setCommentaire(""); setOrderNumber(""); }}
               style={styles.newOrderBtn}
             >
               Nouvelle commande
@@ -407,7 +489,9 @@ export default function BoucheronCommande() {
         )}
 
         <div style={styles.ruleRow}>
-          <span style={styles.ruleTag}>2,90 € HT / pièce</span>
+          <span style={styles.ruleTag}>2,90 € HT / salée</span>
+          <span style={styles.ruleDot}>·</span>
+          <span style={styles.ruleTag}>3,50 € HT / sucrée</span>
           <span style={styles.ruleDot}>·</span>
           <span style={styles.ruleTag}>Livraison 20 € HT</span>
           <span style={styles.ruleDot}>·</span>
@@ -415,7 +499,7 @@ export default function BoucheronCommande() {
         </div>
 
         <div style={styles.instructions}>
-          Sélectionnez vos bouchées puis indiquez les quantités par paliers de 10 (min. 20 par variété).
+          Sélectionnez vos bouchées puis indiquez les quantités par paliers de 5 (min. 20 par variété).
           Le nombre de variétés autorisées dépend du volume total commandé.
         </div>
 
@@ -453,6 +537,7 @@ export default function BoucheronCommande() {
 
         {renderSegment("Bouchées protéinées", "proteine", CATALOGUE.proteine)}
         {renderSegment("Bouchées végétariennes", "veggie", CATALOGUE.veggie)}
+        {renderSegment("Pièces sucrées", "sweet", CATALOGUE.sweet)}
 
         <div style={styles.commentSection}>
           <label style={styles.fieldLabel}>Commentaire (optionnel)</label>
@@ -467,16 +552,20 @@ export default function BoucheronCommande() {
 
         <div style={styles.recap}>
           <h3 style={styles.recapTitle}>Récapitulatif</h3>
-          {[...selected.proteine, ...selected.veggie].length > 0 ? (
+          {[...selected.proteine, ...selected.veggie, ...selected.sweet].length > 0 ? (
             <div style={styles.recapLines}>
-              {[...selected.proteine, ...selected.veggie].map((id) => (
-                <div key={id} style={styles.recapLine}>
-                  <span style={styles.recapItemName}>{getItemName(id)}</span>
-                  <span style={styles.recapItemQty}>
-                    {quantities[id] || 0} × {fmt(PRIX_UNITAIRE)} = {fmt((quantities[id] || 0) * PRIX_UNITAIRE)}
-                  </span>
-                </div>
-              ))}
+              {[...selected.proteine, ...selected.veggie, ...selected.sweet].map((id) => {
+                const qty = quantities[id] || 0;
+                const price = getItemPrice(id);
+                return (
+                  <div key={id} style={styles.recapLine}>
+                    <span style={styles.recapItemName}>{getItemName(id)}</span>
+                    <span style={styles.recapItemQty}>
+                      {qty} × {fmt(price)} = {fmt(qty * price)}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           ) : (
             <p style={{ ...styles.recapItemName, opacity: 0.35, fontStyle: "italic" }}>
@@ -486,6 +575,18 @@ export default function BoucheronCommande() {
 
           <div style={styles.divider} />
 
+          {piecesSalees > 0 && (
+            <div style={styles.totalRow}>
+              <span>Sous-total salées ({piecesSalees} pcs)</span>
+              <span>{fmt(sousTotalSalees)}</span>
+            </div>
+          )}
+          {piecesSucrees > 0 && (
+            <div style={styles.totalRow}>
+              <span>Sous-total sucrées ({piecesSucrees} pcs)</span>
+              <span>{fmt(sousTotalSucrees)}</span>
+            </div>
+          )}
           <div style={styles.totalRow}>
             <span>Sous-total ({totalPieces} pièces)</span>
             <span>{fmt(sousTotal)}</span>
