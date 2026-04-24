@@ -39,7 +39,7 @@ topics:
     angle: "Saint-Germain-des-Prés, dîners intimistes, galeries"
     type: arrondissement
     priority: 9
-    status: pending
+    status: published
 
   - slug: traiteur-paris-17
     zone: "Paris 17e arrondissement"
