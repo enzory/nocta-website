@@ -23,6 +23,7 @@ const geo = defineCollection({
     publishDate: z.coerce.date(),
     readingTime: z.string().optional(),
     schemaType: z.enum(['LocalBusiness', 'Service']).default('LocalBusiness'),
+    ctaType: z.enum(['private', 'corporate']).optional(),
   }),
 });
 

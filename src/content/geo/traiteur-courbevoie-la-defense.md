@@ -6,6 +6,7 @@ type: "commune-92"
 publishDate: "2026-04-22"
 readingTime: "4 min"
 schemaType: "LocalBusiness"
+ctaType: "corporate"
 ---
 
 ## Traiteur corporate à Courbevoie et La Défense

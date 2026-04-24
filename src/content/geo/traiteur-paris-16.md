@@ -6,6 +6,7 @@ type: "arrondissement"
 publishDate: "2026-04-17"
 readingTime: "4 min"
 schemaType: "LocalBusiness"
+ctaType: "private"
 ---
 
 ## Traiteur haut de gamme dans le 16e arrondissement de Paris
