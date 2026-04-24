@@ -6,6 +6,7 @@ type: "arrondissement"
 publishDate: "2026-04-18"
 readingTime: "4 min"
 schemaType: "LocalBusiness"
+ctaType: "private"
 ---
 
 ## Traiteur dans le 7e arrondissement : des prestations à la hauteur du cadre

@@ -6,6 +6,7 @@ type: "arrondissement"
 publishDate: "2026-04-18"
 readingTime: "4 min"
 schemaType: "LocalBusiness"
+ctaType: "corporate"
 ---
 
 ## Traiteur haut de gamme dans le 8e arrondissement de Paris

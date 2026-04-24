@@ -6,6 +6,7 @@ type: "commune-92"
 publishDate: "2026-04-20"
 readingTime: "4 min"
 schemaType: "LocalBusiness"
+ctaType: "private"
 ---
 
 ## Traiteur à Neuilly-sur-Seine : prestations haut de gamme pour résidences et sièges sociaux
