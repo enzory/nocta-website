@@ -6,6 +6,7 @@ type: "arrondissement"
 publishDate: "2026-04-24"
 readingTime: "5 min"
 schemaType: "LocalBusiness"
+ctaType: "private"
 ---
 
 ## Traiteur haut de gamme dans le 6e arrondissement : discrétion et précision à Saint-Germain-des-Prés
