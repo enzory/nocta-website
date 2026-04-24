@@ -145,6 +145,76 @@ function todayISO() {
 }
 
 // ============================================================
+// ctaType inference — logique déterministe (zéro appel LLM)
+// ============================================================
+// Détermine la cible du CTA contextuel (bloc "Autres zones desservies")
+// des pages GEO : /prestations/private ou /prestations/corporate.
+//
+// Pourquoi déterministe et pas LLM :
+//   - Pas d'hallucinations possibles (le LLM classifierait parfois à tort).
+//   - Zéro coût token, zéro latence supplémentaire.
+//   - Règles auditables et extensibles en code review.
+//
+// Extensibilité : si le pipeline génère une nouvelle zone business non listée
+// dans BUSINESS_ZONES, il suffit de l'ajouter au tableau. Le fallback 'private'
+// est intentionnel (aligne sur le template et reste safe pour les résidentiels).
+
+const BUSINESS_ZONES = [
+  "paris-1",
+  "paris-2",
+  "paris-8",
+  "paris-9",
+  "paris-15",
+  "paris-17",
+  "la-defense",
+  "courbevoie",
+  "levallois",
+  "puteaux",
+  "boulogne-billancourt",
+  "issy-les-moulineaux",
+];
+
+const CORPORATE_TITLE_REGEX =
+  /(corporate|entreprise|gala|vernissage|s[ée]minaire|afterwork|afterworks|inauguration|lancement)/i;
+
+export function inferCtaType(entry) {
+  const { type, slug = "", title = "", angle = "" } = entry;
+
+  // 1. chef-prive → toujours private
+  if (type === "chef-prive") return "private";
+
+  // 2. zones business connues → corporate.
+  // Matching par segment (avec délimiteurs) pour éviter les faux positifs
+  // type 'paris-1' qui matcherait 'paris-16' ou 'paris-17'.
+  const slugNormalized = slug.toLowerCase();
+  const matchesBusinessZone = BUSINESS_ZONES.some((z) => {
+    const escaped = z.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return new RegExp(`(?:^|-)${escaped}(?:-|$)`).test(slugNormalized);
+  });
+  if (matchesBusinessZone) return "corporate";
+
+  // 3. occasion : regex sur title/angle
+  if (type === "occasion") {
+    const haystack = `${title} ${angle}`;
+    if (CORPORATE_TITLE_REGEX.test(haystack)) return "corporate";
+  }
+
+  // 4. fallback safe
+  return "private";
+}
+
+// Post-process le markdown LLM : injecte `ctaType: "..."` dans le frontmatter
+// juste après la ligne `type:` (alignement avec les fichiers backfillés).
+// Si `ctaType:` est déjà présent, on ne l'écrase pas.
+function injectCtaType(markdown, ctaType) {
+  if (/^ctaType:/m.test(markdown.split(/^---$/m)[1] ?? "")) return markdown;
+  return markdown.replace(
+    /^(type:\s*.+)$/m,
+    (match) => `${match}\nctaType: "${ctaType}"`,
+  );
+}
+
+// ============================================================
 // Appel Claude
 // ============================================================
 async function generateDraft(client, topic) {
@@ -214,6 +284,11 @@ async function main() {
     process.exit(1);
   }
 
+  // 2bis. Injection déterministe du ctaType (cf. inferCtaType ci-dessus)
+  const ctaType = inferCtaType(topic);
+  markdown = injectCtaType(markdown, ctaType);
+  console.error(`   ctaType = ${ctaType}`);
+
   // 3. Brand-check
   const check = await brandCheck(markdown, client, MODEL);
   console.error(`   Brand-check score : ${check.score}/10 — ${check.verdict}`);
@@ -243,6 +318,23 @@ async function main() {
       file: path.relative(ROOT, outPath),
     })
   );
+}
+
+// ============================================================
+// Test harness (zéro appel API)
+// Usage : node scripts/seo-auto-generate.mjs --test-cta
+// ============================================================
+if (process.argv.includes("--test-cta")) {
+  const cases = [
+    { type: "arrondissement", slug: "traiteur-paris-8", title: "Traiteur Paris 8e", angle: "sièges sociaux, cocktails, galas" },
+    { type: "arrondissement", slug: "traiteur-paris-16", title: "Traiteur Paris 16e", angle: "dîners privés, résidentiel" },
+    { type: "commune-92", slug: "traiteur-courbevoie-la-defense", title: "Traiteur Courbevoie", angle: "business district, plateaux-repas" },
+    { type: "chef-prive", slug: "chef-prive-paris", title: "Chef privé Paris", angle: "chef à domicile" },
+    { type: "occasion", slug: "traiteur-vernissage-paris", title: "Vernissage traiteur Paris", angle: "vernissage galerie, événement culturel" },
+    { type: "occasion", slug: "traiteur-mariage-intime-paris", title: "Mariage intime Paris", angle: "mariage intimiste, dîner familial" },
+  ];
+  console.table(cases.map((c) => ({ slug: c.slug, type: c.type, ctaType: inferCtaType(c) })));
+  process.exit(0);
 }
 
 main().catch((err) => {
