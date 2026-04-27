@@ -46,7 +46,7 @@ topics:
     angle: "Monceau, Ternes, Batignolles, événements familiaux"
     type: arrondissement
     priority: 9
-    status: pending
+    status: published
 
   - slug: traiteur-paris-1
     zone: "Paris 1er arrondissement"
