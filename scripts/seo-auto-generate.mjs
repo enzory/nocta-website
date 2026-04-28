@@ -59,13 +59,47 @@ RÈGLES ÉDITORIALES NON NÉGOCIABLES :
 
 1. JAMAIS "chef étoilé" → TOUJOURS "formé en cuisine étoilée".
 2. Ton luxe sobre. Test : "est-ce qu'un chef étoilé ou un DG de grand groupe dirait ça naturellement ?"
-3. Zéro métaphore lyrique creuse. Zéro superlatif gratuit. Zéro "ambiance chaleureuse / moments inoubliables / magie / savoir-faire d'exception".
+3. Zéro métaphore lyrique creuse. Zéro superlatif gratuit.
 4. ZÉRO INVENTION FACTUELLE : ne cite que les clients listés ci-dessus. N'invente AUCUN événement spécifique, AUCUNE anecdote, AUCUN témoignage.
 5. Du concret uniquement : formats proposés, logistique, cadre, typologie de prestation, contraintes du lieu.
 6. Ne promets jamais des choses qu'on ne vend pas : pas de "wedding planning", pas de "location de mobilier", pas de "décoration florale".
-7. Évite le jargon marketing : "expérience unique", "univers", "voyage culinaire", "ADN", "signature" (hors nom de l'offre).
-8. Mentionner les 3 offres de manière naturelle, sans matraquer.
-9. Français impeccable. Pas d'anglicismes superflus.
+7. Mentionner les 3 offres de manière naturelle, sans matraquer.
+8. Français impeccable. Pas d'anglicismes superflus.
+
+## INTERDICTIONS ABSOLUES (le draft est rejeté si ces mots/tournures apparaissent)
+
+Mots bannis (synonymes lyriques creux du luxe générique) :
+  - "prestige", "prestigieux", "prestigieuse"
+  - "d'exception", "exceptionnel", "exceptionnelle" (sauf usage factuel mesurable :
+    "exceptionnel" pour décrire un cru précis, un millésime, un produit nommé)
+  - "haut de gamme" (préférer le concret : "formés dans des maisons étoilées",
+    "produits de saison", "service en gants blancs", "cuisine sourcée")
+  - "raffinement", "raffiné", "raffinée"
+  - "univers", "voyage", "expérience inoubliable", "moment magique"
+  - "sur-mesure" et "sur mesure" comme adjectif marketing
+    (préférer : "construit selon vos envies", "menu adapté à votre table",
+    "format conçu autour du lieu")
+  - "irréprochable", "impeccable" (creux quand on les écrit soi-même)
+  - "audace", "élégance" (sauf concrète et démontrée par un détail précis)
+  - "incontournable", "le meilleur", "le plus prestigieux"
+  - "expérience unique", "savoir-faire d'exception", "ambiance chaleureuse",
+    "moments inoubliables", "voyage culinaire", "magie", "univers culinaire",
+    "notre ADN"
+
+Formulations interdites :
+  - JAMAIS "chef étoilé" → TOUJOURS "formé en cuisine étoilée".
+  - JAMAIS "le meilleur" / "le plus prestigieux" / "incontournable".
+  - JAMAIS d'adjectif générique sans nom propre, lieu ou produit précis derrière.
+  - JAMAIS "wedding planner", "storytelling", "experience design".
+
+Test du chef étoilé : avant chaque phrase, se demander "est-ce qu'un chef étoilé
+ou un DG de grand groupe dirait ça naturellement à un dîner entre pairs ?".
+Si non → réécrire avec du concret.
+
+Préférer toujours le concret : noms de produits, de quartiers, de gestes
+(découpe en salle, sommellerie au verre, dressage à l'envoi), de chiffres
+(50 couverts, 18 pièces par personne, 24-36h de délai). Le luxe sobre se prouve
+par les détails — pas par les adjectifs.
 
 STRUCTURE DE LA PAGE :
 

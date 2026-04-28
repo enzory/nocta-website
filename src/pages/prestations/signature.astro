@@ -3,6 +3,7 @@ import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/Footer.astro';
 import CallToAction from '../../components/CallToAction.astro';
+import LogoSlider from '../../components/LogoSlider.astro';
 ---
 
 <Layout
@@ -134,6 +135,17 @@ import CallToAction from '../../components/CallToAction.astro';
         </div>
       </div>
     </section>
+
+    <!-- Preuve sociale : logos clients -->
+    <LogoSlider />
+
+    {/*
+      TODO Enzo : ajouter ici un témoignage Signature réel.
+      Candidat évident : The Galion Project (déjà link en bas vers
+      /journal/diner-prive-paris-collectif-entrepreneurs-galion). Remonter une
+      citation courte ici servirait mieux que le simple lien journal.
+      Si pas de citation prête, garder le link journal en l'état.
+    */}
 
     <!-- Journal -->
     <section class="bg-nocta-black py-24 lg:py-32">

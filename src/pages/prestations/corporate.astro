@@ -3,6 +3,7 @@ import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/Footer.astro';
 import CallToAction from '../../components/CallToAction.astro';
+import LogoSlider from '../../components/LogoSlider.astro';
 ---
 
 <Layout
@@ -174,6 +175,19 @@ import CallToAction from '../../components/CallToAction.astro';
         </div>
       </div>
     </section>
+
+    <!-- Preuve sociale : logos clients corporate (Levi's, Galion, Colombus, Jus Mundi, Biologique Recherche, AA Conseil) -->
+    <LogoSlider />
+
+    {/*
+      TODO Enzo : ajouter ici un témoignage client corporate réel.
+      Candidat évident : Valérie Ader / Colombus Consulting (déjà cité sur la home,
+      "dîner comité de mission"). C'est le format où le ROI client compte le plus —
+      un témoignage corporate ici impacte plus que sur Private/Signature.
+      Format :
+        "Citation concrète (1-2 phrases)."
+        — Prénom Nom, Poste, Entreprise (ne pas inventer de poste)
+    */}
 
     <!-- Journal -->
     <section class="bg-nocta-black py-24 lg:py-32">

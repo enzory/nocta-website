@@ -27,21 +27,45 @@
 // ============================================================
 
 // Mots/expressions strictement interdits (violation éditoriale).
+//
+// `eliminatory: true` → le draft passe automatiquement en "pr-review" pour relecture.
+// `eliminatory: false` → simple flag, pondéré dans le scoring qualitatif.
+//
+// La liste est durcie post-audit 2026-04-27 : "prestige", "d'exception", "haut de gamme"
+// utilisés en adjectifs marketing sont désormais éliminatoires (8 occurrences trouvées
+// dans les pages auto-générées de Sprint 4-5).
 const FORBIDDEN_PATTERNS = [
+  // Formulations historiquement bannies
   { pattern: /\bchef[s]?\s+étoilé[s]?\b/gi, flag: "CHEF_ETOILE", eliminatory: true },
-  { pattern: /\bexpérience\s+unique\b/gi, flag: "EXPERIENCE_UNIQUE", eliminatory: false },
+  { pattern: /\bexpérience\s+unique\b/gi, flag: "EXPERIENCE_UNIQUE", eliminatory: true },
   { pattern: /\bmoments?\s+inoubliables?\b/gi, flag: "MOMENTS_INOUBLIABLES", eliminatory: true },
   { pattern: /\bambiance\s+chaleureuse\b/gi, flag: "AMBIANCE_CHALEUREUSE", eliminatory: true },
   { pattern: /\bvoyage\s+culinaire\b/gi, flag: "VOYAGE_CULINAIRE", eliminatory: true },
   { pattern: /\bsavoir[-\s]faire\s+d'exception\b/gi, flag: "SAVOIR_FAIRE_EXCEPTION", eliminatory: true },
   { pattern: /\bnotre\s+ADN\b/gi, flag: "NOTRE_ADN", eliminatory: true },
   { pattern: /\bunivers\s+culinaire\b/gi, flag: "UNIVERS_CULINAIRE", eliminatory: true },
-  { pattern: /\bmagie\s+de\b/gi, flag: "MAGIE_DE", eliminatory: false },
+  { pattern: /\bmagie\s+de\b/gi, flag: "MAGIE_DE", eliminatory: true },
+  { pattern: /\bmoment\s+magique\b/gi, flag: "MOMENT_MAGIQUE", eliminatory: true },
+
+  // Bannis post-audit 2026-04-27 (luxe générique creux)
+  { pattern: /\bprestig(?:e|ieux|ieuse|ieuses|ieux)\b/gi, flag: "PRESTIGE", eliminatory: true },
+  { pattern: /\bd'exception\b/gi, flag: "D_EXCEPTION", eliminatory: true },
+  { pattern: /\b(?:haut|hauts|haute|hautes)\s+de\s+gamme\b/gi, flag: "HAUT_DE_GAMME", eliminatory: true },
+  { pattern: /\braffin(?:é|ée|és|ées|ement)\b/gi, flag: "RAFFINEMENT", eliminatory: true },
+  { pattern: /\b(?:irréprochable|impeccable)s?\b/gi, flag: "IRREPROCHABLE", eliminatory: true },
+  { pattern: /\bincontournables?\b/gi, flag: "INCONTOURNABLE", eliminatory: true },
+  { pattern: /\ble\s+meilleur\b/gi, flag: "LE_MEILLEUR", eliminatory: true },
+  { pattern: /\b(?:sur-mesure|sur\s+mesure)\b/gi, flag: "SUR_MESURE_ADJ", eliminatory: false },
+
+  // Soft flags : pondération dans le scoring, pas d'éliminatoire automatique
   { pattern: /\bsublimer?\b/gi, flag: "SUBLIMER", eliminatory: false },
   { pattern: /\benchanter?\b/gi, flag: "ENCHANTER", eliminatory: false },
+  { pattern: /\b(?:audace|élégance)\b/gi, flag: "AUDACE_ELEGANCE", eliminatory: false },
+
   // Anglicismes marketing creux
   { pattern: /\bwedding\s+planner\b/gi, flag: "WEDDING_PLANNER", eliminatory: true },
-  { pattern: /\bstorytelling\b/gi, flag: "STORYTELLING", eliminatory: false },
+  { pattern: /\bstorytelling\b/gi, flag: "STORYTELLING", eliminatory: true },
+  { pattern: /\bexperience\s+design\b/gi, flag: "EXPERIENCE_DESIGN", eliminatory: true },
 ];
 
 // Vérifie que le frontmatter est bien formé et complet

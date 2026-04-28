@@ -3,6 +3,7 @@ import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/Footer.astro';
 import CallToAction from '../../components/CallToAction.astro';
+import LogoSlider from '../../components/LogoSlider.astro';
 import privateHeroSrc from '../../assets/images/private-hero.webp?url';
 ---
 
@@ -134,6 +135,18 @@ import privateHeroSrc from '../../assets/images/private-hero.webp?url';
         </div>
       </div>
     </section>
+
+    <!-- Preuve sociale : logos clients -->
+    <LogoSlider />
+
+    {/*
+      TODO Enzo : ajouter ici un témoignage client réel pour /prestations/private (1 par page).
+      Format suggéré :
+        "Citation courte (1-2 phrases concrètes)."
+        — Prénom Nom, Poste (ou contexte sobre)
+      Candidat évident : Thomas Cussac (déjà cité sur la home, évènement privé).
+      Ne PAS inventer de poste/employeur — la home utilise simplement "Événement privé".
+    */}
 
     <!-- Journal -->
     <section class="bg-nocta-black py-24 lg:py-32">
