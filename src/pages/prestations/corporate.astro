@@ -179,15 +179,55 @@ import LogoSlider from '../../components/LogoSlider.astro';
     <!-- Preuve sociale : logos clients corporate (Levi's, Galion, Colombus, Jus Mundi, Biologique Recherche, AA Conseil) -->
     <LogoSlider />
 
-    {/*
-      TODO Enzo : ajouter ici un témoignage client corporate réel.
-      Candidat évident : Valérie Ader / Colombus Consulting (déjà cité sur la home,
-      "dîner comité de mission"). C'est le format où le ROI client compte le plus —
-      un témoignage corporate ici impacte plus que sur Private/Signature.
-      Format :
-        "Citation concrète (1-2 phrases)."
-        — Prénom Nom, Poste, Entreprise (ne pas inventer de poste)
-    */}
+    <!-- Témoignages clients (avis Google, citations fidèles) -->
+    <section class="bg-nocta-cream py-24 lg:py-32 border-t border-nocta-black/10">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+        <div class="mb-14 reveal">
+          <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Avis clients</p>
+          <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight">
+            Quelques retours.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
+
+          <figure class="reveal flex flex-col" style="transition-delay: 0.1s">
+            <blockquote class="font-serif text-base lg:text-lg font-light italic text-nocta-black/80 leading-relaxed">
+              « NOCTA a organisé dans notre entreprise un dîner pour une vingtaine de personnes — nous recevions notre comité de mission. L'apéritif, le dîner, le service : non seulement parfaits, mais aussi très professionnels tout en étant chaleureux. Merci à Enzo et Hugo, bravo, à refaire ! »
+            </blockquote>
+            <div class="w-12 h-px bg-nocta-black/20 my-6"></div>
+            <figcaption>
+              <p class="font-sans text-sm font-medium text-nocta-black">Valérie Ader</p>
+              <p class="font-sans text-xs font-light text-nocta-grey mt-1">Co-fondatrice, Columbus Consulting</p>
+            </figcaption>
+          </figure>
+
+          <figure class="reveal flex flex-col" style="transition-delay: 0.2s">
+            <blockquote class="font-serif text-base lg:text-lg font-light italic text-nocta-black/80 leading-relaxed">
+              « Je fais appel régulièrement à NOCTA Catering pour diverses prestations de déjeuners professionnels destinés à une clientèle haut de gamme. La cuisine est délicieuse, la présentation impeccable, et l'équipe réactive et fiable. Je recommande à 100 %. »
+            </blockquote>
+            <div class="w-12 h-px bg-nocta-black/20 my-6"></div>
+            <figcaption>
+              <p class="font-sans text-sm font-medium text-nocta-black">Valérie Dugard</p>
+              <p class="font-sans text-xs font-light text-nocta-grey mt-1">Executive Assistant to CEO, Biologique Recherche</p>
+            </figcaption>
+          </figure>
+
+          <figure class="reveal flex flex-col" style="transition-delay: 0.3s">
+            <blockquote class="font-serif text-base lg:text-lg font-light italic text-nocta-black/80 leading-relaxed">
+              « Je recommande à 100 % NOCTA Catering. J'ai fait appel à eux pour un client dans le luxe et le résultat était plus que parfait. Hugo et Enzo sont à l'écoute, ils ont toujours le sourire, et ils sont très discrets et professionnels. »
+            </blockquote>
+            <div class="w-12 h-px bg-nocta-black/20 my-6"></div>
+            <figcaption>
+              <p class="font-sans text-sm font-medium text-nocta-black">Clémence Donazzan</p>
+              <p class="font-sans text-xs font-light text-nocta-grey mt-1">Freelance événementielle</p>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
 
     <!-- Journal -->
     <section class="bg-nocta-black py-24 lg:py-32">
