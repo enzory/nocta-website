@@ -103,7 +103,7 @@ topics:
     angle: "tertiaire, sièges corporate, événements internes"
     type: commune-92
     priority: 9
-    status: pending
+    status: published
 
   - slug: traiteur-boulogne-billancourt
     zone: "Boulogne-Billancourt"
