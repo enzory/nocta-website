@@ -1,6 +1,6 @@
 ---
 title: "Traiteur Courbevoie La Défense — NOCTA Catering"
-description: "Traiteur haut de gamme à Courbevoie et La Défense : plateaux-repas, cocktails corporate et galas pour directions et grands comptes."
+description: "Traiteur événementiel à Courbevoie et La Défense : plateaux-repas, cocktails corporate et galas pour directions et grands comptes."
 zone: "Courbevoie / La Défense"
 type: "commune-92"
 publishDate: "2026-04-22"
@@ -23,13 +23,13 @@ Les clients que nous servons dans ce secteur sont principalement des entreprises
 
 **NOCTA Corporate** est l'offre la plus sollicitée sur cette zone. Elle couvre trois configurations distinctes :
 
-- **Plateaux-repas haut de gamme** (à partir de 25 €/pers.) : destinés aux réunions de direction, aux formations executives ou aux équipes en séminaire résidentiel. La composition est calibrée pour être prise debout ou assis en salle de réunion, sans matériel de restauration lourd. Les produits sont sélectionnés selon les disponibilités du marché et la saison.
+- **Plateaux-repas soignés** (à partir de 25 €/pers.) : destinés aux réunions de direction, aux formations executives ou aux équipes en séminaire résidentiel. La composition est calibrée pour être prise debout ou assis en salle de réunion, sans matériel de restauration lourd. Les produits sont sélectionnés selon les disponibilités du marché et la saison.
 
 - **Cocktails dinatoires** (jusqu'à 70 €/pers.) : pour les soirées de lancement, les clôtures de projet ou les accueils partenaires. Le format cocktail reste le plus adapté aux plateaux ouverts et aux terrasses des tours, où la circulation des invités est un paramètre à intégrer dès la conception du service.
 
 - **Galas et dîners de gala corporate** : lorsqu'une direction souhaite organiser une soirée à table pour des partenaires stratégiques ou des clients grands comptes, NOCTA Corporate propose un service structuré en plusieurs séquences — apéritif, service à table, accord mets et vins — avec une équipe dédiée. Hugo Vinatier, formé en cuisine étoilée, assure la direction culinaire. Enzo Ryon prend en charge la sélection des vins et la relation avec les interlocuteurs côté client.
 
-**NOCTA Signature** répond aux demandes sur-mesure : format atypique, contraintes de lieu particulières, scénographie de la séquence culinaire intégrée à un programme événementiel plus large. Cette offre est construite sur devis, après un échange préalable avec l'équipe.
+**NOCTA Signature** répond aux demandes spécifiques : format atypique, contraintes de lieu particulières, scénographie de la séquence culinaire intégrée à un programme événementiel plus large. Cette offre est construite sur devis, après un échange préalable avec l'équipe.
 
 ---
 

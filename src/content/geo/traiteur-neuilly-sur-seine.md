@@ -1,6 +1,6 @@
 ---
 title: "Traiteur Neuilly-sur-Seine — NOCTA Catering"
-description: "Traiteur haut de gamme à Neuilly-sur-Seine : dîners privés, cocktails corporate, événements sur-mesure. NOCTA intervient dans les Hauts-de-Seine."
+description: "Traiteur événementiel à Neuilly-sur-Seine : dîners privés, cocktails corporate, événements adaptés à chaque format. NOCTA intervient dans les Hauts-de-Seine."
 zone: "Neuilly-sur-Seine"
 type: "commune-92"
 publishDate: "2026-04-20"
@@ -9,7 +9,7 @@ schemaType: "LocalBusiness"
 ctaType: "private"
 ---
 
-## Traiteur à Neuilly-sur-Seine : prestations haut de gamme pour résidences et sièges sociaux
+## Traiteur à Neuilly-sur-Seine : prestations soignées pour résidences et sièges sociaux
 
 Neuilly-sur-Seine concentre un tissu particulier : des résidences privées exigeantes, des sièges sociaux de premier plan et une clientèle habituée à des standards élevés. C'est précisément dans ce type d'environnement que NOCTA Catering intervient — sans esbroufe, avec une cuisine pilotée par Hugo Vinatier, formé en cuisine étoilée, et une direction de salle assurée par Enzo Ryon, sommelier.
 
@@ -25,7 +25,7 @@ Les demandes que nous recevons depuis cette commune suivent deux grandes logique
 
 **NOCTA Corporate** couvre les besoins événementiels des entreprises installées à Neuilly-sur-Seine : cocktail de fin d'année, comité de direction, déjeuner de présentation, gala interne. Le format varie selon le volume et le contexte — plateau-repas structuré, cocktail debout, dîner assis — avec une fourchette de 25 à 70 € par personne selon le niveau de prestation choisi. Enzo Ryon prend en charge la coordination directe avec les équipes internes ou les assistantes de direction, ce qui simplifie le pilotage côté client.
 
-**NOCTA Signature** est réservé aux projets qui sortent du cadre standard : réception sur-mesure avec scénographie culinaire particulière, événement de représentation pour un cercle restreint d'invités, ou format hybride entre dîner privé et soirée professionnelle. Ce format fait l'objet d'un devis spécifique après échange avec l'équipe.
+**NOCTA Signature** est réservé aux projets qui sortent du cadre standard : réception personnalisée avec scénographie culinaire particulière, événement de représentation pour un cercle restreint d'invités, ou format hybride entre dîner privé et soirée professionnelle. Ce format fait l'objet d'un devis spécifique après échange avec l'équipe.
 
 ---
 

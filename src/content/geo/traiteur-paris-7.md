@@ -13,7 +13,7 @@ ctaType: "private"
 
 Le 7e arrondissement concentre quelques-uns des adresses résidentielles et institutionnelles les plus exigeantes de Paris. Hôtels particuliers du Faubourg Saint-Germain, appartements de standing à proximité des Invalides, bureaux et représentations diplomatiques autour de la rue de Grenelle : les lieux y imposent un niveau d'exécution que peu de prestataires sont en mesure de tenir.
 
-NOCTA Catering intervient dans le 7e pour des dîners privés en appartement ou en hôtel particulier, des cocktails d'entreprise, des comités de direction et des réceptions sur-mesure. Notre équipe — Hugo Vinatier en cuisine, formé en cuisine étoilée, et Enzo Ryon à la direction et à la sommellerie — travaille directement avec le client pour adapter chaque prestation au lieu, au format et aux convives.
+NOCTA Catering intervient dans le 7e pour des dîners privés en appartement ou en hôtel particulier, des cocktails d'entreprise, des comités de direction et des réceptions adaptées à chaque format. Notre équipe — Hugo Vinatier en cuisine, formé en cuisine étoilée, et Enzo Ryon à la direction et à la sommellerie — travaille directement avec le client pour adapter chaque prestation au lieu, au format et aux convives.
 
 La clientèle du 7e est souvent habituée à un niveau de service élevé. C'est précisément ce niveau que nous visons : discrétion, rigueur d'exécution, cuisine construite à partir de produits sourcés avec soin, accord mets et vins pensé pour chaque table.
 
@@ -23,7 +23,7 @@ La clientèle du 7e est souvent habituée à un niveau de service élevé. C'est
 
 **NOCTA Corporate** couvre les besoins des entreprises et organisations installées dans le 7e : cocktails dinatoires après un conseil d'administration, déjeuners de direction, plateaux-repas pour des séances de travail, ou galas dans des espaces événementiels loués pour l'occasion. Les tarifs s'étendent de 25 à 70 € par personne selon le format retenu. Ce format est régulièrement sollicité par des directions générales, des cabinets de conseil et des structures à forte exigence protocolaire — profils comparables à ceux que nous servons par ailleurs pour des clients comme Colombus Consulting ou Jus Mundi.
 
-**NOCTA Signature** est proposé sur devis pour les événements qui ne rentrent pas dans un format standard : réception dans un hôtel particulier avec contraintes architecturales spécifiques, dîner de prestige pour une délégation, événement combinant plusieurs séquences sur une soirée. Ce format permet de construire une proposition entièrement sur-mesure, depuis la conception du menu jusqu'à l'organisation du service.
+**NOCTA Signature** est proposé sur devis pour les événements qui ne rentrent pas dans un format standard : réception dans un hôtel particulier avec contraintes architecturales spécifiques, dîner officiel pour une délégation, événement combinant plusieurs séquences sur une soirée. Ce format permet de construire une proposition entièrement personnalisée, depuis la conception du menu jusqu'à l'organisation du service.
 
 ## Logistique et contraintes spécifiques au 7e
 
