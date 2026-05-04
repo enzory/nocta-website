@@ -110,7 +110,7 @@ topics:
     angle: "tertiaire, studios, événements tech"
     type: commune-92
     priority: 9
-    status: pending
+    status: published
 
   - slug: traiteur-courbevoie-la-defense
     zone: "Courbevoie / La Défense"
