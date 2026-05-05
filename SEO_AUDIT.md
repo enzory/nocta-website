@@ -145,7 +145,70 @@ L'export CSV GSC a remonté 9 URLs en "Introuvable". Croisé avec les redirects 
 
 Total après ce sprint : **12 redirects 301 actifs** dans `vercel.json` (10 historiques + 2 GSC).
 
-### 3.4 Liens `.md` cassés trouvés et corrigés
+### 3.4 Pages orphelines supprimées (410 Gone)
+
+2 URLs legacy n'ont plus de remplacement pertinent. Plutôt que de les laisser en 404 (signal "page non trouvée, peut revenir") ou les rediriger vers une page non liée (signal "page déplacée"), on les déclare en **HTTP 410 Gone** = "page définitivement disparue, désindexe-la".
+
+| URL | Avant | Après |
+|---|---|---|
+| `/events/diner-prive-saint-tropez` | 301 → `/prestations/private` (peu pertinent) | **410 Gone** |
+| `/mention-legal` | 301 → `/mentions-legales` (typo legacy) | **410 Gone** |
+
+Implémentation :
+- Vercel ne supporte pas le 410 dans `redirects`/`rewrites`/`headers` natifs (statuts 200/30x uniquement). La syntaxe legacy `routes` aurait permis mais elle est **incompatible** avec `redirects`/`rewrites` modernes — l'ajouter aurait cassé les 11 autres redirects.
+- Solution : **Vercel Serverless Function** `api/gone.js` qui retourne 410 + `X-Robots-Tag: noindex` + page HTML cohérente avec la charte cream/charbon.
+- `vercel.json:rewrites[]` map les 2 chemins vers `/api/gone`. Vercel auto-discovre `api/*.js` même pour les projets Astro statiques (pas d'adapter requis, pas d'`output: 'hybrid'`).
+
+⚠️ **Test local impossible** : les API Functions Vercel ne tournent pas avec `astro preview`. Test final = preview Vercel après push :
+```bash
+curl -I https://<preview-url>/mention-legal  # doit renvoyer HTTP/2 410
+curl -I https://<preview-url>/events/diner-prive-saint-tropez  # idem
+```
+
+### 3.5 Audit du maillage interne des pages GEO
+
+Question : pourquoi 6 pages GEO en "Détectée non indexée" GSC + 4 manquantes du tableau ?
+
+Sweep maillage (grep récursif `traiteur-<slug>` dans `src/`) → **0 lien codé en dur** sur toutes les 10 pages. Ce qui est attendu : le maillage est entièrement dynamique :
+- `src/pages/traiteur/index.astro` (hub) liste les 10 via `getCollection('geo')`
+- `src/pages/traiteur/[slug].astro` cross-linke chaque page vers les 2 plus récentes des 9 autres ("Autres zones desservies", Sprint 5)
+- `src/pages/journal/[slug].astro` cross-linke entre articles Journal (pas vers GEO — séparation éditoriale Sprint 5)
+
+Vérification post-build :
+- `dist/traiteur/index.html` : 10 liens `/traiteur/traiteur-*` ✓
+- `dist/sitemap-0.xml` : 10 entries `<loc>` GEO ✓
+- Toutes les 10 pages ont le même nombre de "in-links internes" (égalité de traitement)
+
+**Conclusion** : le maillage interne **n'est pas la cause** du différentiel d'indexation. Croisé avec les `publishDate` :
+
+| Page GEO | publishDate | Statut GSC | Diagnostic |
+|---|---|---|---|
+| paris-16 | 17 avril | Détectée non indexée | Crawled, jugé thin/faible qualité |
+| paris-7 | 18 avril | Détectée non indexée | Idem |
+| paris-8 | 18 avril | Détectée non indexée | Idem |
+| neuilly-sur-seine | 20 avril | Détectée non indexée | Idem |
+| courbevoie-la-defense | 22 avril | Détectée non indexée | Idem |
+| paris-6 | 24 avril | Détectée non indexée | Idem |
+| **paris-17** | **27 avril** | **Manquante** | Trop récente, pas encore crawlée |
+| **paris-1** | **29 avril** | **Manquante** | Idem |
+| **levallois-perret** | **1er mai** | **Manquante** | Idem |
+| **boulogne-billancourt** | **4 mai** | **Manquante** | Idem (publiée hier) |
+
+**Diagnostic clair** : les 4 manquantes sont les 4 plus récentes (≤ 8 jours). Pas un problème — délai normal de file de découverte Googlebot.
+
+Pour les 6 "Détectée non indexée" : Google les voit (le sitemap les liste, le hub les expose) mais juge la qualité insuffisante pour les indexer. Causes probables :
+- Contenu trop similaire entre pages (boilerplate cuisine étoilée + sommellerie répété)
+- Densité de mots-clés correcte mais peu de signaux de fraîcheur / originalité
+- Faible autorité du domaine pour le moment (peu de backlinks)
+
+**Action sprint B** (hors scope ici) : refonte du hub `/traiteur` (124 mots actuellement, thin lui-même) + différenciation éditoriale entre pages GEO (anecdotes locales, références client par zone si possible, photos zone).
+
+**Action immédiate Enzo** :
+1. Resoumettre le sitemap dans GSC pour pousser le crawl des 4 récentes
+2. Utiliser GSC URL Inspection → "Demander une indexation" sur les 4 pages récentes
+3. Pour les 6 "Détectée non indexée", attendre la sortie du sprint B, puis re-demander indexation
+
+### 3.6 Liens `.md` cassés trouvés et corrigés
 
 **Aucun lien `.md` cassé trouvé dans `src/`.** Sweep effectué :
 
