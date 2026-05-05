@@ -17,6 +17,9 @@
     { "source": "/blog", "destination": "/journal", "permanent": true },
     { "source": "/blog/:slug*", "destination": "/journal/:slug*", "permanent": true },
     { "source": "/journal/traiteur-la-defense.md", "destination": "/journal/traiteur-la-defense", "permanent": true },
-    { "source": "/mention-legal", "destination": "/mentions-legales", "permanent": true }
+    { "source": "/mention-legal", "destination": "/mentions-legales", "permanent": true },
+
+    { "source": "/a-propos", "destination": "/maison", "permanent": true },
+    { "source": "/events/biologique-recherche-livraison-dejeuner-pause-gourmande", "destination": "/journal/buffet-entreprise-paris-livraison-hebdomadaire", "permanent": true }
   ]
 }

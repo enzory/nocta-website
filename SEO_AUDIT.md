@@ -127,18 +127,43 @@ Avant cette branche, [`astro.config.mjs`](astro.config.mjs) contenait 9 entrées
 
 Très probablement 2 des 9 ci-dessus que Google avait flag à cause du meta-refresh. **Le fix devrait les résoudre automatiquement après recrawl** (1-3 semaines).
 
-### 3.3 Action requise — 9 mappings 404 à compléter
+### 3.3 9 × 404 GSC mappés (post-export CSV)
 
-Sans le CSV GSC, impossible de connaître les 9 URLs en 404. Modèle prêt à recevoir tes mappings :
+L'export CSV GSC a remonté 9 URLs en "Introuvable". Croisé avec les redirects historiques déjà migrés depuis `astro.config.mjs`, on a **7 doublons** (déjà couverts) et **2 vraiment nouveaux** :
 
-```json
-{ "source": "/:slug-cassé", "destination": "/:slug-existant", "permanent": true }
+| Source 404 GSC | Destination | Statut | Justification |
+|---|---|---|---|
+| `/events/biologique-recherche-livraison-dejeuner-pause-gourmande` | `/journal/buffet-entreprise-paris-livraison-hebdomadaire` | ✅ ajouté | Ancienne page client → article qui couvre la même collaboration (Biologique Recherche, livraisons hebdomadaires) |
+| `/a-propos` | `/maison` | ✅ ajouté | Renommage slug : "À propos" → "Notre Maison" |
+| `/nocta-corporate` | `/prestations/corporate` | ✓ déjà L. 14 | Refonte structure (route à plat → sous-route prestations) |
+| `/nocta-signature` | `/prestations/signature` | ✓ déjà L. 13 | Idem |
+| `/nocta-private` | `/prestations/private` | ✓ déjà L. 15 | Idem |
+| `/events` | `/prestations` | ✓ déjà L. 11 | "Événements" merged sous "Prestations" |
+| `/journal/traiteur-la-defense.md` | `/journal/traiteur-la-defense` | ✓ déjà L. 19 | Index Google historique — extension `.md` exposée à une époque |
+| `/demande-de-devis` | `/contact` | ✓ déjà L. 16 | Renommage slug |
+| `/blog` | `/journal` | ✓ déjà L. 17 | Renommage slug |
+
+Total après ce sprint : **12 redirects 301 actifs** dans `vercel.json` (10 historiques + 2 GSC).
+
+### 3.4 Liens `.md` cassés trouvés et corrigés
+
+**Aucun lien `.md` cassé trouvé dans `src/`.** Sweep effectué :
+
+```bash
+grep -rn "href=.*\.md" src/ --include="*.{astro,mdx,md,ts,tsx,jsx,js}"
+grep -rn "\.md[\"'\\)]" src/
+grep -rn "\\]\\([^)]*\\.md" src/content/
 ```
 
-**Action Enzo** :
-1. GSC → Pages → Onglet "Introuvable (404)" → Exporter CSV
-2. Pour chaque URL 404, m'indiquer la destination la plus pertinente (ou `null` si pas de remplacement → on peut envisager un `noindex` ou une 410 Gone selon le cas)
-3. Je les ajoute à `vercel.json` dans un commit suivant
+Résultats :
+- `src/pages/journal.astro:39` — `href={\`/journal/${article.id.replace(/\.md$/, '')}\`}` → **protection défensive** (suppression du suffixe avant href)
+- `src/pages/journal/[slug].astro:89` — idem dans le bloc related-articles
+- `src/pages/traiteur/[slug].astro:6` — commentaire JSDoc mentionnant `src/content/geo/*.md` (pas un href)
+- `astro.config.mjs:12` — commentaire mentionnant `SEO_AUDIT.md` (le rapport lui-même)
+
+**Conclusion** : pas de bug interne. Le 404 sur `/journal/traiteur-la-defense.md` vient de l'index Google historique (URL exposée avant migration des content collections vers les slug propres). Le redirect L. 19 le résout. Resoumettre le sitemap dans GSC accélérera le re-crawl.
+
+**Sitemap généré** : `dist/sitemap-0.xml` contient **0** URL avec extension `.md` (vérifié `grep -c '\.md<' dist/sitemap-0.xml` → 0). ✓
 
 ---
 
@@ -211,7 +236,7 @@ Aucun changement sur le contenu éditorial, le layout, le formulaire Contact, GT
 3. **Décision www vs non-www** : valider la reco www (status quo) ou demander la bascule non-www.
 
 ### À fournir (pour fermer le ticket)
-4. **Export CSV GSC des 9 URLs 404** : à mapper dans `vercel.json`.
+4. ~~Export CSV GSC des 9 URLs 404~~ ✅ **Fait** : 9 mappings consolidés dans `vercel.json` (7 doublons des redirects historiques, 2 nouveaux ajoutés). Cf. §3.3.
 5. **Export CSV GSC des 2 "Explorée non indexée"** : valider mon hypothèse `/contact` + `/traiteur` ou identifier les vraies pages.
 
 ### Optionnelles (sprints suivants)
