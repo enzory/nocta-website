@@ -9,7 +9,6 @@
     },
 
     { "source": "/events", "destination": "/prestations", "permanent": true },
-    { "source": "/events/diner-prive-saint-tropez", "destination": "/prestations/private", "permanent": true },
     { "source": "/nocta-signature", "destination": "/prestations/signature", "permanent": true },
     { "source": "/nocta-corporate", "destination": "/prestations/corporate", "permanent": true },
     { "source": "/nocta-private", "destination": "/prestations/private", "permanent": true },
@@ -17,9 +16,12 @@
     { "source": "/blog", "destination": "/journal", "permanent": true },
     { "source": "/blog/:slug*", "destination": "/journal/:slug*", "permanent": true },
     { "source": "/journal/traiteur-la-defense.md", "destination": "/journal/traiteur-la-defense", "permanent": true },
-    { "source": "/mention-legal", "destination": "/mentions-legales", "permanent": true },
 
     { "source": "/a-propos", "destination": "/maison", "permanent": true },
     { "source": "/events/biologique-recherche-livraison-dejeuner-pause-gourmande", "destination": "/journal/buffet-entreprise-paris-livraison-hebdomadaire", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/events/diner-prive-saint-tropez", "destination": "/api/gone" },
+    { "source": "/mention-legal", "destination": "/api/gone" }
   ]
 }
