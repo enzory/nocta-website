@@ -24,6 +24,18 @@ const geo = defineCollection({
     readingTime: z.string().optional(),
     schemaType: z.enum(['LocalBusiness', 'Service']).default('LocalBusiness'),
     ctaType: z.enum(['private', 'corporate']).optional(),
+    // Sprint B — pages GEO refondues : champs optionnels rétro-compatibles
+    h1: z.string().max(80).optional(),
+    streetAddress: z.string().optional(),
+    areaServed: z.array(z.string()).optional(),
+    faq: z
+      .array(
+        z.object({
+          question: z.string(),
+          answer: z.string(),
+        }),
+      )
+      .optional(),
   }),
 });
 
