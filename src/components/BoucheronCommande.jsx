@@ -339,7 +339,7 @@ export default function BoucheronCommande() {
         body: JSON.stringify({
           _subject: `Commande Boucheron ${orderNum} — ${date || "Sans date"}`,
           message: body,
-          _replyto: "myriana@boucheron.com",
+          _replyto: email,
           _cc: email,
         }),
       });
