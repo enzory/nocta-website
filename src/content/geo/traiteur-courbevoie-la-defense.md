@@ -1,64 +1,97 @@
 ---
-title: "Traiteur Courbevoie La Défense — NOCTA Catering"
-description: "Traiteur événementiel à Courbevoie et La Défense : plateaux-repas, cocktails corporate et galas pour directions et grands comptes."
+title: "Traiteur Courbevoie & La Défense — NOCTA, traiteur événementiel local"
+description: "Traiteur événementiel à Courbevoie et La Défense, basé sur place. Cocktails, déjeuners, dîners pour entreprises et particuliers. À partir de 10 personnes."
+h1: "Traiteur à Courbevoie et La Défense"
 zone: "Courbevoie / La Défense"
 type: "commune-92"
 publishDate: "2026-04-22"
 readingTime: "4 min"
 schemaType: "LocalBusiness"
 ctaType: "corporate"
+streetAddress: "2B Rue Edith Cavell"
+areaServed:
+  - "Courbevoie"
+  - "La Défense"
+  - "Puteaux"
+  - "Neuilly-sur-Seine"
+  - "Levallois-Perret"
+faq:
+  - question: "Vous intervenez à La Défense même ?"
+    answer: "Oui. Notre siège est à Courbevoie, nous nous déplaçons quotidiennement sur le quartier d'affaires de La Défense et les communes voisines."
+  - question: "Quel est le délai minimum de prévenance ?"
+    answer: "Nous prenons des commandes jusqu'à 48 h avant la prestation pour les formats simples (plateaux-repas, cocktail léger), une semaine pour les dîners servis et les événements à plus de 50 personnes."
+  - question: "Peut-on faire un déjeuner pour une équipe de 15 personnes en bureau ?"
+    answer: "Oui, c'est l'un de nos formats récurrents. Nous arrivons une heure avant l'horaire de service, mettons en place, et débarrassons après le repas."
+  - question: "Que faire si nos bureaux n'ont pas de cuisine équipée ?"
+    answer: "Aucun problème. Nous arrivons avec nos plaques de cuisson et notre matériel. Nous avons besoin uniquement d'un point d'eau et d'une zone de mise en place."
+  - question: "Acceptez-vous les protocoles d'accès sécurisé (badges, contrôle d'identité) ?"
+    answer: "Oui. Nous travaillons régulièrement dans des sièges sociaux où l'accès est filtré et nous nous adaptons à votre procédure de sécurité."
+  - question: "Combien coûte un cocktail dînatoire pour 30 personnes à La Défense ?"
+    answer: "Le tarif dépend du nombre de pièces par convive, du niveau de prestation et de la durée du service. Comptez à partir de quelques dizaines d'euros par personne pour un format léger, davantage pour un cocktail signature avec animation. Devis sur demande."
 ---
 
-## Traiteur corporate à Courbevoie et La Défense
+NOCTA est un traiteur événementiel installé à Courbevoie. Cette implantation locale nous permet d'intervenir avec réactivité sur le quartier d'affaires de La Défense, à Courbevoie même, et dans les communes voisines de l'ouest parisien.
 
-Courbevoie et La Défense concentrent une densité de sièges sociaux, de directions générales et de fonctions support sans équivalent en Île-de-France. Les occasions de restauration collective et de réception y sont fréquentes : comités de direction, accueil de délégations étrangères, cocktails de clôture de séminaire, déjeuners de travail pour équipes dirigeantes.
+Cocktails dînatoires, déjeuners d'affaires, dîners de comité de direction, plateaux-repas premium : nous adaptons chaque prestation à votre lieu, votre budget et votre contrainte horaire, à partir de 10 personnes.
 
-NOCTA Catering est basé à Courbevoie. Cette implantation n'est pas anodine : elle permet d'intervenir sur la zone avec des délais courts, une bonne connaissance des contraintes d'accès aux tours et aux espaces de réception du quartier d'affaires, et une logistique rodée pour les livraisons en flux tendu.
+## Pour quels événements ?
 
-Les clients que nous servons dans ce secteur sont principalement des entreprises du CAC 40, des cabinets de conseil, des directions de communication et des équipes RH qui organisent des événements récurrents ou ponctuels à fort enjeu de représentation.
+Sur Courbevoie et La Défense, trois formats reviennent le plus souvent :
 
----
+**Le déjeuner ou cocktail d'équipe en bureau** — entre 10 et 50 personnes, à intégrer dans la journée de travail sans la perturber. Mise en place rapide, vaisselle fournie, débarrassage discret.
 
-## Formats adaptés au contexte de La Défense
+**Le dîner de comité de direction ou de closing** — format restreint (8 à 20 couverts), service à table assuré par un chef de salle, vins choisis par notre sommelier.
 
-**NOCTA Corporate** est l'offre la plus sollicitée sur cette zone. Elle couvre trois configurations distinctes :
+**L'événement client ou interne en plus grand format** — jusqu'à 150 personnes, en bureaux, en espace privatisé ou en lieu événementiel. Cocktail dînatoire ou buffet, équipe de service dimensionnée.
 
-- **Plateaux-repas soignés** (à partir de 25 €/pers.) : destinés aux réunions de direction, aux formations executives ou aux équipes en séminaire résidentiel. La composition est calibrée pour être prise debout ou assis en salle de réunion, sans matériel de restauration lourd. Les produits sont sélectionnés selon les disponibilités du marché et la saison.
+## Comment nous travaillons
 
-- **Cocktails dinatoires** (jusqu'à 70 €/pers.) : pour les soirées de lancement, les clôtures de projet ou les accueils partenaires. Le format cocktail reste le plus adapté aux plateaux ouverts et aux terrasses des tours, où la circulation des invités est un paramètre à intégrer dès la conception du service.
+**Nous nous adaptons à votre lieu.** Nous arrivons avec ce qu'il faut pour cuisiner et servir : plaques de cuisson, matériel, vaisselle si la prestation le demande. Côté lieu, un point d'eau et une zone de mise en place suffisent. Pour le reste — espace réfrigéré, accès, contraintes de circulation — nous trouvons toujours une solution avec vous en amont.
 
-- **Galas et dîners de gala corporate** : lorsqu'une direction souhaite organiser une soirée à table pour des partenaires stratégiques ou des clients grands comptes, NOCTA Corporate propose un service structuré en plusieurs séquences — apéritif, service à table, accord mets et vins — avec une équipe dédiée. Hugo Vinatier, formé en cuisine étoilée, assure la direction culinaire. Enzo Ryon prend en charge la sélection des vins et la relation avec les interlocuteurs côté client.
+**Pour les sites à accès filtré**, nous prenons en compte votre procédure interne : badges visiteurs, dépôt d'identité, créneaux de livraison imposés, accès par quais techniques. Un échange en amont permet de tout caler.
 
-**NOCTA Signature** répond aux demandes spécifiques : format atypique, contraintes de lieu particulières, scénographie de la séquence culinaire intégrée à un programme événementiel plus large. Cette offre est construite sur devis, après un échange préalable avec l'équipe.
+**Notre présence sur place dépend du format choisi :**
 
----
+- **Livraison de plateaux-repas, bouchées ou buffet sans service** — nous livrons et installons, vous gérez sur place. Nous récupérons notre matériel le jour même ou le lendemain.
+- **Cocktail dînatoire avec service** — un membre de l'équipe est présent pendant toute la durée du service, du dressage au débarrassage.
+- **Dîner privé ou repas servi à table** — équipe complète sur place : chef, service, sommellerie selon votre demande.
 
-## Spécificités logistiques à La Défense et Courbevoie
+## Pourquoi un traiteur installé à Courbevoie change quelque chose
 
-Le quartier de La Défense impose des contraintes que tout prestataire extérieur découvre souvent au dernier moment. NOCTA les connaît.
+Pour une opération à La Défense ou dans les communes proches (Neuilly, Levallois, Puteaux, Suresnes), notre implantation à Courbevoie a trois conséquences pratiques :
 
-**Accès aux tours** : la majorité des immeubles de grande hauteur du quartier d'affaires imposent une déclaration préalable des prestataires, un passage par un accès de service distinct de l'entrée principale, et parfois une habilitation sécurité pour les véhicules entrant en sous-sol. Ces démarches doivent être anticipées plusieurs jours avant la prestation.
+1. **Un repérage de site possible la veille ou le matin même** sans alourdir le devis.
+2. **Une fenêtre de livraison plus précise** sur les courts trajets locaux.
+3. **Une équipe disponible pour les ajustements de dernière minute** — un invité supplémentaire, un changement d'horaire, une demande spéciale.
 
-**Gabarit des véhicules** : les quais de livraison des tours sont souvent soumis à des restrictions de hauteur et de tonnage. NOCTA adapte le choix des véhicules en fonction du site déclaré par le client lors de la prise de brief.
+## Tarifs et conditions
 
-**Espaces de réception dans les tours** : les plateaux réaménagés en espace événementiel n'ont pas toujours de cuisine équipée. NOCTA travaille en cuisine froide ou en configuration de finition sur place, selon ce que permet le site. Il est important de préciser en amont la nature des équipements disponibles (électricité, plan de travail, eau courante).
+Nos prestations démarrent à **500 € minimum de commande**. À partir de **10 personnes**, nous construisons un menu et un service sur mesure. Les tarifs varient selon le format (plateau-repas, cocktail, dîner servi), le niveau de prestation, et le nombre de convives. Chaque devis est établi après un échange pour comprendre votre contexte.
 
-**Stationnement et rotation des livraisons** : le stationnement en surface à La Défense est contraint. Pour les prestations de grande ampleur, un repérage préalable du site est systématiquement proposé.
+[Demander un devis pour Courbevoie ou La Défense](/contact)
 
-Pour les sites localisés dans Courbevoie hors dalle — immeubles de bureaux du bord de Seine, espaces du quartier Charras, sites privés avec cour ou parking — les contraintes sont généralement plus souples, mais les mêmes informations sont recueillies lors du brief initial.
+## Questions fréquentes
 
----
+### Vous intervenez à La Défense même ?
 
-## Pourquoi confier votre événement corporate à NOCTA
+Oui. Notre siège est à Courbevoie, nous nous déplaçons quotidiennement sur le quartier d'affaires de La Défense et les communes voisines.
 
-NOCTA a été fondé en avril 2025 par deux associés aux compétences complémentaires : Hugo Vinatier assure la direction culinaire avec une formation acquise en cuisine étoilée, et Enzo Ryon prend en charge la sommellerie, la relation client et la communication. Cette organisation à deux têtes permet de ne pas dissocier la qualité de l'assiette de la qualité du service et du conseil en vins.
+### Quel est le délai minimum de prévenance ?
 
-L'entreprise travaille déjà avec des organisations exigeantes sur le plan protocolaire — Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting, Jus Mundi — ce qui signifie que nos équipes sont habituées à opérer dans des contextes où la discrétion, la ponctualité et la présentation sont des critères non négociables.
+Nous prenons des commandes jusqu'à 48 h avant la prestation pour les formats simples (plateaux-repas, cocktail léger), une semaine pour les dîners servis et les événements à plus de 50 personnes.
 
-Sur un marché comme La Défense, où les prestataires traiteur sont nombreux, la différence ne se joue pas sur la promesse mais sur l'exécution : respect des horaires, qualité constante des produits, interlocuteur identifié tout au long de la prestation. Ce sont ces points que nous mettons en avant, et que nos clients peuvent vérifier dès la première prestation.
+### Peut-on faire un déjeuner pour une équipe de 15 personnes en bureau ?
 
----
+Oui, c'est l'un de nos formats récurrents. Nous arrivons une heure avant l'horaire de service, mettons en place, et débarrassons après le repas.
 
-## Demande de devis
+### Que faire si nos bureaux n'ont pas de cuisine équipée ?
 
-Pour tout événement à Courbevoie, La Défense ou dans les Hauts-de-Seine, transmettez-nous votre demande via la page [contact](/contact). Précisez le format souhaité, la date, le nombre de convives et, si vous le savez, les contraintes d'accès au site. Nous revenons vers vous sous 24 heures ouvrées.
+Aucun problème. Nous arrivons avec nos plaques de cuisson et notre matériel. Nous avons besoin uniquement d'un point d'eau et d'une zone de mise en place.
+
+### Acceptez-vous les protocoles d'accès sécurisé (badges, contrôle d'identité) ?
+
+Oui. Nous travaillons régulièrement dans des sièges sociaux où l'accès est filtré et nous nous adaptons à votre procédure de sécurité.
+
+### Combien coûte un cocktail dînatoire pour 30 personnes à La Défense ?
+
+Le tarif dépend du nombre de pièces par convive, du niveau de prestation et de la durée du service. Comptez à partir de quelques dizaines d'euros par personne pour un format léger, davantage pour un cocktail signature avec animation. Devis sur demande.

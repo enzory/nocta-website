@@ -59,6 +59,19 @@ const ctaConfig = {
   },
 }[ctaType];
 
+// areaServed : array si fourni (Sprint B), sinon fallback sur la zone
+const areaServedValue = d.areaServed?.length
+  ? d.areaServed.map((name) => ({ '@type': 'Place', name }))
+  : { '@type': 'Place', name: d.zone };
+
+const baseAddress = {
+  '@type': 'PostalAddress',
+  addressLocality: 'Courbevoie',
+  addressRegion: 'Île-de-France',
+  addressCountry: 'FR',
+  ...(d.streetAddress ? { streetAddress: d.streetAddress, postalCode: '92400' } : {}),
+};
+
 const schema =
   d.schemaType === 'LocalBusiness'
     ? {
@@ -67,18 +80,17 @@ const schema =
         name: `NOCTA Catering — ${d.zone}`,
         description: d.description,
         url: pageUrl,
-        areaServed: {
-          '@type': 'Place',
-          name: d.zone,
-        },
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Courbevoie',
-          addressRegion: 'Île-de-France',
-          addressCountry: 'FR',
-        },
+        image: `${siteUrl}/images/og-image.jpeg`,
+        areaServed: areaServedValue,
+        address: baseAddress,
         priceRange: '€€€',
         serviceType: 'Traiteur événementiel parisien',
+        servesCuisine: 'Cuisine événementielle française',
+        potentialAction: {
+          '@type': 'ReserveAction',
+          target: `${siteUrl}/contact`,
+          name: 'Demander un devis',
+        },
       }
     : {
         '@context': 'https://schema.org',
@@ -91,16 +103,34 @@ const schema =
           name: 'NOCTA Catering',
           url: siteUrl,
         },
-        areaServed: {
-          '@type': 'Place',
-          name: d.zone,
-        },
+        areaServed: areaServedValue,
       };
+
+// Sprint B — FAQPage si frontmatter `faq` présent (max chances de rich snippet)
+const faqSchema = d.faq?.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: d.faq.map((q) => ({
+        '@type': 'Question',
+        name: q.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: q.answer,
+        },
+      })),
+    }
+  : null;
+
+// H1 affiché : `h1` du frontmatter en priorité (plus court, lisible),
+// sinon `title` (servant aussi pour <title> SEO).
+const displayH1 = d.h1 ?? d.title;
 ---
 
 <Layout title={d.title} description={d.description}>
   <!-- Schema.org injecté -->
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -116,7 +146,7 @@ const schema =
   <article class="geo-article">
     <header class="geo-header">
       <p class="geo-eyebrow">Zone desservie · {d.zone}</p>
-      <h1 class="geo-title">{d.title}</h1>
+      <h1 class="geo-title">{displayH1}</h1>
       {d.readingTime && <p class="geo-reading">{d.readingTime} de lecture</p>}
     </header>
 
