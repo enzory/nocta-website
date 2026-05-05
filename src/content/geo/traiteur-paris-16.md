@@ -1,50 +1,66 @@
 ---
-title: "Traiteur Paris 16e — Dîners privés et réceptions"
-description: "NOCTA Catering à Paris 16e pour clientèle exigeante : dîners à domicile, cocktails, réceptions. Chef formé en cuisine étoilée, sommellerie."
+title: "Traiteur Paris 16e — Dîners de famille et grandes réceptions | NOCTA"
+description: "Traiteur événementiel pour le 16e arrondissement. Dîners de famille élargie, Noëls, réceptions en appartement haussmannien. Service à table et accords mets-vins."
+h1: "Traiteur à Paris 16e"
 zone: "Paris 16e arrondissement"
 type: "arrondissement"
 publishDate: "2026-04-17"
 readingTime: "4 min"
 schemaType: "LocalBusiness"
 ctaType: "private"
+streetAddress: "2B rue Edith Cavell"
+areaServed:
+  - "Paris 16e"
+  - "Boulogne-Billancourt"
+  - "Neuilly-sur-Seine"
+  - "Paris 17e"
+faq:
+  - question: "Vous intervenez pour les fêtes de fin d'année ?"
+    answer: "Oui, c'est l'une de nos périodes les plus actives. Nous accompagnons les familles pour les dîners de Noël, du Nouvel An et les grandes réceptions de fin d'année."
+  - question: "Pouvez-vous gérer un dîner de famille élargie de 30 personnes ?"
+    answer: "Oui, c'est un format récurrent dans le 16e. Service à table par une équipe dimensionnée, gestion des allergies et préférences alimentaires individuelles."
+  - question: "Comment se passe le service dans un appartement en enfilade ?"
+    answer: "Nous adaptons la configuration au lieu : mise en place sur des consoles intermédiaires si la cuisine est éloignée, équipe de service répartie selon la longueur de la table, sommelier dédié au service au verre."
+  - question: "Faites-vous des menus traditionnels (Noël, anniversaires) ?"
+    answer: "Oui. Nous travaillons aussi bien sur des menus classiques (chapon, bûche, plats de tradition) que sur des menus plus contemporains, selon votre souhait."
+  - question: "Pouvez-vous servir mes propres vins ?"
+    answer: "Oui. Si vous avez une cave, notre sommelier travaille avec vous en amont pour proposer un accord par plat. Sinon, nous proposons une sélection."
+  - question: "Combien coûte un dîner de famille pour 25 personnes dans le 16e ?"
+    answer: "Le tarif dépend du menu, du nombre de plats et du choix des vins. Pour un dîner servi à table, comptez à partir de quelques dizaines d'euros par personne hors vins. Devis sur demande."
 ---
 
-## Traiteur événementiel dans le 16e arrondissement de Paris
+NOCTA est un traiteur événementiel basé à Courbevoie. Nous accompagnons régulièrement les familles du 16e arrondissement pour leurs grandes occasions : Noëls, anniversaires marquants, célébrations qui rassemblent les générations autour d'une table.
 
-Le 16e arrondissement concentre une part significative des réceptions privées les plus exigeantes de Paris. Appartements haussmanniens de grande surface, hôtels particuliers, penthouses avec terrasses : les espaces y sont souvent généreux, et les attentes à leur hauteur. NOCTA Catering intervient dans cet arrondissement pour des dîners à domicile, des réceptions de famille et des événements d'entreprise organisés dans des lieux privés.
+Le 16e a ses codes : appartements haussmanniens en enfilade, salles à manger pensées pour recevoir à 20 ou 30, réceptions ancrées dans une tradition familiale. Notre rôle est de vous aider à recevoir comme vous le souhaitez, sans avoir à vous en occuper.
 
-Notre équipe est composée d'Enzo Ryon, qui assure la direction, la sommellerie et la relation client, et de Hugo Vinatier, chef formé en cuisine étoilée, qui prend en charge la conception des menus et l'exécution en cuisine. Nous travaillons sans sous-traitance de direction : les deux fondateurs sont présents sur chaque prestation significative.
+## Pour quels événements ?
 
-Les clients qui nous sollicitent dans le 16e sont généralement des particuliers souhaitant recevoir chez eux sans contrainte logistique, ou des directions d'entreprise qui organisent un dîner de travail dans un cadre résidentiel. Dans les deux cas, la discrétion, la précision du service et la qualité des produits sont les critères qui comptent.
+Sur le 16e, trois formats reviennent particulièrement :
 
-## Les formats NOCTA adaptés au 16e arrondissement
+**Le grand dîner de famille** — Noël, fêtes de fin d'année, anniversaire marquant. 15 à 40 couverts, service à table dans la salle à manger, plats classiques travaillés avec soin.
 
-**NOCTA Private** est l'offre la plus sollicitée dans cet arrondissement. Elle couvre les dîners à domicile et les célébrations intimistes : anniversaires, réunions de famille, dîners entre associés. À partir de 55 € par personne, elle comprend la conception du menu, l'approvisionnement, la mise en place, le service à table et le nettoyage de fin de prestation. Hugo Vinatier conçoit des menus calibrés à l'espace disponible — cuisine ouverte ou fermée, capacité du four, contraintes de plaque — et adapte les préparations en conséquence.
+**La réception élargie** — déjeuner ou dîner pour célébrer un événement (mariage, baptême, anniversaire de mariage, départ à la retraite). 40 à 100 invités, en appartement ou dans un lieu privatisé.
 
-**NOCTA Corporate** s'adresse aux entreprises qui organisent un comité de direction, un dîner client ou un cocktail dans un appartement ou un espace privé loué pour l'occasion. La fourchette de tarif va de 25 à 70 € par personne selon le format retenu — cocktail debout, dîner assis, plateau-repas structuré. Ce format est particulièrement pertinent pour des groupes de 10 à 40 personnes dans des appartements de grande surface ou des espaces événementiels privés du quartier.
+**Le dîner privé pour recevoir des amis** — format intermédiaire, plus libre dans le ton, avec le même niveau d'attention sur la qualité de la table et des vins.
 
-**NOCTA Signature** est proposé sur devis pour les événements qui nécessitent un niveau de personnalisation plus poussé : menu entièrement adapté au lieu, accord mets et vins piloté par Enzo Ryon, scénographie de table travaillée avec le client. Ce format convient aux réceptions où le repas constitue le cœur de la soirée, et non un élément secondaire.
+## Notre approche du service en appartement
 
-## Logistique et contraintes d'intervention dans le 16e
+**Nous nous adaptons aux grands appartements en enfilade.** C'est une configuration que nous connaissons bien : circulation entre les pièces, mise en place sur des consoles, gestion du service à plusieurs serveurs sur de longues distances. Nous repérons en amont quand c'est nécessaire pour caler la logistique.
 
-Intervenir dans le 16e arrondissement implique quelques contraintes logistiques prévisibles que nous prenons en compte dès la phase de préparation.
+**Pour les immeubles de standing avec règles de copropriété**, nous prenons contact en amont avec le gardien : créneaux de livraison, accès par l'escalier de service, tenue de l'équipe en circulation dans les parties communes.
 
-**Accès et stationnement.** Le stationnement à proximité immédiate des adresses de réception peut être limité, notamment dans les rues résidentielles entre Passy, La Muette et Auteuil. Nous anticipons systématiquement le chargement et déchargement du matériel en tenant compte des zones de livraison disponibles et des horaires de circulation. Pour les adresses avec gardien ou accès sécurisé, nous demandons les informations nécessaires en amont.
+**Notre présence sur place dépend du format choisi :**
 
-**Configuration des cuisines.** Les appartements haussmanniens du 16e disposent souvent de cuisines de taille modeste, conçues historiquement pour un usage domestique réduit. Hugo Vinatier adapte les préparations à ces contraintes : une partie du travail de découpe, de mise en place et de cuisson préliminaire est effectuée hors site, ce qui permet de maintenir un niveau de finition élevé sans saturer l'espace de travail disponible.
+- **Livraison de plateaux ou cocktail sans service** — installation puis récupération du matériel le lendemain.
+- **Cocktail dînatoire avec service** — équipe en tenue pendant toute la durée du service.
+- **Dîner servi à table** — équipe complète : chef en cuisine, chef de salle, serveurs, sommelier sur demande.
 
-**Ascenseurs et gabarits.** Certains immeubles anciens de l'arrondissement disposent d'ascenseurs de faible capacité. Nous dimensionnons notre équipement et nos contenants en tenant compte de ce paramètre, et prévoyons si nécessaire plusieurs rotations ou le passage par les escaliers de service.
+## Recevoir comme on l'a toujours fait, mais sans s'en occuper
 
-**Nombre d'intervenants.** Pour les dîners privés de moins de 15 personnes, nous intervenons généralement à deux. Au-delà, un renfort de service est intégré à l'organisation. Le nombre exact est précisé dans le devis.
+Recevoir à 20, 30, 40 personnes dans un grand appartement, c'est une tradition qui se transmet. Mais c'est aussi du temps, de la logistique, du stress. Notre métier est d'absorber tout cela pour que vous puissiez recevoir comme vous l'avez toujours fait — la table dressée, les vins servis, le rythme tenu — sans avoir à le gérer vous-même le jour J.
 
-## Pourquoi confier votre réception à NOCTA dans le 16e
+Nous arrivons en amont du service, nous mettons en place dans la cuisine et la salle à manger, nous servons, et nous repartons en laissant le lieu comme nous l'avons trouvé.
 
-NOCTA a été fondée en avril 2025 avec une conviction simple : les prestations traiteur en résidence ou en espace privé souffrent souvent d'un déficit de pilotage. L'interlocuteur commercial n'est pas le chef, le chef n'est pas le sommelier, et personne ne maîtrise l'ensemble de la prestation de bout en bout. Notre modèle repose sur l'inverse : Enzo Ryon et Hugo Vinatier sont les deux points de contact uniques, de la conception du menu jusqu'au départ de l'équipe en fin de soirée.
+## Tarifs et conditions
 
-La dimension sommellerie — portée directement par Enzo Ryon — est un élément distinctif concret pour les clients du 16e qui souhaitent un accord mets et vins travaillé, ou simplement un conseil de service sur les vins qu'ils ont déjà en cave. Ce n'est pas une prestation annexe : c'est une compétence intégrée à l'offre.
-
-Parmi nos clients de référence figurent Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting et Jus Mundi. Ces collaborations témoignent de notre capacité à intervenir dans des contextes où la qualité de l'accueil engage directement la réputation de ceux qui reçoivent.
-
-## Demande de devis
-
-Pour toute réception dans le 16e arrondissement — dîner privé, cocktail d'entreprise ou événement adapté à votre lieu — nous vous invitons à nous contacter via la page [/contact](/contact). Précisez la date, le nombre de convives et le format envisagé : nous revenons vers vous sous 48 heures avec une proposition chiffrée.
+Nos prestations démarrent à **500 € minimum de commande**. À partir de **10 personnes**, nous construisons un menu et un service sur mesure. Pour les dîners servis à table, comptez à partir de quelques dizaines d'euros par personne hors vins. Chaque devis est établi après un échange pour comprendre votre contexte.
