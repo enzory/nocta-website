@@ -8,6 +8,15 @@ const {
 } = Astro.props;
 
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : null;
+
+// Sprint correctif template GEO : sur les pages `/traiteur/[slug]`, on
+// laisse le template page-level injecter son propre CateringService enrichi
+// (areaServed array, streetAddress, potentialAction). Pour éviter un doublon
+// d'entité du même @type qui dilue les rich snippets Google, on n'injecte
+// PAS le CateringService global ici. Le hub `/traiteur` (sans sous-segment)
+// garde le schema global comme toutes les autres pages du site.
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const isGeoSubPage = pathSegments[0] === 'traiteur' && pathSegments.length >= 2;
 ---
 
 <!DOCTYPE html>
@@ -64,46 +73,49 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : null
     <link rel="icon" type="image/svg+xml" sizes="32x32" href="/favicon.svg" />
     <meta name="theme-color" content="#0A0A0A" />
 
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "CateringService",
-      "name": "NOCTA Catering",
-      "alternateName": "NOCTA",
-      "description": "Traiteur parisien pour entreprises et particuliers exigeants. Chef formé en cuisine étoilée, sommelier, service en salle pour dîners privés, événements corporate et réceptions en Île-de-France.",
-      "url": "https://www.noctaparis.fr",
-      "telephone": "+33650011616",
-      "email": "contact@noctaparis.fr",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "2 bis rue Edith Cavell",
-        "addressLocality": "Courbevoie",
-        "postalCode": "92400",
-        "addressRegion": "Île-de-France",
-        "addressCountry": "FR"
-      },
-      "areaServed": [
-        {"@type": "City", "name": "Paris"},
-        {"@type": "AdministrativeArea", "name": "Île-de-France"},
-        {"@type": "AdministrativeArea", "name": "La Défense"},
-        {"@type": "Country", "name": "France"}
-      ],
-      "serviceType": ["Traiteur événementiel", "Chef privé à domicile", "Catering corporate", "Sommellerie événementielle"],
-      "priceRange": "€€€",
-      "founder": [
-        {"@type": "Person", "name": "Hugo Vinatier", "jobTitle": "Chef — formé à L'Astrance, Akrame, aux côtés de Thierry Marx"},
-        {"@type": "Person", "name": "Enzo Ryon", "jobTitle": "Maître d'hôtel & Sommelier — 14 ans en haute gastronomie étoilée"}
-      ],
-      "knowsAbout": ["gastronomie française", "cuisine étoilée", "sommellerie", "service de luxe", "événementiel corporate"],
-      "sameAs": [
-        "https://www.instagram.com/nocta_catering/",
-        "https://www.linkedin.com/company/nocta-catering/",
-        "https://www.linkedin.com/in/enzo-ryon/",
-        "https://share.google/UQZWin7Uy9jOBdvML"
-      ],
-      "image": "https://www.noctaparis.fr/images/og-image.jpeg",
-      "logo": "https://www.noctaparis.fr/favicon.svg"
-    })} />
+    <!-- Schema.org JSON-LD — skip sur /traiteur/[slug] (le template page-level
+         injecte son propre CateringService enrichi : éviter le doublon d'entité). -->
+    {!isGeoSubPage && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "CateringService",
+        "name": "NOCTA Catering",
+        "alternateName": "NOCTA",
+        "description": "Traiteur parisien pour entreprises et particuliers exigeants. Chef formé en cuisine étoilée, sommelier, service en salle pour dîners privés, événements corporate et réceptions en Île-de-France.",
+        "url": "https://www.noctaparis.fr",
+        "telephone": "+33650011616",
+        "email": "contact@noctaparis.fr",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2B rue Edith Cavell",
+          "addressLocality": "Courbevoie",
+          "postalCode": "92400",
+          "addressRegion": "Île-de-France",
+          "addressCountry": "FR"
+        },
+        "areaServed": [
+          {"@type": "City", "name": "Paris"},
+          {"@type": "AdministrativeArea", "name": "Île-de-France"},
+          {"@type": "AdministrativeArea", "name": "La Défense"},
+          {"@type": "Country", "name": "France"}
+        ],
+        "serviceType": ["Traiteur événementiel", "Chef privé à domicile", "Catering corporate", "Sommellerie événementielle"],
+        "priceRange": "€€€",
+        "founder": [
+          {"@type": "Person", "name": "Hugo Vinatier", "jobTitle": "Chef — formé à L'Astrance, Akrame, aux côtés de Thierry Marx"},
+          {"@type": "Person", "name": "Enzo Ryon", "jobTitle": "Maître d'hôtel & Sommelier — 14 ans en haute gastronomie étoilée"}
+        ],
+        "knowsAbout": ["gastronomie française", "cuisine étoilée", "sommellerie", "service de luxe", "événementiel corporate"],
+        "sameAs": [
+          "https://www.instagram.com/nocta_catering/",
+          "https://www.linkedin.com/company/nocta-catering/",
+          "https://www.linkedin.com/in/enzo-ryon/",
+          "https://share.google/UQZWin7Uy9jOBdvML"
+        ],
+        "image": "https://www.noctaparis.fr/images/og-image.jpeg",
+        "logo": "https://www.noctaparis.fr/favicon.svg"
+      })} />
+    )}
 
     <title>{title}</title>
 

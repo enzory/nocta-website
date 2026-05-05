@@ -8,7 +8,7 @@ publishDate: "2026-04-22"
 readingTime: "4 min"
 schemaType: "LocalBusiness"
 ctaType: "corporate"
-streetAddress: "2B Rue Edith Cavell"
+streetAddress: "2B rue Edith Cavell"
 areaServed:
   - "Courbevoie"
   - "La Défense"

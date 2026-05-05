@@ -277,6 +277,52 @@ Hypothèse : `/contact` et probablement `/traiteur` (hub).
 
 ---
 
+## 6. Sprint correctif template GEO (post-pilote Courbevoie)
+
+Avant la déclinaison du gabarit Sprint B sur les 9 autres pages GEO, 2 points laissés en suspens ont été résolus :
+
+### 6.1 Doublon `CateringService` éliminé sur les pages GEO
+
+**Avant** : sur chaque page `/traiteur/[slug]`, 2 schemas `@type: CateringService` coexistaient :
+1. Le schema global injecté par `src/layouts/layout.astro` (NOCTA global, areaServed = 4 zones génériques)
+2. Le schema page-level injecté par `src/pages/traiteur/[slug].astro` (NOCTA local, areaServed riche, streetAddress, potentialAction)
+
+Conséquence : Google Rich Results Test ne validait que 2/3 des schemas attendus sur la pilote (FAQ + BreadcrumbList) — le `CateringService` n'était pas reconnu, probablement à cause de la collision d'entités du même `@type`.
+
+**Après** : `layout.astro` calcule `isGeoSubPage = pathSegments[0] === 'traiteur' && pathSegments.length >= 2`, puis wrap le bloc `<script>` global avec `{!isGeoSubPage && (...)}`. Résultat :
+
+| Page | Schemas après fix |
+|---|---|
+| `/` (home) | `CateringService` global (préservé) |
+| `/maison`, `/prestations/*`, `/journal/*`, `/contact` | `CateringService` global (préservé) |
+| `/traiteur` (hub) | `CateringService` global + `CollectionPage` + `BreadcrumbList` |
+| `/traiteur/traiteur-*` (10 pages GEO) | `CateringService` page-level uniquement + `BreadcrumbList` (+ `FAQPage` si refondues) |
+
+Vérifié post-build sur 5 pages représentatives : 0 doublon, tous parsent.
+
+### 6.2 Adresse harmonisée en `"2B rue Edith Cavell"`
+
+Adresse SIREN officielle : 2B rue Edith Cavell, 92400 Courbevoie. Sweep `grep -rn "2 bis\|2bis"` dans `src/` + `public/` :
+
+| Fichier:ligne | Avant | Après |
+|---|---|---|
+| `src/layouts/layout.astro:79` (JSON-LD `streetAddress`) | `"2 bis rue Edith Cavell"` | `"2B rue Edith Cavell"` |
+| `src/pages/mentions-legales.astro:36` (mentions légales texte) | `2 bis rue Edith Cavell` | `2B rue Edith Cavell` |
+| `src/content/geo/traiteur-courbevoie-la-defense.md` (frontmatter `streetAddress`) | `"2B Rue Edith Cavell"` (R majuscule, brief Sprint B) | `"2B rue Edith Cavell"` (cohérence pattern) |
+
+Pattern dominant retenu : `"2B"` + `"rue"` (r minuscule, convention française pour adresse en milieu de ligne). Vérifié `grep -r "2 bis" dist/` post-build → 0 résultat. `grep -roE "2B rue Edith Cavell" dist/` → 23 occurrences (toutes les pages avec schema CateringService incluant l'adresse).
+
+### 6.3 Validation
+
+- Build : 31 pages OK
+- Sitemap : 27 URLs (stable)
+- JSON-LD parsing : OK sur Home, Hub `/traiteur`, GEO Courbevoie (refondue), GEO Paris-8 (non refondue), Maison
+- Pages GEO non refondues (9 restantes) : continuent de fonctionner avec leur schema basique, sans doublon
+
+Le template est désormais prêt pour décliner les 9 GEO restantes (sprint B suivant).
+
+---
+
 ## Fichiers modifiés (cette branche)
 
 | Fichier | Action | Raison |
@@ -284,6 +330,9 @@ Hypothèse : `/contact` et probablement `/traiteur` (hub).
 | `vercel.json` | **Créé** | Canonisation host www + 10 redirects 301 réels |
 | `astro.config.mjs` | Nettoyé | Bloc `redirects:` retiré (déplacé vers Vercel) |
 | `SEO_AUDIT.md` | **Créé** | Ce rapport |
+| `src/layouts/layout.astro` | Modifié (sprint correctif) | Skip `CateringService` global sur `/traiteur/[slug]` + adresse `"2B"` |
+| `src/pages/mentions-legales.astro` | Modifié (sprint correctif) | Adresse `"2B"` |
+| `src/content/geo/traiteur-courbevoie-la-defense.md` | Modifié (sprint correctif) | Adresse `streetAddress` cohérente `"2B rue"` |
 
 Aucun changement sur le contenu éditorial, le layout, le formulaire Contact, GTM, ou Formspree.
 
