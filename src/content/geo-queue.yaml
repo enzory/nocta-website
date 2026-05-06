@@ -168,7 +168,7 @@ topics:
     angle: "cocktail d'entreprise, inauguration, remerciement clients"
     type: occasion
     priority: 9
-    status: pending
+    status: published
 
   - slug: traiteur-seminaire-paris
     zone: "Paris"
