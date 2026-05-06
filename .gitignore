@@ -25,3 +25,6 @@ public/images/_originals/
 
 # jetbrains setting folder
 .idea/
+
+# Obsidian
+.obsidian/
