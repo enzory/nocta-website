@@ -34,7 +34,7 @@ Justification : alignement avec JSON-LD jobTitle ("haute gastronomie étoilée")
 
 ## Cas en suspens
 
-- **Whitelist `<blockquote>` dans `seo-brand-check.mjs`** : à traiter (immédiat ou Sprint 11)
+- **Whitelist `<blockquote>` dans `seo-brand-check.mjs`** : ❌ Caduque (investigation 5 mai 2026). Le script ne scanne pas les `.astro` du site mais des drafts SEO auto-générés. La citation Dugard a été préservée à la main pendant le sweep manuel. Détails : https://www.notion.so/356825f8b3818108804bdf197d16dd5e
 - **Articles Journal** : dette de 25 `haut de gamme` + 7 `prestige` + 3 `d'exception` à traiter en Sprint 11+
 
 ## Commits
