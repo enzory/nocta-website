@@ -36,15 +36,10 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
 
 const fmt = (n: number) => n.toFixed(2).replace('.', ',') + ' €';
 
-// J+3 ouvrés : on saute samedis et dimanches.
+// J+3 calendaires : NOCTA livre 7j/7, week-end inclus.
 const computeMinDate = (): string => {
   const d = new Date();
-  let added = 0;
-  while (added < 3) {
-    d.setDate(d.getDate() + 1);
-    const day = d.getDay();
-    if (day !== 0 && day !== 6) added += 1;
-  }
+  d.setDate(d.getDate() + 3);
   return d.toISOString().slice(0, 10);
 };
 
@@ -339,6 +334,10 @@ export default function Configurateur({ menu }: { menu: MenuData }) {
                     {fmt(platLineTotal(pl))}
                   </p>
                 </div>
+                <p className="font-sans text-xs font-light text-nocta-grey/80 leading-relaxed mt-3">
+                  Pour plusieurs plateaux identiques, indiquez la quantité ici. Pour des plateaux
+                  différents, ajoutez un nouveau plateau ci-dessous.
+                </p>
               </div>
             ))}
           </div>
@@ -369,7 +368,7 @@ export default function Configurateur({ menu }: { menu: MenuData }) {
                 className={inputBase}
               />
               <p className="font-sans text-xs font-light text-nocta-grey/80 mt-2">
-                Délai minimum : J-3 ouvrés.
+                Délai minimum : J+3, livraison 7j/7.
               </p>
             </div>
 

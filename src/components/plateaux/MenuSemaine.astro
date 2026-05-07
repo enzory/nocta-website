@@ -41,13 +41,13 @@ const sections: Array<{ titre: string; prix: number; items: Item[] }> = [
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {section.items.map((item, i) => (
             <article class="reveal" style={`transition-delay: ${0.05 * i}s`}>
-              <div class="aspect-square overflow-hidden bg-nocta-black/5 mb-4">
+              <div class="aspect-square overflow-hidden bg-nocta-black/5 mb-4 max-w-[14rem] mx-auto sm:mx-0">
                 <img
                   src={item.image}
                   onerror="this.onerror=null;this.src='/img/plateaux/placeholder.jpg';"
                   alt={item.nom}
-                  width="800"
-                  height="800"
+                  width="448"
+                  height="448"
                   loading="lazy"
                   decoding="async"
                   class="w-full h-full object-cover"
