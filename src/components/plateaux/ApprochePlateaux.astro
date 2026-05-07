@@ -1,0 +1,45 @@
+---
+const colonnes = [
+  {
+    titre: 'Composition libre',
+    texte: "Pas de plateaux figés. Chacun choisit selon ses envies.",
+  },
+  {
+    titre: 'Menu hebdomadaire',
+    texte: "Deux entrées, trois plats, deux desserts qui changent chaque lundi.",
+  },
+  {
+    titre: 'Cuisine étoilée',
+    texte: "Préparé par notre équipe formée en cuisine étoilée, livré frais le jour J.",
+  },
+];
+---
+
+<section class="bg-nocta-cream py-24 lg:py-32 border-t border-nocta-black/10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+    <div class="mb-14 reveal">
+      <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Notre approche</p>
+      <h2 class="font-serif text-2xl md:text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight max-w-3xl">
+        Le plateau repas, repensé.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10 lg:gap-16">
+      {colonnes.map((c, i) => (
+        <div class="reveal" style={`transition-delay: ${0.1 + i * 0.1}s`}>
+          <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">
+            0{i + 1}
+          </p>
+          <h3 class="font-serif text-2xl lg:text-3xl font-light italic text-nocta-black leading-tight mb-4">
+            {c.titre}
+          </h3>
+          <p class="font-sans text-sm font-light text-nocta-grey leading-relaxed">
+            {c.texte}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

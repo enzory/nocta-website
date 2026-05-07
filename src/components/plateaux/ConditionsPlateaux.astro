@@ -1,0 +1,31 @@
+---
+import menu from '../../data/menu-semaine.json';
+
+const conditions = [
+  { label: 'Minimum de commande',  valeur: `${menu.tarifs.minimum_commande} € HT` },
+  { label: 'Délai',                valeur: 'Commande à passer J-3 minimum' },
+  { label: 'Livraison Paris',      valeur: `${menu.tarifs.livraison_paris} € HT — intra-muros` },
+  { label: 'Hors Paris',           valeur: 'Nous consulter' },
+];
+---
+
+<section class="bg-nocta-cream py-20 lg:py-24 border-t border-nocta-black/10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+    <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-8 reveal">Conditions</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+      {conditions.map((c, i) => (
+        <div class="reveal" style={`transition-delay: ${0.05 * i}s`}>
+          <p class="font-sans text-xs tracking-[0.3em] uppercase text-nocta-grey/80 mb-3">
+            {c.label}
+          </p>
+          <p class="font-serif text-lg md:text-xl font-light italic text-nocta-black leading-snug">
+            {c.valeur}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,56 @@
+---
+// Hero plein cadre 85vh — image de fond avec overlay léger pour lisibilité.
+// L'image attendue est /public/img/plateaux/hero.jpg (à fournir par l'équipe).
+// Tant que l'image n'est pas livrée, on utilise placeholder.jpg comme fallback
+// visuel : la mise en page reste correcte.
+---
+
+<section class="relative h-[85vh] min-h-[560px] flex flex-col justify-end overflow-hidden bg-nocta-black">
+
+  <div class="absolute inset-0">
+    <img
+      src="/img/plateaux/hero.jpg"
+      onerror="this.onerror=null;this.src='/img/plateaux/placeholder.jpg';"
+      alt="Plateau repas NOCTA — entrée, plat et dessert composés à la carte, livrés à Paris"
+      width="2400"
+      height="1600"
+      loading="eager"
+      fetchpriority="high"
+      class="w-full h-full object-cover object-center"
+    />
+    <!-- Overlay très léger : juste assez pour la lisibilité -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-black/15"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-20 lg:pb-28 w-full">
+
+    <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-cream/60 mb-6 animate-fade-up" style="animation-delay: 0.15s; opacity: 0;">
+      Nouveau
+    </p>
+
+    <h1 class="font-serif text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-light italic text-nocta-cream leading-[1.05] mb-6 max-w-5xl animate-fade-up" style="animation-delay: 0.3s; opacity: 0;">
+      Plateaux repas. Composés par vos équipes.
+    </h1>
+
+    <p class="font-sans text-base lg:text-lg font-light text-nocta-cream/80 max-w-2xl mb-12 animate-fade-up" style="animation-delay: 0.45s; opacity: 0;">
+      Entrée, plat, dessert — au choix dans notre menu de la semaine. Livrés à Paris.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-5 animate-fade-up" style="animation-delay: 0.6s; opacity: 0;">
+      <a
+        href="#configurateur"
+        class="inline-flex items-center font-sans text-sm font-light tracking-widest uppercase bg-nocta-cream text-nocta-black px-8 py-3 transition-all duration-300 hover:bg-white"
+      >
+        Composer ma commande
+      </a>
+      <a
+        href="#menu"
+        class="inline-flex items-center gap-3 font-sans text-sm font-light tracking-widest uppercase text-nocta-cream/80 hover:text-nocta-cream transition-colors duration-200"
+      >
+        <span class="w-6 h-px bg-current inline-block"></span>
+        Voir le menu de la semaine
+      </a>
+    </div>
+
+  </div>
+</section>
