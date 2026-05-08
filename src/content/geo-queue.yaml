@@ -60,7 +60,7 @@ topics:
     angle: "Bourse, Opéra, cocktails d'entreprise, startups"
     type: arrondissement
     priority: 8
-    status: pending
+    status: published
 
   - slug: traiteur-paris-9
     zone: "Paris 9e arrondissement"
