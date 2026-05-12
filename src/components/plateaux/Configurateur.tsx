@@ -10,7 +10,7 @@ type MenuItem = {
 };
 
 type MenuData = {
-  semaine: { numero: number; debut: string; fin: string; label: string };
+  semaine: { numero: number; label: string; debut?: string };
   entrees: MenuItem[];
   plats: MenuItem[];
   desserts: MenuItem[];
@@ -36,10 +36,10 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
 
 const fmt = (n: number) => n.toFixed(2).replace('.', ',') + ' €';
 
-// J+3 calendaires : NOCTA livre 7j/7, week-end inclus.
+// J+2 calendaires (48 h) : NOCTA livre 7j/7, week-end inclus.
 const computeMinDate = (): string => {
   const d = new Date();
-  d.setDate(d.getDate() + 3);
+  d.setDate(d.getDate() + 2);
   return d.toISOString().slice(0, 10);
 };
 
@@ -368,7 +368,7 @@ export default function Configurateur({ menu }: { menu: MenuData }) {
                 className={inputBase}
               />
               <p className="font-sans text-xs font-light text-nocta-grey/80 mt-2">
-                Délai minimum : J+3, livraison 7j/7.
+                Délai minimum : J+2 (48 h), livraison 7j/7.
               </p>
             </div>
 

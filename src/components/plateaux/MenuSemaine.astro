@@ -1,19 +1,13 @@
 ---
-import menu from '../../data/menu-semaine.json';
+import { activeMenu } from '../../data/menu-active';
+import type { MenuItem } from '../../data/menu-active';
 
-type Item = {
-  id: string;
-  nom: string;
-  description: string;
-  image: string;
-  tags?: string[];
-  allergenes?: string[];
-};
+const menu = activeMenu;
 
-const sections: Array<{ titre: string; prix: number; items: Item[] }> = [
-  { titre: 'Entrées',  prix: menu.tarifs.entree,  items: menu.entrees as Item[] },
-  { titre: 'Plats',    prix: menu.tarifs.plat,    items: menu.plats as Item[] },
-  { titre: 'Desserts', prix: menu.tarifs.dessert, items: menu.desserts as Item[] },
+const sections: Array<{ titre: string; prix: number; items: MenuItem[] }> = [
+  { titre: 'Entrées',  prix: menu.tarifs.entree,  items: menu.entrees },
+  { titre: 'Plats',    prix: menu.tarifs.plat,    items: menu.plats },
+  { titre: 'Desserts', prix: menu.tarifs.dessert, items: menu.desserts },
 ];
 ---
 
@@ -38,10 +32,10 @@ const sections: Array<{ titre: string; prix: number; items: Item[] }> = [
           </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {section.items.map((item, i) => (
             <article class="reveal" style={`transition-delay: ${0.05 * i}s`}>
-              <div class="aspect-square overflow-hidden bg-nocta-black/5 mb-4 max-w-[14rem] mx-auto sm:mx-0">
+              <div class="aspect-square overflow-hidden bg-nocta-black/5 mb-4 max-w-[14rem] mx-auto md:mx-0">
                 <img
                   src={item.image}
                   onerror="this.onerror=null;this.src='/img/plateaux/placeholder.jpg';"

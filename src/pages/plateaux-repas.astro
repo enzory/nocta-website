@@ -9,12 +9,14 @@ import MenuSemaine from '../components/plateaux/MenuSemaine.astro';
 import EtapesCommande from '../components/plateaux/EtapesCommande.astro';
 import ConditionsPlateaux from '../components/plateaux/ConditionsPlateaux.astro';
 import Configurateur from '../components/plateaux/Configurateur.tsx';
-import menu from '../data/menu-semaine.json';
+import { activeMenu } from '../data/menu-active';
+
+const menu = activeMenu;
 ---
 
 <Layout
-  title="Plateaux repas Paris — NOCTA"
-  description="Plateaux repas pour entreprises à Paris. Composition libre : entrée, plat, dessert. Menu hebdomadaire, cuisine formée en étoilée, livraison Paris."
+  title="Plateaux repas Paris — menu hebdomadaire — NOCTA"
+  description="Plateaux repas livrés à Paris pour entreprises. Composition libre — entrée, plat, dessert — menu hebdomadaire renouvelé chaque lundi. Cuisine équilibrée préparée par notre équipe formée en étoilée, conditionnement individuel, couverts inclus. Délai 48 h."
 >
   <Header />
 
@@ -45,6 +47,41 @@ import menu from '../data/menu-semaine.json';
     <EtapesCommande />
     <ConditionsPlateaux />
 
+    <!-- À propos / différenciation — sert aussi le SEO/GEO -->
+    <section class="bg-nocta-cream py-20 lg:py-28 border-t border-nocta-black/10">
+      <div class="max-w-4xl mx-auto px-6 lg:px-12">
+
+        <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-6 reveal">À propos</p>
+
+        <h2 class="font-serif text-2xl md:text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight mb-8 reveal">
+          Nos plateaux repas, en bref.
+        </h2>
+
+        <div class="space-y-5 font-sans text-base lg:text-lg font-light text-nocta-grey leading-relaxed reveal">
+          <p>
+            NOCTA livre à Paris des plateaux repas pour les déjeuners de bureau, comités de direction
+            et événements internes. La carte change <strong class="font-medium text-nocta-black">chaque lundi</strong> sur un cycle de
+            quatre semaines : trois entrées, trois plats, trois desserts à composer librement.
+          </p>
+          <p>
+            Une <strong class="font-medium text-nocta-black">cuisine équilibrée</strong> préparée par notre équipe formée en cuisine étoilée :
+            produits choisis, portions généreuses, rotations saisonnières. Pas de plateaux figés —
+            chacun compose son repas selon ses envies.
+          </p>
+          <p>
+            Chaque plateau est livré en <strong class="font-medium text-nocta-black">conditionnement individuel</strong>, un sac par convive,
+            avec <strong class="font-medium text-nocta-black">couverts et serviettes inclus</strong>. Prêt à servir, sans matériel à prévoir.
+          </p>
+          <p>
+            Commande à passer <strong class="font-medium text-nocta-black">48 h à l'avance minimum</strong>. Livraison Paris intra-muros
+            7 jours sur 7. Tarif unique : {menu.tarifs.entree} € l'entrée, {menu.tarifs.plat} € le plat, {menu.tarifs.dessert} € le dessert (HT).
+            Minimum de commande {menu.tarifs.minimum_commande} € HT.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
     <CallToAction
       subtitle="Une demande spécifique ?"
       heading="Parlons de votre besoin sur mesure."
@@ -53,12 +90,12 @@ import menu from '../data/menu-semaine.json';
 
   <Footer />
 
-  <!-- JSON-LD : FoodEstablishment + Service Plateaux repas -->
+  <!-- JSON-LD : FoodEstablishment + Menu + Offer -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FoodEstablishment",
     "name": "NOCTA — Plateaux repas Paris",
-    "description": "Plateaux repas pour entreprises à Paris. Composition libre : entrée, plat, dessert. Menu hebdomadaire renouvelé chaque semaine, cuisine formée en étoilée, livraison Paris intra-muros.",
+    "description": "Plateaux repas pour entreprises à Paris. Composition libre — entrée, plat, dessert. Menu hebdomadaire renouvelé chaque lundi en rotation de 4 semaines. Cuisine équilibrée préparée par notre équipe formée en étoilée. Conditionnement individuel, couverts inclus. Délai 48 h. Livraison Paris intra-muros 7j/7.",
     "url": "https://www.noctaparis.fr/plateaux-repas",
     "servesCuisine": "Française contemporaine",
     "priceRange": "€€",
@@ -115,7 +152,7 @@ import menu from '../data/menu-semaine.json';
     "makesOffer": {
       "@type": "Offer",
       "name": "Plateau repas livré",
-      "description": "Plateau repas composé librement (entrée 8 € HT, plat 18 € HT, dessert 7 € HT). Livraison Paris intra-muros 20 € HT. Minimum de commande 500 € HT.",
+      "description": `Plateau repas composé librement (entrée ${menu.tarifs.entree} € HT, plat ${menu.tarifs.plat} € HT, dessert ${menu.tarifs.dessert} € HT). Conditionnement individuel, couverts inclus. Livraison Paris intra-muros ${menu.tarifs.livraison_paris} € HT. Minimum de commande ${menu.tarifs.minimum_commande} € HT. Délai 48 h.`,
       "priceCurrency": "EUR",
       "priceSpecification": {
         "@type": "PriceSpecification",

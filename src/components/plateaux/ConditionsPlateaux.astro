@@ -1,11 +1,13 @@
 ---
-import menu from '../../data/menu-semaine.json';
+import { activeMenu } from '../../data/menu-active';
 
 const conditions = [
-  { label: 'Minimum de commande',  valeur: `${menu.tarifs.minimum_commande} € HT` },
-  { label: 'Délai',                valeur: 'Commande à passer J-3 minimum' },
-  { label: 'Livraison Paris',      valeur: `${menu.tarifs.livraison_paris} € HT — intra-muros` },
+  { label: 'Minimum de commande',  valeur: `${activeMenu.tarifs.minimum_commande} € HT` },
+  { label: 'Délai',                valeur: 'Commande J-2 (48 h)' },
+  { label: 'Livraison Paris',      valeur: `${activeMenu.tarifs.livraison_paris} € HT — intra-muros` },
   { label: 'Hors Paris',           valeur: 'Nous consulter' },
+  { label: 'Couverts inclus',      valeur: 'Couverts et serviettes inclus dans chaque sac.' },
+  { label: 'Conditionnement',      valeur: 'Conditionnement individuel : un sac par convive.' },
 ];
 ---
 
@@ -14,7 +16,7 @@ const conditions = [
 
     <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-8 reveal">Conditions</p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
       {conditions.map((c, i) => (
         <div class="reveal" style={`transition-delay: ${0.05 * i}s`}>
           <p class="font-sans text-xs tracking-[0.3em] uppercase text-nocta-grey/80 mb-3">
