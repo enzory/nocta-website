@@ -125,7 +125,7 @@ topics:
     angle: "La Défense, tours, événements corporate"
     type: commune-92
     priority: 8
-    status: pending
+    status: published
 
   # ---------- OCCASIONS (requêtes longue traîne) ----------
   - slug: traiteur-anniversaire-paris
