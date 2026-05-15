@@ -133,7 +133,7 @@ topics:
     angle: "anniversaire privé, dîner à domicile, célébration intime"
     type: occasion
     priority: 8
-    status: pending
+    status: published
 
   - slug: traiteur-cremaillere-paris
     zone: "Paris"
