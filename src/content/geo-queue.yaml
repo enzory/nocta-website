@@ -175,7 +175,7 @@ topics:
     angle: "séminaire, comité de direction, offsite"
     type: occasion
     priority: 8
-    status: pending
+    status: published
 
   - slug: traiteur-inauguration-paris
     zone: "Paris"
