@@ -45,6 +45,39 @@ import LogoSlider from '../../components/LogoSlider.astro';
       </div>
     </section>
 
+    <!-- Cross-sell Plateaux repas -->
+    <section class="bg-nocta-cream border-b border-nocta-black/10">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 py-12 lg:py-16">
+        <a href="/plateaux-repas" class="group grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center reveal">
+          <div class="aspect-[16/9] overflow-hidden bg-nocta-black/5 order-2 lg:order-1">
+            <img
+              src="/img/plateaux/hero.jpg"
+              onerror="this.onerror=null;this.src='/img/plateaux/placeholder.jpg';"
+              alt="Plateau repas NOCTA composé à la carte — entrée, plat, dessert"
+              width="1600"
+              height="900"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+            />
+          </div>
+          <div class="order-1 lg:order-2">
+            <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Nouveau</p>
+            <h2 class="font-serif text-2xl md:text-3xl lg:text-4xl font-light italic text-nocta-black leading-tight mb-4">
+              Plateaux repas — Composez librement vos déjeuners de bureau.
+            </h2>
+            <p class="font-sans text-sm font-light text-nocta-grey leading-relaxed mb-6 max-w-lg">
+              Entrée, plat, dessert au choix dans notre menu de la semaine. Cuisine formée en
+              étoilée, livraison Paris.
+            </p>
+            <span class="inline-flex items-center gap-3 font-sans text-sm font-light tracking-widest uppercase text-nocta-black border-b border-nocta-black/30 pb-1 transition-colors duration-300 group-hover:border-nocta-black">
+              Découvrir <span aria-hidden="true">→</span>
+            </span>
+          </div>
+        </a>
+      </div>
+    </section>
+
     <!-- About -->
     <section class="bg-nocta-black py-24 lg:py-36">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">

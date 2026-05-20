@@ -1,0 +1,35 @@
+---
+const etapes = [
+  { num: '01', titre: 'Composez votre commande', texte: 'Sélectionnez vos plateaux et la date de livraison.' },
+  { num: '02', titre: 'Validation sous 24h ouvrées', texte: 'Nous confirmons la disponibilité et finalisons le devis.' },
+  { num: '03', titre: 'Préparation J-1', texte: "L'équipe prépare l'ensemble la veille, en cuisine." },
+  { num: '04', titre: 'Livraison fraîche le jour J', texte: 'Vos plateaux arrivent au bureau, prêts à servir.' },
+];
+---
+
+<section class="bg-nocta-black py-24 lg:py-32">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+    <div class="mb-14 reveal">
+      <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-4">Comment ça marche</p>
+      <h2 class="font-serif text-2xl md:text-4xl lg:text-5xl font-light italic text-nocta-cream leading-tight max-w-3xl">
+        Quatre étapes, rien de plus.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+      {etapes.map((e, i) => (
+        <div class="reveal" style={`transition-delay: ${0.1 + i * 0.1}s`}>
+          <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-6">{e.num}</p>
+          <h3 class="font-serif text-xl lg:text-2xl font-light italic text-nocta-cream leading-tight mb-3">
+            {e.titre}
+          </h3>
+          <p class="font-sans text-sm font-light text-nocta-cream/60 leading-relaxed">
+            {e.texte}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

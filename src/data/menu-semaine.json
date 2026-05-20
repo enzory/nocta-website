@@ -1,0 +1,343 @@
+{
+  "rotation": {
+    "date_debut": "2026-05-11",
+    "duree_semaines": 4
+  },
+  "semaines": [
+    {
+      "numero": 1,
+      "label": "Semaine 1",
+      "entrees": [
+        {
+          "id": "s1-ent-001",
+          "nom": "Salade de carottes, pois chiches et menthe",
+          "description": "Carottes en rubans, pois chiches, menthe fraîche, vinaigrette aux graines de lin",
+          "image": "/img/plateaux/carottes-pois-chiches.jpg",
+          "tags": ["végétarien", "sans gluten"],
+          "allergenes": []
+        },
+        {
+          "id": "s1-ent-002",
+          "nom": "Entrée 2 — Semaine 1 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s1-ent-003",
+          "nom": "Entrée 3 — Semaine 1 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        }
+      ],
+      "plats": [
+        {
+          "id": "s1-pla-001",
+          "nom": "Suprême de volaille, taboulé de quinoa aux légumes",
+          "description": "Volaille fermière rôtie, quinoa, tomates, courgettes, sucrine",
+          "image": "/img/plateaux/volaille-quinoa.jpg",
+          "tags": ["sans gluten"],
+          "allergenes": []
+        },
+        {
+          "id": "s1-pla-002",
+          "nom": "Plat 2 — Semaine 1 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s1-pla-003",
+          "nom": "Plat 3 — Semaine 1 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        }
+      ],
+      "desserts": [
+        {
+          "id": "s1-des-001",
+          "nom": "Cookie maison aux pépites de chocolat",
+          "description": "Cookie pur beurre, chocolat noir 70 %",
+          "image": "/img/plateaux/cookie.jpg",
+          "tags": [],
+          "allergenes": ["gluten", "lait", "œuf"]
+        },
+        {
+          "id": "s1-des-002",
+          "nom": "Dessert 2 — Semaine 1 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s1-des-003",
+          "nom": "Dessert 3 — Semaine 1 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        }
+      ]
+    },
+    {
+      "numero": 2,
+      "label": "Semaine 2",
+      "entrees": [
+        {
+          "id": "s2-ent-001",
+          "nom": "Entrée 1 — Semaine 2 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s2-ent-002",
+          "nom": "Entrée 2 — Semaine 2 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s2-ent-003",
+          "nom": "Entrée 3 — Semaine 2 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        }
+      ],
+      "plats": [
+        {
+          "id": "s2-pla-001",
+          "nom": "Plat 1 — Semaine 2 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s2-pla-002",
+          "nom": "Plat 2 — Semaine 2 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s2-pla-003",
+          "nom": "Plat 3 — Semaine 2 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        }
+      ],
+      "desserts": [
+        {
+          "id": "s2-des-001",
+          "nom": "Dessert 1 — Semaine 2 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s2-des-002",
+          "nom": "Dessert 2 — Semaine 2 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s2-des-003",
+          "nom": "Dessert 3 — Semaine 2 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        }
+      ]
+    },
+    {
+      "numero": 3,
+      "label": "Semaine 3",
+      "entrees": [
+        {
+          "id": "s3-ent-001",
+          "nom": "Entrée 1 — Semaine 3 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s3-ent-002",
+          "nom": "Entrée 2 — Semaine 3 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s3-ent-003",
+          "nom": "Entrée 3 — Semaine 3 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        }
+      ],
+      "plats": [
+        {
+          "id": "s3-pla-001",
+          "nom": "Plat 1 — Semaine 3 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s3-pla-002",
+          "nom": "Plat 2 — Semaine 3 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s3-pla-003",
+          "nom": "Plat 3 — Semaine 3 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        }
+      ],
+      "desserts": [
+        {
+          "id": "s3-des-001",
+          "nom": "Dessert 1 — Semaine 3 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s3-des-002",
+          "nom": "Dessert 2 — Semaine 3 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s3-des-003",
+          "nom": "Dessert 3 — Semaine 3 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        }
+      ]
+    },
+    {
+      "numero": 4,
+      "label": "Semaine 4",
+      "entrees": [
+        {
+          "id": "s4-ent-001",
+          "nom": "Entrée 1 — Semaine 4 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s4-ent-002",
+          "nom": "Entrée 2 — Semaine 4 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s4-ent-003",
+          "nom": "Entrée 3 — Semaine 4 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        }
+      ],
+      "plats": [
+        {
+          "id": "s4-pla-001",
+          "nom": "Plat 1 — Semaine 4 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s4-pla-002",
+          "nom": "Plat 2 — Semaine 4 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s4-pla-003",
+          "nom": "Plat 3 — Semaine 4 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        }
+      ],
+      "desserts": [
+        {
+          "id": "s4-des-001",
+          "nom": "Dessert 1 — Semaine 4 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s4-des-002",
+          "nom": "Dessert 2 — Semaine 4 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        },
+        {
+          "id": "s4-des-003",
+          "nom": "Dessert 3 — Semaine 4 — à compléter par Hugo",
+          "description": "Description à venir.",
+          "image": "/img/plateaux/placeholder.jpg",
+          "tags": [],
+          "allergenes": []
+        }
+      ]
+    }
+  ],
+  "tarifs": {
+    "entree": 8,
+    "plat": 18,
+    "dessert": 7,
+    "livraison_paris": 20,
+    "minimum_commande": 195
+  }
+}
