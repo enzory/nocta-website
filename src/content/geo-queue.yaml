@@ -182,7 +182,7 @@ topics:
     angle: "inauguration boutique, lancement produit, opening"
     type: occasion
     priority: 8
-    status: pending
+    status: published
 
   - slug: traiteur-vernissage-paris
     zone: "Paris"
