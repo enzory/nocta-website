@@ -197,7 +197,7 @@ topics:
     angle: "chef à domicile, dîner privé, résidentiel 92"
     type: chef-prive
     priority: 8
-    status: pending
+    status: published
 
   - slug: chef-prive-paris-16
     zone: "Paris 16e"
