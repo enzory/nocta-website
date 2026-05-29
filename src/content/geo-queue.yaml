@@ -74,7 +74,7 @@ topics:
     angle: "Marais, espaces événementiels, showrooms"
     type: arrondissement
     priority: 7
-    status: pending
+    status: published
 
   - slug: traiteur-paris-4
     zone: "Paris 4e arrondissement"
