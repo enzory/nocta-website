@@ -81,7 +81,7 @@ topics:
     angle: "Marais, Île Saint-Louis, événements culturels"
     type: arrondissement
     priority: 7
-    status: pending
+    status: published
 
   - slug: traiteur-paris-15
     zone: "Paris 15e arrondissement"
