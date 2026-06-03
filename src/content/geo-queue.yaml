@@ -140,7 +140,7 @@ topics:
     angle: "crémaillère, emménagement, cocktail dînatoire à domicile"
     type: occasion
     priority: 7
-    status: pending
+    status: published
 
   - slug: traiteur-fiancailles-paris
     zone: "Paris"
