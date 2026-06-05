@@ -147,7 +147,7 @@ topics:
     angle: "fiançailles, dîner intimiste, célébration familiale"
     type: occasion
     priority: 7
-    status: pending
+    status: pr-review
 
   - slug: traiteur-bapteme-paris
     zone: "Paris"
