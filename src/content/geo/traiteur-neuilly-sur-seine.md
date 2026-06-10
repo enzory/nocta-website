@@ -1,56 +1,73 @@
 ---
-title: "Traiteur Neuilly-sur-Seine — NOCTA Catering"
-description: "Traiteur événementiel à Neuilly-sur-Seine : dîners privés, cocktails corporate, événements adaptés à chaque format. NOCTA intervient dans les Hauts-de-Seine."
+title: "Traiteur Neuilly-sur-Seine — Dîners privés, accords mets-vins | NOCTA"
+description: "Traiteur événementiel à Neuilly-sur-Seine. Dîners privés en hôtels particuliers, célébrations familiales, accords mets-vins par notre sommelier. À partir de 10 personnes."
+h1: "Traiteur à Neuilly-sur-Seine"
 zone: "Neuilly-sur-Seine"
 type: "commune-92"
 publishDate: "2026-04-20"
 readingTime: "4 min"
 schemaType: "LocalBusiness"
 ctaType: "private"
+streetAddress: "2B rue Edith Cavell"
+areaServed:
+  - "Neuilly-sur-Seine"
+  - "Levallois-Perret"
+  - "Courbevoie"
+  - "Puteaux"
+  - "Meudon-la-Forêt"
+faq:
+  - question: "Vous intervenez à Neuilly-sur-Seine ?"
+    answer: "Oui, c'est l'une de nos zones les plus actives. Nous travaillons régulièrement dans les hôtels particuliers et grands appartements de Neuilly et des communes voisines (Levallois, Courbevoie, Meudon-la-Forêt)."
+  - question: "Pouvez-vous gérer les accords mets-vins sur ma cave personnelle ?"
+    answer: "Oui. Si vous avez une cave, nous travaillons avec vous en amont pour proposer un accord par plat. Si vous préférez, nous vous proposons une sélection de vins."
+  - question: "Quel est le format typique d'un dîner privé chez nous ?"
+    answer: "Le format le plus courant : 12 à 24 couverts, service à table, 4 à 5 plats avec accords mets-vins. Équipe sur place : chef en cuisine, chef de salle, un à deux serveurs selon le nombre."
+  - question: "Faites-vous les anniversaires et baptêmes ?"
+    answer: "Oui, c'est un format que nous proposons régulièrement. Nous adaptons le menu et le service au caractère de l'événement (formel ou plus convivial)."
+  - question: "Comment se passe la coordination avec mon personnel de maison ?"
+    answer: "Nous prenons contact en amont pour comprendre les codes de la maison (tenue, circulation, gestion du débarrassage) et nous coordonner avec votre équipe le jour J."
+  - question: "Combien coûte un dîner privé pour 16 personnes à Neuilly ?"
+    answer: "Le tarif dépend du nombre de plats, du niveau de prestation, et du choix des vins. Pour un dîner servi à table avec accords mets-vins, comptez à partir de quelques dizaines d'euros par personne hors vins. Devis sur demande après un premier échange."
 ---
 
-## Traiteur à Neuilly-sur-Seine : prestations soignées pour résidences et sièges sociaux
+NOCTA est un traiteur événementiel basé à Courbevoie, à dix minutes de Neuilly-sur-Seine. Nous intervenons régulièrement dans les hôtels particuliers, les grands appartements et les résidences privées de Neuilly et des communes voisines de l'ouest parisien.
 
-Neuilly-sur-Seine concentre un tissu particulier : des résidences privées exigeantes, des sièges sociaux de premier plan et une clientèle habituée à des standards élevés. C'est précisément dans ce type d'environnement que NOCTA Catering intervient — sans esbroufe, avec une cuisine pilotée par Hugo Vinatier, formé en cuisine étoilée, et une direction de salle assurée par Enzo Ryon, sommelier.
+Anniversaires, baptêmes, réceptions, dîners de famille élargie : nous accompagnons les célébrations qui demandent un soin particulier — sur la table, dans le service, et sur les vins.
 
-Basée à Courbevoie, l'équipe opère naturellement dans les Hauts-de-Seine. Neuilly-sur-Seine fait partie des zones où NOCTA intervient régulièrement, aussi bien pour des dîners à domicile en semaine que pour des cocktails dinatoires organisés dans des locaux professionnels ou des espaces privatisés.
+## Pour quels événements ?
 
-Les demandes que nous recevons depuis cette commune suivent deux grandes logiques : des particuliers qui reçoivent chez eux — dîner de famille, célébration, réception intimiste — et des entreprises qui souhaitent organiser un événement professionnel dans leurs propres locaux ou dans un lieu loué à Neuilly ou à proximité immédiate.
+Sur Neuilly et l'ouest parisien, trois formats reviennent le plus souvent :
 
----
+**Le dîner privé en hôtel particulier ou grand appartement** — entre 12 et 40 couverts, service à table assuré par un chef de salle, accords mets-vins préparés en amont avec notre sommelier. Format classique mais exigeant : qualité du dressage, fluidité du service, choix des vins.
 
-## Formats NOCTA adaptés à Neuilly-sur-Seine
+**La célébration familiale élargie** — anniversaire marquant, baptême, réception en l'honneur d'un événement familial. 30 à 100 personnes selon le format, en appartement, en jardin privé, ou en lieu privatisé. Cocktail dînatoire ou buffet servi.
 
-**NOCTA Private** s'adresse aux résidents qui souhaitent recevoir à domicile sans gérer la logistique cuisine. L'équipe arrive en amont, prend en charge la mise en place, le service et le rangement. Les menus sont définis en concertation avec Hugo Vinatier selon la saison, le nombre de convives et les contraintes du lieu. Le format est adapté aux appartements comme aux maisons avec cuisine praticable. Tarif à partir de 55 € par personne.
+**La réception "à la maison"** — recevoir des amis sur un format intermédiaire entre le dîner intime et le grand événement. Plus libre dans le ton, mais avec le même niveau d'attention sur les détails.
 
-**NOCTA Corporate** couvre les besoins événementiels des entreprises installées à Neuilly-sur-Seine : cocktail de fin d'année, comité de direction, déjeuner de présentation, gala interne. Le format varie selon le volume et le contexte — plateau-repas structuré, cocktail debout, dîner assis — avec une fourchette de 25 à 70 € par personne selon le niveau de prestation choisi. Enzo Ryon prend en charge la coordination directe avec les équipes internes ou les assistantes de direction, ce qui simplifie le pilotage côté client.
+## Notre approche du service à domicile
 
-**NOCTA Signature** est réservé aux projets qui sortent du cadre standard : réception personnalisée avec scénographie culinaire particulière, événement de représentation pour un cercle restreint d'invités, ou format hybride entre dîner privé et soirée professionnelle. Ce format fait l'objet d'un devis spécifique après échange avec l'équipe.
+**Nous nous adaptons à votre lieu.** Hôtel particulier, appartement haussmannien en enfilade, maison avec jardin : chaque configuration a ses contraintes (cuisine éloignée de la salle à manger, escaliers, ascenseur de service, places de parking pour la livraison). Nous repérons en amont si nécessaire.
 
----
+**Pour les sites avec service de sécurité ou personnel de maison**, nous nous coordonnons avec eux pour respecter les codes de la maison : tenue de service, circulation discrète, gestion du débarrassage.
 
-## Logistique et contraintes d'intervention à Neuilly-sur-Seine
+**Notre présence sur place dépend du format choisi :**
 
-Neuilly-sur-Seine présente des configurations variables selon les secteurs. Dans les immeubles haussmanniens du centre-ville, les cuisines sont parfois de taille réduite et les accès de service contraints — ascenseurs de service étroits, cours intérieures à sens unique, stationnement limité en voie publique. NOCTA anticipe ces points à la prise de brief : nous demandons systématiquement les dimensions des accès, la disponibilité d'un monte-charge ou d'un ascenseur de service, et les horaires de livraison autorisés dans le bâtiment.
+- **Livraison de plateaux ou cocktail sans service** — nous livrons et installons, vous gérez sur place. Récupération du matériel le lendemain.
+- **Cocktail dînatoire avec service** — équipe en tenue présente du dressage au débarrassage.
+- **Dîner privé servi à table** — équipe complète : chef en cuisine, chef de salle, serveurs, sommelier selon votre demande.
 
-Pour les maisons individuelles — plus fréquentes dans les secteurs résidentiels proches du bois de Boulogne — la logistique est généralement plus souple, mais nous vérifions toujours la capacité de la cuisine sur place avant de confirmer le menu.
+## Accords mets-vins, notre marque de fabrique
 
-Dans les locaux professionnels, les contraintes habituelles s'appliquent : badge d'accès, règlement intérieur sur les livraisons, disponibilité d'une zone de préparation. Nous travaillons avec les équipes internes (office manager, assistante de direction) pour établir un plan d'intervention précis en amont.
+Avant de fonder NOCTA, j'ai passé quatorze ans en salle et en sommellerie dans des restaurants étoilés parisiens. Les accords mets-vins ne sont pas une option ajoutée à un menu : c'est la façon dont nous concevons un dîner.
 
-NOCTA dispose de son propre matériel de service — vaisselle, verrerie, matériel de maintien en température — ce qui rend notre intervention indépendante des équipements du lieu, dans la plupart des configurations.
+Pour chaque prestation servie à table, nous proposons :
 
----
+- Un **accord par plat** travaillé avec votre menu, sur les vins de votre cave si vous en avez une, ou sur une sélection que nous vous proposons (cinq à huit références).
+- Une **présentation des vins** au début du repas, en quelques mots, pour que vos invités sachent ce qu'ils boivent.
+- Un **service au verre** rythmé par notre chef de salle, sans que vous ayez à vous en occuper.
 
-## Pourquoi confier votre événement à Neuilly-sur-Seine à NOCTA
+C'est ce que beaucoup de nos clients à Neuilly nous demandent en premier — souvent avant même le menu.
 
-NOCTA a été fondée en avril 2025 par deux associés dont les parcours sont complémentaires : Hugo Vinatier apporte une formation en cuisine étoilée et une rigueur technique directement perceptible dans l'assiette ; Enzo Ryon assure la sommellerie et la relation client, avec une capacité à gérer des interlocuteurs habitués à des standards de représentation élevés.
+## Tarifs et conditions
 
-La structure est volontairement à taille humaine. Cela signifie que l'interlocuteur que vous avez au téléphone au moment du devis est le même qui sera présent le soir de votre événement. Ce point est souvent cité par nos clients — dont certains opèrent dans des secteurs comparables à ceux représentés à Neuilly-sur-Seine — comme un critère de choix déterminant.
-
-Nous travaillons avec des maisons de référence (Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting, Jus Mundi), ce qui témoigne d'une capacité à répondre à des exigences de représentation et de discrétion que la clientèle neuilléenne est en droit d'attendre.
-
----
-
-## Demande de devis
-
-Pour un dîner privé à Neuilly-sur-Seine, un cocktail dans vos locaux ou un événement plus structuré, prenez contact via notre [page de contact](/contact). Nous répondons sous 24 heures ouvrées avec une première proposition adaptée à votre configuration.
+Nos prestations démarrent à **500 € minimum de commande**. À partir de **10 personnes**, nous construisons un menu et un service sur mesure. Pour les dîners servis à table avec accords mets-vins, comptez à partir de quelques dizaines d'euros par personne hors vins (les vins peuvent venir de votre cave ou d'une sélection que nous proposons). Chaque devis est établi après un échange.
