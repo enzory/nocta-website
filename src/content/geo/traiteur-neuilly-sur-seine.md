@@ -1,6 +1,6 @@
 ---
 title: "Traiteur Neuilly-sur-Seine — Dîners privés, accords mets-vins | NOCTA"
-description: "Traiteur événementiel à Neuilly-sur-Seine. Dîners privés en hôtels particuliers, célébrations familiales, accords mets-vins par notre sommelier. À partir de 500 € de commande."
+description: "Traiteur événementiel à Neuilly-sur-Seine. Dîners privés en hôtels particuliers, célébrations familiales, accords mets-vins. À partir de 500 € de commande."
 h1: "Traiteur à Neuilly-sur-Seine"
 zone: "Neuilly-sur-Seine"
 type: "commune-92"
