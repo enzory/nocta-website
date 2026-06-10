@@ -189,7 +189,7 @@ topics:
     angle: "vernissage galerie, événement culturel, artisans du goût"
     type: occasion
     priority: 7
-    status: pending
+    status: pr-review
 
   # ---------- CHEF PRIVÉ — déclinaisons ----------
   - slug: chef-prive-neuilly-sur-seine
