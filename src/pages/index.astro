@@ -106,17 +106,18 @@ import LogoSlider from '../components/LogoSlider.astro';
 
       <!-- Hero text -->
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-20 lg:pb-28">
-        <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-cream/60 mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
+        <!-- LCP : eyebrow + H1 visibles dès le premier paint — pas d'opacity:0 ni de delay ici -->
+        <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-cream/60 mb-6">
           Paris, Île-de-France & ailleurs
         </p>
-        <h1 class="font-serif text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-light italic text-nocta-cream leading-[1.05] max-w-3xl mb-8 animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
+        <h1 class="font-serif text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-light italic text-nocta-cream leading-[1.05] max-w-3xl mb-8">
           L'art de recevoir,<br/>
           <em class="not-italic font-extralight">sans compromis.</em>
         </h1>
-        <p class="font-sans text-base lg:text-lg font-light text-nocta-cream/70 max-w-xl leading-relaxed mb-12 animate-fade-up" style="animation-delay: 0.6s; opacity: 0;">
+        <p class="font-sans text-base lg:text-lg font-light text-nocta-cream/70 max-w-xl leading-relaxed mb-12 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
           NOCTA conçoit des expériences culinaires conçues avec vous, pour les entreprises et les particuliers exigeants - à Paris, en Île-de-France et au-delà.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 animate-fade-up" style="animation-delay: 0.8s; opacity: 0;">
+        <div class="flex flex-col sm:flex-row gap-4 animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
           <a href="/contact" class="inline-flex items-center justify-center font-sans text-sm font-light tracking-widest uppercase bg-nocta-cream text-nocta-black px-8 py-3 transition-all duration-300 hover:bg-white">
             Demander un devis
           </a>
@@ -134,7 +135,7 @@ import LogoSlider from '../components/LogoSlider.astro';
       </div>
 
       <!-- Scroll indicator -->
-      <div class="absolute bottom-8 right-6 lg:right-12 hidden md:flex flex-col items-center gap-2 animate-fade-in" style="animation-delay: 1.2s; opacity: 0;" aria-hidden="true">
+      <div class="absolute bottom-8 right-6 lg:right-12 hidden md:flex flex-col items-center gap-2 animate-fade-in" style="animation-delay: 0.8s; opacity: 0;" aria-hidden="true">
         <span class="font-sans text-xs tracking-widest uppercase text-nocta-cream/40">Scroll</span>
         <div class="w-px h-12 bg-nocta-cream/20 relative overflow-hidden">
           <div class="absolute top-0 left-0 w-full h-1/2 bg-nocta-cream/60 animate-bounce"></div>
