@@ -7,6 +7,15 @@ publishDate: "2026-04-24"
 readingTime: "5 min"
 schemaType: "LocalBusiness"
 ctaType: "private"
+faq:
+  - question: "Proposez-vous des dîners à domicile dans le 6e arrondissement ?"
+    answer: "Oui, c'est le cœur de NOCTA Private : un chef formé en cuisine étoilée dans votre cuisine, un service en salle si vous le souhaitez, et une sélection de vins composée par notre sommelier. Vous êtes présent à vos invités, pas à vos fourneaux."
+  - question: "Combien coûte un dîner privé ?"
+    answer: "Nos prestations démarrent à partir de 500 € de commande. Le tarif dépend ensuite du menu, du service et du nombre de convives — le devis, gratuit, est remis sous 48 heures."
+  - question: "Pouvez-vous cuisiner dans un appartement haussmannien classique ?"
+    answer: "Oui. Nos menus sont pensés pour être finalisés sur place dans une cuisine domestique, sans matériel lourd. Un repérage ou un échange préalable suffit à valider la faisabilité."
+  - question: "Gérez-vous les régimes et allergies ?"
+    answer: "Oui. Les menus sont construits avec vous : régimes, allergies et préférences de vos invités sont intégrés dès la conception, pas traités en variante de dernière minute."
 ---
 
 ## Traiteur événementiel dans le 6e arrondissement : discrétion et précision à Saint-Germain-des-Prés

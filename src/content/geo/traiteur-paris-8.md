@@ -7,6 +7,15 @@ publishDate: "2026-04-18"
 readingTime: "4 min"
 schemaType: "LocalBusiness"
 ctaType: "corporate"
+faq:
+  - question: "Organisez-vous des dîners de direction et des événements clients dans le 8e ?"
+    answer: "Oui, c'est un format que nous connaissons bien : dîners de comité de direction, repas de closing, événements clients en format restreint. Service à table assuré par un chef de salle, vins choisis par notre sommelier."
+  - question: "Quel budget prévoir ?"
+    answer: "Nos prestations démarrent à partir de 500 € de commande. Au-delà, le tarif dépend du format et du niveau de prestation — chaque devis est construit après un échange sur votre contexte."
+  - question: "Pouvez-vous intervenir dans nos bureaux ou dans un lieu loué ?"
+    answer: "Les deux. Nous nous adaptons au lieu : bureaux, salons privés, espaces événementiels. Le repérage en amont fait partie de la prestation."
+  - question: "Quelle est votre expérience sur ce type d'événements ?"
+    answer: "Plus de 50 événements réalisés, une note de 5/5 sur Google, et des références comme Boucheron, Biologique Recherche ou Colombus Consulting. Hugo et Enzo sont formés en cuisine et en service étoilés."
 ---
 
 ## Traiteur événementiel dans le 8e arrondissement de Paris

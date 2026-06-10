@@ -7,6 +7,15 @@ ctaType: "corporate"
 publishDate: "2026-04-27"
 readingTime: "4 min"
 schemaType: "LocalBusiness"
+faq:
+  - question: "Couvrez-vous tout le 17e, des Batignolles à la plaine Monceau ?"
+    answer: "Oui. Notre base de Courbevoie est à quelques minutes du 17e : dîners à domicile, réceptions familiales, événements d'entreprise autour des Batignolles et de la place de Clichy."
+  - question: "À partir de quel budget travaillez-vous ?"
+    answer: "Nos prestations démarrent à partir de 500 € de commande. Cocktail, dîner servi ou plateaux-repas : le format se décide avec vous, selon le lieu et l'occasion."
+  - question: "Quel délai pour réserver une date ?"
+    answer: "Le plus tôt est le mieux pour les samedis et les fins d'année, mais notre proximité nous permet aussi de répondre à des demandes courtes. Premier échange, puis devis gratuit sous 48 heures."
+  - question: "Le vin est-il compris dans la prestation ?"
+    answer: "Il peut l'être. Enzo, sommelier, propose un accord mets et vins construit sur le menu — en option chiffrée dans le devis, jamais imposé."
 ---
 
 ## NOCTA dans le 17e : trois quartiers, une exigence constante
