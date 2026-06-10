@@ -24,9 +24,10 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : null
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- PRECONNECT — réduit la latence DNS/TLS pour Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- PRELOAD fonts self-hostées — les 2 poids critiques du premier écran :
+         serif italic (H1) et sans (body). Déclarations @font-face dans global.css. -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/cormorant-garamond-italic-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/dm-sans-latin.woff2" crossorigin />
 
     <!-- PRELOAD — image LCP hero (conditionné par prop preloadHero) -->
     {preloadHero && <link
@@ -106,17 +107,6 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : null
     })} />
 
     <title>{title}</title>
-
-    <!-- Google Fonts — non-bloquant (media trick : appliqué après le rendu initial) -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" />
-    </noscript>
 
   </head>
   <body>
