@@ -1,6 +1,6 @@
 ---
-title: "Sommelier pour un événement : pourquoi ça change tout"
-description: "On pense souvent à la cuisine, rarement aux vins. Pourtant, une sélection pensée pour l'occasion — le menu, les convives, le moment — transforme un bon dîner en soirée dont on se souvient."
+title: "Sommelier pour un événement : ça change tout"
+description: "On pense à la cuisine, rarement aux vins. Une sélection pensée pour l'occasion — menu, convives, moment — transforme un bon dîner en soirée mémorable."
 date: 2026-03-07
 slug: "sommelier-evenement"
 category: "Expertise"

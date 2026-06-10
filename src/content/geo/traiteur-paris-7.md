@@ -1,6 +1,6 @@
 ---
 title: "Traiteur Paris 7e — Réceptions privées, dîners en appartement | NOCTA"
-description: "Traiteur événementiel pour le 7e arrondissement de Paris. Dîners privés, réceptions en appartement haussmannien, accords mets-vins. À partir de 500 € de commande."
+description: "Traiteur événementiel pour le 7e arrondissement de Paris. Dîners privés, réceptions en appartement haussmannien. À partir de 500 € de commande."
 h1: "Traiteur à Paris 7e"
 zone: "Paris 7e arrondissement"
 type: "arrondissement"

@@ -1,6 +1,6 @@
 ---
-title: "Quel budget prévoir pour un traiteur à Paris en 2026 ?"
-description: "De 25 € par personne pour un plateau-repas à 250 € pour un dîner gastronomique avec chef et sommelier : voici les vrais prix d'un traiteur haut de gamme à Paris, détaillés par format."
+title: "Quel budget pour un traiteur à Paris en 2026 ?"
+description: "De 25 € le plateau-repas à 250 € le dîner gastronomique avec chef et sommelier : les vrais prix d'un traiteur à Paris en 2026, détaillés par format."
 date: 2026-03-26
 author: "Enzo Ryon"
 category: "Guide"
