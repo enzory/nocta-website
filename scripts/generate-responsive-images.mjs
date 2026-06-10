@@ -56,7 +56,7 @@ for (const filename of TARGETS) {
 
     await sharp(inputPath)
       .resize({ width, withoutEnlargement: true })
-      .webp({ quality: 80 })
+      .webp({ quality: 74 }) // abaissé de 80 → 74 (Lot 1 item 1.7) ; cible : 800w < 150 Ko
       .toFile(outputPath);
 
     const originalSize = fs.statSync(inputPath).size;
