@@ -1,6 +1,6 @@
 ---
 title: "Traiteur Courbevoie & La Défense — NOCTA, traiteur événementiel local"
-description: "Traiteur événementiel à Courbevoie et La Défense, basé sur place. Cocktails, déjeuners, dîners pour entreprises et particuliers. À partir de 10 personnes."
+description: "Traiteur événementiel à Courbevoie et La Défense, basé sur place. Cocktails, déjeuners, dîners pour entreprises et particuliers. À partir de 500 € de commande."
 h1: "Traiteur à Courbevoie et La Défense"
 zone: "Courbevoie / La Défense"
 type: "commune-92"
@@ -32,7 +32,7 @@ faq:
 
 NOCTA est un traiteur événementiel installé à Courbevoie. Cette implantation locale nous permet d'intervenir avec réactivité sur le quartier d'affaires de La Défense, à Courbevoie même, et dans les communes voisines de l'ouest parisien.
 
-Cocktails dînatoires, déjeuners d'affaires, dîners de comité de direction, plateaux-repas premium : nous adaptons chaque prestation à votre lieu, votre budget et votre contrainte horaire, à partir de 10 personnes.
+Cocktails dînatoires, déjeuners d'affaires, dîners de comité de direction, plateaux-repas premium : nous adaptons chaque prestation à votre lieu, votre budget et votre contrainte horaire, à partir de 500 € de commande.
 
 ## Pour quels événements ?
 
@@ -66,7 +66,7 @@ Pour une opération à La Défense ou dans les communes proches (Neuilly, Levall
 
 ## Tarifs et conditions
 
-Nos prestations démarrent à **500 € minimum de commande**. À partir de **10 personnes**, nous construisons un menu et un service sur mesure. Les tarifs varient selon le format (plateau-repas, cocktail, dîner servi), le niveau de prestation, et le nombre de convives. Chaque devis est établi après un échange pour comprendre votre contexte.
+Nos prestations démarrent à **500 € minimum de commande**, sans minimum de convives. Les tarifs varient selon le format (plateau-repas, cocktail, dîner servi), le niveau de prestation, et le nombre de convives. Chaque devis est établi après un échange pour comprendre votre contexte.
 
 [Demander un devis pour Courbevoie ou La Défense](/contact)
 

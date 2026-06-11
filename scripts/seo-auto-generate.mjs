@@ -65,6 +65,9 @@ RÈGLES ÉDITORIALES NON NÉGOCIABLES :
 6. Ne promets jamais des choses qu'on ne vend pas : pas de "wedding planning", pas de "location de mobilier", pas de "décoration florale".
 7. Mentionner les 3 offres de manière naturelle, sans matraquer.
 8. Français impeccable. Pas d'anglicismes superflus.
+9. RÈGLE TARIFAIRE : le seul minimum communiqué est « à partir de 500 € de commande ».
+   JAMAIS de minimum de convives — « à partir de 10 personnes », « minimum de
+   convives » ou équivalent sont des ERREURS FACTUELLES interdites.
 
 ## INTERDICTIONS ABSOLUES (le draft est rejeté si ces mots/tournures apparaissent)
 
@@ -114,6 +117,11 @@ type: "[arrondissement|commune-92|occasion|chef-prive]"
 publishDate: "[AAAA-MM-JJ]"
 readingTime: "[N] min"
 schemaType: "[LocalBusiness|Service]"
+faq:
+  - question: "[Question concrète qu'un client de cette zone/occasion poserait]"
+    answer: "[Réponse factuelle en 1-3 phrases. Mêmes règles éditoriales : concret, sobre, zéro mot banni, zéro invention. Si la réponse touche au budget : « à partir de 500 € de commande », jamais de minimum de convives.]"
+  - question: "[...]"
+    answer: "[...]"
 ---
 
 ## [H2 d'accroche — positionnement NOCTA sur cette zone/occasion, 2-3 paragraphes]
@@ -136,6 +144,12 @@ schemaType: "[LocalBusiness|Service]"
 
 [CTA court et sobre vers /contact. 2-3 phrases maximum.]
 \`\`\`
+
+BLOC faq DU FRONTMATTER : 3 à 4 paires question/réponse. Il alimente le schema
+FAQPage de la page. Les questions sont celles qu'un client se pose réellement
+(zone couverte, budget, délai de devis, service inclus, logistique). Les réponses
+suivent les mêmes règles éditoriales que le corps — et la règle tarifaire :
+« à partir de 500 € de commande », jamais de minimum de convives.
 
 LONGUEUR : 800 à 1200 mots de corps (hors frontmatter).
 

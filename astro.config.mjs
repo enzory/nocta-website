@@ -20,6 +20,11 @@ export default defineConfig({
       !page.includes('/commande/'),
   }), react()],
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    build: {
+      // Pas d'inlining data-URI : levis.svg (2,9 Ko < seuil 4096 par défaut)
+      // finissait dupliqué 2× dans le HTML de la home via le LogoSlider.
+      assetsInlineLimit: 0,
+    },
   }
 });

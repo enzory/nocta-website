@@ -7,6 +7,15 @@ ctaType: "corporate"
 publishDate: "2026-04-29"
 readingTime: "4 min"
 schemaType: "LocalBusiness"
+faq:
+  - question: "Intervenez-vous dans le 1er arrondissement malgré les contraintes d'accès ?"
+    answer: "Oui. Nous avons l'habitude des immeubles du centre de Paris : repérage en amont, créneaux de livraison adaptés aux restrictions de circulation, matériel dimensionné pour les accès étroits."
+  - question: "Quels types d'événements organisez-vous dans le 1er ?"
+    answer: "Dîners privés en appartement, cocktails d'entreprise, réceptions dans des lieux événementiels du quartier. Nos prestations démarrent à partir de 500 € de commande."
+  - question: "Le service en salle est-il inclus ?"
+    answer: "Selon le format. Pour un dîner servi, un chef de salle assure le service ; pour un cocktail, l'équipe est dimensionnée au nombre d'invités. Tout est précisé dans le devis, gratuit et remis sous 48 heures."
+  - question: "Travaillez-vous avec des produits de saison ?"
+    answer: "Oui. Les menus changent avec le marché. Chaque produit est sélectionné pour ce qu'il est, pas pour ce qu'il représente."
 ---
 
 ## NOCTA Catering dans le 1er arrondissement : du Louvre à la place Vendôme

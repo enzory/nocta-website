@@ -9,7 +9,7 @@ import path from 'path';
 const IMAGES_DIR    = './public/images';
 const ORIGINALS_DIR = './public/images/_originals';
 const ASSETS_DIR    = './src/assets/images';
-const QUALITY       = 80;
+const QUALITY       = 74; // abaissé de 80 → 74 (Lot 1 item 1.7)
 
 // ─── Images public/images à convertir ────────────────────────────────────────
 // Heroes + galeries + photos d'approche référencés dans les .astro
