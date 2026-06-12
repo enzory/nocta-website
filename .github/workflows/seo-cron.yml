@@ -2,7 +2,10 @@
 # .github/workflows/seo-cron.yml
 # Génération automatique de pages GEO pour NOCTA
 # ============================================================
-# Rythme : 3 fois par semaine (lun / mer / ven à 03h00 UTC = 05h Paris)
+# Rythme : 1 fois par semaine (lundi à 03h00 UTC = 05h Paris).
+# THROTTLE TEMPORAIRE — réduit de 3x/sem (lun/mer/ven) à lundi seul le temps que
+# l'indexation GSC reparte (backlog GEO mince en cours de réécriture/réindexation).
+# Rouvrir à 1,3,5 une fois l'indexation stabilisée.
 # Peut aussi être déclenché à la main depuis l'onglet Actions.
 #
 # Flux :
@@ -21,8 +24,8 @@ name: SEO auto-generate
 
 on:
   schedule:
-    # Lundi, mercredi, vendredi à 03h00 UTC
-    - cron: "0 3 * * 1,3,5"
+    # Lundi seul à 03h00 UTC (throttle temporaire — cf. en-tête)
+    - cron: "0 3 * * 1"
   workflow_dispatch: # permet le lancement manuel
 
 permissions:
