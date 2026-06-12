@@ -33,6 +33,8 @@ NOCTA est un traiteur événementiel basé à Courbevoie. Nous accompagnons rég
 
 Le 16e a ses codes : appartements haussmanniens en enfilade, salles à manger pensées pour recevoir à 20 ou 30, réceptions ancrées dans une tradition familiale. Notre rôle est de vous aider à recevoir comme vous le souhaitez, sans avoir à vous en occuper.
 
+D'**Auteuil** et ses villas aux voies privées à **Passy** et **La Muette** et leurs grands appartements, jusqu'aux immeubles de réception du **Trocadéro** et de **Chaillot** en bordure du Bois, chaque secteur a sa configuration — et ses contraintes d'accès propres.
+
 ## Pour quels événements ?
 
 Sur le 16e, trois formats reviennent particulièrement :
@@ -49,11 +51,15 @@ Sur le 16e, trois formats reviennent particulièrement :
 
 **Pour les immeubles de standing avec règles de copropriété**, nous prenons contact en amont avec le gardien : créneaux de livraison, accès par l'escalier de service, tenue de l'équipe en circulation dans les parties communes.
 
+**Les villas d'Auteuil**, voies privées à accès contrôlé, demandent un peu d'anticipation : nous transmettons à l'avance les coordonnées de l'équipe et du véhicule, et nous fixons l'heure d'arrivée avec le gardien. Notre cuisine étant à Courbevoie, juste de l'autre côté du pont de Puteaux, ce repérage se fait sans alourdir le devis.
+
 **Notre présence sur place dépend du format choisi :**
 
 - **Livraison de plateaux ou cocktail sans service** — installation puis récupération du matériel le lendemain.
 - **Cocktail dînatoire avec service** — équipe en tenue pendant toute la durée du service.
 - **Dîner servi à table** — équipe complète : chef en cuisine, chef de salle, serveurs, sommelier sur demande.
+
+Un format récurrent dans le 16e : un déjeuner de famille élargie de vingt-cinq à trente couverts dans un appartement de Passy en enfilade. Nous répartissons le service sur la longueur des pièces, avec des consoles-relais entre la cuisine et la salle à manger pour ne jamais rompre le rythme du repas.
 
 ## Recevoir comme on l'a toujours fait, mais sans s'en occuper
 

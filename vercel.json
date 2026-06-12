@@ -8,7 +8,7 @@
       "permanent": true
     },
 
-    { "source": "/events", "destination": "/prestations", "permanent": true },
+    { "source": "/events", "destination": "/prestations/corporate", "permanent": true },
     { "source": "/nocta-signature", "destination": "/prestations/signature", "permanent": true },
     { "source": "/nocta-corporate", "destination": "/prestations/corporate", "permanent": true },
     { "source": "/nocta-private", "destination": "/prestations/private", "permanent": true },
@@ -18,7 +18,8 @@
     { "source": "/journal/traiteur-la-defense.md", "destination": "/journal/traiteur-la-defense", "permanent": true },
 
     { "source": "/a-propos", "destination": "/maison", "permanent": true },
-    { "source": "/events/biologique-recherche-livraison-dejeuner-pause-gourmande", "destination": "/journal/buffet-entreprise-paris-livraison-hebdomadaire", "permanent": true }
+    { "source": "/events/biologique-recherche-livraison-dejeuner-pause-gourmande", "destination": "/journal/buffet-entreprise-paris-livraison-hebdomadaire", "permanent": true },
+    { "source": "/events/seminaire-petit-dejeuner-dejeuner-maison-americaine-marais", "destination": "/prestations/corporate", "permanent": true }
   ],
   "rewrites": [
     { "source": "/events/diner-prive-saint-tropez", "destination": "/api/gone" },

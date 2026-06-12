@@ -22,6 +22,13 @@
  * ============================================================
  */
 
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const GEO_DIR = path.resolve(__dirname, "../src/content/geo");
+
 // ============================================================
 // COUCHE 1 — règles déterministes
 // ============================================================
@@ -167,6 +174,61 @@ function checkClientInvention(markdown) {
 }
 
 // ============================================================
+// COUCHE 1bis — duplication inter-pages (anti-cannibalisation)
+// ============================================================
+// Calcule le taux de 5-grammes du candidat déjà présents dans le corpus GEO
+// existant. Seuil mesuré à la recon : duplication max observée ~25 % par page.
+// On flag éliminatoire à 35 % (marge de 10 pt) pour bloquer un draft trop
+// templatisé sans pénaliser une page légitimement distincte.
+
+const DUP_THRESHOLD = 35;
+
+const bodyOf = (md) => md.replace(/^---[\s\S]*?\n---\s*\n/, "");
+const tokensOf = (s) =>
+  s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").match(/[a-z0-9€]+/g) || [];
+
+function shingleSet(tokens, n = 5) {
+  const set = new Set();
+  for (let i = 0; i + n <= tokens.length; i++) set.add(tokens.slice(i, i + n).join(" "));
+  return set;
+}
+
+// Union des 5-grammes de tous les .md GEO existants, hors candidat (excludeId).
+// Tolérant : si le dossier est absent/illisible, renvoie un set vide (dup = 0).
+function loadCorpusShingles(excludeId) {
+  const set = new Set();
+  let files;
+  try {
+    files = fs.readdirSync(GEO_DIR).filter((f) => f.endsWith(".md"));
+  } catch {
+    return set;
+  }
+  for (const f of files) {
+    if (excludeId && f === excludeId) continue;
+    try {
+      const md = fs.readFileSync(path.join(GEO_DIR, f), "utf-8");
+      shingleSet(tokensOf(bodyOf(md))).forEach((s) => set.add(s));
+    } catch {
+      /* fichier illisible — ignoré */
+    }
+  }
+  return set;
+}
+
+function checkDuplication(markdown, excludeId) {
+  const candidate = shingleSet(tokensOf(bodyOf(markdown)));
+  if (candidate.size === 0) return { flags: [], dupPct: 0 };
+  const corpus = loadCorpusShingles(excludeId);
+  let dup = 0;
+  for (const s of candidate) if (corpus.has(s)) dup++;
+  const dupPct = Math.round((100 * dup) / candidate.size);
+  const flags = [];
+  if (dupPct >= DUP_THRESHOLD)
+    flags.push({ code: "DUP_TOO_HIGH", eliminatory: true, detail: `${dupPct}%` });
+  return { flags, dupPct };
+}
+
+// ============================================================
 // COUCHE 2 — scoring qualitatif via Claude
 // ============================================================
 
@@ -226,7 +288,7 @@ async function scoreWithClaude(markdown, client, model) {
 // ============================================================
 // EXPORT : brandCheck
 // ============================================================
-export async function brandCheck(markdown, claudeClient, model = "claude-sonnet-4-6") {
+export async function brandCheck(markdown, claudeClient, model = "claude-sonnet-4-6", excludeId = null) {
   const allFlags = [];
 
   // Couche 1
@@ -241,6 +303,10 @@ export async function brandCheck(markdown, claudeClient, model = "claude-sonnet-
 
   const clientFlags = checkClientInvention(markdown);
   allFlags.push(...clientFlags);
+
+  // Couche 1bis — duplication vs corpus GEO existant
+  const { flags: dupFlags, dupPct } = checkDuplication(markdown, excludeId);
+  allFlags.push(...dupFlags);
 
   const hasEliminatory = allFlags.some((f) => f.eliminatory);
 
@@ -264,6 +330,7 @@ export async function brandCheck(markdown, claudeClient, model = "claude-sonnet-
       client: clientFlags,
       qualitative,
       words,
+      dupPct,
       hasEliminatory,
     },
   };
@@ -273,15 +340,17 @@ export async function brandCheck(markdown, claudeClient, model = "claude-sonnet-
 // CLI mode (test standalone) : node seo-brand-check.mjs path/to/draft.md
 // ============================================================
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const fs = await import("node:fs/promises");
+  const fsp = await import("node:fs/promises");
   const Anthropic = (await import("@anthropic-ai/sdk")).default;
   const filePath = process.argv[2];
   if (!filePath) {
     console.error("Usage: node seo-brand-check.mjs <path-to-draft.md>");
     process.exit(1);
   }
-  const md = await fs.readFile(filePath, "utf-8");
+  const md = await fsp.readFile(filePath, "utf-8");
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-  const result = await brandCheck(md, client);
+  // excludeId = nom du fichier candidat → évite l'auto-comparaison s'il est
+  // déjà présent dans src/content/geo/ (cas du test CLI sur un fichier publié).
+  const result = await brandCheck(md, client, "claude-sonnet-4-6", path.basename(filePath));
   console.log(JSON.stringify(result, null, 2));
 }

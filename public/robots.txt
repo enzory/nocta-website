@@ -1,7 +1,9 @@
 User-agent: *
 Allow: /
+# /mentions-legales : plus de Disallow -- la page porte un noindex,follow,
+# donc Google peut la crawler, voir le noindex et l'exclure proprement
+# (supprime le warning GSC "indexed though blocked by robots.txt").
 Disallow: /merci
-Disallow: /mentions-legales
 Disallow: /commande/
 
 Sitemap: https://www.noctaparis.fr/sitemap-index.xml

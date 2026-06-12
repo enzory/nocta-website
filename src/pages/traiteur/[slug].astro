@@ -29,13 +29,16 @@ const d = entry.data;
 
 // Construction du Schema.org selon le type
 const siteUrl = 'https://www.noctaparis.fr';
-const entrySlug = entry.slug ?? entry.id.replace(/\.md$/, '');
+// Astro 5 : `entry.slug` est déprécié au profit de `entry.id`. On dérive le
+// slug d'URL depuis l'id (nom de fichier sans extension) partout.
+const slugOf = (e) => e.id.replace(/\.md$/, '');
+const entrySlug = slugOf(entry);
 const pageUrl = `${siteUrl}/traiteur/${entrySlug}`;
 
 // Maillage interne : 2 autres zones desservies, triées par date de publication desc
 const allGeo = await getCollection('geo');
 const otherZones = allGeo
-  .filter((p) => p.slug !== entry.slug)
+  .filter((p) => p.id !== entry.id)
   .sort(
     (a, b) =>
       new Date(b.data.publishDate).getTime() -
@@ -154,6 +157,22 @@ const displayH1 = d.h1 ?? d.title;
       <Content />
     </div>
 
+    <!-- FAQ visible — DOIT correspondre mot pour mot au schema FAQPage émis
+         plus haut (règle Google : le contenu balisé doit être visible). -->
+    {d.faq?.length > 0 && (
+      <section class="geo-faq">
+        <h2>Questions fréquentes</h2>
+        <dl>
+          {d.faq.map((item) => (
+            <div class="geo-faq-item">
+              <dt>{item.question}</dt>
+              <dd>{item.answer}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    )}
+
     <!-- CTA réassurance / conversion -->
     <section class="geo-cta">
       <h2>Parlons de votre projet</h2>
@@ -176,7 +195,7 @@ const displayH1 = d.h1 ?? d.title;
         <h2>Autres zones desservies</h2>
         <div class="related-grid">
           {otherZones.map((z) => (
-            <a href={`/traiteur/${z.slug}`} class="related-card">
+            <a href={`/traiteur/${slugOf(z)}`} class="related-card">
               <span class="related-label">{z.data.zone || 'Île-de-France'}</span>
               <span class="related-title">{z.data.title}</span>
             </a>
@@ -240,6 +259,39 @@ const displayH1 = d.h1 ?? d.title;
   }
   .geo-content :global(a):hover {
     border-bottom-color: #8a6a3a;
+  }
+
+  /* FAQ visible — sobre, aligné sur la typo éditoriale cream */
+  .geo-faq {
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .geo-faq > h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin: 0 0 1.5rem;
+    color: #1a1a1a;
+  }
+  .geo-faq-item {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .geo-faq-item:last-child {
+    border-bottom: none;
+  }
+  .geo-faq dt {
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+  }
+  .geo-faq dd {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #2a2a2a;
   }
 
   /* CTA inliné — pattern aligné avec journal/[slug].astro */

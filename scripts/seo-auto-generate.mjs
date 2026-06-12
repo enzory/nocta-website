@@ -337,8 +337,9 @@ async function main() {
   markdown = injectCtaType(markdown, ctaType);
   console.error(`   ctaType = ${ctaType}`);
 
-  // 3. Brand-check
-  const check = await brandCheck(markdown, client, MODEL);
+  // 3. Brand-check (excludeId = fichier cible, pour ne pas se comparer à soi-même
+  //    si une version précédente du slug existe déjà dans le corpus)
+  const check = await brandCheck(markdown, client, MODEL, `${topic.slug}.md`);
   console.error(`   Brand-check score : ${check.score}/10 — ${check.verdict}`);
   if (check.flags.length) {
     console.error(`   Flags : ${check.flags.join(" | ")}`);

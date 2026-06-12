@@ -69,29 +69,3 @@ Pour une opération à La Défense ou dans les communes proches (Neuilly, Levall
 Nos prestations démarrent à **500 € minimum de commande**, sans minimum de convives. Les tarifs varient selon le format (plateau-repas, cocktail, dîner servi), le niveau de prestation, et le nombre de convives. Chaque devis est établi après un échange pour comprendre votre contexte.
 
 [Demander un devis pour Courbevoie ou La Défense](/contact)
-
-## Questions fréquentes
-
-### Vous intervenez à La Défense même ?
-
-Oui. Notre siège est à Courbevoie, nous nous déplaçons quotidiennement sur le quartier d'affaires de La Défense et les communes voisines.
-
-### Quel est le délai minimum de prévenance ?
-
-Nous prenons des commandes jusqu'à 48 h avant la prestation pour les formats simples (plateaux-repas, cocktail léger), une semaine pour les dîners servis et les événements à plus de 50 personnes.
-
-### Peut-on faire un déjeuner pour une équipe de 15 personnes en bureau ?
-
-Oui, c'est l'un de nos formats récurrents. Nous arrivons une heure avant l'horaire de service, mettons en place, et débarrassons après le repas.
-
-### Que faire si nos bureaux n'ont pas de cuisine équipée ?
-
-Aucun problème. Nous arrivons avec nos plaques de cuisson et notre matériel. Nous avons besoin uniquement d'un point d'eau et d'une zone de mise en place.
-
-### Acceptez-vous les protocoles d'accès sécurisé (badges, contrôle d'identité) ?
-
-Oui. Nous travaillons régulièrement dans des sièges sociaux où l'accès est filtré et nous nous adaptons à votre procédure de sécurité.
-
-### Combien coûte un cocktail dînatoire pour 30 personnes à La Défense ?
-
-Le tarif dépend du nombre de pièces par convive, du niveau de prestation et de la durée du service. Comptez à partir de quelques dizaines d'euros par personne pour un format léger, davantage pour un cocktail signature avec animation. Devis sur demande.
