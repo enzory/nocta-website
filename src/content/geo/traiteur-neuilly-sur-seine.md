@@ -34,6 +34,8 @@ NOCTA est un traiteur événementiel basé à Courbevoie, à dix minutes de Neui
 
 Anniversaires, baptêmes, réceptions, dîners de famille élargie : nous accompagnons les célébrations qui demandent un soin particulier — sur la table, dans le service, et sur les vins.
 
+Des **Sablons** au quartier **Saint-James** et leurs hôtels particuliers, jusqu'aux maisons avec jardin de l'**Île de la Jatte** sur la Seine, Neuilly réunit des lieux de réception très différents. Nous adaptons l'équipe et la mise en place à chacun.
+
 ## Pour quels événements ?
 
 Sur Neuilly et l'ouest parisien, trois formats reviennent le plus souvent :
@@ -50,11 +52,15 @@ Sur Neuilly et l'ouest parisien, trois formats reviennent le plus souvent :
 
 **Pour les sites avec service de sécurité ou personnel de maison**, nous nous coordonnons avec eux pour respecter les codes de la maison : tenue de service, circulation discrète, gestion du débarrassage.
 
+Neuilly étant limitrophe de notre base de Courbevoie, nous restons disponibles jusqu'au dernier moment : un convive supplémentaire, un changement d'horaire ou une demande de dernière minute se gèrent sans contrainte logistique.
+
 **Notre présence sur place dépend du format choisi :**
 
 - **Livraison de plateaux ou cocktail sans service** — nous livrons et installons, vous gérez sur place. Récupération du matériel le lendemain.
 - **Cocktail dînatoire avec service** — équipe en tenue présente du dressage au débarrassage.
 - **Dîner privé servi à table** — équipe complète : chef en cuisine, chef de salle, serveurs, sommelier selon votre demande.
+
+Un cadre que l'on rencontre à Neuilly : la réception de jardin, notamment sur l'**Île de la Jatte**. L'extérieur reste possible selon la saison et l'infrastructure du lieu — alimentation électrique pour les postes de chauffe, plan de repli en cas de pluie, accès des véhicules au plus près. Nous évaluons ces points au repérage avant de confirmer le format.
 
 ## Accords mets-vins, notre marque de fabrique
 

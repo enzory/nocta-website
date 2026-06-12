@@ -35,13 +35,13 @@ Cocktails dînatoires, dîners servis, célébrations familiales : nous concevon
 
 ## Pour quels événements ?
 
-Le 7e arrondissement, avec ses grands appartements haussmanniens, ses hôtels particuliers et ses jardins privés, se prête particulièrement à trois formats :
+Le 7e n'est pas un arrondissement uniforme. Le **faubourg Saint-Germain** aligne hôtels particuliers et résidences d'ambassade ; le **Gros-Caillou** et les abords de la rue Cler concentrent de grands appartements bourgeois ; le **Champ-de-Mars** et l'**École Militaire** ouvrent sur des pièces de réception spacieuses. Chacun de ces cadres se prête à trois formats :
 
 **Le dîner privé servi à table** — 10 à 30 couverts, dans un cadre formel ou semi-formel. Service par un chef de salle, accords mets-vins par notre sommelier.
 
 **La réception en appartement** — 30 à 100 invités, format cocktail dînatoire ou buffet servi. Adapté aux grandes pièces de réception et aux configurations en enfilade.
 
-**L'événement familial marquant** — anniversaire, fiançailles, célébration. Format sur-mesure, du dîner intime au grand format avec animation.
+**L'événement familial marquant** — anniversaire, fiançailles, célébration. Format adapté à l'occasion, du dîner intime au grand format avec animation.
 
 ## Notre approche du service en appartement
 
@@ -49,11 +49,15 @@ Le 7e arrondissement, avec ses grands appartements haussmanniens, ses hôtels pa
 
 **Pour les immeubles de standing avec gardien et règles de circulation**, nous prenons contact en amont pour respecter les usages : créneaux de livraison, accès par l'escalier de service, tenue de l'équipe.
 
+**Aux abords des ministères et des ambassades** — boulevard Saint-Germain, rue de Grenelle, quai d'Orsay — le stationnement est réglementé et certains périmètres sont surveillés. Nous calons les livraisons tôt le matin et transmettons à l'avance les coordonnées de l'équipe et du véhicule quand l'adresse l'exige.
+
 **Notre présence sur place dépend du format choisi :**
 
 - **Livraison de plateaux ou cocktail sans service** — installation puis récupération du matériel le lendemain.
 - **Cocktail dînatoire avec service** — équipe en tenue pendant toute la durée du service.
 - **Dîner privé servi à table** — équipe complète, sommelier sur demande.
+
+Un cas fréquent dans le 7e : un dîner servi de quatorze à dix-huit couverts dans un hôtel particulier du faubourg Saint-Germain, où la cuisine se trouve au sous-sol, loin de la salle à manger. Nous installons alors un office-relais à l'étage de réception pour tenir un envoi régulier, sans allers-retours visibles dans les pièces.
 
 ## Pourquoi nous choisir pour le 7e
 
