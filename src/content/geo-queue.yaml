@@ -211,7 +211,7 @@ topics:
     angle: "chef à domicile, dîner privé, 8e arrondissement"
     type: chef-prive
     priority: 7
-    status: pending
+    status: published
 
   - slug: chef-prive-paris-7
     zone: "Paris 7e"
