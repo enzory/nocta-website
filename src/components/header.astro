@@ -1,6 +1,11 @@
 ---
 const pathname = Astro.url.pathname;
 
+// `light` = page dont le haut est clair (cream) sans hero sombre derrière le
+// header fixe (GEO, hub, mentions, journal, contact). Le header démarre alors
+// en texte noir au lieu de blanc — sinon logo + nav sont invisibles sur cream.
+const { light = false } = Astro.props;
+
 const navLinks = [
   { label: 'Notre Maison', href: '/maison' },
   { label: 'Prestations',  href: '/prestations' },
@@ -9,7 +14,7 @@ const navLinks = [
 ];
 ---
 
-<header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 text-white">
+<header id="header" data-top-theme={light ? 'dark' : 'light'} class:list={["fixed top-0 left-0 right-0 z-50 transition-all duration-500", light ? 'text-nocta-black' : 'text-white']}>
   <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
 
     <a href="/" class="flex items-center logo-animated" aria-label="NOCTA - Accueil">
@@ -79,13 +84,18 @@ const navLinks = [
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobile-menu');
 
+  // Couleur du texte quand on est en haut de page : noir si la page est claire
+  // (data-top-theme="dark"), blanc si un hero sombre est derrière le header.
+  const topDark = header?.dataset.topTheme === 'dark';
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 80) {
       header?.classList.add('bg-nocta-cream/95', 'backdrop-blur-sm', 'shadow-sm', 'text-nocta-black');
       header?.classList.remove('text-white');
     } else {
-      header?.classList.remove('bg-nocta-cream/95', 'backdrop-blur-sm', 'shadow-sm', 'text-nocta-black');
-      header?.classList.add('text-white');
+      header?.classList.remove('bg-nocta-cream/95', 'backdrop-blur-sm', 'shadow-sm');
+      header?.classList.add(topDark ? 'text-nocta-black' : 'text-white');
+      header?.classList.remove(topDark ? 'text-white' : 'text-nocta-black');
     }
   });
 
