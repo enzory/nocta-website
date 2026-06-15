@@ -120,7 +120,7 @@ const hasAny = ORDER.some(t => grouped[t].length > 0);
     max-width: 960px;
     margin: 0 auto;
     padding: 6rem 1.5rem 4rem;
-    color: #2a2a2a;
+    color: var(--color-nocta-text);
   }
 
   /* --- En-tête --- */
@@ -133,7 +133,7 @@ const hasAny = ORDER.some(t => grouped[t].length > 0);
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    color: #6a6a6a;
+    color: var(--color-nocta-muted);
     margin: 0 0 1rem;
   }
   .geo-hub-title {
@@ -143,12 +143,12 @@ const hasAny = ORDER.some(t => grouped[t].length > 0);
     font-size: clamp(2.25rem, 5vw, 3.75rem);
     line-height: 1.1;
     margin: 0 0 1.25rem;
-    color: #1a1a1a;
+    color: var(--color-nocta-ink);
   }
   .geo-hub-intro {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #3a3a3a;
+    color: var(--color-nocta-text);
     max-width: 640px;
     margin: 0;
   }
@@ -165,7 +165,7 @@ const hasAny = ORDER.some(t => grouped[t].length > 0);
     font-size: 1.5rem;
     margin: 0 0 1.25rem;
     padding-bottom: 0.5rem;
-    color: #1a1a1a;
+    color: var(--color-nocta-ink);
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
 
@@ -191,12 +191,12 @@ const hasAny = ORDER.some(t => grouped[t].length > 0);
     flex-direction: column;
     gap: 0.2rem;
     padding: 0.9rem 0;
-    color: #2a2a2a;
+    color: var(--color-nocta-text);
     text-decoration: none;
     transition: color 0.2s ease;
   }
   .geo-hub-link:hover {
-    color: #8a6a3a;
+    color: var(--color-nocta-ink);
   }
   .geo-hub-item-title {
     font-size: 0.98rem;
@@ -206,12 +206,12 @@ const hasAny = ORDER.some(t => grouped[t].length > 0);
     font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: #8a8a8a;
+    color: var(--color-nocta-grey);
   }
 
   .geo-hub-empty {
     font-size: 1rem;
-    color: #6a6a6a;
+    color: var(--color-nocta-muted);
     font-style: italic;
   }
 
@@ -219,7 +219,7 @@ const hasAny = ORDER.some(t => grouped[t].length > 0);
   .geo-hub-cta {
     margin-top: 5rem;
     padding: 4rem 2rem;
-    background: #0A0A0A;
+    background: var(--color-nocta-black);
     color: #EEEBE3;
     text-align: center;
   }
@@ -239,7 +239,7 @@ const hasAny = ORDER.some(t => grouped[t].length > 0);
   .geo-hub-cta-btn {
     display: inline-block;
     background: #EEEBE3;
-    color: #0A0A0A;
+    color: var(--color-nocta-black);
     padding: 0.85rem 2rem;
     font-size: 0.8rem;
     text-transform: uppercase;
