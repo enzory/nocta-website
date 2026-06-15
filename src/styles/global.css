@@ -68,6 +68,12 @@
   --color-nocta-grey: #8A8A85;
   --color-nocta-white: #FAFAF8;
 
+  /* Encres éditoriales — ex-valeurs en dur des templates GEO/Journal,
+     remontées en tokens (V3). #3a3a3a/#4a4a4a consolidés sur --text. */
+  --color-nocta-ink: #1a1a1a;   /* titres éditoriaux (near-black) */
+  --color-nocta-text: #2a2a2a;  /* corps de texte éditorial */
+  --color-nocta-muted: #6a6a6a; /* eyebrows, labels, légendes */
+
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'DM Sans', system-ui, sans-serif;
 }

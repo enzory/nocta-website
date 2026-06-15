@@ -144,7 +144,7 @@ const displayH1 = d.h1 ?? d.title;
     ]
   })} />
 
-  <Header />
+  <Header light />
 
   <article class="geo-article">
     <header class="geo-header">
@@ -216,7 +216,7 @@ const displayH1 = d.h1 ?? d.title;
     max-width: 760px;
     margin: 0 auto;
     padding: 5rem 1.5rem 4rem;
-    color: #2a2a2a;
+    color: var(--color-nocta-text);
   }
   .geo-header {
     margin-bottom: 2.5rem;
@@ -227,7 +227,7 @@ const displayH1 = d.h1 ?? d.title;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: #6a6a6a;
+    color: var(--color-nocta-muted);
     margin-bottom: 0.75rem;
   }
   .geo-title {
@@ -235,17 +235,17 @@ const displayH1 = d.h1 ?? d.title;
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.15;
     margin: 0 0 0.75rem;
-    color: #1a1a1a;
+    color: var(--color-nocta-ink);
   }
   .geo-reading {
     font-size: 0.9rem;
-    color: #8a8a8a;
+    color: var(--color-nocta-grey);
   }
   .geo-content :global(h2) {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 1.65rem;
     margin: 2.5rem 0 1rem;
-    color: #1a1a1a;
+    color: var(--color-nocta-ink);
   }
   .geo-content :global(p) {
     font-size: 1.05rem;
@@ -253,12 +253,12 @@ const displayH1 = d.h1 ?? d.title;
     margin: 0 0 1.1rem;
   }
   .geo-content :global(a) {
-    color: #8a6a3a;
-    border-bottom: 1px solid rgba(138, 106, 58, 0.3);
+    color: var(--color-nocta-ink);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     text-decoration: none;
   }
   .geo-content :global(a):hover {
-    border-bottom-color: #8a6a3a;
+    border-bottom-color: var(--color-nocta-ink);
   }
 
   /* FAQ visible — sobre, aligné sur la typo éditoriale cream */
@@ -272,7 +272,7 @@ const displayH1 = d.h1 ?? d.title;
     font-size: 1.8rem;
     font-weight: 400;
     margin: 0 0 1.5rem;
-    color: #1a1a1a;
+    color: var(--color-nocta-ink);
   }
   .geo-faq-item {
     padding: 1.25rem 0;
@@ -284,21 +284,21 @@ const displayH1 = d.h1 ?? d.title;
   .geo-faq dt {
     font-weight: 500;
     font-size: 1.05rem;
-    color: #1a1a1a;
+    color: var(--color-nocta-ink);
     margin-bottom: 0.5rem;
   }
   .geo-faq dd {
     margin: 0;
     font-size: 1rem;
     line-height: 1.7;
-    color: #2a2a2a;
+    color: var(--color-nocta-text);
   }
 
   /* CTA inliné — pattern aligné avec journal/[slug].astro */
   .geo-cta {
     margin-top: 4rem;
     padding: 4rem 2rem;
-    background: #0A0A0A;
+    background: var(--color-nocta-black);
     color: #EEEBE3;
     text-align: center;
   }
@@ -318,7 +318,7 @@ const displayH1 = d.h1 ?? d.title;
   .geo-cta-btn {
     display: inline-block;
     background: #EEEBE3;
-    color: #0A0A0A;
+    color: var(--color-nocta-black);
     padding: 0.85rem 2rem;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -365,7 +365,7 @@ const displayH1 = d.h1 ?? d.title;
     font-size: 1.8rem;
     font-weight: 400;
     margin: 0 0 1.5rem;
-    color: #1a1a1a;
+    color: var(--color-nocta-ink);
   }
   .related-grid {
     display: grid;
@@ -392,25 +392,25 @@ const displayH1 = d.h1 ?? d.title;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: #6a6a6a;
+    color: var(--color-nocta-muted);
   }
   .related-title {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-size: 1.15rem;
     line-height: 1.3;
-    color: #1a1a1a;
+    color: var(--color-nocta-ink);
   }
   .related-cta {
     font-size: 0.95rem;
-    color: #4a4a4a;
+    color: var(--color-nocta-text);
     margin: 0;
   }
   .related-cta a {
-    color: #8a6a3a;
-    border-bottom: 1px solid rgba(138, 106, 58, 0.3);
+    color: var(--color-nocta-ink);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     text-decoration: none;
   }
   .related-cta a:hover {
-    border-bottom-color: #8a6a3a;
+    border-bottom-color: var(--color-nocta-ink);
   }
 </style>
