@@ -137,6 +137,9 @@ html {
      que .t-h2 sur mobile (text-3xl) sans atteindre la taille d'un hero. */
   .t-h2-display { @apply font-serif text-3xl md:text-4xl lg:text-5xl font-light italic leading-tight; }
   .t-h3 { @apply font-serif text-2xl font-light italic; }
+  /* H3 « display » : sous-titres approche (prestations). Reste ≤ .t-h2 à chaque
+     palier (mobile 24≤24, md 30<36, lg 36<48) — corrige l'inversion H3>H2. */
+  .t-h3-lg { @apply font-serif text-2xl md:text-3xl lg:text-4xl font-light italic; }
 }
 
 /* Scroll reveal — état initial */
