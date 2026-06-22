@@ -218,7 +218,7 @@ topics:
     angle: "chef à domicile, dîner privé, 7e arrondissement"
     type: chef-prive
     priority: 7
-    status: pending
+    status: published
 
   - slug: chef-prive-boulogne-billancourt
     zone: "Boulogne-Billancourt"
