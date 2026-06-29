@@ -88,7 +88,7 @@ topics:
     angle: "Porte de Versailles, salons professionnels, événements corporate"
     type: arrondissement
     priority: 6
-    status: pending
+    status: published
 
   # ---------- COMMUNES 92 (priorité haute — cible corporate) ----------
   - slug: traiteur-neuilly-sur-seine
