@@ -154,7 +154,7 @@ topics:
     angle: "baptême, déjeuner familial, événement privé"
     type: occasion
     priority: 6
-    status: pending
+    status: published
 
   - slug: traiteur-depart-retraite-paris
     zone: "Paris"
