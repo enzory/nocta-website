@@ -161,7 +161,7 @@ topics:
     angle: "départ retraite, cocktail corporate, dîner d'équipe"
     type: occasion
     priority: 6
-    status: pending
+    status: published
 
   - slug: traiteur-cocktail-entreprise-paris
     zone: "Paris"
