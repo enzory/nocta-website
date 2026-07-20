@@ -225,4 +225,4 @@ topics:
     angle: "chef à domicile, dîner privé, 92"
     type: chef-prive
     priority: 6
-    status: pending
+    status: published
