@@ -141,6 +141,8 @@ const AUTHORIZED_CLIENTS = [
   "Colombus Consulting",
   "Colombus",
   "Jus Mundi",
+  "Messika",
+  "Originator",
 ];
 
 function checkClientInvention(markdown) {
