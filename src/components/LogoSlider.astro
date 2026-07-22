@@ -17,15 +17,21 @@ import originatorSrc     from '../assets/logos/originator.png?url';
 // figees a 160x60 pour tous (ratio 2.67) : comme la largeur est en `auto`, le
 // navigateur s'appuyait sur ce faux ratio et bridait les logos plus larges
 // (Originator, ratio 5.54, ne rendait qu'a 48 % de sa taille voulue).
+//
+// GABARIT UNIFORME : chaque logo occupe la MEME SURFACE (~2300 px²), quelle que
+// soit sa forme. Une hauteur commune ne marcherait pas — les logos larges
+// buteraient tous sur le max-width de 120 px pendant que les carres resteraient
+// a 48. Regle : h = round(sqrt(2304 / ratio)), donc largeur x hauteur constant.
+// Pour ajouter un logo, appliquer la meme formule avec son ratio reel.
 const logos = [
-  { src: levisSrc,       alt: "Levi's — client NOCTA catering événementiel Paris",               h: 47, iw: 800,  ih: 800 },
-  { src: biologiqueSrc,  alt: 'Biologique Recherche — client traiteur événementiel NOCTA',       h: 31, iw: 600,  ih: 208 },
-  { src: galionSrc,      alt: "The Galion Project — événements d'entreprise NOCTA Paris",         h: 67, iw: 1024, ih: 1024 },
-  { src: columbusSrc,    alt: "Colombus Consulting — cocktail et dîner d'entreprise NOCTA",       h: 62, iw: 1928, ih: 1771 },
-  { src: jusMundiSrc,    alt: 'Jus Mundi — catering corporate Paris NOCTA',                       h: 69, iw: 1024, ih: 1024 },
-  { src: aaConseilSrc,   alt: 'AA Conseil — traiteur corporate Paris NOCTA',                      h: 70, iw: 1024, ih: 1024 },
-  { src: messikaSrc,     alt: 'Messika — client traiteur événementiel NOCTA Paris',               h: 23, iw: 509,  ih: 143 },
-  { src: originatorSrc,  alt: 'Originator — client NOCTA catering événementiel Paris',            h: 16, iw: 360,  ih: 65 },
+  { src: levisSrc,       alt: "Levi's — client NOCTA catering événementiel Paris",               h: 48, iw: 800,  ih: 800 },
+  { src: biologiqueSrc,  alt: 'Biologique Recherche — client traiteur événementiel NOCTA',       h: 28, iw: 600,  ih: 208 },
+  { src: galionSrc,      alt: "The Galion Project — événements d'entreprise NOCTA Paris",         h: 48, iw: 1024, ih: 1024 },
+  { src: columbusSrc,    alt: "Colombus Consulting — cocktail et dîner d'entreprise NOCTA",       h: 46, iw: 1928, ih: 1771 },
+  { src: jusMundiSrc,    alt: 'Jus Mundi — catering corporate Paris NOCTA',                       h: 48, iw: 1024, ih: 1024 },
+  { src: aaConseilSrc,   alt: 'AA Conseil — traiteur corporate Paris NOCTA',                      h: 48, iw: 1024, ih: 1024 },
+  { src: messikaSrc,     alt: 'Messika — client traiteur événementiel NOCTA Paris',               h: 25, iw: 509,  ih: 143 },
+  { src: originatorSrc,  alt: 'Originator — client NOCTA catering événementiel Paris',            h: 20, iw: 360,  ih: 65 },
 ];
 ---
 
