@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
+import vercel from '@astrojs/vercel';
 
 import react from '@astrojs/react';
 
@@ -13,6 +14,10 @@ import react from '@astrojs/react';
 export default defineConfig({
   site: 'https://www.noctaparis.fr',
   trailingSlash: 'never',
+  output: 'server',
+  adapter: vercel({
+    webAnalytics: { enabled: true }
+  }),
   integrations: [sitemap({
     filter: (page) =>
       !page.includes('/merci') &&
