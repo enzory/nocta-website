@@ -1,4 +1,5 @@
 ---
+import Analytics from '@vercel/analytics/astro';
 import '../styles/global.css';
 
 const {
@@ -142,5 +143,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : null
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
       }
     </script>
+
+    <Analytics />
   </body>
 </html>
