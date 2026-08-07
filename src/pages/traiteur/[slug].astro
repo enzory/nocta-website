@@ -194,23 +194,31 @@ const placePhrase = (zone) => {
   return `à ${z}`;
 };
 
-// CTA contextuel — piloté par `ctaType` du frontmatter. Le champ est optionnel
-// au schéma : une page qui ne le porte pas retombe sur le texte générique.
-// Le bouton (« Demander un devis » → /contact) est identique dans les 3 cas.
+// CTA contextuel. Les pages `chef-prive` ont leur propre variante, déduite de
+// `type` : l'intention de recherche y diffère (« chef privé Paris 7 » n'est pas
+// « traiteur Paris 7 »), et elle prime sur `ctaType`. Pour les autres pages, le
+// texte suit `ctaType` — champ optionnel au schéma, d'où le repli générique.
+// Le bouton (« Demander un devis » → /contact) est identique dans tous les cas.
 const ctaPlace = placePhrase(d.zone);
-const ctaCopy = {
-  corporate: {
-    heading: `Un événement d'entreprise ${ctaPlace} ?`,
-    lede: 'Cocktail, gala, dîner de direction. Devis personnalisé sous 48 heures.',
-  },
-  private: {
-    heading: `Un dîner privé ${ctaPlace} ?`,
-    lede: 'Chef à domicile, célébration, réception. Devis personnalisé sous 48 heures.',
-  },
-}[d.ctaType] ?? {
-  heading: 'Parlons de votre projet',
-  lede: 'Un devis personnalisé sous 48 heures.',
-};
+const ctaCopy =
+  d.type === 'chef-prive'
+    ? {
+        heading: `Un chef privé ${ctaPlace} ?`,
+        lede: 'Menu sur mesure, service à domicile. Devis personnalisé sous 48 heures.',
+      }
+    : {
+        corporate: {
+          heading: `Un événement d'entreprise ${ctaPlace} ?`,
+          lede: 'Cocktail, gala, dîner de direction. Devis personnalisé sous 48 heures.',
+        },
+        private: {
+          heading: `Un dîner privé ${ctaPlace} ?`,
+          lede: 'Chef à domicile, célébration, réception. Devis personnalisé sous 48 heures.',
+        },
+      }[d.ctaType] ?? {
+        heading: 'Parlons de votre projet',
+        lede: 'Un devis personnalisé sous 48 heures.',
+      };
 ---
 
 <Layout title={d.title} description={d.description}>
@@ -310,7 +318,7 @@ const ctaCopy = {
 
     <!-- Maillage interne : 3 pages prestations -->
     <section class="geo-related">
-      <h2>Nos prestations sur {d.zone}</h2>
+      <h2>Nos prestations {placePhrase(d.zone)}</h2>
       <ul>
         <li><a href="/prestations/private">NOCTA Private — dîners privés à domicile</a></li>
         <li><a href="/prestations/corporate">NOCTA Corporate — cocktails, galas, plateaux-repas</a></li>
