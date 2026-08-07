@@ -32,7 +32,7 @@ Enzo travaille avec des producteurs qu'il suit depuis des années, principalemen
 
 Lors d'un dîner privé, la sélection des vins est souvent le premier sujet de conversation entre les convives. Une bouteille inattendue, un accord qui surprend, un vin qu'on ne connaissait pas — ça crée une dynamique, ça ouvre des échanges, ça contribue à l'atmosphère autant que la musique ou la lumière.
 
-Dans un contexte corporate, c'est différent mais tout aussi décisif. Proposer à des clients ou des partenaires une sélection de vins pensée pour eux — pas une liste générique — envoie un signal. Celui que le détail a été considéré, que l'invitation était sincère, que la soirée a été préparée.
+Dans un contexte corporate — un dîner client, un [séminaire sur plusieurs journées](/traiteur/traiteur-seminaire-paris) —, c'est différent mais tout aussi décisif. Proposer à des clients ou des partenaires une sélection de vins pensée pour eux — pas une liste générique — envoie un signal. Celui que le détail a été considéré, que l'invitation était sincère, que la soirée a été préparée.
 
 C'est souvent ce dont on se souvient le lendemain.
 

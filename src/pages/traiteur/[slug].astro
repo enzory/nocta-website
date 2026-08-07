@@ -46,6 +46,70 @@ const otherZones = allGeo
   )
   .slice(0, 2);
 
+// ------------------------------------------------------------
+// Zones limitrophes — table d'adjacence EXPLICITE.
+// Volontairement écrite à la main plutôt que dérivée d'un tri :
+// une liste générée (ex. « les 2 dernières pages publiées ») produit le même
+// bloc de liens sur les 30 pages, donc un signal de duplication. Ici chaque
+// page a sa propre liste, géographiquement justifiée.
+//
+// Règles par `type` :
+//   arrondissement → arrondissements réellement limitrophes
+//   commune-92     → communes réellement voisines (+ arrondissement frontalier)
+//   occasion       → 3 autres occasions + 1 zone pertinente
+//   chef-prive     → autres pages chef-prive + l'arrondissement correspondant
+//
+// Les arrondissements sans page GEO (5e, 10e-14e, 18e-20e) sont absents du
+// silo : certaines listes comptent donc 2 ou 3 entrées au lieu de 4. On
+// préfère une liste courte et juste à un remplissage géographiquement faux.
+// ------------------------------------------------------------
+const adjacency = {
+  // --- arrondissements ---
+  'traiteur-paris-1':  ['traiteur-paris-2', 'traiteur-paris-4', 'traiteur-paris-6', 'traiteur-paris-8'],
+  'traiteur-paris-2':  ['traiteur-paris-1', 'traiteur-paris-3', 'traiteur-paris-9'],
+  'traiteur-paris-3':  ['traiteur-paris-1', 'traiteur-paris-2', 'traiteur-paris-4'],
+  'traiteur-paris-4':  ['traiteur-paris-1', 'traiteur-paris-3'],
+  'traiteur-paris-6':  ['traiteur-paris-1', 'traiteur-paris-7', 'traiteur-paris-15'],
+  'traiteur-paris-7':  ['traiteur-paris-6', 'traiteur-paris-8', 'traiteur-paris-15', 'traiteur-paris-16'],
+  'traiteur-paris-8':  ['traiteur-paris-1', 'traiteur-paris-9', 'traiteur-paris-16', 'traiteur-paris-17'],
+  'traiteur-paris-9':  ['traiteur-paris-1', 'traiteur-paris-2', 'traiteur-paris-8', 'traiteur-paris-17'],
+  'traiteur-paris-15': ['traiteur-paris-6', 'traiteur-paris-7', 'traiteur-paris-16'],
+  'traiteur-paris-16': ['traiteur-paris-7', 'traiteur-paris-8', 'traiteur-paris-15', 'traiteur-paris-17'],
+  'traiteur-paris-17': ['traiteur-paris-8', 'traiteur-paris-9', 'traiteur-paris-16'],
+
+  // --- communes des Hauts-de-Seine ---
+  'traiteur-courbevoie-la-defense': ['traiteur-puteaux', 'traiteur-neuilly-sur-seine', 'traiteur-levallois-perret'],
+  'traiteur-puteaux':               ['traiteur-courbevoie-la-defense', 'traiteur-neuilly-sur-seine'],
+  'traiteur-levallois-perret':      ['traiteur-neuilly-sur-seine', 'traiteur-courbevoie-la-defense', 'traiteur-paris-17'],
+  'traiteur-neuilly-sur-seine':     ['traiteur-levallois-perret', 'traiteur-courbevoie-la-defense', 'traiteur-paris-16', 'traiteur-paris-17'],
+  'traiteur-boulogne-billancourt':  ['traiteur-paris-16', 'chef-prive-boulogne-billancourt'],
+
+  // --- occasions : 3 autres occasions + 1 zone pertinente ---
+  'traiteur-anniversaire-paris':        ['traiteur-cremaillere-paris', 'traiteur-fiancailles-paris', 'traiteur-depart-retraite-paris', 'traiteur-paris-16'],
+  'traiteur-bapteme-paris':             ['traiteur-fiancailles-paris', 'traiteur-cremaillere-paris', 'traiteur-anniversaire-paris', 'traiteur-neuilly-sur-seine'],
+  'traiteur-cremaillere-paris':         ['traiteur-anniversaire-paris', 'traiteur-bapteme-paris', 'traiteur-inauguration-paris', 'traiteur-paris-15'],
+  'traiteur-fiancailles-paris':         ['traiteur-anniversaire-paris', 'traiteur-bapteme-paris', 'traiteur-vernissage-paris', 'traiteur-paris-7'],
+  'traiteur-cocktail-entreprise-paris': ['traiteur-inauguration-paris', 'traiteur-seminaire-paris', 'traiteur-vernissage-paris', 'traiteur-courbevoie-la-defense'],
+  'traiteur-depart-retraite-paris':     ['traiteur-cocktail-entreprise-paris', 'traiteur-inauguration-paris', 'traiteur-anniversaire-paris', 'traiteur-paris-8'],
+  'traiteur-inauguration-paris':        ['traiteur-vernissage-paris', 'traiteur-cocktail-entreprise-paris', 'traiteur-seminaire-paris', 'traiteur-paris-1'],
+  'traiteur-seminaire-paris':           ['traiteur-cocktail-entreprise-paris', 'traiteur-depart-retraite-paris', 'traiteur-inauguration-paris', 'traiteur-puteaux'],
+  'traiteur-vernissage-paris':          ['traiteur-inauguration-paris', 'traiteur-cocktail-entreprise-paris', 'traiteur-cremaillere-paris', 'traiteur-paris-3'],
+
+  // --- chef privé : autres pages chef-prive + l'arrondissement/commune correspondant ---
+  'chef-prive-paris-7':               ['chef-prive-paris-8', 'chef-prive-paris-16', 'chef-prive-neuilly-sur-seine', 'traiteur-paris-7'],
+  'chef-prive-paris-8':               ['chef-prive-paris-16', 'chef-prive-paris-7', 'chef-prive-neuilly-sur-seine', 'traiteur-paris-8'],
+  'chef-prive-paris-16':              ['chef-prive-paris-7', 'chef-prive-paris-8', 'chef-prive-boulogne-billancourt', 'traiteur-paris-16'],
+  'chef-prive-neuilly-sur-seine':     ['chef-prive-paris-16', 'chef-prive-paris-8', 'chef-prive-paris-7', 'traiteur-neuilly-sur-seine'],
+  'chef-prive-boulogne-billancourt':  ['chef-prive-paris-16', 'chef-prive-neuilly-sur-seine', 'chef-prive-paris-7', 'traiteur-boulogne-billancourt'],
+};
+
+// Résolution des slugs -> entrées de collection. Un slug absent de la
+// collection est ignoré silencieusement (pas de lien mort au build).
+const geoBySlug = new Map(allGeo.map((p) => [slugOf(p), p]));
+const neighbours = (adjacency[entrySlug] ?? [])
+  .map((s) => geoBySlug.get(s))
+  .filter(Boolean);
+
 // CTA contextuel : piloté par `ctaType` dans le frontmatter (fallback 'private'
 // pour les pages futures sans ce champ).
 const ctaType = entry.data.ctaType ?? 'private';
@@ -197,6 +261,23 @@ const displayH1 = d.h1 ?? d.title;
             </div>
           ))}
         </dl>
+      </section>
+    )}
+
+    <!-- Zones limitrophes — liste propre à chaque page (table d'adjacence
+         explicite dans le frontmatter), pour mailler le silo sans dupliquer
+         le même bloc de liens sur les 30 pages. -->
+    {neighbours.length > 0 && (
+      <section class="related-geo">
+        <h2>Zones limitrophes</h2>
+        <div class="related-grid">
+          {neighbours.map((z) => (
+            <a href={`/traiteur/${slugOf(z)}`} class="related-card">
+              <span class="related-label">{z.data.zone || 'Île-de-France'}</span>
+              <span class="related-title">{z.data.title}</span>
+            </a>
+          ))}
+        </div>
       </section>
     )}
 
