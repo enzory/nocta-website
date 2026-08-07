@@ -36,7 +36,7 @@ Le minimum de commande est de **500 € HT**, sans minimum de convives. Le déla
 
 Le format fonctionne particulièrement bien dans trois contextes.
 
-**En entreprise** : lancements de produit, afterworks clients, séminaires, comités de direction décontractés. Le cocktail dînatoire permet de mêler networking et convivialité sans imposer trois heures à table. C'est le format le plus demandé par nos clients [NOCTA Corporate](/prestations/corporate) à Paris et La Défense.
+**En entreprise** : lancements de produit, afterworks clients, séminaires, comités de direction décontractés. Le cocktail dînatoire permet de mêler networking et convivialité sans imposer trois heures à table. C'est le format le plus demandé par nos clients [NOCTA Corporate](/prestations/corporate) à Paris et La Défense, et le cœur de notre offre de [cocktail d'entreprise](/traiteur/traiteur-cocktail-entreprise-paris).
 
 **En privé** : anniversaires, crémaillères, fêtes entre amis. Le cocktail dînatoire libère l'hôte — pas de service à orchestrer, pas de timing rigide. Les invités circulent, échangent, piochent.
 
@@ -82,6 +82,6 @@ Le format cocktail était ici le seul choix logique : l'espace ne permettait pas
 
 La démarche est simple. Contactez votre traiteur avec les informations essentielles : date, nombre de convives estimé, type d'événement, lieu (ou besoin d'aide pour en trouver un), budget approximatif, et format souhaité (service sur place ou buffet livré). Un traiteur sérieux vous revient sous 48 heures avec une proposition sur-mesure.
 
-Chez NOCTA, nous intervenons à Paris, en Île-de-France et au-delà pour les séjours et séminaires. Notre chef cuisine sur place chez vous avec des produits frais du marché, ou prépare un buffet livré prêt à dresser — selon ce qui convient le mieux à votre événement. Notre équipe de salle assure un service attentif du début à la fin quand la formule le prévoit.
+Chez NOCTA, nous intervenons à Paris — notamment dans le [8e arrondissement](/traiteur/traiteur-paris-8) —, en Île-de-France et au-delà pour les séjours et séminaires. Notre chef cuisine sur place chez vous avec des produits frais du marché, ou prépare un buffet livré prêt à dresser — selon ce qui convient le mieux à votre événement. Notre équipe de salle assure un service attentif du début à la fin quand la formule le prévoit.
 
 **[Demander un devis pour votre cocktail dînatoire →](/contact)**

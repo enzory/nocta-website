@@ -35,32 +35,83 @@ const slugOf = (e) => e.id.replace(/\.md$/, '');
 const entrySlug = slugOf(entry);
 const pageUrl = `${siteUrl}/traiteur/${entrySlug}`;
 
-// Maillage interne : 2 autres zones desservies, triées par date de publication desc
 const allGeo = await getCollection('geo');
-const otherZones = allGeo
-  .filter((p) => p.id !== entry.id)
-  .sort(
-    (a, b) =>
-      new Date(b.data.publishDate).getTime() -
-      new Date(a.data.publishDate).getTime(),
-  )
-  .slice(0, 2);
 
-// CTA contextuel : piloté par `ctaType` dans le frontmatter (fallback 'private'
-// pour les pages futures sans ce champ).
-const ctaType = entry.data.ctaType ?? 'private';
-const ctaConfig = {
-  private: {
-    label: 'Vous organisez un dîner privé ?',
-    href: '/prestations/private',
-    cta: 'Découvrir NOCTA Private',
-  },
-  corporate: {
-    label: "Vous organisez un événement d'entreprise ?",
-    href: '/prestations/corporate',
-    cta: 'Découvrir NOCTA Corporate',
-  },
-}[ctaType];
+// ------------------------------------------------------------
+// « Nos autres zones d'intervention » — table d'adjacence EXPLICITE.
+// Volontairement écrite à la main plutôt que dérivée d'un tri :
+// une liste générée (ex. « les 2 dernières pages publiées ») produit le même
+// bloc de liens sur les 30 pages, donc un signal de duplication. Ici chaque
+// page a sa propre liste.
+//
+// Règles par `type` :
+//   arrondissement → arrondissements réellement limitrophes (+ communes du 92
+//                    réellement frontalières pour les 16e et 17e)
+//   commune-92     → communes voisines + au moins un lien Paris
+//   occasion       → 3 autres occasions + 1 zone pertinente
+//   chef-prive     → autres pages chef-prive + l'arrondissement correspondant
+//
+// Le titre de section dit « autres zones d'intervention », pas « limitrophes » :
+// Courbevoie et Puteaux ne bordent pas Paris (Neuilly s'interpose), mais pointent
+// vers les 17e et 8e pour relier la grappe 92 à la grappe parisienne — continuité
+// de l'axe d'affaires La Défense / Champs-Élysées. Rien n'y est présenté comme
+// une adjacence géographique.
+//
+// Les arrondissements sans page GEO (5e, 10e-14e, 18e-20e) sont absents du
+// silo : certaines listes comptent donc 2 ou 3 entrées au lieu de 4. On
+// préfère une liste courte et juste à un remplissage géographiquement faux.
+// ------------------------------------------------------------
+const adjacency = {
+  // --- arrondissements ---
+  'traiteur-paris-1':  ['traiteur-paris-2', 'traiteur-paris-4', 'traiteur-paris-6', 'traiteur-paris-8'],
+  'traiteur-paris-2':  ['traiteur-paris-1', 'traiteur-paris-3', 'traiteur-paris-9'],
+  'traiteur-paris-3':  ['traiteur-paris-1', 'traiteur-paris-2', 'traiteur-paris-4'],
+  'traiteur-paris-4':  ['traiteur-paris-1', 'traiteur-paris-3'],
+  'traiteur-paris-6':  ['traiteur-paris-1', 'traiteur-paris-7', 'traiteur-paris-15'],
+  'traiteur-paris-7':  ['traiteur-paris-6', 'traiteur-paris-8', 'traiteur-paris-15', 'traiteur-paris-16'],
+  'traiteur-paris-8':  ['traiteur-paris-1', 'traiteur-paris-9', 'traiteur-paris-16', 'traiteur-paris-17'],
+  // paris-1 retiré : le contact 1er/9e se fait en un point vers l'Opéra, trop
+  // faible pour être présenté comme limitrophe (paris-1 ne listait déjà pas le 9e).
+  'traiteur-paris-9':  ['traiteur-paris-2', 'traiteur-paris-8', 'traiteur-paris-17'],
+  'traiteur-paris-15': ['traiteur-paris-6', 'traiteur-paris-7', 'traiteur-paris-16'],
+  // 16e et 17e : seuls arrondissements du silo à border réellement le 92.
+  'traiteur-paris-16': ['traiteur-paris-7', 'traiteur-paris-8', 'traiteur-paris-15', 'traiteur-paris-17', 'traiteur-boulogne-billancourt'],
+  'traiteur-paris-17': ['traiteur-paris-8', 'traiteur-paris-9', 'traiteur-paris-16', 'traiteur-levallois-perret', 'traiteur-neuilly-sur-seine'],
+
+  // --- communes des Hauts-de-Seine (chacune porte au moins un lien Paris) ---
+  // Courbevoie et Puteaux ne bordent pas Paris : les liens 17e/8e sont une
+  // continuité d'axe d'affaires, pas une adjacence.
+  'traiteur-courbevoie-la-defense': ['traiteur-puteaux', 'traiteur-neuilly-sur-seine', 'traiteur-levallois-perret', 'traiteur-paris-17', 'traiteur-paris-8'],
+  'traiteur-puteaux':               ['traiteur-courbevoie-la-defense', 'traiteur-neuilly-sur-seine', 'traiteur-paris-17', 'traiteur-paris-8'],
+  'traiteur-levallois-perret':      ['traiteur-neuilly-sur-seine', 'traiteur-courbevoie-la-defense', 'traiteur-paris-17'],
+  'traiteur-neuilly-sur-seine':     ['traiteur-levallois-perret', 'traiteur-courbevoie-la-defense', 'traiteur-paris-16', 'traiteur-paris-17'],
+  'traiteur-boulogne-billancourt':  ['traiteur-paris-16', 'chef-prive-boulogne-billancourt'],
+
+  // --- occasions : 3 autres occasions + 1 zone pertinente ---
+  'traiteur-anniversaire-paris':        ['traiteur-cremaillere-paris', 'traiteur-fiancailles-paris', 'traiteur-depart-retraite-paris', 'traiteur-paris-16'],
+  'traiteur-bapteme-paris':             ['traiteur-fiancailles-paris', 'traiteur-cremaillere-paris', 'traiteur-anniversaire-paris', 'traiteur-neuilly-sur-seine'],
+  'traiteur-cremaillere-paris':         ['traiteur-anniversaire-paris', 'traiteur-bapteme-paris', 'traiteur-inauguration-paris', 'traiteur-paris-15'],
+  'traiteur-fiancailles-paris':         ['traiteur-anniversaire-paris', 'traiteur-bapteme-paris', 'traiteur-vernissage-paris', 'traiteur-paris-7'],
+  'traiteur-cocktail-entreprise-paris': ['traiteur-inauguration-paris', 'traiteur-seminaire-paris', 'traiteur-vernissage-paris', 'traiteur-courbevoie-la-defense'],
+  'traiteur-depart-retraite-paris':     ['traiteur-cocktail-entreprise-paris', 'traiteur-inauguration-paris', 'traiteur-anniversaire-paris', 'traiteur-paris-8'],
+  'traiteur-inauguration-paris':        ['traiteur-vernissage-paris', 'traiteur-cocktail-entreprise-paris', 'traiteur-seminaire-paris', 'traiteur-paris-1'],
+  'traiteur-seminaire-paris':           ['traiteur-cocktail-entreprise-paris', 'traiteur-depart-retraite-paris', 'traiteur-inauguration-paris', 'traiteur-puteaux'],
+  'traiteur-vernissage-paris':          ['traiteur-inauguration-paris', 'traiteur-cocktail-entreprise-paris', 'traiteur-cremaillere-paris', 'traiteur-paris-3'],
+
+  // --- chef privé : autres pages chef-prive + l'arrondissement/commune correspondant ---
+  'chef-prive-paris-7':               ['chef-prive-paris-8', 'chef-prive-paris-16', 'chef-prive-neuilly-sur-seine', 'traiteur-paris-7'],
+  'chef-prive-paris-8':               ['chef-prive-paris-16', 'chef-prive-paris-7', 'chef-prive-neuilly-sur-seine', 'traiteur-paris-8'],
+  'chef-prive-paris-16':              ['chef-prive-paris-7', 'chef-prive-paris-8', 'chef-prive-boulogne-billancourt', 'traiteur-paris-16'],
+  'chef-prive-neuilly-sur-seine':     ['chef-prive-paris-16', 'chef-prive-paris-8', 'chef-prive-paris-7', 'traiteur-neuilly-sur-seine'],
+  'chef-prive-boulogne-billancourt':  ['chef-prive-paris-16', 'chef-prive-neuilly-sur-seine', 'chef-prive-paris-7', 'traiteur-boulogne-billancourt'],
+};
+
+// Résolution des slugs -> entrées de collection. Un slug absent de la
+// collection est ignoré silencieusement (pas de lien mort au build).
+const geoBySlug = new Map(allGeo.map((p) => [slugOf(p), p]));
+const neighbours = (adjacency[entrySlug] ?? [])
+  .map((s) => geoBySlug.get(s))
+  .filter(Boolean);
 
 // areaServed : array si fourni (Sprint B), sinon fallback sur la zone
 const areaServedValue = d.areaServed?.length
@@ -128,6 +179,46 @@ const faqSchema = d.faq?.length
 // H1 affiché : `h1` du frontmatter en priorité (plus court, lisible),
 // sinon `title` (servant aussi pour <title> SEO).
 const displayH1 = d.h1 ?? d.title;
+
+// `zone` est un libellé calibré pour l'eyebrow (« Zone desservie · Paris 8e
+// arrondissement »), pas un complément de lieu : collé derrière « à », il produit
+// « à Paris 8e arrondissement ». Cette fonction en fait une locution insérable.
+const placePhrase = (zone) => {
+  // « Courbevoie / La Défense » → on ne garde que le dernier segment.
+  const z = (zone.includes(' / ') ? zone.split(' / ').pop() : zone).trim();
+  const arrondissement = z.match(/^Paris (\d+(?:er|e))\b/);
+  if (arrondissement) return `dans le ${arrondissement[1]}`;
+  // Garde-fou pour de futures communes du 92 (Le Plessis-Robinson, Les Lilas…).
+  if (z.startsWith('Le ')) return `au ${z.slice(3)}`;
+  if (z.startsWith('Les ')) return `aux ${z.slice(4)}`;
+  return `à ${z}`;
+};
+
+// CTA contextuel. Les pages `chef-prive` ont leur propre variante, déduite de
+// `type` : l'intention de recherche y diffère (« chef privé Paris 7 » n'est pas
+// « traiteur Paris 7 »), et elle prime sur `ctaType`. Pour les autres pages, le
+// texte suit `ctaType` — champ optionnel au schéma, d'où le repli générique.
+// Le bouton (« Demander un devis » → /contact) est identique dans tous les cas.
+const ctaPlace = placePhrase(d.zone);
+const ctaCopy =
+  d.type === 'chef-prive'
+    ? {
+        heading: `Un chef privé ${ctaPlace} ?`,
+        lede: 'Menu sur mesure, service à domicile. Devis personnalisé sous 48 heures.',
+      }
+    : {
+        corporate: {
+          heading: `Un événement d'entreprise ${ctaPlace} ?`,
+          lede: 'Cocktail, gala, dîner de direction. Devis personnalisé sous 48 heures.',
+        },
+        private: {
+          heading: `Un dîner privé ${ctaPlace} ?`,
+          lede: 'Chef à domicile, célébration, réception. Devis personnalisé sous 48 heures.',
+        },
+      }[d.ctaType] ?? {
+        heading: 'Parlons de votre projet',
+        lede: 'Un devis personnalisé sous 48 heures.',
+      };
 ---
 
 <Layout title={d.title} description={d.description}>
@@ -200,39 +291,40 @@ const displayH1 = d.h1 ?? d.title;
       </section>
     )}
 
-    <!-- CTA réassurance / conversion -->
-    <section class="geo-cta">
-      <h2>Parlons de votre projet</h2>
-      <p>Un devis personnalisé sous 48 heures.</p>
-      <a href="/contact" class="geo-cta-btn">Demander un devis</a>
-    </section>
-
-    <!-- Maillage interne : 3 pages prestations -->
-    <section class="geo-related">
-      <h2>Nos prestations sur {d.zone}</h2>
-      <ul>
-        <li><a href="/prestations/private">NOCTA Private — dîners privés à domicile</a></li>
-        <li><a href="/prestations/corporate">NOCTA Corporate — cocktails, galas, plateaux-repas</a></li>
-        <li><a href="/prestations/signature">NOCTA Signature — expériences immersives</a></li>
-      </ul>
-    </section>
-
-    {otherZones.length > 0 && (
+    <!-- Autres zones d'intervention — liste propre à chaque page (table
+         d'adjacence explicite dans le frontmatter), pour mailler le silo sans
+         dupliquer le même bloc de liens sur les 30 pages. -->
+    {neighbours.length > 0 && (
       <section class="related-geo">
-        <h2>Autres zones desservies</h2>
+        <h2>Nos autres zones d'intervention</h2>
         <div class="related-grid">
-          {otherZones.map((z) => (
+          {neighbours.map((z) => (
             <a href={`/traiteur/${slugOf(z)}`} class="related-card">
               <span class="related-label">{z.data.zone || 'Île-de-France'}</span>
               <span class="related-title">{z.data.title}</span>
             </a>
           ))}
         </div>
-        <p class="related-cta">
-          {ctaConfig.label} <a href={ctaConfig.href}>{ctaConfig.cta}</a>
-        </p>
       </section>
     )}
+
+    <!-- CTA réassurance / conversion — titre et accroche pilotés par `ctaType`
+         (voir ctaCopy plus haut), bouton identique dans tous les cas. -->
+    <section class="geo-cta">
+      <h2>{ctaCopy.heading}</h2>
+      <p>{ctaCopy.lede}</p>
+      <a href="/contact" class="geo-cta-btn">Demander un devis</a>
+    </section>
+
+    <!-- Maillage interne : 3 pages prestations -->
+    <section class="geo-related">
+      <h2>Nos prestations {placePhrase(d.zone)}</h2>
+      <ul>
+        <li><a href="/prestations/private">NOCTA Private — dîners privés à domicile</a></li>
+        <li><a href="/prestations/corporate">NOCTA Corporate — cocktails, galas, plateaux-repas</a></li>
+        <li><a href="/prestations/signature">NOCTA Signature — expériences immersives</a></li>
+      </ul>
+    </section>
   </article>
 
   <Footer />
@@ -494,18 +586,5 @@ const displayH1 = d.h1 ?? d.title;
     font-size: 1.15rem;
     line-height: 1.3;
     color: var(--color-nocta-ink);
-  }
-  .related-cta {
-    font-size: 0.95rem;
-    color: var(--color-nocta-text);
-    margin: 0;
-  }
-  .related-cta a {
-    color: var(--color-nocta-ink);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-    text-decoration: none;
-  }
-  .related-cta a:hover {
-    border-bottom-color: var(--color-nocta-ink);
   }
 </style>
