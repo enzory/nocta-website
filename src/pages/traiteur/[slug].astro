@@ -179,6 +179,23 @@ const faqSchema = d.faq?.length
 // H1 affiché : `h1` du frontmatter en priorité (plus court, lisible),
 // sinon `title` (servant aussi pour <title> SEO).
 const displayH1 = d.h1 ?? d.title;
+
+// CTA contextuel — piloté par `ctaType` du frontmatter. Le champ est optionnel
+// au schéma : une page qui ne le porte pas retombe sur le texte générique.
+// Le bouton (« Demander un devis » → /contact) est identique dans les 3 cas.
+const ctaCopy = {
+  corporate: {
+    heading: `Un événement d'entreprise à ${d.zone} ?`,
+    lede: 'Cocktail, gala, dîner de direction. Devis personnalisé sous 48 heures.',
+  },
+  private: {
+    heading: `Un dîner privé à ${d.zone} ?`,
+    lede: 'Chef à domicile, célébration, réception. Devis personnalisé sous 48 heures.',
+  },
+}[d.ctaType] ?? {
+  heading: 'Parlons de votre projet',
+  lede: 'Un devis personnalisé sous 48 heures.',
+};
 ---
 
 <Layout title={d.title} description={d.description}>
@@ -268,10 +285,11 @@ const displayH1 = d.h1 ?? d.title;
       </section>
     )}
 
-    <!-- CTA réassurance / conversion -->
+    <!-- CTA réassurance / conversion — titre et accroche pilotés par `ctaType`
+         (voir ctaCopy plus haut), bouton identique dans tous les cas. -->
     <section class="geo-cta">
-      <h2>Parlons de votre projet</h2>
-      <p>Un devis personnalisé sous 48 heures.</p>
+      <h2>{ctaCopy.heading}</h2>
+      <p>{ctaCopy.lede}</p>
       <a href="/contact" class="geo-cta-btn">Demander un devis</a>
     </section>
 
