@@ -1,0 +1,76 @@
+---
+import { activeMenu } from '../../data/menu-active';
+import type { MenuItem } from '../../data/menu-active';
+
+const menu = activeMenu;
+
+const sections: Array<{ titre: string; prix: number; items: MenuItem[] }> = [
+  { titre: 'Entrées',  prix: menu.tarifs.entree,  items: menu.entrees },
+  { titre: 'Plats',    prix: menu.tarifs.plat,    items: menu.plats },
+  { titre: 'Desserts', prix: menu.tarifs.dessert, items: menu.desserts },
+];
+---
+
+<section id="menu" class="bg-nocta-cream py-24 lg:py-32 border-t border-nocta-black/10 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+    <div class="mb-14 reveal">
+      <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Menu de la semaine</p>
+      <h2 class="font-serif text-2xl md:text-4xl lg:text-5xl font-light italic text-nocta-black leading-tight">
+        {menu.semaine.label}.
+      </h2>
+    </div>
+
+    {sections.map((section) => (
+      <div class="mb-16 lg:mb-20 last:mb-0">
+        <div class="flex items-baseline justify-between border-b border-nocta-black/10 pb-4 mb-8 reveal">
+          <h3 class="font-serif text-2xl md:text-3xl lg:text-4xl font-light italic text-nocta-black">
+            {section.titre}
+          </h3>
+          <p class="font-sans text-xs tracking-[0.3em] uppercase text-nocta-grey">
+            {section.prix} € HT / pièce
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+          {section.items.map((item, i) => (
+            <article class="reveal" style={`transition-delay: ${0.05 * i}s`}>
+              <div class="aspect-square overflow-hidden bg-nocta-black/5 mb-4 max-w-[14rem] mx-auto md:mx-0">
+                <img
+                  src={item.image}
+                  onerror="this.onerror=null;this.src='/img/plateaux/placeholder.jpg';"
+                  alt={item.nom}
+                  width="448"
+                  height="448"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h4 class="font-serif text-xl lg:text-2xl font-light italic text-nocta-black leading-tight mb-2">
+                {item.nom}
+              </h4>
+              <p class="font-sans text-sm font-light text-nocta-grey leading-relaxed mb-3">
+                {item.description}
+              </p>
+              {item.tags && item.tags.length > 0 && (
+                <div class="flex flex-wrap gap-2">
+                  {item.tags.map((tag) => (
+                    <span class="font-sans text-[10px] tracking-[0.2em] uppercase text-nocta-grey border border-nocta-black/15 px-2 py-1">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
+      </div>
+    ))}
+
+    <p class="font-sans text-xs font-light text-nocta-grey/80 mt-8 reveal">
+      La sélection se fait juste en dessous, dans le configurateur.
+    </p>
+
+  </div>
+</section>
