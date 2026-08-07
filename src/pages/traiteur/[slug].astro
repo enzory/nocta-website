@@ -180,16 +180,31 @@ const faqSchema = d.faq?.length
 // sinon `title` (servant aussi pour <title> SEO).
 const displayH1 = d.h1 ?? d.title;
 
+// `zone` est un libellé calibré pour l'eyebrow (« Zone desservie · Paris 8e
+// arrondissement »), pas un complément de lieu : collé derrière « à », il produit
+// « à Paris 8e arrondissement ». Cette fonction en fait une locution insérable.
+const placePhrase = (zone) => {
+  // « Courbevoie / La Défense » → on ne garde que le dernier segment.
+  const z = (zone.includes(' / ') ? zone.split(' / ').pop() : zone).trim();
+  const arrondissement = z.match(/^Paris (\d+(?:er|e))\b/);
+  if (arrondissement) return `dans le ${arrondissement[1]}`;
+  // Garde-fou pour de futures communes du 92 (Le Plessis-Robinson, Les Lilas…).
+  if (z.startsWith('Le ')) return `au ${z.slice(3)}`;
+  if (z.startsWith('Les ')) return `aux ${z.slice(4)}`;
+  return `à ${z}`;
+};
+
 // CTA contextuel — piloté par `ctaType` du frontmatter. Le champ est optionnel
 // au schéma : une page qui ne le porte pas retombe sur le texte générique.
 // Le bouton (« Demander un devis » → /contact) est identique dans les 3 cas.
+const ctaPlace = placePhrase(d.zone);
 const ctaCopy = {
   corporate: {
-    heading: `Un événement d'entreprise à ${d.zone} ?`,
+    heading: `Un événement d'entreprise ${ctaPlace} ?`,
     lede: 'Cocktail, gala, dîner de direction. Devis personnalisé sous 48 heures.',
   },
   private: {
-    heading: `Un dîner privé à ${d.zone} ?`,
+    heading: `Un dîner privé ${ctaPlace} ?`,
     lede: 'Chef à domicile, célébration, réception. Devis personnalisé sous 48 heures.',
   },
 }[d.ctaType] ?? {
