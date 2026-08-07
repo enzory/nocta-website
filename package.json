@@ -15,6 +15,7 @@
     "@tailwindcss/vite": "^4.2.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "@vercel/analytics": "^2.0.1",
     "astro": "^5.17.1",
     "glightbox": "^3.3.1",
     "jspdf": "^4.2.1",
