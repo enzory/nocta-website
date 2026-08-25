@@ -63,10 +63,7 @@ import LogoSlider from '../../components/LogoSlider.astro';
             <h2 class="t-h2 text-nocta-cream">
               Une expérience construite de bout en bout.
             </h2>
-          </div>
-
-          <div class="reveal" style="transition-delay: 0.15s">
-            <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/60 mb-6">
+            <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/60 mt-8 mb-6">
               NOCTA Signature est le format où nous avons le plus de latitude. Cuisine, vins, scénographie, rythme du service - tout est pensé ensemble pour former une expérience cohérente, pas une succession de prestations.
             </p>
             <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/60">
@@ -74,19 +71,21 @@ import LogoSlider from '../../components/LogoSlider.astro';
             </p>
           </div>
 
+          <div class="reveal" style="transition-delay: 0.15s">
+            <div class="aspect-[3/4] max-w-[480px] lg:ml-auto overflow-hidden">
+              <img
+                src="/images/salon-signature-800w.webp"
+                srcset="/images/salon-signature-400w.webp 400w, /images/salon-signature-800w.webp 800w, /images/salon-signature-1200w.webp 1200w, /images/salon-signature.webp 1800w"
+                sizes="(max-width: 1024px) 100vw, 480px"
+                alt="Salon d'une villa ouverte sur la baie — scénographie NOCTA Signature"
+                width="1800" height="2400" loading="lazy"
+                class="w-full h-full object-cover" />
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
-
-    <!-- Approach image -->
-    <div class="w-full aspect-[21/9] overflow-hidden">
-      <img src="/images/produit-tomate-maison-1200w.webp"
-        srcset="/images/produit-tomate-maison-400w.webp 400w, /images/produit-tomate-maison-800w.webp 800w, /images/produit-tomate-maison-1200w.webp 1200w, /images/produit-tomate-maison.webp 2400w"
-        sizes="100vw"
-        alt="Tomates anciennes du marché préparées en cuisine — produits de saison NOCTA"
-        width="2400" height="3200" loading="lazy"
-        class="w-full h-full object-cover" style="object-position: center center;" />
-    </div>
 
     <!-- Formats -->
     <section class="bg-nocta-cream py-24 lg:py-36">
