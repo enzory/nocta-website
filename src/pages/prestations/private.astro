@@ -15,29 +15,29 @@ import LogoSlider from '../../components/LogoSlider.astro';
   <main>
 
     <!-- Hero -->
-    <section class="relative min-h-[60vh] lg:min-h-[88vh] flex flex-col justify-end bg-nocta-black overflow-hidden">
-      <div class="absolute inset-0">
+    <section class="bg-nocta-black grid grid-cols-1 lg:grid-cols-2 lg:min-h-[88vh]">
+
+      <!-- Photo : plein format sur mobile, moitie droite sur desktop -->
+      <div class="order-1 lg:order-2 relative aspect-[4/5] sm:aspect-[3/2] lg:aspect-auto lg:min-h-full overflow-hidden">
         <img
           src="/images/dressage-signature-1200w.webp"
-          srcset="
-            /images/dressage-signature-400w.webp   400w,
-            /images/dressage-signature-800w.webp   800w,
-            /images/dressage-signature-1200w.webp 1200w,
-            /images/dressage-signature.webp       1440w
-          "
-          sizes="100vw"
-          alt="Dressage d'assiette à la main — chef privé à domicile Paris NOCTA Private"
+          srcset="/images/dressage-signature-400w.webp 400w, /images/dressage-signature-800w.webp 800w, /images/dressage-signature-1200w.webp 1200w, /images/dressage-signature.webp 1440w"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          alt="NOCTA Private"
           width="1440"
           height="1800"
-          class="w-full h-full object-cover"
+          class="absolute inset-0 w-full h-full object-cover"
           style="object-position: center 55%;"
           loading="eager"
           fetchpriority="high"
         />
-        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.70) 30%, rgba(0,0,0,0.45) 48%, rgba(0,0,0,0.10) 75%, rgba(0,0,0,0) 100%);"></div>
+        <!-- protege la lisibilite du menu au-dessus de la photo -->
+        <div class="absolute inset-x-0 top-0 h-40 pointer-events-none" style="background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.20) 55%, rgba(0,0,0,0) 100%);"></div>
       </div>
-      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-20 lg:pb-28 w-full">
-        <a href="/prestations" class="inline-flex items-center gap-3 font-sans text-xs tracking-widest uppercase text-nocta-cream/60 hover:text-nocta-cream transition-colors duration-200 mb-12 animate-fade-up" style="animation-delay: 0.1s; opacity: 0;">
+
+      <!-- Titre -->
+      <div class="order-2 lg:order-1 flex flex-col justify-end px-6 lg:px-12 lg:pl-[max(3rem,calc((100vw-80rem)/2+3rem))] pt-14 pb-16 lg:pt-32 lg:pb-28">
+        <a href="/prestations" class="inline-flex items-center gap-3 font-sans text-xs tracking-widest uppercase text-nocta-cream/60 hover:text-nocta-cream transition-colors duration-200 mb-10 lg:mb-12 animate-fade-up" style="animation-delay: 0.1s; opacity: 0;">
           <span class="w-6 h-px bg-current inline-block"></span>
           Nos Prestations
         </a>
@@ -51,6 +51,7 @@ import LogoSlider from '../../components/LogoSlider.astro';
           Recevoir chez soi, sans s'en occuper.
         </p>
       </div>
+
     </section>
 
     <!-- About -->
