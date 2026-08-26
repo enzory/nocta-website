@@ -21,10 +21,10 @@ const articles = (await getCollection('journal'))
     <!-- Hero -->
     <section class="bg-nocta-cream pt-40 pb-16 lg:pt-52 lg:pb-20">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-grey mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
+        <p class="t-eyebrow font-light text-nocta-grey mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
           Journal
         </p>
-        <h1 class="font-serif text-3xl md:text-5xl lg:text-7xl font-light italic text-nocta-black leading-[1.05] max-w-3xl animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
+        <h1 class="t-h1 xl:text-7xl text-nocta-black max-w-3xl animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
           Gastronomie, service<br/>et art de recevoir.
         </h1>
       </div>
@@ -41,14 +41,14 @@ const articles = (await getCollection('journal'))
             style={`transition-delay: ${i * 0.05}s`}
           >
             <div class="flex items-start gap-6 lg:gap-10">
-              <span class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey shrink-0 pt-1">
+              <span class="t-eyebrow text-nocta-grey shrink-0 pt-1">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <div>
-                <p class="font-sans text-xs tracking-widest uppercase text-nocta-grey mb-3">
+                <p class="t-eyebrow tracking-widest text-nocta-grey mb-3">
                   {article.data.category}
                 </p>
-                <h2 class="font-serif text-2xl md:text-3xl lg:text-4xl font-light italic text-nocta-black leading-tight mb-3">
+                <h2 class="t-h3-lg text-nocta-black leading-tight mb-3">
                   {article.data.title}
                 </h2>
                 <p class="font-sans text-sm font-light text-nocta-grey max-w-xl">
@@ -56,7 +56,7 @@ const articles = (await getCollection('journal'))
                 </p>
               </div>
             </div>
-            <div class="flex items-center gap-3 font-sans text-xs font-light tracking-widest uppercase text-nocta-black/40 group-hover:text-nocta-black transition-colors duration-200 shrink-0 lg:pt-1 pl-10 lg:pl-0">
+            <div class="t-eyebrow flex items-center gap-3 font-light tracking-widest text-nocta-black/40 group-hover:text-nocta-black transition-colors duration-200 shrink-0 lg:pt-1 pl-10 lg:pl-0">
               <span>{article.data.readTime} min</span>
               <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
             </div>

@@ -257,8 +257,12 @@ const displayH1 = d.h1 ?? d.title;
     color: var(--color-nocta-muted);
     margin-bottom: 0.75rem;
   }
+  /* Ecart assume vs le reste du site : partout ailleurs les titres sont en
+     serif 300 italique (.t-h*). Ici le h1 reste romain, graisse par defaut.
+     Ces pages ont un role SEO local distinct et un h1 romain y est plus
+     lisible qu'un italique. Ne pas « aligner » sur .t-h1. */
   .geo-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: var(--font-serif);
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.15;
     margin: 0 0 0.75rem;
@@ -269,7 +273,7 @@ const displayH1 = d.h1 ?? d.title;
     color: var(--color-nocta-grey);
   }
   .geo-content :global(h2) {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: var(--font-serif);
     font-size: 1.65rem;
     margin: 2.5rem 0 1rem;
     color: var(--color-nocta-ink);
@@ -295,7 +299,7 @@ const displayH1 = d.h1 ?? d.title;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
   .geo-faq > h2 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: var(--font-serif);
     font-size: 1.8rem;
     font-weight: 400;
     margin: 0 0 1.5rem;
@@ -349,7 +353,7 @@ const displayH1 = d.h1 ?? d.title;
     border-bottom-color: var(--color-nocta-ink);
   }
   .geo-proof-key {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: var(--font-serif);
     font-style: italic;
     font-size: 1.35rem;
     color: var(--color-nocta-ink);
@@ -374,7 +378,7 @@ const displayH1 = d.h1 ?? d.title;
     border-left: 2px solid rgba(0, 0, 0, 0.15);
   }
   .geo-proof-quote p {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: var(--font-serif);
     font-style: italic;
     font-size: 1.25rem;
     line-height: 1.5;
@@ -398,7 +402,7 @@ const displayH1 = d.h1 ?? d.title;
     text-align: center;
   }
   .geo-cta h2 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: var(--font-serif);
     font-style: italic;
     font-weight: 300;
     font-size: clamp(1.5rem, 3vw, 2.25rem);
@@ -433,7 +437,7 @@ const displayH1 = d.h1 ?? d.title;
   }
   .geo-related h2 {
     margin: 0 0 1rem;
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: var(--font-serif);
     font-size: 1.5rem;
   }
   .geo-related ul {
@@ -456,7 +460,7 @@ const displayH1 = d.h1 ?? d.title;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
   .related-geo h2 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: var(--font-serif);
     font-size: 1.8rem;
     font-weight: 400;
     margin: 0 0 1.5rem;
@@ -490,7 +494,7 @@ const displayH1 = d.h1 ?? d.title;
     color: var(--color-nocta-muted);
   }
   .related-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: var(--font-serif);
     font-size: 1.15rem;
     line-height: 1.3;
     color: var(--color-nocta-ink);

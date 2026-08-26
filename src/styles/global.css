@@ -89,7 +89,7 @@
 html {
   background-color: #EEEBE3;
   color: #000000;
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: var(--font-sans);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -121,9 +121,10 @@ html {
   animation: fadeIn 0.6s ease forwards;
 }
 
-/* Utilitaires typographie */
-.font-serif    { font-family: 'Cormorant Garamond', Georgia, serif; }
-.font-sans     { font-family: 'DM Sans', system-ui, sans-serif; }
+/* Les utilitaires .font-serif / .font-sans sont generes par Tailwind v4
+   depuis les tokens --font-serif / --font-sans declares dans @theme.
+   Ne pas les redefinir a la main ici : ecrites hors @layer, elles
+   gagneraient sur les classes generees et le token deviendrait inerte. */
 
 /* ============================================================
    Échelle typographique partagée (V5) — taille / graisse / style
@@ -140,6 +141,15 @@ html {
   /* H3 « display » : sous-titres approche (prestations). Reste ≤ .t-h2 à chaque
      palier (mobile 24≤24, md 30<36, lg 36<48) — corrige l'inversion H3>H2. */
   .t-h3-lg { @apply font-serif text-2xl md:text-3xl lg:text-4xl font-light italic; }
+
+  /* Eyebrow editorial — petit libelle en capitales espacees au-dessus d'un
+     titre ou d'un bloc. Valeur par defaut = le reglage aujourd'hui dominant
+     (61 occurrences sur 117). Les occurrences historiquement en
+     `tracking-widest` (0.1em) et/ou `text-sm` conservent leur utilitaire en
+     ligne : la couche `utilities` passe apres `components`, l'utilitaire
+     gagne donc et le rendu reste inchange. Ces surcharges sont volontairement
+     visibles — c'est la liste des ecarts a arbitrer. */
+  .t-eyebrow { @apply font-sans text-xs uppercase tracking-[0.4em]; }
 }
 
 /* Scroll reveal — état initial */

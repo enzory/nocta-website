@@ -109,21 +109,21 @@ import LogoSlider from '../components/LogoSlider.astro';
       <!-- Hero text -->
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-20 lg:pb-28">
         <!-- LCP : eyebrow + H1 visibles dès le premier paint — pas d'opacity:0 ni de delay ici -->
-        <p class="font-sans text-xs font-light tracking-[0.4em] uppercase text-nocta-cream/60 mb-6">
+        <p class="t-eyebrow font-light text-nocta-cream/60 mb-6">
           Paris, Île-de-France & ailleurs
         </p>
         <h1 class="t-h1 text-nocta-cream max-w-3xl mb-8">
           L'art de recevoir,<br/>
-          <em class="not-italic font-extralight">sans compromis.</em>
+          <em class="not-italic font-light">sans compromis.</em>
         </h1>
         <p class="font-sans text-base lg:text-lg font-light text-nocta-cream/70 max-w-xl leading-relaxed mb-12 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
           NOCTA conçoit des expériences culinaires conçues avec vous, pour les entreprises et les particuliers exigeants - à Paris, en Île-de-France et au-delà.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
-          <a href="/contact" class="inline-flex items-center justify-center font-sans text-sm font-light tracking-widest uppercase bg-nocta-cream text-nocta-black px-8 py-3 transition-all duration-300 hover:bg-white">
+          <a href="/contact" class="t-eyebrow inline-flex items-center justify-center text-sm font-light tracking-widest bg-nocta-cream text-nocta-black px-8 py-3 transition-all duration-300 hover:bg-white">
             Demander un devis
           </a>
-          <a href="/prestations" class="inline-flex items-center justify-center font-sans text-sm font-light tracking-widest uppercase border border-nocta-cream/50 text-nocta-cream px-8 py-3 transition-all duration-300 hover:border-nocta-cream">
+          <a href="/prestations" class="t-eyebrow inline-flex items-center justify-center text-sm font-light tracking-widest border border-nocta-cream/50 text-nocta-cream px-8 py-3 transition-all duration-300 hover:border-nocta-cream">
             Explorer nos prestations
           </a>
         </div>
@@ -138,7 +138,7 @@ import LogoSlider from '../components/LogoSlider.astro';
 
       <!-- Scroll indicator -->
       <div class="absolute bottom-8 right-6 lg:right-12 hidden md:flex flex-col items-center gap-2 animate-fade-in" style="animation-delay: 0.8s; opacity: 0;" aria-hidden="true">
-        <span class="font-sans text-xs tracking-widest uppercase text-nocta-cream/40">Scroll</span>
+        <span class="t-eyebrow tracking-widest text-nocta-cream/40">Scroll</span>
         <div class="w-px h-12 bg-nocta-cream/20 relative overflow-hidden">
           <div class="absolute top-0 left-0 w-full h-1/2 bg-nocta-cream/60 animate-bounce"></div>
         </div>
@@ -177,46 +177,46 @@ import LogoSlider from '../components/LogoSlider.astro';
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12 reveal">
           <div>
-            <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-4">Nos formats</p>
+            <p class="t-eyebrow text-nocta-cream/40 mb-4">Nos formats</p>
             <h2 class="t-h2 text-nocta-cream">
               Trois formats, une seule exigence.
             </h2>
           </div>
-          <a href="/prestations" class="mt-8 lg:mt-0 font-sans text-sm font-light tracking-widest uppercase text-nocta-cream/60 hover:text-nocta-cream transition-colors duration-300 flex items-center gap-3">
+          <a href="/prestations" class="t-eyebrow mt-8 lg:mt-0 text-sm font-light tracking-widest text-nocta-cream/60 hover:text-nocta-cream transition-colors duration-300 flex items-center gap-3">
             Voir toutes les prestations
             <span class="w-8 h-px bg-current inline-block"></span>
           </a>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-px bg-nocta-cream/10">
           <a href="/prestations/private" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.1s">
-            <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-8">01</p>
-            <h3 class="font-serif text-3xl font-light italic text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Private</h3>
+            <p class="t-eyebrow text-nocta-cream/40 mb-8">01</p>
+            <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Private</h3>
             <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/50 mb-10">
               Dîners à domicile, anniversaires, célébrations familiales. Nous prenons en charge l'intégralité - pour que vous soyez présent à vos invités, pas à votre cuisine.
             </p>
-            <span class="font-sans text-xs tracking-widest uppercase text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
+            <span class="t-eyebrow tracking-widest text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
               Découvrir
               <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
             </span>
           </a>
           <a href="/prestations/corporate" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.2s">
-            <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-8">02</p>
-            <h3 class="font-serif text-3xl font-light italic text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Corporate</h3>
+            <p class="t-eyebrow text-nocta-cream/40 mb-8">02</p>
+            <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Corporate</h3>
             <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/50 mb-10">
               Cocktails de lancement, dîners de gala, comités de direction. Une gastronomie à la hauteur de l'image que vous souhaitez donner.
             </p>
-            <span class="font-sans text-xs tracking-widest uppercase text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
+            <span class="t-eyebrow tracking-widest text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
               Découvrir
               <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
             </span>
           </a>
           <a href="/prestations/signature" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.3s">
-            <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-8">03</p>
-            <h3 class="font-serif text-3xl font-light italic text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Signature</h3>
+            <p class="t-eyebrow text-nocta-cream/40 mb-8">03</p>
+            <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Signature</h3>
             <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/50 mb-10">
               Un format où cuisine, vins et scénographie composent une expérience cohérente de bout en bout.
             </p>
-            <span class="font-sans text-xs tracking-widest uppercase text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
+            <span class="t-eyebrow tracking-widest text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
               Découvrir
               <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
             </span>
@@ -231,7 +231,7 @@ import LogoSlider from '../components/LogoSlider.astro';
     <section class="bg-nocta-cream pt-24 lg:pt-36 pb-8 lg:pb-12">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="max-w-2xl mb-14 reveal">
-          <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Notre approche</p>
+          <p class="t-eyebrow text-nocta-grey mb-4">Notre approche</p>
           <h2 class="t-h2 text-nocta-black">
             Gastronomie, service, sommellerie.
           </h2>
@@ -267,7 +267,7 @@ import LogoSlider from '../components/LogoSlider.astro';
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
 
         <div class="mb-16 reveal">
-          <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-grey mb-4">Nos réalisations</p>
+          <p class="t-eyebrow text-nocta-grey mb-4">Nos réalisations</p>
           <h2 class="t-h2 text-nocta-black">
             Chaque événement,<br/>une signature.
           </h2>
@@ -429,7 +429,7 @@ import LogoSlider from '../components/LogoSlider.astro';
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
 
         <div class="mb-16 reveal">
-          <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-4">Ce qu'ils en disent</p>
+          <p class="t-eyebrow text-nocta-cream/40 mb-4">Ce qu'ils en disent</p>
           <h2 class="t-h2 text-nocta-cream">
             La parole à nos clients.
           </h2>
@@ -477,7 +477,7 @@ import LogoSlider from '../components/LogoSlider.astro';
 
         <!-- Lien Google Reviews -->
         <div class="mt-16 text-center reveal">
-          <a href="https://g.page/r/CQOWoTg-G7diEBE/review" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 font-sans text-sm font-light tracking-widest uppercase text-nocta-cream/40 hover:text-nocta-cream transition-colors duration-300">
+          <a href="https://g.page/r/CQOWoTg-G7diEBE/review" target="_blank" rel="noopener noreferrer" class="t-eyebrow inline-flex items-center gap-3 text-sm font-light tracking-widest text-nocta-cream/40 hover:text-nocta-cream transition-colors duration-300">
             Tous nos avis sur Google — 5/5
             <span class="w-8 h-px bg-current inline-block"></span>
           </a>
