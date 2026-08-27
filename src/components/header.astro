@@ -77,6 +77,15 @@ const navLinks = [
   .logo-animated {
     animation: logoFadeUp 0.8s ease-out forwards;
   }
+
+  /* Meme traitement que .animate-fade-up / .reveal dans global.css : on
+     neutralise l'animation, pas l'element, pour qu'il reste visible. */
+  @media (prefers-reduced-motion: reduce) {
+    .logo-animated {
+      animation: none;
+      opacity: 1;
+    }
+  }
 </style>
 
 <script>
