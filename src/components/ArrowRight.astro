@@ -1,0 +1,26 @@
+---
+/**
+ * Flèche de fin de lien d'action, pour les fichiers .astro.
+ *
+ * En SVG et non en caractère : ni Newsreader ni Instrument Sans ne dessinent
+ * U+2192 — ce sont des polices de texte, sans dingbats. En caractère la flèche
+ * tombait en fallback et changeait de dessin selon l'OS.
+ *
+ * Le style vit dans global.css (.arrow-right), pas ici : le même SVG est écrit
+ * en clair dans les fichiers markdown de src/content/, qui ne peuvent pas
+ * instancier de composant. Une seule définition de comportement pour les deux.
+ */
+const { class: className = '' } = Astro.props;
+---
+
+<svg
+  class:list={["arrow-right", className]}
+  aria-hidden="true"
+  focusable="false"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+><path d="M4 12h15m-6-6 6 6-6 6" /></svg>

@@ -37,13 +37,13 @@ const otherArticles = allJournal
     <!-- HERO ARTICLE -->
     <section class="bg-nocta-black pt-40 pb-16">
       <div class="max-w-3xl mx-auto px-6 lg:px-12">
-        <p class="font-sans text-xs tracking-[0.4em] uppercase text-nocta-cream/40 mb-6 animate-fade-up" style="animation-delay: 0.1s; opacity: 0;">
+        <p class="t-eyebrow text-nocta-cream/40 mb-6 animate-fade-up" style="animation-delay: 0.1s; opacity: 0;">
           {article.data.category} — {article.data.readTime} min de lecture
         </p>
-        <h1 class="font-serif text-3xl md:text-5xl font-light italic text-nocta-cream leading-[1.1] mb-8 animate-fade-up" style="animation-delay: 0.3s; opacity: 0;">
+        <h1 class="t-h1 lg:text-5xl xl:text-5xl text-nocta-cream mb-8 animate-fade-up" style="animation-delay: 0.3s; opacity: 0;">
           {article.data.title}
         </h1>
-        <p class="font-sans text-sm font-light text-nocta-cream/50 animate-fade-up" style="animation-delay: 0.5s; opacity: 0;">
+        <p class="font-sans text-sm font-normal text-nocta-cream/50 animate-fade-up" style="animation-delay: 0.5s; opacity: 0;">
           {formattedDate}
         </p>
       </div>
@@ -52,13 +52,13 @@ const otherArticles = allJournal
     <!-- CONTENU ARTICLE -->
     <section class="bg-nocta-cream py-16 lg:py-24">
       <div class="max-w-3xl mx-auto px-6 lg:px-12">
-        <div class="prose prose-nocta font-sans font-light leading-relaxed text-nocta-black/80">
+        <div class="prose prose-nocta font-sans font-normal leading-relaxed text-nocta-black/80">
           <Content />
         </div>
 
         <!-- RETOUR JOURNAL -->
         <div class="mt-16 pt-12 border-t border-nocta-black/10">
-          <a href="/journal" class="inline-flex items-center gap-3 font-sans text-xs tracking-widest uppercase text-nocta-black/40 hover:text-nocta-black transition-colors duration-200">
+          <a href="/journal" class="t-label inline-flex items-center gap-3 text-nocta-black/40 hover:text-nocta-black transition-colors duration-200">
             <span class="w-6 h-px bg-current inline-block"></span>
             Retour au Journal
           </a>
@@ -69,10 +69,10 @@ const otherArticles = allJournal
     <!-- CTA -->
     <section class="bg-nocta-black py-24">
       <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center">
-        <h2 class="font-serif text-2xl md:text-4xl font-light italic text-nocta-cream mb-8">
+        <h2 class="t-h2 lg:text-4xl text-nocta-cream mb-8">
           Parlons de votre événement.
         </h2>
-        <a href="/contact" class="inline-flex items-center font-sans text-sm font-light tracking-widest uppercase bg-nocta-cream text-nocta-black px-8 py-3 hover:bg-white transition-all duration-300">
+        <a href="/contact" class="t-label inline-flex items-center bg-nocta-cream text-nocta-black px-8 py-3 hover:bg-white transition-all duration-300">
           Demander un devis
         </a>
       </div>
@@ -81,7 +81,7 @@ const otherArticles = allJournal
     {otherArticles.length > 0 && (
       <section class="bg-nocta-cream py-16 lg:py-20 border-t border-nocta-black/10">
         <div class="max-w-3xl mx-auto px-6 lg:px-12">
-          <h2 class="font-serif text-2xl md:text-3xl font-light italic text-nocta-black mb-8">
+          <h2 class="t-h3-lg lg:text-3xl text-nocta-black mb-8">
             Autres lectures
           </h2>
           <div class="related-grid">
@@ -140,40 +140,43 @@ const otherArticles = allJournal
 </Layout>
 
 <style>
-  .prose-nocta h2 {
-    font-family: var(--font-serif, 'Cormorant Garamond', serif);
-    font-size: 1.5rem;
-    font-weight: 300;
-    font-style: italic;
+  /* :global() obligatoire : le corps vient de <Content /> (markdown), dont les
+     noeuds ne portent pas le data-astro-cid du composant. Sans lui, Astro
+     compile `.prose-nocta h2` en exigeant l'attribut sur le h2 aussi, et la
+     regle ne matche jamais. Meme convention que .geo-content dans traiteur/. */
+  .prose-nocta :global(h2) {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;      /* 24px : sous 30px -> 400 / approche 0 */
+    font-weight: 400;
     color: var(--color-nocta-black);
     margin-top: 2.5rem;
     margin-bottom: 1rem;
     line-height: 1.2;
   }
 
-  .prose-nocta p {
+  .prose-nocta :global(p) {
     margin-bottom: 1.5rem;
     font-size: 1rem;
     line-height: 1.8;
   }
 
-  .prose-nocta a {
+  .prose-nocta :global(a) {
     color: var(--color-nocta-black);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
 
-  .prose-nocta a:hover {
+  .prose-nocta :global(a):hover {
     opacity: 0.6;
   }
 
-  .prose-nocta hr {
+  .prose-nocta :global(hr) {
     border: none;
     border-top: 1px solid rgba(0,0,0,0.1);
     margin: 2rem 0;
   }
 
-  .prose-nocta em {
+  .prose-nocta :global(em) {
     font-style: italic;
   }
 
@@ -205,7 +208,7 @@ const otherArticles = allJournal
     color: rgba(0, 0, 0, 0.45);
   }
   .related-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: var(--font-serif);
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.3;

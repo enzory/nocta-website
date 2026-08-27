@@ -79,7 +79,7 @@ const hasAny = ORDER.some(t => grouped[t].length > 0);
       <p class="geo-hub-eyebrow">Traiteur événementiel — Paris et Hauts-de-Seine</p>
       <h1 class="geo-hub-title">Nos zones desservies</h1>
       <p class="geo-hub-intro">
-        NOCTA Catering intervient dans Paris et les Hauts-de-Seine. Chaque zone demande une logistique adaptée — accès, fluidité du service, respect des contraintes de copropriété ou d'immeuble de bureaux — que nous intégrons dès la phase de devis.
+        NOCTA Catering intervient dans Paris et les Hauts-de-Seine. Chaque zone demande une logistique adaptée — accès, fluidité du service, respect des contraintes de copropriété ou d’immeuble de bureaux — que nous intégrons dès la phase de devis.
       </p>
     </header>
 
@@ -106,8 +106,8 @@ const hasAny = ORDER.some(t => grouped[t].length > 0);
     )}
 
     <section class="geo-hub-cta">
-      <h2>Votre zone n'apparaît pas&nbsp;?</h2>
-      <p>Nous intervenons dans toute l'Île-de-France sur demande. Devis personnalisé sous 48 heures.</p>
+      <h2>Votre zone n’apparaît pas&nbsp;?</h2>
+      <p>Nous intervenons dans toute l’Île-de-France sur demande. Devis personnalisé sous 48 heures.</p>
       <a href="/contact" class="geo-hub-cta-btn">Demander un devis</a>
     </section>
   </main>
@@ -137,9 +137,9 @@ const hasAny = ORDER.some(t => grouped[t].length > 0);
     margin: 0 0 1rem;
   }
   .geo-hub-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 300;
-    font-style: italic;
+    font-family: var(--font-serif);
+    font-weight: 300;          /* clamp 36-60px : au-dessus de 30px partout */
+    letter-spacing: -0.012em;
     font-size: clamp(2.25rem, 5vw, 3.75rem);
     line-height: 1.1;
     margin: 0 0 1.25rem;
@@ -160,7 +160,7 @@ const hasAny = ORDER.some(t => grouped[t].length > 0);
     gap: 3rem;
   }
   .geo-hub-section-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: var(--font-serif);
     font-weight: 400;
     font-size: 1.5rem;
     margin: 0 0 1.25rem;
@@ -212,7 +212,6 @@ const hasAny = ORDER.some(t => grouped[t].length > 0);
   .geo-hub-empty {
     font-size: 1rem;
     color: var(--color-nocta-muted);
-    font-style: italic;
   }
 
   /* --- CTA (aligné avec [slug].astro) --- */
@@ -224,9 +223,8 @@ const hasAny = ORDER.some(t => grouped[t].length > 0);
     text-align: center;
   }
   .geo-hub-cta h2 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-style: italic;
-    font-weight: 300;
+    font-family: var(--font-serif);
+    font-weight: 400;   /* clamp 24-36px : traverse 30px, on prend le plancher */
     font-size: clamp(1.5rem, 3vw, 2.25rem);
     margin: 0 0 0.75rem;
     color: #EEEBE3;
