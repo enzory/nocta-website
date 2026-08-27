@@ -55,4 +55,4 @@ Pour un anniversaire privé à Paris, ce que vous obtenez concrètement : un men
 
 Vous souhaitez organiser un anniversaire privé à Paris et obtenir une proposition chiffrée ? Décrivez-nous votre table — date, nombre de convives, lieu, envies — via notre formulaire de contact. Enzo ou Hugo vous répond sous 48 heures ouvrées.
 
-[Demander un devis →](/contact)
+[Demander un devis <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.125em"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

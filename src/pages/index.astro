@@ -109,21 +109,21 @@ import LogoSlider from '../components/LogoSlider.astro';
       <!-- Hero text -->
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-20 lg:pb-28">
         <!-- LCP : eyebrow + H1 visibles dès le premier paint — pas d'opacity:0 ni de delay ici -->
-        <p class="t-eyebrow font-light text-nocta-cream/60 mb-6">
+        <p class="t-eyebrow font-normal text-nocta-cream/60 mb-6">
           Paris, Île-de-France & ailleurs
         </p>
         <h1 class="t-h1 text-nocta-cream max-w-3xl mb-8">
           L'art de recevoir,<br/>
-          <em class="not-italic font-light">sans compromis.</em>
+          <em class="not-italic font-normal">sans compromis.</em>
         </h1>
-        <p class="font-sans text-base lg:text-lg font-light text-nocta-cream/70 max-w-xl leading-relaxed mb-12 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
+        <p class="font-sans text-base lg:text-lg font-normal text-nocta-cream/70 max-w-xl leading-relaxed mb-12 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
           NOCTA conçoit des expériences culinaires conçues avec vous, pour les entreprises et les particuliers exigeants - à Paris, en Île-de-France et au-delà.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
-          <a href="/contact" class="t-eyebrow inline-flex items-center justify-center text-sm font-light tracking-widest bg-nocta-cream text-nocta-black px-8 py-3 transition-all duration-300 hover:bg-white">
+          <a href="/contact" class="t-label inline-flex items-center justify-center bg-nocta-cream text-nocta-black px-8 py-3 transition-all duration-300 hover:bg-white">
             Demander un devis
           </a>
-          <a href="/prestations" class="t-eyebrow inline-flex items-center justify-center text-sm font-light tracking-widest border border-nocta-cream/50 text-nocta-cream px-8 py-3 transition-all duration-300 hover:border-nocta-cream">
+          <a href="/prestations" class="t-label inline-flex items-center justify-center border border-nocta-cream/50 text-nocta-cream px-8 py-3 transition-all duration-300 hover:border-nocta-cream">
             Explorer nos prestations
           </a>
         </div>
@@ -138,7 +138,7 @@ import LogoSlider from '../components/LogoSlider.astro';
 
       <!-- Scroll indicator -->
       <div class="absolute bottom-8 right-6 lg:right-12 hidden md:flex flex-col items-center gap-2 animate-fade-in" style="animation-delay: 0.8s; opacity: 0;" aria-hidden="true">
-        <span class="t-eyebrow tracking-widest text-nocta-cream/40">Scroll</span>
+        <span class="t-label text-nocta-cream/40">Scroll</span>
         <div class="w-px h-12 bg-nocta-cream/20 relative overflow-hidden">
           <div class="absolute top-0 left-0 w-full h-1/2 bg-nocta-cream/60 animate-bounce"></div>
         </div>
@@ -163,10 +163,10 @@ import LogoSlider from '../components/LogoSlider.astro';
             <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
             <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
           </span>
-          <span class="font-sans text-xs sm:text-sm font-light tracking-wide"><strong class="font-medium">5/5 sur Google</strong></span>
+          <span class="font-sans text-xs sm:text-sm font-normal tracking-wide"><strong class="font-medium">5/5 sur Google</strong></span>
         </a>
         <span class="hidden sm:inline-block w-px h-4 bg-nocta-black/20" aria-hidden="true"></span>
-        <p class="font-sans text-xs sm:text-sm font-light text-nocta-grey">
+        <p class="font-sans text-xs sm:text-sm font-normal text-nocta-grey">
           Plus de 50 événements réalisés à Paris et en Île-de-France
         </p>
       </div>
@@ -182,7 +182,7 @@ import LogoSlider from '../components/LogoSlider.astro';
               Trois formats, une seule exigence.
             </h2>
           </div>
-          <a href="/prestations" class="t-eyebrow mt-8 lg:mt-0 text-sm font-light tracking-widest text-nocta-cream/60 hover:text-nocta-cream transition-colors duration-300 flex items-center gap-3">
+          <a href="/prestations" class="t-label mt-8 lg:mt-0 text-nocta-cream/60 hover:text-nocta-cream transition-colors duration-300 flex items-center gap-3">
             Voir toutes les prestations
             <span class="w-8 h-px bg-current inline-block"></span>
           </a>
@@ -191,10 +191,10 @@ import LogoSlider from '../components/LogoSlider.astro';
           <a href="/prestations/private" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.1s">
             <p class="t-eyebrow text-nocta-cream/40 mb-8">01</p>
             <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Private</h3>
-            <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/50 mb-10">
+            <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/50 mb-10">
               Dîners à domicile, anniversaires, célébrations familiales. Nous prenons en charge l'intégralité - pour que vous soyez présent à vos invités, pas à votre cuisine.
             </p>
-            <span class="t-eyebrow tracking-widest text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
+            <span class="t-label text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
               Découvrir
               <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
             </span>
@@ -202,10 +202,10 @@ import LogoSlider from '../components/LogoSlider.astro';
           <a href="/prestations/corporate" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.2s">
             <p class="t-eyebrow text-nocta-cream/40 mb-8">02</p>
             <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Corporate</h3>
-            <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/50 mb-10">
+            <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/50 mb-10">
               Cocktails de lancement, dîners de gala, comités de direction. Une gastronomie à la hauteur de l'image que vous souhaitez donner.
             </p>
-            <span class="t-eyebrow tracking-widest text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
+            <span class="t-label text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
               Découvrir
               <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
             </span>
@@ -213,10 +213,10 @@ import LogoSlider from '../components/LogoSlider.astro';
           <a href="/prestations/signature" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.3s">
             <p class="t-eyebrow text-nocta-cream/40 mb-8">03</p>
             <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Signature</h3>
-            <p class="font-sans text-sm font-light leading-relaxed text-nocta-cream/50 mb-10">
+            <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/50 mb-10">
               Un format où cuisine, vins et scénographie composent une expérience cohérente de bout en bout.
             </p>
-            <span class="t-eyebrow tracking-widest text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
+            <span class="t-label text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
               Découvrir
               <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
             </span>
@@ -240,21 +240,21 @@ import LogoSlider from '../components/LogoSlider.astro';
           <div class="reveal" style="transition-delay: 0.1s">
             <div class="w-8 h-px bg-nocta-black mb-8"></div>
             <h3 class="t-h3 text-nocta-black mb-4">La cuisine</h3>
-            <p class="font-sans text-sm font-light leading-relaxed text-nocta-grey">
+            <p class="font-sans text-sm font-normal leading-relaxed text-nocta-grey">
               Hugo et son équipe sont formés dans les cuisines étoilées. Chaque menu est construit avec soin, chaque produit sélectionné pour ce qu'il est - pas pour ce qu'il représente.
             </p>
           </div>
           <div class="reveal" style="transition-delay: 0.2s">
             <div class="w-8 h-px bg-nocta-black mb-8"></div>
             <h3 class="t-h3 text-nocta-black mb-4">Le service</h3>
-            <p class="font-sans text-sm font-light leading-relaxed text-nocta-grey">
+            <p class="font-sans text-sm font-normal leading-relaxed text-nocta-grey">
               Un bon repas se joue autant en salle qu'en cuisine. Gestuelle, rythme, attention discrète : nous maîtrisons ces codes depuis le premier jour.
             </p>
           </div>
           <div class="reveal" style="transition-delay: 0.3s">
             <div class="w-8 h-px bg-nocta-black mb-8"></div>
             <h3 class="t-h3 text-nocta-black mb-4">La sommellerie</h3>
-            <p class="font-sans text-sm font-light leading-relaxed text-nocta-grey">
+            <p class="font-sans text-sm font-normal leading-relaxed text-nocta-grey">
               Enzo compose chaque sélection de vins en fonction du menu, du moment et des personnes autour de la table. Pas une liste - une ligne directrice.
             </p>
           </div>
@@ -271,7 +271,7 @@ import LogoSlider from '../components/LogoSlider.astro';
           <h2 class="t-h2 text-nocta-black">
             Chaque événement,<br/>une signature.
           </h2>
-          <p class="font-sans text-sm font-light text-nocta-grey mt-4">Quelques tables que nous avons dressées.</p>
+          <p class="font-sans text-sm font-normal text-nocta-grey mt-4">Quelques tables que nous avons dressées.</p>
         </div>
 
         <div class="gallery-masonry">
@@ -407,17 +407,17 @@ import LogoSlider from '../components/LogoSlider.astro';
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 lg:gap-8 text-center">
             <div class="reveal" style="transition-delay: 0.1s">
               <p class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-black mb-3">50+</p>
-              <p class="font-sans text-sm font-light text-nocta-grey">événements réalisés</p>
+              <p class="font-sans text-sm font-normal text-nocta-grey">événements réalisés</p>
             </div>
             <div class="reveal" style="transition-delay: 0.2s">
               <a href="https://g.page/r/CQOWoTg-G7diEBE/review" target="_blank" rel="noopener noreferrer" class="block group">
                 <p class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-black mb-3">5/5</p>
-                <p class="font-sans text-sm font-light text-nocta-grey group-hover:text-nocta-black transition-colors">sur Google Reviews</p>
+                <p class="font-sans text-sm font-normal text-nocta-grey group-hover:text-nocta-black transition-colors">sur Google Reviews</p>
               </a>
             </div>
             <div class="reveal" style="transition-delay: 0.3s">
               <p class="font-serif text-4xl lg:text-5xl font-light italic text-nocta-black mb-3">25 ans</p>
-              <p class="font-sans text-sm font-light text-nocta-grey">d'expérience cumulée en gastronomie</p>
+              <p class="font-sans text-sm font-normal text-nocta-grey">d'expérience cumulée en gastronomie</p>
             </div>
           </div>
         </div>
@@ -444,8 +444,8 @@ import LogoSlider from '../components/LogoSlider.astro';
               « L'apéritif, le dîner, le service étaient non seulement parfaits mais aussi très professionnels tout en étant chaleureux. »
             </blockquote>
             <div>
-              <p class="font-sans text-sm font-light text-nocta-cream">Valérie Ader</p>
-              <p class="font-sans text-xs font-light text-nocta-cream/40 mt-1">Dîner comité de mission — Colombus Consulting</p>
+              <p class="font-sans text-sm font-normal text-nocta-cream">Valérie Ader</p>
+              <p class="font-sans text-xs font-normal text-nocta-cream/40 mt-1">Dîner comité de mission — Colombus Consulting</p>
             </div>
           </div>
 
@@ -456,8 +456,8 @@ import LogoSlider from '../components/LogoSlider.astro';
               « Hugo en cuisine et Enzo en salle sont adorables et passionnés par ce qu'ils font, ça se ressent du service à l'assiette ! »
             </blockquote>
             <div>
-              <p class="font-sans text-sm font-light text-nocta-cream">Thomas Cussac</p>
-              <p class="font-sans text-xs font-light text-nocta-cream/40 mt-1">Événement privé</p>
+              <p class="font-sans text-sm font-normal text-nocta-cream">Thomas Cussac</p>
+              <p class="font-sans text-xs font-normal text-nocta-cream/40 mt-1">Événement privé</p>
             </div>
           </div>
 
@@ -468,8 +468,8 @@ import LogoSlider from '../components/LogoSlider.astro';
               « J'ai fait appel à eux pour un client dans le luxe et le résultat était plus que parfait. Ils sont à l'écoute, très discrets et professionnels. »
             </blockquote>
             <div>
-              <p class="font-sans text-sm font-light text-nocta-cream">Clémence Donazzan</p>
-              <p class="font-sans text-xs font-light text-nocta-cream/40 mt-1">Événement client luxe</p>
+              <p class="font-sans text-sm font-normal text-nocta-cream">Clémence Donazzan</p>
+              <p class="font-sans text-xs font-normal text-nocta-cream/40 mt-1">Événement client luxe</p>
             </div>
           </div>
 
@@ -477,7 +477,7 @@ import LogoSlider from '../components/LogoSlider.astro';
 
         <!-- Lien Google Reviews -->
         <div class="mt-16 text-center reveal">
-          <a href="https://g.page/r/CQOWoTg-G7diEBE/review" target="_blank" rel="noopener noreferrer" class="t-eyebrow inline-flex items-center gap-3 text-sm font-light tracking-widest text-nocta-cream/40 hover:text-nocta-cream transition-colors duration-300">
+          <a href="https://g.page/r/CQOWoTg-G7diEBE/review" target="_blank" rel="noopener noreferrer" class="t-label inline-flex items-center gap-3 text-nocta-cream/40 hover:text-nocta-cream transition-colors duration-300">
             Tous nos avis sur Google — 5/5
             <span class="w-8 h-px bg-current inline-block"></span>
           </a>

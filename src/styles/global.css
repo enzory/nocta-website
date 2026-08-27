@@ -62,6 +62,41 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* ============================================================
+   Newsreader / Instrument Sans (lot B) — variable fonts auto-hebergees,
+   fichiers `latin` complets de fontsource (non sous-ensembles : un
+   sous-ensemble « suffisant » perdait © ® ² ³ ¼ ½ ¾ ± ÷).
+   Les plages wght sont les axes reels des fichiers : plus de clamping
+   ni de gras synthetique.
+   Les @font-face Cormorant / DM Sans ci-dessus restent en place : le
+   module /commande/boucheron pointe encore dessus (lot C).
+   ============================================================ */
+
+/* Newsreader — titres. Axe wght 200-800 */
+@font-face {
+  font-family: "Newsreader";
+  src: url("/fonts/newsreader-latin.woff2") format("woff2-variations");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Newsreader";
+  src: url("/fonts/newsreader-italic-latin.woff2") format("woff2-variations");
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Instrument Sans — corps. Axe wght 400-700 */
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("/fonts/instrument-sans-latin.woff2") format("woff2-variations");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-nocta-black: #000000;
   --color-nocta-cream: #EEEBE3;
@@ -74,8 +109,8 @@
   --color-nocta-text: #2a2a2a;  /* corps de texte éditorial */
   --color-nocta-muted: #6a6a6a; /* eyebrows, labels, légendes */
 
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 @layer base {
@@ -132,25 +167,68 @@ html {
    Unifie les héros et les titres de section auparavant hétérogènes.
    ============================================================ */
 @layer components {
-  .t-h1 { @apply font-serif text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-light italic leading-[1.05]; }
-  .t-h2 { @apply font-serif text-2xl md:text-4xl lg:text-5xl font-light italic leading-tight; }
+  /* Graisses et approches indexees sur la TAILLE RENDUE (lot B) :
+       >= 48px : 300 / -0.012em
+       30-48px : 300 / -0.01em
+       < 30px  : 400 / 0
+     Newsreader devient fluette en 300 sous 30px, surtout sur fond sombre.
+     Chaque palier porte donc sa propre graisse et sa propre approche. */
+  .t-h1 {
+    @apply font-serif italic leading-[1.05]
+           text-3xl font-light tracking-[-0.01em]
+           md:text-5xl md:tracking-[-0.012em]
+           lg:text-7xl xl:text-8xl;
+  }
+  .t-h2 {
+    @apply font-serif italic leading-tight
+           text-2xl font-normal tracking-normal
+           md:text-4xl md:font-light md:tracking-[-0.01em]
+           lg:text-5xl lg:tracking-[-0.012em];
+  }
   /* Variante display : noms d'offres (blocs format prestations) — plus présents
      que .t-h2 sur mobile (text-3xl) sans atteindre la taille d'un hero. */
-  .t-h2-display { @apply font-serif text-3xl md:text-4xl lg:text-5xl font-light italic leading-tight; }
-  .t-h3 { @apply font-serif text-2xl font-light italic; }
+  .t-h2-display {
+    @apply font-serif italic leading-tight
+           text-3xl font-light tracking-[-0.01em]
+           md:text-4xl
+           lg:text-5xl lg:tracking-[-0.012em];
+  }
+  .t-h3 { @apply font-serif italic text-2xl font-normal tracking-normal; }
   /* H3 « display » : sous-titres approche (prestations). Reste ≤ .t-h2 à chaque
      palier (mobile 24≤24, md 30<36, lg 36<48) — corrige l'inversion H3>H2. */
-  .t-h3-lg { @apply font-serif text-2xl md:text-3xl lg:text-4xl font-light italic; }
+  .t-h3-lg {
+    @apply font-serif italic
+           text-2xl font-normal tracking-normal
+           md:text-3xl md:font-light md:tracking-[-0.01em]
+           lg:text-4xl;
+  }
 
-  /* Eyebrow editorial — petit libelle en capitales espacees au-dessus d'un
-     titre ou d'un bloc. Valeur par defaut = le reglage aujourd'hui dominant
-     (61 occurrences sur 117). Les occurrences historiquement en
-     `tracking-widest` (0.1em) et/ou `text-sm` conservent leur utilitaire en
-     ligne : la couche `utilities` passe apres `components`, l'utilitaire
-     gagne donc et le rendu reste inchange. Ces surcharges sont volontairement
-     visibles — c'est la liste des ecarts a arbitrer. */
-  .t-eyebrow { @apply font-sans text-xs uppercase tracking-[0.4em]; }
+  /* Corps de texte long. Instrument Sans n'a pas de graisse sous 400 et sa
+     hauteur d'x demande plus d'interlignage que DM Sans. */
+  .t-body { @apply font-sans font-normal leading-[1.7] max-w-[52ch]; }
+
+  /* Eyebrow editorial — bas de casse. Les capitales espacees a 0.4em sont
+     le marqueur le plus reconnaissable d'un site genere ; on les retire en
+     editorial et on les garde en interface (.t-label). */
+  .t-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  /* Libelle d'interface — bouton, lien d'action, badge, statut. Ici les
+     capitales espacees sont legitimes : c'est de l'interface, pas du texte. */
+  .t-label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
 }
+
 
 /* Scroll reveal — état initial */
 .reveal {

@@ -28,10 +28,12 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : null
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- PRELOAD fonts self-hostées — les 2 poids critiques du premier écran :
-         serif italic (H1) et sans (body). Déclarations @font-face dans global.css. -->
-    <link rel="preload" as="font" type="font/woff2" href="/fonts/cormorant-garamond-italic-latin.woff2" crossorigin />
-    <link rel="preload" as="font" type="font/woff2" href="/fonts/dm-sans-latin.woff2" crossorigin />
+    <!-- PRELOAD fonts self-hostées — romain + sans uniquement. Pas d'italique
+         préchargée : les 30 pages GEO ne rendent pas d'italique et tiraient
+         37 Ko pour rien ; les pages qui en ont ne concernent qu'un fragment
+         de titre, chargé à la demande. Pas de preload conditionnel. -->
+    <link rel="preload" href="/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- PRELOAD — image LCP hero (conditionné par prop preloadHero) -->
     {preloadHero && <link

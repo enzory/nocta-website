@@ -35,7 +35,7 @@ Paris concentre une densité d'événements qui pèse sur la logistique. Plusieu
 
 **L'accès au lieu.** Les boutiques en cours d'inauguration sont souvent dans des zones piétonnes, des rues à sens unique ou des passages couverts. La livraison du matériel de cuisine, des boissons et du mobilier de service doit être planifiée avec une fenêtre horaire précise — généralement tôt le matin ou en fin de nuit selon les arrondissements.
 
-**La cuisine sur place.** Les espaces de vente n'ont pas de cuisine professionnelle. NOCTA travaille en production déportée ou avec un équipement mobile autonome (induction, bain-marie, tour réfrigérée). L'installation nécessite un accès électrique identifié et un espace de préparation d'au moins 6 à 8 m² à l'écart du flux invités.
+**La cuisine sur place.** Les espaces de vente n'ont pas de cuisine professionnelle. NOCTA travaille en production déportée ou avec un équipement mobile autonome (induction, bain-marie, tour réfrigérée). L'installation nécessite un accès électrique identifié et un espace de préparation d'au moins 6 à 8 m<sup>2</sup> à l'écart du flux invités.
 
 **Le stationnement.** Un ou deux véhicules utilitaires doivent pouvoir stationner à proximité immédiate pendant le montage et le démontage. En zone très dense — Marais, Saint-Germain, Opéra — une autorisation de stationnement temporaire peut être nécessaire. Nous pouvons vous indiquer le gabarit des véhicules utilisés pour faciliter vos démarches.
 
@@ -59,4 +59,4 @@ Le devis est établi sous 24 à 36 heures à partir d'un brief précis : lieu, d
 
 Vous préparez une inauguration ou un lancement produit à Paris et souhaitez cadrer la partie restauration ? Transmettez-nous les éléments de base via le formulaire de contact — lieu, date, jauge estimée — et nous vous soumettons une proposition dans les 24 heures.
 
-[Faire une demande de devis →](/contact)
+[Faire une demande de devis <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.125em"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

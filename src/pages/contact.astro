@@ -16,13 +16,13 @@ import CallToAction from '../components/CallToAction.astro';
     <!-- Hero -->
     <section class="bg-nocta-cream pt-40 pb-16 lg:pt-52 lg:pb-20">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <p class="t-eyebrow font-light text-nocta-grey mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
+        <p class="t-eyebrow font-normal text-nocta-grey mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
           Nous contacter
         </p>
         <h1 class="t-h1 xl:text-7xl text-nocta-black mb-6 animate-fade-up" style="animation-delay: 0.35s; opacity: 0;">
           Parlons de votre événement.
         </h1>
-        <p class="font-sans text-base lg:text-lg font-light text-nocta-grey max-w-xl animate-fade-up" style="animation-delay: 0.5s; opacity: 0;">
+        <p class="font-sans text-base lg:text-lg font-normal text-nocta-grey max-w-xl animate-fade-up" style="animation-delay: 0.5s; opacity: 0;">
           Nous répondons à toutes les demandes dans les 48 heures.
         </p>
       </div>
@@ -38,14 +38,14 @@ import CallToAction from '../components/CallToAction.astro';
             <p class="t-eyebrow text-nocta-grey mb-12">Coordonnées</p>
 
             <div class="mb-8">
-              <p class="t-eyebrow tracking-widest text-nocta-grey mb-3">Email</p>
+              <p class="t-eyebrow text-nocta-grey mb-3">Email</p>
               <a href="mailto:contact@noctaparis.fr" class="font-serif text-2xl lg:text-3xl font-light italic text-nocta-black hover:opacity-60 transition-opacity duration-200">
                 contact@noctaparis.fr
               </a>
             </div>
 
             <div class="mb-14">
-              <p class="t-eyebrow tracking-widest text-nocta-grey mb-3">Téléphone</p>
+              <p class="t-eyebrow text-nocta-grey mb-3">Téléphone</p>
               <a href="tel:+33650011616" class="font-serif text-2xl lg:text-3xl font-light italic text-nocta-black hover:opacity-60 transition-opacity duration-200">
                 06 50 01 16 16
               </a>
@@ -60,9 +60,9 @@ import CallToAction from '../components/CallToAction.astro';
                   <svg class="w-4 h-4 text-nocta-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                   <svg class="w-4 h-4 text-nocta-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 </div>
-                <a href="https://g.page/r/CQOWoTg-G7diEBE/review" target="_blank" rel="noopener noreferrer" class="font-sans text-sm font-light text-nocta-black underline underline-offset-4 decoration-nocta-black/30 hover:decoration-nocta-black transition-colors duration-200">5/5 sur Google</a>
+                <a href="https://g.page/r/CQOWoTg-G7diEBE/review" target="_blank" rel="noopener noreferrer" class="font-sans text-sm font-normal text-nocta-black underline underline-offset-4 decoration-nocta-black/30 hover:decoration-nocta-black transition-colors duration-200">5/5 sur Google</a>
               </div>
-              <p class="font-sans text-sm font-light leading-relaxed text-nocta-grey">
+              <p class="font-sans text-sm font-normal leading-relaxed text-nocta-grey">
                 Plus de 50 événements réalisés à Paris et en Île-de-France.
               </p>
             </div>
@@ -79,46 +79,46 @@ import CallToAction from '../components/CallToAction.astro';
             <!-- Prénom & Nom -->
             <div class="grid grid-cols-2 gap-4 lg:gap-6">
               <div class="flex flex-col gap-2">
-                <label for="prenom" class="t-eyebrow tracking-widest text-nocta-grey">Prénom</label>
+                <label for="prenom" class="t-label text-nocta-grey">Prénom</label>
                 <input
                   id="prenom" name="prenom" type="text" required
-                  class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-light text-nocta-black transition-colors duration-200"
+                  class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black transition-colors duration-200"
                 />
               </div>
               <div class="flex flex-col gap-2">
-                <label for="nom" class="t-eyebrow tracking-widest text-nocta-grey">Nom</label>
+                <label for="nom" class="t-label text-nocta-grey">Nom</label>
                 <input
                   id="nom" name="nom" type="text" required
-                  class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-light text-nocta-black transition-colors duration-200"
+                  class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black transition-colors duration-200"
                 />
               </div>
             </div>
 
             <!-- Email -->
             <div class="flex flex-col gap-2">
-              <label for="email" class="t-eyebrow tracking-widest text-nocta-grey">Email</label>
+              <label for="email" class="t-label text-nocta-grey">Email</label>
               <input
                 id="email" name="email" type="email" required
-                class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-light text-nocta-black transition-colors duration-200"
+                class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black transition-colors duration-200"
               />
             </div>
 
             <!-- Téléphone -->
             <div class="flex flex-col gap-2">
-              <label for="telephone" class="t-eyebrow tracking-widest text-nocta-grey">Téléphone</label>
+              <label for="telephone" class="t-label text-nocta-grey">Téléphone</label>
               <input
                 id="telephone" name="telephone" type="tel" required autocomplete="tel"
-                class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-light text-nocta-black transition-colors duration-200"
+                class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black transition-colors duration-200"
               />
             </div>
 
             <!-- Type d'événement -->
             <div class="flex flex-col gap-2">
-              <label for="type_evenement" class="t-eyebrow tracking-widest text-nocta-grey">Type d'événement</label>
+              <label for="type_evenement" class="t-label text-nocta-grey">Type d'événement</label>
               <div class="relative">
                 <select
                   id="type_evenement" name="type_evenement"
-                  class="w-full appearance-none bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 pr-6 font-sans text-sm font-light text-nocta-black cursor-pointer transition-colors duration-200"
+                  class="w-full appearance-none bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 pr-6 font-sans text-sm font-normal text-nocta-black cursor-pointer transition-colors duration-200"
                 >
                   <option value="" disabled selected></option>
                   <option value="private">NOCTA Private</option>
@@ -134,28 +134,28 @@ import CallToAction from '../components/CallToAction.astro';
             <!-- Date & Convives -->
             <div class="grid grid-cols-2 gap-4 lg:gap-6">
               <div class="flex flex-col gap-2">
-                <label for="date" class="t-eyebrow tracking-widest text-nocta-grey">Date envisagée</label>
+                <label for="date" class="t-label text-nocta-grey">Date envisagée</label>
                 <input
                   id="date" name="date" type="date"
-                  class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-light text-nocta-black transition-colors duration-200"
+                  class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black transition-colors duration-200"
                 />
               </div>
               <div class="flex flex-col gap-2">
-                <label for="convives" class="t-eyebrow tracking-widest text-nocta-grey">Nombre de convives</label>
+                <label for="convives" class="t-label text-nocta-grey">Nombre de convives</label>
                 <input
                   id="convives" name="convives" type="number" min="1"
-                  class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-light text-nocta-black transition-colors duration-200"
+                  class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black transition-colors duration-200"
                 />
               </div>
             </div>
 
             <!-- Budget estimatif -->
             <div class="flex flex-col gap-2">
-              <label for="budget" class="t-eyebrow tracking-widest text-nocta-grey">Budget estimatif</label>
+              <label for="budget" class="t-label text-nocta-grey">Budget estimatif</label>
               <div class="relative">
                 <select
                   id="budget" name="budget"
-                  class="w-full appearance-none bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 pr-6 font-sans text-sm font-light text-nocta-black cursor-pointer transition-colors duration-200"
+                  class="w-full appearance-none bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 pr-6 font-sans text-sm font-normal text-nocta-black cursor-pointer transition-colors duration-200"
                 >
                   <option value="" disabled selected></option>
                   <option value="moins_2000">Moins de 2 000 €</option>
@@ -171,10 +171,10 @@ import CallToAction from '../components/CallToAction.astro';
 
             <!-- Message -->
             <div class="flex flex-col gap-2">
-              <label for="message" class="t-eyebrow tracking-widest text-nocta-grey">Message</label>
+              <label for="message" class="t-label text-nocta-grey">Message</label>
               <textarea
                 id="message" name="message" rows="4"
-                class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-light text-nocta-black transition-colors duration-200 resize-none"
+                class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black transition-colors duration-200 resize-none"
               ></textarea>
             </div>
 
@@ -188,7 +188,7 @@ import CallToAction from '../components/CallToAction.astro';
             <button
               id="submit-btn"
               type="submit"
-              class="t-eyebrow w-full text-sm font-light tracking-widest bg-nocta-black text-nocta-cream py-4 hover:bg-nocta-black/80 transition-all duration-300 mt-2"
+              class="t-label w-full bg-nocta-black text-nocta-cream py-4 hover:bg-nocta-black/80 transition-all duration-300 mt-2"
             >
               Envoyer ma demande
             </button>

@@ -21,7 +21,7 @@ const articles = (await getCollection('journal'))
     <!-- Hero -->
     <section class="bg-nocta-cream pt-40 pb-16 lg:pt-52 lg:pb-20">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <p class="t-eyebrow font-light text-nocta-grey mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
+        <p class="t-eyebrow font-normal text-nocta-grey mb-6 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
           Journal
         </p>
         <h1 class="t-h1 xl:text-7xl text-nocta-black max-w-3xl animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
@@ -45,18 +45,18 @@ const articles = (await getCollection('journal'))
                 {String(i + 1).padStart(2, '0')}
               </span>
               <div>
-                <p class="t-eyebrow tracking-widest text-nocta-grey mb-3">
+                <p class="t-eyebrow text-nocta-grey mb-3">
                   {article.data.category}
                 </p>
                 <h2 class="t-h3-lg text-nocta-black leading-tight mb-3">
                   {article.data.title}
                 </h2>
-                <p class="font-sans text-sm font-light text-nocta-grey max-w-xl">
+                <p class="font-sans text-sm font-normal text-nocta-grey max-w-xl">
                   {article.data.description}
                 </p>
               </div>
             </div>
-            <div class="t-eyebrow flex items-center gap-3 font-light tracking-widest text-nocta-black/40 group-hover:text-nocta-black transition-colors duration-200 shrink-0 lg:pt-1 pl-10 lg:pl-0">
+            <div class="t-label flex items-center gap-3 text-nocta-black/40 group-hover:text-nocta-black transition-colors duration-200 shrink-0 lg:pt-1 pl-10 lg:pl-0">
               <span>{article.data.readTime} min</span>
               <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
             </div>

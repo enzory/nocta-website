@@ -263,6 +263,8 @@ const displayH1 = d.h1 ?? d.title;
      lisible qu'un italique. Ne pas « aligner » sur .t-h1. */
   .geo-title {
     font-family: var(--font-serif);
+    font-weight: 300;          /* clamp 32-48px : au-dessus de 30px partout */
+    letter-spacing: -0.01em;
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.15;
     margin: 0 0 0.75rem;
@@ -404,7 +406,7 @@ const displayH1 = d.h1 ?? d.title;
   .geo-cta h2 {
     font-family: var(--font-serif);
     font-style: italic;
-    font-weight: 300;
+    font-weight: 400;   /* clamp 24-36px : traverse 30px, on prend le plancher */
     font-size: clamp(1.5rem, 3vw, 2.25rem);
     margin: 0 0 0.75rem;
     color: #EEEBE3;
