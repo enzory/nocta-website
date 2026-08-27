@@ -167,20 +167,28 @@ html {
    Unifie les héros et les titres de section auparavant hétérogènes.
    ============================================================ */
 @layer components {
-  /* Graisses et approches indexees sur la TAILLE RENDUE (lot B) :
+  /* ROMAIN PAR DEFAUT. L'italique de Newsreader est une vraie italique
+     dessinee, cursive et tres expressive : utilisee sur tous les titres,
+     elle ne signale plus rien et une liste d'articles se lit comme une
+     suite de citations. Elle est desormais reservee aux citations, aux
+     chapos, aux fragments d'emphase et aux noms de plats et de cuvees.
+     Un titre est deja distingue par sa taille et par le contraste
+     serif / sans.
+
+     Graisses et approches indexees sur la TAILLE RENDUE (lot B) :
        >= 48px : 300 / -0.012em
        30-48px : 300 / -0.01em
        < 30px  : 400 / 0
      Newsreader devient fluette en 300 sous 30px, surtout sur fond sombre.
      Chaque palier porte donc sa propre graisse et sa propre approche. */
   .t-h1 {
-    @apply font-serif italic leading-[1.05]
+    @apply font-serif leading-[1.05]
            text-3xl font-light tracking-[-0.01em]
            md:text-5xl md:tracking-[-0.012em]
            lg:text-7xl xl:text-8xl;
   }
   .t-h2 {
-    @apply font-serif italic leading-tight
+    @apply font-serif leading-tight
            text-2xl font-normal tracking-normal
            md:text-4xl md:font-light md:tracking-[-0.01em]
            lg:text-5xl lg:tracking-[-0.012em];
@@ -188,16 +196,16 @@ html {
   /* Variante display : noms d'offres (blocs format prestations) — plus présents
      que .t-h2 sur mobile (text-3xl) sans atteindre la taille d'un hero. */
   .t-h2-display {
-    @apply font-serif italic leading-tight
+    @apply font-serif leading-tight
            text-3xl font-light tracking-[-0.01em]
            md:text-4xl
            lg:text-5xl lg:tracking-[-0.012em];
   }
-  .t-h3 { @apply font-serif italic text-2xl font-normal tracking-normal; }
+  .t-h3 { @apply font-serif text-2xl font-normal tracking-normal; }
   /* H3 « display » : sous-titres approche (prestations). Reste ≤ .t-h2 à chaque
      palier (mobile 24≤24, md 30<36, lg 36<48) — corrige l'inversion H3>H2. */
   .t-h3-lg {
-    @apply font-serif italic
+    @apply font-serif
            text-2xl font-normal tracking-normal
            md:text-3xl md:font-light md:tracking-[-0.01em]
            lg:text-4xl;
