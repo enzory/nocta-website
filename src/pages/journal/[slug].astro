@@ -140,7 +140,11 @@ const otherArticles = allJournal
 </Layout>
 
 <style>
-  .prose-nocta h2 {
+  /* :global() obligatoire : le corps vient de <Content /> (markdown), dont les
+     noeuds ne portent pas le data-astro-cid du composant. Sans lui, Astro
+     compile `.prose-nocta h2` en exigeant l'attribut sur le h2 aussi, et la
+     regle ne matche jamais. Meme convention que .geo-content dans traiteur/. */
+  .prose-nocta :global(h2) {
     font-family: var(--font-serif);
     font-size: 1.5rem;      /* 24px : sous 30px -> 400 / approche 0 */
     font-weight: 400;
@@ -151,29 +155,29 @@ const otherArticles = allJournal
     line-height: 1.2;
   }
 
-  .prose-nocta p {
+  .prose-nocta :global(p) {
     margin-bottom: 1.5rem;
     font-size: 1rem;
     line-height: 1.8;
   }
 
-  .prose-nocta a {
+  .prose-nocta :global(a) {
     color: var(--color-nocta-black);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
 
-  .prose-nocta a:hover {
+  .prose-nocta :global(a):hover {
     opacity: 0.6;
   }
 
-  .prose-nocta hr {
+  .prose-nocta :global(hr) {
     border: none;
     border-top: 1px solid rgba(0,0,0,0.1);
     margin: 2rem 0;
   }
 
-  .prose-nocta em {
+  .prose-nocta :global(em) {
     font-style: italic;
   }
 
