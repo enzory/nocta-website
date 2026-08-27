@@ -84,4 +84,4 @@ La démarche est simple. Contactez votre traiteur avec les informations essentie
 
 Chez NOCTA, nous intervenons à Paris, en Île-de-France et au-delà pour les séjours et séminaires. Notre chef cuisine sur place chez vous avec des produits frais du marché, ou prépare un buffet livré prêt à dresser — selon ce qui convient le mieux à votre événement. Notre équipe de salle assure un service attentif du début à la fin quand la formule le prévoit.
 
-**[Demander un devis pour votre cocktail dînatoire <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.125em"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)**
+**[Demander un devis pour votre cocktail dînatoire <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)**

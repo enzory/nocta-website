@@ -139,7 +139,7 @@ export default function BoucheronCommande() {
   const alertMessages = [];
   if (proteineOverflow) {
     alertMessages.push(
-      `Déséquilibre détecté : vous avez ${selected.proteine.length} protéinée(s) sélectionnée(s), le maximum autorisé pour ce palier (${tier.min}–${tier.max === Infinity ? "∞" : tier.max} pièces) est de ${tier.maxProt}. Désélectionnez une protéinée ou augmentez les quantités pour passer au palier suivant.`
+      `Déséquilibre détecté : vous avez ${selected.proteine.length} protéinée(s) sélectionnée(s), le maximum autorisé pour ce palier (${tier.max === Infinity ? `${tier.min} pièces et plus` : `${tier.min}–${tier.max} pièces`}) est de ${tier.maxProt}. Désélectionnez une protéinée ou augmentez les quantités pour passer au palier suivant.`
     );
   }
   if (varietiesOverflow) {

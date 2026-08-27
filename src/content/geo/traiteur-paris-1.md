@@ -62,4 +62,4 @@ Les menus sont construits autour de produits de saison, sourcés auprès de four
 
 Pour une intervention dans le 1er arrondissement — qu'il s'agisse d'un dîner privé, d'un cocktail corporate ou d'un format plus spécifique — contactez NOCTA via la page dédiée. Un premier échange permet de cadrer le format, le lieu et le budget en moins de 48 heures.
 
-[Prendre contact avec NOCTA <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.125em"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)
+[Prendre contact avec NOCTA <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

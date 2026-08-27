@@ -230,6 +230,33 @@ html {
 }
 
 
+/* ============================================================
+   Flèche de lien d'action (composant ArrowRight + SVG écrits en clair
+   dans src/content/*.md, qui ne peuvent pas instancier de composant).
+   Une seule définition du comportement pour les deux usages.
+   ============================================================ */
+.arrow-right {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  flex: none;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Survol capté sur le lien parent : sur la flèche elle-même, elle fuirait
+   sous le curseur et l'animation se déclencherait en boucle. */
+a:hover > .arrow-right,
+a:focus-visible > .arrow-right {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arrow-right { transition: none; }
+  a:hover > .arrow-right,
+  a:focus-visible > .arrow-right { transform: none; }
+}
+
 /* Scroll reveal — état initial */
 .reveal {
   opacity: 0;

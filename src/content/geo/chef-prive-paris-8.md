@@ -54,4 +54,4 @@ Pour un dîner dans le 8e, nous recommandons de prendre contact au moins une sem
 
 Vous recevez dans le 8e arrondissement et souhaitez un dîner construit selon vos contraintes et votre table. Transmettez-nous la date, le nombre de convives et le cadre général via le formulaire de contact. Un premier retour vous parvient sous 24 à 36 heures ouvrées.
 
-[Faire une demande de devis <svg aria-hidden="true" viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-0.125em"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)
+[Faire une demande de devis <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)
