@@ -1,6 +1,34 @@
 import { useState, useMemo } from "react";
 import { jsPDF } from "jspdf";
 
+// Pictogrammes en SVG et non en caracteres : ni Newsreader ni Instrument
+// Sans ne dessinent U+2192 ni U+2713 — ce sont des polices de texte, elles
+// ne contiennent pas de dingbats. En caractere ils tombaient en fallback et
+// changeaient de dessin selon l'OS, dans un module client. currentColor et
+// dimension en em : ils suivent la couleur et la taille du texte.
+// La fleche reutilise la classe .arrow-right de global.css, partagee avec
+// le composant ArrowRight.astro et les .md de src/content/.
+function ArrowRight() {
+  return (
+    <svg className="arrow-right" aria-hidden="true" focusable="false"
+         viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 12h15m-6-6 6 6-6 6" />
+    </svg>
+  );
+}
+
+function Check({ size = 16, color = "currentColor", strokeWidth = 2.5 }) {
+  return (
+    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"
+         width={size} height={size} fill="none" stroke={color}
+         strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"
+         style={{ display: "block" }}>
+      <path d="m5 13 4.5 4.5L19 7" />
+    </svg>
+  );
+}
+
 // Logo NOCTA Catering en base64 (JPEG 400x200, ~1.2 Ko).
 // Utilisé uniquement dans generatePDF() pour l'export A4.
 // Le rendu UI utilise NoctaSvgLogo (SVG inline) — ne pas confondre.
@@ -382,12 +410,14 @@ export default function BoucheronCommande() {
         <div style={styles.container}>
           <DualHeader subtitle="Commande confirmée" />
           <div style={styles.confirmBox}>
-            <div style={{ fontSize: 48, marginBottom: 16, opacity: 0.7 }}>✓</div>
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: 16, opacity: 0.7 }}>
+              <Check size={48} strokeWidth={1.5} />
+            </div>
             <p style={styles.confirmText}>
               Votre commande a bien été transmise à l'équipe NOCTA.
             </p>
             {orderNumber && (
-              <p style={{ ...styles.confirmText, opacity: 0.7, marginTop: 12, fontSize: 13, fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.04em" }}>
+              <p style={{ ...styles.confirmText, opacity: 0.7, marginTop: 12, fontSize: 13, fontFamily: "var(--font-sans)", letterSpacing: "0.04em" }}>
                 N° de commande : <strong>{orderNumber}</strong>
               </p>
             )}
@@ -446,7 +476,7 @@ export default function BoucheronCommande() {
                     backgroundColor: isSelected ? "#1a1a1a" : "transparent",
                     borderColor: isSelected ? "#1a1a1a" : "rgba(26,26,26,0.25)",
                   }}>
-                    {isSelected && <span style={{ color: "#EEEBE3", fontSize: 10, lineHeight: 1 }}>✓</span>}
+                    {isSelected && <Check size={11} color="#EEEBE3" strokeWidth={3} />}
                   </div>
                   <span style={styles.itemName}>{item.nom}</span>
                 </div>
@@ -502,13 +532,13 @@ export default function BoucheronCommande() {
 
         <div style={styles.tierInfo}>
           <div style={styles.tierRow}>
-            <span style={{...styles.tierTag, ...(totalPieces < 200 ? styles.tierTagActive : {})}}>80–200 pcs → 4 variétés (max 2 prot.)</span>
+            <span style={{...styles.tierTag, ...(totalPieces < 200 ? styles.tierTagActive : {})}}>80–200 pcs <ArrowRight /> 4 variétés (max 2 prot.)</span>
           </div>
           <div style={styles.tierRow}>
-            <span style={{...styles.tierTag, ...(totalPieces >= 200 && totalPieces < 400 ? styles.tierTagActive : {})}}>200–400 pcs → 6 variétés (max 3 prot.)</span>
+            <span style={{...styles.tierTag, ...(totalPieces >= 200 && totalPieces < 400 ? styles.tierTagActive : {})}}>200–400 pcs <ArrowRight /> 6 variétés (max 3 prot.)</span>
           </div>
           <div style={styles.tierRow}>
-            <span style={{...styles.tierTag, ...(totalPieces >= 400 ? styles.tierTagActive : {})}}>400+ pcs → 8 variétés (max 4 prot.)</span>
+            <span style={{...styles.tierTag, ...(totalPieces >= 400 ? styles.tierTagActive : {})}}>400+ pcs <ArrowRight /> 8 variétés (max 4 prot.)</span>
           </div>
         </div>
 
@@ -637,7 +667,7 @@ const styles = {
   page: {
     minHeight: "100vh",
     backgroundColor: "#EEEBE3",
-    fontFamily: "'Cormorant Garamond', 'Georgia', serif",
+    fontFamily: "var(--font-serif)",
     color: "#1a1a1a",
     padding: "48px 16px 64px",
   },
@@ -649,35 +679,35 @@ const styles = {
   },
   logoGroup: { display: "flex", alignItems: "center", gap: 10 },
   logoSep: { display: "flex", alignItems: "center" },
-  logoSepIcon: { fontSize: 14, opacity: 0.25, fontFamily: "'DM Sans', sans-serif", fontWeight: 300 },
+  logoSepIcon: { fontSize: 14, opacity: 0.25, fontFamily: "var(--font-sans)", fontWeight: 400 },
   boucheronWordmark: {
     fontSize: 20, fontWeight: 400, letterSpacing: "0.28em",
-    textTransform: "uppercase", fontFamily: "'Cormorant Garamond', serif",
+    textTransform: "uppercase", fontFamily: "var(--font-serif)",
   },
   exclusiveBadge: {
     display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginBottom: 12,
   },
   exclusiveLine: { height: 1, width: 40, backgroundColor: "rgba(26,26,26,0.15)" },
   exclusiveText: {
-    fontSize: 11, fontFamily: "'DM Sans', sans-serif", fontWeight: 500,
+    fontSize: 11, fontFamily: "var(--font-sans)", fontWeight: 500,
     letterSpacing: "0.1em", textTransform: "uppercase", opacity: 0.45,
   },
   subtitle: {
     fontSize: 15, fontWeight: 400, opacity: 0.45, letterSpacing: "0.04em",
-    fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif", margin: "0 0 8px",
+    fontFamily: "var(--font-sans)", margin: "0 0 8px",
   },
   ruleRow: {
     display: "flex", justifyContent: "center", alignItems: "center",
     gap: 8, flexWrap: "wrap", marginBottom: 24,
   },
   ruleTag: {
-    fontSize: 11, fontFamily: "'DM Sans', sans-serif", fontWeight: 500,
+    fontSize: 11, fontFamily: "var(--font-sans)", fontWeight: 500,
     letterSpacing: "0.03em", padding: "4px 10px",
     border: "1px solid rgba(26,26,26,0.12)", borderRadius: 2,
   },
   ruleDot: { opacity: 0.2, fontSize: 14 },
   instructions: {
-    fontSize: 13, fontFamily: "'DM Sans', sans-serif", lineHeight: 1.6,
+    fontSize: 13, fontFamily: "var(--font-sans)", lineHeight: 1.6,
     opacity: 0.5, textAlign: "center", marginBottom: 28, padding: "0 20px",
   },
   dateRow: {
@@ -685,10 +715,10 @@ const styles = {
     marginBottom: 32, paddingBottom: 24, borderBottom: "1px solid rgba(26,26,26,0.08)",
   },
   fieldLabel: {
-    fontSize: 13, fontFamily: "'DM Sans', sans-serif", fontWeight: 500, letterSpacing: "0.02em",
+    fontSize: 13, fontFamily: "var(--font-sans)", fontWeight: 500, letterSpacing: "0.02em",
   },
   dateInput: {
-    fontSize: 13, fontFamily: "'DM Sans', sans-serif", padding: "8px 12px",
+    fontSize: 13, fontFamily: "var(--font-sans)", padding: "8px 12px",
     border: "1px solid rgba(26,26,26,0.15)", borderRadius: 2,
     backgroundColor: "transparent", color: "#1a1a1a", outline: "none",
   },
@@ -697,13 +727,13 @@ const styles = {
   },
   emailInput: {
     display: "block", width: "100%", marginTop: 8,
-    fontSize: 13, fontFamily: "'DM Sans', sans-serif", padding: "8px 12px",
+    fontSize: 13, fontFamily: "var(--font-sans)", padding: "8px 12px",
     border: "1px solid rgba(26,26,26,0.15)", borderRadius: 2,
     backgroundColor: "transparent", color: "#1a1a1a", outline: "none",
     boxSizing: "border-box",
   },
   emailHint: {
-    marginTop: 6, fontSize: 11, fontFamily: "'DM Sans', sans-serif",
+    marginTop: 6, fontSize: 11, fontFamily: "var(--font-sans)",
     color: "rgba(26,26,26,0.4)", letterSpacing: "0.01em",
   },
   segment: { marginBottom: 32 },
@@ -712,7 +742,7 @@ const styles = {
   },
   segmentTitle: { fontSize: 19, fontWeight: 600, fontStyle: "italic", margin: 0 },
   badge: {
-    fontSize: 11, fontFamily: "'DM Sans', sans-serif", fontWeight: 600,
+    fontSize: 11, fontFamily: "var(--font-sans)", fontWeight: 600,
     letterSpacing: "0.06em", padding: "3px 10px",
     border: "1px solid #1a1a1a", borderRadius: 2, transition: "all 0.2s ease",
   },
@@ -727,7 +757,7 @@ const styles = {
     borderRadius: 2, display: "flex", alignItems: "center", justifyContent: "center",
     marginTop: 2, transition: "all 0.15s ease",
   },
-  itemName: { fontSize: 14, fontFamily: "'DM Sans', sans-serif", fontWeight: 400, lineHeight: 1.5 },
+  itemName: { fontSize: 14, fontFamily: "var(--font-sans)", fontWeight: 400, lineHeight: 1.5 },
   qtyControl: {
     display: "flex", alignItems: "center", gap: 6, marginTop: 12, marginLeft: 29,
   },
@@ -735,17 +765,17 @@ const styles = {
     width: 30, height: 30, display: "flex", alignItems: "center", justifyContent: "center",
     border: "1px solid rgba(26,26,26,0.15)", borderRadius: 2,
     backgroundColor: "transparent", fontSize: 15, fontWeight: 600,
-    cursor: "pointer", color: "#1a1a1a", fontFamily: "'DM Sans', sans-serif",
+    cursor: "pointer", color: "#1a1a1a", fontFamily: "var(--font-sans)",
   },
   qtyInput: {
-    width: 68, textAlign: "center", fontSize: 14, fontFamily: "'DM Sans', sans-serif",
+    width: 68, textAlign: "center", fontSize: 14, fontFamily: "var(--font-sans)",
     fontWeight: 600, padding: "5px 4px", border: "1px solid rgba(26,26,26,0.15)",
     borderRadius: 2, backgroundColor: "transparent", color: "#1a1a1a", outline: "none",
   },
-  qtyLabel: { fontSize: 11, fontFamily: "'DM Sans', sans-serif", opacity: 0.4, marginLeft: 2 },
+  qtyLabel: { fontSize: 11, fontFamily: "var(--font-sans)", opacity: 0.4, marginLeft: 2 },
   commentSection: { marginBottom: 28 },
   textarea: {
-    width: "100%", marginTop: 8, fontSize: 13, fontFamily: "'DM Sans', sans-serif",
+    width: "100%", marginTop: 8, fontSize: 13, fontFamily: "var(--font-sans)",
     padding: "10px 12px", border: "1px solid rgba(26,26,26,0.15)", borderRadius: 2,
     backgroundColor: "transparent", color: "#1a1a1a", outline: "none",
     resize: "vertical", boxSizing: "border-box",
@@ -756,39 +786,39 @@ const styles = {
   },
   recapTitle: {
     fontSize: 13, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase",
-    fontFamily: "'DM Sans', sans-serif", margin: "0 0 14px",
+    fontFamily: "var(--font-sans)", margin: "0 0 14px",
   },
   recapLines: { display: "flex", flexDirection: "column", gap: 8 },
   recapLine: { display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 },
-  recapItemName: { fontSize: 12, fontFamily: "'DM Sans', sans-serif", flex: 1, lineHeight: 1.4 },
-  recapItemQty: { fontSize: 12, fontFamily: "'DM Sans', sans-serif", fontWeight: 600, whiteSpace: "nowrap" },
+  recapItemName: { fontSize: 12, fontFamily: "var(--font-sans)", flex: 1, lineHeight: 1.4 },
+  recapItemQty: { fontSize: 12, fontFamily: "var(--font-sans)", fontWeight: 600, whiteSpace: "nowrap" },
   divider: { height: 1, backgroundColor: "rgba(26,26,26,0.08)", margin: "14px 0" },
   totalRow: {
     display: "flex", justifyContent: "space-between", fontSize: 13,
-    fontFamily: "'DM Sans', sans-serif", marginBottom: 5,
+    fontFamily: "var(--font-sans)", marginBottom: 5,
   },
   warning: {
-    marginTop: 14, fontSize: 12, fontFamily: "'DM Sans', sans-serif",
+    marginTop: 14, fontSize: 12, fontFamily: "var(--font-sans)",
     color: "#8B4513", fontWeight: 500, padding: "8px 12px",
     backgroundColor: "rgba(139,69,19,0.05)", borderRadius: 2,
     border: "1px solid rgba(139,69,19,0.1)", lineHeight: 1.5,
   },
   submitBtn: {
     width: "100%", padding: "15px", backgroundColor: "#1a1a1a", color: "#EEEBE3",
-    fontSize: 13, fontFamily: "'DM Sans', sans-serif", fontWeight: 600,
+    fontSize: 13, fontFamily: "var(--font-sans)", fontWeight: 600,
     letterSpacing: "0.14em", textTransform: "uppercase",
     border: "none", borderRadius: 2, transition: "opacity 0.2s ease",
   },
   footerText: {
     textAlign: "center", marginTop: 28, fontSize: 11,
-    fontFamily: "'DM Sans', sans-serif", opacity: 0.25, letterSpacing: "0.06em",
+    fontFamily: "var(--font-sans)", opacity: 0.25, letterSpacing: "0.06em",
   },
   alertBanner: {
     backgroundColor: "#8B1A1A", color: "#fff", padding: "14px 18px",
     borderRadius: 2, marginBottom: 20, lineHeight: 1.6,
   },
   alertText: {
-    fontSize: 13, fontFamily: "'DM Sans', sans-serif", fontWeight: 500,
+    fontSize: 13, fontFamily: "var(--font-sans)", fontWeight: 500,
     margin: "0 0 4px",
   },
   tierInfo: {
@@ -797,7 +827,7 @@ const styles = {
   },
   tierRow: { display: "flex" },
   tierTag: {
-    fontSize: 11, fontFamily: "'DM Sans', sans-serif", fontWeight: 400,
+    fontSize: 11, fontFamily: "var(--font-sans)", fontWeight: 400,
     letterSpacing: "0.02em", padding: "3px 10px",
     border: "1px solid rgba(26,26,26,0.08)", borderRadius: 2,
     opacity: 0.4, transition: "all 0.2s ease",
@@ -810,10 +840,10 @@ const styles = {
     textAlign: "center", padding: "56px 24px",
     backgroundColor: "rgba(26,26,26,0.025)", border: "1px solid rgba(26,26,26,0.08)", borderRadius: 2,
   },
-  confirmText: { fontSize: 16, fontFamily: "'DM Sans', sans-serif", lineHeight: 1.6, margin: 0 },
+  confirmText: { fontSize: 16, fontFamily: "var(--font-sans)", lineHeight: 1.6, margin: 0 },
   newOrderBtn: {
     marginTop: 28, padding: "11px 28px", backgroundColor: "transparent", color: "#1a1a1a",
-    fontSize: 12, fontFamily: "'DM Sans', sans-serif", fontWeight: 600,
+    fontSize: 12, fontFamily: "var(--font-sans)", fontWeight: 600,
     letterSpacing: "0.1em", textTransform: "uppercase",
     border: "1.5px solid #1a1a1a", borderRadius: 2, cursor: "pointer", transition: "all 0.2s ease",
   },

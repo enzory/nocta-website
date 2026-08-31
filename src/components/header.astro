@@ -83,7 +83,10 @@ const navLinks = [
   @media (prefers-reduced-motion: reduce) {
     .logo-animated {
       animation: none;
-      opacity: 1;
+      /* !important par prevention, comme .animate-fade-up et .reveal dans
+         global.css : un opacity en ligne ajoute plus tard rendrait le logo
+         invisible sans bruit. */
+      opacity: 1 !important;
     }
   }
 </style>

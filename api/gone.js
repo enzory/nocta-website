@@ -18,7 +18,7 @@ export default function handler(req, res) {
     <meta name="robots" content="noindex">
     <title>Page disparue — NOCTA</title>
     <style>
-      body { font-family: 'Cormorant Garamond', Georgia, serif; background: #EEEBE3; color: #0A0A0A; margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
+      body { font-family: Georgia, 'Times New Roman', serif; background: #EEEBE3; color: #0A0A0A; margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; text-align: center; }
       h1 { font-style: italic; font-weight: 300; font-size: clamp(1.75rem, 4vw, 2.5rem); margin: 0 0 1rem; }
       p { font-family: system-ui, sans-serif; font-weight: 300; color: #4a4a4a; margin: 0 0 2rem; }
       a { display: inline-block; font-family: system-ui, sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; padding: 0.85rem 2rem; background: #0A0A0A; color: #EEEBE3; text-decoration: none; }
