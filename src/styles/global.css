@@ -292,8 +292,12 @@ a:focus-visible > .arrow-right {
     opacity: 1 !important;
   }
 
+  /* !important par prevention : aucun .reveal ne porte d'opacity en ligne
+     aujourd'hui, mais le jour ou l'un en portera, la declaration en ligne
+     gagnerait et l'element disparaitrait silencieusement — exactement le
+     motif corrige juste au-dessus. On ferme le motif plutot que le cas. */
   .reveal {
-    opacity: 1;
+    opacity: 1 !important;
     transform: none;
     transition: none;
   }
