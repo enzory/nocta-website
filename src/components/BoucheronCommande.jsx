@@ -1,6 +1,34 @@
 import { useState, useMemo } from "react";
 import { jsPDF } from "jspdf";
 
+// Pictogrammes en SVG et non en caracteres : ni Newsreader ni Instrument
+// Sans ne dessinent U+2192 ni U+2713 — ce sont des polices de texte, elles
+// ne contiennent pas de dingbats. En caractere ils tombaient en fallback et
+// changeaient de dessin selon l'OS, dans un module client. currentColor et
+// dimension en em : ils suivent la couleur et la taille du texte.
+// La fleche reutilise la classe .arrow-right de global.css, partagee avec
+// le composant ArrowRight.astro et les .md de src/content/.
+function ArrowRight() {
+  return (
+    <svg className="arrow-right" aria-hidden="true" focusable="false"
+         viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 12h15m-6-6 6 6-6 6" />
+    </svg>
+  );
+}
+
+function Check({ size = 16, color = "currentColor", strokeWidth = 2.5 }) {
+  return (
+    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"
+         width={size} height={size} fill="none" stroke={color}
+         strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"
+         style={{ display: "block" }}>
+      <path d="m5 13 4.5 4.5L19 7" />
+    </svg>
+  );
+}
+
 // Logo NOCTA Catering en base64 (JPEG 400x200, ~1.2 Ko).
 // Utilisé uniquement dans generatePDF() pour l'export A4.
 // Le rendu UI utilise NoctaSvgLogo (SVG inline) — ne pas confondre.
@@ -382,7 +410,9 @@ export default function BoucheronCommande() {
         <div style={styles.container}>
           <DualHeader subtitle="Commande confirmée" />
           <div style={styles.confirmBox}>
-            <div style={{ fontSize: 48, marginBottom: 16, opacity: 0.7 }}>✓</div>
+            <div style={{ display: "flex", justifyContent: "center", marginBottom: 16, opacity: 0.7 }}>
+              <Check size={48} strokeWidth={1.5} />
+            </div>
             <p style={styles.confirmText}>
               Votre commande a bien été transmise à l'équipe NOCTA.
             </p>
@@ -446,7 +476,7 @@ export default function BoucheronCommande() {
                     backgroundColor: isSelected ? "#1a1a1a" : "transparent",
                     borderColor: isSelected ? "#1a1a1a" : "rgba(26,26,26,0.25)",
                   }}>
-                    {isSelected && <span style={{ color: "#EEEBE3", fontSize: 10, lineHeight: 1 }}>✓</span>}
+                    {isSelected && <Check size={11} color="#EEEBE3" strokeWidth={3} />}
                   </div>
                   <span style={styles.itemName}>{item.nom}</span>
                 </div>
@@ -502,13 +532,13 @@ export default function BoucheronCommande() {
 
         <div style={styles.tierInfo}>
           <div style={styles.tierRow}>
-            <span style={{...styles.tierTag, ...(totalPieces < 200 ? styles.tierTagActive : {})}}>80–200 pcs → 4 variétés (max 2 prot.)</span>
+            <span style={{...styles.tierTag, ...(totalPieces < 200 ? styles.tierTagActive : {})}}>80–200 pcs <ArrowRight /> 4 variétés (max 2 prot.)</span>
           </div>
           <div style={styles.tierRow}>
-            <span style={{...styles.tierTag, ...(totalPieces >= 200 && totalPieces < 400 ? styles.tierTagActive : {})}}>200–400 pcs → 6 variétés (max 3 prot.)</span>
+            <span style={{...styles.tierTag, ...(totalPieces >= 200 && totalPieces < 400 ? styles.tierTagActive : {})}}>200–400 pcs <ArrowRight /> 6 variétés (max 3 prot.)</span>
           </div>
           <div style={styles.tierRow}>
-            <span style={{...styles.tierTag, ...(totalPieces >= 400 ? styles.tierTagActive : {})}}>400+ pcs → 8 variétés (max 4 prot.)</span>
+            <span style={{...styles.tierTag, ...(totalPieces >= 400 ? styles.tierTagActive : {})}}>400+ pcs <ArrowRight /> 8 variétés (max 4 prot.)</span>
           </div>
         </div>
 
