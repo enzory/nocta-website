@@ -283,7 +283,13 @@ a:focus-visible > .arrow-right {
   .animate-fade-up,
   .animate-fade-in {
     animation: none;
-    opacity: 1;
+    /* !important indispensable : 41 elements portent un style="opacity: 0"
+       en ligne, que l'animation devait lever en arrivant a son etat final.
+       Animation coupee, la declaration en ligne gagne sur la feuille de
+       style et l'element reste invisible pour de bon — sur la home, le
+       chapo du hero et les deux boutons d'appel a l'action disparaissaient
+       pour qui demande des animations reduites. */
+    opacity: 1 !important;
   }
 
   .reveal {
