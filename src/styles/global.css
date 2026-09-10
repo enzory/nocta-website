@@ -36,7 +36,11 @@
 @theme {
   --color-nocta-black: #000000;
   --color-nocta-cream: #EEEBE3;
-  --color-nocta-grey: #8A8A85;
+  /* #8A8A85 donnait 2,91:1 sur le cream #EEEBE3 : échec WCAG AA (4,5:1).
+     #6A6A66 mesure 4,56:1 sur cream. Ne pas éclaircir : #6C6C67 retombe à
+     4,43:1. Le token n'est employé que sur fond clair (cream / blanc) —
+     vérifié sur les 51 pages générées. */
+  --color-nocta-grey: #6A6A66;
   --color-nocta-white: #FAFAF8;
 
   /* Encres éditoriales — ex-valeurs en dur des templates GEO/Journal,

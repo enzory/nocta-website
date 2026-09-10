@@ -28,7 +28,14 @@ const isDark = variant === 'dark';
 ]}>
   <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center reveal">
     {subtitle && (
-      <p class="t-eyebrow text-nocta-grey mb-6">{subtitle}</p>
+      <p class:list={[
+        't-eyebrow mb-6',
+        /* Seul endroit du site où --color-nocta-grey tombait sur du noir.
+           Assombri à #6A6A66 pour le cream, il y serait passé de 6,06:1 à
+           3,87:1. cream/60 rend rgb(143,141,136) — à 5/255 de l'ancien gris,
+           donc rendu inchangé — pour 6,33:1. */
+        isDark ? 'text-nocta-cream/60' : 'text-nocta-grey',
+      ]}>{subtitle}</p>
     )}
     <h2 class:list={[
       't-h2 mb-10',
