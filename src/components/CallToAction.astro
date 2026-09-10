@@ -3,12 +3,19 @@ interface Props {
   variant?: 'dark' | 'light';
   subtitle?: string;
   heading?: string;
+  /* Destination et libellé du bouton. Par défaut le devis, mais /contact
+     porte un bloc « Appelez-nous directement. » : y renvoyer vers /contact
+     renvoyait vers la page elle-même. */
+  ctaHref?: string;
+  ctaLabel?: string;
 }
 
 const {
   variant = 'dark',
   subtitle,
   heading = 'Parlons de votre événement.',
+  ctaHref = '/contact',
+  ctaLabel = 'Demander un devis',
 } = Astro.props;
 
 const isDark = variant === 'dark';
@@ -30,7 +37,7 @@ const isDark = variant === 'dark';
       {heading}
     </h2>
     <a
-      href="/contact"
+      href={ctaHref}
       class:list={[
         'inline-flex items-center font-sans text-sm font-light tracking-widest uppercase px-8 py-3 transition-all duration-300',
         isDark
@@ -38,7 +45,7 @@ const isDark = variant === 'dark';
           : 'bg-nocta-black text-nocta-cream hover:bg-nocta-black/80',
       ]}
     >
-      Demander un devis
+      {ctaLabel}
     </a>
   </div>
 </section>
