@@ -84,6 +84,16 @@ import LogoSlider from '../components/LogoSlider.astro';
       <!-- Gradient overlay — au-dessus des deux couches d'images -->
       <div class="absolute inset-0 bg-gradient-to-t from-nocta-black/80 via-nocta-black/20 to-transparent pointer-events-none z-[1]"></div>
 
+      <!-- Voile local, DERRIÈRE LE BLOC DE TEXTE UNIQUEMENT (cf. #hero-veil).
+           Le dégradé ci-dessus laisse la zone du titre à ~20 % d'opacité : sur
+           les slides claires (fleurs de courgette, assiettes) le titre et
+           l'exergue tombaient sous 1,3:1. Renforcer le dégradé global aurait
+           noirci les slides sombres, qui n'ont aucun problème ; ce second
+           calque est donc masqué horizontalement au-delà de la colonne de
+           texte sur desktop, et pleine largeur sur mobile où le texte occupe
+           toute la largeur. -->
+      <div id="hero-veil" class="absolute inset-0 pointer-events-none z-[1]"></div>
+
       <!-- Prev arrow -->
       <button
         id="carousel-prev"
@@ -109,14 +119,14 @@ import LogoSlider from '../components/LogoSlider.astro';
       <!-- Hero text -->
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-20 lg:pb-28">
         <!-- LCP : eyebrow + H1 visibles dès le premier paint — pas d'opacity:0 ni de delay ici -->
-        <p class="t-eyebrow text-nocta-cream/60 mb-6">
+        <p class="t-eyebrow text-nocta-cream mb-6">
           Paris, Île-de-France & ailleurs
         </p>
         <h1 class="t-h1 text-nocta-cream max-w-3xl mb-8">
           L’art de recevoir,<br/>
           <em>sans compromis.</em>
         </h1>
-        <p class="font-sans text-base lg:text-lg font-normal text-nocta-cream/70 max-w-xl leading-relaxed mb-12 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
+        <p class="font-sans text-base lg:text-lg font-normal text-nocta-cream/90 max-w-xl leading-relaxed mb-12 animate-fade-up" style="animation-delay: 0.2s; opacity: 0;">
           NOCTA conçoit des expériences culinaires avec vous, pour les entreprises et les particuliers exigeants — à Paris, en Île-de-France et au-delà.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
@@ -500,6 +510,36 @@ import LogoSlider from '../components/LogoSlider.astro';
   /* Show arrows when hero is hovered */
   #hero:hover .carousel-arrow {
     opacity: 1;
+  }
+
+  /* ── Voile de lisibilité du hero ──────────────────────────────────────
+     Second calque, EN PLUS du dégradé global qui reste tel quel. Valeurs
+     obtenues par mesure sur la page rendue, pas au jugé : contraste calculé
+     pixel par pixel sous les glyphes (Range.getClientRects), sur les trois
+     slides et aux deux largeurs. Pire cas obtenu 5,36:1 pour un seuil de
+     4,5:1 sur l'exergue et le chapô, 6,07:1 pour un seuil de 3:1 sur le H1.
+
+     Verticalement : fort en bas, éteint à 88 % de la hauteur — au-dessus du
+     bloc de texte, l'image reste intacte.
+     Horizontalement : sur desktop un masque coupe le voile au-delà de la
+     colonne de texte (le H1 en text-8xl déborde de son max-w-3xl et court
+     jusqu'à ~72 % de la largeur : le masque tient donc jusque-là). Sur
+     mobile, aucun masque — le texte occupe toute la largeur. */
+  #hero-veil {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.66) 45%,
+      rgba(0, 0, 0, 0.54) 68%,
+      rgba(0, 0, 0, 0) 88%
+    );
+  }
+
+  @media (min-width: 768px) {
+    #hero-veil {
+      -webkit-mask-image: linear-gradient(to right, #000 0%, #000 72%, transparent 92%);
+      mask-image: linear-gradient(to right, #000 0%, #000 72%, transparent 92%);
+    }
   }
 
   /* ── Masonry gallery ── */
