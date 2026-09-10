@@ -8,12 +8,14 @@ import BoucheronCommande from '../../components/BoucheronCommande.jsx';
   description="Bon de commande bouchées cocktail — Boucheron"
   noindex
 >
-  <div id="commande-gate" style="display:none;">
-    <BoucheronCommande client:load />
-  </div>
-  <div id="commande-denied" style="min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;background-color:#EEEBE3;">
-    <p style="font-family:Georgia,serif;color:var(--color-nocta-ink);opacity:0.4;font-size:16px;">Accès non autorisé</p>
-  </div>
+  <main id="contenu">
+    <div id="commande-gate" style="display:none;">
+      <BoucheronCommande client:load />
+    </div>
+    <div id="commande-denied" style="min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;background-color:#EEEBE3;">
+      <p style="font-family:Georgia,serif;color:var(--color-nocta-ink);opacity:0.4;font-size:16px;">Accès non autorisé</p>
+    </div>
+  </main>
   <script>
     const params = new URLSearchParams(window.location.search);
     if (params.get('key') === 'boucheron2026') {
