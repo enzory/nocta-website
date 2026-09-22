@@ -1,5 +1,5 @@
 ---
-title: "Buffet d’entreprise à Paris : ce que 6 mois de livraisons hebdomadaires nous ont appris sur l’exigence en restauration d’entreprise"
+title: "Buffet d’entreprise à Paris : six mois de livraisons"
 description: "NOCTA livre des buffets d’entreprise haut de gamme à Paris chaque semaine. Produits frais, présentation soignée, constance garantie. Découvrez notre approche de la restauration corporate premium."
 date: 2026-03-24
 category: "Corporate"

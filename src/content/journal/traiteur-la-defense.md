@@ -1,5 +1,5 @@
 ---
-title: "Traiteur à La Défense : ce que les entreprises attendent vraiment"
+title: "Traiteur à La Défense : les attentes des entreprises"
 description: "Cocktails de lancement, dîners de direction, déjeuners d’affaires : organiser un événement gastronomique à La Défense exige bien plus qu’un traiteur standard. Ce que nous avons appris en travaillant avec les entreprises du quartier."
 date: 2026-03-07
 slug: "traiteur-la-defense"

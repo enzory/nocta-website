@@ -1,5 +1,5 @@
 ---
-title: "Fidéliser un collectif d’entrepreneurs : les coulisses de 4 dîners pour The Galion Project"
+title: "Dîner privé à Paris : le Galion Project en coulisses"
 description: "NOCTA accompagne The Galion Project depuis 4 dîners privés à Paris. Découvrez comment nous construisons une prestation gastronomique sur-mesure pour les collectifs et clubs d’entrepreneurs exigeants."
 date: 2026-03-25
 category: "Expertise"
