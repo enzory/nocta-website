@@ -40,7 +40,15 @@ urls = [u.replace(PROD, SITE) for u in re.findall(r"<loc>([^<]+)</loc>", xml)]
 inbound = Counter()   # nb de pages qui pointent vers chaque chemin
 rows = []
 for url in urls:
-    html = requests.get(url, timeout=20).text
+    resp = requests.get(url, timeout=20)
+    # Forcer l'UTF-8. Sans `charset` dans l'en-tete Content-Type — c'est le cas
+    # de `astro preview`, qui renvoie `text/html` tout court — requests retombe
+    # sur ISO-8859-1 (RFC 2616) et decode l'UTF-8 octet par octet. Chaque
+    # caractere accentue compte alors double, chaque tiret cadratin triple :
+    # « Traiteur a La Defense : les attentes des entreprises — NOCTA » (60 car.)
+    # etait mesure a 64 et signale a tort comme trop long.
+    resp.encoding = "utf-8"
+    html = resp.text
     soup = BeautifulSoup(html, "html.parser")
     title = (soup.title.string or "").strip() if soup.title else ""
     desc_tag = soup.find("meta", attrs={"name": "description"})
