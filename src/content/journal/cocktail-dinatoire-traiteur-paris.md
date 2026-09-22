@@ -1,6 +1,6 @@
 ---
 title: "Cocktail dînatoire à Paris : budget et format"
-description: "Tout comprendre sur le cocktail dînatoire à Paris : budget par personne, nombre de pièces, différences avec le dîner assis, et comment choisir son traiteur. Guide pratique par NOCTA Catering."
+description: "Cocktail dînatoire à Paris : budget par personne, nombre de pièces, écart avec le dîner assis et critères de choix du traiteur. Devis sous 48 heures."
 date: 2026-04-02
 author: "Enzo Ryon"
 category: "Guide"

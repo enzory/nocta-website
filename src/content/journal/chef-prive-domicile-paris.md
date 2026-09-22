@@ -1,6 +1,6 @@
 ---
 title: "Chef privé à domicile à Paris : comment ça marche ?"
-description: "Un chef formé en cuisine étoilée cuisine chez vous, avec son équipe. Voici comment se passe un dîner privé à domicile à Paris avec NOCTA : réservation, menu, déroulé, prix et ce qu’il faut prévoir."
+description: "Un chef formé en cuisine étoilée cuisine chez vous à Paris : réservation, menu, déroulé de la soirée, prix et ce qu’il faut prévoir. Devis sous 48 heures."
 date: 2026-03-30
 author: "Enzo Ryon"
 category: "Guide"
