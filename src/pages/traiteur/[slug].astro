@@ -13,6 +13,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/Footer.astro';
+import { maillage } from '../../data/maillage';
 
 // Génère une page statique par entrée de la collection "geo"
 export async function getStaticPaths() {
@@ -35,16 +36,70 @@ const slugOf = (e) => e.id.replace(/\.md$/, '');
 const entrySlug = slugOf(entry);
 const pageUrl = `${siteUrl}/traiteur/${entrySlug}`;
 
-// Maillage interne : 2 autres zones desservies, triées par date de publication desc
+// ============================================================
+// Maillage interne — piloté par src/data/maillage.ts
+// ============================================================
+// L'ancienne règle prenait les 2 pages GEO les plus récentes, sans regarder
+// ni la zone ni le type : les 30 pages pointaient donc vers les 2 mêmes, et
+// 27 d'entre elles ne recevaient qu'un seul lien (celui du hub /traiteur).
+// La table de voisinage est désormais écrite à la main, relue, et VALIDÉE
+// AU BUILD : toute incohérence fait échouer `astro build` plutôt que de
+// produire un lien cassé en silence.
 const allGeo = await getCollection('geo');
-const otherZones = allGeo
-  .filter((p) => p.id !== entry.id)
-  .sort(
-    (a, b) =>
-      new Date(b.data.publishDate).getTime() -
-      new Date(a.data.publishDate).getTime(),
-  )
-  .slice(0, 2);
+const allJournal = await getCollection('journal');
+const geoSlugs = new Set(allGeo.map(slugOf));
+const journalSlugs = new Set(allJournal.map(slugOf));
+
+// Clés orphelines : une entrée de maillage.ts sans page GEO correspondante.
+// Ce contrôle ne dépend pas de la page courante — il suffit qu'une seule page
+// se construise pour qu'il se déclenche.
+for (const cle of Object.keys(maillage)) {
+  if (!geoSlugs.has(cle)) {
+    throw new Error(
+      `[maillage] La clé « ${cle} » de src/data/maillage.ts ne correspond à aucune page de src/content/geo/. ` +
+        `Supprimer la clé, ou créer la page.`,
+    );
+  }
+}
+
+const lien = maillage[entrySlug];
+if (!lien) {
+  throw new Error(
+    `[maillage] Aucune entrée pour « ${entrySlug} » dans src/data/maillage.ts. ` +
+      `Ajouter l'entrée (4 voisins + 1 article) ET citer cette page chez au moins 3 voisines.`,
+  );
+}
+
+for (const v of lien.voisins) {
+  if (v === entrySlug) {
+    throw new Error(`[maillage] « ${entrySlug} » se cite elle-même comme voisine dans src/data/maillage.ts.`);
+  }
+  if (!geoSlugs.has(v)) {
+    throw new Error(
+      `[maillage] « ${entrySlug} » cite le voisin « ${v} », absent de src/content/geo/. ` +
+        `Corriger le slug dans src/data/maillage.ts.`,
+    );
+  }
+}
+
+if (!journalSlugs.has(lien.article)) {
+  throw new Error(
+    `[maillage] « ${entrySlug} » cite l'article « ${lien.article} », absent de src/content/journal/. ` +
+      `Corriger le slug dans src/data/maillage.ts.`,
+  );
+}
+
+// Les entrées sont désormais garanties existantes : le `!` est sûr.
+const voisins = lien.voisins.map((v) => {
+  const cible = allGeo.find((p) => slugOf(p) === v)!;
+  return {
+    slug: v,
+    zone: cible.data.zone,
+    titre: cible.data.h1 ?? cible.data.title,
+  };
+});
+
+const articleLie = allJournal.find((a) => slugOf(a) === lien.article)!;
 
 // CTA contextuel : piloté par `ctaType` dans le frontmatter (fallback 'private'
 // pour les pages futures sans ce champ).
@@ -217,22 +272,28 @@ const displayH1 = d.h1 ?? d.title;
       </ul>
     </section>
 
-    {otherZones.length > 0 && (
-      <section class="related-geo">
-        <h2>Autres zones desservies</h2>
-        <div class="related-grid">
-          {otherZones.map((z) => (
-            <a href={`/traiteur/${slugOf(z)}`} class="related-card">
-              <span class="related-label">{z.data.zone || 'Île-de-France'}</span>
-              <span class="related-title">{z.data.title}</span>
-            </a>
-          ))}
-        </div>
-        <p class="related-cta">
-          {ctaConfig.label} <a href={ctaConfig.href}>{ctaConfig.cta}</a>
-        </p>
-      </section>
-    )}
+    <!-- Maillage interne : 4 pages voisines + 1 article du Journal.
+         Voisines et article viennent de src/data/maillage.ts, validé au build. -->
+    <section class="related-geo">
+      <h2>À découvrir aussi</h2>
+      <div class="related-grid">
+        {voisins.map((v) => (
+          <a href={`/traiteur/${v.slug}`} class="related-card">
+            <span class="related-label">{v.zone}</span>
+            <span class="related-title">{v.titre}</span>
+          </a>
+        ))}
+      </div>
+
+      <p class="related-journal">
+        <span class="related-label">À lire dans le Journal</span>
+        <a href={`/journal/${slugOf(articleLie)}`}>{articleLie.data.title}</a>
+      </p>
+
+      <p class="related-cta">
+        {ctaConfig.label} <a href={ctaConfig.href}>{ctaConfig.cta}</a>
+      </p>
+    </section>
   </article>
 
   <Footer />
@@ -498,6 +559,28 @@ const displayH1 = d.h1 ?? d.title;
     font-size: 1.15rem;
     line-height: 1.3;
     color: var(--color-nocta-ink);
+  }
+  /* Lien vers l'article du Journal — même grammaire que .related-cta, séparé
+     des cartes par un filet pour distinguer les deux natures de lien. */
+  .related-journal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin: 0 0 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .related-journal a {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    line-height: 1.3;
+    color: var(--color-nocta-ink);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    align-self: flex-start;
+  }
+  .related-journal a:hover {
+    border-bottom-color: var(--color-nocta-ink);
   }
   .related-cta {
     font-size: 0.95rem;
