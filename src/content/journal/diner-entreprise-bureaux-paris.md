@@ -1,6 +1,6 @@
 ---
-title: "Dîner d’entreprise dans vos bureaux : comment NOCTA transforme un open space en restaurant — et repart sans laisser de trace"
-description: "NOCTA organise des dîners d’entreprise dans vos bureaux à Paris. Open space, salle de réunion, plateau : nous transformons votre espace en restaurant éphémère — et le restituons intact. Demandez un devis."
+title: "Dîner d’entreprise dans vos bureaux, à Paris"
+description: "Dîner d’entreprise dans vos bureaux à Paris : open space ou salle de réunion transformés en restaurant d’un soir, rendus intacts. Devis sous 48 heures."
 date: 2026-03-18
 category: "Corporate"
 readTime: 5

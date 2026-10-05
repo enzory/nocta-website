@@ -11,7 +11,7 @@ import CallToAction from '../components/CallToAction.astro';
 >
   <Header light />
 
-  <main>
+  <main id="contenu">
 
     <!-- Hero -->
     <section class="bg-nocta-cream pt-40 pb-16 lg:pt-52 lg:pb-20">
@@ -81,14 +81,14 @@ import CallToAction from '../components/CallToAction.astro';
               <div class="flex flex-col gap-2">
                 <label for="prenom" class="t-label text-nocta-grey">Prénom</label>
                 <input
-                  id="prenom" name="prenom" type="text" required
+                  id="prenom" name="prenom" type="text" required autocomplete="given-name"
                   class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black transition-colors duration-200"
                 />
               </div>
               <div class="flex flex-col gap-2">
                 <label for="nom" class="t-label text-nocta-grey">Nom</label>
                 <input
-                  id="nom" name="nom" type="text" required
+                  id="nom" name="nom" type="text" required autocomplete="family-name"
                   class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black transition-colors duration-200"
                 />
               </div>
@@ -98,7 +98,7 @@ import CallToAction from '../components/CallToAction.astro';
             <div class="flex flex-col gap-2">
               <label for="email" class="t-label text-nocta-grey">Email</label>
               <input
-                id="email" name="email" type="email" required
+                id="email" name="email" type="email" required autocomplete="email"
                 class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black transition-colors duration-200"
               />
             </div>
@@ -199,7 +199,12 @@ import CallToAction from '../components/CallToAction.astro';
       </div>
     </section>
 
-    <CallToAction subtitle="Autre chose en tête ?" heading="Appelez-nous directement." />
+    <CallToAction
+      subtitle="Autre chose en tête ?"
+      heading="Appelez-nous directement."
+      ctaHref="tel:+33650011616"
+      ctaLabel="Appeler le 06 50 01 16 16"
+    />
 
   </main>
 
