@@ -89,13 +89,40 @@ if (!journalSlugs.has(lien.article)) {
   );
 }
 
+// Libellé d'une carte. 26 pages GEO sur 30 n'ont pas de champ `h1` : on
+// retombait alors sur le `title`, qui est un titre SEO et porte souvent la
+// marque en suffixe (« — NOCTA Catering », « – NOCTA Catering », « — Dîner
+// privé NOCTA »). Lire « NOCTA Catering » dans une carte sur le site NOCTA
+// n'apprend rien. On coupe sur le DERNIER séparateur suivi d'un fragment
+// contenant NOCTA ; un suffixe sans la marque (« — Dîner privé 92 ») est
+// conservé, il porte de l'information.
+const SUFFIXE_MARQUE = /\s+[—–|-]\s+[^—–|]*NOCTA[^—–|]*$/;
+
+function cardLabel(e: (typeof allGeo)[number]): string {
+  const brut = e.data.h1 ?? e.data.title.replace(SUFFIXE_MARQUE, '');
+  const libelle = brut.trim();
+  if (!libelle) {
+    throw new Error(
+      `[maillage] Libellé de carte vide pour « ${slugOf(e)} » : le titre « ${e.data.title} » ` +
+        `est entièrement consommé par le retrait du suffixe de marque. Ajouter un champ h1.`,
+    );
+  }
+  if (libelle.includes('NOCTA')) {
+    throw new Error(
+      `[maillage] Le libellé de carte de « ${slugOf(e)} » contient encore « NOCTA » : « ${libelle} ». ` +
+        `Le suffixe n'est pas en fin de titre — ajouter un champ h1 à la page.`,
+    );
+  }
+  return libelle;
+}
+
 // Les entrées sont désormais garanties existantes : le `!` est sûr.
 const voisins = lien.voisins.map((v) => {
   const cible = allGeo.find((p) => slugOf(p) === v)!;
   return {
     slug: v,
     zone: cible.data.zone,
-    titre: cible.data.h1 ?? cible.data.title,
+    titre: cardLabel(cible),
   };
 });
 
@@ -275,10 +302,13 @@ const displayH1 = d.h1 ?? d.title;
     <!-- Maillage interne : 4 pages voisines + 1 article du Journal.
          Voisines et article viennent de src/data/maillage.ts, validé au build. -->
     <section class="related-geo">
-      <h2>À découvrir aussi</h2>
+      <h2 class="t-h3">À découvrir aussi</h2>
       <div class="related-grid">
         {voisins.map((v) => (
-          <a href={`/traiteur/${v.slug}`} class="related-card">
+          <a
+            href={`/traiteur/${v.slug}`}
+            class="related-card border border-nocta-black/10 hover:border-nocta-black/25"
+          >
             <span class="related-label">{v.zone}</span>
             <span class="related-title">{v.titre}</span>
           </a>
@@ -520,10 +550,12 @@ const displayH1 = d.h1 ?? d.title;
     padding-top: 3rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
+  /* Taille, graisse, famille et approche viennent de .t-h3 (global.css) :
+     c'est l'echelle partagee du site, un titre ne porte pas de font-size en
+     dur. .t-h3 rend 24px/400/Newsreader, soit exactement « Nos prestations »
+     juste au-dessus — les deux blocs se lisent au meme niveau.
+     Couleur et marge restent contextuelles, comme le prevoit l'echelle. */
   .related-geo h2 {
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
-    font-weight: 400;
     margin: 0 0 1.5rem;
     color: var(--color-nocta-ink);
   }
@@ -533,19 +565,24 @@ const displayH1 = d.h1 ?? d.title;
     gap: 1rem;
     margin-bottom: 2rem;
   }
+  /* La bordure vient de Tailwind sur l'element (border-nocta-black/10, et /25
+     au survol). L'ancienne valeur en dur etait #EEEBE3 — la couleur de fond de
+     la page : la bordure etait invisible, les cartes flottaient sans contour.
+     Aucun autre bloc du site ne pose de bordure complete sur fond cream (les
+     cartes /prestations se separent par une grille gap-px, le Journal par un
+     filet border-t) : on prend donc le token de filet deja employe partout,
+     nocta-black/10. */
   .related-card {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
     padding: 1.5rem;
-    border: 1px solid #EEEBE3;
     background: transparent;
     text-decoration: none;
     color: inherit;
     transition: border-color 0.2s ease, background 0.2s ease;
   }
   .related-card:hover {
-    border-color: rgba(26, 26, 26, 0.25);
     background: rgba(238, 235, 227, 0.35);
   }
   .related-label {
@@ -575,24 +612,41 @@ const displayH1 = d.h1 ?? d.title;
     font-size: 1.15rem;
     line-height: 1.3;
     color: var(--color-nocta-ink);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-    text-decoration: none;
+    /* Comme pour .related-cta a : filet en text-decoration. En border-bottom,
+       le trait se posait sous la boite — il courait donc jusqu'au bord droit
+       des que le titre passait sur deux lignes, a 390 px. */
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(0, 0, 0, 0.25);
+    text-underline-offset: 4px;
     align-self: flex-start;
   }
   .related-journal a:hover {
-    border-bottom-color: var(--color-nocta-ink);
+    text-decoration-color: var(--color-nocta-ink);
   }
   .related-cta {
     font-size: 0.95rem;
     color: var(--color-nocta-text);
     margin: 0;
   }
+  /* inline-block + padding vertical : en ligne, le lien ne faisait que la
+     hauteur de sa ligne de texte — 20px, trois fois moins que la cible
+     tactile de 44px. Le padding s'ajoute aussi quand le texte passe sur deux
+     lignes (cas de « Decouvrir NOCTA Private » a 390px). */
   .related-cta a {
+    display: inline-block;
+    padding-block: 0.75rem;
     color: var(--color-nocta-ink);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-    text-decoration: none;
+    /* Le filet est porte par text-decoration et non par border-bottom : la
+       bordure se pose sous la BOITE, donc le padding vertical ajoute pour la
+       cible tactile la decrochait de 12 px sous le texte. text-decoration
+       suit les glyphes quel que soit le padding. */
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(0, 0, 0, 0.25);
+    text-underline-offset: 4px;
   }
   .related-cta a:hover {
-    border-bottom-color: var(--color-nocta-ink);
+    text-decoration-color: var(--color-nocta-ink);
   }
 </style>
