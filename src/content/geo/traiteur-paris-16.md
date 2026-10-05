@@ -1,6 +1,6 @@
 ---
-title: "Traiteur Paris 16e — Dîners de famille et grandes réceptions | NOCTA"
-description: "Traiteur événementiel pour le 16e arrondissement. Dîners de famille élargie, Noëls, réceptions en appartement haussmannien. Service à table et accords mets-vins."
+title: "Traiteur Paris 16e : dîners de famille, réceptions | NOCTA"
+description: "Traiteur dans le 16e arrondissement : dîners de famille, Noëls, réceptions en appartement haussmannien, service à table, sommelier. Devis sous 48 heures."
 h1: "Traiteur à Paris 16e"
 zone: "Paris 16e arrondissement"
 type: "arrondissement"

@@ -1,6 +1,6 @@
 ---
-title: "Traiteur Levallois-Perret — événements corporate et dîners"
-description: "NOCTA Catering intervient à Levallois-Perret pour vos cocktails, comités de direction et dîners d’entreprise. Devis sous 48h."
+title: "Traiteur d’entreprise à Levallois-Perret | NOCTA"
+description: "Traiteur d’entreprise à Levallois-Perret : cocktails, déjeuners d’équipe, comités de direction et plateaux-repas, depuis Courbevoie. Devis sous 48 heures."
 zone: "Levallois-Perret"
 type: "commune-92"
 ctaType: "corporate"
