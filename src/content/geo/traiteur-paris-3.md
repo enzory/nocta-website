@@ -45,6 +45,6 @@ Parmi les marques avec lesquelles nous travaillons figurent Boucheron et Biologi
 
 ## Demande de devis
 
-Vous organisez un événement dans le 3e arrondissement — cocktail de lancement, dîner professionnel ou réception privée ? Transmettez-nous les grandes lignes via notre formulaire de contact : lieu, format souhaité, nombre de convives et date. Nous revenons vers vous sous 24 heures ouvrées avec une première proposition.
+Vous organisez un événement dans le 3e arrondissement — cocktail de lancement, dîner professionnel ou réception privée ? Transmettez-nous les grandes lignes via notre formulaire de contact : lieu, format souhaité, nombre de convives et date. Nous revenons vers vous sous 48 heures ouvrées avec une première proposition.
 
 [Faire une demande de devis <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

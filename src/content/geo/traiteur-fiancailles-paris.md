@@ -61,4 +61,4 @@ Paris concentre une densité de fournisseurs de qualité que nous utilisons dire
 
 ## Demande de devis
 
-Vous préparez un dîner de fiançailles, une célébration en famille ou un repas intimiste à Paris ? Contactez-nous via le formulaire disponible sur [/contact](#). Précisez la date souhaitée, le nombre de convives, le lieu et le format envisagé. Nous revenons vers vous sous 24 heures ouvrées.
+Vous préparez un dîner de fiançailles, une célébration en famille ou un repas intimiste à Paris ? Contactez-nous via notre [formulaire de demande de devis](/contact). Précisez la date souhaitée, le nombre de convives, le lieu et le format envisagé. Nous revenons vers vous sous 48 heures ouvrées.

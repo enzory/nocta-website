@@ -1,6 +1,6 @@
 ---
 title: "Chef à domicile Paris 8e — Dîner privé NOCTA"
-description: "NOCTA propose un chef à domicile dans le 8e arrondissement : dîner privé, menu construit selon vos envies, sommellerie incluse. Devis sous 24h."
+description: "NOCTA propose un chef à domicile dans le 8e arrondissement : dîner privé, menu construit selon vos envies, sommellerie incluse. Devis sous 48 heures."
 zone: "Paris 8e"
 type: "chef-prive"
 ctaType: "private"

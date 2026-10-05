@@ -55,6 +55,6 @@ Nous n’intervenons pas sur la décoration, la location de mobilier ou la scén
 
 ## Demande de devis
 
-Vous organisez un cocktail d’entreprise, une inauguration ou une soirée clients à Paris ? Transmettez-nous la date, le lieu, le nombre de convives et le format envisagé via notre page de contact. Nous revenons vers vous sous 24 heures ouvrées avec une première proposition.
+Vous organisez un cocktail d’entreprise, une inauguration ou une soirée clients à Paris ? Transmettez-nous la date, le lieu, le nombre de convives et le format envisagé via notre page de contact. Nous revenons vers vous sous 48 heures ouvrées avec une première proposition.
 
 [Demander un devis <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

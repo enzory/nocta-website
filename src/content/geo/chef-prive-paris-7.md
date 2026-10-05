@@ -52,4 +52,4 @@ NOCTA compte parmi ses clients des maisons comme Boucheron, Biologique Recherche
 
 ## Demande de devis
 
-Pour organiser un dîner privé dans le 7e arrondissement, contactez l’équipe NOCTA via la page [/contact]. Précisez la date souhaitée, le nombre approximatif de convives et le cadre de la réception : nous revenons vers vous sous 24 heures avec une première proposition.
+Pour organiser un dîner privé dans le 7e arrondissement, contactez-nous via notre [formulaire de demande de devis](/contact). Précisez la date souhaitée, le nombre approximatif de convives et le cadre de la réception : nous revenons vers vous sous 48 heures avec une première proposition.

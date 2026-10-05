@@ -52,4 +52,4 @@ Nous ne sous-traitons pas la cuisine, ne travaillons pas avec des équipes varia
 
 ## Demande de devis
 
-Pour une intervention dans le 6e arrondissement — dîner privé, cocktail de vernissage ou réception personnalisée — prenez contact via notre formulaire sur [/contact](/contact). Indiquez la date, le nombre d’invités et le type de lieu : nous revenons vers vous sous 48 heures avec une première proposition adaptée.
+Pour une intervention dans le 6e arrondissement — dîner privé, cocktail de vernissage ou réception personnalisée — prenez contact via notre [formulaire de demande de devis](/contact). Indiquez la date, le nombre d’invités et le type de lieu : nous revenons vers vous sous 48 heures avec une première proposition adaptée.

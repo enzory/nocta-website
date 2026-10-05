@@ -55,4 +55,4 @@ Le menu est adapté à votre table, pas à une carte pré-constituée. Les produ
 
 ## Demande de devis
 
-Pour un dîner privé dans le 16e arrondissement, contactez-nous via la page [/contact](/contact). Précisez la date envisagée, le nombre de couverts et le cadre général de la soirée. Nous revenons vers vous sous 24 heures avec une proposition adaptée.
+Pour un dîner privé dans le 16e arrondissement, contactez-nous via notre [formulaire de demande de devis](/contact). Précisez la date envisagée, le nombre de couverts et le cadre général de la soirée. Nous revenons vers vous sous 48 heures avec une proposition adaptée.

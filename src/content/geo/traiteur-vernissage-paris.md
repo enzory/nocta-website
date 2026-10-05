@@ -15,7 +15,7 @@ faq:
   - question: "Proposez-vous un service de sommellerie pour les événements culturels ?"
     answer: "Oui. Enzo Ryon, co-fondateur de NOCTA, assure la sélection et le service au verre. Il peut concevoir une carte resserrée adaptée au profil de vos invités et à la durée de l’événement."
   - question: "Quel délai pour obtenir un devis pour un vernissage parisien ?"
-    answer: "Comptez 24 à 48 heures pour recevoir une proposition chiffrée. Pour les événements avec contraintes particulières de lieu ou d’accès, nous recommandons de nous contacter au moins dix jours avant la date."
+    answer: "Comptez 48 heures pour recevoir une proposition chiffrée. Pour les événements avec contraintes particulières de lieu ou d’accès, nous recommandons de nous contacter au moins dix jours avant la date."
 ---
 
 ## Traiteur pour vernissages et événements culturels à Paris
@@ -54,4 +54,4 @@ Hugo Vinatier, formé en cuisine étoilée, construit des menus de cocktail où 
 
 ## Demande de devis
 
-Vous organisez un vernissage, une soirée d’ouverture ou un dîner culturel à Paris ? Transmettez-nous la date, le lieu et le format souhaité via notre page de contact. Nous revenons vers vous sous 24 à 48 heures avec une proposition adaptée.
+Vous organisez un vernissage, une soirée d’ouverture ou un dîner culturel à Paris ? Transmettez-nous la date, le lieu et le format souhaité via notre page de contact. Nous revenons vers vous sous 48 heures avec une proposition adaptée.

@@ -57,4 +57,4 @@ Les entreprises qui font appel à NOCTA cherchent une prestation qui tient la pr
 
 ## Demande de devis
 
-Vous organisez un événement à Puteaux, dans une tour de La Défense ou dans un espace de bureaux du quartier ? Transmettez-nous le format souhaité, la date et le nombre de convives via la page [contact](/contact). Nous revenons vers vous sous 24 heures ouvrées avec une première proposition chiffrée.
+Vous organisez un événement à Puteaux, dans une tour de La Défense ou dans un espace de bureaux du quartier ? Transmettez-nous le format souhaité, la date et le nombre de convives via la page [contact](/contact). Nous revenons vers vous sous 48 heures ouvrées avec une première proposition chiffrée.

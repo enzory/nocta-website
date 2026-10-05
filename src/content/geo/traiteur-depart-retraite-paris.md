@@ -13,7 +13,7 @@ faq:
   - question: "Quel est le budget minimum pour organiser un événement avec NOCTA à Paris ?"
     answer: "NOCTA intervient à partir de 500 € de commande, quel que soit le format retenu — cocktail debout, dîner assis ou plateau-repas."
   - question: "Dans quel délai peut-on obtenir un devis pour un départ en retraite ou un dîner d’équipe ?"
-    answer: "Un devis est transmis sous 24 à 48 heures après réception de votre demande. Pour les événements nécessitant un menu adapté ou un format complexe, un échange téléphonique avec Enzo ou Hugo permet d’affiner le projet rapidement."
+    answer: "Un devis est transmis sous 48 heures après réception de votre demande. Pour les événements nécessitant un menu adapté ou un format complexe, un échange téléphonique avec Enzo ou Hugo permet d’affiner le projet rapidement."
   - question: "Quels services sont inclus dans une prestation NOCTA Corporate à Paris ?"
     answer: "La prestation comprend la conception du menu, la préparation en cuisine, le transport, le dressage sur place et le service. La sommellerie peut être intégrée selon le format choisi. NOCTA ne propose pas de location de mobilier ni de décoration florale."
 ---
@@ -52,4 +52,4 @@ La taille de la structure — deux associés, aucun intermédiaire — permet au
 
 ## Demande de devis
 
-Vous organisez un cocktail, un dîner d’équipe ou un départ en retraite à Paris ? Transmettez votre demande via [le formulaire de contact](/contact) en précisant la date, le lieu et le format envisagé. Un premier retour vous est adressé sous 24 à 48 heures.
+Vous organisez un cocktail, un dîner d’équipe ou un départ en retraite à Paris ? Transmettez votre demande via [le formulaire de contact](/contact) en précisant la date, le lieu et le format envisagé. Un premier retour vous est adressé sous 48 heures.

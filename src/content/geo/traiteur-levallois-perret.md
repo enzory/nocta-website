@@ -52,4 +52,4 @@ Notre implantation à Courbevoie nous place en position cohérente pour interven
 
 ## Demande de devis
 
-Vous organisez un événement à Levallois-Perret — cocktail d’entreprise, dîner de direction, séminaire avec déjeuner — et souhaitez un chiffrage précis ? Contactez-nous via la page [/contact](/contact). Nous revenons vers vous sous 48 heures avec une proposition adaptée au format, au lieu et au nombre de personnes.
+Vous organisez un événement à Levallois-Perret — cocktail d’entreprise, dîner de direction, séminaire avec déjeuner — et souhaitez un chiffrage précis ? Contactez-nous via notre [formulaire de demande de devis](/contact). Nous revenons vers vous sous 48 heures avec une proposition adaptée au format, au lieu et au nombre de personnes.
