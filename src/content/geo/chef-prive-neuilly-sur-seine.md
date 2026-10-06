@@ -19,7 +19,7 @@ Le positionnement de NOCTA n’est pas celui d’un traiteur livrant des plateau
 
 ## Formats NOCTA adaptés à Neuilly-sur-Seine
 
-**NOCTA Private** est le format conçu pour ce type de prestation. À partir de 55 € par personne, il couvre les dîners intimistes, les célébrations en petit comité et les tablées familiales où la qualité du menu prime. Le menu est adapté à votre table : nombre de convives, contraintes alimentaires, tonalité souhaitée (déjeuner décontracté ou dîner structuré en cinq services). Hugo Vinatier propose systématiquement un échange préalable pour caler le menu — aucun format figé ne s’applique sans discussion.
+**NOCTA Private** est le format conçu pour ce type de prestation. Il couvre les dîners intimistes, les célébrations en petit comité et les tablées familiales où la qualité du menu prime. Comptez entre 70 et 250 € par personne, chef et service compris. Le menu est adapté à votre table : nombre de convives, contraintes alimentaires, tonalité souhaitée (déjeuner décontracté ou dîner structuré en cinq services). Hugo Vinatier propose systématiquement un échange préalable pour caler le menu — aucun format figé ne s’applique sans discussion.
 
 **NOCTA Signature** répond aux demandes qui dépassent le cadre du dîner standard : réception pour un anniversaire marquant, célébration intime sur plusieurs jours, format immersif autour d’un thème ou d’un producteur. Ce format est conçu autour du lieu et des attentes spécifiques de l’hôte, sur devis, sans grille tarifaire prédéfinie.
 

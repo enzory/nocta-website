@@ -27,7 +27,7 @@ Ce format intègre la constitution du menu, l’approvisionnement, le transport,
 
 **NOCTA Signature** s’adresse aux offsite qui demandent un traitement plus poussé : dîner de clôture en fin de séminaire, déjeuner avec accord mets et vins commenté par Enzo Ryon, ou format immersif sur une soirée complète. Ce format est construit au cas par cas, selon le lieu, le nombre de convives et les attentes de la direction. Le devis est établi après un échange téléphonique ou une visite du site.
 
-**NOCTA Private** peut également être mobilisé dans un contexte professionnel lorsque le séminaire se tient dans un appartement ou une résidence privée — format courant pour les directions générales qui souhaitent travailler hors des locaux habituels, dans un cadre plus confidentiel. L’offre démarre à 55 € par personne et couvre des tablées de quatre à vingt couverts.
+**NOCTA Private** peut également être mobilisé dans un contexte professionnel lorsque le séminaire se tient dans un appartement ou une résidence privée — format courant pour les directions générales qui souhaitent travailler hors des locaux habituels, dans un cadre plus confidentiel. L’offre couvre des tablées de quatre à vingt couverts. Comptez entre 70 et 250 € par personne, chef et service compris.
 
 ---
 

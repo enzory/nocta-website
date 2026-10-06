@@ -21,7 +21,7 @@ Ce format s’adresse à des hôtes qui reçoivent entre huit et vingt couverts 
 
 ## Les formats NOCTA adaptés au 16e
 
-**NOCTA Private** est le format conçu pour les dîners à domicile. À partir de 55 € par personne, le menu est construit selon votre table : nombre de convives, régimes alimentaires, saison, degré de formalité souhaité. Pas de carte imposée. Le chef arrive en amont, travaille dans votre cuisine, dresse à l’envoi. La vaisselle reste la vôtre — ou nous pouvons prévoir le matériel nécessaire selon votre équipement.
+**NOCTA Private** est le format conçu pour les dîners à domicile. Comptez entre 70 et 250 € par personne, chef et service compris. Le menu est construit selon votre table : nombre de convives, régimes alimentaires, saison, degré de formalité souhaité. Pas de carte imposée. Le chef arrive en amont, travaille dans votre cuisine, dresse à l’envoi. La vaisselle reste la vôtre — ou nous pouvons prévoir le matériel nécessaire selon votre équipement.
 
 **NOCTA Signature** s’adresse aux occasions qui demandent une construction plus poussée : anniversaire de grande ampleur, réception autour d’un vin spécifique, dîner thématique autour d’un terroir ou d’un producteur. Ce format est établi sur devis, après un échange avec Enzo Ryon pour cadrer le concept, les accords mets-vins et la progression du repas.
 

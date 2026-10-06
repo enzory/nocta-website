@@ -25,7 +25,7 @@ La restauration n’est pas un poste secondaire à caler en dernier. Sur une ina
 
 **NOCTA Signature** s’adresse aux événements où la restauration devient elle-même un élément de communication : lancement d’une maison, opening d’une adresse positionnée, présentation à un cercle d’acheteurs internationaux. Le format est construit sur devis, autour d’un brief précis — identité de la marque, univers produit, contraintes du lieu, profil des convives. Hugo Vinatier, formé en cuisine étoilée, développe un menu et une mise en scène culinaire cohérents avec le propos de la soirée. Enzo Ryon prend en charge la sélection des vins et spiritueux, et peut assurer une présentation en salle si le format s’y prête.
 
-**NOCTA Private** reste disponible pour les formats plus intimistes : dîner de présentation à dix personnes, table de directeurs artistiques, déjeuner de remerciement après une ouverture. Ce format à partir de 55 € par personne est adapté aux espaces de petite capacité — appartement, salle de réunion transformée, studio privé.
+**NOCTA Private** reste disponible pour les formats plus intimistes : dîner de présentation à dix personnes, table de directeurs artistiques, déjeuner de remerciement après une ouverture. Ce format est adapté aux espaces de petite capacité — appartement, salle de réunion transformée, studio privé. Comptez entre 70 et 250 € par personne, chef et service compris.
 
 ---
 
