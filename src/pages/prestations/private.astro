@@ -135,7 +135,7 @@ import LogoSlider from '../../components/LogoSlider.astro';
         <div class="border-t border-nocta-black/10 pt-16 reveal">
           <p class="t-eyebrow text-nocta-grey mb-4">Tarifs indicatifs</p>
           <p class="font-serif text-2xl md:text-3xl font-light text-nocta-black leading-snug mb-6">
-            À partir de 55 € par personne.
+            Entre 70 et 250 € par personne.
           </p>
           <p class="font-sans text-sm font-normal text-nocta-grey leading-relaxed max-w-2xl">
             Chef et service compris. Minimum de commande : 500 € HT. Chaque menu est conçu avec vous — le tarif exact dépend du nombre de convives, du menu et des produits choisis.
@@ -189,7 +189,7 @@ import LogoSlider from '../../components/LogoSlider.astro';
     "provider": {"@type": "Organization", "name": "NOCTA Catering", "url": "https://www.noctaparis.fr"},
     "areaServed": [{"@type": "City", "name": "Paris"}, {"@type": "AdministrativeArea", "name": "Île-de-France"}],
     "serviceType": "Chef privé à domicile",
-    "offers": {"@type": "Offer", "priceCurrency": "EUR", "price": "55", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "55", "priceCurrency": "EUR", "unitText": "par personne", "description": "À partir de 55 € par personne, chef et service compris. Minimum de commande : 500 € HT."}}
+    "offers": {"@type": "Offer", "priceCurrency": "EUR", "price": "70", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": "70", "maxPrice": "250", "priceCurrency": "EUR", "unitText": "par personne", "description": "Entre 70 et 250 € par personne, chef et service compris. Minimum de commande : 500 € HT."}}
   })} />
 
   <script type="application/ld+json" set:html={JSON.stringify({

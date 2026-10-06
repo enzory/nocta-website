@@ -19,7 +19,7 @@ faq:
   - question: "Vous intervenez à La Défense même ?"
     answer: "Oui. Notre siège est à Courbevoie, nous nous déplaçons quotidiennement sur le quartier d’affaires de La Défense et les communes voisines."
   - question: "Quel est le délai minimum de prévenance ?"
-    answer: "Nous prenons des commandes jusqu’à 48 h avant la prestation pour les formats simples (plateaux-repas, cocktail léger), une semaine pour les dîners servis et les événements à plus de 50 personnes."
+    answer: "Comptez 3 jours minimum ; une semaine conseillée pour les dîners servis et les événements de plus de 50 personnes."
   - question: "Peut-on faire un déjeuner pour une équipe de 15 personnes en bureau ?"
     answer: "Oui, c’est l’un de nos formats récurrents. Nous arrivons une heure avant l’horaire de service, mettons en place, et débarrassons après le repas."
   - question: "Que faire si nos bureaux n’ont pas de cuisine équipée ?"
