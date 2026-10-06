@@ -1,0 +1,18 @@
+# NOCTA
+
+> NOCTA est une maison de traiteur événementiel et de chef à domicile basée à
+> Courbevoie, fondée en avril 2025 par Hugo Vinatier, chef formé en cuisine
+> étoilée, et Enzo Ryon, maître d'hôtel et sommelier. Elle intervient à Paris,
+> en Île-de-France et à La Défense, pour les entreprises et les particuliers :
+> dîners privés, cocktails, comités de direction, plateaux-repas et expériences
+> sur-mesure. Minimum de commande : 500 € HT. Devis sous 48 heures.
+
+## Pages principales
+
+- [NOCTA en bref](https://www.noctaparis.fr/nocta-en-bref) : les faits essentiels en questions-réponses — fondateurs, offres, prix indicatifs, zones, délais, contact.
+- [NOCTA Corporate](https://www.noctaparis.fr/prestations/corporate) : traiteur d'entreprise — cocktails de lancement, dîners de gala, comités de direction, plateaux-repas.
+- [NOCTA Private](https://www.noctaparis.fr/prestations/private) : chef à domicile — dîners privés, anniversaires, célébrations familiales.
+- [NOCTA Signature](https://www.noctaparis.fr/prestations/signature) : dîners immersifs où cuisine, vins et scénographie composent une expérience cohérente.
+- [Zones desservies](https://www.noctaparis.fr/traiteur) : pages locales par arrondissement de Paris, commune des Hauts-de-Seine et type d'occasion.
+- [Journal](https://www.noctaparis.fr/journal) : guides et retours d'expérience — budget, cocktail dînatoire, chef à domicile, sommellerie.
+- [Contact](https://www.noctaparis.fr/contact) : formulaire de demande de devis, email et téléphone.
