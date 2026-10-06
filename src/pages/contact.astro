@@ -178,8 +178,12 @@ import CallToAction from '../components/CallToAction.astro';
               ></textarea>
             </div>
 
-            <!-- Honeypot anti-spam -->
-            <input type="text" name="_gotcha" style="display:none" />
+            <!-- Honeypot anti-spam (Formspree) : un humain ne le voit pas, un robot
+                 qui remplit tout le remplit, et Formspree écarte alors l'envoi.
+                 aria-hidden + tabindex="-1" + autocomplete="off" : un agent IA qui
+                 remplit le formulaire pour le compte d'un vrai client ne doit jamais
+                 y toucher, sinon la demande — légitime — serait rejetée en silence. -->
+            <input type="text" name="_gotcha" style="display:none" aria-hidden="true" tabindex="-1" autocomplete="off" />
 
             <!-- Redirection après envoi -->
             <input type="hidden" name="_next" value="https://www.noctaparis.fr/merci" />
