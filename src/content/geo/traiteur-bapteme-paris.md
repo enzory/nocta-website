@@ -50,4 +50,4 @@ Nous ne proposons pas de décoration florale, de location de mobilier ou de coor
 
 ## Demande de devis
 
-Pour un baptême, un déjeuner de famille ou tout événement privé à Paris, contactez-nous via la page [/contact](/contact). Précisez la date envisagée, le lieu, le nombre de convives approximatif et le format souhaité. Nous revenons sous 48 heures ouvrées avec une première proposition.
+Pour un baptême, un déjeuner de famille ou tout événement privé à Paris, contactez-nous via notre [formulaire de demande de devis](/contact). Précisez la date envisagée, le lieu, le nombre de convives approximatif et le format souhaité. Nous revenons sous 48 heures ouvrées avec une première proposition.

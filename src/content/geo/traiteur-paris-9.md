@@ -53,4 +53,4 @@ Dans le 9e arrondissement spécifiquement, notre connaissance du tissu corporate
 
 ## Demande de devis
 
-Pour un événement dans le 9e arrondissement, transmettez-nous la date, le lieu, le nombre d’invités et le format envisagé via notre [formulaire de contact](/contact). Nous revenons vers vous sous 24 heures ouvrées avec une proposition chiffrée et un premier échange sur le menu.
+Pour un événement dans le 9e arrondissement, transmettez-nous la date, le lieu, le nombre d’invités et le format envisagé via notre [formulaire de contact](/contact). Nous revenons vers vous sous 48 heures ouvrées avec une proposition chiffrée et un premier échange sur le menu.

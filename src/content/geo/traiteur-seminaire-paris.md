@@ -47,12 +47,12 @@ NOCTA a été fondée avec un positionnement clair : servir des entreprises et d
 
 Sur un séminaire ou un comité de direction, cela se traduit concrètement : un menu calibré pour que les participants restent alertes (pas de portion excessive, pas de temps mort), un service discret qui ne vient pas parasiter les échanges, une sommellerie disponible si la direction souhaite accompagner le déjeuner d’un vin sélectionné avec précision. Hugo Vinatier construit les menus à partir des produits disponibles selon la saison et la région d’approvisionnement. Enzo Ryon prend en charge la relation client de bout en bout, du premier échange au débriefing post-prestation.
 
-Les devis sont retournés sous 24 à 48 heures ouvrées. Pour les formats récurrents — déjeuner mensuel du comité de direction, par exemple — une convention annuelle peut être établie avec un tarif négocié.
+Les devis sont retournés sous 48 heures ouvrées. Pour les formats récurrents — déjeuner mensuel du comité de direction, par exemple — une convention annuelle peut être établie avec un tarif négocié.
 
 ---
 
 ## Demande de devis
 
-Vous organisez un séminaire, un offsite ou un déjeuner de direction à Paris ? Transmettez-nous la date, le nombre de participants, le lieu et le format souhaité via le formulaire de contact. Un membre de l’équipe revient vers vous sous 24 à 48 heures ouvrées avec une proposition chiffrée.
+Vous organisez un séminaire, un offsite ou un déjeuner de direction à Paris ? Transmettez-nous la date, le nombre de participants, le lieu et le format souhaité via le formulaire de contact. Un membre de l’équipe revient vers vous sous 48 heures ouvrées avec une proposition chiffrée.
 
 [Faire une demande de devis <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

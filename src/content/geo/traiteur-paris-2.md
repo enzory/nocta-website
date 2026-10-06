@@ -45,4 +45,4 @@ Nous ne sous-traitons pas le service : l’équipe qui conçoit la prestation es
 
 ## Demande de devis
 
-Pour un événement dans le 2e arrondissement, transmettez-nous via la page [contact](/contact) la date, le nombre de convives, le type de format souhaité et les contraintes du lieu. Nous revenons vers vous dans les 24 heures ouvrées avec une première proposition chiffrée.
+Pour un événement dans le 2e arrondissement, transmettez-nous via la page [contact](/contact) la date, le nombre de convives, le type de format souhaité et les contraintes du lieu. Nous revenons vers vous dans les 48 heures ouvrées avec une première proposition chiffrée.

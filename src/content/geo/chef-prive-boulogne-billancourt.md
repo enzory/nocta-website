@@ -13,7 +13,7 @@ faq:
   - question: "Quel est le budget minimum pour un dîner privé à domicile ?"
     answer: "Le budget minimum est de 500 € de commande. Le tarif varie selon le menu, le nombre de convives et les options de service retenues (sommellerie, service en salle, coordination logistique)."
   - question: "Quel est le délai pour obtenir un devis et réserver ?"
-    answer: "Un devis est adressé sous 24 à 48 heures après réception de votre demande. Pour les dîners complexes ou à date fixe, nous recommandons de nous contacter au moins deux semaines à l’avance afin de sécuriser la date et organiser l’approvisionnement."
+    answer: "Un devis est adressé sous 48 heures après réception de votre demande. Pour les dîners complexes ou à date fixe, nous recommandons de nous contacter au moins deux semaines à l’avance afin de sécuriser la date et organiser l’approvisionnement."
   - question: "Que comprend exactement la prestation chef à domicile NOCTA ?"
     answer: "La prestation comprend la conception du menu, l’approvisionnement en produits de saison, la mise en place, la cuisson et le dressage à l’envoi dans votre cuisine, ainsi que le nettoyage en fin de service. La sommellerie et le service en salle peuvent être ajoutés selon vos besoins."
 ---
@@ -52,4 +52,4 @@ Pour un dîner privé à Boulogne-Billancourt, nous sommes disponibles en semain
 
 ## Demande de devis
 
-Pour organiser un dîner privé à votre domicile à Boulogne-Billancourt, contactez-nous via le formulaire disponible sur [/contact](/contact). Précisez la date souhaitée, le nombre de convives approximatif et la nature de l’occasion. Un devis détaillé vous est adressé sous 24 à 48 heures.
+Pour organiser un dîner privé à votre domicile à Boulogne-Billancourt, contactez-nous via notre [formulaire de demande de devis](/contact). Précisez la date souhaitée, le nombre de convives approximatif et la nature de l’occasion. Un devis détaillé vous est adressé sous 48 heures.

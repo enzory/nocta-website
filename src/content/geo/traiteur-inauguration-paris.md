@@ -1,6 +1,6 @@
 ---
 title: "Inauguration boutique et lancement produit à Paris"
-description: "NOCTA organise vos cocktails d’inauguration, lancements produit et openings à Paris. Formats Corporate et Signature, devis en 24h."
+description: "NOCTA organise vos cocktails d’inauguration, lancements produit et openings à Paris. Formats Corporate et Signature, devis sous 48 heures."
 zone: "Paris"
 type: "occasion"
 ctaType: "corporate"
@@ -57,6 +57,6 @@ Le devis est établi sous 24 à 36 heures à partir d’un brief précis : lieu,
 
 ## Demande de devis
 
-Vous préparez une inauguration ou un lancement produit à Paris et souhaitez cadrer la partie restauration ? Transmettez-nous les éléments de base via le formulaire de contact — lieu, date, jauge estimée — et nous vous soumettons une proposition dans les 24 heures.
+Vous préparez une inauguration ou un lancement produit à Paris et souhaitez cadrer la partie restauration ? Transmettez-nous les éléments de base via le formulaire de contact — lieu, date, jauge estimée — et nous vous soumettons une proposition dans les 48 heures.
 
 [Faire une demande de devis <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

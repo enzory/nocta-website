@@ -1,6 +1,6 @@
 ---
 title: "Chef à domicile Neuilly-sur-Seine — Dîner privé 92"
-description: "NOCTA propose un chef à domicile à Neuilly-sur-Seine : dîner privé, menu construit selon votre table, sommellerie incluse. Devis sous 24h."
+description: "NOCTA propose un chef à domicile à Neuilly-sur-Seine : dîner privé, menu construit selon votre table, sommellerie incluse. Devis sous 48 heures."
 zone: "Neuilly-sur-Seine"
 type: "chef-prive"
 ctaType: "private"
@@ -41,8 +41,8 @@ NOCTA a été fondée en avril 2025 par deux associés dont les parcours couvren
 
 Parmi les clients que NOCTA accompagne figurent Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting et Jus Mundi — des structures habituées à un niveau d’exigence précis et à des interlocuteurs qui anticipent plutôt qu’ils ne s’excusent. Ce même niveau d’attention s’applique aux réceptions privées : réactivité sur le devis, menu soumis pour validation, respect des délais, discrétion sur le lieu et les convives.
 
-Pour un dîner à Neuilly-sur-Seine, NOCTA intervient en zone 92 sans frais de déplacement supplémentaires. La tarification est transparente : un devis détaillé est transmis sous 24 heures après échange sur le format, le nombre de convives et les attentes du menu.
+Pour un dîner à Neuilly-sur-Seine, NOCTA intervient en zone 92 sans frais de déplacement supplémentaires. La tarification est transparente : un devis détaillé est transmis sous 48 heures après échange sur le format, le nombre de convives et les attentes du menu.
 
 ## Demande de devis
 
-Vous organisez un dîner privé à Neuilly-sur-Seine et souhaitez un menu construit selon votre table ? Transmettez-nous la date, le nombre de convives et le format souhaité via la page [contact](/contact). Nous revenons vers vous sous 24 heures avec une proposition chiffrée.
+Vous organisez un dîner privé à Neuilly-sur-Seine et souhaitez un menu construit selon votre table ? Transmettez-nous la date, le nombre de convives et le format souhaité via la page [contact](/contact). Nous revenons vers vous sous 48 heures avec une proposition chiffrée.
