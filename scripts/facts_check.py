@@ -29,10 +29,13 @@ from bs4 import BeautifulSoup
 FORBIDDEN = [
     # « à partir de / dès / démarre à 55 € » = ancien prix d'entrée Private.
     # (« 50-55 € » pour un cocktail ou « 55 € HT » pour un buffet restent légitimes.)
-    (r"(?:à partir de|dès|démarre à)\s+55\s?€", "prix Private obsolète (référence : 70 à 250 € par personne)"),
+    (r"(?:à partir de|dès|démarre à)\s+55\s?(?:€|euros)", "prix Private obsolète (référence : 70 à 250 € par personne)"),
     # Délais de réservation qui imposent PLUS que 24 heures comme minimum
     # (une recommandation formulée comme un conseil reste autorisée).
-    (r"(?:3|trois)\s+jours\s+minimum|minimum\s+(?:de\s+)?(?:3|trois)\s+jours|72\s?(?:h\b|heures)\s+minimum|délai de réservation minimum",
+    (r"(?:3|trois)\s+jours\s+minimum|minimum\s+(?:de\s+)?(?:3|trois)\s+jours|72\s?(?:h\b|heures)\s+minimum"
+     r"|minimum\s+de\s+72\s?(?:h\b|heures)|au\s+moins\s+72\s?(?:h\b|heures)|48\s?à\s?72\s?(?:h\b|heures)"
+     r"|délai de réservation minimum|au\s+minimum\s+(?:\d+|deux|trois)\s+(?:à\s+\d+\s+)?(?:jours|semaines)"
+     r"|jours\s+ouvrés\s+(?:est|sont)\s+nécessaires?",
      "ancien délai minimum de réservation (référence : dès 24 heures, selon disponibilité)"),
     # Anciennes fourchettes : 24 à 36 h, 36 h, 24 à 48 h.
     (r"\b24\s?(?:h|heures)?\s?à\s?(?:36|48)\s?(?:h\b|heures)|\b36\s?(?:h\b|heures\b)",
