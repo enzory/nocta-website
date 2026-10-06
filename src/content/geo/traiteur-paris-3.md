@@ -33,7 +33,7 @@ Les espaces événementiels du secteur présentent fréquemment des particularit
 
 La majorité des showrooms et galeries du 3e ne disposent pas de cuisine équipée. Notre équipe travaille en autonomie complète : le matériel de cuisson, le matériel de service et la vaisselle sont apportés par nos soins. Aucune dépendance à l’infrastructure du lieu n’est présupposée dans nos devis.
 
-Le délai de préparation que nous recommandons est de 24 à 36 heures minimum pour un cocktail de moins de 50 personnes, et d’une semaine pour tout événement assis avec service à table ou format Signature.
+Nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour les dîners servis, les formats Signature et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant.
 
 ## Pourquoi faire appel à NOCTA dans le 3e arrondissement
 

@@ -45,4 +45,4 @@ Nous ne proposons pas de décoration, de location de mobilier ni de coordination
 
 ## Demande de devis
 
-Vous organisez un dîner privé dans le Marais, un cocktail d’entreprise sur l’Île Saint-Louis ou un événement culturel dans le 4e arrondissement ? Transmettez-nous la date, le nombre de convives et les contraintes du lieu via notre [formulaire de contact](/contact). Nous revenons vers vous sous 24 à 36 heures avec une proposition adaptée.
+Vous organisez un dîner privé dans le Marais, un cocktail d’entreprise sur l’Île Saint-Louis ou un événement culturel dans le 4e arrondissement ? Transmettez-nous la date, le nombre de convives et les contraintes du lieu via notre [formulaire de contact](/contact). Nous revenons vers vous sous 48 heures avec une proposition adaptée. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.

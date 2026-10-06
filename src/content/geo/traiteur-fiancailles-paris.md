@@ -43,7 +43,7 @@ Paris pose des contraintes concrètes que nous intégrons systématiquement à l
 
 **Configuration de la cuisine.** Pour NOCTA Private, nous travaillons avec la cuisine du lieu. Nous demandons à l’avance : nombre de feux disponibles, taille du four, espace plan de travail. Si la configuration est limitée, le menu est adapté en conséquence — certaines préparations peuvent être finalisées sur place à partir de bases élaborées en amont dans notre atelier de Courbevoie.
 
-**Délai de confirmation.** Nous demandons une confirmation au moins 72 heures avant l’événement pour les formats Private, et 5 à 7 jours ouvrés pour les formats Signature, afin de garantir la qualité du sourcing et la disponibilité de l’équipe.
+**Délai de réservation.** Nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour un dîner de fiançailles servi, nous conseillons de nous contacter une semaine avant, afin de garantir la qualité du sourcing et la disponibilité de l’équipe.
 
 **Service en salle.** Pour les dîners avec service à table, Enzo assure la sommellerie et la coordination du service. Si le format le requiert, un second serveur peut être intégré à la prestation — à préciser au moment du devis.
 

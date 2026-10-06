@@ -35,7 +35,7 @@ Intervenir dans le 16e implique une lecture sérieuse des contraintes d’accès
 
 Les maisons d’Auteuil et du secteur Jasmin offrent souvent une entrée directe de plain-pied ou un accès cour, ce qui facilite le déchargement. Dans les immeubles récents proches du Trocadéro, l’accès au sous-sol ou à la livraison nécessite une réservation ou une coordination avec le gardien.
 
-Notre processus inclut systématiquement un échange préalable sur ces points : dimensions du monte-charge, superficie de la cuisine, nombre de plaques disponibles, équipement en place. Cela conditionne la faisabilité technique du menu envisagé. Nous travaillons avec un délai minimum de 24 à 36 heures pour les dîners NOCTA Private, davantage pour les formats NOCTA Signature avec accords mets-vins.
+Notre processus inclut systématiquement un échange préalable sur ces points : dimensions du monte-charge, superficie de la cuisine, nombre de plaques disponibles, équipement en place. Cela conditionne la faisabilité technique du menu envisagé. Nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant — davantage pour les formats NOCTA Signature avec accords mets-vins.
 
 Le stationnement pour notre véhicule de livraison peut se révéler contraint sur certains axes — avenue Henri-Martin, rue de la Pompe en soirée. Nous anticipons ce point et arrivons avec la marge nécessaire pour ne pas impacter l’heure de démarrage du service.
 

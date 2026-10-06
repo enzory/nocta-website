@@ -35,7 +35,7 @@ Un appartement parisien est rarement pensé pour accueillir un service de traite
 
 **Le bruit et les voisins** : la crémaillère se tient souvent tard en semaine ou le week-end. Le service NOCTA ne génère pas de nuisances supplémentaires : l’équipe travaille en silence, le nettoyage de la cuisine est inclus en fin de prestation, et aucun matériel sonore n’est fourni ni recommandé dans le cadre de nos prestations.
 
-**Le délai de confirmation** : pour une crémaillère à Paris, un délai minimum de cinq à sept jours ouvrés est nécessaire pour garantir l’approvisionnement en produits frais et la disponibilité de l’équipe. Pour les dates de forte demande — vendredi soir, samedi soir, week-ends de mi-saison —, une réservation deux à trois semaines à l’avance est conseillée.
+**Le délai de réservation** : Nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour une crémaillère avec dîner servi, nous conseillons de nous contacter une semaine avant, le temps de garantir l’approvisionnement en produits frais et la disponibilité de l’équipe. Pour les dates de forte demande — vendredi soir, samedi soir, week-ends de mi-saison —, une réservation deux à trois semaines à l’avance est conseillée.
 
 ## Pourquoi faire appel à NOCTA pour sa crémaillère
 

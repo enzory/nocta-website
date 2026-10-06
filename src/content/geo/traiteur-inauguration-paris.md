@@ -51,7 +51,7 @@ NOCTA a été fondé par deux professionnels dont les parcours se complètent di
 
 Parmi nos clients figurent des maisons comme Boucheron et Biologique Recherche — des structures habituées à un niveau d’exigence élevé sur leurs événements de marque. Nous ne faisons pas de décoration florale, pas de gestion de prestataires son et lumière, pas de coordination générale de l’événement : notre périmètre est la restauration, le service et la sommellerie. Sur ce périmètre, nous nous engageons sur un niveau de détail et de fiabilité que vous pouvez vérifier dès le premier échange.
 
-Le devis est établi sous 24 à 36 heures à partir d’un brief précis : lieu, date, jauge, format souhaité, budget indicatif.
+Le devis est établi sous 48 heures à partir d’un brief précis : lieu, date, jauge, format souhaité, budget indicatif. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.
 
 ---
 

@@ -35,7 +35,7 @@ Paris concentre une grande diversité d’espaces événementiels, avec des cont
 
 NOCTA travaille en cuisine déportée pour la majorité de ses prestations : les préparations sont finalisées en amont dans notre laboratoire de Courbevoie, et les finitions sont assurées sur place avec le matériel adapté. Ce fonctionnement rend notre intervention compatible avec la grande majorité des espaces parisiens, y compris ceux qui ne disposent que d’une kitchenette ou d’un point d’eau.
 
-Pour les événements au-dessus de 100 convives ou dans des lieux avec un accès horaire limité, nous demandons un délai minimum de 72 heures pour coordonner la logistique. Un repérage du site est systématiquement proposé pour les formats Signature ou les premières collaborations.
+Pour les événements au-dessus de 100 convives ou dans des lieux avec un accès horaire limité, nous conseillons de nous contacter une semaine avant, pour coordonner la logistique. Un repérage du site est systématiquement proposé pour les formats Signature ou les premières collaborations.
 
 Stationnement et livraison : à Paris, le déchargement du matériel de restauration suppose souvent une déclaration auprès du gardien ou du gestionnaire de l’immeuble, parfois une autorisation de stationnement ponctuellement déposée en mairie d’arrondissement. Nous intégrons cette coordination dans notre préparation de l’événement.
 

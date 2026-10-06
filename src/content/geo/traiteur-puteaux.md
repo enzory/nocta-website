@@ -39,7 +39,7 @@ Intervenir dans les tours de La Défense ou sur les dalles de Puteaux impose une
 
 **Stationnement et accès véhicule.** La zone La Défense est soumise aux restrictions de circulation habituelles des quartiers d’affaires denses. Nous gérons la logistique de stationnement en amont et ne reportons pas ces contraintes sur le client le jour de l’événement.
 
-**Délais de confirmation.** Pour une prestation corporate à Puteaux ou La Défense, nous travaillons sur un délai minimum de 24 à 36 heures pour les formats Corporate standards, et d’une semaine à dix jours pour les formats Signature nécessitant une visite de lieu et une construction de menu spécifique.
+**Délais de réservation.** Pour une prestation corporate à Puteaux ou La Défense, nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour les formats Signature nécessitant une visite de lieu et une construction de menu spécifique, nous conseillons de nous contacter une semaine à dix jours avant.
 
 ---
 

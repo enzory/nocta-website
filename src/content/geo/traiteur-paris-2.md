@@ -33,7 +33,7 @@ Les cuisines sur place sont souvent absentes ou réduites à un coin kitchenette
 
 Le stationnement d’un véhicule utilitaire le temps du montage et du service reste le point de friction le plus fréquent dans cet arrondissement. Nous gérons cette logistique en interne, mais une coordination avec le gestionnaire de l’immeuble ou le responsable événementiel côté client facilite significativement l’intervention.
 
-Délai de traitement habituel : 24 à 36 heures pour un devis Corporate standard. Pour les formats Signature ou les événements dépassant 80 couverts, un délai de 5 à 7 jours ouvrés est nécessaire pour garantir la qualité de la prestation.
+Réponse à toute demande de devis sous 48 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16. Pour les formats Signature, les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant.
 
 ## Pourquoi NOCTA dans le 2e arrondissement
 

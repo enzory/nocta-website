@@ -13,7 +13,7 @@ faq:
   - question: "Quel est le budget minimum pour un déjeuner de baptême avec NOCTA ?"
     answer: "NOCTA intervient à partir de 500 € de commande. Le détail du devis dépend du format choisi (service à table, buffet, cocktail dînatoire), du menu et du nombre de convives."
   - question: "Quel délai pour obtenir un devis ?"
-    answer: "Nous revenons sous 48 heures ouvrées après réception de votre demande. Pour les événements familiaux, nous recommandons de nous contacter au minimum deux semaines avant la date souhaitée."
+    answer: "Nous revenons sous 48 heures ouvrées après réception de votre demande. Pour les événements familiaux, nous conseillons de nous contacter deux semaines avant la date souhaitée."
   - question: "NOCTA propose-t-il un service de sommellerie pour un événement privé à Paris ?"
     answer: "Oui. Enzo Ryon, sommelier de l’équipe, peut constituer la sélection de vins et assurer le service au verre pendant le repas, en accord avec votre menu."
 ---

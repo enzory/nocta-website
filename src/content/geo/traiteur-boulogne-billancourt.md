@@ -40,7 +40,7 @@ Pour les prestations en appartement ou en maison individuelle, l’équipe éval
 
 Les studios de production posent des contraintes différentes : horaires décalés, accès sécurisés, parfois peu de surface disponible en cuisine. NOCTA est habitué à travailler dans des conditions compactes. L’essentiel de la préparation peut être réalisé en amont, avec une finition sur place réduite au strict nécessaire.
 
-Pour toute prestation, un délai minimum de 24 à 36 heures est requis pour les formats Corporate standards. Les prestations NOCTA Signature et Private avec menu construit demandent un délai de cinq à sept jours ouvrés pour permettre le sourçage des produits.
+Nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant, le temps de sourcer les produits.
 
 ## Pourquoi NOCTA sur Boulogne-Billancourt
 

@@ -35,7 +35,7 @@ Intervenir en traiteur à domicile dans Paris intra-muros implique plusieurs poi
 
 **La cuisine du lieu.** La qualité de l’équipement disponible sur place conditionne une partie des choix de menu. Lors de l’échange préparatoire, nous demandons un inventaire rapide : nombre de plaques, type de four, surface de travail disponible. En cas d’équipement limité, Hugo adapte les techniques et la composition du menu pour maintenir le niveau de la prestation sans improvisation.
 
-**Délai de préparation.** Nous recommandons de nous contacter au minimum 7 à 10 jours avant la date pour une prestation NOCTA Private, et 3 semaines à l’avance pour une prestation NOCTA Signature. Ce délai permet de sécuriser les approvisionnements, de construire le menu et de confirmer la logistique. Les demandes en deçà de ces délais peuvent être traitées selon disponibilité.
+**Délai de préparation.** Nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour un anniversaire avec dîner servi, nous conseillons de nous contacter 7 à 10 jours avant la date, et 3 semaines à l’avance pour une prestation NOCTA Signature. Ce délai permet de sécuriser les approvisionnements, de construire le menu et de confirmer la logistique. Les demandes en deçà de ces délais peuvent être traitées selon disponibilité.
 
 **Nombre de convives.** NOCTA Private fonctionne à partir de 8 couverts. Pour des tables de moins de 8 personnes, nous vous invitons à nous contacter directement afin d’étudier la faisabilité. Au-delà de 30 couverts dans un appartement, le format NOCTA Signature avec renfort d’équipe est généralement plus adapté.
 
