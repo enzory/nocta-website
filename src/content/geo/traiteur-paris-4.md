@@ -21,7 +21,7 @@ L’équipe est basée à Courbevoie. Le temps de déplacement vers le 4e est ma
 
 **NOCTA Private** convient aux dîners organisés dans des appartements du Marais ou sur l’Île Saint-Louis. Hugo Vinatier, formé en cuisine étoilée, prend en charge l’intégralité de la mise en place, du dressage à l’envoi, jusqu’au débarrassage complet. Le menu est construit selon les envies de l’hôte, le gabarit de la cuisine disponible et le nombre de couverts — de 6 à 20 personnes selon la configuration du lieu. Enzo Ryon peut assurer la sommellerie au verre, avec une sélection adaptée au menu servi. Comptez entre 70 et 250 € par personne, chef et service compris.
 
-**NOCTA Corporate** s’adresse aux entreprises qui organisent un cocktail, un comité de direction ou un déjeuner de travail dans une salle louée dans le 4e — galerie d’art transformée en espace de réception, salle de séminaire en sous-sol d’hôtel ou terrasse d’un immeuble de bureaux. Nous prenons en charge la restauration et le service, de 20 à plusieurs centaines de convives selon le format. Les plateaux-repas démarraient à 25 €/personne ; les cocktails dînatoires sont calibrés entre 40 et 70 €/personne selon le nombre de pièces servies et la présence d’un bar à boissons.
+**NOCTA Corporate** s’adresse aux entreprises qui organisent un cocktail, un comité de direction ou un déjeuner de travail dans une salle louée dans le 4e — galerie d’art transformée en espace de réception, salle de séminaire en sous-sol d’hôtel ou terrasse d’un immeuble de bureaux. Nous prenons en charge la restauration et le service, de 20 à plusieurs centaines de convives selon le format. Les cocktails dînatoires sont calibrés entre 40 et 70 €/personne selon le nombre de pièces servies et la présence d’un bar à boissons.
 
 **NOCTA Signature** est pertinent pour des événements culturels qui exigent une construction entièrement adaptée au lieu et au programme : vernissage avec service en déambulation, dîner de table longue dans une cour pavée, soirée de collecte pour une fondation. Ce format est proposé sur devis, après visite du lieu et échange avec l’équipe.
 
@@ -33,7 +33,7 @@ Les immeubles anciens du secteur présentent souvent des escaliers sans ascenseu
 
 L’Île Saint-Louis pose des questions supplémentaires : stationnement quasi inexistant, accès par pont avec contrôle ponctuel en soirée, peu de surfaces de stockage dans les appartements. Nous adaptons les volumes préparés en amont et travaillons en flux tendu lorsque la configuration le demande.
 
-Pour les événements en semaine en journée, le 4e offre en revanche une bonne fluidité de circulation tôt le matin, ce qui facilite la livraison de plateaux-repas ou la mise en place d’un cocktail déjeunatoire avant 10h.
+Pour les événements en semaine en journée, le 4e offre en revanche une bonne fluidité de circulation tôt le matin, ce qui facilite la livraison d’un buffet ou la mise en place d’un cocktail déjeunatoire avant 10h.
 
 ## Pourquoi NOCTA dans le 4e
 

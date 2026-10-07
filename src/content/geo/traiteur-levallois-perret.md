@@ -1,6 +1,6 @@
 ---
 title: "Traiteur d’entreprise à Levallois-Perret | NOCTA"
-description: "Traiteur d’entreprise à Levallois-Perret : cocktails, déjeuners d’équipe, comités de direction et plateaux-repas, depuis Courbevoie. Devis sous 48 heures."
+description: "Traiteur d’entreprise à Levallois-Perret : cocktails, déjeuners d’équipe, comités de direction et buffets, depuis Courbevoie. Devis sous 48 heures."
 zone: "Levallois-Perret"
 type: "commune-92"
 ctaType: "corporate"
@@ -9,7 +9,7 @@ readingTime: "4 min"
 schemaType: "LocalBusiness"
 faq:
   - question: "Quels formats proposez-vous aux entreprises de Levallois-Perret ?"
-    answer: "Cocktails de lancement, déjeuners d’équipe en bureau, dîners de comité de direction, plateaux-repas. Chaque format s’adapte à vos locaux et à vos horaires, avec une équipe de service quand le moment le demande."
+    answer: "Cocktails de lancement, déjeuners d’équipe en bureau, dîners de comité de direction, buffets. Chaque format s’adapte à vos locaux et à vos horaires, avec une équipe de service quand le moment le demande."
   - question: "Quel est le minimum de commande ?"
     answer: "500 €. Les tarifs varient ensuite selon le format, le niveau de prestation et le nombre de convives — chaque devis est établi après un échange."
   - question: "Pouvez-vous livrer et servir directement dans nos bureaux ?"
@@ -28,7 +28,7 @@ Nous intervenons dans les salles de réunion aménagées, les halls d’immeuble
 
 ## Formats adaptés aux événements d’entreprise à Levallois-Perret
 
-**NOCTA Corporate** est le format naturellement taillé pour les besoins des sièges levalloisiens. Il couvre les cocktails dînatoires (25 à 70 € par personne selon le volume et le niveau de service), les galas internes, les comités de direction avec service à table, et les plateaux-repas structurés pour des réunions en journée. Pour un cocktail debout de cinquante à cent personnes, nous travaillons sur une base de seize à vingt pièces par personne, avec un dressage réalisé sur place et un service assuré par notre équipe. La sommellerie — prise en charge directement par Enzo Ryon pour les formats premium — permet de proposer une sélection au verre cohérente avec le ton de l’événement, sans carte générique.
+**NOCTA Corporate** est le format naturellement taillé pour les besoins des sièges levalloisiens. Il couvre les cocktails dînatoires (25 à 70 € par personne selon le volume et le niveau de service), les galas internes et les comités de direction avec service à table. Pour un cocktail debout de cinquante à cent personnes, nous travaillons sur une base de seize à vingt pièces par personne, avec un dressage réalisé sur place et un service assuré par notre équipe. La sommellerie — prise en charge directement par Enzo Ryon pour les formats premium — permet de proposer une sélection au verre cohérente avec le ton de l’événement, sans carte générique.
 
 **NOCTA Private** peut être activé lorsqu’un dirigeant souhaite organiser un dîner restreint dans un appartement de fonction ou une résidence privée à Levallois. Pour six à douze couverts, Hugo Vinatier intervient en cuisine sur place : dressage à l’envoi, découpe en salle si le menu le prévoit, service coordonné. Ce format est particulièrement adapté aux dîners avec partenaires étrangers ou aux célébrations d’équipe dirigeante dans un cadre plus intimiste qu’une salle de restaurant privatisée.
 

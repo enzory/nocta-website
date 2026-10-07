@@ -19,7 +19,7 @@ Le profil type de nos clients dans le 2e : directeurs généraux qui reçoivent 
 
 ## Formats adaptés au 2e arrondissement
 
-**NOCTA Corporate** est le format le plus sollicité dans cet arrondissement. Il couvre les cocktails debout (18 à 24 pièces par personne, service en 45 à 90 minutes), les cocktails dînatoires avec stations chaudes, et les plateaux-repas pour comités de direction. La fourchette tarifaire va de 25 à 70 € par personne selon le format et le nombre de couverts. Ce cadre convient aussi bien à une salle de réunion de 20 personnes qu’à un plateau ouvert de 120 invités. Le service peut être assuré en gants blancs ou en tenue sobre selon le registre souhaité.
+**NOCTA Corporate** est le format le plus sollicité dans cet arrondissement. Il couvre les cocktails debout (18 à 24 pièces par personne, service en 45 à 90 minutes) et les cocktails dînatoires avec stations chaudes. La fourchette tarifaire va de 40 à 70 € par personne selon le format et le nombre de couverts. Ce cadre convient aussi bien à une salle de réunion de 20 personnes qu’à un plateau ouvert de 120 invités. Le service peut être assuré en gants blancs ou en tenue sobre selon le registre souhaité.
 
 **NOCTA Private** trouve également sa place dans le 2e, notamment pour les dîners intimistes organisés dans des appartements de direction ou des suites privatisées. Ce format propose un menu construit autour des produits de saison, dressé à l’envoi, avec une proposition de vins sélectionnés par Enzo Ryon en accord avec chaque plat. Comptez entre 70 et 250 € par personne, chef et service compris. Le nombre de couverts est limité — typiquement 8 à 20 personnes — ce qui permet un service attentif et une cuisine servie dans les conditions d’un restaurant.
 
@@ -37,7 +37,7 @@ Réponse à toute demande de devis sous 48 heures. Pour un événement dans les 
 
 ## Pourquoi NOCTA dans le 2e arrondissement
 
-NOCTA a été fondé en avril 2025 par deux associés dont les parcours sont complémentaires : une cuisine construite dans des brigades étoilées et une sommellerie orientée clientèle grands comptes. Ce positionnement correspond directement au profil des entreprises du 2e arrondissement, qui reçoivent des interlocuteurs habitués à un certain niveau de table et pour qui un plateau-repas générique constitue un signal négatif.
+NOCTA a été fondé en avril 2025 par deux associés dont les parcours sont complémentaires : une cuisine construite dans des brigades étoilées et une sommellerie orientée clientèle grands comptes. Ce positionnement correspond directement au profil des entreprises du 2e arrondissement, qui reçoivent des interlocuteurs habitués à un certain niveau de table et pour qui un repas générique constitue un signal négatif.
 
 Parmi nos clients de référence figurent Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting et Jus Mundi — des structures pour lesquelles la qualité de la table fait partie du message adressé à leurs invités. C’est le même registre d’exigence que nous appliquons à chaque intervention, quelle qu’en soit l’échelle.
 

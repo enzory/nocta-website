@@ -31,7 +31,7 @@ Après quelques semaines, on sait ce que cette équipe aime. Les produits qui pa
 
 Ce n’est pas de la personnalisation au sens marketing du terme. C’est simplement ce qui se passe quand on fait attention.
 
-## Pourquoi les plateaux-repas haut de gamme ne ressemblent pas à des plateaux-repas
+## Pourquoi nos buffets livrés ne ressemblent pas aux livraisons de bureau
 
 Le marché de la livraison d’entreprise est dominé par des acteurs qui misent sur le volume. Des menus standardisés, des emballages plastique, une logistique optimisée pour la marge. Ce n’est pas ce que nous faisons.
 

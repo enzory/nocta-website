@@ -11,7 +11,7 @@ faq:
   - question: "Couvrez-vous tout le 17e, des Batignolles à la plaine Monceau ?"
     answer: "Oui. Notre base de Courbevoie est à quelques minutes du 17e : dîners à domicile, réceptions familiales, événements d’entreprise autour des Batignolles et de la place de Clichy."
   - question: "À partir de quel budget travaillez-vous ?"
-    answer: "Nos prestations démarrent à partir de 500 € de commande. Cocktail, dîner servi ou plateaux-repas : le format se décide avec vous, selon le lieu et l’occasion."
+    answer: "Nos prestations démarrent à partir de 500 € de commande. Cocktail, dîner servi ou buffet : le format se décide avec vous, selon le lieu et l’occasion."
   - question: "Quel délai pour réserver une date ?"
     answer: "Le plus tôt est le mieux pour les samedis et les fins d’année, mais notre proximité nous permet aussi de répondre à des demandes courtes. Premier échange, puis devis gratuit sous 48 heures."
   - question: "Le vin est-il compris dans la prestation ?"
@@ -30,7 +30,7 @@ La clientèle du 17e qui fait appel à NOCTA est généralement composée de par
 
 **NOCTA Private** est le format privilégié pour les événements familiaux et les dîners à domicile dans le 17e. Hugo Vinatier, formé en cuisine étoilée, conçoit un menu adapté au lieu, au nombre de convives et aux préférences alimentaires, entre 70 et 250 € par personne, chef et service compris. La prestation comprend la mise en place, le service à table et le nettoyage complet après le repas. Dans les appartements hausmanniens du quartier Monceau, où l’espace de réception est souvent généreux mais la cuisine professionnellement limitée, l’équipe apporte le matériel nécessaire et adapte la préparation aux contraintes du lieu. C’est également le format retenu pour les réceptions familiales — anniversaires, retours de cérémonie, déjeuners dominicaux — où l’on cherche un niveau de prestation restaurateur sans quitter son domicile.
 
-**NOCTA Corporate** couvre les événements professionnels : cocktails dinatoires, comités de direction, séminaires avec restauration, plateaux-repas structurés. Le tarif varie de 25 à 70 € par personne selon le format retenu. Pour les entreprises du secteur Ternes ou les bureaux situés en bordure du 17e, ce format permet d’organiser un événement en interne — dans ses propres locaux — sans mobiliser une logistique événementielle lourde. NOCTA gère la conception du menu, la mise en place, le service et le rangement.
+**NOCTA Corporate** couvre les événements professionnels : cocktails dinatoires, comités de direction, séminaires avec restauration. Le tarif varie de 40 à 70 € par personne selon le format retenu. Pour les entreprises du secteur Ternes ou les bureaux situés en bordure du 17e, ce format permet d’organiser un événement en interne — dans ses propres locaux — sans mobiliser une logistique événementielle lourde. NOCTA gère la conception du menu, la mise en place, le service et le rangement.
 
 **NOCTA Signature** s’adresse aux demandes qui ne rentrent pas dans un cadre standard : réception dans un lieu atypique des Batignolles, événement hybride mêlant professionnel et familial, ou prestation pour laquelle le commanditaire souhaite une proposition construite de zéro. Ce format est proposé sur devis après un premier échange de cadrage. Enzo Ryon, qui assure la direction et la sommellerie, intervient directement dans la conception de l’accord mets-vins et l’organisation de la prestation.
 
