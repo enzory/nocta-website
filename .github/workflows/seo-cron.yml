@@ -12,9 +12,11 @@
 #   1. Checkout repo
 #   2. Setup Node 20 + install deps (@anthropic-ai/sdk, yaml)
 #   3. Run scripts/seo-auto-generate.mjs
-#   4. Si status == "published" → commit direct sur main
-#   5. Si status == "pr-review" → crée une branche + PR
-#   6. Si status == "empty-queue" ou "error" → log, pas de commit
+#   4. Garde-fou : build du site + scripts/facts_check.py. Si une page contredit
+#      les faits de référence, le job échoue ici et RIEN n'est publié.
+#   5. Si status == "published" → commit direct sur main
+#   6. Si status == "pr-review" → crée une branche + PR
+#   7. Si status == "empty-queue" ou "error" → log, pas de commit
 #
 # Secrets requis (Settings → Secrets and variables → Actions) :
 #   - ANTHROPIC_API_KEY
@@ -73,6 +75,17 @@ jobs:
           echo "status=$STATUS" >> $GITHUB_OUTPUT
           echo "slug=$SLUG"     >> $GITHUB_OUTPUT
           echo "score=$SCORE"   >> $GITHUB_OUTPUT
+
+      # ---------- Garde-fou : cohérence des faits AVANT toute publication ----------
+      # Ne tourne que si une page a été générée. facts_check.py lit dist/ et sort en
+      # erreur s'il trouve un fait contredit (prix, délai, plateaux-repas…) : l'étape
+      # échoue, les étapes de commit / push / PR ci-dessous sont sautées.
+      - name: Vérification des faits (build + facts_check)
+        if: steps.gen.outputs.status == 'published' || steps.gen.outputs.status == 'pr-review'
+        run: |
+          pip install requests beautifulsoup4
+          npm run build
+          python3 scripts/facts_check.py
 
       - name: Configure git
         if: steps.gen.outputs.status == 'published' || steps.gen.outputs.status == 'pr-review'
