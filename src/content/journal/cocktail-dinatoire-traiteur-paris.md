@@ -28,7 +28,7 @@ Les prix varient selon le traiteur et le niveau de prestation, mais voici les or
 
 **Sur-mesure et prestige** : 80 à 150 € HT par personne, voire davantage. Menu conçu sur-mesure, produits d’exception, service en salle dédié, sommellerie. Pour un cocktail dînatoire de 40 convives avec 18 pièces par personne — incluant des coquilles Saint-Jacques, du foie gras, du pâté en croûte maison — comptez environ 85 à 90 € HT par personne avec chef et maître d’hôtel sur place.
 
-Chez NOCTA, un cocktail dînatoire démarre à environ **54 € HT par personne** sur la base de 12 pièces à 4,50 € HT la pièce, et peut monter en gamme selon le menu et le format souhaités. Le tarif comprend la cuisine sur place par notre chef ou la livraison selon la formule choisie. La sommellerie et les boissons sont proposées en complément, sur devis.
+Chez NOCTA, un cocktail dînatoire est à partir de **54 € HT par personne**, sur la base de 12 pièces à 4,50 € HT la pièce, et peut monter en gamme selon le menu et le format souhaités. Le tarif comprend la cuisine sur place par notre chef ou la livraison selon la formule choisie. La sommellerie et les boissons sont proposées en complément, sur devis.
 
 Le minimum de commande est de **500 € HT**, sans minimum de convives. NOCTA peut intervenir dès 24 heures à l’avance, selon disponibilité ; une semaine est conseillée pour les événements de plus de 50 personnes. Pour un comparatif complet de tous nos formats, consultez [notre guide des prix d’un traiteur à Paris](/journal/budget-traiteur-paris).
 

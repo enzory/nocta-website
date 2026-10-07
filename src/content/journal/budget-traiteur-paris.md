@@ -7,7 +7,7 @@ category: "Guide"
 readTime: 8
 ---
 
-Un traiteur haut de gamme à Paris coûte entre 54 € et 250 € par personne selon le format choisi. Pour un dîner privé avec chef et service, comptez 70 à 250 € par personne. Un cocktail revient à environ 50-55 € par personne sur une base de 12 pièces. Chez NOCTA, le minimum de commande est de 500 € HT, sans minimum de convives — ce qui rend la prestation accessible dès 6-7 personnes pour un dîner.
+Un traiteur haut de gamme à Paris coûte entre 54 € et 250 € par personne selon le format choisi. Pour un dîner privé avec chef et service, comptez 70 à 250 € par personne. Un cocktail est à partir de 54 € HT par personne, sur une base de 12 pièces. Chez NOCTA, le minimum de commande est de 500 € HT, sans minimum de convives — ce qui rend la prestation accessible dès 6-7 personnes pour un dîner.
 
 Ces chiffres viennent de notre expérience sur plus de 50 événements réalisés à Paris et en Île-de-France, pour des particuliers comme pour des entreprises (Levi’s, The Galion Project, Jus Mundi, Colombus Consulting, entre autres). Voici le détail par format.
 

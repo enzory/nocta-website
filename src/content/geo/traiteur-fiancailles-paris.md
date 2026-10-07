@@ -23,7 +23,7 @@ Nous travaillons aussi bien dans un appartement haussmannien du 7e ou du 16e que
 
 **NOCTA Private — dîner à domicile**
 
-C’est le format conçu pour les dîners intimistes : fiançailles à deux ou à douze, repas de famille restreint, célébration autour d’une table que vous connaissez. Comptez entre 70 et 250 € par personne, chef et service compris. Hugo prend en charge les courses, la mise en place complète de votre cuisine, le dressage à l’envoi et le nettoyage après service. Vous n’avez rien à préparer. Le menu est discuté en amont — nombre de plats, allergies, préférences, vins souhaités — et figé 48 heures avant l’événement. Comptez entre 4 et 8 couverts pour ce format, selon la configuration de votre espace.
+C’est le format conçu pour les dîners intimistes : fiançailles à deux ou à douze, repas de famille restreint, célébration autour d’une table que vous connaissez. Comptez entre 70 et 250 € par personne, chef et service compris. Hugo prend en charge les courses, la mise en place complète de votre cuisine, le dressage à l’envoi et le nettoyage après service. Vous n’avez rien à préparer. Le menu est discuté en amont — nombre de plats, allergies, préférences, vins souhaités — et figé 48 heures avant l’événement. À table, de quelques convives à une cinquantaine, selon le lieu et le mobilier disponible. Si besoin, la location de matériel est chiffrée dans le devis.
 
 **NOCTA Signature — célébration construite autour du lieu et de la soirée**
 
