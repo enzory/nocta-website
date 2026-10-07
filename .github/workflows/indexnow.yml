@@ -1,0 +1,15 @@
+# Après chaque déploiement de production réussi sur Vercel, on prévient IndexNow.
+name: IndexNow
+on:
+  deployment_status:
+jobs:
+  ping:
+    if: github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python3 scripts/indexnow_ping.py
