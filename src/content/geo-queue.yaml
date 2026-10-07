@@ -5,7 +5,8 @@
 # Le script seo-auto-generate.mjs pioche le premier `pending`
 # trié par priorité. Statuts possibles :
 #   - pending   : en file
-#   - published : publié en direct (score brand-check >= 8)
+#   - published : en ligne, après merge de la PR ouverte par le cron
+#                 (le cron ne publie plus jamais directement sur main)
 #   - pr-review : PR créée, en attente de review Enzo
 #   - skipped   : rejeté (score < 8 sur 3 tentatives)
 # Ordre tri : priority DESC, puis ordre du fichier.
