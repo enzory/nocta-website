@@ -169,6 +169,31 @@ import CallToAction from '../components/CallToAction.astro';
               </div>
             </div>
 
+            <!-- Source (facultatif) : comment le client a connu NOCTA.
+                 Les valeurs envoyées sont les libellés eux-mêmes, pour que
+                 l'email Formspree soit lisible sans table de correspondance. -->
+            <div class="flex flex-col gap-2">
+              <label for="source" class="t-label text-nocta-grey">Comment avez-vous connu NOCTA ?</label>
+              <div class="relative">
+                <select
+                  id="source" name="source"
+                  class="w-full appearance-none bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 pr-6 font-sans text-sm font-normal text-nocta-black cursor-pointer transition-colors duration-200"
+                >
+                  <option value="" selected>Choisir…</option>
+                  <option value="Recherche Google">Recherche Google</option>
+                  <option value="ChatGPT ou un autre assistant IA">ChatGPT ou un autre assistant IA</option>
+                  <option value="Recommandation">Recommandation</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="LinkedIn">LinkedIn</option>
+                  <option value="Un événement NOCTA auquel j’ai assisté">Un événement NOCTA auquel j’ai assisté</option>
+                  <option value="Autre">Autre</option>
+                </select>
+                <svg class="absolute right-0 bottom-3.5 pointer-events-none text-nocta-grey" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+
             <!-- Message -->
             <div class="flex flex-col gap-2">
               <label for="message" class="t-label text-nocta-grey">Message</label>
