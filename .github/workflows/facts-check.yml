@@ -1,0 +1,21 @@
+# Vérifie sur chaque PR vers main que le site ne contredit pas les faits de référence.
+name: facts-check
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  facts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install requests beautifulsoup4
+      - run: python3 scripts/facts_check.py
