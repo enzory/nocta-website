@@ -5,7 +5,7 @@ Tout texte publié sur le site doit respecter ces faits. En cas de doute, ne pas
 
 ## Identité
 - NOCTA est un traiteur événementiel installé à Courbevoie, aux portes de La Défense.
-- Offres : NOCTA Private (dîners privés, chef à domicile), NOCTA Corporate (cocktails, dîners de direction, galas, buffets), NOCTA Signature (expériences sur-mesure), sommellerie et accords mets-vins.
+- Offres : NOCTA Private (dîners privés, chef à domicile), NOCTA Corporate (cocktails, dîners de direction, galas, buffets), NOCTA Signature (expériences sur-mesure : cuisine, vins et scénographie pensés ensemble), sommellerie et accords mets-vins.
 - Cuisine : Hugo Vinatier, formé en cuisine étoilée. Ne jamais écrire « chef étoilé ».
 - Sommellerie et service : Enzo Ryon, sommelier et cofondateur.
 - Zones : Paris, La Défense, Hauts-de-Seine (Neuilly, Levallois, Puteaux, Boulogne), partout en France sur demande.
