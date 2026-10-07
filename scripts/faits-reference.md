@@ -23,6 +23,7 @@ Tout texte publié sur le site doit respecter ces faits. En cas de doute, ne pas
 
 ## Convives (NOCTA Private)
 - « À table, de quelques convives à une cinquantaine, selon le lieu et le mobilier disponible. Si besoin, la location de matériel est chiffrée dans le devis. »
+- Mobilier et matériel : jamais inclus par défaut ; si le lieu n'en dispose pas, leur location est chiffrée dans le devis.
 
 ## Délais
 - Réservation : « Nous pouvons intervenir dès 24 heures à l'avance, selon disponibilité. Pour les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant. »

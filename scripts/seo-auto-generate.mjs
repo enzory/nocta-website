@@ -66,7 +66,7 @@ RÈGLES ÉDITORIALES NON NÉGOCIABLES :
 3. Zéro métaphore lyrique creuse. Zéro superlatif gratuit.
 4. ZÉRO INVENTION FACTUELLE : ne cite que les clients listés dans les faits de référence. N'invente AUCUN événement spécifique, AUCUNE anecdote, AUCUN témoignage.
 5. Du concret uniquement : formats proposés, logistique, cadre, typologie de prestation, contraintes du lieu.
-6. Ne promets jamais des choses qu'on ne vend pas : pas de "wedding planning", pas de "location de mobilier", pas de "décoration florale".
+6. Ne jamais présenter le mobilier ou le matériel comme inclus. Si le lieu n'en dispose pas, leur location est chiffrée dans le devis.
 7. Mentionner les 3 offres de manière naturelle, sans matraquer.
 8. Français impeccable. Pas d'anglicismes superflus.
 9. RÈGLE TARIFAIRE : le seul minimum communiqué est le minimum de commande des faits de référence.
