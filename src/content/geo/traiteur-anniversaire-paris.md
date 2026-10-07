@@ -15,7 +15,7 @@ Organiser un dîner d’anniversaire privé à Paris suppose de régler deux con
 
 L’équipe se compose d’Hugo Vinatier, chef formé en cuisine étoilée, et d’Enzo Ryon, sommelier. Ensemble, ils construisent un menu adapté à la table, au nombre de couverts et au profil des convives. Le dressage se fait à l’envoi depuis votre cuisine, le service est assuré en salle selon les codes d’un dîner gastronomique : gestes maîtrisés, rythme tenu, accord mets et vins proposé au verre si souhaité.
 
-NOCTA travaille principalement avec des particuliers exigeants et des entreprises parisiennes. Pour un anniversaire privé, la prestation prend la forme d’un dîner intimiste de 8 à 30 couverts, dans votre espace de vie, sans que vous ayez à mobiliser de ressource extérieure supplémentaire.
+NOCTA travaille principalement avec des particuliers exigeants et des entreprises parisiennes. Pour un anniversaire privé, la prestation prend la forme d’un dîner intimiste dans votre espace de vie, sans que vous ayez à mobiliser de ressource extérieure supplémentaire.
 
 ---
 
@@ -23,7 +23,7 @@ NOCTA travaille principalement avec des particuliers exigeants et des entreprise
 
 **NOCTA Private** est le format conçu pour ce type d’occasion. Il couvre un menu en plusieurs actes — entrée froide, entrée chaude, plat, fromage ou pré-dessert, dessert — élaboré selon la saison, vos contraintes alimentaires et l’ambiance souhaitée. Comptez entre 70 et 250 € par personne, chef et service compris. Le menu est discuté en amont lors d’un échange avec Hugo et Enzo ; aucun modèle standard n’est imposé. Les produits sont sourcés selon la saison et le marché : poisson de ligne, viandes maturées, légumes de producteurs identifiés. Le tarif final dépend du nombre de couverts, du nombre de services et des choix de produits.
 
-**NOCTA Signature** s’adresse aux anniversaires qui appellent un format plus structuré : soirée en plusieurs temps, plateau d’amuse-bouches à l’apéritif suivi d’un dîner assis, service de sommellerie au verre sur toute la durée, ou encore découpe en salle pour une pièce de caractère. Ce format est construit autour du lieu et de vos envies spécifiques ; il fait l’objet d’un devis dédié. Il convient notamment lorsque l’appartement ou la maison permet de distinguer un espace cocktail d’un espace dîner, ou lorsque le nombre de convives dépasse une vingtaine de personnes.
+**NOCTA Signature** s’adresse aux anniversaires qui appellent un format plus structuré : soirée en plusieurs temps, plateau d’amuse-bouches à l’apéritif suivi d’un dîner assis, service de sommellerie au verre sur toute la durée, ou encore découpe en salle pour une pièce de caractère. Ce format est construit autour du lieu et de vos envies spécifiques ; il fait l’objet d’un devis dédié. Il convient notamment lorsque l’appartement ou la maison permet de distinguer un espace cocktail d’un espace dîner.
 
 ---
 
@@ -37,7 +37,7 @@ Intervenir en traiteur à domicile dans Paris intra-muros implique plusieurs poi
 
 **Délai de préparation.** Nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour un anniversaire avec dîner servi, nous conseillons de nous contacter 7 à 10 jours avant la date, et 3 semaines à l’avance pour une prestation NOCTA Signature. Ce délai permet de sécuriser les approvisionnements, de construire le menu et de confirmer la logistique. Les demandes en deçà de ces délais peuvent être traitées selon disponibilité.
 
-**Nombre de convives.** NOCTA Private fonctionne à partir de 8 couverts. Pour des tables de moins de 8 personnes, nous vous invitons à nous contacter directement afin d’étudier la faisabilité. Au-delà de 30 couverts dans un appartement, le format NOCTA Signature avec renfort d’équipe est généralement plus adapté.
+**Nombre de convives.** À table, de quelques convives à une cinquantaine, selon le lieu et le mobilier disponible. Si besoin, la location de matériel est chiffrée dans le devis.
 
 ---
 

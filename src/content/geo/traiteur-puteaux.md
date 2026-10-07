@@ -21,7 +21,7 @@ Les clients servis par NOCTA — Boucheron, Biologique Recherche, The Galion Pro
 
 ## Formats proposés à Puteaux et dans les tours de La Défense
 
-**NOCTA Corporate** est le format central pour les entreprises du quartier. Il couvre les cocktails dinatoires, les galas, les plateaux-repas de comité de direction et les déjeuners d’affaires. La fourchette tarifaire va de 25 à 70 € par personne selon le format retenu — cocktail debout en fin d’après-midi, dîner assis avec service en salle, ou plateau structuré pour un conseil d’administration en configuration resserrée. Chaque intervention est pensée autour de la capacité du lieu, du nombre de convives et du déroulé de la soirée ou du déjeuner : pas de menu standard appliqué mécaniquement, mais un cadre construit autour de ce que vous organisez.
+**NOCTA Corporate** est le format central pour les entreprises du quartier. Il couvre les cocktails dinatoires, les galas, les comités de direction et les déjeuners d’affaires. La fourchette tarifaire va de 40 à 70 € HT par personne selon le format retenu — cocktail debout en fin d’après-midi, dîner assis avec service en salle, ou déjeuner pour un conseil d’administration en configuration resserrée. Chaque intervention est pensée autour de la capacité du lieu, du nombre de convives et du déroulé de la soirée ou du déjeuner : pas de menu standard appliqué mécaniquement, mais un cadre construit autour de ce que vous organisez.
 
 **NOCTA Private** trouve également sa place à Puteaux pour les événements à caractère plus intime : dîner de direction restreint dans un appartement de fonction, célébration de clôture pour une équipe projet, accueil à domicile d’un client stratégique. Ce format mobilise Hugo Vinatier en cuisine avec un service discret et maîtrisé, adapté aux espaces résidentiels ou semi-résidentiels. Comptez entre 70 et 250 € par personne, chef et service compris.
 
@@ -47,7 +47,7 @@ Intervenir dans les tours de La Défense ou sur les dalles de Puteaux impose une
 
 La réponse tient en peu de mots : une structure dimensionnée pour les événements B2B exigeants, implantée à quelques minutes du quartier, avec une équipe qui connaît les contraintes opérationnelles des espaces de bureaux et des tours.
 
-Hugo Vinatier apporte une maîtrise technique construite dans des maisons étoilées, appliquée à des volumes et des configurations qui n’ont rien à voir avec la restauration à l’assiette : cocktails à 80 personnes, plateaux de 15 couverts pour un CODIR, dîner debout en espace de réception sans office. Ce sont des formats différents, avec leurs propres contraintes, et la compétence qui compte ici n’est pas la même que celle d’un chef de restaurant.
+Hugo Vinatier apporte une maîtrise technique construite dans des maisons étoilées, appliquée à des volumes et des configurations qui n’ont rien à voir avec la restauration à l’assiette : cocktails à 80 personnes, déjeuners de 15 couverts pour un CODIR, dîner debout en espace de réception sans office. Ce sont des formats différents, avec leurs propres contraintes, et la compétence qui compte ici n’est pas la même que celle d’un chef de restaurant.
 
 Enzo Ryon prend en charge la sommellerie pour les dîners qui l’exigent — accord mets et vins structuré, service au verre, sélection adaptée à une table de direction ou à un événement de marque — et assure la relation directe avec les interlocuteurs côté client, sans intermédiaire.
 

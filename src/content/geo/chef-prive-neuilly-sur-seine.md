@@ -13,7 +13,7 @@ schemaType: "Service"
 
 Neuilly-sur-Seine concentre une part importante des réceptions privées du 92 : appartements de standing avenue du Roule, maisons avec jardin côté Bagatelle, duplex proches du bois de Boulogne. Ces adresses appellent un service qui s’adapte au lieu et à la table — pas l’inverse.
 
-NOCTA intervient à Neuilly-sur-Seine pour des dîners privés de 6 à 20 couverts. Hugo Vinatier, formé en cuisine étoilée, conçoit le menu en amont avec l’hôte : produits de saison, format en plusieurs services, dressage à l’envoi dans votre cuisine. Enzo Ryon assure la partie sommellerie — sélection de vins, service au verre, accord mets-vins pensé pour chaque plat — ou intervient en conseil si vous souhaitez mettre en valeur votre propre cave.
+NOCTA intervient à Neuilly-sur-Seine pour des dîners privés. À table, de quelques convives à une cinquantaine, selon le lieu et le mobilier disponible. Si besoin, la location de matériel est chiffrée dans le devis. Hugo Vinatier, formé en cuisine étoilée, conçoit le menu en amont avec l’hôte : produits de saison, format en plusieurs services, dressage à l’envoi dans votre cuisine. Enzo Ryon assure la partie sommellerie — sélection de vins, service au verre, accord mets-vins pensé pour chaque plat — ou intervient en conseil si vous souhaitez mettre en valeur votre propre cave.
 
 Le positionnement de NOCTA n’est pas celui d’un traiteur livrant des plateaux : l’équipe travaille dans vos locaux, sur votre matériel ou avec le sien si nécessaire, et repart en laissant la cuisine dans l’état où elle l’a trouvée. C’est un service de cuisine à domicile complet, de la mise en place jusqu’au débarrassage.
 

@@ -1,0 +1,236 @@
+---
+import Layout from '../../layouts/layout.astro';
+import Header from '../../components/header.astro';
+import Footer from '../../components/Footer.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import LogoSlider from '../../components/LogoSlider.astro';
+
+// Ce que comprend la prestation (rendu en liste numérotée, comme « Nos formats »).
+const inclus = [
+  'La sélection des vins, plat par plat ou pour l’ensemble de la réception.',
+  'La mise en condition : température de service, ouverture, carafage si nécessaire.',
+  'Le service pendant toute la réception, à table comme au cocktail.',
+];
+
+// FAQ : une seule liste alimente le texte visible ET le JSON-LD FAQPage
+// (même convention que /prestations : le balisage reprend le texte affiché
+// mot pour mot, par construction).
+const faq = [
+  {
+    q: 'Peut-on avoir un sommelier pour un dîner ou un gala d’entreprise ?',
+    a: 'Oui. Enzo Ryon, sommelier de NOCTA, compose l’accord mets-vins et assure le service pendant l’événement, à Paris, à La Défense et dans les Hauts-de-Seine.',
+  },
+  {
+    q: 'Comment le vin est-il facturé ?',
+    a: 'À la bouteille ouverte. Seules les bouteilles servies sont facturées ; le prix comprend la mise en condition et le service.',
+  },
+  {
+    q: 'Quels vins proposez-vous ?',
+    a: 'Des vins conventionnels, en biodynamie et nature, des bouteilles accessibles comme des vins sur allocation, choisis selon le menu et vos goûts.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((it) => ({
+    '@type': 'Question',
+    name: it.q,
+    acceptedAnswer: { '@type': 'Answer', text: it.a },
+  })),
+};
+
+const lien = 'underline underline-offset-4 decoration-nocta-black/25 hover:decoration-nocta-black text-nocta-black transition-colors';
+---
+
+<Layout
+  title="Sommelier pour événement et accords mets-vins | NOCTA"
+  description="Accords mets-vins sur mesure par Enzo Ryon, sommelier : dîners, galas et cocktails à Paris et La Défense. Service compris, facturé à la bouteille ouverte."
+>
+  <Header />
+
+  <main id="contenu">
+
+    <!-- Hero -->
+    <section class="relative min-h-[78svh] lg:min-h-screen flex flex-col justify-end bg-nocta-black overflow-hidden">
+      <div class="absolute inset-0">
+        <img
+          src="/images/nocta-table-haussmann-1200w.webp"
+          srcset="
+            /images/nocta-table-haussmann-400w.webp   400w,
+            /images/nocta-table-haussmann-800w.webp   800w,
+            /images/nocta-table-haussmann.webp       1232w
+          "
+          sizes="100vw"
+          alt="Grande table dressée dans un salon haussmannien, verres à vin à chaque couvert — sommellerie événementielle NOCTA"
+          width="1232"
+          height="1685"
+          class="w-full h-full object-cover"
+          style="object-position: center 60%;"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <!-- protege la lisibilite du menu, qui se superpose a la photo -->
+        <div class="absolute inset-x-0 top-0 h-36 pointer-events-none" style="background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.16) 55%, rgba(0,0,0,0) 100%);"></div>
+        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.70) 30%, rgba(0,0,0,0.45) 48%, rgba(0,0,0,0.10) 75%, rgba(0,0,0,0) 100%);"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-20 lg:pb-28 w-full">
+        <a href="/prestations" class="t-label inline-flex items-center gap-3 text-nocta-cream/60 hover:text-nocta-cream transition-colors duration-200 mb-12 animate-fade-up" style="animation-delay: 0.1s; opacity: 0;">
+          <span class="w-6 h-px bg-current inline-block"></span>
+          Nos Prestations
+        </a>
+        <h1 class="t-h1 text-nocta-cream max-w-4xl mb-6 animate-fade-up" style="animation-delay: 0.35s; opacity: 0;">
+          Sommellerie et accords mets-vins pour vos événements
+        </h1>
+        <p class="font-sans text-base lg:text-lg font-normal text-nocta-cream/70 max-w-2xl animate-fade-up" style="animation-delay: 0.5s; opacity: 0;">
+          Enzo Ryon, sommelier et cofondateur de NOCTA, compose l’accord mets-vins de chaque événement : à partir du menu retenu, ou de vos goûts si vous préférez partir du vin.
+        </p>
+      </div>
+    </section>
+
+    <!-- Ce que comprend la prestation -->
+    <section class="bg-nocta-cream py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+        <div class="mb-16 reveal">
+          <h2 class="t-h2 text-nocta-black">Ce que comprend la prestation</h2>
+        </div>
+
+        <div>
+          {inclus.map((texte, i) => (
+            <div
+              class:list={['border-t border-nocta-black/10 py-7 flex items-start gap-8 reveal', { 'border-b': i === inclus.length - 1 }]}
+              style={`transition-delay: ${(i + 1) * 5 / 100}s`}
+            >
+              <span class="t-eyebrow text-nocta-grey w-8 shrink-0 pt-2">{String(i + 1).padStart(2, '0')}</span>
+              <p class="font-serif text-xl md:text-2xl font-light text-nocta-black leading-snug">{texte}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Les vins -->
+    <section class="bg-nocta-black py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+
+          <div class="reveal">
+            <h2 class="t-h2 text-nocta-cream mb-8">Les vins</h2>
+            <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/60">
+              Des bouteilles que l’on retrouve facilement, comme des pépites et des vins sur allocation, beaucoup plus rares. Vins conventionnels, en biodynamie ou nature : notre seul critère est que le vin soit bon.
+            </p>
+          </div>
+
+          <div class="reveal" style="transition-delay: 0.15s">
+            <div class="aspect-[4/5] max-w-[420px] lg:ml-auto overflow-hidden">
+              <img
+                src="/images/nocta-corporate-enzo-800w.webp"
+                srcset="/images/nocta-corporate-enzo-400w.webp 400w, /images/nocta-corporate-enzo-800w.webp 800w, /images/nocta-corporate-enzo-1200w.webp 1200w, /images/nocta-corporate-enzo.webp 2054w"
+                sizes="(max-width: 1024px) 100vw, 420px"
+                alt="Enzo Ryon, sommelier de NOCTA, dresse les verres avant un dîner"
+                width="2054" height="2452" loading="lazy"
+                class="w-full h-full object-cover"
+                style="object-position: center 12%;" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Tarif -->
+    <section class="bg-nocta-cream pt-24 lg:pt-36 pb-12 lg:pb-16">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="reveal">
+          <h2 class="t-h2 text-nocta-black mb-8">Tarif</h2>
+          <p class="font-sans text-sm font-normal text-nocta-grey leading-relaxed max-w-2xl">
+            Le vin est facturé à la bouteille ouverte : seules les bouteilles servies sont décomptées. Le prix comprend la sélection, la mise en condition et le service. Il dépend des vins retenus et figure dans votre devis, envoyé sous 48 heures.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pour quels événements -->
+    <section class="bg-nocta-cream pb-24 lg:pb-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="border-t border-nocta-black/10 pt-16 reveal">
+          <h2 class="t-h2 text-nocta-black mb-8">Pour quels événements</h2>
+          <p class="font-sans text-sm font-normal text-nocta-grey leading-relaxed max-w-2xl">
+            Dîners privés <a href="/prestations/private" class={lien}>NOCTA Private</a>, dîners de direction et galas <a href="/prestations/corporate" class={lien}>NOCTA Corporate</a>, expériences <a href="/prestations/signature" class={lien}>NOCTA Signature</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preuve sociale : logos clients -->
+    <LogoSlider />
+
+    <!-- FAQ -->
+    <section class="bg-nocta-cream border-t border-nocta-black/10 py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+        <div class="mb-16 reveal">
+          <h2 class="t-h2 text-nocta-black">Questions fréquentes</h2>
+        </div>
+
+        <div class="max-w-3xl">
+          {faq.map((it, i) => (
+            <div
+              class:list={['border-t border-nocta-black/10 py-8 reveal', { 'border-b': i === faq.length - 1 }]}
+              style={`transition-delay: ${(i + 1) * 5 / 100}s`}
+            >
+              <h3 class="t-h3 text-xl lg:text-2xl text-nocta-black mb-4">{it.q}</h3>
+              <p class="font-sans text-sm font-normal leading-relaxed text-nocta-grey">{it.a}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Journal -->
+    <section class="bg-nocta-black py-24 lg:py-32">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="mb-12 reveal">
+          <p class="t-eyebrow text-nocta-cream/40 mb-4">À lire</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <a href="/journal/sommelier-evenement" class="group block border border-nocta-cream/10 p-8 hover:border-nocta-cream/30 transition-all duration-300 reveal" style="transition-delay: 0.1s">
+            <p class="t-eyebrow text-nocta-cream/40 mb-3">Expertise</p>
+            <p class="font-serif text-xl lg:text-2xl font-light text-nocta-cream group-hover:text-white transition-colors">Sommelier pour un événement : pourquoi ça change tout</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <CallToAction />
+
+  </main>
+
+  <Footer />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Sommellerie et accords mets-vins — NOCTA",
+    "description": "Accords mets-vins sur mesure par Enzo Ryon, sommelier : dîners, galas et cocktails à Paris et La Défense. Service compris, facturé à la bouteille ouverte.",
+    "provider": {"@type": "Organization", "name": "NOCTA Catering", "url": "https://www.noctaparis.fr"},
+    "areaServed": [{"@type": "City", "name": "Paris"}, {"@type": "AdministrativeArea", "name": "La Défense"}, {"@type": "AdministrativeArea", "name": "Hauts-de-Seine"}],
+    "serviceType": "Sommellerie événementielle"
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.noctaparis.fr/"},
+      {"@type": "ListItem", "position": 2, "name": "Prestations", "item": "https://www.noctaparis.fr/prestations"},
+      {"@type": "ListItem", "position": 3, "name": "Sommellerie", "item": "https://www.noctaparis.fr/prestations/sommellerie"}
+    ]
+  })} />
+
+</Layout>

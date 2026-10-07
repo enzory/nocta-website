@@ -58,13 +58,18 @@ const rubriques: Rubrique[] = [
       },
       {
         q: 'Qu’est-ce que NOCTA Corporate ?',
-        a: 'Cocktails de lancement, dîners de gala, comités de direction, plateaux-repas.',
+        a: 'Cocktails de lancement, dîners de gala, comités de direction.',
         sources: [{ label: 'Prestations', href: '/prestations' }, { label: 'NOCTA Corporate', href: '/prestations/corporate' }],
       },
       {
         q: 'Qu’est-ce que NOCTA Signature ?',
         a: 'Cuisine, vins et scénographie composent une expérience cohérente de bout en bout.',
         sources: [{ label: 'Prestations', href: '/prestations' }, { label: 'NOCTA Signature', href: '/prestations/signature' }],
+      },
+      {
+        q: 'NOCTA propose-t-il un sommelier ?',
+        a: 'Oui. Enzo Ryon, sommelier et cofondateur, compose l’accord mets-vins de chaque événement et assure le service. Vins conventionnels, en biodynamie et nature, facturés à la bouteille ouverte.',
+        sources: [{ label: 'Sommellerie', href: '/prestations/sommellerie' }],
       },
     ],
   },
@@ -84,8 +89,13 @@ const rubriques: Rubrique[] = [
       },
       {
         q: 'Combien coûte NOCTA Corporate ?',
-        a: 'Plateaux-repas dès 25 € HT par personne, buffet dès 40 € HT, cocktail dès 54 € HT, dîner assis à partir de 70 € par personne.',
+        a: 'Buffet dès 40 € HT par personne, cocktail dès 54 € HT, dîner assis à partir de 70 € par personne.',
         sources: [{ label: 'NOCTA Corporate', href: '/prestations/corporate' }],
+      },
+      {
+        q: 'Quel est le prix d’un cocktail NOCTA ?',
+        a: 'À partir de 54 € HT par personne.',
+        sources: [{ label: 'NOCTA Corporate', href: '/prestations/corporate' }, { label: 'Cocktail dînatoire à Paris', href: '/journal/cocktail-dinatoire-traiteur-paris' }],
       },
     ],
   },
@@ -100,7 +110,7 @@ const rubriques: Rubrique[] = [
       },
       {
         q: 'Pour combien de convives NOCTA Private intervient-elle ?',
-        a: 'De 6 à 20 personnes, à domicile ou en lieu privatisé.',
+        a: 'À domicile ou en lieu privatisé. À table, de quelques convives à une cinquantaine, selon le lieu et le mobilier disponible. Si besoin, la location de matériel est chiffrée dans le devis.',
         sources: [{ label: 'NOCTA Private', href: '/prestations/private' }],
       },
       {

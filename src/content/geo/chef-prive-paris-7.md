@@ -32,7 +32,7 @@ La prestation s’adresse aussi bien aux particuliers qui souhaitent marquer un 
 
 **NOCTA Signature** s’adresse aux hôtes qui souhaitent aller plus loin : un format entièrement conçu autour du lieu, de l’occasion et des invités. Cela peut prendre la forme d’un menu en plusieurs séquences avec service à table, d’une expérience organisée autour d’un producteur ou d’un terroir particulier, ou encore d’un dîner pensé pour accompagner un temps fort professionnel ou personnel. Ce format est établi sur devis, après un échange approfondi avec Enzo Ryon.
 
-**NOCTA Corporate** peut également convenir pour les comités de direction ou les dîners de présentation organisés dans le cadre professionnel. Si votre entreprise est domiciliée dans le 7e ou si vous souhaitez organiser un déjeuner de travail dans vos locaux, ce format propose des plateaux-repas structurés ou des cocktails dînatoires adaptés à vos contraintes horaires et logistiques.
+**NOCTA Corporate** peut également convenir pour les comités de direction ou les dîners de présentation organisés dans le cadre professionnel. Si votre entreprise est domiciliée dans le 7e ou si vous souhaitez organiser un déjeuner de travail dans vos locaux, ce format propose des buffets ou des cocktails dînatoires adaptés à vos contraintes horaires et logistiques.
 
 ## Logistique et contraintes d’intervention dans le 7e
 

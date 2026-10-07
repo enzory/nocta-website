@@ -7,8 +7,8 @@ import LogoSlider from '../../components/LogoSlider.astro';
 ---
 
 <Layout
-  title="Traiteur d’entreprise à Paris et plateaux-repas | NOCTA"
-  description="Traiteur d’entreprise à Paris et La Défense : plateaux-repas, cocktails de lancement, dîners de gala et comités de direction. Devis sous 48 heures."
+  title="Traiteur d’entreprise à Paris et La Défense | NOCTA"
+  description="Traiteur d’entreprise à Paris et La Défense : cocktails de lancement, dîners de gala, comités de direction et buffets. Devis sous 48 heures."
 >
   <Header />
 
@@ -137,15 +137,8 @@ import LogoSlider from '../../components/LogoSlider.astro';
               <p class="font-sans text-sm font-normal text-nocta-grey mt-2">Restauration soignée sur une ou plusieurs journées.</p>
             </div>
           </div>
-          <div class="border-t border-nocta-black/10 py-7 flex items-start gap-8 reveal" style="transition-delay: 0.3s">
+          <div class="border-t border-b border-nocta-black/10 py-7 flex items-start gap-8 reveal" style="transition-delay: 0.3s">
             <span class="t-eyebrow text-nocta-grey w-8 shrink-0 pt-2">06</span>
-            <div>
-              <h3 class="t-h3-lg text-nocta-black">Plateaux-repas</h3>
-              <p class="font-sans text-sm font-normal text-nocta-grey mt-2">Livraison soignée pour vos équipes. Le même soin, un format adapté.</p>
-            </div>
-          </div>
-          <div class="border-t border-b border-nocta-black/10 py-7 flex items-start gap-8 reveal" style="transition-delay: 0.35s">
-            <span class="t-eyebrow text-nocta-grey w-8 shrink-0 pt-2">07</span>
             <div>
               <h3 class="t-h3-lg text-nocta-black">Buffet</h3>
               <p class="font-sans text-sm font-normal text-nocta-grey mt-2">Mise en place complète, produits de qualité, service sur place si souhaité.</p>
@@ -163,10 +156,6 @@ import LogoSlider from '../../components/LogoSlider.astro';
           <p class="t-eyebrow text-nocta-grey mb-4">Tarifs indicatifs</p>
           <div class="space-y-4 mb-6">
             <div class="flex items-baseline gap-4">
-              <p class="font-serif text-xl md:text-2xl font-light text-nocta-black">Plateaux-repas</p>
-              <p class="font-sans text-sm font-normal text-nocta-grey">dès 25 € HT / pers.</p>
-            </div>
-            <div class="flex items-baseline gap-4">
               <p class="font-serif text-xl md:text-2xl font-light text-nocta-black">Buffet livré</p>
               <p class="font-sans text-sm font-normal text-nocta-grey">dès 40 € HT / pers.</p>
             </div>
@@ -181,6 +170,9 @@ import LogoSlider from '../../components/LogoSlider.astro';
           </div>
           <p class="font-sans text-sm font-normal text-nocta-grey leading-relaxed max-w-2xl">
             Chaque prestation est construite avec vous. Le tarif final dépend du format, du nombre de convives et du lieu.
+          </p>
+          <p class="font-sans text-sm font-normal text-nocta-grey leading-relaxed max-w-2xl mt-4">
+            Pour un dîner de direction ou un gala, Enzo Ryon compose l’accord mets-vins et assure le service : découvrez notre <a href="/prestations/sommellerie" class="underline underline-offset-4 decoration-nocta-black/25 hover:decoration-nocta-black text-nocta-black transition-colors">prestation de sommellerie</a>.
           </p>
         </div>
       </div>
@@ -272,11 +264,11 @@ import LogoSlider from '../../components/LogoSlider.astro';
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "NOCTA Corporate — Traiteur événementiel Paris",
-    "description": "Cocktails, dîners de gala, comités de direction, plateaux-repas et buffets pour entreprises à Paris et La Défense.",
+    "description": "Cocktails, dîners de gala, comités de direction et buffets pour entreprises à Paris et La Défense.",
     "provider": {"@type": "Organization", "name": "NOCTA Catering", "url": "https://www.noctaparis.fr"},
     "areaServed": [{"@type": "City", "name": "Paris"}, {"@type": "AdministrativeArea", "name": "La Défense"}, {"@type": "AdministrativeArea", "name": "Île-de-France"}],
     "serviceType": "Traiteur événementiel corporate",
-    "offers": {"@type": "AggregateOffer", "priceCurrency": "EUR", "lowPrice": "25", "highPrice": "70", "description": "Plateaux-repas dès 25 € HT/pers., buffet dès 40 €, cocktail dès 54 €, dîner assis à partir de 70 €/pers."}
+    "offers": {"@type": "AggregateOffer", "priceCurrency": "EUR", "lowPrice": "40", "highPrice": "70", "description": "Buffet dès 40 € HT/pers., cocktail dès 54 €, dîner assis à partir de 70 €/pers."}
   })} />
 
   <script type="application/ld+json" set:html={JSON.stringify({

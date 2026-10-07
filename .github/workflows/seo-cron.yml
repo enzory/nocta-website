@@ -12,8 +12,10 @@
 #   1. Checkout repo
 #   2. Setup Node 20 + install deps (@anthropic-ai/sdk, yaml)
 #   3. Run scripts/seo-auto-generate.mjs
-#   4. Si status == "published" → commit direct sur main
-#   5. Si status == "pr-review" → crée une branche + PR
+#   4. Garde-fou : build du site + scripts/facts_check.py. Si une page contredit
+#      les faits de référence, le job échoue ici et RIEN n'est publié.
+#   5. Crée une branche + une PR, QUELLE QUE SOIT la note du brand-check :
+#      plus aucun commit direct sur main. La note figure dans le titre de la PR.
 #   6. Si status == "empty-queue" ou "error" → log, pas de commit
 #
 # Secrets requis (Settings → Secrets and variables → Actions) :
@@ -39,12 +41,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: "20"
           cache: "npm"
@@ -69,26 +71,34 @@ jobs:
           STATUS=$(echo "$RESULT" | node -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>{try{console.log(JSON.parse(d).status||"")}catch{}})')
           SLUG=$(echo "$RESULT" | node -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>{try{console.log(JSON.parse(d).slug||"")}catch{}})')
           SCORE=$(echo "$RESULT" | node -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>{try{console.log(JSON.parse(d).score||"")}catch{}})')
+          VERDICT=$(echo "$RESULT" | node -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>{try{console.log(JSON.parse(d).verdict||"")}catch{}})')
 
           echo "status=$STATUS" >> $GITHUB_OUTPUT
           echo "slug=$SLUG"     >> $GITHUB_OUTPUT
           echo "score=$SCORE"   >> $GITHUB_OUTPUT
+          echo "verdict=$VERDICT" >> $GITHUB_OUTPUT
+
+      # ---------- Garde-fou : cohérence des faits AVANT toute publication ----------
+      # Ne tourne que si une page a été générée. facts_check.py lit dist/ et sort en
+      # erreur s'il trouve un fait contredit (prix, délai, plateaux-repas…) : l'étape
+      # échoue, les étapes de commit / push / PR ci-dessous sont sautées.
+      - name: Vérification des faits (build + facts_check)
+        if: steps.gen.outputs.status == 'pr-review'
+        run: |
+          pip install requests beautifulsoup4
+          npm run build
+          python3 scripts/facts_check.py
 
       - name: Configure git
-        if: steps.gen.outputs.status == 'published' || steps.gen.outputs.status == 'pr-review'
+        if: steps.gen.outputs.status == 'pr-review'
         run: |
           git config user.name  "nocta-seo-bot"
           git config user.email "seo-bot@noctaparis.fr"
 
-      # ---------- CAS 1 : auto-publish direct sur main ----------
-      - name: Commit + push (auto-publish)
-        if: steps.gen.outputs.status == 'published'
-        run: |
-          git add src/content/geo/ src/content/geo-queue.yaml
-          git commit -m "feat(seo): auto-publish ${{ steps.gen.outputs.slug }} (score ${{ steps.gen.outputs.score }})"
-          git push origin main
-
-      # ---------- CAS 2 : PR pour relecture Enzo ----------
+      # ---------- PR pour relecture Enzo (toujours, quelle que soit la note) ----------
+      # L'ancien « CAS 1 » (note >= 8 → commit + push direct sur main) est supprimé :
+      # aucune page ne part en ligne sans relecture. La note du brand-check est
+      # dans le titre de la PR, le verdict et les détails dans sa description.
       - name: Create PR (pr-review)
         if: steps.gen.outputs.status == 'pr-review'
         env:
@@ -97,16 +107,18 @@ jobs:
           BRANCH="seo/auto-${{ steps.gen.outputs.slug }}"
           git checkout -b "$BRANCH"
           git add src/content/geo/ src/content/geo-queue.yaml
-          git commit -m "feat(seo): draft ${{ steps.gen.outputs.slug }} — review requise (score ${{ steps.gen.outputs.score }})"
+          git commit -m "feat(seo): draft ${{ steps.gen.outputs.slug }} (brand-check ${{ steps.gen.outputs.score }}/10)"
           git push origin "$BRANCH"
 
           SLUG="${{ steps.gen.outputs.slug }}"
           SCORE="${{ steps.gen.outputs.score }}"
-          PR_BODY=$(printf 'Page GEO générée automatiquement, brand-check a flaggé des points à vérifier.\n\n**Slug** : %s\n**Score** : %s/10\n\nRelire le draft dans `src/content/geo/%s.md` avant merge.\n\n---\n_Généré automatiquement par seo-cron._' "$SLUG" "$SCORE" "$SLUG")
+          VERDICT="${{ steps.gen.outputs.verdict }}"
+          PR_BODY=$(printf 'Page GEO générée automatiquement. Garde-fou build + facts_check passé.\n\n**Slug** : %s\n**Note brand-check** : %s/10\n**Verdict brand-check** : %s\n\nRelire le draft dans `src/content/geo/%s.md` avant merge (le détail des points relevés est dans le log du job).\n\n---\n_Généré automatiquement par seo-cron._' "$SLUG" "$SCORE" "$VERDICT" "$SLUG")
+          # La note apparaît dans le titre : qualité visible d'un coup d'œil dans la liste des PR.
           gh pr create \
             --base main \
             --head "$BRANCH" \
-            --title "[SEO auto] $SLUG — review requise" \
+            --title "[SEO auto] $SLUG — brand-check $SCORE/10" \
             --body "$PR_BODY"
 
       # ---------- Log en cas de queue vide ----------

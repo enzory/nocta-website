@@ -1,13 +1,13 @@
 ---
 title: "Quel budget pour un traiteur à Paris en 2026 ?"
-description: "De 25 € le plateau-repas à 250 € le dîner gastronomique avec chef et sommelier : les vrais prix d’un traiteur à Paris en 2026, détaillés par format."
+description: "De 54 € HT le cocktail à 250 € le dîner gastronomique avec chef et sommelier : les vrais prix d’un traiteur à Paris en 2026, détaillés par format."
 date: 2026-03-26
 author: "Enzo Ryon"
 category: "Guide"
 readTime: 8
 ---
 
-Un traiteur haut de gamme à Paris coûte entre 25 € et 250 € par personne selon le format choisi. Pour un dîner privé avec chef et service, comptez 70 à 250 € par personne. Un cocktail revient à environ 50-55 € par personne sur une base de 12 pièces. Un plateau-repas démarre à 25 € HT. Chez NOCTA, le minimum de commande est de 500 € HT, sans minimum de convives — ce qui rend la prestation accessible dès 6-7 personnes pour un dîner.
+Un traiteur haut de gamme à Paris coûte entre 54 € et 250 € par personne selon le format choisi. Pour un dîner privé avec chef et service, comptez 70 à 250 € par personne. Un cocktail est à partir de 54 € HT par personne, sur une base de 12 pièces. Chez NOCTA, le minimum de commande est de 500 € HT, sans minimum de convives — ce qui rend la prestation accessible dès 6-7 personnes pour un dîner.
 
 Ces chiffres viennent de notre expérience sur plus de 50 événements réalisés à Paris et en Île-de-France, pour des particuliers comme pour des entreprises (Levi’s, The Galion Project, Jus Mundi, Colombus Consulting, entre autres). Voici le détail par format.
 
@@ -34,12 +34,6 @@ Pour un cocktail plus léger (6-8 pièces, en apéritif avant un dîner assis pa
 Les tarifs sont similaires au dîner privé. La différence se joue sur la logistique : en entreprise, la location de matériel (assiettes, verres, mobilier) n’est généralement pas incluse et dépend du lieu. Certains espaces corporate disposent de leur propre matériel, d’autres non.
 
 [NOCTA Corporate](/prestations/corporate) intervient régulièrement dans des contextes corporate exigeants : comités de direction, dîners de gala, cocktails de lancement. Nous gérons le timing serré, la confidentialité, et la logistique complexe — c’est notre métier depuis plus de 14 ans en haute gastronomie.
-
-## Plateaux-repas : à partir de 25 € HT
-
-C’est le format le plus accessible. À partir de 25 € HT par personne, NOCTA livre des plateaux-repas soignés — le même niveau d’exigence sur les produits, dans un format adapté au déjeuner de travail.
-
-Ce format convient aux séminaires, aux réunions d’équipe, ou simplement aux entreprises qui veulent offrir mieux qu’un sandwich à leurs collaborateurs sans organiser un service complet.
 
 ## Chef à domicile pour un séjour ou un séminaire
 

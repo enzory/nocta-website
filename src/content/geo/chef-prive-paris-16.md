@@ -15,7 +15,7 @@ Le 16e arrondissement concentre une clientèle qui reçoit chez elle avec exigen
 
 NOCTA intervient directement dans votre cuisine. Hugo Vinatier, chef formé en cuisine étoilée, prépare l’intégralité du repas sur place, de la mise en place à l’envoi. Enzo Ryon assure, selon les configurations, la sommellerie et la coordination en salle. Le service est complet : vous n’intervenez pas.
 
-Ce format s’adresse à des hôtes qui reçoivent entre huit et vingt couverts — famille, cercle professionnel, table d’amis proches — et souhaitent que la soirée tourne autour de la conversation, pas de la logistique.
+Ce format s’adresse à des hôtes qui reçoivent — famille, cercle professionnel, table d’amis proches — et souhaitent que la soirée tourne autour de la conversation, pas de la logistique. À table, de quelques convives à une cinquantaine, selon le lieu et le mobilier disponible. Si besoin, la location de matériel est chiffrée dans le devis.
 
 ---
 

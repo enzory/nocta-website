@@ -55,7 +55,7 @@ Sur le 16e, trois formats reviennent particulièrement :
 
 **Notre présence sur place dépend du format choisi :**
 
-- **Livraison de plateaux ou cocktail sans service** — installation puis récupération du matériel le lendemain.
+- **Livraison de bouchées ou de buffet sans service** — installation puis récupération du matériel le lendemain.
 - **Cocktail dînatoire avec service** — équipe en tenue pendant toute la durée du service.
 - **Dîner servi à table** — équipe complète : chef en cuisine, chef de salle, serveurs, sommelier sur demande.
 

@@ -11,7 +11,7 @@ faq:
   - question: "NOCTA intervient-il dans tous les arrondissements de Paris ?"
     answer: "Oui, NOCTA intervient sur l’ensemble de Paris, aussi bien dans les bureaux d’entreprise que dans des espaces privatisés ou des appartements. Il suffit de préciser le lieu lors de votre demande pour que nous évaluions les contraintes logistiques."
   - question: "Quel est le budget minimum pour organiser un événement avec NOCTA à Paris ?"
-    answer: "NOCTA intervient à partir de 500 € de commande, quel que soit le format retenu — cocktail debout, dîner assis ou plateau-repas."
+    answer: "NOCTA intervient à partir de 500 € de commande, quel que soit le format retenu — cocktail debout, dîner assis ou buffet."
   - question: "Dans quel délai peut-on obtenir un devis pour un départ en retraite ou un dîner d’équipe ?"
     answer: "Un devis est transmis sous 48 heures après réception de votre demande. Pour les événements nécessitant un menu adapté ou un format complexe, un échange téléphonique avec Enzo ou Hugo permet d’affiner le projet rapidement."
   - question: "Quels services sont inclus dans une prestation NOCTA Corporate à Paris ?"
@@ -28,7 +28,7 @@ Les événements corporate à Paris ont leurs propres contraintes : délais serr
 
 ## Formats NOCTA adaptés aux occasions parisiennes
 
-**NOCTA Corporate** est le format le plus sollicité pour les événements d’entreprise à Paris. Il couvre les cocktails debout, les galas, les dîners de comité de direction et les plateaux-repas. Le tarif varie selon le format retenu — cocktail ou dîner assis — et le niveau de service souhaité. Pour un départ en retraite, par exemple, le format cocktail debout permet de rassembler une équipe élargie dans un espace de travail transformé pour la soirée : pièces chaudes et froides en rotation, boissons gérées par Enzo, service fluide sans attroupement autour du buffet.
+**NOCTA Corporate** est le format le plus sollicité pour les événements d’entreprise à Paris. Il couvre les cocktails debout, les galas et les dîners de comité de direction. Le tarif varie selon le format retenu — cocktail ou dîner assis — et le niveau de service souhaité. Pour un départ en retraite, par exemple, le format cocktail debout permet de rassembler une équipe élargie dans un espace de travail transformé pour la soirée : pièces chaudes et froides en rotation, boissons gérées par Enzo, service fluide sans attroupement autour du buffet.
 
 **NOCTA Private** s’adresse aux occasions plus intimistes : un dîner d’équipe resserré à huit ou douze personnes, un déjeuner de direction dans un appartement parisien, une célébration à domicile. Hugo intervient directement en cuisine, avec mise en place sur place et dressage à l’envoi. Le menu est construit autour des contraintes du lieu et des préférences de la table — saison, intolérances, niveau de formalité souhaité.
 

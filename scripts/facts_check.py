@@ -5,8 +5,12 @@ Pourquoi : un assistant IA qui lit deux prix ou deux délais différents pour la
 même offre a moins de raisons de recommander NOCTA. Ce script cherche, dans les
 pages construites, les formulations qui contredisent les faits de référence.
 
-Faits de référence (validés par Enzo le 06/10/2026) :
+Faits de référence (validés par Enzo le 06/10/2026, complétés le 07/10/2026) :
   - NOCTA Private : entre 70 et 250 € par personne, chef et service compris
+  - NOCTA Private, convives : à table, de quelques convives à une cinquantaine,
+    selon le lieu et le mobilier disponible (location de matériel chiffrée dans le devis)
+  - Cocktail : à partir de 54 € HT par personne
+  - Plateaux-repas : non proposés actuellement
   - Minimum de commande : 500 € HT, hors livraison (jamais TTC)
   - Réservation : possible dès 24 heures à l'avance, selon disponibilité
     (une semaine conseillée pour les dîners servis et les événements de plus de 50 personnes)
@@ -28,7 +32,7 @@ from bs4 import BeautifulSoup
 # Chaque règle : (expression à NE PAS trouver, explication affichée)
 FORBIDDEN = [
     # « à partir de / dès / démarre à 55 € » = ancien prix d'entrée Private.
-    # (« 50-55 € » pour un cocktail ou « 55 € HT » pour un buffet restent légitimes.)
+    # (« 55 € HT » pour un buffet reste légitime.)
     (r"(?:à partir de|dès|démarre à)\s+55\s?(?:€|euros)", "prix Private obsolète (référence : 70 à 250 € par personne)"),
     # Délais de réservation qui imposent PLUS que 24 heures comme minimum
     # (une recommandation formulée comme un conseil reste autorisée).
@@ -45,6 +49,17 @@ FORBIDDEN = [
      "délai de devis en 24 h (référence : sous 48 heures)"),
     (r"500\s?€\s?TTC", "minimum de commande en TTC (référence : 500 € HT, hors livraison)"),
     (r"chef\s+étoilé", "règle éditoriale : écrire « formé en cuisine étoilée »"),
+    # Plateaux-repas : offre non proposée actuellement (logistique).
+    (r"plateaux?[\s-]repas", "offre non proposée actuellement (plateaux-repas) : retirer la mention"),
+    # Ancienne fourchette cocktail.
+    (r"\b50\s?(?:€\s?)?(?:-|–|à)\s?55\s?€", "fourchette cocktail obsolète (référence : à partir de 54 € HT par personne)"),
+    # Anciennes limites de convives Private.
+    (r"\b(?:4|6)\s?(?:-|–|à)\s?(?:8|20)\s+(?:convives|personnes|invités)"
+     r"|jusqu[’']à\s+(?:8|20)\s+(?:convives|personnes|invités)",
+     "ancienne limite de convives (référence : jusqu'à une cinquantaine selon le lieu et le mobilier)"),
+    # La fourchette Corporate doit toujours préciser HT.
+    (r"\b40\s?(?:€\s?)?(?:à|et|-|–)\s?70\s?(?:€|euros)(?!\s*HT)",
+     "fourchette Corporate sans « HT » (référence : de 40 à 70 € HT par personne)"),
 ]
 
 

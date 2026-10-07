@@ -56,7 +56,7 @@ Neuilly étant limitrophe de notre base de Courbevoie, nous restons disponibles 
 
 **Notre présence sur place dépend du format choisi :**
 
-- **Livraison de plateaux ou cocktail sans service** — nous livrons et installons, vous gérez sur place. Récupération du matériel le lendemain.
+- **Livraison de bouchées ou de buffet sans service** — nous livrons et installons, vous gérez sur place. Récupération du matériel le lendemain.
 - **Cocktail dînatoire avec service** — équipe en tenue présente du dressage au débarrassage.
 - **Dîner privé servi à table** — équipe complète : chef en cuisine, chef de salle, serveurs, sommelier selon votre demande.
 
