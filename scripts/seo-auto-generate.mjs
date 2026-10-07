@@ -9,19 +9,20 @@
  *   1. Charge src/content/geo-queue.yaml
  *   2. Pioche le premier sujet `pending` (priority DESC)
  *   3. Appelle Claude Sonnet 4.6 avec prompt système NOCTA
- *   4. Lance seo-brand-check.mjs sur le draft
- *   5. Si score >= 8 → écrit dans src/content/geo/ + met status=published
- *   6. Si score < 8 → écrit dans src/content/geo/ + met status=pr-review
- *                     (le workflow GH Actions crée alors une PR au lieu de merger)
- *   7. Persiste la queue mise à jour
+ *   4. Lance seo-brand-check.mjs sur le draft (note sur 10)
+ *   5. Écrit dans src/content/geo/ + met status=pr-review, QUELLE QUE SOIT la note :
+ *      plus aucune publication directe sur main. Le workflow ouvre toujours une PR
+ *      et affiche la note dans son titre, pour une relecture humaine avant merge.
+ *   6. Persiste la queue mise à jour
  *
  * Variables d'environnement requises :
  *   - ANTHROPIC_API_KEY   (secret GitHub Actions)
  *
  * Sortie JSON sur stdout pour le workflow :
- *   { "status": "published" | "pr-review" | "skipped" | "error",
+ *   { "status": "pr-review" | "empty-queue" | "error",
  *     "slug":   "traiteur-neuilly-sur-seine",
  *     "score":  8.5,
+ *     "verdict": "auto-publish" | ...,   (avis du brand-check, affiché dans la PR)
  *     "flags":  [...] }
  * ============================================================
  */
@@ -355,8 +356,12 @@ async function main() {
   await fs.writeFile(outPath, markdown, "utf-8");
   console.error(`   → ${path.relative(ROOT, outPath)}`);
 
-  // 5. Met à jour la queue
-  const newStatus = check.verdict === "auto-publish" ? "published" : "pr-review";
+  // 5. Met à jour la queue.
+  // Avant : une note >= 8 (verdict "auto-publish") publiait directement sur main.
+  // Désormais toute page passe par une PR relue à la main : le statut est
+  // toujours "pr-review", la note et le verdict sont transmis au workflow
+  // pour être affichés dans la PR.
+  const newStatus = "pr-review";
   updateTopicStatus(doc, topic.slug, newStatus);
   await saveQueue(doc);
 
@@ -367,6 +372,7 @@ async function main() {
       slug: topic.slug,
       zone: topic.zone,
       score: check.score,
+      verdict: check.verdict,
       flags: check.flags,
       file: path.relative(ROOT, outPath),
     })
