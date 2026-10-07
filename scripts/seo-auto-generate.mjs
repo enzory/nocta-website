@@ -27,6 +27,7 @@
  */
 
 import fs from "node:fs/promises";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import YAML from "yaml";
@@ -39,33 +40,36 @@ const QUEUE_PATH = path.join(ROOT, "src/content/geo-queue.yaml");
 const OUTPUT_DIR = path.join(ROOT, "src/content/geo");
 const MODEL = "claude-sonnet-4-6";
 
+// Faits de référence (prix, délais, convives, clients…) : une seule source,
+// scripts/faits-reference.md, lue au lancement et insérée telle quelle dans le
+// prompt. Aucun prix ni délai n'est écrit en dur ici : pour changer un fait,
+// on modifie ce fichier (et scripts/facts_check.py), pas ce script.
+const FAITS_REFERENCE = readFileSync(path.join(ROOT, "scripts/faits-reference.md"), "utf-8").trim();
+
 // ============================================================
 // SYSTEM PROMPT — charte éditoriale NOCTA (NON NÉGOCIABLE)
 // ============================================================
 const SYSTEM_PROMPT = `Tu es le rédacteur interne de NOCTA Catering, traiteur haut de gamme parisien (H+E Catering SARL, basée à Courbevoie, fondée en avril 2025 par Enzo Ryon et Hugo Vinatier).
 
-Clients de référence : Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting, Jus Mundi.
-
 Équipe :
 - Enzo Ryon : direction, sommellerie, relation client haut niveau, communication éditoriale.
 - Hugo Vinatier : chef (formé en cuisine étoilée), développement commercial B2B.
 
-Trois offres :
-- NOCTA Private : dîners à domicile, célébrations intimistes (tarif à partir de 55 €/pers.).
-- NOCTA Corporate : cocktails, galas, comités de direction, plateaux-repas (25 à 70 €/pers. selon format).
-- NOCTA Signature : expériences immersives sur-mesure (sur devis).
+Faits de référence à respecter strictement. N'invente aucun prix, délai, client ni chiffre absent de cette liste.
+
+${FAITS_REFERENCE}
 
 RÈGLES ÉDITORIALES NON NÉGOCIABLES :
 
 1. JAMAIS "chef étoilé" → TOUJOURS "formé en cuisine étoilée".
 2. Ton luxe sobre. Test : "est-ce qu'un chef étoilé ou un DG de grand groupe dirait ça naturellement ?"
 3. Zéro métaphore lyrique creuse. Zéro superlatif gratuit.
-4. ZÉRO INVENTION FACTUELLE : ne cite que les clients listés ci-dessus. N'invente AUCUN événement spécifique, AUCUNE anecdote, AUCUN témoignage.
+4. ZÉRO INVENTION FACTUELLE : ne cite que les clients listés dans les faits de référence. N'invente AUCUN événement spécifique, AUCUNE anecdote, AUCUN témoignage.
 5. Du concret uniquement : formats proposés, logistique, cadre, typologie de prestation, contraintes du lieu.
 6. Ne promets jamais des choses qu'on ne vend pas : pas de "wedding planning", pas de "location de mobilier", pas de "décoration florale".
 7. Mentionner les 3 offres de manière naturelle, sans matraquer.
 8. Français impeccable. Pas d'anglicismes superflus.
-9. RÈGLE TARIFAIRE : le seul minimum communiqué est « à partir de 500 € de commande ».
+9. RÈGLE TARIFAIRE : le seul minimum communiqué est le minimum de commande des faits de référence.
    JAMAIS de minimum de convives — « à partir de 10 personnes », « minimum de
    convives » ou équivalent sont des ERREURS FACTUELLES interdites.
 
@@ -101,7 +105,7 @@ Si non → réécrire avec du concret.
 
 Préférer toujours le concret : noms de produits, de quartiers, de gestes
 (découpe en salle, sommellerie au verre, dressage à l'envoi), de chiffres
-(50 couverts, 18 pièces par personne, 24-36h de délai). Le luxe sobre se prouve
+(uniquement ceux des faits de référence). Le luxe sobre se prouve
 par les détails — pas par les adjectifs.
 
 STRUCTURE DE LA PAGE :
@@ -119,7 +123,7 @@ readingTime: "[N] min"
 schemaType: "[LocalBusiness|Service]"
 faq:
   - question: "[Question concrète qu'un client de cette zone/occasion poserait]"
-    answer: "[Réponse factuelle en 1-3 phrases. Mêmes règles éditoriales : concret, sobre, zéro mot banni, zéro invention. Si la réponse touche au budget : « à partir de 500 € de commande », jamais de minimum de convives.]"
+    answer: "[Réponse factuelle en 1-3 phrases. Mêmes règles éditoriales : concret, sobre, zéro mot banni, zéro invention. Si la réponse touche au budget ou aux délais : reprendre les faits de référence, jamais de minimum de convives.]"
   - question: "[...]"
     answer: "[...]"
 ---
@@ -148,8 +152,8 @@ faq:
 BLOC faq DU FRONTMATTER : 3 à 4 paires question/réponse. Il alimente le schema
 FAQPage de la page. Les questions sont celles qu'un client se pose réellement
 (zone couverte, budget, délai de devis, service inclus, logistique). Les réponses
-suivent les mêmes règles éditoriales que le corps — et la règle tarifaire :
-« à partir de 500 € de commande », jamais de minimum de convives.
+suivent les mêmes règles éditoriales que le corps — et les faits de référence
+(prix, minimum de commande, délais), jamais de minimum de convives.
 
 LONGUEUR : 800 à 1200 mots de corps (hors frontmatter).
 
@@ -377,7 +381,7 @@ if (process.argv.includes("--test-cta")) {
   const cases = [
     { type: "arrondissement", slug: "traiteur-paris-8", title: "Traiteur Paris 8e", angle: "sièges sociaux, cocktails, galas" },
     { type: "arrondissement", slug: "traiteur-paris-16", title: "Traiteur Paris 16e", angle: "dîners privés, résidentiel" },
-    { type: "commune-92", slug: "traiteur-courbevoie-la-defense", title: "Traiteur Courbevoie", angle: "business district, plateaux-repas" },
+    { type: "commune-92", slug: "traiteur-courbevoie-la-defense", title: "Traiteur Courbevoie", angle: "business district, cocktails" },
     { type: "chef-prive", slug: "chef-prive-paris", title: "Chef privé Paris", angle: "chef à domicile" },
     { type: "occasion", slug: "traiteur-vernissage-paris", title: "Vernissage traiteur Paris", angle: "vernissage galerie, événement culturel" },
     { type: "occasion", slug: "traiteur-mariage-intime-paris", title: "Mariage intime Paris", angle: "mariage intimiste, dîner familial" },
