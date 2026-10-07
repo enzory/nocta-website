@@ -13,7 +13,7 @@ faq:
   - question: "Quel est le budget minimum pour un dîner privé avec chef à domicile ?"
     answer: "Les prestations NOCTA démarrent à partir de 500 € de commande. Le tarif final dépend du format retenu, du nombre de convives et du niveau de service souhaité."
   - question: "Quel délai faut-il prévoir pour réserver un chef à domicile dans le 7e ?"
-    answer: "Un délai de 72 heures minimum est conseillé pour une prestation NOCTA Private. Pour les formats Signature avec menu entièrement construit autour du lieu et de l’occasion, nous recommandons de contacter l’équipe au moins deux semaines à l’avance."
+    answer: "Nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant. Pour un format Signature construit autour du lieu et de l’occasion, nous conseillons deux semaines."
   - question: "Le service inclut-il la sommellerie ?"
     answer: "Oui. Enzo Ryon, sommelier de formation, peut intégrer une sélection de vins au menu ou intervenir en conseil à part entière selon le format choisi. La carte est construite en cohérence avec les plats et adaptée à vos préférences."
 ---

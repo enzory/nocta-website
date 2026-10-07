@@ -19,7 +19,7 @@ NOCTA intervient à Paris pour des crémaillères de 10 à 80 personnes, selon l
 
 ## Les formats NOCTA adaptés à une crémaillère
 
-**NOCTA Private** est le format naturel pour une crémaillère en appartement. Il couvre les dîners assis et les formats cocktail dînatoire à domicile, à partir de 55 € par personne. Le menu est construit en fonction du nombre de convives, de la configuration de la cuisine disponible, des préférences alimentaires communiquées en amont. Le service est assuré par l’équipe NOCTA : dressage, envoi des plats, gestion des verres. La vaisselle et les couverts peuvent être fournis selon les besoins du lieu.
+**NOCTA Private** est le format naturel pour une crémaillère en appartement. Il couvre les dîners assis à domicile, entre 70 et 250 € par personne, chef et service compris. Le menu est construit en fonction du nombre de convives, de la configuration de la cuisine disponible, des préférences alimentaires communiquées en amont. Le service est assuré par l’équipe NOCTA : dressage, envoi des plats, gestion des verres. La vaisselle et les couverts peuvent être fournis selon les besoins du lieu.
 
 Pour une crémaillère plus nombreuse — au-delà de trente personnes — ou dans un espace qui s’y prête (duplex avec terrasse, loft, appartement haussmannien avec grande salle de réception), **NOCTA Corporate** peut s’appliquer à un cadre privé. Ce format est pensé pour les cocktails avec pièces chaudes et froides, service au plateau, buffet construit autour de produits de saison. Il est facturé entre 25 et 70 € par personne selon le volume et le niveau de service souhaité.
 
@@ -35,7 +35,7 @@ Un appartement parisien est rarement pensé pour accueillir un service de traite
 
 **Le bruit et les voisins** : la crémaillère se tient souvent tard en semaine ou le week-end. Le service NOCTA ne génère pas de nuisances supplémentaires : l’équipe travaille en silence, le nettoyage de la cuisine est inclus en fin de prestation, et aucun matériel sonore n’est fourni ni recommandé dans le cadre de nos prestations.
 
-**Le délai de confirmation** : pour une crémaillère à Paris, un délai minimum de cinq à sept jours ouvrés est nécessaire pour garantir l’approvisionnement en produits frais et la disponibilité de l’équipe. Pour les dates de forte demande — vendredi soir, samedi soir, week-ends de mi-saison —, une réservation deux à trois semaines à l’avance est conseillée.
+**Le délai de réservation** : Nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour une crémaillère avec dîner servi, nous conseillons de nous contacter une semaine avant, le temps de garantir l’approvisionnement en produits frais et la disponibilité de l’équipe. Pour les dates de forte demande — vendredi soir, samedi soir, week-ends de mi-saison —, une réservation deux à trois semaines à l’avance est conseillée.
 
 ## Pourquoi faire appel à NOCTA pour sa crémaillère
 

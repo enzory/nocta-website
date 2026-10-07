@@ -21,7 +21,7 @@ Le profil type de nos clients dans le 2e : directeurs généraux qui reçoivent 
 
 **NOCTA Corporate** est le format le plus sollicité dans cet arrondissement. Il couvre les cocktails debout (18 à 24 pièces par personne, service en 45 à 90 minutes), les cocktails dînatoires avec stations chaudes, et les plateaux-repas pour comités de direction. La fourchette tarifaire va de 25 à 70 € par personne selon le format et le nombre de couverts. Ce cadre convient aussi bien à une salle de réunion de 20 personnes qu’à un plateau ouvert de 120 invités. Le service peut être assuré en gants blancs ou en tenue sobre selon le registre souhaité.
 
-**NOCTA Private** trouve également sa place dans le 2e, notamment pour les dîners intimistes organisés dans des appartements de direction ou des suites privatisées. À partir de 55 € par personne, ce format propose un menu construit autour des produits de saison, dressé à l’envoi, avec une proposition de vins sélectionnés par Enzo Ryon en accord avec chaque plat. Le nombre de couverts est limité — typiquement 8 à 20 personnes — ce qui permet un service attentif et une cuisine servie dans les conditions d’un restaurant.
+**NOCTA Private** trouve également sa place dans le 2e, notamment pour les dîners intimistes organisés dans des appartements de direction ou des suites privatisées. Ce format propose un menu construit autour des produits de saison, dressé à l’envoi, avec une proposition de vins sélectionnés par Enzo Ryon en accord avec chaque plat. Comptez entre 70 et 250 € par personne, chef et service compris. Le nombre de couverts est limité — typiquement 8 à 20 personnes — ce qui permet un service attentif et une cuisine servie dans les conditions d’un restaurant.
 
 **NOCTA Signature** s’adresse aux projets qui sortent des formats standards : dîner de gala dans un lieu patrimonial, soirée de lancement avec scénographie culinaire intégrée, événement construit autour d’un lieu ou d’une contrainte spécifique. Ce format est proposé sur devis, après un premier échange pour qualifier le projet. Il convient aux entreprises dont l’événement constitue un moment de représentation à part entière.
 
@@ -33,7 +33,7 @@ Les cuisines sur place sont souvent absentes ou réduites à un coin kitchenette
 
 Le stationnement d’un véhicule utilitaire le temps du montage et du service reste le point de friction le plus fréquent dans cet arrondissement. Nous gérons cette logistique en interne, mais une coordination avec le gestionnaire de l’immeuble ou le responsable événementiel côté client facilite significativement l’intervention.
 
-Délai de traitement habituel : 24 à 36 heures pour un devis Corporate standard. Pour les formats Signature ou les événements dépassant 80 couverts, un délai de 5 à 7 jours ouvrés est nécessaire pour garantir la qualité de la prestation.
+Réponse à toute demande de devis sous 48 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16. Pour les formats Signature, les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant.
 
 ## Pourquoi NOCTA dans le 2e arrondissement
 

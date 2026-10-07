@@ -13,7 +13,7 @@ faq:
   - question: "Quel est le budget minimum pour un dîner privé à domicile dans le 8e ?"
     answer: "Les prestations NOCTA Private démarrent à partir de 500 € de commande. Le devis est établi selon le nombre de convives, le menu retenu et les options de service souhaitées."
   - question: "Combien de temps faut-il pour obtenir un devis ?"
-    answer: "Un premier devis est adressé sous 24 à 36 heures ouvrées après réception de votre demande via le formulaire de contact. Les prestations complexes peuvent nécessiter un échange téléphonique préalable."
+    answer: "Réponse à toute demande de devis sous 48 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16. Les prestations complexes peuvent nécessiter un échange téléphonique préalable."
   - question: "La sommellerie est-elle incluse dans la prestation dîner privé ?"
     answer: "NOCTA intègre une proposition d’accords mets et vins à chaque dîner privé. Enzo Ryon, sommelier et directeur de l’entreprise, peut accompagner la sélection des vins selon le menu et le profil de votre table."
 ---
@@ -28,7 +28,7 @@ Ce type de prestation répond à plusieurs logiques : un anniversaire intime, un
 
 ## Les formats NOCTA adaptés à un dîner privé dans le 8e
 
-**NOCTA Private** est le format central pour cette zone et ce type de demande. Il couvre les dîners à domicile, les célébrations intimistes, les repas de famille ou entre associés. Le menu est construit selon vos envies et les produits disponibles : poissons de ligne, viandes maturées, légumes de saison sourcés auprès de producteurs identifiés. Le service inclut l’installation, le dressage, le service en salle et le nettoyage complet de la cuisine après prestation. Comptez un délai de réservation de 72 heures minimum pour un format standard.
+**NOCTA Private** est le format central pour cette zone et ce type de demande. Il couvre les dîners à domicile, les célébrations intimistes, les repas de famille ou entre associés. Le menu est construit selon vos envies et les produits disponibles : poissons de ligne, viandes maturées, légumes de saison sourcés auprès de producteurs identifiés. Le service inclut l’installation, le dressage, le service en salle et le nettoyage complet de la cuisine après prestation. Nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité.
 
 **NOCTA Corporate** peut également intervenir dans le 8e pour des comités de direction tenus dans un appartement professionnel ou un espace de réception privatif. Le format cocktail dînatoire (18 à 22 pièces par personne) ou le dîner assis en salle à manger sont les deux configurations les plus demandées dans cet arrondissement pour ce type d’usage.
 
@@ -52,6 +52,6 @@ Pour un dîner dans le 8e, nous recommandons de prendre contact au moins une sem
 
 ## Demande de devis
 
-Vous recevez dans le 8e arrondissement et souhaitez un dîner construit selon vos contraintes et votre table. Transmettez-nous la date, le nombre de convives et le cadre général via le formulaire de contact. Un premier retour vous parvient sous 24 à 36 heures ouvrées.
+Vous recevez dans le 8e arrondissement et souhaitez un dîner construit selon vos contraintes et votre table. Transmettez-nous la date, le nombre de convives et le cadre général via le formulaire de contact. Réponse à toute demande de devis sous 48 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.
 
 [Faire une demande de devis <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

@@ -19,7 +19,7 @@ L’équipe est basée à Courbevoie. Le temps de déplacement vers le 4e est ma
 
 ## Formats adaptés au 4e arrondissement
 
-**NOCTA Private** convient aux dîners organisés dans des appartements du Marais ou sur l’Île Saint-Louis. Hugo Vinatier, formé en cuisine étoilée, prend en charge l’intégralité de la mise en place, du dressage à l’envoi, jusqu’au débarrassage complet. Le menu est construit selon les envies de l’hôte, le gabarit de la cuisine disponible et le nombre de couverts — de 6 à 20 personnes selon la configuration du lieu. Enzo Ryon peut assurer la sommellerie au verre, avec une sélection adaptée au menu servi. Tarif à partir de 55 €/personne.
+**NOCTA Private** convient aux dîners organisés dans des appartements du Marais ou sur l’Île Saint-Louis. Hugo Vinatier, formé en cuisine étoilée, prend en charge l’intégralité de la mise en place, du dressage à l’envoi, jusqu’au débarrassage complet. Le menu est construit selon les envies de l’hôte, le gabarit de la cuisine disponible et le nombre de couverts — de 6 à 20 personnes selon la configuration du lieu. Enzo Ryon peut assurer la sommellerie au verre, avec une sélection adaptée au menu servi. Comptez entre 70 et 250 € par personne, chef et service compris.
 
 **NOCTA Corporate** s’adresse aux entreprises qui organisent un cocktail, un comité de direction ou un déjeuner de travail dans une salle louée dans le 4e — galerie d’art transformée en espace de réception, salle de séminaire en sous-sol d’hôtel ou terrasse d’un immeuble de bureaux. Nous prenons en charge la restauration et le service, de 20 à plusieurs centaines de convives selon le format. Les plateaux-repas démarraient à 25 €/personne ; les cocktails dînatoires sont calibrés entre 40 et 70 €/personne selon le nombre de pièces servies et la présence d’un bar à boissons.
 
@@ -45,4 +45,4 @@ Nous ne proposons pas de décoration, de location de mobilier ni de coordination
 
 ## Demande de devis
 
-Vous organisez un dîner privé dans le Marais, un cocktail d’entreprise sur l’Île Saint-Louis ou un événement culturel dans le 4e arrondissement ? Transmettez-nous la date, le nombre de convives et les contraintes du lieu via notre [formulaire de contact](/contact). Nous revenons vers vous sous 24 à 36 heures avec une proposition adaptée.
+Vous organisez un dîner privé dans le Marais, un cocktail d’entreprise sur l’Île Saint-Louis ou un événement culturel dans le 4e arrondissement ? Transmettez-nous la date, le nombre de convives et les contraintes du lieu via notre [formulaire de contact](/contact). Nous revenons vers vous sous 48 heures avec une proposition adaptée. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.

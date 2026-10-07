@@ -23,7 +23,7 @@ Les clients servis par NOCTA — Boucheron, Biologique Recherche, The Galion Pro
 
 **NOCTA Corporate** est le format central pour les entreprises du quartier. Il couvre les cocktails dinatoires, les galas, les plateaux-repas de comité de direction et les déjeuners d’affaires. La fourchette tarifaire va de 25 à 70 € par personne selon le format retenu — cocktail debout en fin d’après-midi, dîner assis avec service en salle, ou plateau structuré pour un conseil d’administration en configuration resserrée. Chaque intervention est pensée autour de la capacité du lieu, du nombre de convives et du déroulé de la soirée ou du déjeuner : pas de menu standard appliqué mécaniquement, mais un cadre construit autour de ce que vous organisez.
 
-**NOCTA Private** trouve également sa place à Puteaux pour les événements à caractère plus intime : dîner de direction restreint dans un appartement de fonction, célébration de clôture pour une équipe projet, accueil à domicile d’un client stratégique. Ce format, à partir de 55 € par personne, mobilise Hugo Vinatier en cuisine avec un service discret et maîtrisé, adapté aux espaces résidentiels ou semi-résidentiels.
+**NOCTA Private** trouve également sa place à Puteaux pour les événements à caractère plus intime : dîner de direction restreint dans un appartement de fonction, célébration de clôture pour une équipe projet, accueil à domicile d’un client stratégique. Ce format mobilise Hugo Vinatier en cuisine avec un service discret et maîtrisé, adapté aux espaces résidentiels ou semi-résidentiels. Comptez entre 70 et 250 € par personne, chef et service compris.
 
 **NOCTA Signature** s’adresse aux projets qui sortent du cadre standard : inauguration d’un plateau, lancement de marque dans un espace non équipé, dîner thématique pour une délégation internationale. Ce format est construit sur devis, après échange sur le lieu, le concept et les contraintes opérationnelles. Enzo Ryon intervient directement sur la sélection des vins et la conduite du service en salle, avec une attention portée à la cohérence entre ce qui est servi et le message que l’événement doit porter.
 
@@ -39,7 +39,7 @@ Intervenir dans les tours de La Défense ou sur les dalles de Puteaux impose une
 
 **Stationnement et accès véhicule.** La zone La Défense est soumise aux restrictions de circulation habituelles des quartiers d’affaires denses. Nous gérons la logistique de stationnement en amont et ne reportons pas ces contraintes sur le client le jour de l’événement.
 
-**Délais de confirmation.** Pour une prestation corporate à Puteaux ou La Défense, nous travaillons sur un délai minimum de 24 à 36 heures pour les formats Corporate standards, et d’une semaine à dix jours pour les formats Signature nécessitant une visite de lieu et une construction de menu spécifique.
+**Délais de réservation.** Pour une prestation corporate à Puteaux ou La Défense, nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour les formats Signature nécessitant une visite de lieu et une construction de menu spécifique, nous conseillons de nous contacter une semaine à dix jours avant.
 
 ---
 

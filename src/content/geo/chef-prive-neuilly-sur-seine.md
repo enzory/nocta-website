@@ -19,7 +19,7 @@ Le positionnement de NOCTA n’est pas celui d’un traiteur livrant des plateau
 
 ## Formats NOCTA adaptés à Neuilly-sur-Seine
 
-**NOCTA Private** est le format conçu pour ce type de prestation. À partir de 55 € par personne, il couvre les dîners intimistes, les célébrations en petit comité et les tablées familiales où la qualité du menu prime. Le menu est adapté à votre table : nombre de convives, contraintes alimentaires, tonalité souhaitée (déjeuner décontracté ou dîner structuré en cinq services). Hugo Vinatier propose systématiquement un échange préalable pour caler le menu — aucun format figé ne s’applique sans discussion.
+**NOCTA Private** est le format conçu pour ce type de prestation. Il couvre les dîners intimistes, les célébrations en petit comité et les tablées familiales où la qualité du menu prime. Comptez entre 70 et 250 € par personne, chef et service compris. Le menu est adapté à votre table : nombre de convives, contraintes alimentaires, tonalité souhaitée (déjeuner décontracté ou dîner structuré en cinq services). Hugo Vinatier propose systématiquement un échange préalable pour caler le menu — aucun format figé ne s’applique sans discussion.
 
 **NOCTA Signature** répond aux demandes qui dépassent le cadre du dîner standard : réception pour un anniversaire marquant, célébration intime sur plusieurs jours, format immersif autour d’un thème ou d’un producteur. Ce format est conçu autour du lieu et des attentes spécifiques de l’hôte, sur devis, sans grille tarifaire prédéfinie.
 
@@ -31,7 +31,7 @@ Neuilly-sur-Seine présente des configurations variées selon les quartiers. Les
 
 Dans les immeubles sans monte-charge ou avec un accès restreint, NOCTA prend contact avec l’hôte en amont pour anticiper les contraintes : gabarit du matériel, horaires de livraison acceptés par la copropriété, surface de travail disponible en cuisine. Un repérage téléphonique est systématiquement réalisé 48 heures avant la prestation pour éviter toute improvisation le jour J.
 
-La cuisine de l’hôte est évaluée dès la confirmation : puissance des feux, four disponible, plan de travail. Si certains équipements manquent, NOCTA apporte le nécessaire — induction de complément, matériel de dressage, verrerie de service. Le délai minimal pour organiser une prestation à Neuilly est de 24 à 36 heures pour un dîner simple ; comptez 5 à 7 jours pour un format Signature avec approvisionnement spécifique.
+La cuisine de l’hôte est évaluée dès la confirmation : puissance des feux, four disponible, plan de travail. Si certains équipements manquent, NOCTA apporte le nécessaire — induction de complément, matériel de dressage, verrerie de service. Nous pouvons intervenir à Neuilly dès 24 heures à l’avance, selon disponibilité. Pour les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant, notamment pour un format Signature avec approvisionnement spécifique.
 
 Le stationnement en soirée reste accessible dans la plupart des rues résidentielles de Neuilly, ce qui facilite le départ de l’équipe en fin de service sans contrainte horaire imposée.
 

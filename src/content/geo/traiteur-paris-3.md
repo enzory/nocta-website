@@ -23,7 +23,7 @@ La clientèle du 3e est souvent exigeante sur l’esthétique du dressage et la 
 
 **NOCTA Signature** s’adresse aux marques ou aux clients qui souhaitent faire de la table un élément central de leur événement. Dans un showroom du Marais, cela peut signifier un menu en accord avec une collection, une sélection de vins naturels discutée avec Enzo Ryon, ou un format de dégustation commentée en fin de soirée. Ce format est établi sur devis, après échange direct avec l’équipe.
 
-**NOCTA Private** reste disponible pour des dîners à domicile dans le 3e, à partir de 55 € par personne — pour des résidents qui souhaitent recevoir chez eux avec un niveau de service comparable à celui d’un restaurant gastronomique, sans en gérer la logistique.
+**NOCTA Private** reste disponible pour des dîners à domicile dans le 3e, entre 70 et 250 € par personne, chef et service compris — pour des résidents qui souhaitent recevoir chez eux avec un niveau de service comparable à celui d’un restaurant gastronomique, sans en gérer la logistique.
 
 ## Logistique et contraintes spécifiques au 3e arrondissement
 
@@ -33,7 +33,7 @@ Les espaces événementiels du secteur présentent fréquemment des particularit
 
 La majorité des showrooms et galeries du 3e ne disposent pas de cuisine équipée. Notre équipe travaille en autonomie complète : le matériel de cuisson, le matériel de service et la vaisselle sont apportés par nos soins. Aucune dépendance à l’infrastructure du lieu n’est présupposée dans nos devis.
 
-Le délai de préparation que nous recommandons est de 24 à 36 heures minimum pour un cocktail de moins de 50 personnes, et d’une semaine pour tout événement assis avec service à table ou format Signature.
+Nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour les dîners servis, les formats Signature et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant.
 
 ## Pourquoi faire appel à NOCTA dans le 3e arrondissement
 

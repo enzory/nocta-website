@@ -7,7 +7,7 @@ category: "Guide"
 readTime: 7
 ---
 
-Un chef privé à domicile à Paris, c’est un chef qui vient cuisiner chez vous, avec ses produits, son équipe et son matériel si nécessaire. Chez NOCTA, le chef Hugo Vinatier — formé à L’Astrance (3 étoiles) et aux côtés de Thierry Marx — se déplace avec un maître d’hôtel sommelier et une équipe adaptée au nombre de convives. Le dîner est préparé sur place, servi à table, et la cuisine est rendue propre en fin de soirée. Comptez entre 70 et 250 € par personne selon le menu, chef et service compris, avec un minimum de commande de 500 € HT. Le délai de réservation minimum est de 3 jours.
+Un chef privé à domicile à Paris, c’est un chef qui vient cuisiner chez vous, avec ses produits, son équipe et son matériel si nécessaire. Chez NOCTA, le chef Hugo Vinatier — formé à L’Astrance (3 étoiles) et aux côtés de Thierry Marx — se déplace avec un maître d’hôtel sommelier et une équipe adaptée au nombre de convives. Le dîner est préparé sur place, servi à table, et la cuisine est rendue propre en fin de soirée. Comptez entre 70 et 250 € par personne selon le menu, chef et service compris, avec un minimum de commande de 500 € HT. NOCTA peut intervenir dès 24 heures à l’avance, selon disponibilité.
 
 Voici le déroulé concret d’un dîner privé à domicile avec NOCTA, de la prise de contact au dernier coup d’éponge.
 
@@ -49,9 +49,9 @@ Pour un comparatif détaillé de tous les formats et budgets, consultez [notre g
 
 ## Le délai de réservation
 
-NOCTA peut intervenir avec un délai minimum de 3 jours. C’est rare dans le métier — la plupart des services de chef privé demandent 2 à 3 semaines. Ce délai court est possible parce que Hugo travaille avec des fournisseurs réactifs et un réseau de producteurs locaux qu’il connaît bien.
+NOCTA peut intervenir dès 24 heures à l’avance, selon disponibilité. C’est rare dans le métier — la plupart des services de chef privé demandent 2 à 3 semaines. Ce délai court est possible parce que Hugo travaille avec des fournisseurs réactifs et un réseau de producteurs locaux qu’il connaît bien.
 
-Évidemment, plus vous réservez tôt, plus le choix des dates est large. Pour un dîner un samedi soir en haute saison, mieux vaut prévoir 2 à 3 semaines d’avance.
+Pour les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant. Et plus vous réservez tôt, plus le choix des dates est large : pour un dîner un samedi soir en haute saison, mieux vaut prévoir 2 à 3 semaines d’avance.
 
 ## Pour quelles occasions faire appel à un chef privé
 

@@ -21,7 +21,7 @@ Ce format s’adresse à des hôtes qui reçoivent entre huit et vingt couverts 
 
 ## Les formats NOCTA adaptés au 16e
 
-**NOCTA Private** est le format conçu pour les dîners à domicile. À partir de 55 € par personne, le menu est construit selon votre table : nombre de convives, régimes alimentaires, saison, degré de formalité souhaité. Pas de carte imposée. Le chef arrive en amont, travaille dans votre cuisine, dresse à l’envoi. La vaisselle reste la vôtre — ou nous pouvons prévoir le matériel nécessaire selon votre équipement.
+**NOCTA Private** est le format conçu pour les dîners à domicile. Comptez entre 70 et 250 € par personne, chef et service compris. Le menu est construit selon votre table : nombre de convives, régimes alimentaires, saison, degré de formalité souhaité. Pas de carte imposée. Le chef arrive en amont, travaille dans votre cuisine, dresse à l’envoi. La vaisselle reste la vôtre — ou nous pouvons prévoir le matériel nécessaire selon votre équipement.
 
 **NOCTA Signature** s’adresse aux occasions qui demandent une construction plus poussée : anniversaire de grande ampleur, réception autour d’un vin spécifique, dîner thématique autour d’un terroir ou d’un producteur. Ce format est établi sur devis, après un échange avec Enzo Ryon pour cadrer le concept, les accords mets-vins et la progression du repas.
 
@@ -35,7 +35,7 @@ Intervenir dans le 16e implique une lecture sérieuse des contraintes d’accès
 
 Les maisons d’Auteuil et du secteur Jasmin offrent souvent une entrée directe de plain-pied ou un accès cour, ce qui facilite le déchargement. Dans les immeubles récents proches du Trocadéro, l’accès au sous-sol ou à la livraison nécessite une réservation ou une coordination avec le gardien.
 
-Notre processus inclut systématiquement un échange préalable sur ces points : dimensions du monte-charge, superficie de la cuisine, nombre de plaques disponibles, équipement en place. Cela conditionne la faisabilité technique du menu envisagé. Nous travaillons avec un délai minimum de 24 à 36 heures pour les dîners NOCTA Private, davantage pour les formats NOCTA Signature avec accords mets-vins.
+Notre processus inclut systématiquement un échange préalable sur ces points : dimensions du monte-charge, superficie de la cuisine, nombre de plaques disponibles, équipement en place. Cela conditionne la faisabilité technique du menu envisagé. Nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant — davantage pour les formats NOCTA Signature avec accords mets-vins.
 
 Le stationnement pour notre véhicule de livraison peut se révéler contraint sur certains axes — avenue Henri-Martin, rue de la Pompe en soirée. Nous anticipons ce point et arrivons avec la marge nécessaire pour ne pas impacter l’heure de démarrage du service.
 

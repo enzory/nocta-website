@@ -1,0 +1,237 @@
+---
+// ============================================================
+// /nocta-en-bref — les faits essentiels, en questions-réponses.
+// ============================================================
+// Pour les assistants IA et les acheteurs pressés.
+//
+// RÈGLE : uniquement des faits DÉJÀ présents ailleurs sur le site, chacun
+// avec sa page source. Aucun chiffre ne doit naître ici : si un fait change,
+// on le change d'abord sur sa page source, puis ici.
+//
+// Une seule liste alimente le texte visible ET le JSON-LD FAQPage : le
+// balisage reprend donc le texte affiché mot pour mot, par construction
+// (exigence de Google pour les données structurées FAQ).
+// ============================================================
+import Layout from '../layouts/layout.astro';
+import Header from '../components/header.astro';
+import Footer from '../components/Footer.astro';
+
+type Source = { label: string; href: string };
+type Item = { q: string; a: string; sources: Source[] };
+type Rubrique = { id: string; titre: string; items: Item[] };
+
+const rubriques: Rubrique[] = [
+  {
+    id: 'qui-sommes-nous',
+    titre: 'Qui sommes-nous',
+    items: [
+      {
+        q: 'Qu’est-ce que NOCTA ?',
+        a: 'NOCTA est une maison de traiteur événementiel et de chef à domicile, basée à Courbevoie, au service des entreprises et des particuliers.',
+        sources: [{ label: 'Notre Maison', href: '/maison' }],
+      },
+      {
+        q: 'Qui a fondé NOCTA ?',
+        a: 'Hugo Vinatier, chef, formé à L’Astrance, chez Akrame et aux côtés de Thierry Marx. Enzo Ryon, maître d’hôtel et sommelier, 14 ans dans la haute gastronomie et l’hôtellerie de luxe.',
+        sources: [{ label: 'Notre Maison', href: '/maison' }],
+      },
+      {
+        q: 'Quand NOCTA a-t-elle été créée ?',
+        a: 'NOCTA a été fondée en avril 2025.',
+        sources: [{ label: 'Traiteur vernissage à Paris', href: '/traiteur/traiteur-vernissage-paris' }],
+      },
+      {
+        q: 'Quelle est l’adresse de NOCTA ?',
+        a: 'H+E Catering SARL, 2 bis rue Edith Cavell, 92400 Courbevoie. SIRET : 943 364 463 00019.',
+        sources: [{ label: 'Mentions légales', href: '/mentions-legales' }],
+      },
+    ],
+  },
+  {
+    id: 'offres',
+    titre: 'Offres',
+    items: [
+      {
+        q: 'Qu’est-ce que NOCTA Private ?',
+        a: 'Dîners à domicile, anniversaires, célébrations familiales.',
+        sources: [{ label: 'Prestations', href: '/prestations' }, { label: 'NOCTA Private', href: '/prestations/private' }],
+      },
+      {
+        q: 'Qu’est-ce que NOCTA Corporate ?',
+        a: 'Cocktails de lancement, dîners de gala, comités de direction, plateaux-repas.',
+        sources: [{ label: 'Prestations', href: '/prestations' }, { label: 'NOCTA Corporate', href: '/prestations/corporate' }],
+      },
+      {
+        q: 'Qu’est-ce que NOCTA Signature ?',
+        a: 'Cuisine, vins et scénographie composent une expérience cohérente de bout en bout.',
+        sources: [{ label: 'Prestations', href: '/prestations' }, { label: 'NOCTA Signature', href: '/prestations/signature' }],
+      },
+    ],
+  },
+  {
+    id: 'prix',
+    titre: 'Prix indicatifs et minimum de commande',
+    items: [
+      {
+        q: 'Quel est le minimum de commande ?',
+        a: '500 € HT de commande minimum, hors frais de livraison, sans minimum de convives.',
+        sources: [{ label: 'Prestations', href: '/prestations' }],
+      },
+      {
+        q: 'Combien coûte NOCTA Private ?',
+        a: 'Entre 70 et 250 € par personne, chef et service compris.',
+        sources: [{ label: 'NOCTA Private', href: '/prestations/private' }, { label: 'Chef privé à domicile à Paris', href: '/journal/chef-prive-domicile-paris' }],
+      },
+      {
+        q: 'Combien coûte NOCTA Corporate ?',
+        a: 'Plateaux-repas dès 25 € HT par personne, buffet dès 40 € HT, cocktail dès 54 € HT, dîner assis à partir de 70 € par personne.',
+        sources: [{ label: 'NOCTA Corporate', href: '/prestations/corporate' }],
+      },
+    ],
+  },
+  {
+    id: 'convives',
+    titre: 'Nombre de convives',
+    items: [
+      {
+        q: 'Y a-t-il un nombre minimum de convives ?',
+        a: 'Pas de minimum de convives : seul le minimum de commande s’applique.',
+        sources: [{ label: 'Quel budget pour un traiteur à Paris', href: '/journal/budget-traiteur-paris' }],
+      },
+      {
+        q: 'Pour combien de convives NOCTA Private intervient-elle ?',
+        a: 'De 6 à 20 personnes, à domicile ou en lieu privatisé.',
+        sources: [{ label: 'NOCTA Private', href: '/prestations/private' }],
+      },
+      {
+        q: 'Pour combien de convives en entreprise ?',
+        a: 'Cocktails d’entreprise de 60 à 150 personnes.',
+        sources: [{ label: 'Cocktail d’entreprise à Paris', href: '/traiteur/traiteur-cocktail-entreprise-paris' }],
+      },
+    ],
+  },
+  {
+    id: 'zones',
+    titre: 'Zones desservies',
+    items: [
+      {
+        q: 'Où NOCTA intervient-elle ?',
+        a: 'Paris, Île-de-France et La Défense. NOCTA intervient aussi dans toute la France : les frais de transport sont alors à la charge du client, ainsi que l’hébergement de l’équipe si un séjour sur place est nécessaire.',
+        sources: [{ label: 'Prestations', href: '/prestations' }, { label: 'Zones desservies', href: '/traiteur' }],
+      },
+    ],
+  },
+  {
+    id: 'delais',
+    titre: 'Délais de réservation et de devis',
+    items: [
+      {
+        q: 'Combien de temps à l’avance faut-il réserver ?',
+        a: 'Nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant.',
+        sources: [{ label: 'Prestations', href: '/prestations' }],
+      },
+      {
+        q: 'Sous quel délai reçoit-on un devis ?',
+        a: 'Réponse à toute demande de devis sous 48 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.',
+        sources: [{ label: 'Contact', href: '/contact' }],
+      },
+    ],
+  },
+  {
+    id: 'references',
+    titre: 'Références clients',
+    items: [
+      {
+        q: 'Quels clients ont fait appel à NOCTA ?',
+        a: 'Levi’s, Boucheron, The Galion Project, Biologique Recherche, Colombus Consulting, Jus Mundi, AA Conseil, Messika, Originator.',
+        sources: [{ label: 'Accueil', href: '/' }, { label: 'Zones desservies', href: '/traiteur' }],
+      },
+      {
+        q: 'Combien d’événements NOCTA a-t-elle réalisés ?',
+        a: 'Plus de 50 événements réalisés à Paris et en Île-de-France. Note de 5/5 sur Google.',
+        sources: [{ label: 'Accueil', href: '/' }, { label: 'Contact', href: '/contact' }],
+      },
+    ],
+  },
+  {
+    id: 'contact',
+    titre: 'Contact',
+    items: [
+      {
+        q: 'Comment contacter NOCTA ?',
+        a: 'contact@noctaparis.fr · 06 50 01 16 16 · formulaire de demande de devis.',
+        sources: [{ label: 'Formulaire de demande de devis', href: '/contact' }],
+      },
+    ],
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: rubriques.flatMap((r) =>
+    r.items.map((it) => ({
+      '@type': 'Question',
+      name: it.q,
+      acceptedAnswer: { '@type': 'Answer', text: it.a },
+    })),
+  ),
+};
+---
+
+<Layout
+  title="NOCTA en bref : offres, prix, zones et délais"
+  description="Les faits essentiels sur NOCTA, traiteur et chef à domicile basé à Courbevoie : fondateurs, offres, prix indicatifs, zones desservies, délais et contact."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.noctaparis.fr/"},
+      {"@type": "ListItem", "position": 2, "name": "NOCTA en bref", "item": "https://www.noctaparis.fr/nocta-en-bref"}
+    ]
+  })} />
+
+  <Header light />
+
+  <main id="contenu" class="bg-nocta-cream min-h-screen min-h-svh">
+
+    <section class="pt-40 pb-16 lg:pt-52 lg:pb-20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <p class="t-eyebrow text-nocta-grey mb-6">Questions-réponses</p>
+        <h1 class="t-h1 xl:text-7xl text-nocta-black">NOCTA en bref</h1>
+      </div>
+    </section>
+
+    <section class="pb-28 lg:pb-40">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="max-w-3xl">
+          {rubriques.map((r) => (
+            <section id={r.id} class="mb-16" aria-labelledby={`${r.id}-titre`}>
+              <h2 id={`${r.id}-titre`} class="t-h2 text-nocta-black mb-8">{r.titre}</h2>
+              {r.items.map((it) => (
+                <div class="border-t border-nocta-black/10 py-8">
+                  <h3 class="t-h3 text-xl lg:text-2xl text-nocta-black mb-4">{it.q}</h3>
+                  <p class="font-sans text-base font-normal leading-relaxed text-nocta-black/80">{it.a}</p>
+                  <p class="font-sans text-sm font-normal text-nocta-grey mt-3">
+                    {it.sources.length > 1 ? 'Sources' : 'Source'} :{' '}
+                    {it.sources.map((s, i) => (
+                      <>
+                        {i > 0 && ', '}
+                        <a href={s.href} class="underline underline-offset-4 decoration-nocta-black/25 hover:decoration-nocta-black text-nocta-black/80">{s.label}</a>
+                      </>
+                    ))}
+                  </p>
+                </div>
+              ))}
+            </section>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
