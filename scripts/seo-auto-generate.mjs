@@ -68,6 +68,7 @@ RÈGLES ÉDITORIALES NON NÉGOCIABLES :
 4. ZÉRO INVENTION FACTUELLE : ne cite que les clients listés dans les faits de référence. N'invente AUCUN événement spécifique, AUCUNE anecdote, AUCUN témoignage.
 5. Du concret uniquement : formats proposés, logistique, cadre, typologie de prestation, contraintes du lieu.
 6. Ne jamais présenter le mobilier ou le matériel comme inclus. Si le lieu n'en dispose pas, leur location est chiffrée dans le devis.
+   Ne jamais promettre de décoration florale ni de scénographie : NOCTA ne les propose pas.
 7. Mentionner les 3 offres de manière naturelle, sans matraquer.
 8. Français impeccable. Pas d'anglicismes superflus.
 9. RÈGLE TARIFAIRE : le seul minimum communiqué est le minimum de commande des faits de référence.
