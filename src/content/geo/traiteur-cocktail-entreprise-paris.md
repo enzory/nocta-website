@@ -21,7 +21,7 @@ NOCTA travaille avec des directions générales, des équipes marketing et des r
 
 ## Formats NOCTA adaptés au cocktail d’entreprise parisien
 
-**NOCTA Corporate** est le format central pour ce type de prestation. Il couvre les cocktails déjeunatoires, les réceptions en soirée et les comités de direction. Les tarifs s’échelonnent de 40 à 70 € par personne selon la densité du service : nombre de pièces servies, présence d’un sommelier, service en salle ou buffet dressé. Pour un cocktail de 60 à 150 personnes avec passage de canapés chauds et froids, service au plateau et sélection de vins au verre, le format Corporate répond à l’essentiel.
+**NOCTA Corporate** est le format central pour ce type de prestation. Il couvre les cocktails déjeunatoires, les réceptions en soirée et les comités de direction. Les tarifs s’échelonnent de 40 à 70 € HT par personne selon la densité du service : nombre de pièces servies, présence d’un sommelier, service en salle ou buffet dressé. Pour un cocktail de 60 à 150 personnes avec passage de canapés chauds et froids, service au plateau et sélection de vins au verre, le format Corporate répond à l’essentiel.
 
 Pour les événements qui demandent davantage de construction — une inauguration avec un espace atypique, une soirée clients avec une scénographie particulière du repas, un format hybride entre cocktail assis et buffet — **NOCTA Signature** s’impose. Ce format est conçu sur devis, en dialogue direct avec votre équipe, à partir des contraintes du lieu et de vos objectifs pour la soirée.
 

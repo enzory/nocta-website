@@ -21,7 +21,7 @@ La clientèle visée est celle des entreprises qui soignent leurs rendez-vous in
 
 ## Les formats NOCTA adaptés aux séminaires et offsite
 
-**NOCTA Corporate** est le format central pour ce type de prestation. Il couvre les cocktails déjeunatoires, les déjeuners de comité de direction assis, les buffets de mi-journée et les formats cocktail en fin de journée. La fourchette tarifaire s’étend de 40 à 70 € par personne selon le volume, le nombre de services et le niveau de mise en place requis. Pour un comité de direction de huit à douze personnes avec un déjeuner en trois services, le cadrage budgétaire est établi dès la première prise de contact.
+**NOCTA Corporate** est le format central pour ce type de prestation. Il couvre les cocktails déjeunatoires, les déjeuners de comité de direction assis, les buffets de mi-journée et les formats cocktail en fin de journée. La fourchette tarifaire s’étend de 40 à 70 € HT par personne selon le volume, le nombre de services et le niveau de mise en place requis. Pour un comité de direction de huit à douze personnes avec un déjeuner en trois services, le cadrage budgétaire est établi dès la première prise de contact.
 
 Ce format intègre la constitution du menu, l’approvisionnement, le transport, le dressage sur place et le service en salle. Il ne comprend pas la location de mobilier ni d’équipements spécifiques : si l’espace est nu, il faut anticiper ce point en amont avec un prestataire dédié. NOCTA s’adapte aux espaces déjà équipés — salles de réunion avec office, lofts professionnels avec cuisine, espaces événementiels dotés de préparation.
 

@@ -57,6 +57,9 @@ FORBIDDEN = [
     (r"\b(?:4|6)\s?(?:-|–|à)\s?(?:8|20)\s+(?:convives|personnes|invités)"
      r"|jusqu[’']à\s+(?:8|20)\s+(?:convives|personnes|invités)",
      "ancienne limite de convives (référence : jusqu'à une cinquantaine selon le lieu et le mobilier)"),
+    # La fourchette Corporate doit toujours préciser HT.
+    (r"\b40\s?(?:€\s?)?(?:à|et|-|–)\s?70\s?(?:€|euros)(?!\s*HT)",
+     "fourchette Corporate sans « HT » (référence : de 40 à 70 € HT par personne)"),
 ]
 
 
