@@ -28,6 +28,11 @@ const faq = [
     q: 'Quels vins proposez-vous ?',
     a: 'Des vins conventionnels, en biodynamie et nature, des bouteilles accessibles comme des vins sur allocation, choisis selon le menu et vos goûts.',
   },
+  {
+    // \u00A0 = espace insécable : le « ? » ne passe jamais seul à la ligne.
+    q: 'Proposez-vous du conseil en vins en dehors des événements\u00A0?',
+    a: 'Oui. Enzo Ryon accompagne la création de cartes des vins pour les restaurants, bars et hôtels, et la conception de caves pour les particuliers et les entreprises. Sur devis.',
+  },
 ];
 
 const faqSchema = {
@@ -40,12 +45,36 @@ const faqSchema = {
   })),
 };
 
+// Prestations de conseil (hors événement) : un Service schema.org chacune,
+// sur le modèle du Service « Sommellerie et accords mets-vins » plus bas.
+const zonesServies = [{ '@type': 'City', name: 'Paris' }, { '@type': 'AdministrativeArea', name: 'La Défense' }, { '@type': 'AdministrativeArea', name: 'Hauts-de-Seine' }];
+const servicesConseil = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Création de carte des vins — NOCTA',
+    description: 'Création de carte des vins pour un restaurant, un bar ou un hôtel par Enzo Ryon, sommelier : sélection des vins en fonction de la cuisine et de la clientèle, et construction de la carte. Sur devis.',
+    provider: { '@type': 'Organization', name: 'NOCTA Catering', url: 'https://www.noctaparis.fr' },
+    areaServed: zonesServies,
+    serviceType: 'Création de carte des vins',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Conception de cave — NOCTA',
+    description: 'Conception de cave pour un particulier ou une entreprise par Enzo Ryon, sommelier : une cave pensée selon les goûts et le budget, des vins à boire rapidement comme des vins de garde. Sur devis.',
+    provider: { '@type': 'Organization', name: 'NOCTA Catering', url: 'https://www.noctaparis.fr' },
+    areaServed: zonesServies,
+    serviceType: 'Conception de cave',
+  },
+];
+
 const lien = 'underline underline-offset-4 decoration-nocta-black/25 hover:decoration-nocta-black text-nocta-black transition-colors';
 ---
 
 <Layout
   title="Sommelier pour événement et accords mets-vins | NOCTA"
-  description="Accords mets-vins sur mesure par Enzo Ryon, sommelier : dîners, galas et cocktails à Paris et La Défense. Service compris, facturé à la bouteille ouverte."
+  description="Accords mets-vins, carte des vins et conception de cave par Enzo Ryon, sommelier de NOCTA, à Paris et La Défense. Devis sous 48 heures."
 >
   <Header />
 
@@ -153,6 +182,30 @@ const lien = 'underline underline-offset-4 decoration-nocta-black/25 hover:decor
       </div>
     </section>
 
+    <!-- Conseil : carte des vins et conception de cave (hors événement).
+         &nbsp; avant « : » pour que la ponctuation ne passe jamais seule à la ligne. -->
+    <section class="bg-nocta-cream pb-12 lg:pb-16">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="border-t border-nocta-black/10 pt-16 reveal">
+          <h2 class="t-h2 text-nocta-black mb-8">Conseil&nbsp;: carte des vins et conception de cave</h2>
+          <p class="font-sans text-sm font-normal text-nocta-grey leading-relaxed max-w-2xl">
+            Au-delà de l’événement, Enzo Ryon accompagne celles et ceux qui veulent construire une carte ou une cave dans la durée.
+          </p>
+          <ul class="mt-6 space-y-4 max-w-2xl">
+            <li class="font-sans text-sm font-normal text-nocta-grey leading-relaxed">
+              <span class="text-nocta-black font-medium">Création de carte des vins&nbsp;:</span> pour un restaurant, un bar ou un hôtel. Sélection des vins en fonction de la cuisine et de la clientèle, et construction de la carte.
+            </li>
+            <li class="font-sans text-sm font-normal text-nocta-grey leading-relaxed">
+              <span class="text-nocta-black font-medium">Conception de cave&nbsp;:</span> pour un particulier ou une entreprise. Une cave pensée selon vos goûts et votre budget, des vins à boire rapidement comme des vins de garde.
+            </li>
+          </ul>
+          <p class="font-sans text-sm font-normal text-nocta-grey leading-relaxed max-w-2xl mt-6">
+            Ces missions sont réalisées sur devis, après un premier échange.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Pour quels événements -->
     <section class="bg-nocta-cream pb-24 lg:pb-36">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
@@ -221,6 +274,10 @@ const lien = 'underline underline-offset-4 decoration-nocta-black/25 hover:decor
     "areaServed": [{"@type": "City", "name": "Paris"}, {"@type": "AdministrativeArea", "name": "La Défense"}, {"@type": "AdministrativeArea", "name": "Hauts-de-Seine"}],
     "serviceType": "Sommellerie événementielle"
   })} />
+
+  {servicesConseil.map((service) => (
+    <script type="application/ld+json" set:html={JSON.stringify(service)} />
+  ))}
 
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 

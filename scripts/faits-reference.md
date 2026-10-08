@@ -33,6 +33,7 @@ Tout texte publié sur le site doit respecter ces faits. En cas de doute, ne pas
 - Accord mets-vins composé à partir du menu retenu ou des goûts du client.
 - Bouteilles faciles à retrouver comme pépites et vins sur allocation.
 - Vins conventionnels, en biodynamie et nature ; le critère est que le vin soit bon.
+- Conseil : création de carte des vins (restaurants, bars, hôtels) et conception de cave (particuliers, entreprises), sur devis.
 
 ## Clients citables
 - Levi's, Boucheron, The Galion Project, Biologique Recherche, Colombus Consulting, Jus Mundi, AA Conseil, Messika, Originator.
