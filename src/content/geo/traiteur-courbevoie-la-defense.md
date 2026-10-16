@@ -27,7 +27,7 @@ faq:
   - question: "Acceptez-vous les protocoles d’accès sécurisé (badges, contrôle d’identité) ?"
     answer: "Oui. Nous travaillons régulièrement dans des sièges sociaux où l’accès est filtré et nous nous adaptons à votre procédure de sécurité."
   - question: "Combien coûte un cocktail dînatoire pour 30 personnes à La Défense ?"
-    answer: "Le tarif dépend du nombre de pièces par convive, du niveau de prestation et de la durée du service. Comptez à partir de quelques dizaines d’euros par personne pour un format léger, davantage pour un cocktail signature avec animation. Devis sur demande."
+    answer: "Le tarif dépend du nombre de pièces par convive, du niveau de prestation et de la durée du service. Un cocktail dînatoire démarre à 54 € HT par personne, davantage pour un cocktail signature avec animation. Devis sur demande."
 ---
 
 NOCTA est un traiteur événementiel installé à Courbevoie. Cette implantation locale nous permet d’intervenir avec réactivité sur le quartier d’affaires de La Défense, à Courbevoie même, et dans les communes voisines de l’ouest parisien.

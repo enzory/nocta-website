@@ -14,7 +14,7 @@ Tout texte publié sur le site doit respecter ces faits. En cas de doute, ne pas
 - NOCTA Private : « Comptez entre 70 et 250 € par personne, chef et service compris. »
 - Cocktail dînatoire : à partir de 54 € HT par personne.
 - Buffet livré : dès 40 € HT par personne.
-- Corporate : de 40 à 70 € HT par personne selon le format.
+- Corporate : buffet livré dès 40 € HT et cocktail dînatoire dès 54 € HT par personne. Ne jamais attacher le prix du buffet (40 €) à un cocktail.
 - Minimum de commande : 500 € HT, hors livraison. Pas de minimum de convives.
 - Vin : facturé à la bouteille ouverte ; sélection, mise en condition et service compris.
 
