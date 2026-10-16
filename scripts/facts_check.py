@@ -14,7 +14,7 @@ Faits de référence (validés par Enzo le 06/10/2026, complétés le 07/10/2026
   - Minimum de commande : 500 € HT, hors livraison (jamais TTC)
   - Réservation : possible dès 24 heures à l'avance, selon disponibilité
     (une semaine conseillée pour les dîners servis et les événements de plus de 50 personnes)
-  - Réponse aux demandes de devis : sous 48 heures (urgences : par téléphone)
+  - Réponse aux demandes de devis : sous 24 heures (urgences : par téléphone)
   - Règle éditoriale : jamais « chef étoilé » (toujours « formé en cuisine étoilée »)
 
 Usage :
@@ -43,10 +43,10 @@ FORBIDDEN = [
      "ancien délai minimum de réservation (référence : dès 24 heures, selon disponibilité)"),
     # Anciennes fourchettes : 24 à 36 h, 36 h, 24 à 48 h.
     (r"\b24\s?(?:h|heures)?\s?à\s?(?:36|48)\s?(?:h\b|heures)|\b36\s?(?:h\b|heures\b)",
-     "ancienne fourchette de délai (référence : réservation dès 24 h, devis sous 48 h)"),
-    # Un devis promis en 24 h contredit la règle des 48 heures.
-    (r"devis[^.]{0,60}\b24\s?(?:h\b|heures)|\b24\s?(?:h\b|heures)[^.]{0,40}(?:devis|première proposition)",
-     "délai de devis en 24 h (référence : sous 48 heures)"),
+     "ancienne fourchette de délai (référence : réservation dès 24 h, devis sous 24 h)"),
+    # Un devis promis en 48 h contredit la règle des 24 heures.
+    (r"devis[^.]{0,60}\b48\s?(?:h\b|heures)|\b48\s?(?:h\b|heures)[^.]{0,40}(?:devis|proposition|première proposition)",
+     "délai de devis en 48 h (référence : sous 24 heures)"),
     (r"500\s?€\s?TTC", "minimum de commande en TTC (référence : 500 € HT, hors livraison)"),
     (r"chef\s+étoilé", "règle éditoriale : écrire « formé en cuisine étoilée »"),
     # Plateaux-repas : offre non proposée actuellement (logistique).
@@ -57,9 +57,12 @@ FORBIDDEN = [
     (r"\b(?:4|6)\s?(?:-|–|à)\s?(?:8|20)\s+(?:convives|personnes|invités)"
      r"|jusqu[’']à\s+(?:8|20)\s+(?:convives|personnes|invités)",
      "ancienne limite de convives (référence : jusqu'à une cinquantaine selon le lieu et le mobilier)"),
-    # La fourchette Corporate doit toujours préciser HT.
-    (r"\b40\s?(?:€\s?)?(?:à|et|-|–)\s?70\s?(?:€|euros)(?!\s*HT)",
-     "fourchette Corporate sans « HT » (référence : de 40 à 70 € HT par personne)"),
+    # La fourchette Corporate 40-70 est retirée : buffet et cocktail ont des planchers distincts.
+    (r"\b40\s?(?:€\s?)?(?:à|et|-|–)\s?70\s?(?:€|euros)",
+     "fourchette Corporate 40-70 retirée (référence : buffet dès 40 € HT, cocktail dînatoire dès 54 € HT par personne)"),
+    # Le prix du buffet (40 €) ne doit jamais être attaché à un cocktail dans la même phrase.
+    (r"cocktail[^.;]{0,80}(?:dès|à partir de|de)\s+40\s?(?:€|euros)|(?<![Bb]uffet )(?:dès|à partir de)\s+40\s?(?:€|euros)[^.;]{0,60}cocktail",
+     "prix du buffet attaché à un cocktail (référence : cocktail dînatoire dès 54 € HT par personne)"),
 ]
 
 
