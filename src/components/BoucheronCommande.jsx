@@ -56,20 +56,20 @@ const getTier = (totalPieces) => {
 
 const CATALOGUE = {
   proteine: [
-    { id: "p1", nom: "Pic courgette en violon, mozzarella et crevette" },
-    { id: "p2", nom: "Trident saumon, gel de citron vert, laquage aigre-doux, cébette et sésame" },
-    { id: "p3", nom: "Pic estival : pêche, mozzarella, basilic et jambon" },
+    { id: "p1", nom: "Blinis saumon, crème montée" },
+    { id: "p2", nom: "Feuilleté de lamelles de volaille, persil et parmesan" },
+    { id: "p3", nom: "Magret de canard, confiture de figues et pain d'épices" },
     { id: "p4", nom: "Bouchée : gressin et charcuterie (enroulé)" },
   ],
   veggie: [
-    { id: "v1", nom: "Trident végétarien : cube de polenta au parmesan, tomate confite et tapenade noire" },
-    { id: "v2", nom: "Pic salade grecque" },
-    { id: "v3", nom: "Pic italien : tomate, olive et artichauts confits" },
-    { id: "v4", nom: "Finger végétarien : financier à l'olive noire, confit d'oignons et pickles" },
+    { id: "v1", nom: "Tartelette crémeux avocat et passion" },
+    { id: "v2", nom: "Endive, poire, noix et fromage de chèvre" },
+    { id: "v3", nom: "Tartelette champignons au thym" },
+    { id: "v4", nom: "Pomme grenaille rôtie, crème citronnée, ciboulette et pistache" },
   ],
   sweet: [
-    { id: "mini-pavlova",  nom: "Mini pavlova, duo de fruits de saison" },
-    { id: "mini-canneles", nom: "Mini cannelés" },
+    { id: "mini-canneles",       nom: "Mini cannelés" },
+    { id: "tartelette-chocolat", nom: "Tartelette chocolat et cacao" },
   ],
 };
 
