@@ -13,7 +13,7 @@ faq:
   - question: "Quel est le minimum pour faire appel à vous ?"
     answer: "Nos prestations démarrent à partir de 500 € de commande. Un dîner intime avec chef et service en salle entre donc pleinement dans nos formats."
   - question: "Sous quel délai recevons-nous un devis ?"
-    answer: "Sous 48 heures après un premier échange. Le devis est gratuit et détaille le menu, le service et la logistique propres à votre lieu."
+    answer: "Sous 24 heures après un premier échange. Le devis est gratuit et détaille le menu, le service et la logistique propres à votre lieu."
   - question: "Proposez-vous un accord mets et vins ?"
     answer: "Oui. Enzo, sommelier formé en restaurant étoilé, compose la sélection de vins en fonction du menu et de vos invités. C’est une ligne directrice, pas une liste."
 ---
@@ -52,4 +52,4 @@ Nous n’avons pas vocation à proposer de la décoration florale, du mobilier �
 
 ## Demande de devis
 
-Pour un événement à Boulogne-Billancourt — qu’il s’agisse d’un cocktail d’entreprise, d’un dîner privé ou d’une prestation intégrée à un événement de communication — vous pouvez nous adresser votre demande depuis la page contact. Précisez le format, la date, le nombre de convives et les contraintes du lieu : nous revenons vers vous sous 48 heures avec une proposition adaptée.
+Pour un événement à Boulogne-Billancourt — qu’il s’agisse d’un cocktail d’entreprise, d’un dîner privé ou d’une prestation intégrée à un événement de communication — vous pouvez nous adresser votre demande depuis la page contact. Précisez le format, la date, le nombre de convives et les contraintes du lieu : nous revenons vers vous sous 24 heures avec une proposition adaptée.

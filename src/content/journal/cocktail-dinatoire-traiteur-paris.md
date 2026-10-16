@@ -1,6 +1,6 @@
 ---
 title: "Cocktail dînatoire à Paris : budget et format"
-description: "Cocktail dînatoire à Paris : budget par personne, nombre de pièces, écart avec le dîner assis et critères de choix du traiteur. Devis sous 48 heures."
+description: "Cocktail dînatoire à Paris : budget par personne, nombre de pièces, écart avec le dîner assis et critères de choix du traiteur. Devis sous 24 heures."
 date: 2026-04-02
 author: "Enzo Ryon"
 category: "Guide"
@@ -80,7 +80,7 @@ Le format cocktail était ici le seul choix logique : l’espace ne permettait p
 
 ## Comment organiser votre cocktail dînatoire à Paris
 
-La démarche est simple. Contactez votre traiteur avec les informations essentielles : date, nombre de convives estimé, type d’événement, lieu (ou besoin d’aide pour en trouver un), budget approximatif, et format souhaité (service sur place ou buffet livré). Un traiteur sérieux vous revient sous 48 heures avec une proposition sur-mesure.
+La démarche est simple. Contactez votre traiteur avec les informations essentielles : date, nombre de convives estimé, type d’événement, lieu (ou besoin d’aide pour en trouver un), budget approximatif, et format souhaité (service sur place ou buffet livré). Un traiteur sérieux vous revient sous 24 heures avec une proposition sur-mesure.
 
 Chez NOCTA, nous intervenons à Paris, en Île-de-France et au-delà pour les séjours et séminaires. Notre chef cuisine sur place chez vous avec des produits frais du marché, ou prépare un buffet livré prêt à dresser — selon ce qui convient le mieux à votre événement. Notre équipe de salle assure un service attentif du début à la fin quand la formule le prévoit.
 

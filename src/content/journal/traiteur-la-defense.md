@@ -1,6 +1,6 @@
 ---
 title: "Traiteur à La Défense : les attentes des entreprises"
-description: "Cocktails, dîners de direction et déjeuners d’affaires à La Défense : contraintes d’accès en tour, niveau de cuisine et de service. Devis sous 48 heures."
+description: "Cocktails, dîners de direction et déjeuners d’affaires à La Défense : contraintes d’accès en tour, niveau de cuisine et de service. Devis sous 24 heures."
 date: 2026-03-07
 slug: "traiteur-la-defense"
 category: "Corporate"

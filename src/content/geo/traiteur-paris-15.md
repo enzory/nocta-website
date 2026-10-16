@@ -13,7 +13,7 @@ faq:
   - question: "Quel est le budget minimum pour une prestation dans le 15e ?"
     answer: "NOCTA intervient à partir de 500 € de commande, quel que soit le format retenu. Un devis détaillé est établi après échange sur le lieu, le format et le nombre de convives."
   - question: "Quel délai pour recevoir un devis ?"
-    answer: "Un devis est transmis sous 48 heures ouvrées après réception de vos informations : date, lieu, format souhaité, nombre de convives estimé."
+    answer: "Un devis est transmis sous 24 heures ouvrées après réception de vos informations : date, lieu, format souhaité, nombre de convives estimé."
   - question: "NOCTA gère-t-il la logistique en parallèle d’un salon professionnel ?"
     answer: "Oui. Nous nous adaptons aux contraintes propres aux espaces de salon : créneaux de livraison imposés, accès chargement, configuration du lieu. La coordination logistique est intégrée à notre prestation."
 ---
@@ -50,4 +50,4 @@ Nous travaillons avec des clients qui ont des exigences précises sur la ponctua
 
 ## Demande de devis
 
-Pour un événement dans le 15e arrondissement — cocktail professionnel, dîner de comité, buffet ou projet Signature — adressez-nous votre demande via la page contact. Nous revenons vers vous sous 48 heures avec un devis détaillé, construit à partir de votre lieu, de votre format et de vos contraintes.
+Pour un événement dans le 15e arrondissement — cocktail professionnel, dîner de comité, buffet ou projet Signature — adressez-nous votre demande via la page contact. Nous revenons vers vous sous 24 heures avec un devis détaillé, construit à partir de votre lieu, de votre format et de vos contraintes.

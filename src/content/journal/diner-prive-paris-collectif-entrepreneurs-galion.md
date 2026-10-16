@@ -1,6 +1,6 @@
 ---
 title: "Dîner privé à Paris : le Galion Project en coulisses"
-description: "Quatre dîners privés à Paris pour The Galion Project : comment se construit une prestation sur-mesure pour un collectif. Devis sous 48 heures."
+description: "Quatre dîners privés à Paris pour The Galion Project : comment se construit une prestation sur-mesure pour un collectif. Devis sous 24 heures."
 date: 2026-03-25
 category: "Expertise"
 readTime: 4

@@ -27,7 +27,7 @@ Tout texte publié sur le site doit respecter ces faits. En cas de doute, ne pas
 
 ## Délais
 - Réservation : « Nous pouvons intervenir dès 24 heures à l'avance, selon disponibilité. Pour les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant. »
-- Devis : « Réponse à toute demande de devis sous 48 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16. »
+- Devis : « Réponse à toute demande de devis sous 24 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16. »
 
 ## Sommellerie
 - Accord mets-vins composé à partir du menu retenu ou des goûts du client.

@@ -33,7 +33,7 @@ Les cuisines sur place sont souvent absentes ou réduites à un coin kitchenette
 
 Le stationnement d’un véhicule utilitaire le temps du montage et du service reste le point de friction le plus fréquent dans cet arrondissement. Nous gérons cette logistique en interne, mais une coordination avec le gestionnaire de l’immeuble ou le responsable événementiel côté client facilite significativement l’intervention.
 
-Réponse à toute demande de devis sous 48 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16. Pour les formats Signature, les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant.
+Réponse à toute demande de devis sous 24 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16. Pour les formats Signature, les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant.
 
 ## Pourquoi NOCTA dans le 2e arrondissement
 
@@ -45,4 +45,4 @@ Nous ne sous-traitons pas le service : l’équipe qui conçoit la prestation es
 
 ## Demande de devis
 
-Pour un événement dans le 2e arrondissement, transmettez-nous via la page [contact](/contact) la date, le nombre de convives, le type de format souhaité et les contraintes du lieu. Nous revenons vers vous dans les 48 heures ouvrées avec une première proposition chiffrée.
+Pour un événement dans le 2e arrondissement, transmettez-nous via la page [contact](/contact) la date, le nombre de convives, le type de format souhaité et les contraintes du lieu. Nous revenons vers vous dans les 24 heures ouvrées avec une première proposition chiffrée.

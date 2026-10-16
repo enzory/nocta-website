@@ -11,7 +11,7 @@ faq:
   - question: "Proposez-vous des dîners à domicile dans le 6e arrondissement ?"
     answer: "Oui, c’est le cœur de NOCTA Private : un chef formé en cuisine étoilée dans votre cuisine, un service en salle si vous le souhaitez, et une sélection de vins composée par notre sommelier. Vous êtes présent à vos invités, pas à vos fourneaux."
   - question: "Combien coûte un dîner privé ?"
-    answer: "Nos prestations démarrent à partir de 500 € de commande. Le tarif dépend ensuite du menu, du service et du nombre de convives — le devis, gratuit, est remis sous 48 heures."
+    answer: "Nos prestations démarrent à partir de 500 € de commande. Le tarif dépend ensuite du menu, du service et du nombre de convives — le devis, gratuit, est remis sous 24 heures."
   - question: "Pouvez-vous cuisiner dans un appartement haussmannien classique ?"
     answer: "Oui. Nos menus sont pensés pour être finalisés sur place dans une cuisine domestique, sans matériel lourd. Un repérage ou un échange préalable suffit à valider la faisabilité."
   - question: "Gérez-vous les régimes et allergies ?"
@@ -52,4 +52,4 @@ Nous ne sous-traitons pas la cuisine, ne travaillons pas avec des équipes varia
 
 ## Demande de devis
 
-Pour une intervention dans le 6e arrondissement — dîner privé, cocktail de vernissage ou réception personnalisée — prenez contact via notre [formulaire de demande de devis](/contact). Indiquez la date, le nombre d’invités et le type de lieu : nous revenons vers vous sous 48 heures avec une première proposition adaptée.
+Pour une intervention dans le 6e arrondissement — dîner privé, cocktail de vernissage ou réception personnalisée — prenez contact via notre [formulaire de demande de devis](/contact). Indiquez la date, le nombre d’invités et le type de lieu : nous revenons vers vous sous 24 heures avec une première proposition adaptée.

@@ -1,6 +1,6 @@
 ---
 title: "Chef à domicile Paris 8e — Dîner privé NOCTA"
-description: "NOCTA propose un chef à domicile dans le 8e arrondissement : dîner privé, menu construit selon vos envies, sommellerie incluse. Devis sous 48 heures."
+description: "NOCTA propose un chef à domicile dans le 8e arrondissement : dîner privé, menu construit selon vos envies, sommellerie incluse. Devis sous 24 heures."
 zone: "Paris 8e"
 type: "chef-prive"
 ctaType: "private"
@@ -13,7 +13,7 @@ faq:
   - question: "Quel est le budget minimum pour un dîner privé à domicile dans le 8e ?"
     answer: "Les prestations NOCTA Private démarrent à partir de 500 € de commande. Le devis est établi selon le nombre de convives, le menu retenu et les options de service souhaitées."
   - question: "Combien de temps faut-il pour obtenir un devis ?"
-    answer: "Réponse à toute demande de devis sous 48 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16. Les prestations complexes peuvent nécessiter un échange téléphonique préalable."
+    answer: "Réponse à toute demande de devis sous 24 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16. Les prestations complexes peuvent nécessiter un échange téléphonique préalable."
   - question: "La sommellerie est-elle incluse dans la prestation dîner privé ?"
     answer: "NOCTA intègre une proposition d’accords mets et vins à chaque dîner privé. Enzo Ryon, sommelier et directeur de l’entreprise, peut accompagner la sélection des vins selon le menu et le profil de votre table."
 ---
@@ -52,6 +52,6 @@ Pour un dîner dans le 8e, nous recommandons de prendre contact au moins une sem
 
 ## Demande de devis
 
-Vous recevez dans le 8e arrondissement et souhaitez un dîner construit selon vos contraintes et votre table. Transmettez-nous la date, le nombre de convives et le cadre général via le formulaire de contact. Réponse à toute demande de devis sous 48 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.
+Vous recevez dans le 8e arrondissement et souhaitez un dîner construit selon vos contraintes et votre table. Transmettez-nous la date, le nombre de convives et le cadre général via le formulaire de contact. Réponse à toute demande de devis sous 24 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.
 
 [Faire une demande de devis <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

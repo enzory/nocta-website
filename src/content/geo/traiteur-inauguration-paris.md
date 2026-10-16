@@ -1,6 +1,6 @@
 ---
 title: "Inauguration boutique et lancement produit à Paris"
-description: "NOCTA organise vos cocktails d’inauguration, lancements produit et openings à Paris. Formats Corporate et Signature, devis sous 48 heures."
+description: "NOCTA organise vos cocktails d’inauguration, lancements produit et openings à Paris. Formats Corporate et Signature, devis sous 24 heures."
 zone: "Paris"
 type: "occasion"
 ctaType: "corporate"
@@ -51,12 +51,12 @@ NOCTA a été fondé par deux professionnels dont les parcours se complètent di
 
 Parmi nos clients figurent des maisons comme Boucheron et Biologique Recherche — des structures habituées à un niveau d’exigence élevé sur leurs événements de marque. Nous ne faisons pas de décoration florale, pas de gestion de prestataires son et lumière, pas de coordination générale de l’événement : notre périmètre est la restauration, le service et la sommellerie. Sur ce périmètre, nous nous engageons sur un niveau de détail et de fiabilité que vous pouvez vérifier dès le premier échange.
 
-Le devis est établi sous 48 heures à partir d’un brief précis : lieu, date, jauge, format souhaité, budget indicatif. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.
+Le devis est établi sous 24 heures à partir d’un brief précis : lieu, date, jauge, format souhaité, budget indicatif. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.
 
 ---
 
 ## Demande de devis
 
-Vous préparez une inauguration ou un lancement produit à Paris et souhaitez cadrer la partie restauration ? Transmettez-nous les éléments de base via le formulaire de contact — lieu, date, jauge estimée — et nous vous soumettons une proposition dans les 48 heures.
+Vous préparez une inauguration ou un lancement produit à Paris et souhaitez cadrer la partie restauration ? Transmettez-nous les éléments de base via le formulaire de contact — lieu, date, jauge estimée — et nous vous soumettons une proposition dans les 24 heures.
 
 [Faire une demande de devis <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

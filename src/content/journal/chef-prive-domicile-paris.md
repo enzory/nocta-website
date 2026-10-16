@@ -1,6 +1,6 @@
 ---
 title: "Chef privé à domicile à Paris : comment ça marche ?"
-description: "Un chef formé en cuisine étoilée cuisine chez vous à Paris : réservation, menu, déroulé de la soirée, prix et ce qu’il faut prévoir. Devis sous 48 heures."
+description: "Un chef formé en cuisine étoilée cuisine chez vous à Paris : réservation, menu, déroulé de la soirée, prix et ce qu’il faut prévoir. Devis sous 24 heures."
 date: 2026-03-30
 author: "Enzo Ryon"
 category: "Guide"
@@ -13,7 +13,7 @@ Voici le déroulé concret d’un dîner privé à domicile avec NOCTA, de la pr
 
 ## La prise de contact et la construction du menu
 
-Tout commence par un échange — par téléphone, email ou via le formulaire du site. Vous décrivez votre projet : le nombre de convives, la date, le lieu, vos envies, vos contraintes alimentaires éventuelles. NOCTA répond sous 48 heures avec une proposition détaillée.
+Tout commence par un échange — par téléphone, email ou via le formulaire du site. Vous décrivez votre projet : le nombre de convives, la date, le lieu, vos envies, vos contraintes alimentaires éventuelles. NOCTA répond sous 24 heures avec une proposition détaillée.
 
 Le menu est construit sur-mesure. Hugo ne travaille pas avec des formules figées. Il compose chaque menu en fonction de la saison, de vos goûts et de l’occasion. Un anniversaire intime à 8 ne ressemble pas à un dîner de famille à 20 — le menu non plus.
 
@@ -61,6 +61,6 @@ Nous intervenons aussi pour des séjours en villa — Saint-Tropez, Côte d’Az
 
 ## Comment réserver
 
-Contactez-nous directement par email à contact@noctaparis.fr, par téléphone au 06 50 01 16 16, ou via le formulaire de contact sur notre site. Décrivez votre projet — date, nombre de convives, envies — et vous recevrez une proposition détaillée sous 48 heures.
+Contactez-nous directement par email à contact@noctaparis.fr, par téléphone au 06 50 01 16 16, ou via le formulaire de contact sur notre site. Décrivez votre projet — date, nombre de convives, envies — et vous recevrez une proposition détaillée sous 24 heures.
 
 NOCTA Catering est un service de traiteur et chef privé haut de gamme basé à Paris, fondé par Hugo Vinatier (chef formé à L’Astrance 3 étoiles, Akrame, aux côtés de Thierry Marx) et Enzo Ryon (maître d’hôtel et sommelier, 14 ans en haute gastronomie étoilée). Plus de 50 événements réalisés à Paris et en Île-de-France pour des particuliers et des entreprises comme Levi’s, The Galion Project, Jus Mundi et Colombus Consulting.

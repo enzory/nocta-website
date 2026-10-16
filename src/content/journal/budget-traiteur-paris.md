@@ -57,6 +57,6 @@ Le quatrième est le niveau de service : service à table avec sommelier, simple
 
 Chaque événement NOCTA est sur-mesure. Les fourchettes ci-dessus donnent un ordre de grandeur réaliste, mais le seul moyen d’avoir un prix exact est de nous décrire votre projet.
 
-Vous pouvez nous contacter directement pour un devis gratuit. Nous répondons sous 48 heures avec une proposition détaillée — menu, budget, déroulé complet.
+Vous pouvez nous contacter directement pour un devis gratuit. Nous répondons sous 24 heures avec une proposition détaillée — menu, budget, déroulé complet.
 
 NOCTA est un service de traiteur et chef privé haut de gamme basé à Paris, fondé par Hugo Vinatier (chef formé à L’Astrance 3 étoiles, Akrame, aux côtés de Thierry Marx) et Enzo Ryon (maître d’hôtel et sommelier, 14 ans en haute gastronomie étoilée). Nous intervenons à Paris, en Île-de-France, et partout en France pour des dîners privés, événements corporate et expériences culinaires sur-mesure.
