@@ -1,6 +1,6 @@
 ---
 title: "Traiteur Paris 9e — Opéra, sièges corporate, événements"
-description: "NOCTA Catering intervient dans le 9e arrondissement : cocktails corporate, dîners de direction, buffets soignés. Devis sous 48h."
+description: "NOCTA Catering intervient dans le 9e arrondissement : cocktails corporate, dîners de direction, buffets soignés. Devis sous 24 h."
 zone: "Paris 9e arrondissement"
 type: "arrondissement"
 ctaType: "corporate"
@@ -21,7 +21,7 @@ Les clients que nous servons dans ce périmètre sont principalement des directi
 
 ## Formats disponibles dans le 9e arrondissement
 
-**NOCTA Corporate** est le format le plus sollicité dans cet arrondissement. Il couvre les cocktails dinatoires, les galas internes et les déjeuners de direction — de 40 à 70 € HT par personne selon le niveau de service. Pour un cocktail de 30 à 80 personnes en bureau parisien, nous proposons typiquement 14 à 18 pièces par personne, en flux continu sur 90 minutes, avec service en plateau ou stand selon la configuration de la salle. La sommellerie peut être intégrée : sélection de vins au verre, accords définis à l’avance, service assuré par Enzo Ryon ou un collaborateur formé à cet effet.
+**NOCTA Corporate** est le format le plus sollicité dans cet arrondissement. Il couvre les cocktails dinatoires, les galas internes et les déjeuners de direction. Le buffet livré démarre à 40 € HT par personne. Le cocktail dînatoire démarre à 54 € HT par personne. Pour un cocktail de 30 à 80 personnes en bureau parisien, nous proposons typiquement 14 à 18 pièces par personne, en flux continu sur 90 minutes, avec service en plateau ou stand selon la configuration de la salle. La sommellerie peut être intégrée : sélection de vins au verre, accords définis à l’avance, service assuré par Enzo Ryon ou un collaborateur formé à cet effet.
 
 **NOCTA Private** s’adresse aux cadres dirigeants souhaitant organiser un dîner dans leur appartement ou dans un espace privatif hors des murs de l’entreprise — une résidence du 9e, un appartement haussmannien loué pour la soirée, un salon de club privé. Ce format propose un dîner en plusieurs services, dressé à l’envoi, avec un menu construit selon les contraintes du lieu (cuisine disponible, gabarit de la salle, nombre de couverts). Comptez entre 70 et 250 € par personne, chef et service compris. Le chef est présent de la préparation au service ; la vaisselle et les équipements nécessaires sont apportés si l’espace ne les fournit pas.
 
@@ -53,4 +53,4 @@ Dans le 9e arrondissement spécifiquement, notre connaissance du tissu corporate
 
 ## Demande de devis
 
-Pour un événement dans le 9e arrondissement, transmettez-nous la date, le lieu, le nombre d’invités et le format envisagé via notre [formulaire de contact](/contact). Nous revenons vers vous sous 48 heures ouvrées avec une proposition chiffrée et un premier échange sur le menu.
+Pour un événement dans le 9e arrondissement, transmettez-nous la date, le lieu, le nombre d’invités et le format envisagé via notre [formulaire de contact](/contact). Nous revenons vers vous sous 24 heures ouvrées avec une proposition chiffrée et un premier échange sur le menu.

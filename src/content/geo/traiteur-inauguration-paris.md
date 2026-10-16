@@ -1,6 +1,6 @@
 ---
 title: "Inauguration boutique et lancement produit à Paris"
-description: "NOCTA organise vos cocktails d’inauguration, lancements produit et openings à Paris. Formats Corporate et Signature, devis sous 48 heures."
+description: "NOCTA organise vos cocktails d’inauguration, lancements produit et openings à Paris. Formats Corporate et Signature, devis sous 24 heures."
 zone: "Paris"
 type: "occasion"
 ctaType: "corporate"
@@ -21,7 +21,7 @@ La restauration n’est pas un poste secondaire à caler en dernier. Sur une ina
 
 ## Formats NOCTA adaptés à une inauguration ou un lancement à Paris
 
-**NOCTA Corporate** est le format naturel pour la majorité des openings parisiens. Il couvre les cocktails dînatoires, les lancements en soirée, les petits-déjeuners de presse ou les déjeuners de présentation en comité restreint. Les tarifs vont de 40 à 70 € HT par personne selon le format retenu — plateau de bouchées, service à l’assiette debout, buffet chaud en cloche. Le service est assuré par une équipe dimensionnée à votre jauge, avec un chef formé en cuisine étoilée en production et un responsable de salle dédié à la coordination sur place. Les pièces sont dressées à l’envoi, pas préparées à l’avance et posées sur table deux heures trop tôt.
+**NOCTA Corporate** est le format naturel pour la majorité des openings parisiens. Il couvre les cocktails dînatoires, les lancements en soirée, les petits-déjeuners de presse ou les déjeuners de présentation en comité restreint. Le tarif dépend du format retenu — plateau de bouchées, service à l’assiette debout, buffet chaud en cloche. Le buffet livré démarre à 40 € HT par personne. Le cocktail dînatoire démarre à 54 € HT par personne. Le service est assuré par une équipe dimensionnée à votre jauge, avec un chef formé en cuisine étoilée en production et un responsable de salle dédié à la coordination sur place. Les pièces sont dressées à l’envoi, pas préparées à l’avance et posées sur table deux heures trop tôt.
 
 **NOCTA Signature** s’adresse aux événements où la restauration devient elle-même un élément de communication : lancement d’une maison, opening d’une adresse positionnée, présentation à un cercle d’acheteurs internationaux. Le format est construit sur devis, autour d’un brief précis — identité de la marque, univers produit, contraintes du lieu, profil des convives. Hugo Vinatier, formé en cuisine étoilée, développe un menu et une mise en scène culinaire cohérents avec le propos de la soirée. Enzo Ryon prend en charge la sélection des vins et spiritueux, et peut assurer une présentation en salle si le format s’y prête.
 
@@ -51,12 +51,12 @@ NOCTA a été fondé par deux professionnels dont les parcours se complètent di
 
 Parmi nos clients figurent des maisons comme Boucheron et Biologique Recherche — des structures habituées à un niveau d’exigence élevé sur leurs événements de marque. Nous ne faisons pas de décoration florale, pas de gestion de prestataires son et lumière, pas de coordination générale de l’événement : notre périmètre est la restauration, le service et la sommellerie. Sur ce périmètre, nous nous engageons sur un niveau de détail et de fiabilité que vous pouvez vérifier dès le premier échange.
 
-Le devis est établi sous 48 heures à partir d’un brief précis : lieu, date, jauge, format souhaité, budget indicatif. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.
+Le devis est établi sous 24 heures à partir d’un brief précis : lieu, date, jauge, format souhaité, budget indicatif. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.
 
 ---
 
 ## Demande de devis
 
-Vous préparez une inauguration ou un lancement produit à Paris et souhaitez cadrer la partie restauration ? Transmettez-nous les éléments de base via le formulaire de contact — lieu, date, jauge estimée — et nous vous soumettons une proposition dans les 48 heures.
+Vous préparez une inauguration ou un lancement produit à Paris et souhaitez cadrer la partie restauration ? Transmettez-nous les éléments de base via le formulaire de contact — lieu, date, jauge estimée — et nous vous soumettons une proposition dans les 24 heures.
 
 [Faire une demande de devis <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

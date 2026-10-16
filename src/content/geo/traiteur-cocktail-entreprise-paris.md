@@ -21,7 +21,7 @@ NOCTA travaille avec des directions générales, des équipes marketing et des r
 
 ## Formats NOCTA adaptés au cocktail d’entreprise parisien
 
-**NOCTA Corporate** est le format central pour ce type de prestation. Il couvre les cocktails déjeunatoires, les réceptions en soirée et les comités de direction. Les tarifs s’échelonnent de 40 à 70 € HT par personne selon la densité du service : nombre de pièces servies, présence d’un sommelier, service en salle ou buffet dressé. Pour un cocktail de 60 à 150 personnes avec passage de canapés chauds et froids, service au plateau et sélection de vins au verre, le format Corporate répond à l’essentiel.
+**NOCTA Corporate** est le format central pour ce type de prestation. Il couvre les cocktails déjeunatoires, les réceptions en soirée et les comités de direction. Le tarif dépend de la densité du service : nombre de pièces servies, présence d’un sommelier, service en salle ou buffet dressé. Le buffet livré démarre à 40 € HT par personne. Le cocktail dînatoire démarre à 54 € HT par personne. Pour un cocktail de 60 à 150 personnes avec passage de canapés chauds et froids, service au plateau et sélection de vins au verre, le format Corporate répond à l’essentiel.
 
 Pour les événements qui demandent davantage de construction — une inauguration avec un espace atypique, une soirée clients avec une scénographie particulière du repas, un format hybride entre cocktail assis et buffet — **NOCTA Signature** s’impose. Ce format est conçu sur devis, en dialogue direct avec votre équipe, à partir des contraintes du lieu et de vos objectifs pour la soirée.
 
@@ -55,6 +55,6 @@ Nous n’intervenons pas sur la décoration, la location de mobilier ou la scén
 
 ## Demande de devis
 
-Vous organisez un cocktail d’entreprise, une inauguration ou une soirée clients à Paris ? Transmettez-nous la date, le lieu, le nombre de convives et le format envisagé via notre page de contact. Nous revenons vers vous sous 48 heures ouvrées avec une première proposition.
+Vous organisez un cocktail d’entreprise, une inauguration ou une soirée clients à Paris ? Transmettez-nous la date, le lieu, le nombre de convives et le format envisagé via notre page de contact. Nous revenons vers vous sous 24 heures ouvrées avec une première proposition.
 
 [Demander un devis <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

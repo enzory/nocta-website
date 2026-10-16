@@ -31,7 +31,7 @@ Pour une célébration plus élaborée — fiançailles avec plusieurs tables, r
 
 **NOCTA Corporate — si la célébration a une dimension professionnelle**
 
-Certaines entreprises parisiennes organisent des dîners de comité de direction ou des cocktails dînatoires pour marquer une étape importante — un départ, une association, une réussite collective. NOCTA Corporate couvre ces formats entre 40 et 70 € HT/personne selon le niveau de prestation choisi : buffet, cocktail en pièces circulantes ou dîner assis en salle de réunion privatisée.
+Certaines entreprises parisiennes organisent des dîners de comité de direction ou des cocktails dînatoires pour marquer une étape importante — un départ, une association, une réussite collective. NOCTA Corporate couvre ces formats : buffet, cocktail en pièces circulantes ou dîner assis en salle de réunion privatisée. Le buffet démarre à 40 € HT par personne. Le cocktail démarre à 54 € HT par personne.
 
 ---
 
@@ -61,4 +61,4 @@ Paris concentre une densité de fournisseurs de qualité que nous utilisons dire
 
 ## Demande de devis
 
-Vous préparez un dîner de fiançailles, une célébration en famille ou un repas intimiste à Paris ? Contactez-nous via notre [formulaire de demande de devis](/contact). Précisez la date souhaitée, le nombre de convives, le lieu et le format envisagé. Nous revenons vers vous sous 48 heures ouvrées.
+Vous préparez un dîner de fiançailles, une célébration en famille ou un repas intimiste à Paris ? Contactez-nous via notre [formulaire de demande de devis](/contact). Précisez la date souhaitée, le nombre de convives, le lieu et le format envisagé. Nous revenons vers vous sous 24 heures ouvrées.

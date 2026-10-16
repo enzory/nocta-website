@@ -1,6 +1,6 @@
 ---
 title: "Traiteur baptême Paris – déjeuner familial à domicile"
-description: "NOCTA organise votre déjeuner de baptême ou événement privé à Paris. Menu construit selon vos envies, service à table, sommellerie. Devis sous 48 h."
+description: "NOCTA organise votre déjeuner de baptême ou événement privé à Paris. Menu construit selon vos envies, service à table, sommellerie. Devis sous 24 h."
 zone: "Paris"
 type: "occasion"
 ctaType: "private"
@@ -13,7 +13,7 @@ faq:
   - question: "Quel est le budget minimum pour un déjeuner de baptême avec NOCTA ?"
     answer: "NOCTA intervient à partir de 500 € de commande. Le détail du devis dépend du format choisi (service à table, buffet, cocktail dînatoire), du menu et du nombre de convives."
   - question: "Quel délai pour obtenir un devis ?"
-    answer: "Nous revenons sous 48 heures ouvrées après réception de votre demande. Pour les événements familiaux, nous conseillons de nous contacter deux semaines avant la date souhaitée."
+    answer: "Nous revenons sous 24 heures ouvrées après réception de votre demande. Pour les événements familiaux, nous conseillons de nous contacter deux semaines avant la date souhaitée."
   - question: "NOCTA propose-t-il un service de sommellerie pour un événement privé à Paris ?"
     answer: "Oui. Enzo Ryon, sommelier de l’équipe, peut constituer la sélection de vins et assurer le service au verre pendant le repas, en accord avec votre menu."
 ---
@@ -50,4 +50,4 @@ Nous ne proposons pas de décoration florale, de location de mobilier ou de coor
 
 ## Demande de devis
 
-Pour un baptême, un déjeuner de famille ou tout événement privé à Paris, contactez-nous via notre [formulaire de demande de devis](/contact). Précisez la date envisagée, le lieu, le nombre de convives approximatif et le format souhaité. Nous revenons sous 48 heures ouvrées avec une première proposition.
+Pour un baptême, un déjeuner de famille ou tout événement privé à Paris, contactez-nous via notre [formulaire de demande de devis](/contact). Précisez la date envisagée, le lieu, le nombre de convives approximatif et le format souhaité. Nous revenons sous 24 heures ouvrées avec une première proposition.

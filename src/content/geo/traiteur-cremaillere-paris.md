@@ -1,6 +1,6 @@
 ---
 title: "Crémaillère à Paris : cocktail dînatoire à domicile"
-description: "NOCTA organise votre crémaillère à Paris : cocktail dînatoire ou dîner assis, chef à domicile, sommellerie. Devis sous 48 heures."
+description: "NOCTA organise votre crémaillère à Paris : cocktail dînatoire ou dîner assis, chef à domicile, sommellerie. Devis sous 24 heures."
 zone: "Paris"
 type: "occasion"
 ctaType: "private"
@@ -21,7 +21,7 @@ NOCTA intervient à Paris pour des crémaillères de 10 à 80 personnes, selon l
 
 **NOCTA Private** est le format naturel pour une crémaillère en appartement. Il couvre les dîners assis à domicile, entre 70 et 250 € par personne, chef et service compris. Le menu est construit en fonction du nombre de convives, de la configuration de la cuisine disponible, des préférences alimentaires communiquées en amont. Le service est assuré par l’équipe NOCTA : dressage, envoi des plats, gestion des verres. La vaisselle et les couverts peuvent être fournis selon les besoins du lieu.
 
-Pour une crémaillère plus nombreuse — au-delà de trente personnes — ou dans un espace qui s’y prête (duplex avec terrasse, loft, appartement haussmannien avec grande salle de réception), **NOCTA Corporate** peut s’appliquer à un cadre privé. Ce format est pensé pour les cocktails avec pièces chaudes et froides, service au plateau, buffet construit autour de produits de saison. Il est facturé entre 40 et 70 € HT par personne selon le volume et le niveau de service souhaité.
+Pour une crémaillère plus nombreuse — au-delà de trente personnes — ou dans un espace qui s’y prête (duplex avec terrasse, loft, appartement haussmannien avec grande salle de réception), **NOCTA Corporate** peut s’appliquer à un cadre privé. Ce format est pensé pour les cocktails avec pièces chaudes et froides, service au plateau, buffet construit autour de produits de saison. Le buffet démarre à 40 € HT par personne. Le cocktail démarre à 54 € HT par personne.
 
 Lorsque la crémaillère doit marquer un moment précis — premier appartement acquis après une négociation longue, retour à Paris après plusieurs années à l’étranger, inauguration d’un espace de travail à domicile —, **NOCTA Signature** permet de construire un format entièrement adapté à la table, au lieu et au moment. Tarif sur devis, après échange avec Enzo Ryon.
 
@@ -47,4 +47,4 @@ La sommellerie est intégrée à l’offre : Enzo Ryon peut conseiller et, selon
 
 ## Demande de devis
 
-Pour organiser votre crémaillère à Paris, transmettez-nous la date envisagée, le nombre d’invités approximatif et la configuration du logement via la page [contact](/contact). Nous revenons vers vous sous 48 heures ouvrées avec une première proposition.
+Pour organiser votre crémaillère à Paris, transmettez-nous la date envisagée, le nombre d’invités approximatif et la configuration du logement via la page [contact](/contact). Nous revenons vers vous sous 24 heures ouvrées avec une première proposition.

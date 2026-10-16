@@ -19,7 +19,7 @@ La clientèle du 3e est souvent exigeante sur l’esthétique du dressage et la 
 
 ## Les formats NOCTA adaptés au 3e arrondissement
 
-**NOCTA Corporate** est le format le plus sollicité dans le 3e. Il couvre les cocktails de lancement de collection ou de produit, les dîners de comité de direction et les galas en petite jauge. Le tarif varie de 40 à 70 € HT par personne selon le format retenu : cocktail dînatoire debout, dîner assis servi à table, ou buffet livré avec présentation soignée. Chaque proposition est construite autour du lieu, du nombre de couverts et du déroulé horaire de la soirée.
+**NOCTA Corporate** est le format le plus sollicité dans le 3e. Il couvre les cocktails de lancement de collection ou de produit, les dîners de comité de direction et les galas en petite jauge. Le tarif dépend du format retenu : cocktail dînatoire debout, dîner assis servi à table, ou buffet livré avec présentation soignée. Le buffet livré démarre à 40 € HT par personne. Le cocktail dînatoire démarre à 54 € HT par personne. Chaque proposition est construite autour du lieu, du nombre de couverts et du déroulé horaire de la soirée.
 
 **NOCTA Signature** s’adresse aux marques ou aux clients qui souhaitent faire de la table un élément central de leur événement. Dans un showroom du Marais, cela peut signifier un menu en accord avec une collection, une sélection de vins naturels discutée avec Enzo Ryon, ou un format de dégustation commentée en fin de soirée. Ce format est établi sur devis, après échange direct avec l’équipe.
 
@@ -45,6 +45,6 @@ Parmi les marques avec lesquelles nous travaillons figurent Boucheron et Biologi
 
 ## Demande de devis
 
-Vous organisez un événement dans le 3e arrondissement — cocktail de lancement, dîner professionnel ou réception privée ? Transmettez-nous les grandes lignes via notre formulaire de contact : lieu, format souhaité, nombre de convives et date. Nous revenons vers vous sous 48 heures ouvrées avec une première proposition.
+Vous organisez un événement dans le 3e arrondissement — cocktail de lancement, dîner professionnel ou réception privée ? Transmettez-nous les grandes lignes via notre formulaire de contact : lieu, format souhaité, nombre de convives et date. Nous revenons vers vous sous 24 heures ouvrées avec une première proposition.
 
 [Faire une demande de devis <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

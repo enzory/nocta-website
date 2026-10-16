@@ -13,7 +13,7 @@ faq:
   - question: "Quel est le budget minimum pour une prestation dans le 15e ?"
     answer: "NOCTA intervient à partir de 500 € de commande, quel que soit le format retenu. Un devis détaillé est établi après échange sur le lieu, le format et le nombre de convives."
   - question: "Quel délai pour recevoir un devis ?"
-    answer: "Un devis est transmis sous 48 heures ouvrées après réception de vos informations : date, lieu, format souhaité, nombre de convives estimé."
+    answer: "Un devis est transmis sous 24 heures ouvrées après réception de vos informations : date, lieu, format souhaité, nombre de convives estimé."
   - question: "NOCTA gère-t-il la logistique en parallèle d’un salon professionnel ?"
     answer: "Oui. Nous nous adaptons aux contraintes propres aux espaces de salon : créneaux de livraison imposés, accès chargement, configuration du lieu. La coordination logistique est intégrée à notre prestation."
 ---
@@ -28,7 +28,7 @@ Parmi nos clients : Boucheron, Biologique Recherche, The Galion Project, Colombu
 
 ## Formats NOCTA adaptés au 15e arrondissement
 
-**NOCTA Corporate** est le format le plus mobilisé dans cet arrondissement. Il couvre les cocktails professionnels, les galas et les comités de direction liés à des événements d’entreprise. La prestation inclut la conception du menu, la préparation, le service en salle et, selon le format retenu, la sommellerie au verre. Les tarifs vont de 40 à 70 € HT par personne selon le niveau de prestation choisi. C’est le format naturellement adapté aux formats de salon ou de convention, où les contraintes de temps, d’espace et de flux sont importantes.
+**NOCTA Corporate** est le format le plus mobilisé dans cet arrondissement. Il couvre les cocktails professionnels, les galas et les comités de direction liés à des événements d’entreprise. La prestation inclut la conception du menu, la préparation, le service en salle et, selon le format retenu, la sommellerie au verre. Le buffet livré démarre à 40 € HT par personne. Le cocktail dînatoire démarre à 54 € HT par personne. C’est le format naturellement adapté aux formats de salon ou de convention, où les contraintes de temps, d’espace et de flux sont importantes.
 
 **NOCTA Private** répond aux demandes de dîners à domicile ou de célébrations intimistes dans le 15e. L’arrondissement compte de nombreux appartements spacieux et des résidences disposant de cuisines équipées, ce qui facilite l’intervention d’un chef à domicile. Ce format s’adresse aux particuliers comme aux dirigeants souhaitant recevoir dans un cadre privé en marge d’un événement professionnel. Comptez entre 70 et 250 € par personne, chef et service compris.
 
@@ -50,4 +50,4 @@ Nous travaillons avec des clients qui ont des exigences précises sur la ponctua
 
 ## Demande de devis
 
-Pour un événement dans le 15e arrondissement — cocktail professionnel, dîner de comité, buffet ou projet Signature — adressez-nous votre demande via la page contact. Nous revenons vers vous sous 48 heures avec un devis détaillé, construit à partir de votre lieu, de votre format et de vos contraintes.
+Pour un événement dans le 15e arrondissement — cocktail professionnel, dîner de comité, buffet ou projet Signature — adressez-nous votre demande via la page contact. Nous revenons vers vous sous 24 heures avec un devis détaillé, construit à partir de votre lieu, de votre format et de vos contraintes.
