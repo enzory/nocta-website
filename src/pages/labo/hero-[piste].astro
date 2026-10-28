@@ -2,7 +2,7 @@
 /**
  * LABO — pistes de refonte du hero de l'accueil (maquettes de travail).
  *
- * /labo/hero-a, /labo/hero-b : le header réel, la piste,
+ * /labo/hero-a, /labo/hero-b, /labo/hero-c : le header réel, la piste,
  * puis le footer. L'accueil (src/pages/index.astro) n'est PAS modifié.
  * Pages en noindex et exclues du sitemap (astro.config.mjs). À supprimer
  * une fois la piste retenue intégrée à l'accueil.
@@ -12,11 +12,13 @@ import Header from '../../components/header.astro';
 import Footer from '../../components/Footer.astro';
 import HeroEditorial from '../../components/hero-pistes/HeroEditorial.astro';
 import HeroNuit from '../../components/hero-pistes/HeroNuit.astro';
+import HeroTriptyque from '../../components/hero-pistes/HeroTriptyque.astro';
 
 export function getStaticPaths() {
   return [
     { params: { piste: 'a' } },
     { params: { piste: 'b' } },
+    { params: { piste: 'c' } },
   ];
 }
 
@@ -44,6 +46,15 @@ const pistes = {
       sizes: '100vw',
     },
   },
+  c: {
+    nom: 'Triptyque',
+    light: false,
+    preload: {
+      href: '/images/nocta-assiette-hero1-400w.webp',
+      srcset: '/images/nocta-assiette-hero1-400w.webp 400w, /images/nocta-assiette-hero1-800w.webp 800w, /images/nocta-assiette-hero1-1200w.webp 1200w',
+      sizes: '(min-width: 1024px) 100vh, 55vh',
+    },
+  },
 } as const;
 
 const p = pistes[piste as keyof typeof pistes];
@@ -59,6 +70,7 @@ const p = pistes[piste as keyof typeof pistes];
   <main id="contenu">
     {piste === 'a' && <HeroEditorial />}
     {piste === 'b' && <HeroNuit />}
+    {piste === 'c' && <HeroTriptyque />}
   </main>
   <Footer />
 </Layout>
