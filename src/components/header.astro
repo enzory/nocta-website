@@ -131,11 +131,11 @@ const navLinks = [
     animation-delay: calc(var(--sig-start) + var(--i) * var(--sig-step));
   }
 
-  /* Soulignement des liens de navigation : tracé en quatre coups (~12
-     images/s), comme la pose du logo, au lieu de s'étirer en continu. */
+  /* Soulignement des liens de navigation : tracé fluide de gauche à droite
+     en 0,25 s, sur la même courbe douce que le logo. */
   nav a::after {
-    transition-duration: 0.33s;
-    transition-timing-function: steps(4, jump-end);
+    transition-duration: 0.25s;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   @media (prefers-reduced-motion: reduce) {
