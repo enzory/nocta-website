@@ -593,27 +593,21 @@ import LogoSlider from '../components/LogoSlider.astro';
     }
   }
 
-  /* ── Galerie : les photos se « posent » comme des assiettes ──────────
-     Même déclencheur qu'avant (.reveal → .visible à l'entrée dans l'écran),
-     mais au lieu du glissé fluide de 32 px, les quatre poses du logo :
-     tenues chacune une image, sans interpolation, en pixels (le décalage
-     en em de la pose du texte serait invisible ici). Pas de parallaxe. Le
-     léger décalage selon le rang évite que trois photos tombent ensemble. */
-  @keyframes pose-assiette {
-    0%      { opacity: 0;    transform: translateY(20px); animation-timing-function: steps(1, end); }
-    33.333% { opacity: 0.45; transform: translateY(9px);  animation-timing-function: steps(1, end); }
-    66.667% { opacity: 0.85; transform: translateY(-2px); animation-timing-function: steps(1, end); }
-    100%    { opacity: 1;    transform: none; }
-  }
+  /* ── Galerie : les photos se déposent en douceur ──────────────────────
+     Même déclencheur qu'avant (.reveal → .visible à l'entrée dans l'écran) :
+     fondu et montée courte de 12 px (au lieu de 32), avec les keyframes
+     partagées « fondu-montee » de global.css. Pas de parallaxe. Le léger
+     décalage selon le rang évite que trois photos arrivent ensemble. */
   .gallery-item.reveal {
     transform: none;
     transition: none;
   }
   .gallery-item.reveal.visible {
-    animation: pose-assiette 0.25s both;
+    --rise: 12px;
+    animation: fondu-montee 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
-  .gallery-item.reveal.visible:nth-child(3n + 2) { animation-delay: 0.08s; }
-  .gallery-item.reveal.visible:nth-child(3n)     { animation-delay: 0.16s; }
+  .gallery-item.reveal.visible:nth-child(3n + 2) { animation-delay: 0.1s; }
+  .gallery-item.reveal.visible:nth-child(3n)     { animation-delay: 0.2s; }
 
   @media (prefers-reduced-motion: reduce) {
     .gallery-item.reveal.visible { animation: none; }
