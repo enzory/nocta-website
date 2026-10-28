@@ -17,8 +17,9 @@ const navLinks = [
 <header id="header" data-top-theme={light ? 'dark' : 'light'} class:list={["fixed top-0 left-0 right-0 z-50 transition-all duration-500", light ? 'text-nocta-black' : 'text-white']}>
   <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
 
-    {/* data-logo-tempo : 1 = séquence complète (~2,7 s) ; 0.58 en header (~1,6 s). */}
-    <a href="/" class="flex items-center" aria-label="NOCTA - Accueil" data-logo-stopmotion data-logo-tempo="0.58">
+    {/* data-logo-format : « compact » = séquence courte du header (~1,6 s) ;
+        sans attribut = grand format (~2,4 s). */}
+    <a href="/" class="flex items-center" aria-label="NOCTA - Accueil" data-logo-stopmotion data-logo-format="compact">
       <span class="logo-svg" aria-hidden="true"></span>
     </a>
 
@@ -70,7 +71,7 @@ const navLinks = [
     mask: url('/images/nocta-logo.svg') no-repeat center / contain;
   }
 
-  /* ── Logo « stop motion » — joué une fois par session ──────────────────
+  /* ── Logo animé — joué une fois par session ────────────────────────────
      Par défaut, rien ne change : le logo reste le masque CSS ci-dessus.
      Le script de <head> (layout.astro) pose html[data-logo-anim="play"]
      uniquement à la première page de la session, et jamais sous
@@ -91,29 +92,43 @@ const navLinks = [
     height: 52px;
     width: auto;
     aspect-ratio: 170 / 75;
+    /* Grand format (~2,4 s) : capitales 0,14 s d'écart, 0,6 s chacune ;
+       « Catering » dès 1,2 s, 0,07 s d'écart, 0,7 s par lettre. */
+    --cap-step: 0.14s;
+    --cap-dur: 0.6s;
+    --sig-start: 1.2s;
+    --sig-step: 0.07s;
+    --sig-dur: 0.7s;
+  }
+  /* Header (~1,6 s) : même séquence, resserrée. */
+  :global(.logo-sm.logo-sm--compact) {
+    --cap-step: 0.11s;
+    --cap-dur: 0.5s;
+    --sig-start: 0.75s;
+    --sig-step: 0.055s;
+    --sig-dur: 0.45s;
   }
 
-  /* Une lettre = 4 poses tenues chacune une image (~12 images/s), sans
-     interpolation : steps(1, end) sur chaque palier. Le décalage vertical est
-     en unités du viewBox (18 = 18 px quand le logo fait 75 px de haut) : il
-     suit la taille du logo. --amp réduit l'amplitude de « Catering », trop
-     fin pour sauter de toute la hauteur d'une capitale. */
-  @keyframes logoPose {
-    0%      { opacity: 0;    transform: translateY(calc(18px * var(--amp))); animation-timing-function: steps(1, end); }
-    33.333% { opacity: 0.45; transform: translateY(calc(8px * var(--amp)));  animation-timing-function: steps(1, end); }
-    66.667% { opacity: 0.85; transform: translateY(calc(-3px * var(--amp))); animation-timing-function: steps(1, end); }
-    100%    { opacity: 1;    transform: none; }
+  /* Révélation continue : fondu et montée courte, courbe douce sans
+     dépassement (cubic-bezier(0.22, 1, 0.36, 1) ne passe jamais au-delà de
+     sa valeur finale). Montée en unités du viewBox : 7 = 7 px quand le logo
+     fait 75 px de haut, ~4,9 px en header. Opacité et transform uniquement. */
+  @keyframes logoReveal {
+    from { opacity: 0; transform: translateY(var(--rise, 0px)); }
+    to   { opacity: 1; transform: none; }
   }
   :global(.logo-sm.is-playing .l) {
-    --amp: 1;
-    animation: logoPose 0.25s both;
-    /* N, O, C, T, A : 0,25 s d'écart, multiplié par le tempo (0.58 en header). */
-    animation-delay: calc(var(--i) * 0.25s * var(--tempo, 1));
+    --rise: 7px;
+    animation: logoReveal var(--cap-dur) cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--i) * var(--cap-step));
   }
+  /* « Catering » : une signature qui s'écrit de gauche à droite — fondu en
+     cascade, sans montée. Un trait aussi fin qui se déplace à 52 px se
+     brouille ; un simple fondu reste net à chaque image. */
   :global(.logo-sm.is-playing .l.sig) {
-    --amp: 0.45;
-    /* « Catering » : départ 1,5 s après le N, 0,13 s d'écart, même tempo. */
-    animation-delay: calc((1.5s + var(--i) * 0.13s) * var(--tempo, 1));
+    --rise: 0px;
+    animation-duration: var(--sig-dur);
+    animation-delay: calc(var(--sig-start) + var(--i) * var(--sig-step));
   }
 
   /* Soulignement des liens de navigation : tracé en quatre coups (~12
@@ -156,7 +171,7 @@ const navLinks = [
     burger.setAttribute('aria-expanded', String(isOpen));
   });
 
-  // ── Logo « stop motion » ────────────────────────────────────────────────
+  // ── Logo animé (révélation lettre par lettre) ───────────────────────────
   // Ne tourne que si le script de <head> a posé data-logo-anim="play"
   // (première page de la session, pas de prefers-reduced-motion).
   //
@@ -205,10 +220,9 @@ const navLinks = [
     });
     if (cap !== 5 || sig !== 8) throw new Error(`logo : ${cap}+${sig} lettres`);
 
-    svg.setAttribute('class', 'logo-sm is-playing');
+    svg.setAttribute('class', link.dataset.logoFormat === 'compact' ? 'logo-sm logo-sm--compact is-playing' : 'logo-sm is-playing');
     svg.setAttribute('aria-hidden', 'true');
     svg.setAttribute('focusable', 'false');
-    svg.setAttribute('style', `--tempo:${link.dataset.logoTempo || '1'}`);
 
     const node = document.importNode(svg, true);
     link.querySelector('.logo-svg')?.replaceWith(node);

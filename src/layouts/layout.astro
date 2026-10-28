@@ -28,7 +28,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : null
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {/* Logo « stop motion » : décidé AVANT le premier affichage pour éviter
+    {/* Logo animé : décidé AVANT le premier affichage pour éviter
          tout flash. Joué à la première page de la session uniquement, jamais
          sous prefers-reduced-motion. Sans JS, ou si sessionStorage est
          indisponible (navigation privée stricte), rien n'est posé : le logo
