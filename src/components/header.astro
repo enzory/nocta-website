@@ -116,7 +116,15 @@ const navLinks = [
     animation-delay: calc((1.5s + var(--i) * 0.13s) * var(--tempo, 1));
   }
 
+  /* Soulignement des liens de navigation : tracé en quatre coups (~12
+     images/s), comme la pose du logo, au lieu de s'étirer en continu. */
+  nav a::after {
+    transition-duration: 0.33s;
+    transition-timing-function: steps(4, jump-end);
+  }
+
   @media (prefers-reduced-motion: reduce) {
+    nav a::after { transition: none; }
     :global(.logo-sm .l) { animation: none !important; }
     :global(html[data-logo-anim="play"]) .logo-svg { opacity: 1; animation: none; }
   }
