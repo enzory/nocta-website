@@ -96,6 +96,27 @@ html {
   animation: fadeIn 0.6s ease forwards;
 }
 
+/* ============================================================
+   Rythme NOCTA — la « pose » du logo, réutilisée pour le texte.
+   Quatre poses tenues chacune une image (~12 images/s), sans
+   interpolation : steps(1, end) sur chaque palier. Décalage en em pour
+   suivre la taille du texte. Jouée une fois, jamais en boucle ;
+   neutralisée sous prefers-reduced-motion (bloc en fin de fichier).
+   ============================================================ */
+@keyframes pose {
+  0%      { opacity: 0;    transform: translateY(0.18em);  animation-timing-function: steps(1, end); }
+  33.333% { opacity: 0.45; transform: translateY(0.08em);  animation-timing-function: steps(1, end); }
+  66.667% { opacity: 0.85; transform: translateY(-0.03em); animation-timing-function: steps(1, end); }
+  100%    { opacity: 1;    transform: none; }
+}
+
+/* Un mot posé à la main (italique du hero). inline-block : nécessaire pour
+   le décalage vertical, sans empêcher le retour à la ligne entre les mots. */
+.pose-mot {
+  display: inline-block;
+  animation: pose 0.25s both;
+}
+
 /* Les utilitaires .font-serif / .font-sans sont generes par Tailwind v4
    depuis les tokens --font-serif / --font-sans declares dans @theme.
    Ne pas les redefinir a la main ici : ecrites hors @layer, elles
@@ -240,6 +261,11 @@ a:focus-visible > .arrow-right {
     opacity: 1 !important;
     transform: none;
     transition: none;
+  }
+
+  /* Rythme NOCTA : aucune pose, le texte est là d'emblée. */
+  .pose-mot {
+    animation: none;
   }
 
   html {
