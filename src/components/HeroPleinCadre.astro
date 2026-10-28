@@ -115,7 +115,12 @@
   }
 
   /* ── Images ──────────────────────────────────────────────────────────── */
-  .pc-media { position: absolute; inset: 0; }
+  /* Couche des photos : son propre contexte d'empilement (isolation). Le
+     script fait passer l'image entrante au-dessus des autres en augmentant
+     son z-index à chaque rotation ; sans cette isolation, dès la 2e
+     rotation, la photo passait AU-DESSUS du voile puis du texte (constaté
+     sur la maquette). Ordre fixe : photos (0) < voile (1) < texte (2). */
+  .pc-media { position: absolute; inset: 0; z-index: 0; isolation: isolate; }
   .pc-img {
     position: absolute;
     inset: 0;
@@ -146,6 +151,7 @@
   .pc-veil {
     position: absolute;
     inset: 0;
+    z-index: 1;
     pointer-events: none;
     background:
       linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 22%),
