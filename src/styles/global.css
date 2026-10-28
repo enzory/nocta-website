@@ -117,6 +117,17 @@ html {
   animation: pose 0.25s both;
 }
 
+/* Titres des pages internes : leur H1 entrait par le fondu fluide
+   .animate-fade-up. Même déclenchement, mêmes délais (en ligne), même
+   opacity:0 de départ — seule la manière change : la pose en quatre temps.
+   Les autres éléments .animate-fade-up (chapô, boutons) gardent le fondu.
+   Sous prefers-reduced-motion, le bloc .animate-fade-up de fin de fichier
+   coupe l'animation et force opacity:1 : rien ne change pour ce cas. */
+h1.animate-fade-up {
+  animation-name: pose;
+  animation-duration: 0.25s;
+}
+
 /* Les utilitaires .font-serif / .font-sans sont generes par Tailwind v4
    depuis les tokens --font-serif / --font-sans declares dans @theme.
    Ne pas les redefinir a la main ici : ecrites hors @layer, elles
