@@ -17,7 +17,9 @@ export default defineConfig({
     filter: (page) =>
       !page.includes('/merci') &&
       !page.includes('/mentions-legales') &&
-      !page.includes('/commande/'),
+      !page.includes('/commande/') &&
+      // Maquettes de travail (pistes de hero) : noindex, hors sitemap.
+      !page.includes('/labo/'),
   }), react()],
   vite: {
     plugins: [tailwindcss()],

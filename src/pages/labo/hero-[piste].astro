@@ -1,0 +1,50 @@
+---
+/**
+ * LABO — pistes de refonte du hero de l'accueil (maquettes de travail).
+ *
+ * /labo/hero-a : le header réel, la piste,
+ * puis le footer. L'accueil (src/pages/index.astro) n'est PAS modifié.
+ * Pages en noindex et exclues du sitemap (astro.config.mjs). À supprimer
+ * une fois la piste retenue intégrée à l'accueil.
+ */
+import Layout from '../../layouts/layout.astro';
+import Header from '../../components/header.astro';
+import Footer from '../../components/Footer.astro';
+import HeroEditorial from '../../components/hero-pistes/HeroEditorial.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { piste: 'a' } },
+  ];
+}
+
+const { piste } = Astro.params;
+
+// Image préchargée : celle qui porte le LCP dans chaque piste.
+const pistes = {
+  a: {
+    nom: 'Éditorial',
+    light: true,
+    preload: {
+      href: '/images/nocta-pancetta-hero4-800w.webp',
+      srcset: '/images/nocta-pancetta-hero4-400w.webp 400w, /images/nocta-pancetta-hero4-800w.webp 800w, /images/nocta-pancetta-hero4-1200w.webp 1200w',
+      sizes: '(min-width: 1024px) 22vw, 92vw',
+    },
+  },
+} as const;
+
+const p = pistes[piste as keyof typeof pistes];
+---
+
+<Layout
+  title={`Labo hero — piste ${piste.toUpperCase()} ${p.nom} | NOCTA`}
+  description="Maquette de travail, non indexée."
+  noindex={true}
+  preloadHero={p.preload}
+>
+  <Header light={p.light} />
+  <main id="contenu">
+    {piste === 'a' && <HeroEditorial />}
+  </main>
+  <Footer />
+</Layout>
