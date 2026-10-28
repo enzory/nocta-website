@@ -110,11 +110,20 @@ html {
   100%    { opacity: 1;    transform: none; }
 }
 
-/* Un mot posé à la main (italique du hero). inline-block : nécessaire pour
-   le décalage vertical, sans empêcher le retour à la ligne entre les mots. */
+/* Révélation fluide (retour d'Enzo : « plus fluide et plus élégant ») :
+   fondu et montée courte, courbe douce sans dépassement. Opacité et
+   transform uniquement. --rise règle la montée selon l'élément. */
+@keyframes fondu-montee {
+  from { opacity: 0; transform: translateY(var(--rise, 0.14em)); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Un mot révélé (italique du hero). inline-block : nécessaire pour le
+   décalage vertical, sans empêcher le retour à la ligne entre les mots. */
 .pose-mot {
   display: inline-block;
-  animation: pose 0.25s both;
+  --rise: 0.14em;
+  animation: fondu-montee 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* Titres des pages internes : leur H1 entrait par le fondu fluide
