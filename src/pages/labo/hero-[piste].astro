@@ -2,7 +2,7 @@
 /**
  * LABO — pistes de refonte du hero de l'accueil (maquettes de travail).
  *
- * /labo/hero-a : le header réel, la piste,
+ * /labo/hero-a, /labo/hero-b : le header réel, la piste,
  * puis le footer. L'accueil (src/pages/index.astro) n'est PAS modifié.
  * Pages en noindex et exclues du sitemap (astro.config.mjs). À supprimer
  * une fois la piste retenue intégrée à l'accueil.
@@ -11,10 +11,12 @@ import Layout from '../../layouts/layout.astro';
 import Header from '../../components/header.astro';
 import Footer from '../../components/Footer.astro';
 import HeroEditorial from '../../components/hero-pistes/HeroEditorial.astro';
+import HeroNuit from '../../components/hero-pistes/HeroNuit.astro';
 
 export function getStaticPaths() {
   return [
     { params: { piste: 'a' } },
+    { params: { piste: 'b' } },
   ];
 }
 
@@ -31,6 +33,17 @@ const pistes = {
       sizes: '(min-width: 1024px) 22vw, 92vw',
     },
   },
+  b: {
+    nom: 'Plein cadre',
+    light: false,
+    preload: {
+      // Même jeu de tailles que l'<img>, 2400w compris : sans lui, un écran
+      // 1440 px préchargeait la 1200w puis téléchargeait aussi la 2400w.
+      href: '/images/nocta-assiette-hero1-400w.webp',
+      srcset: '/images/nocta-assiette-hero1-400w.webp 400w, /images/nocta-assiette-hero1-800w.webp 800w, /images/nocta-assiette-hero1-1200w.webp 1200w, /images/nocta-assiette-hero1.webp 2400w',
+      sizes: '100vw',
+    },
+  },
 } as const;
 
 const p = pistes[piste as keyof typeof pistes];
@@ -45,6 +58,7 @@ const p = pistes[piste as keyof typeof pistes];
   <Header light={p.light} />
   <main id="contenu">
     {piste === 'a' && <HeroEditorial />}
+    {piste === 'b' && <HeroNuit />}
   </main>
   <Footer />
 </Layout>

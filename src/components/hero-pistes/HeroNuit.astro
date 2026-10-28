@@ -1,0 +1,418 @@
+---
+/**
+ * PISTE B — « Plein cadre » (maquette, labo uniquement)
+ *
+ * Idée : la photo d'abord, comme un plan de cinéma. L'image occupe tout
+ * l'écran avec un voile réduit au tiers bas ; le titre court sur une seule
+ * ligne au desktop, au-dessus d'un bandeau « générique » séparé par un filet :
+ * exergue | chapô | boutons. Le haut de l'image reste net.
+ *
+ * Les trois photos actuelles sont conservées. La rotation devient plus lente
+ * et plus calme : fondu enchaîné de 1,4 s, et chaque image se pose par un
+ * léger recul (zoom 1,06 → 1) qui s'arrête de lui-même. Les puces deviennent
+ * trois filets qui se remplissent pendant l'affichage de l'image.
+ *
+ * Règles conservées du carrousel actuel :
+ *   - l'image LCP n'a jamais son opacité modifiée (seules les slides 2-3
+ *     passent au-dessus) ;
+ *   - slides 2-3 sans requête avant le premier besoin ;
+ *   - rotation lancée à load + 2 s, pause au survol, au focus clavier, et
+ *     bouton pause/lecture (WCAG 2.2.2) ;
+ *   - prefers-reduced-motion : aucune rotation automatique, aucun zoom.
+ * Contenus identiques au hero actuel.
+ */
+---
+
+<section id="hero" class="nuit relative bg-nocta-black text-nocta-cream overflow-hidden">
+
+  <div class="nuit-media">
+    <img
+      id="nuit-lcp"
+      class="nuit-img is-on"
+      src="/images/nocta-assiette-hero1-800w.webp"
+      srcset="
+        /images/nocta-assiette-hero1-400w.webp   400w,
+        /images/nocta-assiette-hero1-800w.webp   800w,
+        /images/nocta-assiette-hero1-1200w.webp 1200w,
+        /images/nocta-assiette-hero1.webp       2400w
+      "
+      sizes="100vw"
+      alt="Assiette gastronomique chef privé Paris — dressage NOCTA"
+      width="2400"
+      height="1800"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <img
+      class="nuit-img nuit-slide"
+      data-src="/images/nocta-pancetta-hero4-800w.webp"
+      data-srcset="
+        /images/nocta-pancetta-hero4-800w.webp  800w,
+        /images/nocta-pancetta-hero4-1200w.webp 1200w,
+        /images/nocta-pancetta-hero4.webp       2400w
+      "
+      sizes="100vw"
+      alt="Pancetta croustillante dressée par le chef — catering événementiel Paris"
+      width="800"
+      height="1067"
+      style="object-position: center 60%;"
+    />
+    <img
+      class="nuit-img nuit-slide"
+      data-src="/images/nocta-fleur-courgette-hero3-800w.webp"
+      data-srcset="
+        /images/nocta-fleur-courgette-hero3-800w.webp  800w,
+        /images/nocta-fleur-courgette-hero3-1200w.webp 1200w,
+        /images/nocta-fleur-courgette-hero3.webp       2400w
+      "
+      sizes="100vw"
+      alt="Fleur de courgette farcie — chef privé traiteur Paris Île-de-France"
+      width="800"
+      height="1067"
+    />
+  </div>
+
+  <div class="nuit-veil" aria-hidden="true"></div>
+
+  <div class="nuit-content max-w-7xl mx-auto px-6 lg:px-12">
+    <h1 class="nuit-title font-serif font-light">
+      L’art de recevoir, <em><span class="pose-mot" style="animation-delay: 0.1s">sans</span> <span class="pose-mot" style="animation-delay: 0.22s">compromis.</span></em>
+    </h1>
+
+    <span class="nuit-rule" aria-hidden="true"></span>
+
+    <div class="nuit-band">
+      <p class="nuit-eyebrow t-eyebrow text-nocta-cream/80">Paris, Île-de-France & ailleurs</p>
+      <p class="nuit-chapo font-sans text-base font-normal text-nocta-cream/90 leading-relaxed">
+        NOCTA conçoit des expériences culinaires avec vous, pour les entreprises et les particuliers exigeants — à Paris, en Île-de-France et au-delà.
+      </p>
+      <div class="nuit-actions">
+        <a href="/contact" class="t-label inline-flex items-center justify-center bg-nocta-cream text-nocta-black px-8 py-3 transition-colors duration-300 hover:bg-white">
+          Demander un devis
+        </a>
+        <a href="/prestations" class="t-label inline-flex items-center justify-center border border-nocta-cream/50 text-nocta-cream px-8 py-3 transition-colors duration-300 hover:border-nocta-cream">
+          Explorer nos prestations
+        </a>
+      </div>
+    </div>
+
+    <div class="nuit-controls" role="group" aria-label="Contrôles du diaporama">
+      <button type="button" class="nuit-bar is-current" data-index="0" aria-label="Afficher l’image 1 sur 3" aria-current="true"><span></span></button>
+      <button type="button" class="nuit-bar" data-index="1" aria-label="Afficher l’image 2 sur 3"><span></span></button>
+      <button type="button" class="nuit-bar" data-index="2" aria-label="Afficher l’image 3 sur 3"><span></span></button>
+      <button type="button" class="nuit-toggle" aria-pressed="false" aria-label="Mettre le diaporama en pause">
+        <svg data-icon="pause" width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><rect x="2" y="1.5" width="2.5" height="9" rx="0.4"/><rect x="7.5" y="1.5" width="2.5" height="9" rx="0.4"/></svg>
+        <svg data-icon="play" width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true" hidden><path d="M2.5 1.5 10 6 2.5 10.5Z"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .nuit {
+    min-height: 100vh;
+    min-height: 100svh;
+    height: 100vh;
+    height: 100svh;
+  }
+
+  /* ── Images ──────────────────────────────────────────────────────────── */
+  .nuit-media { position: absolute; inset: 0; }
+  .nuit-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.06);
+    transform-origin: 50% 55%;
+  }
+  .nuit-slide {
+    opacity: 0;
+    transition: opacity 1.4s cubic-bezier(0.45, 0, 0.25, 1);
+  }
+  .nuit-slide.is-visible { opacity: 1; }
+
+  /* Recul lent : l'image se pose en 7 s puis s'arrête (forwards, pas de
+     boucle). Rejoué à chaque fois qu'une image redevient visible. */
+  @keyframes nuit-recul {
+    from { transform: scale(1.06); }
+    to   { transform: scale(1); }
+  }
+  .nuit-img.is-on { animation: nuit-recul 7s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+  /* Voile : seulement le bas de l'image (le texte), plus un léger
+     assombrissement en haut pour le header blanc. Le haut reste net.
+     Mobile : le texte occupe plus de la moitié de l'écran, le voile monte
+     plus haut et plus dense (les assiettes blanches sont la pire photo). */
+  .nuit-veil {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 22%),
+      linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.8) 45%, rgba(0,0,0,0.62) 62%, rgba(0,0,0,0) 86%);
+  }
+  @media (min-width: 1024px) {
+    .nuit-veil {
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 22%),
+        linear-gradient(to top, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.72) 28%, rgba(0,0,0,0.38) 50%, rgba(0,0,0,0) 72%);
+    }
+  }
+
+  /* ── Texte : titre puis bandeau « générique » ─────────────────────────── */
+  .nuit-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 1.25rem;
+  }
+  .nuit-title {
+    font-size: clamp(2.75rem, 5.6vw, 5.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+  }
+  .nuit-title em { display: block; }
+  .nuit-rule {
+    display: block;
+    margin-top: 1.5rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.3;
+    transform-origin: left center;
+  }
+  .nuit-band {
+    margin-top: 1.25rem;
+    display: grid;
+    gap: 1rem;
+  }
+  .nuit-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  .nuit-actions a { min-height: 48px; white-space: nowrap; }
+
+  @media (min-width: 1024px) {
+    .nuit-content { padding-bottom: 2rem; }
+    .nuit-title em { display: inline; }  /* une seule ligne au desktop */
+    .nuit-band {
+      grid-template-columns: minmax(0, 3fr) minmax(0, 5fr) auto;
+      align-items: start;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .nuit-chapo { max-width: 46ch; }
+    .nuit-actions {
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-top: 0;
+    }
+  }
+
+  /* ── Contrôles : trois filets qui se remplissent ─────────────────────── */
+  .nuit-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-top: 0.75rem;
+  }
+  @media (min-width: 1024px) {
+    .nuit-controls { justify-content: flex-start; margin-top: 1.25rem; }
+  }
+  .nuit-bar {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+  }
+  .nuit-bar span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: rgba(238, 235, 227, 0.35);
+    overflow: hidden;
+  }
+  .nuit-bar span::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #EEEBE3;
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+  .nuit-bar.is-current span::after { transform: scaleX(0.15); }
+  /* Remplissage pendant l'affichage. La fin de cette animation fait passer
+     à l'image suivante (script) : la barre et la rotation ne peuvent pas se
+     désynchroniser, et la pause fige les deux à la fois. */
+  @keyframes nuit-remplit {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+  .nuit.is-running .nuit-bar.is-current span::after {
+    animation: nuit-remplit 6s linear forwards;
+  }
+  .nuit.is-held .nuit-bar.is-current span::after { animation-play-state: paused; }
+
+  .nuit-toggle {
+    width: 44px;
+    height: 44px;
+    margin-left: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(238, 235, 227, 0.7);
+    transition: color 0.3s;
+  }
+  .nuit-toggle:hover, .nuit-toggle:focus-visible { color: #EEEBE3; }
+
+  /* ── Entrée — une seule fois ─────────────────────────────────────────── */
+  @keyframes nuit-trace {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+  .nuit-rule     { animation: nuit-trace 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+  .nuit-band > * { --rise: 10px; animation: fondu-montee 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .nuit-eyebrow  { animation-delay: 0.35s; }
+  .nuit-chapo    { animation-delay: 0.45s; }
+  .nuit-actions  { animation-delay: 0.6s; }
+  .nuit-controls { animation: fondu-montee 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.8s both; --rise: 0px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nuit-img, .nuit-img.is-on { animation: none; transform: none; }
+    .nuit-slide { transition: none; }
+    .nuit-rule, .nuit-band > *, .nuit-controls { animation: none; }
+    /* Le filet garde son remplissage : il ne tourne que si la personne a
+       explicitement relancé le diaporama (bouton lecture). */
+  }
+</style>
+
+<script>
+  // Rotation pilotée par la fin du remplissage du filet courant (animationend),
+  // pas par un setInterval : pause, survol et focus figent l'animation CSS,
+  // donc la rotation, sans compteur à resynchroniser.
+  const hero = document.querySelector<HTMLElement>('.nuit');
+  if (hero) {
+    const imgs   = Array.from(hero.querySelectorAll<HTMLImageElement>('.nuit-img'));
+    const slides = imgs.slice(1);                 // l'image LCP (imgs[0]) n'est jamais masquée
+    const bars   = Array.from(hero.querySelectorAll<HTMLButtonElement>('.nuit-bar'));
+    const toggle = hero.querySelector<HTMLButtonElement>('.nuit-toggle');
+    const rm     = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    let current  = 0;
+    let playing  = !rm.matches;
+    let started  = false;   // feu vert de l'autoplay (load + 2 s, ou bouton lecture)
+    let hovering = false;
+    let focusing = false;
+    let hydrated = false;
+    let layer    = 1;
+    let cleanup: ReturnType<typeof setTimeout> | undefined;
+
+    function hydrate() {
+      if (hydrated) return;
+      hydrated = true;
+      for (const s of slides) {
+        if (s.dataset.srcset) s.srcset = s.dataset.srcset;
+        if (s.dataset.src) s.src = s.dataset.src;
+      }
+    }
+
+    // Rejoue le recul lent sur l'image qui devient visible.
+    function replay(img: HTMLImageElement) {
+      img.classList.remove('is-on');
+      void img.offsetWidth;
+      img.classList.add('is-on');
+    }
+
+    // Fondu enchaîné sans « trou » : l'image entrante passe AU-DESSUS des
+    // autres et apparaît ; l'ancienne n'est retirée qu'une fois recouverte.
+    // Retour à l'image 1 (LCP, toujours opaque dessous) : les slides
+    // s'effacent simplement.
+    function show(index: number) {
+      clearTimeout(cleanup);
+      if (index === 0) {
+        slides.forEach((s) => s.classList.remove('is-visible'));
+        return;
+      }
+      const incoming = slides[index - 1];
+      incoming.style.zIndex = String(++layer);
+      incoming.classList.add('is-visible');
+      cleanup = setTimeout(() => {
+        for (const s of slides) {
+          if (s === incoming || !s.classList.contains('is-visible')) continue;
+          s.style.transition = 'none';
+          s.classList.remove('is-visible');
+          void s.offsetWidth;
+          s.style.transition = '';
+        }
+      }, 1400);
+    }
+
+    function goTo(index: number) {
+      hydrate();
+      bars[current].classList.remove('is-current');
+      bars[current].removeAttribute('aria-current');
+      current = (index + 3) % 3;
+      bars[current].classList.add('is-current');
+      bars[current].setAttribute('aria-current', 'true');
+      show(current);
+      replay(imgs[current]);
+      // Relance le remplissage du filet courant depuis zéro.
+      const fill = bars[current].querySelector('span');
+      if (fill) { fill.style.animation = 'none'; void fill.offsetWidth; fill.style.animation = ''; }
+    }
+
+    // is-running : le remplissage tourne (une fois lancé, il le reste) ;
+    // is-held : il est figé (pause, survol, focus clavier).
+    function sync() {
+      hero!.classList.toggle('is-running', started);
+      hero!.classList.toggle('is-held', !playing || hovering || focusing);
+    }
+
+    function updateToggle() {
+      if (!toggle) return;
+      toggle.setAttribute('aria-pressed', playing ? 'false' : 'true');
+      toggle.setAttribute('aria-label', playing ? 'Mettre le diaporama en pause' : 'Reprendre le diaporama');
+      toggle.querySelector<SVGElement>('[data-icon="pause"]')!.toggleAttribute('hidden', !playing);
+      toggle.querySelector<SVGElement>('[data-icon="play"]')!.toggleAttribute('hidden', playing);
+    }
+
+    bars.forEach((bar, i) => {
+      bar.addEventListener('click', () => goTo(i));
+      bar.querySelector('span')!.addEventListener('animationend', () => goTo(current + 1));
+    });
+
+    toggle?.addEventListener('click', () => {
+      playing = !playing;
+      if (playing) { hydrate(); started = true; }
+      updateToggle();
+      sync();
+    });
+
+    hero.addEventListener('mouseenter', () => { hovering = true;  sync(); });
+    hero.addEventListener('mouseleave', () => { hovering = false; sync(); });
+    hero.addEventListener('focusin',  (e) => { focusing = e.target !== toggle; sync(); });
+    hero.addEventListener('focusout', () => { focusing = false; sync(); });
+
+    rm.addEventListener('change', () => { playing = !rm.matches; updateToggle(); sync(); });
+
+    updateToggle();
+    // Démarrage différé : load + 2 s, pour laisser le LCP se mesurer seul.
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        if (!playing) return;
+        hydrate();
+        started = true;
+        sync();
+      }, 2000);
+    });
+  }
+</script>
