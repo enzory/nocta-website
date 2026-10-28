@@ -96,6 +96,39 @@ html {
   animation: fadeIn 0.6s ease forwards;
 }
 
+/* ============================================================
+   Rythme NOCTA — le geste du logo, réutilisé pour le texte : une
+   révélation douce et continue, jouée une fois, jamais en boucle ;
+   neutralisée sous prefers-reduced-motion (bloc en fin de fichier).
+   ============================================================ */
+/* Révélation fluide (retour d'Enzo : « plus fluide et plus élégant ») :
+   fondu et montée courte, courbe douce sans dépassement. Opacité et
+   transform uniquement. --rise règle la montée selon l'élément. */
+@keyframes fondu-montee {
+  from { opacity: 0; transform: translateY(var(--rise, 0.14em)); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Un mot révélé (italique du hero). inline-block : nécessaire pour le
+   décalage vertical, sans empêcher le retour à la ligne entre les mots. */
+.pose-mot {
+  display: inline-block;
+  --rise: 0.14em;
+  animation: fondu-montee 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Titres des pages internes : leur H1 entrait par .animate-fade-up (fondu
+   et montée de 24 px). Même déclenchement, mêmes délais (en ligne), même
+   durée et même courbe : seule la montée est raccourcie (0,12 em), pour un
+   titre qui se dépose plutôt qu'il ne glisse. Les autres éléments
+   .animate-fade-up (chapô, boutons) gardent le fondu d'origine. Sous
+   prefers-reduced-motion, le bloc .animate-fade-up de fin de fichier coupe
+   l'animation et force opacity:1 : rien ne change pour ce cas. */
+h1.animate-fade-up {
+  --rise: 0.12em;
+  animation-name: fondu-montee;
+}
+
 /* Les utilitaires .font-serif / .font-sans sont generes par Tailwind v4
    depuis les tokens --font-serif / --font-sans declares dans @theme.
    Ne pas les redefinir a la main ici : ecrites hors @layer, elles
@@ -240,6 +273,11 @@ a:focus-visible > .arrow-right {
     opacity: 1 !important;
     transform: none;
     transition: none;
+  }
+
+  /* Rythme NOCTA : aucune révélation, le texte est là d'emblée. */
+  .pose-mot {
+    animation: none;
   }
 
   html {
