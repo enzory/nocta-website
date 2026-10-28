@@ -28,6 +28,22 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : null
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Logo « stop motion » : décidé AVANT le premier affichage pour éviter
+         tout flash. Joué à la première page de la session uniquement, jamais
+         sous prefers-reduced-motion. Sans JS, ou si sessionStorage est
+         indisponible (navigation privée stricte), rien n'est posé : le logo
+         reste statique. Cf. components/header.astro. -->
+    <script is:inline>
+      (function () {
+        try {
+          if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          if (sessionStorage.getItem('nocta-logo')) return;
+          sessionStorage.setItem('nocta-logo', '1');
+          document.documentElement.setAttribute('data-logo-anim', 'play');
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- PRELOAD fonts self-hostées — romain + sans uniquement. Pas d'italique
          préchargée : les 30 pages GEO ne rendent pas d'italique et tiraient
          37 Ko pour rien ; les pages qui en ont ne concernent qu'un fragment
