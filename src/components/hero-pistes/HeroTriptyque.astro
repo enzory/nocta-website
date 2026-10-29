@@ -1,0 +1,213 @@
+---
+/**
+ * PISTE C — « Triptyque » (maquette, labo uniquement)
+ *
+ * Idée : les trois photos du hero montrées ENSEMBLE, en trois panneaux
+ * verticaux décalés, plutôt qu'une à une dans un carrousel. Le mouvement
+ * porte l'entrée — les panneaux montent l'un après l'autre et l'image se
+ * resserre à l'intérieur de chacun — puis tout s'arrête. Plus aucune
+ * rotation automatique, donc plus de bouton pause ni de puces.
+ *
+ * Desktop : texte à gauche (5 colonnes), triptyque à droite (7 colonnes),
+ * panneau central descendu d'un cran pour le rythme.
+ * Mobile : triptyque en tête, texte dessous, sur fond noir.
+ *
+ * Contenus identiques au hero actuel. Transform et opacity uniquement,
+ * une seule fois. Sous prefers-reduced-motion, tout est en place d'emblée.
+ * Aucun script.
+ */
+---
+
+<section id="hero" class="tri relative bg-nocta-black text-nocta-cream overflow-hidden">
+  <div class="tri-grid max-w-7xl mx-auto px-6 lg:px-12">
+
+    {/* sizes en vh et non en vw : l'image couvre un panneau étroit et haut
+         (object-fit: cover), sa largeur dessinée dépend donc de la HAUTEUR
+         du panneau — ~0,75 × h pour les photos 3:4, ~1,33 × h pour la photo
+         4:3. En vw, le navigateur choisissait la version 400w et l'agrandissait. */}
+    <div class="tri-panels">
+      <div class="tri-panel" style="--n: 0">
+        <img
+          src="/images/nocta-assiette-hero1-800w.webp"
+          srcset="/images/nocta-assiette-hero1-400w.webp 400w, /images/nocta-assiette-hero1-800w.webp 800w, /images/nocta-assiette-hero1-1200w.webp 1200w"
+          sizes="(min-width: 1024px) 100vh, 55vh"
+          alt="Assiette gastronomique chef privé Paris — dressage NOCTA"
+          width="2400" height="1800"
+          loading="eager" fetchpriority="high"
+        />
+      </div>
+      <div class="tri-panel" style="--n: 1">
+        <img
+          src="/images/nocta-pancetta-hero4-800w.webp"
+          srcset="/images/nocta-pancetta-hero4-400w.webp 400w, /images/nocta-pancetta-hero4-800w.webp 800w, /images/nocta-pancetta-hero4-1200w.webp 1200w"
+          sizes="(min-width: 1024px) 60vh, 30vh"
+          alt="Pancetta croustillante dressée par le chef — catering événementiel Paris"
+          width="800" height="1067"
+          loading="eager"
+        />
+      </div>
+      <div class="tri-panel" style="--n: 2">
+        <img
+          src="/images/nocta-fleur-courgette-hero3-800w.webp"
+          srcset="/images/nocta-fleur-courgette-hero3-400w.webp 400w, /images/nocta-fleur-courgette-hero3-800w.webp 800w, /images/nocta-fleur-courgette-hero3-1200w.webp 1200w"
+          sizes="(min-width: 1024px) 60vh, 30vh"
+          alt="Fleur de courgette farcie — chef privé traiteur Paris Île-de-France"
+          width="800" height="1067"
+          loading="eager"
+        />
+      </div>
+    </div>
+
+    <div class="tri-text">
+      <p class="tri-eyebrow t-eyebrow text-nocta-cream/80">Paris, Île-de-France & ailleurs</p>
+      <h1 class="tri-title font-serif font-light">
+        L’art de recevoir,<br/>
+        <em><span class="pose-mot" style="animation-delay: 0.35s">sans</span> <span class="pose-mot" style="animation-delay: 0.47s">compromis.</span></em>
+      </h1>
+      <p class="tri-chapo font-sans text-base lg:text-lg font-normal text-nocta-cream/85 leading-relaxed">
+        NOCTA conçoit des expériences culinaires avec vous, pour les entreprises et les particuliers exigeants — à Paris, en Île-de-France et au-delà.
+      </p>
+      <div class="tri-actions">
+        <a href="/contact" class="t-label inline-flex items-center justify-center bg-nocta-cream text-nocta-black px-8 py-3 transition-colors duration-300 hover:bg-white">
+          Demander un devis
+        </a>
+        <a href="/prestations" class="t-label inline-flex items-center justify-center border border-nocta-cream/50 text-nocta-cream px-8 py-3 transition-colors duration-300 hover:border-nocta-cream">
+          Explorer nos prestations
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ── Composition ─────────────────────────────────────────────────────── */
+  .tri-grid {
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    padding-top: 5.5rem;      /* header fixe 80 px */
+    padding-bottom: 1.75rem;
+  }
+
+  .tri-panels {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+    height: 40svh;
+  }
+  .tri-panel {
+    position: relative;
+    overflow: hidden;
+    background: #161616;
+  }
+  /* Rythme : le panneau central est descendu d'un cran. */
+  .tri-panel:nth-child(1),
+  .tri-panel:nth-child(3) { margin-bottom: 1.5rem; }
+  .tri-panel:nth-child(2) { margin-top: 1.5rem; }
+
+  .tri-panel img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .tri-text {
+    margin-top: auto;
+    padding-top: 1.5rem;
+  }
+  .tri-title {
+    margin-top: 0.75rem;
+    font-size: clamp(2.5rem, 4.9vw, 4.75rem);
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+  }
+  .tri-chapo { margin-top: 1rem; max-width: 42ch; }
+  .tri-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .tri-actions a { min-height: 48px; }
+
+  @media (min-width: 1024px) {
+    .tri-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      column-gap: 1.5rem;
+      padding-top: 7rem;
+      padding-bottom: 3rem;
+      height: 100svh;
+      min-height: 640px;
+    }
+    /* La colonne de texte occupe toute la hauteur : l'exergue s'aligne sur
+       le haut du triptyque, comme un folio ; titre, chapô et boutons restent
+       en bas. Le coin haut gauche n'est plus un vide. */
+    .tri-text {
+      grid-column: 1 / 6;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0;
+      padding-top: 0;
+    }
+    .tri-eyebrow {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(238, 235, 227, 0.2);
+    }
+    .tri-title { margin-top: auto; }
+    .tri-panels {
+      grid-column: 6 / -1;
+      grid-row: 1;
+      height: auto;
+      gap: 0.75rem;
+    }
+    .tri-panel:nth-child(1),
+    .tri-panel:nth-child(3) { margin-bottom: 4rem; }
+    .tri-panel:nth-child(2) { margin-top: 4rem; }
+    .tri-actions { flex-direction: row; flex-wrap: wrap; }
+    .tri-chapo { margin-top: 1.5rem; }
+    .tri-actions { margin-top: 2.25rem; }
+
+    /* Au survol, l'image se rapproche à peine. */
+    .tri-panel:hover img { transform: scale(1.035); }
+  }
+
+  /* ── Entrée — une seule fois ─────────────────────────────────────────
+     Chaque panneau monte de 48 px (0,12 s d'écart) ; à
+     l'intérieur, l'image se resserre de 1,12 à 1 un peu plus lentement :
+     un effet de fenêtre qui s'ouvre, sans masque ni clip-path.
+     Pas de fondu d'opacité sur les panneaux : l'image LCP n'est comptée
+     qu'une fois opaque, un fondu la retardait de ~1,7 s (mesuré).
+     « backwards » et non « both » : l'état final est le style normal, et le
+     léger zoom au survol (transition) reste possible après l'entrée. */
+  @keyframes tri-monte {
+    from { transform: translateY(48px); }
+    to   { transform: none; }
+  }
+  @keyframes tri-resserre {
+    from { transform: scale(1.12); }
+    to   { transform: none; }
+  }
+  .tri-panel {
+    animation: tri-monte 1s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: calc(var(--n) * 0.12s);
+  }
+  .tri-panel img {
+    animation: tri-resserre 1.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: calc(var(--n) * 0.12s);
+  }
+  .tri-eyebrow  { --rise: 8px;  animation: fondu-montee 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+  .tri-chapo    { --rise: 10px; animation: fondu-montee 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both; }
+  .tri-actions  { --rise: 10px; animation: fondu-montee 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tri-panel, .tri-panel img, .tri-eyebrow, .tri-chapo, .tri-actions { animation: none; }
+    .tri-panel img { transition: none; }
+    .tri-panel:hover img { transform: none; }
+  }
+</style>
