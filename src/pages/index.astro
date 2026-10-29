@@ -5,6 +5,31 @@ import Footer from '../components/Footer.astro';
 import CallToAction from '../components/CallToAction.astro';
 import LogoSlider from '../components/LogoSlider.astro';
 import HeroPleinCadre from '../components/HeroPleinCadre.astro';
+import FormatSequence from '../components/FormatSequence.astro';
+
+// Séquences photo des cartes FORMATS (cf. components/FormatSequence.astro) :
+// quatre images existantes par format, du produit à la table.
+// w / h = dimensions des variantes 800w.
+const sequences = {
+  private: [
+    { img: 'produit-tomate-maison', w: 800, h: 1067 },
+    { img: 'dressage-signature', w: 800, h: 1000 },
+    { img: 'nocta-bouche-private', w: 800, h: 846 },
+    { img: 'bougie-bois-maison', w: 800, h: 1006 },
+  ],
+  corporate: [
+    { img: 'nocta-table-corporate-apm', w: 800, h: 1067 },
+    { img: 'nocta-corporate-enzo', w: 800, h: 955, pos: '50% 12%' },   // visage dans le cadre
+    { img: 'nocta-amuses-bouches', w: 800, h: 1067 },
+    { img: 'reception-levis-corporate', w: 800, h: 458 },
+  ],
+  signature: [
+    { img: 'salon-signature', w: 800, h: 1067 },
+    { img: 'nocta-table-haussmann', w: 800, h: 1094 },
+    { img: 'sommellerie-verres-vin', w: 800, h: 600 },
+    { img: 'nocta-plat-signature-hermes', w: 800, h: 600 },
+  ],
+};
 ---
 
 <Layout
@@ -68,6 +93,7 @@ import HeroPleinCadre from '../components/HeroPleinCadre.astro';
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-px bg-nocta-cream/10">
           <a href="/prestations/private" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.1s">
+            <FormatSequence frames={sequences.private} delay={0} />
             <p class="t-eyebrow text-nocta-cream/40 mb-8">01</p>
             <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Private</h3>
             <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/50 mb-10">
@@ -79,6 +105,7 @@ import HeroPleinCadre from '../components/HeroPleinCadre.astro';
             </span>
           </a>
           <a href="/prestations/corporate" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.2s">
+            <FormatSequence frames={sequences.corporate} delay={700} />
             <p class="t-eyebrow text-nocta-cream/40 mb-8">02</p>
             <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Corporate</h3>
             <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/50 mb-10">
@@ -90,6 +117,7 @@ import HeroPleinCadre from '../components/HeroPleinCadre.astro';
             </span>
           </a>
           <a href="/prestations/signature" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.3s">
+            <FormatSequence frames={sequences.signature} delay={1400} />
             <p class="t-eyebrow text-nocta-cream/40 mb-8">03</p>
             <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Signature</h3>
             <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/50 mb-10">
