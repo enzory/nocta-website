@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import CallToAction from '../components/CallToAction.astro';
 import LogoSlider from '../components/LogoSlider.astro';
 import HeroPleinCadre from '../components/HeroPleinCadre.astro';
+import FormatTitleCascade from '../components/FormatTitleCascade.astro';
 ---
 
 <Layout
@@ -66,7 +67,7 @@ import HeroPleinCadre from '../components/HeroPleinCadre.astro';
             <span class="w-8 h-px bg-current inline-block"></span>
           </a>
         </div>
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-px bg-nocta-cream/10">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-px bg-nocta-cream/10" data-fl-cards>
           <a href="/prestations/private" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.1s">
             <p class="t-eyebrow text-nocta-cream/40 mb-8">01</p>
             <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Private</h3>
@@ -101,6 +102,8 @@ import HeroPleinCadre from '../components/HeroPleinCadre.astro';
             </span>
           </a>
         </div>
+        {/* Titres des cartes composés lettre par lettre à leur apparition. */}
+        <FormatTitleCascade />
       </div>
     </section>
 
