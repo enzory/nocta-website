@@ -1,0 +1,146 @@
+---
+/**
+ * Cartes FORMATS (accueil) — les titres se composent lettre par lettre.
+ *
+ * À l'apparition de chaque carte (classe .visible posée par le script
+ * « reveal » du layout), le numéro 01/02/03 se pose, puis les lettres de
+ * « NOCTA Private / Corporate / Signature » arrivent une à une : chacune sort
+ * d'un léger flou en montant de 0,3 em — une mise au point image par image,
+ * mais en fondu, jamais saccadée. Départs décalés de 0,25 s entre les trois
+ * cartes. Une seule passe, ~2,2 s au plus : pas de boucle, donc pas de
+ * contrôle pause requis (WCAG 2.2.2 ne vise que ce qui dure plus de 5 s).
+ *
+ * Amélioration progressive : le HTML des cartes ne change pas (titres en
+ * texte simple). Le script découpe les titres juste avant l'apparition, puis
+ * remet le texte d'origine à la fin de l'animation. Sans JS ou sous
+ * prefers-reduced-motion : rien n'est découpé, les titres s'affichent tels
+ * quels (avec l'apparition « reveal » existante, inchangée).
+ *
+ * Fidélité du dessin : des lettres séparées perdent le crénage de la police
+ * (« TA », « Co »…), le titre s'élargirait de ~5 px et sauterait au retour du
+ * texte d'origine. Chaque lettre est donc recalée sur sa position mesurée
+ * dans le titre d'origine : aucun décalage pendant l'animation ni à la fin.
+ *
+ * Accessibilité : pendant l'animation, le titre garde son nom complet
+ * (aria-label) et les lettres sont masquées aux lecteurs d'écran.
+ */
+---
+
+<script>
+  const START = 0.35;      // départ de la 1re carte après son apparition (s)
+  const CARD = 0.25;       // décalage entre deux cartes (s)
+  // Écart entre deux lettres : 45 ms, dans le CSS ci-dessous.
+
+  const rm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const grid = document.querySelector<HTMLElement>('[data-fl-cards]');
+
+  // Découpe un titre en lettres animables, recalées sur le dessin d'origine.
+  function prepare(h: HTMLElement, d0: number) {
+    const node = h.firstChild;
+    if (h.childNodes.length !== 1 || !node || node.nodeType !== Node.TEXT_NODE) return;
+    const text = node.textContent || '';
+
+    // 1. Position de chaque caractère dans le titre d'origine (crénage compris).
+    const base = h.getBoundingClientRect();
+    const range = document.createRange();
+    const pos: [number, number][] = [];
+    for (let i = 0; i < text.length; i++) {
+      range.setStart(node, i);
+      range.setEnd(node, i + 1);
+      const r = range.getBoundingClientRect();
+      pos.push([r.left - base.left, r.top - base.top]);
+    }
+
+    // 2. Lettres séparées ; les mots restent insécables, les espaces réels.
+    const wrap = document.createElement('span');
+    wrap.setAttribute('aria-hidden', 'true');
+    const letters: HTMLSpanElement[] = [];
+    let k = 0;
+    text.split(' ').forEach((word, wi) => {
+      if (wi) { wrap.append(' '); k++; }
+      const w = document.createElement('span');
+      w.style.whiteSpace = 'nowrap';
+      for (const c of word) {
+        const s = document.createElement('span');
+        s.className = 'fl-l';
+        s.textContent = c;
+        s.dataset.k = String(k++);
+        s.style.setProperty('--i', String(letters.length));
+        w.append(s);
+        letters.push(s);
+      }
+      wrap.append(w);
+    });
+    h.setAttribute('aria-label', text);
+    h.textContent = '';
+    h.append(wrap);
+    h.classList.add('fl-title');
+    h.style.setProperty('--fl-d0', `${d0}s`);
+
+    // 3. Recalage : chaque lettre reprend son écart d'origine avec la
+    //    précédente (sur une même ligne uniquement).
+    for (let j = 1; j < letters.length; j++) {
+      const a = letters[j - 1], b = letters[j];
+      const ka = Number(a.dataset.k), kb = Number(b.dataset.k);
+      const ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
+      if (Math.abs(rb.top - ra.top) > 2 || Math.abs(pos[kb][1] - pos[ka][1]) > 2) continue;
+      const delta = (pos[kb][0] - pos[ka][0]) - (rb.left - ra.left);
+      if (Math.abs(delta) > 0.01) b.style.marginLeft = `${delta}px`;
+    }
+
+    // 4. Fin de la dernière lettre : retour au texte d'origine, identique.
+    letters[letters.length - 1]?.addEventListener('animationend', () => {
+      h.textContent = text;
+      h.removeAttribute('aria-label');
+      h.classList.remove('fl-title', 'fl-ready');
+      h.style.removeProperty('--fl-d0');
+    }, { once: true });
+
+    h.classList.add('fl-ready');   // l'animation n'est permise qu'une fois recalée
+  }
+
+  if (grid && !rm.matches) {
+    // Mesures avec la vraie police (Newsreader), jamais avec la police de repli.
+    document.fonts.ready.then(() => {
+      grid.querySelectorAll<HTMLElement>(':scope > a').forEach((card, i) => {
+        const d0 = START + i * CARD;
+        const num = card.querySelector<HTMLElement>(':scope > p');
+        const title = card.querySelector<HTMLElement>(':scope > h3');
+        if (num) { num.classList.add('fl-num'); num.style.setProperty('--fl-dn', `${Math.max(0, d0 - 0.15)}s`); }
+        if (title) prepare(title, d0);
+      });
+    });
+  }
+</script>
+
+<style is:global>
+  /* Lettres : inline-block pour pouvoir monter (transform). */
+  .fl-title .fl-l { display: inline-block; }
+
+  /* Mise au point : fondu, montée de 0,3 em, flou qui se lève un peu avant
+     la fin. Déclenchée par .visible (apparition « reveal » de la carte). */
+  @keyframes fl-lettre {
+    0%   { opacity: 0; transform: translateY(0.3em); filter: blur(6px); }
+    70%  { filter: blur(0); }
+    100% { opacity: 1; transform: none; filter: none; }
+  }
+  .reveal.visible .fl-title.fl-ready .fl-l {
+    animation: fl-lettre 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: calc(var(--fl-d0, 0s) + var(--i, 0) * 45ms);
+  }
+
+  /* Le numéro se pose juste avant son titre. */
+  @keyframes fl-numero {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: none; }
+  }
+  .reveal.visible .fl-num {
+    animation: fl-numero 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--fl-dn, 0s);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal.visible .fl-title.fl-ready .fl-l,
+    .reveal.visible .fl-num { animation: none; }
+  }
+</style>
