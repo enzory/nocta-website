@@ -58,7 +58,7 @@
       alt="Pancetta croustillante dressée par le chef — catering événementiel Paris"
       width="800"
       height="1067"
-      style="--pos-d: 50% 100%;"
+      style="--pos-d: 50% 55%; --pos-m: 50% 50%;"
     />
     <img
       class="pc-img pc-slide"
@@ -133,9 +133,16 @@
     height: 100%;
     object-fit: cover;
     /* Recadrage par photo : --pos-m (mobile) et --pos-d (desktop), posés en
-       ligne sur chaque <img>. Pancetta : calée en bas au desktop
-       (100 %), le plat remonte dans les deux tiers supérieurs et le titre se
-       pose sur la table grise au lieu de couper le plat. */
+       ligne sur chaque <img>.
+       Pancetta : plat centré verticalement dans l'écran. Dans la photo, le
+       plat (bord argenté compris) va de 21,5 % à 84 % de la hauteur, centre
+       à 52,7 %. Desktop : la photo est agrandie à ~1 920 px de haut pour
+       couvrir 1 440 px de large ; 55 % place le centre du plat au milieu de
+       l'écran à 800 comme à 900 px de haut (le recul 1,06 autour de 55 % le
+       décale de moins de 3 px). Le plat mesure alors ~1 200 px : il ne peut
+       pas tenir entier en plein cadre, il déborde à parts égales en haut et
+       en bas. Mobile : la photo tient entière en hauteur, le plat aussi
+       (y compris à 1,06), déjà centré — 50 % 50 % explicite. */
     object-position: var(--pos-m, 50% 50%);
     transform: scale(1.06);
     transform-origin: 50% 55%;
