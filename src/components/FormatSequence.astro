@@ -14,6 +14,10 @@
  *     sort puis revient dans l'écran ;
  *   - pause au survol et au focus clavier de la carte, onglet masqué, ou
  *     carte hors écran ;
+ *   - pause / lecture par bouton (FormatSequenceToggle, WCAG 2.2.2) : les
+ *     trois boutons pilotent la même pause, qui tient tant que la page reste
+ *     affichée ; une fois les deux tours finis, le bouton propose de
+ *     reprendre et relance les séquences ;
  *   - prefers-reduced-motion : la 1re image seule, fixe, aucune autre
  *     image téléchargée ;
  *   - sans JS : la 1re image seule.
@@ -110,6 +114,8 @@ const srcset = (f: Frame) => `/images/${f.img}-400w.webp 400w, /images/${f.img}-
   const CYCLES = 2;      // tours avant le retour au repos
 
   const rm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const toggles = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-fs-toggle]'));
+  let userPaused = false;   // pause demandée par le bouton (persiste sur la page)
 
   interface Seq {
     root: HTMLElement;
@@ -149,7 +155,30 @@ const srcset = (f: Frame) => `/images/${f.img}-400w.webp 400w, /images/${f.img}-
   }
 
   const maxSteps = (s: Seq) => s.frames.length * CYCLES;
-  const canRun = (s: Seq) => s.inView && !s.held && !document.hidden && !rm.matches && s.steps < maxSteps(s);
+  const canRun = (s: Seq) => s.inView && !s.held && !userPaused && !document.hidden && !rm.matches && s.steps < maxSteps(s);
+  const done = (s: Seq) => s.steps >= maxSteps(s);
+
+  // Séquence de la carte d'un bouton (le bouton est dans le conteneur
+  // data-fs-card, à côté du lien qui porte la vignette).
+  const seqOf = (b: HTMLElement) => seqs.find((s) => s.root.closest('[data-fs-card]') === b.closest('[data-fs-card]'));
+  // « En lecture » pour une carte : ni pause demandée, ni deux tours finis.
+  const playingFor = (s?: Seq) => !!s && !userPaused && !done(s);
+
+  // État affiché par chaque bouton = celui de SA carte (une carte déjà au
+  // repos propose « Reprendre », même si une autre n'a pas encore joué) ;
+  // la pause, elle, reste commune aux trois cartes. Libellé d'état explicite
+  // (aria-label + title), icône assortie. Masqués sous prefers-reduced-motion.
+  function updateToggles() {
+    for (const b of toggles) {
+      const playing = playingFor(seqOf(b));
+      const label = playing ? "Mettre l'animation en pause" : "Reprendre l'animation";
+      b.hidden = rm.matches;
+      b.setAttribute('aria-label', label);
+      b.title = label;
+      b.querySelector<SVGElement>('[data-icon="pause"]')?.toggleAttribute('hidden', !playing);
+      b.querySelector<SVGElement>('[data-icon="play"]')?.toggleAttribute('hidden', playing);
+    }
+  }
 
   function schedule(s: Seq, ms: number) {
     clearTimeout(s.timer);
@@ -174,6 +203,7 @@ const srcset = (f: Frame) => `/images/${f.img}-400w.webp 400w, /images/${f.img}-
     s.index = next;
     s.steps++;
     if (s.steps < maxSteps(s)) schedule(s, HOLD + FADE);
+    else updateToggles();
   }
 
   function resume(s: Seq) {
@@ -195,13 +225,16 @@ const srcset = (f: Frame) => `/images/${f.img}-400w.webp 400w, /images/${f.img}-
         const s = seqs.find((x) => x.root === e.target);
         if (!s) continue;
         s.inView = e.isIntersecting;
-        if (!s.inView && s.steps >= maxSteps(s)) { s.steps = 0; s.started = false; }  // rejouera au retour
+        if (!s.inView && s.steps >= maxSteps(s)) { s.steps = 0; s.started = false; updateToggles(); }  // rejouera au retour
         resume(s);
       }
     }, { threshold: 0.4 });
 
     for (const s of seqs) {
       io.observe(s.root);
+      // Survol / focus du LIEN de la carte : le bouton pause est à côté du
+      // lien, pas dedans, donc le survoler ou le focaliser ne fige pas
+      // l'animation (sinon « Reprendre » ne repartirait qu'en quittant le bouton).
       const card = s.root.closest('a');
       card?.addEventListener('mouseenter', () => { s.held = true;  resume(s); });
       card?.addEventListener('mouseleave', () => { s.held = false; resume(s); });
@@ -209,7 +242,23 @@ const srcset = (f: Frame) => `/images/${f.img}-400w.webp 400w, /images/${f.img}-
       card?.addEventListener('focusout', () => { s.held = false; resume(s); });
     }
 
+    // Bouton : « pause » fige les trois cartes ; « reprendre » lève la pause
+    // et relance les cartes déjà au repos (deux tours finis).
+    for (const b of toggles) {
+      b.addEventListener('click', () => {
+        if (playingFor(seqOf(b))) {
+          userPaused = true;
+        } else {
+          userPaused = false;
+          seqs.forEach((s) => { if (done(s)) { s.steps = 0; s.started = false; } });
+        }
+        seqs.forEach(resume);
+        updateToggles();
+      });
+    }
+
     document.addEventListener('visibilitychange', () => seqs.forEach(resume));
-    rm.addEventListener('change', () => seqs.forEach((s) => (rm.matches ? rest(s) : resume(s))));
+    rm.addEventListener('change', () => { seqs.forEach((s) => (rm.matches ? rest(s) : resume(s))); updateToggles(); });
+    updateToggles();
   }
 </script>
