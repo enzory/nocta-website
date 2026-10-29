@@ -5,32 +5,6 @@ import Footer from '../components/Footer.astro';
 import CallToAction from '../components/CallToAction.astro';
 import LogoSlider from '../components/LogoSlider.astro';
 import HeroPleinCadre from '../components/HeroPleinCadre.astro';
-import FormatSequence from '../components/FormatSequence.astro';
-import FormatSequenceToggle from '../components/FormatSequenceToggle.astro';
-
-// Séquences photo des cartes FORMATS (cf. components/FormatSequence.astro) :
-// quatre images existantes par format, du produit à la table.
-// w / h = dimensions des variantes 800w.
-const sequences = {
-  private: [
-    { img: 'produit-tomate-maison', w: 800, h: 1067 },
-    { img: 'dressage-signature', w: 800, h: 1000 },
-    { img: 'nocta-bouche-private', w: 800, h: 846 },
-    { img: 'bougie-bois-maison', w: 800, h: 1006 },
-  ],
-  corporate: [
-    { img: 'nocta-table-corporate-apm', w: 800, h: 1067 },
-    { img: 'nocta-corporate-enzo', w: 800, h: 955, pos: '50% 12%' },   // visage dans le cadre
-    { img: 'nocta-amuses-bouches', w: 800, h: 1067 },
-    { img: 'reception-levis-corporate', w: 800, h: 458 },
-  ],
-  signature: [
-    { img: 'salon-signature', w: 800, h: 1067 },
-    { img: 'nocta-table-haussmann', w: 800, h: 1094 },
-    { img: 'sommellerie-verres-vin', w: 800, h: 600 },
-    { img: 'nocta-plat-signature-hermes', w: 800, h: 600 },
-  ],
-};
 ---
 
 <Layout
@@ -93,51 +67,39 @@ const sequences = {
           </a>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-px bg-nocta-cream/10">
-          <div class="relative grid" data-fs-card>
-            <a href="/prestations/private" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.1s">
-              <FormatSequence frames={sequences.private} delay={0} />
-              <p class="t-eyebrow text-nocta-cream/40 mb-8">01</p>
-              <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Private</h3>
-              <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/50 mb-10">
-                Dîners à domicile, anniversaires, célébrations familiales. Nous prenons en charge l’intégralité — pour que vous soyez présent à vos invités, pas à votre cuisine.
-              </p>
-              <span class="t-label text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
-                Découvrir
-                <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
-              </span>
-            </a>
-            <FormatSequenceToggle delay="0.1s" />
-          </div>
-          <div class="relative grid" data-fs-card>
-            <a href="/prestations/corporate" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.2s">
-              <FormatSequence frames={sequences.corporate} delay={700} />
-              <p class="t-eyebrow text-nocta-cream/40 mb-8">02</p>
-              <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Corporate</h3>
-              <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/50 mb-10">
-                Cocktails de lancement, dîners de gala, comités de direction. Une gastronomie à la hauteur de l’image que vous souhaitez donner.
-              </p>
-              <span class="t-label text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
-                Découvrir
-                <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
-              </span>
-            </a>
-            <FormatSequenceToggle delay="0.2s" />
-          </div>
-          <div class="relative grid" data-fs-card>
-            <a href="/prestations/signature" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.3s">
-              <FormatSequence frames={sequences.signature} delay={1400} />
-              <p class="t-eyebrow text-nocta-cream/40 mb-8">03</p>
-              <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Signature</h3>
-              <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/50 mb-10">
-                Un format où cuisine, vins et scénographie composent une expérience cohérente de bout en bout.
-              </p>
-              <span class="t-label text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
-                Découvrir
-                <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
-              </span>
-            </a>
-            <FormatSequenceToggle delay="0.3s" />
-          </div>
+          <a href="/prestations/private" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.1s">
+            <p class="t-eyebrow text-nocta-cream/40 mb-8">01</p>
+            <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Private</h3>
+            <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/50 mb-10">
+              Dîners à domicile, anniversaires, célébrations familiales. Nous prenons en charge l’intégralité — pour que vous soyez présent à vos invités, pas à votre cuisine.
+            </p>
+            <span class="t-label text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
+              Découvrir
+              <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
+            </span>
+          </a>
+          <a href="/prestations/corporate" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.2s">
+            <p class="t-eyebrow text-nocta-cream/40 mb-8">02</p>
+            <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Corporate</h3>
+            <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/50 mb-10">
+              Cocktails de lancement, dîners de gala, comités de direction. Une gastronomie à la hauteur de l’image que vous souhaitez donner.
+            </p>
+            <span class="t-label text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
+              Découvrir
+              <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
+            </span>
+          </a>
+          <a href="/prestations/signature" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.3s">
+            <p class="t-eyebrow text-nocta-cream/40 mb-8">03</p>
+            <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Signature</h3>
+            <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/50 mb-10">
+              Un format où cuisine, vins et scénographie composent une expérience cohérente de bout en bout.
+            </p>
+            <span class="t-label text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
+              Découvrir
+              <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
+            </span>
+          </a>
         </div>
       </div>
     </section>
