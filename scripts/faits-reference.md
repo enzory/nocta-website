@@ -19,7 +19,7 @@ Tout texte publié sur le site doit respecter ces faits. En cas de doute, ne pas
 - Vin : facturé à la bouteille ouverte ; sélection, mise en condition et service compris.
 
 ## Ce que NOCTA ne propose pas
-- Plateaux-repas : non proposés. Ne jamais les mentionner comme une offre.
+- Plateaux-repas : proposables sur demande (décision d'Enzo, 02/11/2026). Pas d'offre détaillée ni de prix publiés : ne jamais inventer de tarif ou de contenu.
 
 ## Convives (NOCTA Private)
 - « À table, de quelques convives à une cinquantaine, selon le lieu et le mobilier disponible. Si besoin, la location de matériel est chiffrée dans le devis. »

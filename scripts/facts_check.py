@@ -10,7 +10,7 @@ Faits de référence (validés par Enzo le 06/10/2026, complétés le 07/10/2026
   - NOCTA Private, convives : à table, de quelques convives à une cinquantaine,
     selon le lieu et le mobilier disponible (location de matériel chiffrée dans le devis)
   - Cocktail : à partir de 54 € HT par personne
-  - Plateaux-repas : non proposés actuellement
+  - Plateaux-repas : proposables sur demande, sans prix publié (02/11/2026)
   - Minimum de commande : 500 € HT, hors livraison (jamais TTC)
   - Réservation : possible dès 24 heures à l'avance, selon disponibilité
     (une semaine conseillée pour les dîners servis et les événements de plus de 50 personnes)
@@ -49,8 +49,10 @@ FORBIDDEN = [
      "délai de devis en 48 h (référence : sous 24 heures)"),
     (r"500\s?€\s?TTC", "minimum de commande en TTC (référence : 500 € HT, hors livraison)"),
     (r"chef\s+étoilé", "règle éditoriale : écrire « formé en cuisine étoilée »"),
-    # Plateaux-repas : offre non proposée actuellement (logistique).
-    (r"plateaux?[\s-]repas", "offre non proposée actuellement (plateaux-repas) : retirer la mention"),
+    # Plateaux-repas : proposables sur demande depuis le 02/11/2026 — la mention
+    # est permise, mais aucun prix n'est publié : on bloque un tarif accolé.
+    (r"plateaux?[\s-]repas[^.;]{0,60}\d+\s?(?:€|euros)",
+     "prix de plateaux-repas publié (aucun tarif validé) : retirer le prix"),
     # Ancienne fourchette cocktail.
     (r"\b50\s?(?:€\s?)?(?:-|–|à)\s?55\s?€", "fourchette cocktail obsolète (référence : à partir de 54 € HT par personne)"),
     # Anciennes limites de convives Private.
