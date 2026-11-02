@@ -51,6 +51,25 @@ import CallToAction from '../components/CallToAction.astro';
               </a>
             </div>
 
+            <!-- Ce qui se passe ensuite (validé le 02/11 : conforme à la pratique) -->
+            <div class="border-t border-nocta-black/10 pt-8 mb-14">
+              <p class="t-eyebrow text-nocta-grey mb-6">Ce qui se passe ensuite</p>
+              <ol class="flex flex-col gap-5">
+                <li class="flex gap-5">
+                  <span class="t-eyebrow text-nocta-grey w-6 shrink-0 pt-0.5">01</span>
+                  <p class="font-sans text-sm font-normal leading-relaxed text-nocta-black">Hugo ou Enzo lit votre demande, personnellement.</p>
+                </li>
+                <li class="flex gap-5">
+                  <span class="t-eyebrow text-nocta-grey w-6 shrink-0 pt-0.5">02</span>
+                  <p class="font-sans text-sm font-normal leading-relaxed text-nocta-black">Nous vous rappelons sous 24 heures pour en parler.</p>
+                </li>
+                <li class="flex gap-5">
+                  <span class="t-eyebrow text-nocta-grey w-6 shrink-0 pt-0.5">03</span>
+                  <p class="font-sans text-sm font-normal leading-relaxed text-nocta-black">Vous recevez une proposition de menu et un devis détaillé.</p>
+                </li>
+              </ol>
+            </div>
+
             <div class="border-t border-nocta-black/10 pt-8">
               <div class="flex items-center gap-3 mb-3">
                 <div class="flex items-center gap-0.5">
@@ -72,9 +91,126 @@ import CallToAction from '../components/CallToAction.astro';
           <form
             action="https://formspree.io/f/maqpwebj"
             method="POST"
-            class="reveal flex flex-col gap-8"
+            class="reveal flex flex-col gap-8 min-w-0"
             style="transition-delay: 0.15s"
           >
+
+            <!-- 1. Le projet d'abord : on parle de l'événement avant de demander
+                 les coordonnées. -->
+            <p class="t-eyebrow text-nocta-grey">Votre projet</p>
+
+            <!-- Projet : pré-sélectionné via ?projet=private|corporate|signature
+                 depuis les pages prestations (cf. script en bas de page). -->
+            <div class="flex flex-col gap-2">
+              <label for="projet" class="t-label text-nocta-grey">Occasion</label>
+              <div class="relative">
+                <select
+                  id="projet" name="projet"
+                  class="w-full appearance-none bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 pr-6 font-sans text-sm font-normal text-nocta-black cursor-pointer transition-colors duration-200"
+                >
+                  <option value="" disabled selected></option>
+                  <option value="Un dîner ou une fête chez moi" data-cle="private" data-court="Dîner privé">Un dîner ou une fête chez moi</option>
+                  <option value="Un événement d’entreprise (cocktail, séminaire, comité…)" data-cle="corporate" data-court="Événement d’entreprise">Un événement d’entreprise (cocktail, séminaire, comité…)</option>
+                  <option value="Des buffets livrés au bureau, ponctuels ou réguliers" data-cle="buffet" data-court="Buffet au bureau">Des buffets livrés au bureau, ponctuels ou réguliers</option>
+                  <option value="Une expérience sur-mesure autour de la cuisine et du vin" data-cle="signature" data-court="Sur-mesure">Une expérience sur-mesure autour de la cuisine et du vin</option>
+                  <option value="Je ne sais pas encore" data-cle="indecis" data-court="À définir">Je ne sais pas encore</option>
+                </select>
+                <svg class="absolute right-0 bottom-3.5 pointer-events-none text-nocta-grey" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Date & Convives -->
+            <div class="grid grid-cols-2 gap-4 lg:gap-6">
+              <div class="flex flex-col gap-2">
+                <label for="date" class="t-label text-nocta-grey">Date envisagée</label>
+                <input
+                  id="date" name="date" type="date"
+                  class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black transition-colors duration-200"
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="convives" class="t-label text-nocta-grey">Nombre de convives</label>
+                <input
+                  id="convives" name="convives" type="number" min="1"
+                  class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black transition-colors duration-200"
+                />
+              </div>
+            </div>
+
+            <!-- Lieu (nouveau) : où se passe l'événement -->
+            <div class="flex flex-col gap-2">
+              <label for="lieu" class="t-label text-nocta-grey">Lieu</label>
+              <input
+                id="lieu" name="lieu" type="text"
+                placeholder="Chez vous à Neuilly, vos bureaux à La Défense, un lieu à trouver…"
+                class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black placeholder:text-nocta-grey/60 transition-colors duration-200"
+              />
+            </div>
+
+            <!-- Budget : tranches validées le 02/11, avec les repères de prix -->
+            <div class="flex flex-col gap-2">
+              <label for="budget" class="t-label text-nocta-grey">Budget estimatif</label>
+              <div class="relative">
+                <select
+                  id="budget" name="budget"
+                  class="w-full appearance-none bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 pr-6 font-sans text-sm font-normal text-nocta-black cursor-pointer transition-colors duration-200"
+                >
+                  <option value="" disabled selected></option>
+                  <option value="Moins de 1 500 €">Moins de 1 500 €</option>
+                  <option value="1 500 € – 3 000 €">1 500 € – 3 000 €</option>
+                  <option value="3 000 € – 6 000 €">3 000 € – 6 000 €</option>
+                  <option value="6 000 € – 12 000 €">6 000 € – 12 000 €</option>
+                  <option value="Plus de 12 000 €">Plus de 12 000 €</option>
+                  <option value="Je ne sais pas encore, conseillez-moi">Je ne sais pas encore, conseillez-moi</option>
+                </select>
+                <svg class="absolute right-0 bottom-3.5 pointer-events-none text-nocta-grey" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <p class="font-sans text-xs font-normal leading-relaxed text-nocta-grey mt-1">
+                Repères. Dîner privé : de 70 à 250 € par personne, chef et service compris. Cocktail dînatoire : dès 54 € HT par personne. Buffet livré : dès 40 € HT par personne.
+              </p>
+            </div>
+
+            <!-- Message -->
+            <div class="flex flex-col gap-2">
+              <label for="message" class="t-label text-nocta-grey">Message</label>
+              <textarea
+                id="message" name="message" rows="4"
+                placeholder="L’occasion, vos invités, une contrainte alimentaire, un vin que vous aimez…"
+                class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black placeholder:text-nocta-grey/60 transition-colors duration-200 resize-none"
+              ></textarea>
+            </div>
+
+            <!-- Source (facultatif) : comment le client a connu NOCTA.
+                 Les valeurs envoyées sont les libellés eux-mêmes, pour que
+                 l'email Formspree soit lisible sans table de correspondance. -->
+            <div class="flex flex-col gap-2">
+              <label for="source" class="t-label text-nocta-grey">Comment avez-vous connu NOCTA ?</label>
+              <div class="relative">
+                <select
+                  id="source" name="source"
+                  class="w-full appearance-none bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 pr-6 font-sans text-sm font-normal text-nocta-black cursor-pointer transition-colors duration-200"
+                >
+                  <option value="" selected>Choisir…</option>
+                  <option value="Recherche Google">Recherche Google</option>
+                  <option value="ChatGPT ou un autre assistant IA">ChatGPT ou un autre assistant IA</option>
+                  <option value="Recommandation">Recommandation</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="LinkedIn">LinkedIn</option>
+                  <option value="Un événement NOCTA auquel j’ai assisté">Un événement NOCTA auquel j’ai assisté</option>
+                  <option value="Autre">Autre</option>
+                </select>
+                <svg class="absolute right-0 bottom-3.5 pointer-events-none text-nocta-grey" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- 2. Les coordonnées ensuite -->
+            <p class="t-eyebrow text-nocta-grey border-t border-nocta-black/10 pt-8 mt-2">Vos coordonnées</p>
 
             <!-- Prénom & Nom -->
             <div class="grid grid-cols-2 gap-4 lg:gap-6">
@@ -112,96 +248,12 @@ import CallToAction from '../components/CallToAction.astro';
               />
             </div>
 
-            <!-- Type d'événement -->
-            <div class="flex flex-col gap-2">
-              <label for="type_evenement" class="t-label text-nocta-grey">Type d’événement</label>
-              <div class="relative">
-                <select
-                  id="type_evenement" name="type_evenement"
-                  class="w-full appearance-none bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 pr-6 font-sans text-sm font-normal text-nocta-black cursor-pointer transition-colors duration-200"
-                >
-                  <option value="" disabled selected></option>
-                  <option value="private">NOCTA Private</option>
-                  <option value="corporate">NOCTA Corporate</option>
-                  <option value="signature">NOCTA Signature</option>
-                </select>
-                <svg class="absolute right-0 bottom-3.5 pointer-events-none text-nocta-grey" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-            </div>
-
-            <!-- Date & Convives -->
-            <div class="grid grid-cols-2 gap-4 lg:gap-6">
-              <div class="flex flex-col gap-2">
-                <label for="date" class="t-label text-nocta-grey">Date envisagée</label>
-                <input
-                  id="date" name="date" type="date"
-                  class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black transition-colors duration-200"
-                />
-              </div>
-              <div class="flex flex-col gap-2">
-                <label for="convives" class="t-label text-nocta-grey">Nombre de convives</label>
-                <input
-                  id="convives" name="convives" type="number" min="1"
-                  class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black transition-colors duration-200"
-                />
-              </div>
-            </div>
-
-            <!-- Budget estimatif -->
-            <div class="flex flex-col gap-2">
-              <label for="budget" class="t-label text-nocta-grey">Budget estimatif</label>
-              <div class="relative">
-                <select
-                  id="budget" name="budget"
-                  class="w-full appearance-none bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 pr-6 font-sans text-sm font-normal text-nocta-black cursor-pointer transition-colors duration-200"
-                >
-                  <option value="" disabled selected></option>
-                  <option value="moins_2000">Moins de 2 000 €</option>
-                  <option value="2000_5000">2 000 € – 5 000 €</option>
-                  <option value="5000_10000">5 000 € – 10 000 €</option>
-                  <option value="plus_10000">Plus de 10 000 €</option>
-                </select>
-                <svg class="absolute right-0 bottom-3.5 pointer-events-none text-nocta-grey" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-            </div>
-
-            <!-- Source (facultatif) : comment le client a connu NOCTA.
-                 Les valeurs envoyées sont les libellés eux-mêmes, pour que
-                 l'email Formspree soit lisible sans table de correspondance. -->
-            <div class="flex flex-col gap-2">
-              <label for="source" class="t-label text-nocta-grey">Comment avez-vous connu NOCTA ?</label>
-              <div class="relative">
-                <select
-                  id="source" name="source"
-                  class="w-full appearance-none bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 pr-6 font-sans text-sm font-normal text-nocta-black cursor-pointer transition-colors duration-200"
-                >
-                  <option value="" selected>Choisir…</option>
-                  <option value="Recherche Google">Recherche Google</option>
-                  <option value="ChatGPT ou un autre assistant IA">ChatGPT ou un autre assistant IA</option>
-                  <option value="Recommandation">Recommandation</option>
-                  <option value="Instagram">Instagram</option>
-                  <option value="LinkedIn">LinkedIn</option>
-                  <option value="Un événement NOCTA auquel j’ai assisté">Un événement NOCTA auquel j’ai assisté</option>
-                  <option value="Autre">Autre</option>
-                </select>
-                <svg class="absolute right-0 bottom-3.5 pointer-events-none text-nocta-grey" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-            </div>
-
-            <!-- Message -->
-            <div class="flex flex-col gap-2">
-              <label for="message" class="t-label text-nocta-grey">Message</label>
-              <textarea
-                id="message" name="message" rows="4"
-                class="bg-transparent border-b border-nocta-black/20 focus:border-nocta-black outline-none py-2.5 font-sans text-sm font-normal text-nocta-black transition-colors duration-200 resize-none"
-              ></textarea>
-            </div>
+            <!-- Champs cachés lus par Formspree :
+                 _subject     → objet de l'email (« Demande NOCTA — Dîner privé — 12 pers. — 14/12/2026 »),
+                                complété en JavaScript à l'envoi ;
+                 page_origine → page du site d'où vient le visiteur. -->
+            <input type="hidden" name="_subject" id="f-subject" value="Demande NOCTA — site" />
+            <input type="hidden" name="page_origine" id="f-origine" value="Inconnue" />
 
             <!-- Honeypot anti-spam (Formspree) : un humain ne le voit pas, un robot
                  qui remplit tout le remplit, et Formspree écarte alors l'envoi.
@@ -259,8 +311,43 @@ import CallToAction from '../components/CallToAction.astro';
 <script>
   const form = document.querySelector('form');
   const btn = document.getElementById('submit-btn');
+  const projet = document.getElementById('projet');
+
+  // 1. Pré-remplissage : /contact?projet=private sélectionne « Un dîner ou une
+  //    fête chez moi ». Le visiteur peut toujours changer.
+  const cle = new URLSearchParams(location.search).get('projet');
+  if (cle && projet) {
+    const opt = projet.querySelector(`option[data-cle="${CSS.escape(cle)}"]`);
+    if (opt) opt.selected = true;
+  }
+
+  // 2. Page d'origine : la page du site visitée juste avant le formulaire.
+  const origine = document.getElementById('f-origine');
+  if (origine) {
+    try {
+      const ref = document.referrer ? new URL(document.referrer) : null;
+      if (!ref) origine.value = 'Accès direct';
+      else if (ref.host === location.host) origine.value = ref.pathname;
+      else origine.value = 'Externe : ' + ref.host;
+    } catch { /* on garde « Inconnue » */ }
+  }
+
+  // 3. Objet de l'email : « Demande NOCTA — Dîner privé — 12 pers. — 14/12/2026 »
+  function objetEmail() {
+    const parts = ['Demande NOCTA'];
+    const opt = projet && projet.selectedOptions[0];
+    if (opt && opt.dataset.court) parts.push(opt.dataset.court);
+    const conv = document.getElementById('convives').value;
+    if (conv) parts.push(conv + ' pers.');
+    const d = document.getElementById('date').value; // AAAA-MM-JJ
+    if (d) parts.push(d.split('-').reverse().join('/'));
+    return parts.join(' — ');
+  }
+
   if (form && btn) {
     form.addEventListener('submit', () => {
+      const subject = document.getElementById('f-subject');
+      if (subject) subject.value = objetEmail();
       btn.disabled = true;
       btn.textContent = 'Envoi en cours…';
       btn.classList.add('opacity-60', 'cursor-not-allowed');
