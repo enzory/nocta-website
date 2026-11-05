@@ -1,29 +1,42 @@
 ---
 /*
-  APERÇU — « Votre fiche de réception »
+  APERÇU — « Fiche de réception » (v2 : papier de la maison)
   Ébauche interactive du parcours « Demander un devis ».
 
   - Page isolée : /contact (production) et Formspree ne sont pas touchés.
   - Aucun envoi réel : l'envoi est simulé dans le navigateur.
-  - Hors index Google (noindex) et hors sitemap (cf. astro.config.mjs).
+  - Hors layout du site (pas de GTM / GA4 / Vercel Analytics), noindex,
+    exclue du sitemap (cf. astro.config.mjs).
   - Champs, options et règles de validation repris de src/pages/contact.astro :
       obligatoires = prénom, nom, email, téléphone ; email au bon format ;
       convives ≥ 1. Rien d'autre n'est imposé.
-  - ?projet=private|corporate|signature présélectionne le format (modifiable).
-  - Un seul geste animé : le tampon « Demande reçue » après l'envoi.
-*/
-// Pas de layout du site : il embarque GTM / GA4 et Vercel Analytics.
-// Un aperçu ne doit rien compter dans les vraies statistiques.
-import '../../styles/global.css';
+  - ?projet=private|corporate|signature : format présélectionné, présenté sur
+    une ligne condensée avec « Modifier ». Sans paramètre : choix ouverts.
+  - Un seul geste animé : le tampon « Demande reçue » après l'envoi simulé.
 
-// Formats — mêmes libellés que le formulaire en ligne (validés le 02/11).
-// cle = valeur de ?projet ; court = libellé de l'objet de l'email.
+  Références de marque : aucun menu ni carton imprimé dans le projet (seul un
+  carton flou visible sur table-fleurie-v2.webp : blanc, texte centré, larges
+  marges). Logo, polices et encre reprises du site.
+*/
+import '../../styles/global.css';
+// Logo de la maison, inséré en SVG (net à toute taille). Le fichier d'origine
+// a de grandes marges transparentes : le dessin n'occupe que 49 % × 46 % de
+// son cadre (mesuré au rendu). On recadre le viewBox au plus près du mot pour
+// que la taille réglée en CSS soit la taille visible de « NOCTA ».
+import logoBrut from '../../../public/images/nocta-logo.svg?raw';
+const logo = logoBrut
+  .replace(/viewBox="[^"]*"/, 'viewBox="85.8 57.8 83.2 34.9"')
+  .replace('<svg ', '<svg class="logo" role="img" aria-label="NOCTA Catering" focusable="false" ');
+
+// Formats — mêmes options et valeurs que le formulaire en ligne (02/11).
+// cle   = valeur de ?projet ; court = libellé de l'objet de l'email ;
+// titre = intitulé affiché sur la ligne condensée de la fiche.
 const formats = [
-  { cle: 'private',   court: 'Dîner privé',             label: 'Un dîner ou une fête chez moi' },
-  { cle: 'corporate', court: 'Événement d’entreprise',  label: 'Un événement d’entreprise' },
-  { cle: 'buffet',    court: 'Plateaux-repas / buffet', label: 'Des plateaux-repas ou buffets livrés au bureau' },
-  { cle: 'signature', court: 'Sur-mesure',              label: 'Une expérience sur-mesure autour de la cuisine et du vin' },
-  { cle: 'indecis',   court: 'À définir',               label: 'Je ne sais pas encore' },
+  { cle: 'private',   court: 'Dîner privé',             titre: 'Réception privée',                    label: 'Un dîner ou une fête chez moi' },
+  { cle: 'corporate', court: 'Événement d’entreprise',  titre: 'Événement d’entreprise',              label: 'Un événement d’entreprise' },
+  { cle: 'buffet',    court: 'Plateaux-repas / buffet', titre: 'Plateaux-repas ou buffets au bureau', label: 'Des plateaux-repas ou buffets livrés au bureau' },
+  { cle: 'signature', court: 'Sur-mesure',              titre: 'Expérience sur-mesure',               label: 'Une expérience sur-mesure autour de la cuisine et du vin' },
+  { cle: 'indecis',   court: 'À définir',               titre: 'Format à définir ensemble',           label: 'Je ne sais pas encore' },
 ];
 
 const budgets = [
@@ -36,13 +49,18 @@ const sources = [
   'Instagram', 'LinkedIn', 'Un événement NOCTA auquel j’ai assisté', 'Autre',
 ];
 
-// Barre d'aperçu : simule les quatre points d'entrée possibles.
+// Commandes de démonstration : simulent les quatre points d'arrivée.
 const entrees = [
-  { label: 'Depuis NOCTA Private',    href: '?projet=private' },
-  { label: 'Depuis NOCTA Corporate',  href: '?projet=corporate' },
-  { label: 'Depuis NOCTA Signature',  href: '?projet=signature' },
-  { label: 'Bouton général du site',  href: '?' },
+  { label: 'NOCTA Private',   href: '?projet=private' },
+  { label: 'NOCTA Corporate', href: '?projet=corporate' },
+  { label: 'NOCTA Signature', href: '?projet=signature' },
+  { label: 'Bouton général',  href: '?' },
 ];
+
+// Date de secours (au moment du build) ; remplacée par la date du jour en JS.
+const moisFr = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+const d = new Date();
+const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${moisFr[d.getMonth()]} ${d.getFullYear()}`;
 ---
 
 <!DOCTYPE html>
@@ -51,316 +69,500 @@ const entrees = [
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Aperçu — Votre fiche de réception | NOCTA</title>
+  <title>Aperçu — Fiche de réception | NOCTA</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preload" href="/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/newsreader-italic-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
 </head>
 <body>
-  <main id="contenu" class="page">
+  <div class="page">
 
-    <!-- Outil d'aperçu (ne fait pas partie de la fiche) -->
-    <nav class="apercu-bar" aria-label="Simuler le point d’arrivée">
-      <span>Simuler l’arrivée :</span>
-      {entrees.map((e) => <a href={e.href} data-entree={e.href}>{e.label}</a>)}
-    </nav>
+    <!-- ════ Commandes de démonstration — hors du document client ════ -->
+    <aside class="demo" aria-label="Commandes de démonstration">
+      <p class="demo-mention">Aperçu · aucun envoi réel</p>
+      <nav class="demo-nav" aria-label="Simuler l’arrivée">
+        <span class="demo-lbl">Simuler l’arrivée depuis</span>
+        <ul>
+          {entrees.map((e) => <li><a href={e.href} data-entree={e.href}>{e.label}</a></li>)}
+        </ul>
+      </nav>
+      <label class="demo-select">
+        <span class="sr">Simuler l’arrivée depuis</span>
+        <select id="demo-entree">
+          {entrees.map((e) => <option value={e.href}>{e.label.replace('NOCTA ', 'Depuis ')}</option>)}
+        </select>
+      </label>
+    </aside>
 
-    <article class="fiche" id="fiche" aria-labelledby="fiche-titre">
+    <!-- ════ La feuille ════ -->
+    <main id="contenu" class="support">
+      <article class="feuille" id="fiche" aria-labelledby="fiche-titre">
 
-      <!-- En-tête de la feuille -->
-      <header class="fiche-head">
-        <div class="fiche-head-top">
-          <span class="logo" role="img" aria-label="NOCTA"></span>
-          <p class="mention">Aperçu · aucun envoi réel</p>
-        </div>
-        <h1 id="fiche-titre" class="fiche-titre">Votre fiche de réception</h1>
-        <p class="fiche-intro">
-          Décrivez votre réception comme vous le feriez à votre maître d’hôtel.
-          Nous répondons à toutes les demandes dans les 24 heures.
-        </p>
-        <p class="fiche-meta">Établie le <span id="date-jour">—</span></p>
-      </header>
+        <!-- En-tête : comme un courrier de la maison -->
+        <header class="entete">
+          <div class="entete-haut">
+            <Fragment set:html={logo} />
+            <p class="lieu-date" id="lieu-date">{dateSecours}</p>
+          </div>
+          <h1 id="fiche-titre" class="titre">Fiche de réception</h1>
+          <p class="invitation">Qui recevez-vous, et <span class="insecable">qu’aimeriez-vous</span> leur faire vivre&#8239;?</p>
+        </header>
 
-      <form id="fiche-form" novalidate>
+        <form id="fiche-form" novalidate>
 
-        <!-- ───────── I. Votre réception ───────── -->
-        <fieldset class="partie">
-          <legend class="partie-titre"><span class="num">I.</span> Votre réception</legend>
+          <!-- ───────── I. Votre réception ───────── -->
+          <section class="partie" aria-labelledby="partie-1">
+            <h2 class="partie-titre" id="partie-1"><span class="num">I.</span> Votre réception</h2>
 
-          <!-- Format : cases à cocher (une seule réponse). Facultatif, comme en ligne. -->
-          <fieldset class="ligne ligne-choix">
-            <legend class="lbl">Format</legend>
-            <div class="choix">
-              {formats.map((f) => (
-                <label class="case">
-                  <input type="radio" name="projet" value={f.label} data-cle={f.cle} data-court={f.court} />
-                  <span>{f.label}</span>
-                </label>
-              ))}
+            <!-- Format — ligne condensée quand un choix existe (JS) -->
+            <div class="format-choisi" id="format-choisi" hidden>
+              <span class="lbl-court">Format</span>
+              <span class="format-nom" id="format-nom" aria-live="polite"></span>
+              <button type="button" class="lien" id="format-modifier"
+                aria-expanded="false" aria-controls="format-choix">
+                Modifier<span class="sr"> le format</span>
+              </button>
             </div>
-          </fieldset>
 
-          <div class="duo">
-            <div class="ligne">
-              <label class="lbl" for="date">Date envisagée</label>
-              <input id="date" name="date" type="date" enterkeyhint="next" />
+            <!-- Format — choix ouverts (visibles par défaut, sans JS aussi) -->
+            <fieldset class="format-choix" id="format-choix">
+              <legend class="question">Quel type de réception envisagez-vous&#8239;?</legend>
+              <p class="astuce" id="astuce-format">Flèches pour parcourir, Entrée pour valider.</p>
+              <div class="choix" aria-describedby="astuce-format">
+                {formats.map((f) => (
+                  <label class="option">
+                    <input type="radio" name="projet" value={f.label}
+                      data-cle={f.cle} data-court={f.court} data-titre={f.titre} />
+                    <span>{f.label}</span>
+                  </label>
+                ))}
+              </div>
+              <button type="button" class="lien conserver" id="format-conserver" hidden></button>
+            </fieldset>
+
+            <div class="duo">
+              <div class="champ">
+                <label for="date">À quelle date&#8239;?</label>
+                <input id="date" name="date" type="date" enterkeyhint="next" />
+              </div>
+              <div class="champ">
+                <label for="convives">Pour combien de convives&#8239;?</label>
+                <input id="convives" name="convives" type="number" min="1" step="1"
+                  inputmode="numeric" enterkeyhint="next" aria-describedby="convives-err" />
+                <p class="err" id="convives-err" hidden></p>
+              </div>
             </div>
-            <div class="ligne">
-              <label class="lbl" for="convives">Convives</label>
-              <input id="convives" name="convives" type="number" min="1" step="1"
-                inputmode="numeric" enterkeyhint="next" aria-describedby="convives-err" />
-              <p class="err" id="convives-err" hidden></p>
+
+            <div class="champ">
+              <label for="lieu">Où se tiendra la réception&#8239;?</label>
+              <input id="lieu" name="lieu" type="text" autocomplete="off" enterkeyhint="next"
+                aria-describedby="lieu-aide" />
+              <p class="aide" id="lieu-aide">Chez vous, dans vos bureaux ou dans un lieu encore à trouver.</p>
             </div>
-          </div>
 
-          <div class="ligne">
-            <label class="lbl" for="lieu">Lieu</label>
-            <input id="lieu" name="lieu" type="text" autocomplete="off" enterkeyhint="next"
-              placeholder="Chez vous, vos bureaux, un lieu à trouver…" />
-          </div>
-
-          <div class="ligne">
-            <label class="lbl" for="budget">Budget estimatif</label>
-            <select id="budget" name="budget">
-              <option value="" selected>—</option>
-              {budgets.map((b) => <option value={b}>{b}</option>)}
-            </select>
-            <p class="aide">
-              Repères. Dîner privé : de 70 à 250 € par personne, chef et service compris.
-              Cocktail dînatoire : dès 54 € HT par personne. Buffet livré : dès 40 € HT par personne.
-            </p>
-          </div>
-
-          <div class="ligne">
-            <label class="lbl" for="message">Vos indications</label>
-            <textarea id="message" name="message" rows="4"
-              placeholder="L’occasion, vos invités, une contrainte alimentaire, un vin que vous aimez…"></textarea>
-          </div>
-
-          <div class="ligne">
-            <label class="lbl" for="source">Comment avez-vous connu NOCTA ?</label>
-            <select id="source" name="source">
-              <option value="" selected>—</option>
-              {sources.map((s) => <option value={s}>{s}</option>)}
-            </select>
-          </div>
-        </fieldset>
-
-        <!-- ───────── II. Vos coordonnées ───────── -->
-        <fieldset class="partie">
-          <legend class="partie-titre"><span class="num">II.</span> Vos coordonnées</legend>
-          <p class="partie-note">Ces quatre informations nous permettent de vous rappeler.</p>
-
-          <div class="duo">
-            <div class="ligne">
-              <label class="lbl" for="prenom">Prénom</label>
-              <input id="prenom" name="prenom" type="text" required autocomplete="given-name"
-                autocapitalize="words" enterkeyhint="next" aria-describedby="prenom-err" />
-              <p class="err" id="prenom-err" hidden></p>
+            <div class="champ">
+              <label for="budget">Quel budget envisagez-vous&#8239;?</label>
+              <select id="budget" name="budget" aria-describedby="budget-aide">
+                <option value="" selected>Choisir une fourchette</option>
+                {budgets.map((b) => <option value={b}>{b}</option>)}
+              </select>
+              <p class="aide" id="budget-aide">
+                Repères. Dîner privé : de 70 à 250 € par personne, chef et service compris.
+                Cocktail dînatoire : dès 54 € HT par personne. Buffet livré : dès 40 € HT par personne.
+              </p>
             </div>
-            <div class="ligne">
-              <label class="lbl" for="nom">Nom</label>
-              <input id="nom" name="nom" type="text" required autocomplete="family-name"
-                autocapitalize="words" enterkeyhint="next" aria-describedby="nom-err" />
-              <p class="err" id="nom-err" hidden></p>
+
+            <div class="champ champ-recit">
+              <label for="message">Vos indications</label>
+              <p class="aide" id="message-aide">L’occasion, vos invités, une contrainte alimentaire, un vin que vous aimez.</p>
+              <textarea id="message" name="message" rows="6" aria-describedby="message-aide"></textarea>
             </div>
-          </div>
 
-          <div class="ligne">
-            <label class="lbl" for="email">Email</label>
-            <input id="email" name="email" type="email" required autocomplete="email"
-              inputmode="email" autocapitalize="off" autocorrect="off" spellcheck="false"
-              enterkeyhint="next" aria-describedby="email-err" />
-            <p class="err" id="email-err" hidden></p>
-          </div>
+            <!-- La seule trace personnelle. Remplaçable plus tard par un scan :
+                 mettre <img src="/images/signatures-hugo-enzo.png" alt="Hugo et Enzo">
+                 à la place du <p class="noms">. -->
+            <div class="mot">
+              <p class="mot-phrase">Au plaisir de préparer cette réception avec vous.</p>
+              <p class="noms">Hugo et Enzo</p>
+            </div>
+          </section>
 
-          <div class="ligne">
-            <label class="lbl" for="telephone">Téléphone</label>
-            <input id="telephone" name="telephone" type="tel" required autocomplete="tel"
-              inputmode="tel" enterkeyhint="send" aria-describedby="telephone-err" />
-            <p class="err" id="telephone-err" hidden></p>
-          </div>
-        </fieldset>
+          <!-- ───────── II. Vos coordonnées ───────── -->
+          <section class="partie" aria-labelledby="partie-2">
+            <h2 class="partie-titre" id="partie-2"><span class="num">II.</span> Vos coordonnées</h2>
+            <p class="partie-note">Ces quatre informations nous permettent de vous rappeler.</p>
 
-        <!-- Anti-spam : repris tel quel du formulaire en ligne -->
-        <input type="text" name="_gotcha" style="display:none" aria-hidden="true" tabindex="-1" autocomplete="off" />
+            <div class="duo">
+              <div class="champ">
+                <label for="prenom">Prénom</label>
+                <input id="prenom" name="prenom" type="text" required autocomplete="given-name"
+                  autocapitalize="words" enterkeyhint="next" aria-describedby="prenom-err" />
+                <p class="err" id="prenom-err" hidden></p>
+              </div>
+              <div class="champ">
+                <label for="nom">Nom</label>
+                <input id="nom" name="nom" type="text" required autocomplete="family-name"
+                  autocapitalize="words" enterkeyhint="next" aria-describedby="nom-err" />
+                <p class="err" id="nom-err" hidden></p>
+              </div>
+            </div>
 
-        <!-- Pied de fiche : récapitulatif d'erreurs, bouton, confirmation -->
-        <div class="fiche-pied">
-          <p class="resume" id="resume" role="alert" hidden></p>
-          <button type="submit" id="envoyer" class="btn">Envoyer ma fiche</button>
-          <div class="confirmation" id="confirmation" hidden>
-            <p class="conf-titre">Votre fiche nous est parvenue.</p>
-            <p>Hugo ou Enzo la lit personnellement et vous rappelle sous 24 heures.</p>
-          </div>
-        </div>
-      </form>
+            <div class="duo">
+              <div class="champ">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required autocomplete="email"
+                  inputmode="email" autocapitalize="off" autocorrect="off" spellcheck="false"
+                  enterkeyhint="next" aria-describedby="email-err" />
+                <p class="err" id="email-err" hidden></p>
+              </div>
+              <div class="champ">
+                <label for="telephone">Téléphone</label>
+                <input id="telephone" name="telephone" type="tel" required autocomplete="tel"
+                  inputmode="tel" enterkeyhint="next" aria-describedby="telephone-err" />
+                <p class="err" id="telephone-err" hidden></p>
+              </div>
+            </div>
 
-      <!-- Le seul geste animé : apparaît après la confirmation d'envoi -->
-      <div class="tampon" id="tampon" aria-hidden="true">
-        <span class="tampon-haut">NOCTA</span>
-        <span class="tampon-texte">Demande reçue</span>
-        <span class="tampon-bas" id="tampon-date"></span>
-      </div>
-    </article>
+            <div class="champ">
+              <label for="source">Comment avez-vous connu NOCTA&#8239;? <span class="facultatif">(facultatif)</span></label>
+              <select id="source" name="source">
+                <option value="" selected>Choisir</option>
+                {sources.map((s) => <option value={s}>{s}</option>)}
+              </select>
+            </div>
+          </section>
 
-    <!-- Aperçu seulement : ce que contiendrait l'email Formspree -->
-    <details class="envoi-detail" id="envoi-detail" hidden>
-      <summary>Aperçu : ce qui aurait été envoyé</summary>
+          <!-- Anti-spam : repris tel quel du formulaire en ligne -->
+          <input type="text" name="_gotcha" style="display:none" aria-hidden="true" tabindex="-1" autocomplete="off" />
+
+          <!-- Pied de fiche -->
+          <footer class="pied">
+            <!-- Le seul geste animé : apposé après la confirmation d'envoi -->
+            <div class="tampon" id="tampon" aria-hidden="true">
+              <span class="tampon-haut">NOCTA</span>
+              <span class="tampon-texte">Demande reçue</span>
+              <span class="tampon-bas" id="tampon-date"></span>
+            </div>
+            <p class="resume" id="resume" role="alert" hidden></p>
+            <div class="pied-ligne" id="pied-ligne">
+              <p class="delai">
+                Réponse sous 24 heures.<br />
+                Pour un événement dans les 48 heures, appelez-nous au <a href="tel:+33650011616">06 50 01 16 16</a>.
+              </p>
+              <button type="submit" id="envoyer" class="btn">Envoyer ma demande</button>
+            </div>
+            <div class="confirmation" id="confirmation" tabindex="-1" hidden>
+              <p class="conf-titre">Demande reçue.</p>
+              <p>La démonstration est terminée : <strong>aucune demande réelle n’a été envoyée</strong>.
+                 En situation réelle, Hugo ou Enzo vous rappellerait sous 24 heures.</p>
+            </div>
+          </footer>
+        </form>
+
+      </article>
+    </main>
+
+    <!-- Démonstration : contenu de l'email qui aurait été envoyé -->
+    <details class="demo envoi-detail" id="envoi-detail" hidden>
+      <summary>Démonstration : ce qui aurait été envoyé</summary>
       <pre id="envoi-contenu"></pre>
     </details>
-  </main>
+  </div>
 </body>
 </html>
 
 <style>
-  /* Palette et typographies du site (tokens de src/styles/global.css) */
+  /* ── Teintes ─────────────────────────────────────────────────────────
+     Contrastes mesurés (WCAG) :
+       encre   #1A1917 → 16,6:1 sur l'ivoire · 11,7:1 sur le fond
+       encre-2 #3D3B37 → 10,5:1 sur l'ivoire ·  7,5:1 sur le fond
+       gris    #5F5D58 →  6,2:1 sur l'ivoire (réservé à la feuille)
+       erreur  #8C2A1C →  8,0:1 sur l'ivoire
+     Feuille / fond : 1,41:1, écart visible même sur un téléphone. */
   .page {
-    --encre: var(--color-nocta-black);
-    --gris: var(--color-nocta-grey);       /* 4,5:1 mini sur fond clair */
-    --ivoire: var(--color-nocta-white);    /* #FAFAF8 : la feuille */
-    --filet: rgba(0, 0, 0, 0.14);          /* filets fins */
-    --erreur: #8C2A1C;                     /* brun-rouge sobre, 7:1 sur ivoire */
-    background: var(--color-nocta-cream);
+    --encre: #1A1917;
+    --encre-2: #3D3B37;
+    --gris: #5F5D58;
+    --ivoire: #FBF8F1;            /* ivoire chaud mais clair */
+    --fond: #D6D3CB;              /* minéral doux, pierre claire */
+    --filet: rgba(26, 25, 23, 0.16);
+    --filet-fort: rgba(26, 25, 23, 0.78);
+    --erreur: #8C2A1C;
+
     min-height: 100svh;
-    padding: 24px 0 64px;
+    padding: 20px 24px 72px;
     color: var(--encre);
+    /* Lumière de fenêtre : légèrement plus claire en haut à gauche */
+    background:
+      radial-gradient(120% 80% at 8% 0%, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0) 60%),
+      var(--fond);
+  }
+  :global(html), :global(body) { background: #D6D3CB; }  /* le fond du site (crème) ne doit pas réapparaître en bout de page */
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* ── Commandes de démonstration ─────────────────────────────────── */
+  .demo {
+    max-width: 820px; margin: 0 auto 22px;
+    font: 500 13px/1.5 var(--font-sans); color: var(--encre-2);
+  }
+  aside.demo {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+    padding: 10px 0 14px; border-bottom: 1px dashed rgba(26, 25, 23, 0.35);
+  }
+  .demo-mention {
+    font: 600 11px/1 var(--font-sans); letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 7px 10px; border: 1px solid var(--encre-2); color: var(--encre);
+  }
+  .demo-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
+  .demo-nav ul { display: flex; flex-wrap: wrap; gap: 6px 12px; list-style: none; }
+  .demo-nav a { color: var(--encre-2); text-decoration: underline; text-underline-offset: 3px; }
+  .demo-nav a[aria-current="true"] { color: var(--encre); font-weight: 600; text-decoration-thickness: 2px; }
+  .demo-nav a:focus-visible { outline: 2px solid var(--encre); outline-offset: 2px; }
+  .demo-select { display: none; }
+  .demo-select select {
+    width: auto; padding: 6px 22px 6px 0; border-bottom: 1px solid var(--encre-2);
+    font: 500 13px/1.3 var(--font-sans); color: var(--encre);
   }
 
-  /* Barre d'aperçu : utilitaire, volontairement effacée */
-  .apercu-bar {
-    max-width: 760px; margin: 0 auto 16px; padding: 0 16px;
-    display: flex; flex-wrap: wrap; gap: 6px 14px;
-    font: 500 12px/1.6 var(--font-sans); color: var(--gris);
+  /* ── Le papier ─────────────────────────────────────────────────────
+     Épaisseur rendue par les bords et la lumière, pas par une grande ombre :
+       - filet de bord très fin, tout autour ;
+       - ombre étroite côté droit (la lumière vient de gauche) ;
+       - ombre plus diffuse sous le bord inférieur, comme soulevé d'un
+         millimètre (pseudo-élément du support, derrière la feuille). */
+  .support { position: relative; max-width: 820px; margin: 0 auto; }
+  .support::before {
+    content: ""; position: absolute; z-index: 0;
+    left: 4%; right: 2%; bottom: -7px; height: 18px;
+    background: radial-gradient(50% 100% at 52% 0%, rgba(45, 35, 25, 0.22), rgba(45, 35, 25, 0) 100%);
+    filter: blur(3px);
+    pointer-events: none;
   }
-  .apercu-bar a { color: var(--gris); text-decoration: underline; text-underline-offset: 3px; }
-  .apercu-bar a[aria-current="true"] { color: var(--encre); }
+  .feuille {
+    position: relative; z-index: 1;
+    /* Le tampon, agrandi au début de son animation, ne doit jamais dépasser
+       de la feuille (sinon le téléphone élargit la page). L'ombre portée de
+       la feuille elle-même n'est pas concernée par ce découpage. */
+    overflow: hidden;
+    background-color: var(--ivoire);
+    /* Lumière latérale : un voile clair à gauche qui s'éteint vers la droite */
+    background-image: linear-gradient(100deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 45%, rgba(120, 100, 80, 0.035) 100%);
+    padding: 52px 68px 60px;
+    box-shadow:
+      0 0 0 1px rgba(60, 50, 40, 0.07),
+      2px 0 2px -1px rgba(45, 35, 25, 0.16),
+      0 3px 3px -2px rgba(45, 35, 25, 0.14);
+  }
+  /* Grain : bruit fractal très fin + irrégularité plus large, à peine visible */
+  .feuille::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.24 0 0 0 0 0.2 0 0 0 0 0.15 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0 0.2 0 0 0 1.2 -0.35'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+    background-size: 240px 240px, 640px 640px;
+    opacity: 0.075;
+    mix-blend-mode: multiply;
+  }
+  .feuille > * { position: relative; }
 
-  /* La feuille */
-  .fiche {
-    position: relative;
-    overflow: hidden; /* le tampon, agrandi en début d'animation, ne doit jamais élargir la page */
-    max-width: 760px; margin: 0 auto;
-    background: var(--ivoire);
-    border: 1px solid var(--filet);
-    padding: 48px 56px 56px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 12px 32px -18px rgba(0,0,0,0.18);
+  /* ── En-tête ────────────────────────────────────────────────────── */
+  .entete-haut { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 12px 20px; }
+  :global(.logo) { display: block; width: 168px; height: auto; color: var(--encre); flex: none; }
+  .lieu-date {
+    padding-top: 6px; white-space: nowrap; margin-left: auto;
+    font: 400 15px/1.4 var(--font-serif); color: var(--encre-2); text-align: right;
+  }
+  .titre {
+    margin-top: 56px;
+    font: 300 clamp(2.4rem, 5.4vw, 3.4rem)/1.02 var(--font-serif); letter-spacing: -0.012em;
+  }
+  .insecable { white-space: nowrap; }
+  .invitation {
+    margin: 22px 0 0; max-width: 34rem; text-wrap: balance;
+    font: 400 italic clamp(1.2rem, 2.6vw, 1.45rem)/1.45 var(--font-serif); color: var(--encre-2);
   }
 
-  .fiche-head { border-bottom: 1px solid var(--encre); padding-bottom: 28px; margin-bottom: 8px; }
-  .fiche-head-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 36px; }
-  .logo {
-    display: block; height: 40px; aspect-ratio: 170 / 75; background: var(--encre);
-    -webkit-mask: url('/images/nocta-logo.svg') no-repeat center / contain;
-    mask: url('/images/nocta-logo.svg') no-repeat center / contain;
-  }
-  .mention { font: 500 11px/1.4 var(--font-sans); letter-spacing: 0.06em; text-transform: uppercase; color: var(--gris); text-align: right; }
-  .fiche-titre { font: 300 clamp(2rem, 6vw, 3rem)/1.05 var(--font-serif); letter-spacing: -0.01em; }
-  .fiche-intro { margin-top: 14px; max-width: 34rem; font: 400 15px/1.6 var(--font-sans); color: var(--gris); }
-  .fiche-meta { margin-top: 18px; font: 400 italic 15px/1.4 var(--font-serif); color: var(--gris); }
-
-  /* Parties I et II */
-  .partie { border: 0; min-width: 0; margin-top: 36px; }
+  /* ── Parties ────────────────────────────────────────────────────── */
+  .partie { margin-top: 52px; }
+  .partie + .partie { margin-top: 56px; }
   .partie-titre {
-    display: block; width: 100%;
-    font: 400 1.5rem/1.2 var(--font-serif);
-    padding-bottom: 10px; border-bottom: 1px solid var(--filet); margin-bottom: 4px;
+    display: flex; align-items: baseline; gap: 10px;
+    font: 400 1.6rem/1.2 var(--font-serif);
+    padding-bottom: 12px; border-bottom: 1px solid var(--filet-fort);
   }
-  .num { font-style: italic; color: var(--gris); margin-right: 6px; }
-  .partie-note { font: 400 13px/1.5 var(--font-sans); color: var(--gris); margin: 10px 0 0; }
+  .num { font-style: italic; color: var(--gris); }
+  .partie-note { font: 400 14px/1.5 var(--font-sans); color: var(--gris); margin-top: 12px; }
 
-  /* Une ligne de fiche : étiquette + champ posé sur un filet */
-  .ligne { display: flex; flex-direction: column; gap: 6px; padding-top: 20px; min-width: 0; border: 0; }
-  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
-  .lbl { font: 500 11px/1.4 var(--font-sans); letter-spacing: 0.06em; text-transform: uppercase; color: var(--gris); padding: 0; }
-
-  input:not([type="radio"]), select, textarea {
-    width: 100%; min-width: 0;
-    background: transparent; border: 0; border-bottom: 1px solid var(--filet); border-radius: 0;
-    padding: 8px 0 9px;
-    font: 400 16px/1.4 var(--font-sans);   /* 16 px : évite le zoom auto d'iOS */
-    color: var(--encre); outline: none;
-    -webkit-appearance: none; appearance: none;
+  /* ── Format : ligne condensée ───────────────────────────────────── */
+  .format-choisi {
+    display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 16px;
+    padding: 18px 0 16px; border-bottom: 1px solid var(--filet);
   }
-  input::placeholder, textarea::placeholder { color: rgba(0,0,0,0.38); }
-  input:focus, select:focus, textarea:focus { border-bottom-color: var(--encre); }
-  textarea { resize: vertical; min-height: 6.5em; }
-  select {
-    padding-right: 22px; cursor: pointer;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%236A6A66' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 2px center;
+  .format-choisi[hidden] { display: none; }
+  .lbl-court { font: 500 12px/1.4 var(--font-sans); letter-spacing: 0.07em; text-transform: uppercase; color: var(--gris); min-width: 4.5rem; }
+  .format-nom { font: 400 1.45rem/1.25 var(--font-serif); flex: 1 1 auto; }
+  .lien {
+    background: none; border: 0; padding: 10px 0; cursor: pointer;
+    font: 500 15px/1 var(--font-sans); color: var(--encre);
+    text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px;
   }
-  input[type="date"] { min-height: 2.6em; }
-  .aide { font: 400 12px/1.6 var(--font-sans); color: var(--gris); margin-top: 4px; }
+  .lien:hover { text-decoration-thickness: 2px; }
+  .lien:focus-visible { outline: 2px solid var(--encre); outline-offset: 3px; }
 
-  /* Format : cases à cocher façon fiche imprimée (≥ 44 px de haut au doigt) */
-  .choix { display: flex; flex-direction: column; }
-  .case {
+  /* ── Format : choix ouverts ─────────────────────────────────────── */
+  .format-choix { border: 0; min-width: 0; padding-top: 22px; }
+  .format-choix[hidden] { display: none; }
+  .question { font: 400 1.3rem/1.3 var(--font-serif); padding: 0; margin-bottom: 10px; }
+  .astuce { display: none; font: 400 13px/1.4 var(--font-sans); color: var(--gris); margin-bottom: 6px; }
+  .format-choix:has(input:focus-visible) .astuce { display: block; }
+  .choix { border-top: 1px solid var(--filet); }
+  .option {
     display: flex; align-items: center; gap: 14px;
-    min-height: 44px; padding: 6px 0;
+    min-height: 48px; padding: 8px 0;
     border-bottom: 1px solid var(--filet);
     font: 400 16px/1.4 var(--font-sans); cursor: pointer;
   }
-  .case input {
-    -webkit-appearance: none; appearance: none; flex: none;
-    width: 16px; height: 16px; margin: 0; border: 1px solid var(--encre); border-radius: 0;
-    display: grid; place-items: center; cursor: pointer;
+  .option input {
+    -webkit-appearance: none; appearance: none; flex: none; margin: 0;
+    width: 18px; height: 18px; border: 1px solid var(--encre); border-radius: 50%;
+    display: grid; place-items: center; cursor: pointer; background: transparent;
   }
-  .case input::after { content: ""; width: 8px; height: 8px; background: var(--encre); transform: scale(0); }
-  .case input:checked::after { transform: scale(1); }
-  .case input:focus-visible { outline: 2px solid var(--encre); outline-offset: 3px; }
+  .option input::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--encre); transform: scale(0); }
+  .option input:checked::after { transform: scale(1); }
+  .option:has(input:checked) { font-weight: 500; }
+  .option input:focus-visible { outline: 2px solid var(--encre); outline-offset: 3px; }
+  .conserver { margin-top: 6px; }
+
+  /* ── Champs ─────────────────────────────────────────────────────── */
+  .champ { display: flex; flex-direction: column; gap: 4px; padding-top: 26px; min-width: 0; }
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; }
+  .champ label {
+    font: 500 15px/1.35 var(--font-sans); color: var(--encre-2);
+  }
+  .facultatif { font-weight: 400; color: var(--gris); }
+  .champ:focus-within label { color: var(--encre); }
+
+  input:not([type="radio"]), select, textarea {
+    width: 100%; min-width: 0; display: block;
+    background: transparent; border: 0; border-bottom: 1px solid var(--filet); border-radius: 0;
+    padding: 9px 0 10px;
+    font: 400 17px/1.4 var(--font-sans);    /* ≥ 16 px : pas de zoom auto sur iPhone */
+    color: var(--encre); outline: none;
+    -webkit-appearance: none; appearance: none;
+  }
+  input::placeholder, textarea::placeholder { color: #8A8781; }
+  /* Focus visible : filet d'encre épaissi + légère surbrillance */
+  input:not([type="radio"]):focus, select:focus, textarea:focus {
+    border-bottom-color: var(--encre);
+    box-shadow: 0 1px 0 0 var(--encre);
+    background-color: rgba(26, 25, 23, 0.025);
+  }
+  select {
+    padding-right: 24px; cursor: pointer;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='%233D3B37' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 2px center;
+  }
+  select:invalid, select:has(option[value=""]:checked) { color: #6F6C66; }
+  input[type="date"] { min-height: 2.75em; }
+  .aide { font: 400 14px/1.55 var(--font-sans); color: var(--gris); margin-top: 6px; }
+
+  /* Récit libre : plus de place, papier réglé discret */
+  .champ-recit .aide { margin: 0 0 2px; }
+  textarea {
+    resize: vertical; min-height: calc(30px * 6 + 10px);
+    line-height: 30px; padding: 4px 0 6px;
+    border-bottom: 0;
+    background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 29px, var(--filet) 29px, var(--filet) 30px);
+    background-position: 0 4px; background-attachment: local;
+  }
+  textarea:focus { background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 29px, rgba(26,25,23,0.32) 29px, rgba(26,25,23,0.32) 30px); }
+
+  /* La trace d'Hugo et Enzo */
+  .mot { margin-top: 30px; text-align: right; }
+  .mot-phrase { font: 400 italic 1.15rem/1.4 var(--font-serif); color: var(--encre-2); }
+  .noms { margin-top: 6px; font: 400 1.15rem/1.3 var(--font-serif); letter-spacing: 0.01em; }
 
   /* Erreurs : texte + filet, jamais la couleur seule */
-  [aria-invalid="true"] { border-bottom-color: var(--erreur) !important; border-bottom-width: 2px !important; }
-  .err { font: 500 13px/1.4 var(--font-sans); color: var(--erreur); }
-  .resume { font: 500 14px/1.5 var(--font-sans); color: var(--erreur); margin-bottom: 14px; }
+  [aria-invalid="true"] { border-bottom-color: var(--erreur) !important; box-shadow: 0 1px 0 0 var(--erreur) !important; }
+  .err { font: 500 14px/1.4 var(--font-sans); color: var(--erreur); margin-top: 4px; }
+  .err::before { content: "↑ "; }
+  .resume { font: 500 15px/1.5 var(--font-sans); color: var(--erreur); margin-bottom: 16px; }
 
-  .fiche-pied { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--encre); }
+  /* ── Pied de fiche ──────────────────────────────────────────────── */
+  .pied { margin-top: 52px; padding-top: 22px; border-top: 1px solid var(--filet-fort); }
+  .pied-ligne { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .pied-ligne[hidden] { display: none; }
+  .delai { font: 400 14px/1.55 var(--font-sans); color: var(--gris); }
+  .delai a { color: var(--encre); text-underline-offset: 3px; white-space: nowrap; }
   .btn {
-    width: 100%; min-height: 52px; border: 0; cursor: pointer;
-    background: var(--encre); color: var(--color-nocta-cream);
-    font: 500 12px/1 var(--font-sans); letter-spacing: 0.08em; text-transform: uppercase;
+    flex: none; min-height: 52px; padding: 0 30px; border: 0; cursor: pointer;
+    background: var(--encre); color: var(--ivoire);
+    font: 500 13px/1 var(--font-sans); letter-spacing: 0.08em; text-transform: uppercase;
   }
-  .btn:disabled { opacity: 0.6; cursor: progress; }
-  .confirmation { font: 400 15px/1.6 var(--font-sans); color: var(--gris); }
-  .conf-titre { font: 400 1.5rem/1.3 var(--font-serif); color: var(--encre); margin-bottom: 4px; }
+  .btn:hover { background: #000; }
+  .btn:focus-visible { outline: 2px solid var(--encre); outline-offset: 3px; }
+  .btn:disabled { opacity: 0.65; cursor: progress; }
+  .confirmation { font: 400 15px/1.6 var(--font-sans); color: var(--encre-2); max-width: 30rem; outline: none; }
+  .confirmation strong { font-weight: 600; color: var(--encre); }
+  .conf-titre { font: 400 1.6rem/1.25 var(--font-serif); color: var(--encre); margin-bottom: 6px; }
 
-  /* Fiche envoyée : les réponses restent lisibles, plus modifiables */
-  .fiche.envoyee input, .fiche.envoyee select, .fiche.envoyee textarea { color: var(--encre); opacity: 1; -webkit-text-fill-color: var(--encre); }
+  /* Fiche envoyée : réponses lisibles, plus modifiables */
+  .feuille.envoyee :is(input, select, textarea) { color: var(--encre); -webkit-text-fill-color: var(--encre); opacity: 1; }
 
-  /* Le tampon — seul geste animé de la page */
+  /* ── Tampon — seul geste animé ──────────────────────────────────── */
+  /* Ordinateur : posé à cheval sur le filet du pied, à droite de la confirmation */
+  .pied { position: relative; }
   .tampon {
-    position: absolute; right: 40px; bottom: 120px;
+    position: absolute; right: 8px; top: -58px; pointer-events: none;
     display: none; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
-    width: 150px; height: 150px; border-radius: 50%;
+    width: 142px; height: 142px; border-radius: 50%;
     border: 2px solid var(--encre); outline: 1px solid var(--encre); outline-offset: -8px;
     color: var(--encre); text-align: center;
-    opacity: 0.82; mix-blend-mode: multiply; transform: rotate(-12deg);
-    pointer-events: none;
+    opacity: 0.8; mix-blend-mode: multiply; transform: rotate(-11deg);
   }
-  .tampon-haut, .tampon-bas { font: 500 10px/1 var(--font-sans); letter-spacing: 0.18em; text-transform: uppercase; }
-  .tampon-texte { font: 400 italic 21px/1.05 var(--font-serif); padding: 6px 14px; border-top: 1px solid var(--encre); border-bottom: 1px solid var(--encre); margin: 4px 0; }
-  .fiche.envoyee .tampon { display: flex; animation: tamponne 420ms cubic-bezier(.2,.9,.25,1.2) both; }
+  .tampon-haut, .tampon-bas { font: 600 10px/1 var(--font-sans); letter-spacing: 0.2em; text-transform: uppercase; }
+  .tampon-texte { font: 400 italic 20px/1.05 var(--font-serif); padding: 6px 12px; border-top: 1px solid currentColor; border-bottom: 1px solid currentColor; margin: 4px 0; }
+  .feuille.envoyee .tampon { display: flex; animation: tamponne 420ms cubic-bezier(.2, .9, .25, 1.2) both; }
   @keyframes tamponne {
-    0%   { opacity: 0;    transform: rotate(-12deg) scale(1.35); }
-    100% { opacity: 0.82; transform: rotate(-12deg) scale(1); }
+    0%   { opacity: 0;   transform: rotate(-11deg) scale(1.3); }
+    100% { opacity: 0.8; transform: rotate(-11deg) scale(1); }
   }
   @media (prefers-reduced-motion: reduce) {
-    .fiche.envoyee .tampon { animation: none; }
+    .feuille.envoyee .tampon { animation: none; }
   }
 
-  .envoi-detail { max-width: 760px; margin: 20px auto 0; padding: 0 16px; font: 400 13px/1.5 var(--font-sans); color: var(--gris); }
+  .envoi-detail { margin-top: 24px; }
   .envoi-detail summary { cursor: pointer; }
   .envoi-detail pre { white-space: pre-wrap; margin-top: 10px; font: 400 12px/1.6 ui-monospace, Menlo, monospace; color: var(--encre); }
 
-  /* Mobile : la feuille prend toute la largeur, marges de 20 px */
+  /* ── Téléphone : priorité aux champs, fin liseré de support ─────── */
   @media (max-width: 640px) {
-    .page { padding-top: 12px; }
-    .fiche { border-left: 0; border-right: 0; box-shadow: none; padding: 28px 20px 36px; }
-    .fiche-head-top { margin-bottom: 28px; }
-    .logo { height: 34px; }
+    .page { padding: 10px 8px 48px; }
+    .demo { margin-bottom: 12px; padding-left: 4px; padding-right: 4px; font-size: 13px; }
+    aside.demo { flex-wrap: nowrap; justify-content: space-between; gap: 10px; padding: 4px 4px 10px; }
+    .demo-mention { padding: 6px 8px; font-size: 10px; white-space: nowrap; flex: none; }
+    .demo-nav { display: none; }
+    .demo-select { display: block; min-width: 0; }
+    .demo-select select { max-width: 100%; font-size: 13px; }
+    .feuille { padding: 26px 20px 32px; }
+    :global(.logo) { width: 124px; }
+    .lieu-date { font-size: 14px; padding-top: 2px; }
+    .titre { margin-top: 32px; font-size: 2.2rem; }
+    .invitation { margin-top: 14px; font-size: 1.15rem; }
+    .partie { margin-top: 36px; }
+    .partie-titre { font-size: 1.4rem; }
+    .format-choisi { padding: 14px 0 12px; }
+    .lbl-court { min-width: 0; width: 100%; }
+    .format-nom { font-size: 1.3rem; }
     .duo { grid-template-columns: 1fr; }
-    .tampon { right: 16px; bottom: 150px; width: 128px; height: 128px; }
-    .tampon-texte { font-size: 18px; padding: 5px 10px; }
+    .champ { padding-top: 22px; }
+    .mot { text-align: left; }
+    .pied-ligne { flex-direction: column-reverse; align-items: stretch; gap: 16px; }
+    .btn { width: 100%; min-height: 54px; }
+    /* Téléphone : au-dessus de la confirmation, sans jamais masquer de texte */
+    .feuille.envoyee .tampon { position: relative; top: auto; right: auto; margin: 4px 0 18px auto; }
+    .tampon { width: 124px; height: 124px; }
+    .tampon-texte { font-size: 17px; padding: 5px 9px; }
   }
 </style>
 
@@ -370,27 +572,90 @@ const entrees = [
   const btn = document.getElementById('envoyer') as HTMLButtonElement;
   const resume = document.getElementById('resume')!;
 
-  // Date du jour, en toutes lettres : « 5 novembre 2026 »
-  const aujourdhui = new Date();
-  document.getElementById('date-jour')!.textContent =
-    aujourdhui.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+  // ── Date du jour : « Paris, le 5 novembre 2026 » (« 1er » le premier du mois)
+  const ajd = new Date();
+  const jour = ajd.getDate() === 1 ? '1er' : String(ajd.getDate());
+  const moisAnnee = ajd.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' });
+  document.getElementById('lieu-date')!.textContent = `Paris, le ${jour} ${moisAnnee}`;
   document.getElementById('tampon-date')!.textContent =
-    aujourdhui.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    ajd.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
 
-  // 1. Présélection du format : seuls Private, Corporate et Signature arrivent
-  //    préremplis. Le bouton général du site laisse le choix ouvert.
+  // ── Commandes de démonstration : entrée active
   const cle = new URLSearchParams(location.search).get('projet');
-  if (cle && ['private', 'corporate', 'signature'].includes(cle)) {
-    const radio = form.querySelector<HTMLInputElement>(`input[name="projet"][data-cle="${cle}"]`);
-    if (radio) radio.checked = true;
-  }
-  // Barre d'aperçu : souligne l'entrée active
   const actif = cle ? `?projet=${cle}` : '?';
   document.querySelectorAll<HTMLAnchorElement>('[data-entree]').forEach((a) => {
     if (a.dataset.entree === actif) a.setAttribute('aria-current', 'true');
   });
+  const demoSelect = document.getElementById('demo-entree') as HTMLSelectElement;
+  demoSelect.value = actif;
+  demoSelect.addEventListener('change', () => { location.search = demoSelect.value; });
 
-  // 2. Règles de validation — identiques au formulaire en ligne
+  // ── Format : ligne condensée ⇄ choix ouverts ─────────────────────────
+  const choisi = document.getElementById('format-choisi')!;
+  const nom = document.getElementById('format-nom')!;
+  const modifier = document.getElementById('format-modifier') as HTMLButtonElement;
+  const choix = document.getElementById('format-choix') as HTMLFieldSetElement;
+  const conserver = document.getElementById('format-conserver') as HTMLButtonElement;
+  const radios = [...form.querySelectorAll<HTMLInputElement>('input[name="projet"]')];
+  const coche = () => radios.find((r) => r.checked) || null;
+  let valeurAvantOuverture: HTMLInputElement | null = null;
+
+  function afficherCondense(focus = false) {
+    const r = coche();
+    if (!r) return;                      // rien de choisi : on reste ouvert
+    nom.textContent = r.dataset.titre!;
+    choix.hidden = true;
+    choisi.hidden = false;
+    modifier.setAttribute('aria-expanded', 'false');
+    if (focus) modifier.focus({ preventScroll: true });
+  }
+  function ouvrir() {
+    valeurAvantOuverture = coche();
+    choix.hidden = false;
+    choisi.hidden = true;
+    modifier.setAttribute('aria-expanded', 'true');
+    if (valeurAvantOuverture) {
+      conserver.textContent = `Conserver « ${valeurAvantOuverture.dataset.titre} »`;
+      conserver.hidden = false;
+    } else conserver.hidden = true;
+    (coche() || radios[0]).focus();
+  }
+
+  // Présélection : seuls Private, Corporate et Signature arrivent préremplis.
+  if (cle && ['private', 'corporate', 'signature'].includes(cle)) {
+    const r = radios.find((x) => x.dataset.cle === cle);
+    if (r) r.checked = true;
+  }
+  afficherCondense();
+
+  modifier.addEventListener('click', ouvrir);
+  conserver.addEventListener('click', () => {
+    if (valeurAvantOuverture) valeurAvantOuverture.checked = true;
+    afficherCondense(true);
+  });
+
+  // Souris / doigt : un choix replie aussitôt la liste.
+  // Clavier : les flèches parcourent sans replier ; Entrée ou Espace valide ;
+  // Échap revient au format précédent.
+  let viaPointeur = false;
+  choix.addEventListener('pointerdown', () => { viaPointeur = true; });
+  radios.forEach((r) => {
+    r.addEventListener('click', () => {
+      if (viaPointeur) { viaPointeur = false; afficherCondense(false); }
+    });
+    r.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();               // Entrée ne doit pas envoyer la fiche
+        r.checked = true;
+        afficherCondense(true);
+      } else if (e.key === 'Escape' && valeurAvantOuverture) {
+        valeurAvantOuverture.checked = true;
+        afficherCondense(true);
+      }
+    });
+  });
+
+  // ── Validation — règles identiques au formulaire en ligne ────────────
   const messages: Record<string, (el: HTMLInputElement) => string> = {
     prenom: () => 'Indiquez votre prénom.',
     nom: () => 'Indiquez votre nom.',
@@ -412,26 +677,24 @@ const entrees = [
     err.hidden = false;
     return false;
   }
-
-  // Un champ signalé se « corrige » dès que le visiteur le complète
   aVerifier.forEach((el) => el.addEventListener('input', () => {
     if (el.getAttribute('aria-invalid') === 'true') verifier(el);
     if (!form.querySelector('[aria-invalid="true"]')) resume.hidden = true;
   }));
 
-  // 3. Envoi simulé — aucune requête réseau
+  // ── Envoi simulé — aucune requête réseau ─────────────────────────────
   function contenuEmail(): string {
     const fd = new FormData(form);
-    const choix = form.querySelector<HTMLInputElement>('input[name="projet"]:checked');
+    const r = coche();
     const objet = ['Demande NOCTA'];
-    if (choix) objet.push(choix.dataset.court!);
+    if (r) objet.push(r.dataset.court!);
     if (fd.get('convives')) objet.push(fd.get('convives') + ' pers.');
     if (fd.get('date')) objet.push(String(fd.get('date')).split('-').reverse().join('/'));
     let origine = 'Accès direct';
-    try { if (document.referrer) { const r = new URL(document.referrer); origine = r.host === location.host ? r.pathname + r.search : 'Externe : ' + r.host; } } catch {}
+    try { if (document.referrer) { const u = new URL(document.referrer); origine = u.host === location.host ? u.pathname + u.search : 'Externe : ' + u.host; } } catch {}
     const lignes = [`Objet : ${objet.join(' — ')}`, ''];
+    if (!r) lignes.push('projet : —');
     for (const [k, v] of fd.entries()) if (k !== '_gotcha') lignes.push(`${k} : ${v || '—'}`);
-    if (!fd.get('projet')) lignes.splice(2, 0, 'projet : —');
     lignes.push(`page_origine : ${origine}`);
     return lignes.join('\n');
   }
@@ -440,12 +703,13 @@ const entrees = [
     e.preventDefault();
     const invalides = aVerifier.filter((el) => !verifier(el));
     if (invalides.length) {
-      // Les réponses déjà saisies restent en place : rien n'est rechargé.
+      // Les réponses restent en place : rien n'est rechargé ni effacé.
       resume.textContent = invalides.length === 1
-        ? 'Une information manque avant l’envoi.'
-        : `${invalides.length} informations manquent avant l’envoi.`;
+        ? 'Une information manque avant l’envoi : voir le champ signalé.'
+        : `${invalides.length} informations manquent avant l’envoi : voir les champs signalés.`;
       resume.hidden = false;
-      invalides[0].focus();
+      invalides[0].scrollIntoView({ block: 'center' });
+      invalides[0].focus({ preventScroll: true });
       return;
     }
     resume.hidden = true;
@@ -454,12 +718,15 @@ const entrees = [
 
     const contenu = contenuEmail();
     setTimeout(() => {
-      // « Envoi confirmé » → la fiche est figée et tamponnée
+      // Envoi « confirmé » : la fiche est figée, tamponnée, et le dit.
       form.querySelectorAll('input, select, textarea').forEach((el) => ((el as HTMLInputElement).disabled = true));
-      btn.hidden = true;
-      document.getElementById('confirmation')!.hidden = false;
+      modifier.hidden = true;
+      document.getElementById('pied-ligne')!.hidden = true;
+      const conf = document.getElementById('confirmation')!;
+      conf.hidden = false;
       fiche.classList.add('envoyee');
       fiche.dataset.etat = 'envoyee';
+      conf.focus({ preventScroll: true });
       document.getElementById('envoi-contenu')!.textContent = contenu;
       document.getElementById('envoi-detail')!.hidden = false;
     }, 900);
