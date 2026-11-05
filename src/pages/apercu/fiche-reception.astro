@@ -24,6 +24,13 @@ import '../../styles/global.css';
 // son cadre (mesuré au rendu). On recadre le viewBox au plus près du mot pour
 // que la taille réglée en CSS soit la taille visible de « NOCTA ».
 import logoBrut from '../../../public/images/nocta-logo.svg?raw';
+import { existsSync } from 'node:fs';
+// Prénoms manuscrits : déposer le scan de « Hugo et Enzo » (fond transparent
+// de préférence) sous l'un de ces noms, puis relancer le build. Tant qu'aucun
+// fichier n'existe, les prénoms sont composés dans l'écriture provisoire.
+const signature = ['svg', 'png', 'webp']
+  .map((ext) => `/images/signatures/hugo-et-enzo.${ext}`)
+  .find((chemin) => existsSync(`public${chemin}`));
 const logo = logoBrut
   .replace(/viewBox="[^"]*"/, 'viewBox="85.8 57.8 83.2 34.9"')
   .replace('<svg ', '<svg class="logo" role="img" aria-label="NOCTA Catering" focusable="false" ');
@@ -35,8 +42,8 @@ const formats = [
   { cle: 'private',   court: 'Dîner privé',             titre: 'Réception privée',                    label: 'Un dîner ou une fête chez moi',
     repere: 'Pour un dîner privé, comptez de 70 à 250 € par personne, chef et service compris.' },
   { cle: 'corporate', court: 'Événement d’entreprise',  titre: 'Événement d’entreprise',              label: 'Un événement d’entreprise',
-    // 70 € : affiché tel quel sur /prestations/corporate, sans mention HT ni TTC (à trancher)
-    repere: 'Pour un cocktail dînatoire, comptez à partir de 54 € HT par personne. Pour un dîner assis, à partir de 70 € par personne.' },
+    // Dîner assis : 70 € HT confirmé par Enzo le 05/11, montant plancher qui évolue avec le menu
+    repere: 'Pour un cocktail dînatoire, comptez à partir de 54 € HT par personne. Pour un dîner assis, à partir de 70 € HT, selon le menu et les produits choisis.' },
   { cle: 'buffet',    court: 'Plateaux-repas / buffet', titre: 'Plateaux-repas ou buffets au bureau', label: 'Des plateaux-repas ou buffets livrés au bureau',
     // Aucun tarif validé pour les plateaux-repas : seul le buffet est chiffré
     repere: 'Pour un buffet livré, comptez à partir de 40 € HT par personne.' },
@@ -80,6 +87,7 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preload" href="/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/newsreader-italic-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/la-belle-aurore-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
 </head>
 <body>
@@ -124,7 +132,7 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
             <!-- Format — ligne condensée quand un choix existe (JS) -->
             <div class="format-choisi" id="format-choisi" hidden>
               <span class="lbl-court">Format</span>
-              <span class="format-nom" id="format-nom" aria-live="polite"></span>
+              <span class="format-nom manuscrit" id="format-nom" aria-live="polite"></span>
               <button type="button" class="lien" id="format-modifier"
                 aria-expanded="false" aria-controls="format-choix">
                 Modifier<span class="sr"> le format</span>
@@ -229,13 +237,15 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
               </select>
             </div>
 
-            <!-- Conclusion de la fiche : la seule trace personnelle.
-                 Remplaçable plus tard par un scan : mettre
-                 <img src="/images/signatures-hugo-enzo.png" alt="Hugo et Enzo">
-                 à la place du <p class="noms">. -->
+            <!-- Conclusion de la fiche. Les prénoms sont une écriture PROVISOIRE
+                 (police La Belle Aurore), pas une signature. Pour mettre votre
+                 propre écriture : déposer le scan dans
+                 public/images/signatures/hugo-et-enzo.png (ou .svg / .webp). -->
             <div class="mot">
               <p class="mot-phrase">Au plaisir de préparer cette réception <span class="insecable">avec vous.</span></p>
-              <p class="noms">Hugo et Enzo</p>
+              {signature
+                ? <img class="noms-scan" src={signature} alt="Hugo et Enzo" width="220" height="72" />
+                : <p class="noms manuscrit">Hugo et Enzo</p>}
             </div>
           </section>
 
@@ -396,14 +406,41 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
   .num { font-style: italic; color: var(--gris); }
   .partie-note { font: 400 14px/1.5 var(--font-sans); color: var(--gris); margin-top: 12px; }
 
+  /* ── Écriture manuscrite : deux gestes seulement (format, prénoms) ──
+     La Belle Aurore (SIL Open Font License 1.1) : trait de plume fin,
+     pleins et déliés, sans grandes boucles. Encre bleu-noir très sombre
+     (#1B2438 : 14,6:1 sur l'ivoire). */
+  @font-face {
+    font-family: "La Belle Aurore";
+    src: url("/fonts/la-belle-aurore-latin.woff2") format("woff2");
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  .manuscrit {
+    font-family: "La Belle Aurore", var(--font-serif);
+    font-weight: 400; font-style: normal;
+    color: #1B2438;
+    letter-spacing: 0.01em;
+  }
+
   /* ── Format : ligne condensée ───────────────────────────────────── */
   .format-choisi {
-    display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 16px;
-    padding: 18px 0 16px; border-bottom: 1px solid var(--filet);
+    /* Alignés sur le bas : le mot manuscrit se pose sur le filet ; « FORMAT »
+       et « Modifier » gardent leur propre ligne de base, un peu au-dessus. */
+    display: flex; align-items: flex-end; flex-wrap: wrap; gap: 4px 16px;
+    padding: 14px 0 0; border-bottom: 1px solid var(--filet);
   }
   .format-choisi[hidden] { display: none; }
-  .lbl-court { font: 500 12px/1.4 var(--font-sans); letter-spacing: 0.07em; text-transform: uppercase; color: var(--gris); min-width: 4.5rem; }
-  .format-nom { font: 400 1.45rem/1.25 var(--font-serif); flex: 1 1 auto; }
+  .lbl-court { font: 500 12px/1.4 var(--font-sans); letter-spacing: 0.07em; text-transform: uppercase; color: var(--gris); min-width: 4.5rem; padding-bottom: 7px; }
+  .format-choisi .lien { padding: 12px 0 10px; }   /* zone tactile conservée (≥ 44 px avec l'interligne) */
+  /* Valeur écrite à la main, posée sur le filet du bas de la ligne */
+  .format-nom {
+    flex: 1 1 auto; min-width: 0;
+    /* Ligne de base calée ~3 px au-dessus du filet (mesurée au rendu) :
+       les jambages (p, q) touchent le filet comme un mot écrit sur une ligne. */
+    font-size: 1.95rem; line-height: 1.12;
+    margin-bottom: -0.45em;   /* compense la réserve des jambages de l'écriture */
+    transform: rotate(-1deg); transform-origin: left bottom;
+  }
   .lien {
     background: none; border: 0; padding: 10px 0; cursor: pointer;
     font: 500 15px/1 var(--font-sans); color: var(--encre);
@@ -490,7 +527,8 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
   .mot { margin-top: 40px; text-align: right; }
   .mot + * { margin-top: 0; }
   .mot-phrase { font: 400 italic 1.15rem/1.4 var(--font-serif); color: var(--encre-2); text-wrap: balance; }
-  .noms { margin-top: 6px; font: 400 1.15rem/1.3 var(--font-serif); letter-spacing: 0.01em; }
+  .noms { margin-top: 4px; font-size: 1.9rem; line-height: 1.2; transform: rotate(-2deg); transform-origin: right center; }
+  .noms-scan { display: inline-block; margin-top: 4px; height: 56px; width: auto; mix-blend-mode: multiply; }
 
   /* Erreurs : texte + filet, jamais la couleur seule */
   [aria-invalid="true"] { border-bottom-color: var(--erreur) !important; box-shadow: 0 1px 0 0 var(--erreur) !important; }
@@ -562,9 +600,14 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
     .champ-recit { padding-top: 28px; }
     .champ-recit .question-recit { font-size: 1.22rem; line-height: 1.35; }
     .partie-titre { font-size: 1.4rem; }
-    .format-choisi { padding: 14px 0 12px; }
-    .lbl-court { min-width: 0; width: 100%; }
-    .format-nom { font-size: 1.3rem; }
+    /* Téléphone : « FORMAT » et « Modifier » sur la première ligne,
+       l'écriture seule dessous, posée sur le filet — même sur deux lignes. */
+    .format-choisi { padding-top: 4px; gap: 0 16px; align-items: center; margin-bottom: 6px; }
+    .lbl-court { min-width: 0; flex: 1 1 auto; padding-bottom: 0; }
+    .format-choisi .lien { order: 1; padding: 13px 0; }
+    .format-nom { order: 2; flex-basis: 100%; }
+    .format-nom { font-size: 1.7rem; }
+    .noms { font-size: 1.75rem; }
     .duo { grid-template-columns: 1fr; }
     .champ { padding-top: 22px; }
     .mot { margin-top: 30px; }
