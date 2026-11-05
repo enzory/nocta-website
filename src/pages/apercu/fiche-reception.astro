@@ -237,14 +237,15 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
               </select>
             </div>
 
-            <!-- Conclusion de la fiche. Les prénoms sont une écriture PROVISOIRE
-                 (police La Belle Aurore), pas une signature. Pour mettre votre
-                 propre écriture : déposer le scan dans
-                 public/images/signatures/hugo-et-enzo.png (ou .svg / .webp). -->
+            <!-- Conclusion de la fiche. Prénoms : scan authentique d'Hugo et Enzo
+                 (PDF « Signature manuscrite site », 05/11/2026, 2e prise), détouré
+                 sur fond transparent, encre bleu-noir de la fiche. Fichier :
+                 public/images/signatures/hugo-et-enzo.png. S'il est retiré, la
+                 page revient à l'écriture provisoire (police La Belle Aurore). -->
             <div class="mot">
               <p class="mot-phrase">Au plaisir de préparer cette réception <span class="insecable">avec vous.</span></p>
               {signature
-                ? <img class="noms-scan" src={signature} alt="Hugo et Enzo" width="220" height="72" />
+                ? <img class="noms-scan" src={signature} alt="Hugo & Enzo" width="483" height="240" decoding="async" />
                 : <p class="noms manuscrit">Hugo et Enzo</p>}
             </div>
           </section>
@@ -528,7 +529,8 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
   .mot + * { margin-top: 0; }
   .mot-phrase { font: 400 italic 1.15rem/1.4 var(--font-serif); color: var(--encre-2); text-wrap: balance; }
   .noms { margin-top: 4px; font-size: 1.9rem; line-height: 1.2; transform: rotate(-2deg); transform-origin: right center; }
-  .noms-scan { display: inline-block; margin-top: 4px; height: 56px; width: auto; mix-blend-mode: multiply; }
+  /* Scan des prénoms : 80 px de haut, dont les longues descentes du g et du z */
+  .noms-scan { display: inline-block; margin-top: 6px; height: 80px; width: auto; mix-blend-mode: multiply; transform: rotate(-2deg); transform-origin: right center; }
 
   /* Erreurs : texte + filet, jamais la couleur seule */
   [aria-invalid="true"] { border-bottom-color: var(--erreur) !important; box-shadow: 0 1px 0 0 var(--erreur) !important; }
@@ -608,6 +610,7 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
     .format-nom { order: 2; flex-basis: 100%; }
     .format-nom { font-size: 1.7rem; }
     .noms { font-size: 1.75rem; }
+    .noms-scan { height: 72px; }
     .duo { grid-template-columns: 1fr; }
     .champ { padding-top: 22px; }
     .mot { margin-top: 30px; }
