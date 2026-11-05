@@ -7,7 +7,7 @@ category: "Guide"
 readTime: 7
 ---
 
-Un chef privé à domicile à Paris, c’est un chef qui vient cuisiner chez vous, avec ses produits, son équipe et son matériel si nécessaire. Chez NOCTA, le chef Hugo Vinatier — formé à L’Astrance (3 étoiles) et aux côtés de Thierry Marx — se déplace avec un maître d’hôtel sommelier et une équipe adaptée au nombre de convives. Le dîner est préparé sur place, servi à table, et la cuisine est rendue propre en fin de soirée. Comptez entre 70 et 250 € par personne selon le menu, chef et service compris, avec un minimum de commande de 500 € HT. NOCTA peut intervenir dès 24 heures à l’avance, selon disponibilité.
+Un chef privé à domicile à Paris, c’est un chef qui vient cuisiner chez vous, avec ses produits, son équipe et son matériel si nécessaire. Chez NOCTA, le chef Hugo Vinatier — formé à L’Astrance (3 étoiles) et aux côtés de Thierry Marx — se déplace avec un maître d’hôtel sommelier et une équipe adaptée au nombre de convives. Le dîner est préparé sur place, servi à table, et la cuisine est rendue propre en fin de soirée. Comptez entre 70 et 250 € HT par personne selon le menu, chef et service compris, avec un minimum de commande de 500 € HT. NOCTA peut intervenir dès 24 heures à l’avance, selon disponibilité.
 
 Voici le déroulé concret d’un dîner privé à domicile avec NOCTA, de la prise de contact au dernier coup d’éponge.
 
@@ -39,7 +39,7 @@ Le rangement et le nettoyage sont faits dans la foulée. La cuisine est rendue p
 
 ## Combien coûte un chef privé à domicile à Paris
 
-Le prix d’un chef privé à domicile chez NOCTA varie entre 70 et 250 € par personne. Ce tarif inclut tout : la conception du menu, les courses et produits, la préparation sur place, le service à table avec sommelier, et le nettoyage complet.
+Le prix d’un chef privé à domicile chez NOCTA varie entre 70 et 250 € HT par personne. Ce tarif inclut tout : la conception du menu, les courses et produits, la préparation sur place, le service à table avec sommelier, et le nettoyage complet.
 
 Un dîner en 3 temps avec des produits de saison se situe autour de 70 à 80 € par personne. Un menu en 5 temps avec des produits d’exception — Saint-Jacques, ris de veau, truffe selon la saison — monte entre 150 et 250 € par personne.
 
