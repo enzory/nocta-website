@@ -32,11 +32,18 @@ const logo = logoBrut
 // cle   = valeur de ?projet ; court = libellé de l'objet de l'email ;
 // titre = intitulé affiché sur la ligne condensée de la fiche.
 const formats = [
-  { cle: 'private',   court: 'Dîner privé',             titre: 'Réception privée',                    label: 'Un dîner ou une fête chez moi' },
-  { cle: 'corporate', court: 'Événement d’entreprise',  titre: 'Événement d’entreprise',              label: 'Un événement d’entreprise' },
-  { cle: 'buffet',    court: 'Plateaux-repas / buffet', titre: 'Plateaux-repas ou buffets au bureau', label: 'Des plateaux-repas ou buffets livrés au bureau' },
-  { cle: 'signature', court: 'Sur-mesure',              titre: 'Expérience sur-mesure',               label: 'Une expérience sur-mesure autour de la cuisine et du vin' },
-  { cle: 'indecis',   court: 'À définir',               titre: 'Format à définir ensemble',           label: 'Je ne sais pas encore' },
+  { cle: 'private',   court: 'Dîner privé',             titre: 'Réception privée',                    label: 'Un dîner ou une fête chez moi',
+    repere: 'Pour un dîner privé, comptez de 70 à 250 € par personne, chef et service compris.' },
+  { cle: 'corporate', court: 'Événement d’entreprise',  titre: 'Événement d’entreprise',              label: 'Un événement d’entreprise',
+    // 70 € : affiché tel quel sur /prestations/corporate, sans mention HT ni TTC (à trancher)
+    repere: 'Pour un cocktail dînatoire, comptez à partir de 54 € HT par personne. Pour un dîner assis, à partir de 70 € par personne.' },
+  { cle: 'buffet',    court: 'Plateaux-repas / buffet', titre: 'Plateaux-repas ou buffets au bureau', label: 'Des plateaux-repas ou buffets livrés au bureau',
+    // Aucun tarif validé pour les plateaux-repas : seul le buffet est chiffré
+    repere: 'Pour un buffet livré, comptez à partir de 40 € HT par personne.' },
+  { cle: 'signature', court: 'Sur-mesure',              titre: 'Expérience sur-mesure',               label: 'Une expérience sur-mesure autour de la cuisine et du vin',
+    repere: '' },
+  { cle: 'indecis',   court: 'À définir',               titre: 'Format à définir ensemble',           label: 'Je ne sais pas encore',
+    repere: '' },
 ];
 
 const budgets = [
@@ -106,7 +113,6 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
             <p class="lieu-date" id="lieu-date">{dateSecours}</p>
           </div>
           <h1 id="fiche-titre" class="titre">Fiche de réception</h1>
-          <p class="invitation">Qui recevez-vous, et <span class="insecable">qu’aimeriez-vous</span> leur faire vivre&#8239;?</p>
         </header>
 
         <form id="fiche-form" novalidate>
@@ -133,7 +139,7 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
                 {formats.map((f) => (
                   <label class="option">
                     <input type="radio" name="projet" value={f.label}
-                      data-cle={f.cle} data-court={f.court} data-titre={f.titre} />
+                      data-cle={f.cle} data-court={f.court} data-titre={f.titre} data-repere={f.repere} />
                     <span>{f.label}</span>
                   </label>
                 ))}
@@ -167,25 +173,16 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
                 <option value="" selected>Choisir une fourchette</option>
                 {budgets.map((b) => <option value={b}>{b}</option>)}
               </select>
-              <p class="aide" id="budget-aide">
-                Repères. Dîner privé : de 70 à 250 € par personne, chef et service compris.
-                Cocktail dînatoire : dès 54 € HT par personne. Buffet livré : dès 40 € HT par personne.
-              </p>
+              <!-- Repère adapté au format choisi (cf. data-repere) ; masqué sans tarif confirmé -->
+              <p class="aide" id="budget-aide" aria-live="polite" hidden></p>
             </div>
 
             <div class="champ champ-recit">
-              <label for="message">Vos indications</label>
-              <p class="aide" id="message-aide">L’occasion, vos invités, une contrainte alimentaire, un vin que vous aimez.</p>
+              <label for="message" class="question-recit">Qui recevez-vous, et <span class="insecable">qu’aimeriez-vous</span> leur faire vivre&#8239;?</label>
+              <p class="aide" id="message-aide">L’occasion, une envie particulière, un vin que vous aimez…</p>
               <textarea id="message" name="message" rows="6" aria-describedby="message-aide"></textarea>
             </div>
 
-            <!-- La seule trace personnelle. Remplaçable plus tard par un scan :
-                 mettre <img src="/images/signatures-hugo-enzo.png" alt="Hugo et Enzo">
-                 à la place du <p class="noms">. -->
-            <div class="mot">
-              <p class="mot-phrase">Au plaisir de préparer cette réception avec vous.</p>
-              <p class="noms">Hugo et Enzo</p>
-            </div>
           </section>
 
           <!-- ───────── II. Vos coordonnées ───────── -->
@@ -231,6 +228,15 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
                 {sources.map((s) => <option value={s}>{s}</option>)}
               </select>
             </div>
+
+            <!-- Conclusion de la fiche : la seule trace personnelle.
+                 Remplaçable plus tard par un scan : mettre
+                 <img src="/images/signatures-hugo-enzo.png" alt="Hugo et Enzo">
+                 à la place du <p class="noms">. -->
+            <div class="mot">
+              <p class="mot-phrase">Au plaisir de préparer cette réception <span class="insecable">avec vous.</span></p>
+              <p class="noms">Hugo et Enzo</p>
+            </div>
           </section>
 
           <!-- Anti-spam : repris tel quel du formulaire en ligne -->
@@ -248,7 +254,7 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
             <div class="pied-ligne" id="pied-ligne">
               <p class="delai">
                 Réponse sous 24 heures.<br />
-                Pour un événement dans les 48 heures, appelez-nous au <a href="tel:+33650011616">06 50 01 16 16</a>.
+                Pour un événement dans les 48 heures, <span class="insecable">appelez-nous</span> au <a href="tel:+33650011616">06 50 01 16 16</a>.
               </p>
               <button type="submit" id="envoyer" class="btn">Envoyer ma demande</button>
             </div>
@@ -374,17 +380,13 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
     font: 400 15px/1.4 var(--font-serif); color: var(--encre-2); text-align: right;
   }
   .titre {
-    margin-top: 56px;
+    margin-top: 52px;
     font: 300 clamp(2.4rem, 5.4vw, 3.4rem)/1.02 var(--font-serif); letter-spacing: -0.012em;
   }
   .insecable { white-space: nowrap; }
-  .invitation {
-    margin: 22px 0 0; max-width: 34rem; text-wrap: balance;
-    font: 400 italic clamp(1.2rem, 2.6vw, 1.45rem)/1.45 var(--font-serif); color: var(--encre-2);
-  }
 
   /* ── Parties ────────────────────────────────────────────────────── */
-  .partie { margin-top: 52px; }
+  .partie { margin-top: 40px; }
   .partie + .partie { margin-top: 56px; }
   .partie-titre {
     display: flex; align-items: baseline; gap: 10px;
@@ -466,20 +468,28 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
   input[type="date"] { min-height: 2.75em; }
   .aide { font: 400 14px/1.55 var(--font-sans); color: var(--gris); margin-top: 6px; }
 
-  /* Récit libre : plus de place, papier réglé discret */
-  .champ-recit .aide { margin: 0 0 2px; }
-  textarea {
-    resize: vertical; min-height: calc(30px * 6 + 10px);
-    line-height: 30px; padding: 4px 0 6px;
-    border-bottom: 0;
-    background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 29px, var(--filet) 29px, var(--filet) 30px);
-    background-position: 0 4px; background-attachment: local;
+  /* Récit libre : la question personnelle en est le libellé (visible après saisie) */
+  .champ-recit { padding-top: 34px; }
+  .champ-recit .question-recit {
+    font: 400 italic 1.4rem/1.35 var(--font-serif); color: var(--encre);
+    max-width: 32rem; text-wrap: balance;
   }
-  textarea:focus { background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 29px, rgba(26,25,23,0.32) 29px, rgba(26,25,23,0.32) 30px); }
+  .champ-recit .aide { margin: 4px 0 6px; }
+  textarea {
+    --pas: 32px;                 /* interligne = écart entre deux lignes de la feuille */
+    --ligne-y: 23px;             /* filet 1 px sous la ligne de base (mesurée à 22 px) : le texte repose dessus */
+    resize: none; overflow: hidden; min-height: calc(var(--pas) * 6);
+    line-height: var(--pas); padding: 0;
+    border-bottom: 0;
+    background-image: repeating-linear-gradient(to bottom, transparent 0, transparent var(--ligne-y), var(--filet) var(--ligne-y), var(--filet) calc(var(--ligne-y) + 1px), transparent calc(var(--ligne-y) + 1px), transparent var(--pas));
+    background-attachment: local;
+  }
+  textarea:focus { background-image: repeating-linear-gradient(to bottom, transparent 0, transparent var(--ligne-y), rgba(26,25,23,0.34) var(--ligne-y), rgba(26,25,23,0.34) calc(var(--ligne-y) + 1px), transparent calc(var(--ligne-y) + 1px), transparent var(--pas)); }
 
   /* La trace d'Hugo et Enzo */
-  .mot { margin-top: 30px; text-align: right; }
-  .mot-phrase { font: 400 italic 1.15rem/1.4 var(--font-serif); color: var(--encre-2); }
+  .mot { margin-top: 40px; text-align: right; }
+  .mot + * { margin-top: 0; }
+  .mot-phrase { font: 400 italic 1.15rem/1.4 var(--font-serif); color: var(--encre-2); text-wrap: balance; }
   .noms { margin-top: 6px; font: 400 1.15rem/1.3 var(--font-serif); letter-spacing: 0.01em; }
 
   /* Erreurs : texte + filet, jamais la couleur seule */
@@ -489,7 +499,7 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
   .resume { font: 500 15px/1.5 var(--font-sans); color: var(--erreur); margin-bottom: 16px; }
 
   /* ── Pied de fiche ──────────────────────────────────────────────── */
-  .pied { margin-top: 52px; padding-top: 22px; border-top: 1px solid var(--filet-fort); }
+  .pied { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--filet-fort); }
   .pied-ligne { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
   .pied-ligne[hidden] { display: none; }
   .delai { font: 400 14px/1.55 var(--font-sans); color: var(--gris); }
@@ -547,16 +557,18 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
     .feuille { padding: 26px 20px 32px; }
     :global(.logo) { width: 124px; }
     .lieu-date { font-size: 14px; padding-top: 2px; }
-    .titre { margin-top: 32px; font-size: 2.2rem; }
-    .invitation { margin-top: 14px; font-size: 1.15rem; }
-    .partie { margin-top: 36px; }
+    .titre { margin-top: 30px; font-size: 2.2rem; }
+    .partie { margin-top: 28px; }
+    .champ-recit { padding-top: 28px; }
+    .champ-recit .question-recit { font-size: 1.22rem; line-height: 1.35; }
     .partie-titre { font-size: 1.4rem; }
     .format-choisi { padding: 14px 0 12px; }
     .lbl-court { min-width: 0; width: 100%; }
     .format-nom { font-size: 1.3rem; }
     .duo { grid-template-columns: 1fr; }
     .champ { padding-top: 22px; }
-    .mot { text-align: left; }
+    .mot { margin-top: 30px; }
+    .pied { margin-top: 18px; }
     .pied-ligne { flex-direction: column-reverse; align-items: stretch; gap: 16px; }
     .btn { width: 100%; min-height: 54px; }
     /* Téléphone : au-dessus de la confirmation, sans jamais masquer de texte */
@@ -600,7 +612,17 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
   const coche = () => radios.find((r) => r.checked) || null;
   let valeurAvantOuverture: HTMLInputElement | null = null;
 
+  // Repère de budget : celui du format choisi, ou rien sans tarif confirmé.
+  const repere = document.getElementById('budget-aide')!;
+  function majRepere() {
+    const texte = coche()?.dataset.repere || '';
+    repere.textContent = texte;
+    repere.hidden = !texte;
+  }
+  radios.forEach((r) => r.addEventListener('change', majRepere));
+
   function afficherCondense(focus = false) {
+    majRepere();
     const r = coche();
     if (!r) return;                      // rien de choisi : on reste ouvert
     nom.textContent = r.dataset.titre!;
@@ -654,6 +676,18 @@ const dateSecours = `Paris, le ${d.getDate() === 1 ? '1er' : d.getDate()} ${mois
       }
     });
   });
+
+  // ── Récit libre : la feuille s'allonge d'une ligne à la fois ─────────
+  //    (hauteur arrondie à l'interligne pour que le texte reste sur les filets)
+  const recit = document.getElementById('message') as HTMLTextAreaElement;
+  function ajusterRecit() {
+    const pas = parseFloat(getComputedStyle(recit).lineHeight);
+    recit.style.height = 'auto';
+    const lignes = Math.max(6, Math.ceil((recit.scrollHeight - 1) / pas));
+    recit.style.height = lignes * pas + 'px';
+  }
+  recit.addEventListener('input', ajusterRecit);
+  addEventListener('resize', ajusterRecit);
 
   // ── Validation — règles identiques au formulaire en ligne ────────────
   const messages: Record<string, (el: HTMLInputElement) => string> = {
