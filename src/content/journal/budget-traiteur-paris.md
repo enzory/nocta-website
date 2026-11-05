@@ -7,11 +7,11 @@ category: "Guide"
 readTime: 8
 ---
 
-Un traiteur haut de gamme à Paris coûte entre 54 € et 250 € par personne selon le format choisi. Pour un dîner privé avec chef et service, comptez 70 à 250 € par personne. Un cocktail est à partir de 54 € HT par personne, sur une base de 12 pièces. Chez NOCTA, le minimum de commande est de 500 € HT, sans minimum de convives — ce qui rend la prestation accessible dès 6-7 personnes pour un dîner.
+Un traiteur haut de gamme à Paris coûte entre 54 € et 250 € par personne selon le format choisi. Pour un dîner privé avec chef et service, comptez 70 à 250 € HT par personne. Un cocktail est à partir de 54 € HT par personne, sur une base de 12 pièces. Chez NOCTA, le minimum de commande est de 500 € HT, sans minimum de convives — ce qui rend la prestation accessible dès 6-7 personnes pour un dîner.
 
 Ces chiffres viennent de notre expérience sur plus de 50 événements réalisés à Paris et en Île-de-France, pour des particuliers comme pour des entreprises (Levi’s, The Galion Project, Jus Mundi, Colombus Consulting, entre autres). Voici le détail par format.
 
-## Dîner privé avec chef à domicile : 70 à 250 € par personne
+## Dîner privé avec chef à domicile : 70 à 250 € HT par personne
 
 C’est le format le plus demandé chez [NOCTA Private](/prestations/private). Le chef cuisine chez vous, le service est assuré sur place, et le rangement est inclus. Le prix par personne dépend de trois facteurs : la complexité du menu, le nombre de convives, et les produits choisis.
 
@@ -29,7 +29,7 @@ Le cocktail est plus difficile à chiffrer au convive parce que tout dépend du 
 
 Pour un cocktail plus léger (6-8 pièces, en apéritif avant un dîner assis par exemple), le budget descend mécaniquement. C’est un format très adapté aux lancements de produit, aux afterworks d’entreprise, ou aux vernissages.
 
-## Dîner corporate : 70 à 250 € par personne
+## Dîner corporate : 70 à 250 € HT par personne
 
 Les tarifs sont similaires au dîner privé. La différence se joue sur la logistique : en entreprise, la location de matériel (assiettes, verres, mobilier) n’est généralement pas incluse et dépend du lieu. Certains espaces corporate disposent de leur propre matériel, d’autres non.
 
