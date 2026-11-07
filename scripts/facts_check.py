@@ -14,7 +14,7 @@ Faits de référence (validés par Enzo le 06/10/2026, complétés le 07/10/2026
   - Minimum de commande : 500 € HT, hors livraison (jamais TTC)
   - Réservation : possible dès 24 heures à l'avance, selon disponibilité
     (une semaine conseillée pour les dîners servis et les événements de plus de 50 personnes)
-  - Réponse aux demandes de devis : sous 24 heures (urgences : par téléphone)
+  - Réponse aux demandes de devis : sous 24 heures ouvrées (urgences : par téléphone)
   - Règle éditoriale : jamais « chef étoilé » (toujours « formé en cuisine étoilée »)
 
 Usage :
@@ -43,10 +43,11 @@ FORBIDDEN = [
      "ancien délai minimum de réservation (référence : dès 24 heures, selon disponibilité)"),
     # Anciennes fourchettes : 24 à 36 h, 36 h, 24 à 48 h.
     (r"\b24\s?(?:h|heures)?\s?à\s?(?:36|48)\s?(?:h\b|heures)|\b36\s?(?:h\b|heures\b)",
-     "ancienne fourchette de délai (référence : réservation dès 24 h, devis sous 24 h)"),
-    # Un devis promis en 48 h contredit la règle des 24 heures.
-    (r"devis[^.]{0,60}\b48\s?(?:h\b|heures)|\b48\s?(?:h\b|heures)[^.]{0,40}(?:devis|proposition|première proposition)",
-     "délai de devis en 48 h (référence : sous 24 heures)"),
+     "ancienne fourchette de délai (référence : réservation dès 24 h, devis sous 24 h ouvrées)"),
+    # Le délai de devis s'écrit « sous 24 heures ouvrées » (ou « 24 h ouvrées »).
+    (r"(?:devis|proposition)[^.]{0,40}\b24\s?(?:h\b|heures)(?!\s?ouvrées)"
+     r"|\b24\s?(?:h\b|heures)(?!\s?ouvrées)[^.]{0,40}(?:devis|proposition)",
+     "délai de devis sans « ouvrées » (référence : sous 24 heures ouvrées)"),
     (r"500\s?€\s?TTC", "minimum de commande en TTC (référence : 500 € HT, hors livraison)"),
     (r"chef\s+étoilé", "règle éditoriale : écrire « formé en cuisine étoilée »"),
     # Plateaux-repas : proposables sur demande depuis le 02/11/2026 — la mention
@@ -70,36 +71,73 @@ FORBIDDEN = [
      "minimum de commande sans « HT » (référence : 500 € HT, hors livraison)"),
 ]
 
+# Noms de clients autorisés seulement dans les articles du Journal.
+FORBIDDEN_HORS_JOURNAL = [
+    (r"Boucheron", "client citable uniquement dans le Journal (Boucheron)"),
+    (r"Biologique Recherche", "client citable uniquement dans le Journal (Biologique Recherche)"),
+]
+
+# Pages privées hors site public (noindex, absentes du sitemap, bloquées dans
+# robots.txt) : le bon de commande /commande/boucheron porte forcément le nom
+# du client. On ne lui applique donc pas la règle des clients.
+PAGES_PRIVEES = ("/commande/",)
+
 
 def page_texts():
-    """Renvoie une liste (nom de page, texte visible + JSON-LD) à analyser."""
+    """Renvoie une liste (nom affiché, chemin de la page, texte, textes alt) à analyser."""
     if len(sys.argv) > 1:  # mode prod : on lit les pages listées dans le sitemap
         site = sys.argv[1].rstrip("/")
         xml = requests.get(f"{site}/sitemap-0.xml", timeout=20).text
         for url in re.findall(r"<loc>([^<]+)</loc>", xml):
             r = requests.get(url, timeout=20)
             r.encoding = "utf-8"
-            yield url.replace(site, "") or "/", extract(r.text)
+            chemin = url.replace(site, "") or "/"
+            yield (chemin, chemin, *extract(r.text))
     else:  # mode build : on lit les fichiers HTML de dist/
         for path in sorted(pathlib.Path("dist").rglob("*.html")):
-            yield str(path), extract(path.read_text(encoding="utf-8"))
+            # dist/journal/mon-article/index.html -> /journal/mon-article/
+            rel = path.relative_to("dist").as_posix()
+            chemin = "/" + (rel[: -len("index.html")] if rel.endswith("index.html") else rel)
+            yield (str(path), chemin, *extract(path.read_text(encoding="utf-8")))
 
 
 def extract(html):
-    """Texte lisible de la page + contenu des JSON-LD (lus par Google et les IA)."""
+    """Texte lisible de la page + JSON-LD (lus par Google et les IA), et textes alt des images."""
     soup = BeautifulSoup(html, "html.parser")
     jsonld = " ".join(s.get_text() for s in soup.find_all("script", type="application/ld+json"))
+    # Les alt des images ne font pas partie du texte visible : on les lit à part
+    # pour repérer les logos clients (un logo n'a pas d'autre texte que son alt).
+    alts = " ".join(img.get("alt", "") for img in soup.find_all("img"))
     for tag in soup(["script", "style", "noscript"]):
         tag.decompose()
-    return soup.get_text(" ", strip=True) + " " + jsonld
+    return soup.get_text(" ", strip=True) + " " + jsonld, alts
+
+
+def est_article_journal(chemin):
+    """Vrai pour un article du Journal (/journal/slug), faux pour l'index /journal."""
+    return chemin.rstrip("/").startswith("/journal/")
+
+
+def signale(name, text, m, why):
+    """Affiche un problème avec 60 caractères de contexte de chaque côté."""
+    context = text[max(0, m.start() - 60): m.end() + 60].replace("\n", " ")
+    print(f"{name}\n  -> {why}\n     « …{context}… »\n")
 
 
 problems = 0
-for name, text in page_texts():
+for name, chemin, text, alts in page_texts():
+    # 1. Faits de référence : sur toutes les pages
     for pattern, why in FORBIDDEN:
         for m in re.finditer(pattern, text, flags=re.IGNORECASE):
-            context = text[max(0, m.start() - 60): m.end() + 60].replace("\n", " ")
-            print(f"{name}\n  -> {why}\n     « …{context}… »\n")
+            signale(name, text, m, why)
+            problems += 1
+    # 2. Clients réservés au Journal : partout ailleurs, texte ET alt des images
+    if est_article_journal(chemin) or chemin.startswith(PAGES_PRIVEES):
+        continue
+    texte_et_alts = text + " " + alts
+    for pattern, why in FORBIDDEN_HORS_JOURNAL:
+        for m in re.finditer(pattern, texte_et_alts, flags=re.IGNORECASE):
+            signale(name, texte_et_alts, m, why)
             problems += 1
 
 print(f"Résultat : {problems} contradiction(s) trouvée(s)")
