@@ -45,7 +45,7 @@ Intervenir en traiteur à domicile dans Paris intra-muros implique plusieurs poi
 
 NOCTA a été fondé en avril 2025 par Enzo Ryon et Hugo Vinatier avec une conviction simple : les prestations de traiteur à domicile et les événements d’entreprise méritent le même niveau d’attention que la salle d’un restaurant gastronomique. Cette conviction se traduit par des choix précis — produits de saison identifiés, service structuré, sommellerie intégrée — plutôt que par une promesse générique.
 
-L’équipe intervient régulièrement pour des clients exigeants, tant dans le cadre de dîners privés que pour des événements corporate auprès de maisons comme Boucheron ou Biologique Recherche. Ce double ancrage — particuliers et entreprises parisiennes — permet à NOCTA de gérer aussi bien la dimension relationnelle d’un dîner intimiste que les contraintes logistiques d’une prestation en milieu professionnel.
+L’équipe intervient régulièrement pour des clients exigeants, tant dans le cadre de dîners privés que pour des événements corporate auprès de marques comme Messika ou Levi’s. Ce double ancrage — particuliers et entreprises parisiennes — permet à NOCTA de gérer aussi bien la dimension relationnelle d’un dîner intimiste que les contraintes logistiques d’une prestation en milieu professionnel.
 
 Pour un anniversaire privé à Paris, ce que vous obtenez concrètement : un menu construit avec vous, des produits sourcés, un chef et un sommelier présents le soir même, un service conduit de l’arrivée des convives à la fin du dessert, et une cuisine rendue propre en fin de prestation.
 

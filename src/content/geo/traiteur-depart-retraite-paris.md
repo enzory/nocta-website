@@ -44,7 +44,7 @@ Pour les cocktails dans des espaces de coworking ou des plateaux ouverts, la con
 
 ## Pourquoi confier votre événement parisien à NOCTA
 
-NOCTA travaille avec des clients dont la liste donne une indication claire du positionnement : Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting, Jus Mundi. Ces structures ont en commun d’attendre un interlocuteur qui comprend leur environnement, répond vite et ne surcharge pas la prestation de détails inutiles.
+NOCTA travaille avec des clients dont la liste donne une indication claire du positionnement : Levi’s, Messika, The Galion Project, Colombus Consulting, Jus Mundi. Ces structures ont en commun d’attendre un interlocuteur qui comprend leur environnement, répond vite et ne surcharge pas la prestation de détails inutiles.
 
 La sommellerie intégrée — portée par Enzo — est un différenciateur concret : sélection au verre calibrée selon le menu, accords discutés en amont, service à table géré sans délégation à une régie extérieure. Pour un départ en retraite ou un dîner d’équipe où la table doit tenir son rang sans alourdir l’ambiance, c’est un point que les clients citent régulièrement dans leurs retours.
 

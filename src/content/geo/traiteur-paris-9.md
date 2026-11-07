@@ -45,7 +45,7 @@ Nous pouvons intervenir dans le 9e dès 24 heures à l’avance, selon disponibi
 
 NOCTA Catering a été fondé en avril 2025 par deux associés aux profils complémentaires : Hugo Vinatier en cuisine, Enzo Ryon à la sommellerie et à la relation client. Cette structure à deux têtes garantit une continuité de suivi rare dans le secteur : le même interlocuteur de la première prise de contact au débrief post-événement, et le même chef de cuisine le jour J.
 
-Nous travaillons avec des maisons qui ont des exigences fortes sur l’image et la cohérence de leurs réceptions — Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting, Jus Mundi. Ce sont des clients pour lesquels la prestation culinaire est un signal envoyé à leurs propres invités. Nous appliquons la même rigueur à chaque format, qu’il s’agisse d’un déjeuner pour 12 personnes ou d’un cocktail pour 150.
+Nous travaillons avec des maisons qui ont des exigences fortes sur l’image et la cohérence de leurs réceptions — Messika, Levi’s, The Galion Project, Colombus Consulting, Jus Mundi. Ce sont des clients pour lesquels la prestation culinaire est un signal envoyé à leurs propres invités. Nous appliquons la même rigueur à chaque format, qu’il s’agisse d’un déjeuner pour 12 personnes ou d’un cocktail pour 150.
 
 Dans le 9e arrondissement spécifiquement, notre connaissance du tissu corporate parisien et notre capacité à intervenir dans des espaces non équipés font la différence. Nous ne sous-traitons pas la cuisine, nous ne standardisons pas les menus.
 

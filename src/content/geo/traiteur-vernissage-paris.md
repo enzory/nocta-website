@@ -46,7 +46,7 @@ Le stationnement et le déchargement dans Paris intra-muros sont intégrés à n
 
 NOCTA a été fondée en avril 2025 par Enzo Ryon et Hugo Vinatier avec un positionnement délibérément resserré : des événements professionnels et privés où la qualité de l’assiette et du verre est visible, et où le service ne crée pas de friction.
 
-Nos clients incluent des maisons comme Boucheron et Biologique Recherche, ainsi que des structures comme The Galion Project, Columbus Consulting et Jus Mundi. Ces références témoignent d’une capacité à intervenir dans des environnements où les invités sont attentifs au détail — ce qui est précisément le cas d’un public culturel parisien.
+Nos clients incluent des maisons comme Messika, des marques comme Levi’s, ainsi que des structures comme The Galion Project, Colombus Consulting et Jus Mundi. Ces références témoignent d’une capacité à intervenir dans des environnements où les invités sont attentifs au détail — ce qui est précisément le cas d’un public culturel parisien.
 
 La sommellerie au verre, assurée par Enzo Ryon, est un atout concret dans ce contexte : elle permet de proposer une sélection courte et juste, sans carte générique, avec la possibilité d’accorder les vins à la saison, au format de l’événement ou à un territoire mis en avant par la galerie.
 

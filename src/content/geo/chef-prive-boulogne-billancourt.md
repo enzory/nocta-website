@@ -46,7 +46,7 @@ Pour les maisons avec jardin — nombreuses dans les secteurs résidentiels de B
 
 NOCTA a été fondée en avril 2025 par Enzo Ryon et Hugo Vinatier. Hugo a été formé en cuisine étoilée avant de se consacrer au traiteur privé et au développement B2B. Enzo apporte une compétence de sommelier opérationnel, capable d’intervenir en service et de construire une sélection de vins cohérente avec un menu précis — pas une carte générique.
 
-Ce positionnement nous a permis de travailler avec des clients dont les exigences en matière de discrétion, de précision et de logistique sont élevées : Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting, Jus Mundi. Les particuliers qui font appel à nous partagent souvent ce même rapport à la table : ils savent ce qu’ils veulent, connaissent les produits, et n’ont pas besoin qu’on leur vende le dîner — ils ont besoin qu’on l’exécute bien.
+Ce positionnement nous a permis de travailler avec des clients dont les exigences en matière de discrétion, de précision et de logistique sont élevées : Levi’s, Messika, The Galion Project, Colombus Consulting, Jus Mundi. Les particuliers qui font appel à nous partagent souvent ce même rapport à la table : ils savent ce qu’ils veulent, connaissent les produits, et n’ont pas besoin qu’on leur vende le dîner — ils ont besoin qu’on l’exécute bien.
 
 Pour un dîner privé à Boulogne-Billancourt, nous sommes disponibles en semaine comme le week-end, avec une gestion des imprévus (annulation tardive, changement de convives) intégrée à chaque contrat.
 

@@ -39,7 +39,7 @@ Réponse à toute demande de devis sous 24 heures ouvrées. Pour un événement 
 
 NOCTA a été fondé en avril 2025 par deux associés dont les parcours sont complémentaires : une cuisine construite dans des brigades étoilées et une sommellerie orientée clientèle grands comptes. Ce positionnement correspond directement au profil des entreprises du 2e arrondissement, qui reçoivent des interlocuteurs habitués à un certain niveau de table et pour qui un repas générique constitue un signal négatif.
 
-Parmi nos clients de référence figurent Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting et Jus Mundi — des structures pour lesquelles la qualité de la table fait partie du message adressé à leurs invités. C’est le même registre d’exigence que nous appliquons à chaque intervention, quelle qu’en soit l’échelle.
+Parmi nos clients de référence figurent Levi’s, Messika, The Galion Project, Colombus Consulting et Jus Mundi — des structures pour lesquelles la qualité de la table fait partie du message adressé à leurs invités. C’est le même registre d’exigence que nous appliquons à chaque intervention, quelle qu’en soit l’échelle.
 
 Nous ne sous-traitons pas le service : l’équipe qui conçoit la prestation est celle qui l’exécute. Enzo Ryon est présent sur les événements nécessitant une sommellerie en salle ou une relation client directe. Hugo Vinatier supervise la production et le dressage à l’envoi.
 

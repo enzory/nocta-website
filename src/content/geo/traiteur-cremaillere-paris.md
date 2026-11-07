@@ -41,7 +41,7 @@ Un appartement parisien est rarement pensé pour accueillir un service de traite
 
 NOCTA a été fondé en avril 2025 par deux associés complémentaires : Hugo Vinatier à la cuisine, formé dans des maisons étoilées, et Enzo Ryon à la sommellerie et à la direction de la relation client. Cette structure à taille humaine a une conséquence directe pour les crémaillères : l’interlocuteur qui prend le devis est le même que celui qui dirige le service le soir J.
 
-Les clients que NOCTA accompagne au quotidien — maisons comme Boucheron ou Biologique Recherche, structures comme The Galion Project ou Colombus Consulting — ont des attentes précises en matière de service et de discrétion. Ces mêmes exigences s’appliquent aux prestations privées : ponctualité, propreté du lieu en fin de service, respect des consignes alimentaires communiquées, gestion autonome sans solliciter l’hôte pendant la soirée.
+Les clients que NOCTA accompagne au quotidien — maisons comme Messika, marques comme Levi’s, structures comme The Galion Project ou Colombus Consulting — ont des attentes précises en matière de service et de discrétion. Ces mêmes exigences s’appliquent aux prestations privées : ponctualité, propreté du lieu en fin de service, respect des consignes alimentaires communiquées, gestion autonome sans solliciter l’hôte pendant la soirée.
 
 La sommellerie est intégrée à l’offre : Enzo Ryon peut conseiller et, selon les formats, assurer le service au verre pour accompagner chaque partie du repas. Ce n’est pas un module optionnel facturé à part — c’est une composante du service NOCTA Private dès la conception du menu.
 

@@ -38,5 +38,6 @@ Tout texte publié sur le site doit respecter ces faits. En cas de doute, ne pas
 - Conseil : création de carte des vins (restaurants, bars, hôtels) et conception de cave (particuliers, entreprises), sur devis.
 
 ## Clients citables
-- Levi's, Boucheron, The Galion Project, Biologique Recherche, Colombus Consulting, Jus Mundi, AA Conseil, Messika, Originator.
+- Levi's, The Galion Project, Colombus Consulting, Jus Mundi, AA Conseil, Messika, Originator.
+- Boucheron et Biologique Recherche : citables uniquement dans les articles du Journal, jamais en logo ni sur les autres pages.
 - Ne citer aucun autre client que ceux de cette liste.

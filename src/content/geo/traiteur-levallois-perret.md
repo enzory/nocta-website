@@ -44,7 +44,7 @@ Nous intervenons dans des espaces sans cuisine professionnelle. C’est une conf
 
 ## Pourquoi NOCTA pour vos événements à Levallois-Perret
 
-NOCTA travaille pour des structures qui ont des attentes précises : des clients comme Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting ou Jus Mundi nous font confiance précisément parce que nous traitons chaque événement avec la même rigueur, qu’il s’agisse d’un cocktail de cent personnes ou d’un dîner de huit couverts.
+NOCTA travaille pour des structures qui ont des attentes précises : des clients comme Levi’s, Messika, The Galion Project, Colombus Consulting ou Jus Mundi nous font confiance précisément parce que nous traitons chaque événement avec la même rigueur, qu’il s’agisse d’un cocktail de cent personnes ou d’un dîner de huit couverts.
 
 À Levallois-Perret, nous nous adressons aux directeurs généraux, aux responsables communication et aux office managers qui cherchent un interlocuteur fiable, capable de produire un rendu soigné sans nécessiter trois réunions préparatoires. Hugo Vinatier construit des menus ancrés dans la saisonnalité — produits sourcés, fournisseurs identifiés — et Enzo Ryon prend en charge la relation client de bout en bout, du premier échange au débrief post-événement. Nous répondons à toute demande de devis sous 24 heures ouvrées.
 

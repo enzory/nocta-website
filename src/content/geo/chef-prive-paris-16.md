@@ -47,7 +47,7 @@ NOCTA a été fondé en avril 2025 par deux associés aux compétences compléme
 
 Cette organisation à deux voix permet d’aller au-delà de la simple production culinaire. La sélection des vins, la construction des accords, le rythme du service — ces éléments sont travaillés avec la même attention que les assiettes. Pour un dîner dans le 16e, où les convives connaissent souvent les codes de la table, ce niveau de préparation n’est pas un détail.
 
-NOCTA travaille avec des maisons telles que Boucheron, Biologique Recherche, The Galion Project ou Colombus Consulting — des structures habituées à un certain niveau d’organisation et de discrétion. Cette expérience du service en environnement exigeant se retrouve dans notre manière d’aborder chaque prestation privée : ponctualité, lisibilité du déroulé, aucune improvisation visible.
+NOCTA travaille avec des clients tels que Messika, Levi’s, The Galion Project ou Colombus Consulting — des structures habituées à un certain niveau d’organisation et de discrétion. Cette expérience du service en environnement exigeant se retrouve dans notre manière d’aborder chaque prestation privée : ponctualité, lisibilité du déroulé, aucune improvisation visible.
 
 Le menu est adapté à votre table, pas à une carte pré-constituée. Les produits de saison sont sourcés selon la direction choisie : marché parisien, producteurs directs, circuits courts selon disponibilité. Le niveau de formalité — dîner décontracté ou table dressée avec service en salle — est défini avec vous en amont.
 

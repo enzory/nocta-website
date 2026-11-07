@@ -52,7 +52,7 @@ Dans tous les cas, un repérage préalable du lieu est intégré dans la phase d
 
 NOCTA a été fondée en avril 2025 par deux associés dont les trajectoires sont complémentaires : un chef formé en cuisine étoilée et un sommelier avec une expérience de la relation client dans des environnements exigeants. Cette structure à taille humaine permet une réactivité et un niveau de personnalisation que les grandes brigades externalisées offrent difficilement — les interlocuteurs qui construisent la prestation avec le client sont les mêmes que ceux qui exécutent le soir J.
 
-Parmi les clients que NOCTA accompagne figurent des maisons comme Boucheron, Biologique Recherche ou des structures comme The Galion Project et Jus Mundi — des environnements où la qualité de l’accueil fait partie de l’image que l’on donne. Le 1er arrondissement, par la densité de ses adresses dans l’univers du luxe, de la finance et de la culture, correspond naturellement au profil de client pour lequel NOCTA a été pensé.
+Parmi les clients que NOCTA accompagne figurent des maisons comme Messika, des marques comme Levi’s ou des structures comme The Galion Project et Jus Mundi — des environnements où la qualité de l’accueil fait partie de l’image que l’on donne. Le 1er arrondissement, par la densité de ses adresses dans l’univers du luxe, de la finance et de la culture, correspond naturellement au profil de client pour lequel NOCTA a été pensé.
 
 Les menus sont construits autour de produits de saison, sourcés auprès de fournisseurs identifiés, et adaptés à chaque table : régimes alimentaires, contraintes de service, format de la soirée. Rien n’est standardisé par défaut.
 

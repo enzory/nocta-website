@@ -42,7 +42,7 @@ Pour les lieux privatisés (salons, résidences, espaces associatifs), nous dema
 
 ## Pourquoi confier votre baptême à NOCTA
 
-NOCTA a été fondé en avril 2025 par Enzo Ryon et Hugo Vinatier avec une conviction simple : les événements privés méritent la même rigueur que les événements professionnels, et inversement. Nos clients incluent des maisons comme Boucheron ou Biologique Recherche pour des formats corporate, et des particuliers exigeants pour des célébrations familiales à Paris.
+NOCTA a été fondé en avril 2025 par Enzo Ryon et Hugo Vinatier avec une conviction simple : les événements privés méritent la même rigueur que les événements professionnels, et inversement. Nos clients incluent des marques comme Messika ou Levi’s pour des formats corporate, et des particuliers exigeants pour des célébrations familiales à Paris.
 
 Ce qui distingue notre approche sur un déjeuner de baptême, c’est la continuité entre la cuisine et la table. Hugo Vinatier assure le service en salle quand le format l’exige, Enzo Ryon gère la sommellerie et la relation avec les convives. Nous ne sous-traitons pas le service à une équipe extérieure — ce que vous avez validé lors du premier échange est ce qui est exécuté le jour J.
 

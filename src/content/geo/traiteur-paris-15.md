@@ -24,7 +24,7 @@ Le 15e arrondissement concentre une part significative de l’activité événem
 
 Notre équipe est composée d’Enzo Ryon, en charge de la direction, de la sommellerie et de la relation client, et d’Hugo Vinatier, chef formé en cuisine étoilée, qui pilote l’ensemble des prestations culinaires. Ce binôme permet de couvrir aussi bien la sélection des vins et boissons que la conception des menus, depuis un déjeuner soigné pour un comité de direction jusqu’à un cocktail dînatoire pour cent personnes.
 
-Parmi nos clients : Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting, Jus Mundi. Ces références attestent d’une pratique régulière des formats corporate exigeants, qu’il s’agisse de petits groupes ou de rassemblements plus larges.
+Parmi nos clients : Levi’s, Messika, The Galion Project, Colombus Consulting, Jus Mundi. Ces références attestent d’une pratique régulière des formats corporate exigeants, qu’il s’agisse de petits groupes ou de rassemblements plus larges.
 
 ## Formats NOCTA adaptés au 15e arrondissement
 

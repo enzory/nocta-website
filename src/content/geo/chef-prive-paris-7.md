@@ -48,7 +48,7 @@ NOCTA a été fondée en avril 2025 par Enzo Ryon et Hugo Vinatier avec une lign
 
 Hugo Vinatier, formé en cuisine étoilée, adapte ses menus à la saison et aux approvisionnements du moment — il ne travaille pas sur une carte figée. Enzo Ryon assure la direction de salle, la relation client et la sommellerie : une sélection de vins construite avec soin, servie au bon moment, sans effet de manche.
 
-NOCTA compte parmi ses clients des maisons comme Boucheron, Biologique Recherche ou The Galion Project, ce qui témoigne d’une capacité à intervenir dans des contextes exigeants, avec des interlocuteurs habitués à un niveau de service élevé. Cette même rigueur est apportée aux dîners privés, quelle que soit leur taille.
+NOCTA compte parmi ses clients des clients comme Messika, Levi’s ou The Galion Project, ce qui témoigne d’une capacité à intervenir dans des contextes exigeants, avec des interlocuteurs habitués à un niveau de service élevé. Cette même rigueur est apportée aux dîners privés, quelle que soit leur taille.
 
 ## Demande de devis
 

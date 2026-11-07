@@ -15,7 +15,7 @@ Puteaux concentre une part significative des grandes directions françaises et i
 
 Basée à Courbevoie, la structure est fondée par Enzo Ryon, en charge de la direction, de la sommellerie et de la relation client, et Hugo Vinatier, chef formé en cuisine étoilée, qui pilote la production et le développement commercial. La proximité géographique n’est pas un argument rhétorique : elle se traduit par des délais d’installation réduits, une connaissance directe des accès de livraison et une réactivité adaptée aux plannings serrés du secteur.
 
-Les clients servis par NOCTA — Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting, Jus Mundi — illustrent le positionnement de la structure : des comptes exigeants, habitués à un niveau de service cohérent avec leur image, pour lesquels la prestation traiteur ne peut pas être le maillon faible d’un événement.
+Les clients servis par NOCTA — Levi’s, Messika, The Galion Project, Colombus Consulting, Jus Mundi — illustrent le positionnement de la structure : des comptes exigeants, habitués à un niveau de service cohérent avec leur image, pour lesquels la prestation traiteur ne peut pas être le maillon faible d’un événement.
 
 ---
 

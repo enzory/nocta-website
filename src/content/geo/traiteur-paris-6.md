@@ -46,7 +46,7 @@ Pour les galeries et espaces commerciaux du quartier, la question du bruit et de
 
 NOCTA a été fondée par deux associés dont les parcours sont directement en phase avec les attentes de la clientèle du 6e. Hugo Vinatier apporte une maîtrise technique issue de la cuisine étoilée, appliquée à des formats de traiteur où la régularité et la précision priment sur l’effet de présentation. Enzo Ryon, sommelier, gère la dimension conseil en vins et la relation client avec le niveau de discrétion et de disponibilité qu’exige ce type de prestation.
 
-Nous comptons parmi nos clients des structures comme Boucheron, Biologique Recherche ou Jus Mundi, qui partagent avec la clientèle du 6e arrondissement une même exigence : un niveau de finition élevé, une logistique sans friction, et une équipe qui comprend les codes du milieu dans lequel elle intervient. Ce positionnement nous permet d’intervenir dans des contextes où la prestation traiteur ne doit pas se remarquer pour elle-même, mais contribuer à la qualité globale de l’événement.
+Nous comptons parmi nos clients des structures comme Messika, Levi’s ou Jus Mundi, qui partagent avec la clientèle du 6e arrondissement une même exigence : un niveau de finition élevé, une logistique sans friction, et une équipe qui comprend les codes du milieu dans lequel elle intervient. Ce positionnement nous permet d’intervenir dans des contextes où la prestation traiteur ne doit pas se remarquer pour elle-même, mais contribuer à la qualité globale de l’événement.
 
 Nous ne sous-traitons pas la cuisine, ne travaillons pas avec des équipes variables selon les dates, et n’acceptons pas plus de mandats que ce que notre capacité d’exécution nous permet d’honorer correctement.
 

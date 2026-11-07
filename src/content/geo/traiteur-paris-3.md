@@ -41,7 +41,7 @@ Les clients qui nous confient leurs événements dans le Marais appartiennent en
 
 Notre positionnement repose sur deux personnes directement impliquées dans chaque prestation : Hugo Vinatier en cuisine, Enzo Ryon en salle et à la sommellerie. Nous ne sous-traitons pas la direction artistique du menu à une équipe dédiée aux événements en série. Chaque menu est pensé à partir du lieu, du nombre de couverts, de la saison et du profil des convives.
 
-Parmi les marques avec lesquelles nous travaillons figurent Boucheron et Biologique Recherche — des références qui témoignent d’une capacité à servir des tables exigeantes, dans des environnements où la qualité du détail compte autant que la fluidité du service.
+Parmi les marques avec lesquelles nous travaillons figurent Messika et Levi’s — des références qui témoignent d’une capacité à servir des tables exigeantes, dans des environnements où la qualité du détail compte autant que la fluidité du service.
 
 ## Demande de devis
 

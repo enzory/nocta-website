@@ -47,7 +47,7 @@ NOCTA a été fondé en avril 2025 par Enzo Ryon et Hugo Vinatier avec une inten
 
 Hugo Vinatier, formé en cuisine étoilée, assure la direction culinaire et le développement des menus. Enzo Ryon prend en charge la sommellerie et la relation client : sélection des vins, accord mets et boissons, cohérence entre ce qui est servi et le positionnement de l’événement. Ce binôme fonctionne sur chaque prestation, sans sous-traitance de la conception.
 
-Parmi nos clients : Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting, Jus Mundi. Ces maisons ont en commun d’opérer dans des environnements exigeants, où la qualité de ce qui est servi lors d’un événement client est lue comme le reflet direct de l’entreprise qui reçoit.
+Parmi nos clients : Levi’s, Messika, The Galion Project, Colombus Consulting, Jus Mundi. Ces maisons ont en commun d’opérer dans des environnements exigeants, où la qualité de ce qui est servi lors d’un événement client est lue comme le reflet direct de l’entreprise qui reçoit.
 
 Nous n’intervenons pas sur la décoration, la location de mobilier ou la scénographie du lieu. Notre périmètre est strict : la cuisine, le service, la sommellerie. C’est précisément ce périmètre que nous maîtrisons entièrement.
 

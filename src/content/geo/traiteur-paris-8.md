@@ -15,7 +15,7 @@ faq:
   - question: "Pouvez-vous intervenir dans nos bureaux ou dans un lieu loué ?"
     answer: "Les deux. Nous nous adaptons au lieu : bureaux, salons privés, espaces événementiels. Le repérage en amont fait partie de la prestation."
   - question: "Quelle est votre expérience sur ce type d’événements ?"
-    answer: "Plus de 50 événements réalisés, une note de 5/5 sur Google, et des références comme Boucheron, Biologique Recherche ou Colombus Consulting. Hugo et Enzo sont formés en cuisine et en service étoilés."
+    answer: "Plus de 50 événements réalisés, une note de 5/5 sur Google, et des références comme Levi’s, Messika ou Colombus Consulting. Hugo et Enzo sont formés en cuisine et en service étoilés."
 ---
 
 ## Traiteur événementiel dans le 8e arrondissement de Paris
@@ -50,7 +50,7 @@ Intervenir dans le 8e arrondissement implique de gérer plusieurs paramètres lo
 
 L’arrondissement concentre des interlocuteurs habitués à un niveau d’exigence élevé et peu disposés à gérer les imprévus le soir d’un événement. Notre organisation repose sur une préparation technique rigoureuse et une équipe réduite mais spécialisée, ce qui permet de limiter les points de friction.
 
-Enzo Ryon et Hugo Vinatier s’impliquent directement dans la préparation de chaque prestation : construction du menu, sélection des vins, coordination logistique, relation avec le référent événementiel côté client. Nous travaillons déjà avec des organisations dont les événements nécessitent ce niveau de préparation — parmi nos clients figurent Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting et Jus Mundi. Ces références reflètent notre capacité à intervenir dans des contextes à enjeux, avec des interlocuteurs exigeants sur la forme comme sur le fond.
+Enzo Ryon et Hugo Vinatier s’impliquent directement dans la préparation de chaque prestation : construction du menu, sélection des vins, coordination logistique, relation avec le référent événementiel côté client. Nous travaillons déjà avec des organisations dont les événements nécessitent ce niveau de préparation — parmi nos clients figurent Levi’s, Messika, The Galion Project, Colombus Consulting et Jus Mundi. Ces références reflètent notre capacité à intervenir dans des contextes à enjeux, avec des interlocuteurs exigeants sur la forme comme sur le fond.
 
 Nous ne sous-traitons pas la direction artistique ou culinaire de nos prestations. Le chef présent le soir de l’événement est celui qui a conçu le menu. La personne qui a répondu au devis est celle que vous retrouvez sur place.
 

@@ -46,7 +46,7 @@ La cuisine du lieu est inspectée à distance (photos transmises par l’hôte) 
 
 NOCTA a été fondé par deux professionnels issus du terrain : Hugo Vinatier, dont la formation en cuisine étoilée se lit dans la précision du geste et la construction des assiettes, et Enzo Ryon, dont le parcours en sommellerie apporte une dimension rare dans les prestations de traiteur à domicile. Cette complémentarité — cuisine et cave, assiette et verre — est structurante dans ce que NOCTA propose, en particulier pour des tables où le vin compte autant que le plat.
 
-Les clients qui font appel à NOCTA dans des arrondissements similaires partagent en général deux attentes : un interlocuteur unique capable de porter l’ensemble du dossier, et une cuisine qui ne ressemble pas à celle d’un traiteur standard. Les références de NOCTA — Boucheron, Biologique Recherche, The Galion Project — témoignent d’une capacité à intervenir dans des contextes exigeants, qu’ils soient privés ou professionnels.
+Les clients qui font appel à NOCTA dans des arrondissements similaires partagent en général deux attentes : un interlocuteur unique capable de porter l’ensemble du dossier, et une cuisine qui ne ressemble pas à celle d’un traiteur standard. Les références de NOCTA — Levi’s, Messika, The Galion Project — témoignent d’une capacité à intervenir dans des contextes exigeants, qu’ils soient privés ou professionnels.
 
 Pour un dîner dans le 8e, nous recommandons de prendre contact au moins une semaine avant la date souhaitée, deux semaines pour les formats Signature ou les tablées de plus de douze couverts.
 
