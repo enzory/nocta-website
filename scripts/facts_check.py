@@ -65,6 +65,9 @@ FORBIDDEN = [
     # Le prix du buffet (40 €) ne doit jamais être attaché à un cocktail dans la même phrase.
     (r"cocktail[^.;]{0,80}(?:dès|à partir de|de)\s+40\s?(?:€|euros)|(?<![Bb]uffet )(?:dès|à partir de)\s+40\s?(?:€|euros)[^.;]{0,60}cocktail",
      "prix du buffet attaché à un cocktail (référence : cocktail dînatoire dès 54 € HT par personne)"),
+    # Le minimum de commande s'écrit toujours en HT.
+    (r"(?<!\d)(?<!\d\s)500\s?€(?!\s?HT)",
+     "minimum de commande sans « HT » (référence : 500 € HT, hors livraison)"),
 ]
 
 
