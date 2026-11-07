@@ -1,6 +1,6 @@
 ---
 title: "Traiteur à Neuilly-sur-Seine — Dîners privés | NOCTA"
-description: "Traiteur événementiel à Neuilly-sur-Seine. Dîners privés en hôtels particuliers, célébrations familiales, accords mets-vins. À partir de 500 € de commande."
+description: "Traiteur événementiel à Neuilly-sur-Seine. Dîners privés en hôtels particuliers, célébrations familiales, accords mets-vins. À partir de 500 € HT de commande."
 h1: "Traiteur à Neuilly-sur-Seine"
 zone: "Neuilly-sur-Seine"
 type: "commune-92"
@@ -76,4 +76,4 @@ C’est ce que beaucoup de nos clients à Neuilly nous demandent en premier — 
 
 ## Tarifs et conditions
 
-Nos prestations démarrent à **500 € minimum de commande**, sans minimum de convives. Pour les dîners servis à table avec accords mets-vins, comptez à partir de quelques dizaines d’euros par personne hors vins (les vins peuvent venir de votre cave ou d’une sélection que nous proposons). Chaque devis est établi après un échange.
+Nos prestations démarrent à **500 € HT minimum de commande**, sans minimum de convives. Pour les dîners servis à table avec accords mets-vins, comptez à partir de quelques dizaines d’euros par personne hors vins (les vins peuvent venir de votre cave ou d’une sélection que nous proposons). Chaque devis est établi après un échange.

@@ -11,7 +11,7 @@ faq:
   - question: "NOCTA peut-il intervenir dans une galerie d’art sans cuisine professionnelle sur place ?"
     answer: "Oui. Notre équipe travaille en cuisine déportée et arrive avec le matériel nécessaire à la mise en place et au service. Nous adaptons le format à la configuration du lieu : office, couloir de service, ou simple accès rue."
   - question: "Quel budget prévoir pour un cocktail de vernissage ?"
-    answer: "NOCTA intervient à partir de 500 € de commande. Le format et le niveau de service sont définis selon vos contraintes de lieu, de durée et de nombre d’invités."
+    answer: "NOCTA intervient à partir de 500 € HT de commande. Le format et le niveau de service sont définis selon vos contraintes de lieu, de durée et de nombre d’invités."
   - question: "Proposez-vous un service de sommellerie pour les événements culturels ?"
     answer: "Oui. Enzo Ryon, co-fondateur de NOCTA, assure la sélection et le service au verre. Il peut concevoir une carte resserrée adaptée au profil de vos invités et à la durée de l’événement."
   - question: "Quel délai pour obtenir un devis pour un vernissage parisien ?"

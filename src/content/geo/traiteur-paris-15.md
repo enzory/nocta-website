@@ -11,7 +11,7 @@ faq:
   - question: "NOCTA intervient-il pour des événements à la Porte de Versailles ?"
     answer: "Oui. NOCTA prend en charge les cocktails, galas et buffets dans les salons et espaces événementiels du 15e arrondissement, y compris les formats liés aux salons professionnels. Nous intervenons aussi bien pour des formats debout que pour des dîners assis en comité restreint."
   - question: "Quel est le budget minimum pour une prestation dans le 15e ?"
-    answer: "NOCTA intervient à partir de 500 € de commande, quel que soit le format retenu. Un devis détaillé est établi après échange sur le lieu, le format et le nombre de convives."
+    answer: "NOCTA intervient à partir de 500 € HT de commande, quel que soit le format retenu. Un devis détaillé est établi après échange sur le lieu, le format et le nombre de convives."
   - question: "Quel délai pour recevoir un devis ?"
     answer: "Un devis est transmis sous 24 heures ouvrées après réception de vos informations : date, lieu, format souhaité, nombre de convives estimé."
   - question: "NOCTA gère-t-il la logistique en parallèle d’un salon professionnel ?"

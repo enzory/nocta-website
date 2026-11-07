@@ -69,4 +69,4 @@ Nous arrivons en amont du service, nous mettons en place dans la cuisine et la s
 
 ## Tarifs et conditions
 
-Nos prestations démarrent à **500 € minimum de commande**, sans minimum de convives. Pour les dîners servis à table, comptez à partir de quelques dizaines d’euros par personne hors vins. Chaque devis est établi après un échange pour comprendre votre contexte.
+Nos prestations démarrent à **500 € HT minimum de commande**, sans minimum de convives. Pour les dîners servis à table, comptez à partir de quelques dizaines d’euros par personne hors vins. Chaque devis est établi après un échange pour comprendre votre contexte.

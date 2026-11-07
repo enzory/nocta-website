@@ -11,7 +11,7 @@ faq:
   - question: "NOCTA assure-t-il les déjeuners de baptême à Paris ?"
     answer: "Oui. NOCTA intervient pour des déjeuners de baptême dans Paris intramuros, à domicile ou dans un lieu privatisé. Le menu et le format de service sont construits selon vos envies et les contraintes du lieu."
   - question: "Quel est le budget minimum pour un déjeuner de baptême avec NOCTA ?"
-    answer: "NOCTA intervient à partir de 500 € de commande. Le détail du devis dépend du format choisi (service à table, buffet, cocktail dînatoire), du menu et du nombre de convives."
+    answer: "NOCTA intervient à partir de 500 € HT de commande. Le détail du devis dépend du format choisi (service à table, buffet, cocktail dînatoire), du menu et du nombre de convives."
   - question: "Quel délai pour obtenir un devis ?"
     answer: "Nous revenons sous 24 heures ouvrées après réception de votre demande. Pour les événements familiaux, nous conseillons de nous contacter deux semaines avant la date souhaitée."
   - question: "NOCTA propose-t-il un service de sommellerie pour un événement privé à Paris ?"

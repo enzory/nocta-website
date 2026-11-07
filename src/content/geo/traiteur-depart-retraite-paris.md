@@ -11,7 +11,7 @@ faq:
   - question: "NOCTA intervient-il dans tous les arrondissements de Paris ?"
     answer: "Oui, NOCTA intervient sur l’ensemble de Paris, aussi bien dans les bureaux d’entreprise que dans des espaces privatisés ou des appartements. Il suffit de préciser le lieu lors de votre demande pour que nous évaluions les contraintes logistiques."
   - question: "Quel est le budget minimum pour organiser un événement avec NOCTA à Paris ?"
-    answer: "NOCTA intervient à partir de 500 € de commande, quel que soit le format retenu — cocktail debout, dîner assis ou buffet."
+    answer: "NOCTA intervient à partir de 500 € HT de commande, quel que soit le format retenu — cocktail debout, dîner assis ou buffet."
   - question: "Dans quel délai peut-on obtenir un devis pour un départ en retraite ou un dîner d’équipe ?"
     answer: "Un devis est transmis sous 24 heures après réception de votre demande. Pour les événements nécessitant un menu adapté ou un format complexe, un échange téléphonique avec Enzo ou Hugo permet d’affiner le projet rapidement."
   - question: "Quels services sont inclus dans une prestation NOCTA Corporate à Paris ?"

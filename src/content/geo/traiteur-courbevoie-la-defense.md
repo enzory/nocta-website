@@ -1,6 +1,6 @@
 ---
 title: "Traiteur d’entreprise à Courbevoie et La Défense | NOCTA"
-description: "Traiteur d’entreprise basé à Courbevoie : cocktails, déjeuners d’équipe et buffets à La Défense, dès 500 € de commande. Devis sous 24 heures."
+description: "Traiteur d’entreprise basé à Courbevoie : cocktails, déjeuners d’équipe et buffets à La Défense, dès 500 € HT de commande. Devis sous 24 heures."
 h1: "Traiteur à Courbevoie et La Défense"
 zone: "Courbevoie / La Défense"
 type: "commune-92"
@@ -32,7 +32,7 @@ faq:
 
 NOCTA est un traiteur événementiel installé à Courbevoie. Cette implantation locale nous permet d’intervenir avec réactivité sur le quartier d’affaires de La Défense, à Courbevoie même, et dans les communes voisines de l’ouest parisien.
 
-Cocktails dînatoires, déjeuners d’affaires, dîners de comité de direction, buffets livrés : nous adaptons chaque prestation à votre lieu, votre budget et votre contrainte horaire, à partir de 500 € de commande.
+Cocktails dînatoires, déjeuners d’affaires, dîners de comité de direction, buffets livrés : nous adaptons chaque prestation à votre lieu, votre budget et votre contrainte horaire, à partir de 500 € HT de commande.
 
 ## Pour quels événements ?
 
@@ -66,6 +66,6 @@ Pour une opération à La Défense ou dans les communes proches (Neuilly, Levall
 
 ## Tarifs et conditions
 
-Nos prestations démarrent à **500 € minimum de commande**, sans minimum de convives. Les tarifs varient selon le format (buffet, cocktail, dîner servi), le niveau de prestation, et le nombre de convives. Chaque devis est établi après un échange pour comprendre votre contexte.
+Nos prestations démarrent à **500 € HT minimum de commande**, sans minimum de convives. Les tarifs varient selon le format (buffet, cocktail, dîner servi), le niveau de prestation, et le nombre de convives. Chaque devis est établi après un échange pour comprendre votre contexte.
 
 [Demander un devis pour Courbevoie ou La Défense](/contact)
