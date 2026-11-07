@@ -1,6 +1,6 @@
 ---
 title: "Chef à domicile Paris 7e — Dîner privé NOCTA"
-description: "NOCTA propose un chef à domicile dans le 7e arrondissement : dîner privé, menu adapté à votre table, service complet. À partir de 500 €."
+description: "NOCTA propose un chef à domicile dans le 7e arrondissement : dîner privé, menu adapté à votre table, service complet. À partir de 500 € HT."
 zone: "Paris 7e"
 type: "chef-prive"
 ctaType: "private"
@@ -11,7 +11,7 @@ faq:
   - question: "NOCTA intervient-il dans tout le 7e arrondissement ?"
     answer: "Oui, NOCTA intervient dans l’ensemble du 7e arrondissement, que ce soit côté Invalides, Saint-Thomas-d’Aquin ou Gros-Caillou. Un repérage préalable du lieu peut être organisé pour les réceptions de grande envergure."
   - question: "Quel est le budget minimum pour un dîner privé avec chef à domicile ?"
-    answer: "Les prestations NOCTA démarrent à partir de 500 € de commande. Le tarif final dépend du format retenu, du nombre de convives et du niveau de service souhaité."
+    answer: "Les prestations NOCTA démarrent à partir de 500 € HT de commande. Le tarif final dépend du format retenu, du nombre de convives et du niveau de service souhaité."
   - question: "Quel délai faut-il prévoir pour réserver un chef à domicile dans le 7e ?"
     answer: "Nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant. Pour un format Signature construit autour du lieu et de l’occasion, nous conseillons deux semaines."
   - question: "Le service inclut-il la sommellerie ?"

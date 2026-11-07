@@ -1,6 +1,6 @@
 ---
 title: "Traiteur Paris 7e : dîners privés et réceptions | NOCTA"
-description: "Traiteur dans le 7e : dîners privés et réceptions en appartement, service à table et accords mets-vins, dès 500 € de commande. Devis sous 24 heures."
+description: "Traiteur dans le 7e : dîners privés et réceptions en appartement, service à table et accords mets-vins, dès 500 € HT de commande. Devis sous 24 heures."
 h1: "Traiteur à Paris 7e"
 zone: "Paris 7e arrondissement"
 type: "arrondissement"
@@ -69,4 +69,4 @@ Trois raisons reviennent dans les retours de nos clients :
 
 ## Tarifs et conditions
 
-Nos prestations démarrent à **500 € minimum de commande**, sans minimum de convives. Les tarifs varient selon le format, le niveau de prestation et le nombre de convives. Chaque devis est établi après un échange pour comprendre votre contexte.
+Nos prestations démarrent à **500 € HT minimum de commande**, sans minimum de convives. Les tarifs varient selon le format, le niveau de prestation et le nombre de convives. Chaque devis est établi après un échange pour comprendre votre contexte.

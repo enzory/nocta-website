@@ -1,6 +1,6 @@
 ---
 title: "Chef à domicile Boulogne-Billancourt — Dîner privé 92"
-description: "NOCTA propose un chef à domicile à Boulogne-Billancourt pour vos dîners privés. Cuisine sourcée, sommellerie, service en salle. À partir de 500 €."
+description: "NOCTA propose un chef à domicile à Boulogne-Billancourt pour vos dîners privés. Cuisine sourcée, sommellerie, service en salle. À partir de 500 € HT."
 zone: "Boulogne-Billancourt"
 type: "chef-prive"
 ctaType: "private"
@@ -11,7 +11,7 @@ faq:
   - question: "NOCTA intervient-il à domicile à Boulogne-Billancourt ?"
     answer: "Oui. NOCTA intervient dans tout Boulogne-Billancourt, que ce soit dans un appartement haussmannien, une maison avec jardin ou un loft contemporain. La prestation est conçue autour des contraintes et du volume de votre cuisine."
   - question: "Quel est le budget minimum pour un dîner privé à domicile ?"
-    answer: "Le budget minimum est de 500 € de commande. Le tarif varie selon le menu, le nombre de convives et les options de service retenues (sommellerie, service en salle, coordination logistique)."
+    answer: "Le budget minimum est de 500 € HT de commande. Le tarif varie selon le menu, le nombre de convives et les options de service retenues (sommellerie, service en salle, coordination logistique)."
   - question: "Quel est le délai pour obtenir un devis et réserver ?"
     answer: "Un devis est adressé sous 24 heures après réception de votre demande. Pour les dîners complexes ou à date fixe, nous recommandons de nous contacter au moins deux semaines à l’avance afin de sécuriser la date et organiser l’approvisionnement."
   - question: "Que comprend exactement la prestation chef à domicile NOCTA ?"

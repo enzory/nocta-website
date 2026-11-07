@@ -11,7 +11,7 @@ faq:
   - question: "Couvrez-vous tout le 17e, des Batignolles à la plaine Monceau ?"
     answer: "Oui. Notre base de Courbevoie est à quelques minutes du 17e : dîners à domicile, réceptions familiales, événements d’entreprise autour des Batignolles et de la place de Clichy."
   - question: "À partir de quel budget travaillez-vous ?"
-    answer: "Nos prestations démarrent à partir de 500 € de commande. Cocktail, dîner servi ou buffet : le format se décide avec vous, selon le lieu et l’occasion."
+    answer: "Nos prestations démarrent à partir de 500 € HT de commande. Cocktail, dîner servi ou buffet : le format se décide avec vous, selon le lieu et l’occasion."
   - question: "Quel délai pour réserver une date ?"
     answer: "Le plus tôt est le mieux pour les samedis et les fins d’année, mais notre proximité nous permet aussi de répondre à des demandes courtes. Premier échange, puis devis gratuit sous 24 heures."
   - question: "Le vin est-il compris dans la prestation ?"

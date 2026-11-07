@@ -11,7 +11,7 @@ faq:
   - question: "Quels formats proposez-vous aux entreprises de Levallois-Perret ?"
     answer: "Cocktails de lancement, déjeuners d’équipe en bureau, dîners de comité de direction, buffets. Chaque format s’adapte à vos locaux et à vos horaires, avec une équipe de service quand le moment le demande."
   - question: "Quel est le minimum de commande ?"
-    answer: "500 €. Les tarifs varient ensuite selon le format, le niveau de prestation et le nombre de convives — chaque devis est établi après un échange."
+    answer: "500 € HT. Les tarifs varient ensuite selon le format, le niveau de prestation et le nombre de convives — chaque devis est établi après un échange."
   - question: "Pouvez-vous livrer et servir directement dans nos bureaux ?"
     answer: "Oui. Mise en place rapide, vaisselle fournie, débarrassage discret : la prestation s’intègre dans la journée de travail sans la perturber."
   - question: "Qui cuisine ?"

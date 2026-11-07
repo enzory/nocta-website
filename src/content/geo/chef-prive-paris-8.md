@@ -11,7 +11,7 @@ faq:
   - question: "NOCTA intervient-il dans tout le 8e arrondissement ?"
     answer: "Oui, NOCTA se déplace dans l’ensemble du 8e arrondissement, que ce soit pour un appartement particulier, un hôtel particulier ou un espace privatif. La logistique est étudiée en amont lors de la prise en charge du dossier."
   - question: "Quel est le budget minimum pour un dîner privé à domicile dans le 8e ?"
-    answer: "Les prestations NOCTA Private démarrent à partir de 500 € de commande. Le devis est établi selon le nombre de convives, le menu retenu et les options de service souhaitées."
+    answer: "Les prestations NOCTA Private démarrent à partir de 500 € HT de commande. Le devis est établi selon le nombre de convives, le menu retenu et les options de service souhaitées."
   - question: "Combien de temps faut-il pour obtenir un devis ?"
     answer: "Réponse à toute demande de devis sous 24 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16. Les prestations complexes peuvent nécessiter un échange téléphonique préalable."
   - question: "La sommellerie est-elle incluse dans la prestation dîner privé ?"
