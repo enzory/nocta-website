@@ -1,6 +1,6 @@
 ---
 title: "Traiteur d’entreprise à Levallois-Perret | NOCTA"
-description: "Traiteur d’entreprise à Levallois-Perret : cocktails, déjeuners d’équipe, comités de direction et buffets, depuis Courbevoie. Devis sous 24 heures."
+description: "Traiteur d’entreprise à Levallois-Perret : cocktails, déjeuners d’équipe, comités de direction et buffets, depuis Courbevoie. Devis sous 24 h ouvrées."
 zone: "Levallois-Perret"
 type: "commune-92"
 ctaType: "corporate"
@@ -52,4 +52,4 @@ Notre implantation à Courbevoie nous place en position cohérente pour interven
 
 ## Demande de devis
 
-Vous organisez un événement à Levallois-Perret — cocktail d’entreprise, dîner de direction, séminaire avec déjeuner — et souhaitez un chiffrage précis ? Contactez-nous via notre [formulaire de demande de devis](/contact). Nous revenons vers vous sous 24 heures avec une proposition adaptée au format, au lieu et au nombre de personnes.
+Vous organisez un événement à Levallois-Perret — cocktail d’entreprise, dîner de direction, séminaire avec déjeuner — et souhaitez un chiffrage précis ? Contactez-nous via notre [formulaire de demande de devis](/contact). Nous revenons vers vous sous 24 heures ouvrées avec une proposition adaptée au format, au lieu et au nombre de personnes.

@@ -1,6 +1,6 @@
 ---
 title: "Traiteur baptême Paris – déjeuner familial à domicile"
-description: "NOCTA organise votre déjeuner de baptême ou événement privé à Paris. Menu construit selon vos envies, service à table, sommellerie. Devis sous 24 h."
+description: "NOCTA organise votre déjeuner de baptême ou événement privé à Paris. Menu construit selon vos envies, service à table, sommellerie. Devis sous 24 h ouvrées."
 zone: "Paris"
 type: "occasion"
 ctaType: "private"

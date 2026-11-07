@@ -1,6 +1,6 @@
 ---
 title: "Séminaire & comité de direction à Paris — NOCTA Catering"
-description: "NOCTA Catering orchestre vos séminaires et offsite à Paris : formules Corporate et Signature, sommellerie, service en salle. Devis sous 24 h."
+description: "NOCTA Catering orchestre vos séminaires et offsite à Paris : formules Corporate et Signature, sommellerie, service en salle. Devis sous 24 h ouvrées."
 zone: "Paris"
 type: "occasion"
 ctaType: "corporate"

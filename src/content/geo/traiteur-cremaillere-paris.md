@@ -1,6 +1,6 @@
 ---
 title: "Crémaillère à Paris : cocktail dînatoire à domicile"
-description: "NOCTA organise votre crémaillère à Paris : cocktail dînatoire ou dîner assis, chef à domicile, sommellerie. Devis sous 24 heures."
+description: "NOCTA organise votre crémaillère à Paris : cocktail dînatoire ou dîner assis, chef à domicile, sommellerie. Devis sous 24 h ouvrées."
 zone: "Paris"
 type: "occasion"
 ctaType: "private"

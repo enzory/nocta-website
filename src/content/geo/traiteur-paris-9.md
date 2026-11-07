@@ -1,6 +1,6 @@
 ---
 title: "Traiteur Paris 9e — Opéra, sièges corporate, événements"
-description: "NOCTA Catering intervient dans le 9e arrondissement : cocktails corporate, dîners de direction, buffets soignés. Devis sous 24 h."
+description: "NOCTA Catering intervient dans le 9e arrondissement : cocktails corporate, dîners de direction, buffets soignés. Devis sous 24 h ouvrées."
 zone: "Paris 9e arrondissement"
 type: "arrondissement"
 ctaType: "corporate"

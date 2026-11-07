@@ -50,4 +50,4 @@ Nous travaillons avec des clients qui ont des exigences précises sur la ponctua
 
 ## Demande de devis
 
-Pour un événement dans le 15e arrondissement — cocktail professionnel, dîner de comité, buffet ou projet Signature — adressez-nous votre demande via la page contact. Nous revenons vers vous sous 24 heures avec un devis détaillé, construit à partir de votre lieu, de votre format et de vos contraintes.
+Pour un événement dans le 15e arrondissement — cocktail professionnel, dîner de comité, buffet ou projet Signature — adressez-nous votre demande via la page contact. Nous revenons vers vous sous 24 heures ouvrées avec un devis détaillé, construit à partir de votre lieu, de votre format et de vos contraintes.
