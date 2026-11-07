@@ -36,7 +36,7 @@ Le minimum de commande est de **500 € HT**, sans minimum de convives. NOCTA pe
 
 Le format fonctionne particulièrement bien dans trois contextes.
 
-**En entreprise** : lancements de produit, afterworks clients, séminaires, comités de direction décontractés. Le cocktail dînatoire permet de mêler networking et convivialité sans imposer trois heures à table. C’est le format le plus demandé par nos clients [NOCTA Corporate](/prestations/corporate) à Paris et La Défense.
+**En entreprise** : lancements de produit, afterworks clients, séminaires, comités de direction décontractés. Le cocktail dînatoire permet de mêler networking et convivialité sans imposer trois heures à table. C’est le format le plus demandé par nos clients [NOCTA Corporate](/prestations/corporate) à Paris et La Défense. Pour un événement d’entreprise, voir notre page dédiée au [cocktail d’entreprise à Paris](/traiteur/traiteur-cocktail-entreprise-paris).
 
 **En privé** : anniversaires, crémaillères, fêtes entre amis. Le cocktail dînatoire libère l’hôte — pas de service à orchestrer, pas de timing rigide. Les invités circulent, échangent, piochent.
 
