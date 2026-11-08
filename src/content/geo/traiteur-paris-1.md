@@ -13,7 +13,7 @@ faq:
   - question: "Quels types d’événements organisez-vous dans le 1er ?"
     answer: "Dîners privés en appartement, cocktails d’entreprise, réceptions dans des lieux événementiels du quartier. Nos prestations démarrent à partir de 500 € HT de commande."
   - question: "Le service en salle est-il inclus ?"
-    answer: "Selon le format. Pour un dîner servi, un chef de salle assure le service ; pour un cocktail, l’équipe est dimensionnée au nombre d’invités. Tout est précisé dans le devis, gratuit et remis sous 24 heures ouvrées."
+    answer: "Selon le format. Pour un dîner servi, un chef de salle assure le service ; pour un cocktail, l’équipe est dimensionnée au nombre d’invités. Tout est précisé dans le devis, remis sous 24 heures ouvrées."
   - question: "Travaillez-vous avec des produits de saison ?"
     answer: "Oui. Les menus changent avec le marché. Chaque produit est sélectionné pour ce qu’il est, pas pour ce qu’il représente."
 ---
