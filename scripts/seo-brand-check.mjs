@@ -131,19 +131,43 @@ function checkForbiddenPatterns(markdown) {
   return flags;
 }
 
-// Détecte les clients inventés (seuls clients autorisés : ceux listés)
+// Détecte les clients inventés (seuls clients autorisés : ceux listés).
+// Source unique : scripts/faits-reference.md, section « Clients citables ».
+// Variantes courtes incluses (« Galion », « Levi ») car l'heuristique ci-dessous
+// découpe les noms propres sur les espaces et l'apostrophe.
 const AUTHORIZED_CLIENTS = [
-  "Boucheron",
-  "Biologique Recherche",
+  "Levi’s",
+  "Levi's",
+  "Levi",
   "The Galion Project",
   "Galion Project",
   "Galion",
   "Colombus Consulting",
   "Colombus",
   "Jus Mundi",
+  "AA Conseil",
   "Messika",
   "Originator",
 ];
+
+// Clients citables UNIQUEMENT dans les articles du Journal (/journal/*),
+// jamais ailleurs (pages par ville comprises) ni en logo — cf. faits-reference.md.
+// Le générateur ne produit que des pages par ville : toute mention est éliminatoire.
+const REFUSED_CLIENTS_HORS_JOURNAL = [
+  { pattern: /\bBoucheron\b/gi, flag: "CLIENT_JOURNAL_ONLY_BOUCHERON" },
+  { pattern: /\bBiologique\s+Recherche\b/gi, flag: "CLIENT_JOURNAL_ONLY_BIOLOGIQUE_RECHERCHE" },
+];
+
+// Refuse les clients réservés au Journal, sauf si le contenu est un article du Journal.
+function checkRefusedClients(markdown, isJournal) {
+  if (isJournal) return [];
+  const flags = [];
+  for (const { pattern, flag } of REFUSED_CLIENTS_HORS_JOURNAL) {
+    const matches = markdown.match(pattern);
+    if (matches) flags.push({ code: flag, eliminatory: true, detail: `${matches.length} occurrence(s)` });
+  }
+  return flags;
+}
 
 function checkClientInvention(markdown) {
   const flags = [];
@@ -236,7 +260,7 @@ function checkDuplication(markdown, excludeId) {
 
 const SCORING_PROMPT = `Tu es l'éditeur en chef de NOCTA Catering. Ton job : valider ou rejeter un contenu SEO avant publication.
 
-NOCTA est un traiteur HAUT DE GAMME parisien. Clients : Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting, Jus Mundi.
+NOCTA est un traiteur HAUT DE GAMME parisien. Clients citables : Levi's, The Galion Project, Colombus Consulting, Jus Mundi, AA Conseil, Messika, Originator. Aucun autre client ne peut être cité dans ce contenu.
 
 Règles éditoriales NOCTA :
 - Jamais "chef étoilé" → "formé en cuisine étoilée"
@@ -290,7 +314,10 @@ async function scoreWithClaude(markdown, client, model) {
 // ============================================================
 // EXPORT : brandCheck
 // ============================================================
-export async function brandCheck(markdown, claudeClient, model = "claude-sonnet-4-6", excludeId = null) {
+// `options.journal` : true seulement pour un article du Journal. Par défaut (false),
+// le contenu est traité comme une page hors Journal — cas du générateur de pages par ville.
+export async function brandCheck(markdown, claudeClient, model = "claude-sonnet-4-6", excludeId = null, options = {}) {
+  const { journal = false } = options;
   const allFlags = [];
 
   // Couche 1
@@ -305,6 +332,10 @@ export async function brandCheck(markdown, claudeClient, model = "claude-sonnet-
 
   const clientFlags = checkClientInvention(markdown);
   allFlags.push(...clientFlags);
+
+  // Clients réservés au Journal : éliminatoire hors /journal/
+  const refusedFlags = checkRefusedClients(markdown, journal);
+  allFlags.push(...refusedFlags);
 
   // Couche 1bis — duplication vs corpus GEO existant
   const { flags: dupFlags, dupPct } = checkDuplication(markdown, excludeId);
@@ -330,6 +361,7 @@ export async function brandCheck(markdown, claudeClient, model = "claude-sonnet-
       body: bodyFlags,
       forbidden: forbidFlags,
       client: clientFlags,
+      refusedClients: refusedFlags,
       qualitative,
       words,
       dupPct,
