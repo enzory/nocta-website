@@ -1,6 +1,6 @@
 ---
 title: "Traiteur Paris : dîner d’équipe, cocktail, départ retraite"
-description: "NOCTA organise vos cocktails corporate, dîners d’équipe et départs en retraite à Paris. Cuisine sourcée, service sobre et efficace. Devis sous 24 h."
+description: "NOCTA organise vos cocktails corporate, dîners d’équipe et départs en retraite à Paris. Cuisine sourcée, service sobre et efficace. Devis sous 24 h ouvrées."
 zone: "Paris"
 type: "occasion"
 ctaType: "corporate"
@@ -13,7 +13,7 @@ faq:
   - question: "Quel est le budget minimum pour organiser un événement avec NOCTA à Paris ?"
     answer: "NOCTA intervient à partir de 500 € HT de commande, quel que soit le format retenu — cocktail debout, dîner assis ou buffet."
   - question: "Dans quel délai peut-on obtenir un devis pour un départ en retraite ou un dîner d’équipe ?"
-    answer: "Un devis est transmis sous 24 heures après réception de votre demande. Pour les événements nécessitant un menu adapté ou un format complexe, un échange téléphonique avec Enzo ou Hugo permet d’affiner le projet rapidement."
+    answer: "Un devis est transmis sous 24 heures ouvrées après réception de votre demande. Pour les événements nécessitant un menu adapté ou un format complexe, un échange téléphonique avec Enzo ou Hugo permet d’affiner le projet rapidement."
   - question: "Quels services sont inclus dans une prestation NOCTA Corporate à Paris ?"
     answer: "La prestation comprend la conception du menu, la préparation en cuisine, le transport, le dressage sur place et le service. La sommellerie peut être intégrée selon le format choisi. NOCTA ne propose pas de location de mobilier ni de décoration florale."
 ---
@@ -44,7 +44,7 @@ Pour les cocktails dans des espaces de coworking ou des plateaux ouverts, la con
 
 ## Pourquoi confier votre événement parisien à NOCTA
 
-NOCTA travaille avec des clients dont la liste donne une indication claire du positionnement : Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting, Jus Mundi. Ces structures ont en commun d’attendre un interlocuteur qui comprend leur environnement, répond vite et ne surcharge pas la prestation de détails inutiles.
+NOCTA travaille avec des clients dont la liste donne une indication claire du positionnement : Levi’s, Messika, The Galion Project, Colombus Consulting, Jus Mundi. Ces structures ont en commun d’attendre un interlocuteur qui comprend leur environnement, répond vite et ne surcharge pas la prestation de détails inutiles.
 
 La sommellerie intégrée — portée par Enzo — est un différenciateur concret : sélection au verre calibrée selon le menu, accords discutés en amont, service à table géré sans délégation à une régie extérieure. Pour un départ en retraite ou un dîner d’équipe où la table doit tenir son rang sans alourdir l’ambiance, c’est un point que les clients citent régulièrement dans leurs retours.
 
@@ -52,4 +52,4 @@ La taille de la structure — deux associés, aucun intermédiaire — permet au
 
 ## Demande de devis
 
-Vous organisez un cocktail, un dîner d’équipe ou un départ en retraite à Paris ? Transmettez votre demande via [le formulaire de contact](/contact) en précisant la date, le lieu et le format envisagé. Un premier retour vous est adressé sous 24 heures.
+Vous organisez un cocktail, un dîner d’équipe ou un départ en retraite à Paris ? Transmettez votre demande via [le formulaire de contact](/contact) en précisant la date, le lieu et le format envisagé. Un premier retour vous est adressé sous 24 heures ouvrées.

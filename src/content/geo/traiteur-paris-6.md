@@ -11,7 +11,7 @@ faq:
   - question: "Proposez-vous des dîners à domicile dans le 6e arrondissement ?"
     answer: "Oui, c’est le cœur de NOCTA Private : un chef formé en cuisine étoilée dans votre cuisine, un service en salle si vous le souhaitez, et une sélection de vins composée par notre sommelier. Vous êtes présent à vos invités, pas à vos fourneaux."
   - question: "Combien coûte un dîner privé ?"
-    answer: "Nos prestations démarrent à partir de 500 € HT de commande. Le tarif dépend ensuite du menu, du service et du nombre de convives — le devis, gratuit, est remis sous 24 heures."
+    answer: "Nos prestations démarrent à partir de 500 € HT de commande. Le tarif dépend ensuite du menu, du service et du nombre de convives — le devis, gratuit, est remis sous 24 heures ouvrées."
   - question: "Pouvez-vous cuisiner dans un appartement haussmannien classique ?"
     answer: "Oui. Nos menus sont pensés pour être finalisés sur place dans une cuisine domestique, sans matériel lourd. Un repérage ou un échange préalable suffit à valider la faisabilité."
   - question: "Gérez-vous les régimes et allergies ?"
@@ -46,10 +46,10 @@ Pour les galeries et espaces commerciaux du quartier, la question du bruit et de
 
 NOCTA a été fondée par deux associés dont les parcours sont directement en phase avec les attentes de la clientèle du 6e. Hugo Vinatier apporte une maîtrise technique issue de la cuisine étoilée, appliquée à des formats de traiteur où la régularité et la précision priment sur l’effet de présentation. Enzo Ryon, sommelier, gère la dimension conseil en vins et la relation client avec le niveau de discrétion et de disponibilité qu’exige ce type de prestation.
 
-Nous comptons parmi nos clients des structures comme Boucheron, Biologique Recherche ou Jus Mundi, qui partagent avec la clientèle du 6e arrondissement une même exigence : un niveau de finition élevé, une logistique sans friction, et une équipe qui comprend les codes du milieu dans lequel elle intervient. Ce positionnement nous permet d’intervenir dans des contextes où la prestation traiteur ne doit pas se remarquer pour elle-même, mais contribuer à la qualité globale de l’événement.
+Nous comptons parmi nos clients des structures comme Messika, Levi’s ou Jus Mundi, qui partagent avec la clientèle du 6e arrondissement une même exigence : un niveau de finition élevé, une logistique sans friction, et une équipe qui comprend les codes du milieu dans lequel elle intervient. Ce positionnement nous permet d’intervenir dans des contextes où la prestation traiteur ne doit pas se remarquer pour elle-même, mais contribuer à la qualité globale de l’événement.
 
 Nous ne sous-traitons pas la cuisine, ne travaillons pas avec des équipes variables selon les dates, et n’acceptons pas plus de mandats que ce que notre capacité d’exécution nous permet d’honorer correctement.
 
 ## Demande de devis
 
-Pour une intervention dans le 6e arrondissement — dîner privé, cocktail de vernissage ou réception personnalisée — prenez contact via notre [formulaire de demande de devis](/contact). Indiquez la date, le nombre d’invités et le type de lieu : nous revenons vers vous sous 24 heures avec une première proposition adaptée.
+Pour une intervention dans le 6e arrondissement — dîner privé, cocktail de vernissage ou réception personnalisée — prenez contact via notre [formulaire de demande de devis](/contact). Indiquez la date, le nombre d’invités et le type de lieu : nous revenons vers vous sous 24 heures ouvrées avec une première proposition adaptée.

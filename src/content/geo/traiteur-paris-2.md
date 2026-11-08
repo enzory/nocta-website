@@ -33,13 +33,13 @@ Les cuisines sur place sont souvent absentes ou réduites à un coin kitchenette
 
 Le stationnement d’un véhicule utilitaire le temps du montage et du service reste le point de friction le plus fréquent dans cet arrondissement. Nous gérons cette logistique en interne, mais une coordination avec le gestionnaire de l’immeuble ou le responsable événementiel côté client facilite significativement l’intervention.
 
-Réponse à toute demande de devis sous 24 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16. Pour les formats Signature, les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant.
+Réponse à toute demande de devis sous 24 heures ouvrées. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16. Pour les formats Signature, les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant.
 
 ## Pourquoi NOCTA dans le 2e arrondissement
 
 NOCTA a été fondé en avril 2025 par deux associés dont les parcours sont complémentaires : une cuisine construite dans des brigades étoilées et une sommellerie orientée clientèle grands comptes. Ce positionnement correspond directement au profil des entreprises du 2e arrondissement, qui reçoivent des interlocuteurs habitués à un certain niveau de table et pour qui un repas générique constitue un signal négatif.
 
-Parmi nos clients de référence figurent Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting et Jus Mundi — des structures pour lesquelles la qualité de la table fait partie du message adressé à leurs invités. C’est le même registre d’exigence que nous appliquons à chaque intervention, quelle qu’en soit l’échelle.
+Parmi nos clients de référence figurent Levi’s, Messika, The Galion Project, Colombus Consulting et Jus Mundi — des structures pour lesquelles la qualité de la table fait partie du message adressé à leurs invités. C’est le même registre d’exigence que nous appliquons à chaque intervention, quelle qu’en soit l’échelle.
 
 Nous ne sous-traitons pas le service : l’équipe qui conçoit la prestation est celle qui l’exécute. Enzo Ryon est présent sur les événements nécessitant une sommellerie en salle ou une relation client directe. Hugo Vinatier supervise la production et le dressage à l’envoi.
 

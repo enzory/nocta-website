@@ -13,7 +13,7 @@ faq:
   - question: "Quel est le minimum pour faire appel à vous ?"
     answer: "Nos prestations démarrent à partir de 500 € HT de commande. Un dîner intime avec chef et service en salle entre donc pleinement dans nos formats."
   - question: "Sous quel délai recevons-nous un devis ?"
-    answer: "Sous 24 heures après un premier échange. Le devis est gratuit et détaille le menu, le service et la logistique propres à votre lieu."
+    answer: "Sous 24 heures ouvrées après un premier échange. Le devis est gratuit et détaille le menu, le service et la logistique propres à votre lieu."
   - question: "Proposez-vous un accord mets et vins ?"
     answer: "Oui. Enzo, sommelier formé en restaurant étoilé, compose la sélection de vins en fonction du menu et de vos invités. C’est une ligne directrice, pas une liste."
 ---
@@ -46,10 +46,10 @@ Nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour
 
 NOCTA Catering a été fondé en avril 2025 par deux associés dont les profils sont complémentaires sur les attentes du marché événementiel parisien et des Hauts-de-Seine. Hugo Vinatier apporte une formation en cuisine étoilée et un sens de la rigueur du dressage et de l’envoi qui se traduit directement dans la tenue du service, même pour des formats courts ou des couverts serrés. Enzo Ryon assure la relation client, la sélection des vins et la coordination éditoriale des propositions.
 
-Nos clients de référence incluent des structures comme Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting et Jus Mundi. Ce périmètre couvre aussi bien le secteur du luxe que la tech, le conseil et la communication — autant de typologies présentes à Boulogne-Billancourt. Nous ne citons pas d’événements spécifiques, mais ces collaborations témoignent d’une capacité à travailler avec des directions générales et des équipes communication qui ont des exigences claires sur la tenue du service et la qualité des produits servis.
+Nos clients de référence incluent des structures comme Levi’s, Messika, The Galion Project, Colombus Consulting et Jus Mundi. Ce périmètre couvre aussi bien le secteur du luxe que la tech, le conseil et la communication — autant de typologies présentes à Boulogne-Billancourt. Nous ne citons pas d’événements spécifiques, mais ces collaborations témoignent d’une capacité à travailler avec des directions générales et des équipes communication qui ont des exigences claires sur la tenue du service et la qualité des produits servis.
 
 Nous n’avons pas vocation à proposer de la décoration florale, du mobilier événementiel ou du pilotage global de votre événement. Notre périmètre est la restauration, de la conception du menu au service en salle, et nous le tenons rigoureusement.
 
 ## Demande de devis
 
-Pour un événement à Boulogne-Billancourt — qu’il s’agisse d’un cocktail d’entreprise, d’un dîner privé ou d’une prestation intégrée à un événement de communication — vous pouvez nous adresser votre demande depuis la page contact. Précisez le format, la date, le nombre de convives et les contraintes du lieu : nous revenons vers vous sous 24 heures avec une proposition adaptée.
+Pour un événement à Boulogne-Billancourt — qu’il s’agisse d’un cocktail d’entreprise, d’un dîner privé ou d’une prestation intégrée à un événement de communication — vous pouvez nous adresser votre demande depuis la page contact. Précisez le format, la date, le nombre de convives et les contraintes du lieu : nous revenons vers vous sous 24 heures ouvrées avec une proposition adaptée.

@@ -13,7 +13,7 @@ faq:
   - question: "Quels types d’événements organisez-vous dans le 1er ?"
     answer: "Dîners privés en appartement, cocktails d’entreprise, réceptions dans des lieux événementiels du quartier. Nos prestations démarrent à partir de 500 € HT de commande."
   - question: "Le service en salle est-il inclus ?"
-    answer: "Selon le format. Pour un dîner servi, un chef de salle assure le service ; pour un cocktail, l’équipe est dimensionnée au nombre d’invités. Tout est précisé dans le devis, gratuit et remis sous 24 heures."
+    answer: "Selon le format. Pour un dîner servi, un chef de salle assure le service ; pour un cocktail, l’équipe est dimensionnée au nombre d’invités. Tout est précisé dans le devis, gratuit et remis sous 24 heures ouvrées."
   - question: "Travaillez-vous avec des produits de saison ?"
     answer: "Oui. Les menus changent avec le marché. Chaque produit est sélectionné pour ce qu’il est, pas pour ce qu’il représente."
 ---
@@ -52,7 +52,7 @@ Dans tous les cas, un repérage préalable du lieu est intégré dans la phase d
 
 NOCTA a été fondée en avril 2025 par deux associés dont les trajectoires sont complémentaires : un chef formé en cuisine étoilée et un sommelier avec une expérience de la relation client dans des environnements exigeants. Cette structure à taille humaine permet une réactivité et un niveau de personnalisation que les grandes brigades externalisées offrent difficilement — les interlocuteurs qui construisent la prestation avec le client sont les mêmes que ceux qui exécutent le soir J.
 
-Parmi les clients que NOCTA accompagne figurent des maisons comme Boucheron, Biologique Recherche ou des structures comme The Galion Project et Jus Mundi — des environnements où la qualité de l’accueil fait partie de l’image que l’on donne. Le 1er arrondissement, par la densité de ses adresses dans l’univers du luxe, de la finance et de la culture, correspond naturellement au profil de client pour lequel NOCTA a été pensé.
+Parmi les clients que NOCTA accompagne figurent des maisons comme Messika, des marques comme Levi’s ou des structures comme The Galion Project et Jus Mundi — des environnements où la qualité de l’accueil fait partie de l’image que l’on donne. Le 1er arrondissement, par la densité de ses adresses dans l’univers du luxe, de la finance et de la culture, correspond naturellement au profil de client pour lequel NOCTA a été pensé.
 
 Les menus sont construits autour de produits de saison, sourcés auprès de fournisseurs identifiés, et adaptés à chaque table : régimes alimentaires, contraintes de service, format de la soirée. Rien n’est standardisé par défaut.
 
@@ -60,6 +60,6 @@ Les menus sont construits autour de produits de saison, sourcés auprès de four
 
 ## Demande de devis
 
-Pour une intervention dans le 1er arrondissement — qu’il s’agisse d’un dîner privé, d’un cocktail corporate ou d’un format plus spécifique — contactez NOCTA via la page dédiée. Un premier échange permet de cadrer le format, le lieu et le budget en moins de 24 heures.
+Pour une intervention dans le 1er arrondissement — qu’il s’agisse d’un dîner privé, d’un cocktail corporate ou d’un format plus spécifique — contactez NOCTA via la page dédiée. Un premier échange permet de cadrer le format, le lieu et le budget en moins de 24 heures ouvrées.
 
 [Prendre contact avec NOCTA <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

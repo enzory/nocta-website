@@ -1,6 +1,6 @@
 ---
 title: "Chef à domicile Paris 8e — Dîner privé NOCTA"
-description: "NOCTA propose un chef à domicile dans le 8e arrondissement : dîner privé, menu construit selon vos envies, sommellerie incluse. Devis sous 24 heures."
+description: "NOCTA propose un chef à domicile dans le 8e arrondissement : dîner privé, menu construit selon vos envies, sommellerie incluse. Devis sous 24 h ouvrées."
 zone: "Paris 8e"
 type: "chef-prive"
 ctaType: "private"
@@ -13,7 +13,7 @@ faq:
   - question: "Quel est le budget minimum pour un dîner privé à domicile dans le 8e ?"
     answer: "Les prestations NOCTA Private démarrent à partir de 500 € HT de commande. Le devis est établi selon le nombre de convives, le menu retenu et les options de service souhaitées."
   - question: "Combien de temps faut-il pour obtenir un devis ?"
-    answer: "Réponse à toute demande de devis sous 24 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16. Les prestations complexes peuvent nécessiter un échange téléphonique préalable."
+    answer: "Réponse à toute demande de devis sous 24 heures ouvrées. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16. Les prestations complexes peuvent nécessiter un échange téléphonique préalable."
   - question: "La sommellerie est-elle incluse dans la prestation dîner privé ?"
     answer: "NOCTA intègre une proposition d’accords mets et vins à chaque dîner privé. Enzo Ryon, sommelier et directeur de l’entreprise, peut accompagner la sélection des vins selon le menu et le profil de votre table."
 ---
@@ -46,12 +46,12 @@ La cuisine du lieu est inspectée à distance (photos transmises par l’hôte) 
 
 NOCTA a été fondé par deux professionnels issus du terrain : Hugo Vinatier, dont la formation en cuisine étoilée se lit dans la précision du geste et la construction des assiettes, et Enzo Ryon, dont le parcours en sommellerie apporte une dimension rare dans les prestations de traiteur à domicile. Cette complémentarité — cuisine et cave, assiette et verre — est structurante dans ce que NOCTA propose, en particulier pour des tables où le vin compte autant que le plat.
 
-Les clients qui font appel à NOCTA dans des arrondissements similaires partagent en général deux attentes : un interlocuteur unique capable de porter l’ensemble du dossier, et une cuisine qui ne ressemble pas à celle d’un traiteur standard. Les références de NOCTA — Boucheron, Biologique Recherche, The Galion Project — témoignent d’une capacité à intervenir dans des contextes exigeants, qu’ils soient privés ou professionnels.
+Les clients qui font appel à NOCTA dans des arrondissements similaires partagent en général deux attentes : un interlocuteur unique capable de porter l’ensemble du dossier, et une cuisine qui ne ressemble pas à celle d’un traiteur standard. Les références de NOCTA — Levi’s, Messika, The Galion Project — témoignent d’une capacité à intervenir dans des contextes exigeants, qu’ils soient privés ou professionnels.
 
 Pour un dîner dans le 8e, nous recommandons de prendre contact au moins une semaine avant la date souhaitée, deux semaines pour les formats Signature ou les tablées de plus de douze couverts.
 
 ## Demande de devis
 
-Vous recevez dans le 8e arrondissement et souhaitez un dîner construit selon vos contraintes et votre table. Transmettez-nous la date, le nombre de convives et le cadre général via le formulaire de contact. Réponse à toute demande de devis sous 24 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.
+Vous recevez dans le 8e arrondissement et souhaitez un dîner construit selon vos contraintes et votre table. Transmettez-nous la date, le nombre de convives et le cadre général via le formulaire de contact. Réponse à toute demande de devis sous 24 heures ouvrées. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.
 
 [Faire une demande de devis <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

@@ -13,7 +13,7 @@ faq:
   - question: "Quel est le budget minimum pour un dîner privé à domicile ?"
     answer: "Le budget minimum est de 500 € HT de commande. Le tarif varie selon le menu, le nombre de convives et les options de service retenues (sommellerie, service en salle, coordination logistique)."
   - question: "Quel est le délai pour obtenir un devis et réserver ?"
-    answer: "Un devis est adressé sous 24 heures après réception de votre demande. Pour les dîners complexes ou à date fixe, nous recommandons de nous contacter au moins deux semaines à l’avance afin de sécuriser la date et organiser l’approvisionnement."
+    answer: "Un devis est adressé sous 24 heures ouvrées après réception de votre demande. Pour les dîners complexes ou à date fixe, nous recommandons de nous contacter au moins deux semaines à l’avance afin de sécuriser la date et organiser l’approvisionnement."
   - question: "Que comprend exactement la prestation chef à domicile NOCTA ?"
     answer: "La prestation comprend la conception du menu, l’approvisionnement en produits de saison, la mise en place, la cuisson et le dressage à l’envoi dans votre cuisine, ainsi que le nettoyage en fin de service. La sommellerie et le service en salle peuvent être ajoutés selon vos besoins."
 ---
@@ -46,10 +46,10 @@ Pour les maisons avec jardin — nombreuses dans les secteurs résidentiels de B
 
 NOCTA a été fondée en avril 2025 par Enzo Ryon et Hugo Vinatier. Hugo a été formé en cuisine étoilée avant de se consacrer au traiteur privé et au développement B2B. Enzo apporte une compétence de sommelier opérationnel, capable d’intervenir en service et de construire une sélection de vins cohérente avec un menu précis — pas une carte générique.
 
-Ce positionnement nous a permis de travailler avec des clients dont les exigences en matière de discrétion, de précision et de logistique sont élevées : Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting, Jus Mundi. Les particuliers qui font appel à nous partagent souvent ce même rapport à la table : ils savent ce qu’ils veulent, connaissent les produits, et n’ont pas besoin qu’on leur vende le dîner — ils ont besoin qu’on l’exécute bien.
+Ce positionnement nous a permis de travailler avec des clients dont les exigences en matière de discrétion, de précision et de logistique sont élevées : Levi’s, Messika, The Galion Project, Colombus Consulting, Jus Mundi. Les particuliers qui font appel à nous partagent souvent ce même rapport à la table : ils savent ce qu’ils veulent, connaissent les produits, et n’ont pas besoin qu’on leur vende le dîner — ils ont besoin qu’on l’exécute bien.
 
 Pour un dîner privé à Boulogne-Billancourt, nous sommes disponibles en semaine comme le week-end, avec une gestion des imprévus (annulation tardive, changement de convives) intégrée à chaque contrat.
 
 ## Demande de devis
 
-Pour organiser un dîner privé à votre domicile à Boulogne-Billancourt, contactez-nous via notre [formulaire de demande de devis](/contact). Précisez la date souhaitée, le nombre de convives approximatif et la nature de l’occasion. Un devis détaillé vous est adressé sous 24 heures.
+Pour organiser un dîner privé à votre domicile à Boulogne-Billancourt, contactez-nous via notre [formulaire de demande de devis](/contact). Précisez la date souhaitée, le nombre de convives approximatif et la nature de l’occasion. Un devis détaillé vous est adressé sous 24 heures ouvrées.

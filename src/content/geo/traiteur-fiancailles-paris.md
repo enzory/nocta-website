@@ -51,7 +51,7 @@ Paris pose des contraintes concrètes que nous intégrons systématiquement à l
 
 ## Pourquoi choisir NOCTA pour une célébration à Paris
 
-NOCTA a été fondé à Courbevoie en avril 2025 par deux professionnels issus de secteurs complémentaires : la cuisine de haut niveau d’un côté, la sommellerie et la relation client de l’autre. Nous travaillons avec des clients qui attendent un service structuré, discret et fiable — des marques comme Boucheron, Biologique Recherche ou The Galion Project nous font confiance pour leurs événements corporate.
+NOCTA a été fondé à Courbevoie en avril 2025 par deux professionnels issus de secteurs complémentaires : la cuisine de haut niveau d’un côté, la sommellerie et la relation client de l’autre. Nous travaillons avec des clients qui attendent un service structuré, discret et fiable — des marques comme Levi’s, Messika ou The Galion Project nous font confiance pour leurs événements corporate.
 
 Ce même niveau de rigueur s’applique aux dîners privés. Un dîner de fiançailles ou une célébration familiale ne se rattrape pas. Nous construisons chaque prestation à partir d’un cahier des charges précis : nombre de convives, contraintes alimentaires, budget par personne, attentes en matière de service. Nous ne proposons pas de formule standard — chaque menu est écrit pour la table concernée, avec les produits disponibles à la date de l’événement.
 

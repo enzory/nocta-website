@@ -39,10 +39,10 @@ Pour les événements en semaine en journée, le 4e offre en revanche une bonne 
 
 NOCTA a été fondé par deux associés dont les parcours couvrent la cuisine étoilée, la sommellerie et le développement commercial B2B. Cette double compétence — maîtrise technique du service et capacité à s’adapter aux interlocuteurs exigeants — est particulièrement utile dans un arrondissement où les événements mêlent souvent clients institutionnels, collectionneurs, dirigeants et personnalités du secteur culturel.
 
-Nous travaillons déjà pour des structures comme Boucheron ou Biologique Recherche, habituées à des standards de présentation et de service qui ne tolèrent pas l’approximation. Cette expérience se traduit concrètement : briefing écrit avant chaque prestation, respect des timings communiqués, équipe en tenue sobre et discrète, remise en état du lieu en fin de service.
+Nous travaillons déjà pour des structures comme Messika ou Levi’s, habituées à des standards de présentation et de service qui ne tolèrent pas l’approximation. Cette expérience se traduit concrètement : briefing écrit avant chaque prestation, respect des timings communiqués, équipe en tenue sobre et discrète, remise en état du lieu en fin de service.
 
 Nous ne proposons pas de décoration, de location de mobilier ni de coordination générale de l’événement. Notre périmètre est la restauration et le service, exécutés avec rigueur.
 
 ## Demande de devis
 
-Vous organisez un dîner privé dans le Marais, un cocktail d’entreprise sur l’Île Saint-Louis ou un événement culturel dans le 4e arrondissement ? Transmettez-nous la date, le nombre de convives et les contraintes du lieu via notre [formulaire de contact](/contact). Nous revenons vers vous sous 24 heures avec une proposition adaptée. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.
+Vous organisez un dîner privé dans le Marais, un cocktail d’entreprise sur l’Île Saint-Louis ou un événement culturel dans le 4e arrondissement ? Transmettez-nous la date, le nombre de convives et les contraintes du lieu via notre [formulaire de contact](/contact). Nous revenons vers vous sous 24 heures ouvrées avec une proposition adaptée. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.

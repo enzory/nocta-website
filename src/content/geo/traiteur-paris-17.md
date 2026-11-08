@@ -13,7 +13,7 @@ faq:
   - question: "À partir de quel budget travaillez-vous ?"
     answer: "Nos prestations démarrent à partir de 500 € HT de commande. Cocktail, dîner servi ou buffet : le format se décide avec vous, selon le lieu et l’occasion."
   - question: "Quel délai pour réserver une date ?"
-    answer: "Le plus tôt est le mieux pour les samedis et les fins d’année, mais notre proximité nous permet aussi de répondre à des demandes courtes. Premier échange, puis devis gratuit sous 24 heures."
+    answer: "Le plus tôt est le mieux pour les samedis et les fins d’année, mais notre proximité nous permet aussi de répondre à des demandes courtes. Premier échange, puis devis gratuit sous 24 heures ouvrées."
   - question: "Le vin est-il compris dans la prestation ?"
     answer: "Il peut l’être. Enzo, sommelier, propose un accord mets et vins construit sur le menu — en option chiffrée dans le devis, jamais imposé."
 ---
@@ -48,10 +48,10 @@ Dans tous les cas, NOCTA effectue, pour les prestations Private et Signature, un
 
 L’équipe NOCTA est composée de deux associés qui interviennent directement sur les prestations : Hugo Vinatier assure la direction culinaire, Enzo Ryon la relation client, la sommellerie et la coordination d’ensemble. Il n’y a pas d’intermédiaire entre le commanditaire et les personnes qui exécutent la prestation, ce qui garantit une cohérence entre ce qui est discuté en amont et ce qui est livré le jour J.
 
-NOCTA travaille avec des clients qui ont des exigences élevées en matière de discrétion, de tenue et de qualité d’exécution — Boucheron, Biologique Recherche, The Galion Project, Colombus Consulting, Jus Mundi font partie des références de la maison. Ces collaborations ont construit une culture de la prestation sans défaillance, applicable aussi bien à un dîner privé pour douze personnes dans un appartement du quartier Monceau qu’à un cocktail de direction dans des bureaux des Ternes.
+NOCTA travaille avec des clients qui ont des exigences élevées en matière de discrétion, de tenue et de qualité d’exécution — Levi’s, Messika, The Galion Project, Colombus Consulting, Jus Mundi font partie des références de la maison. Ces collaborations ont construit une culture de la prestation sans défaillance, applicable aussi bien à un dîner privé pour douze personnes dans un appartement du quartier Monceau qu’à un cocktail de direction dans des bureaux des Ternes.
 
 La sélection des produits est faite en direct avec des fournisseurs identifiés, sans recours à des centrales d’achat. La carte des vins proposée par Enzo Ryon est construite pour s’accorder aux menus, pas pour remplir un catalogue.
 
 ## Demande de devis
 
-Pour toute prestation dans le 17e arrondissement — dîner à domicile, cocktail professionnel ou événement construit selon vos envies — vous pouvez soumettre une demande via la page [contact](/contact). Précisez la date souhaitée, le nombre de convives et le type d’événement : l’équipe revient vers vous sous 24 heures avec une première proposition.
+Pour toute prestation dans le 17e arrondissement — dîner à domicile, cocktail professionnel ou événement construit selon vos envies — vous pouvez soumettre une demande via la page [contact](/contact). Précisez la date souhaitée, le nombre de convives et le type d’événement : l’équipe revient vers vous sous 24 heures ouvrées avec une première proposition.

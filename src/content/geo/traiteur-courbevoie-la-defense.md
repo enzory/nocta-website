@@ -1,6 +1,6 @@
 ---
 title: "Traiteur d’entreprise à Courbevoie et La Défense | NOCTA"
-description: "Traiteur d’entreprise basé à Courbevoie : cocktails, déjeuners d’équipe et buffets à La Défense, dès 500 € HT de commande. Devis sous 24 heures."
+description: "Traiteur d’entreprise basé à Courbevoie : cocktails, déjeuners d’équipe et buffets à La Défense, dès 500 € HT de commande. Devis sous 24 h ouvrées."
 h1: "Traiteur à Courbevoie et La Défense"
 zone: "Courbevoie / La Défense"
 type: "commune-92"
