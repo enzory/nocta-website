@@ -64,9 +64,12 @@ const navLinks = [
           {link.label}
         </a>
       ))}
-      <a href="/contact" class="t-label border border-nocta-black text-nocta-black px-6 py-3 mt-3 text-center hover:bg-nocta-black hover:text-nocta-cream transition-all duration-300">
-        Demander un devis
-      </a>
+      {/* Même règle que dans la barre : pas de bouton devis sur /contact. */}
+      {!surContact && (
+        <a href="/contact" class="t-label border border-nocta-black text-nocta-black px-6 py-3 mt-3 text-center hover:bg-nocta-black hover:text-nocta-cream transition-all duration-300">
+          Demander un devis
+        </a>
+      )}
       {/* Appel direct : même numéro et même écriture que dans le footer. */}
       <a href="tel:+33650011616" class="t-label text-nocta-black text-center py-3.5 mt-2">
         06 50 01 16 16
