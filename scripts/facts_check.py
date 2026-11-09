@@ -82,9 +82,21 @@ FORBIDDEN_HORS_JOURNAL = [
 # du client. On ne lui applique donc pas la règle des clients.
 PAGES_PRIVEES = ("/commande/",)
 
+# Exception étroite (règle d'Enzo du 08/11/2026) : le LOGO Biologique Recherche
+# figure dans le bandeau de logos clients. Seule une image dont l'alt vaut
+# exactement « Biologique Recherche » ET placée dans le conteneur repéré par
+# l'attribut data-client-logos (composant LogoSlider) est tolérée.
+# Le nom reste interdit partout ailleurs : texte, JSON-LD, meta, autres images.
+# Aucune exception pour Boucheron : jamais de logo.
+REPERE_BANDEAU = "data-client-logos"
+LOGO_AUTORISE_DANS_BANDEAU = "Biologique Recherche"
+
+# Balises meta lues par le contrôle des clients (description et titres de partage).
+META_LUES = ("description", "og:description", "og:title", "twitter:description", "twitter:title")
+
 
 def page_texts():
-    """Renvoie une liste (nom affiché, chemin de la page, texte, textes alt) à analyser."""
+    """Renvoie une liste (nom affiché, chemin, texte, meta, alts contrôlés) à analyser."""
     if len(sys.argv) > 1:  # mode prod : on lit les pages listées dans le sitemap
         site = sys.argv[1].rstrip("/")
         xml = requests.get(f"{site}/sitemap-0.xml", timeout=20).text
@@ -102,15 +114,31 @@ def page_texts():
 
 
 def extract(html):
-    """Texte lisible de la page + JSON-LD (lus par Google et les IA), et textes alt des images."""
+    """Renvoie trois textes :
+    - le texte lisible de la page + JSON-LD (lus par Google et les IA) ;
+    - le contenu des balises meta (description, titres de partage) ;
+    - les textes alt des images, SAUF le logo autorisé dans le bandeau.
+    """
     soup = BeautifulSoup(html, "html.parser")
     jsonld = " ".join(s.get_text() for s in soup.find_all("script", type="application/ld+json"))
-    # Les alt des images ne font pas partie du texte visible : on les lit à part
-    # pour repérer les logos clients (un logo n'a pas d'autre texte que son alt).
-    alts = " ".join(img.get("alt", "") for img in soup.find_all("img"))
+    # Les meta sont des attributs du <head> : get_text() ne les voit pas.
+    metas = " ".join(
+        m.get("content", "")
+        for m in soup.find_all("meta")
+        if (m.get("name") or m.get("property") or "") in META_LUES
+    )
+    # Les alt ne font pas partie du texte visible : on les lit à part pour
+    # repérer les logos clients (un logo n'a pas d'autre texte que son alt).
+    alts = []
+    for img in soup.find_all("img"):
+        alt = img.get("alt", "")
+        dans_bandeau = img.find_parent(attrs={REPERE_BANDEAU: True}) is not None
+        if dans_bandeau and alt.strip() == LOGO_AUTORISE_DANS_BANDEAU:
+            continue  # logo Biologique Recherche dans le bandeau : toléré
+        alts.append(alt)
     for tag in soup(["script", "style", "noscript"]):
         tag.decompose()
-    return soup.get_text(" ", strip=True) + " " + jsonld, alts
+    return soup.get_text(" ", strip=True) + " " + jsonld, metas, " ".join(alts)
 
 
 def est_article_journal(chemin):
@@ -125,16 +153,17 @@ def signale(name, text, m, why):
 
 
 problems = 0
-for name, chemin, text, alts in page_texts():
-    # 1. Faits de référence : sur toutes les pages
+for name, chemin, text, metas, alts in page_texts():
+    # 1. Faits de référence : sur toutes les pages (texte lisible + JSON-LD)
     for pattern, why in FORBIDDEN:
         for m in re.finditer(pattern, text, flags=re.IGNORECASE):
             signale(name, text, m, why)
             problems += 1
-    # 2. Clients réservés au Journal : partout ailleurs, texte ET alt des images
+    # 2. Clients réservés au Journal : partout ailleurs, sur le texte, le JSON-LD,
+    #    les meta et les alt des images (hors logo BR autorisé dans le bandeau)
     if est_article_journal(chemin) or chemin.startswith(PAGES_PRIVEES):
         continue
-    texte_et_alts = text + " " + alts
+    texte_et_alts = text + " " + metas + " " + alts
     for pattern, why in FORBIDDEN_HORS_JOURNAL:
         for m in re.finditer(pattern, texte_et_alts, flags=re.IGNORECASE):
             signale(name, texte_et_alts, m, why)
