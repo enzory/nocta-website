@@ -622,6 +622,10 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
     .demo-select select { max-width: 100%; font-size: 13px; }
     .feuille { padding: 26px 20px 32px; }
     :global(.logo) { width: 124px; }
+    /* Sur /contact, le logo du site est déjà affiché 60 px plus haut, dans le
+       header fixe : celui de la fiche est réduit pour ne pas le répéter au
+       même poids. L'aperçu (démo), sans header, garde 124 px. */
+    .page[data-mode="production"] :global(.logo) { width: 96px; }
     .lieu-date { font-size: 14px; padding-top: 2px; }
     .titre { margin-top: 30px; font-size: 2.2rem; }
     .partie { margin-top: 28px; }
