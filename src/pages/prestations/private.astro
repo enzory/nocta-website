@@ -80,7 +80,10 @@ import BoutonDevis from '../../components/BoutonDevis.astro';
 
           <div class="reveal" style="transition-delay: 0.15s">
             <div class="overflow-hidden" style="max-width: 360px; aspect-ratio: 4/5;">
-              <img src="/images/nocta-bouche-private.webp" alt="Dressage d'assiette dîner privé — chef à domicile Paris Île-de-France" width="2400" height="2537" loading="lazy" class="w-full h-full object-cover object-center" />
+              <img src="/images/nocta-bouche-private-800w.webp"
+                srcset="/images/nocta-bouche-private-400w.webp 400w, /images/nocta-bouche-private-800w.webp 800w, /images/nocta-bouche-private-1200w.webp 1200w, /images/nocta-bouche-private.webp 2400w"
+                sizes="(max-width: 408px) calc(100vw - 48px), 360px"
+                alt="Dressage d'assiette dîner privé — chef à domicile Paris Île-de-France" width="2400" height="2537" loading="lazy" class="w-full h-full object-cover object-center" />
             </div>
           </div>
 

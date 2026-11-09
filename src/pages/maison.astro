@@ -18,7 +18,14 @@ import notreHistoireSrc from '../assets/images/notre-histoire.webp?url';
     <section class="relative min-h-[70vh] flex flex-col justify-end bg-nocta-black overflow-hidden">
       <div class="absolute inset-0">
         <img
-          src="/images/bougie-bois-maison.webp"
+          src="/images/bougie-bois-maison-1200w.webp"
+          srcset="
+            /images/bougie-bois-maison-400w.webp   400w,
+            /images/bougie-bois-maison-800w.webp   800w,
+            /images/bougie-bois-maison-1200w.webp 1200w,
+            /images/bougie-bois-maison.webp       2400w
+          "
+          sizes="100vw"
           alt="Notre Maison — NOCTA Catering, traiteur gastronomique Paris La Défense"
           width="2400"
           height="3018"
@@ -85,7 +92,9 @@ import notreHistoireSrc from '../assets/images/notre-histoire.webp?url';
           <div class="reveal flex flex-col items-center lg:items-start text-center lg:text-left" style="transition-delay: 0.1s">
             <div class="overflow-hidden w-full max-w-[300px] aspect-[300/380]">
               <img
-                src="/images/hugo-vinatier-chef.webp"
+                src="/images/hugo-vinatier-chef-800w.webp"
+                srcset="/images/hugo-vinatier-chef-400w.webp 400w, /images/hugo-vinatier-chef-800w.webp 800w, /images/hugo-vinatier-chef.webp 1067w"
+                sizes="300px"
                 alt="Hugo Vinatier, chef formé en cuisine étoilée — NOCTA traiteur Paris"
                 width="1067"
                 height="1600"
@@ -108,7 +117,9 @@ import notreHistoireSrc from '../assets/images/notre-histoire.webp?url';
           <div class="reveal flex flex-col items-center lg:items-start text-center lg:text-left" style="transition-delay: 0.2s">
             <div class="overflow-hidden w-full max-w-[300px] aspect-[300/380]">
               <img
-                src="/images/nocta-corporate-enzo.webp"
+                src="/images/nocta-corporate-enzo-800w.webp"
+                srcset="/images/nocta-corporate-enzo-400w.webp 400w, /images/nocta-corporate-enzo-800w.webp 800w, /images/nocta-corporate-enzo-1200w.webp 1200w, /images/nocta-corporate-enzo.webp 2054w"
+                sizes="300px"
                 alt="Enzo Ryon, sommelier et maître d'hôtel — NOCTA chef privé Paris"
                 width="2054"
                 height="2452"
