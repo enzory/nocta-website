@@ -173,6 +173,15 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
               <p class="aide" id="lieu-aide">Chez vous, dans vos bureaux ou dans un lieu encore à trouver.</p>
             </div>
 
+            <!-- Adresse exacte : facultative (aucune règle de validation), envoyée
+                 à Formspree avec les autres champs (logistique, accès, matériel). -->
+            <div class="champ">
+              <label for="adresse">Adresse exacte de la réception</label>
+              <input id="adresse" name="adresse" type="text" autocomplete="street-address" enterkeyhint="next"
+                aria-describedby="adresse-aide" />
+              <p class="aide" id="adresse-aide">Si vous la connaissez déjà : numéro, rue, code postal, ville. Sinon, nous la préciserons ensemble.</p>
+            </div>
+
             <div class="champ">
               <label for="budget">Quel budget envisagez-vous&#8239;?</label>
               <select id="budget" name="budget" aria-describedby="budget-aide">
