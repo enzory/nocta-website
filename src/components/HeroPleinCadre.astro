@@ -201,8 +201,11 @@
   /* Menu, tant qu'il est transparent au-dessus de la photo (classe
      text-white posée par le header en haut de page ; retirée au scroll,
      quand le fond cream revient). Feuille chargée sur l'accueil seulement. */
-  :global(#header.text-white > div > nav a),
-  :global(#header.text-white > div > a.t-label) { text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45); }
+  /* :first-child : la barre du header seulement. Sans lui, la règle
+     atteignait aussi les liens du menu mobile (second <div> du header), en
+     texte noir sur fond cream : ils y prenaient une ombre grise. */
+  :global(#header.text-white > div:first-child > nav a),
+  :global(#header.text-white > div:first-child > a.t-label) { text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45); }
 
   /* ── Texte : titre puis bandeau « générique » ─────────────────────────── */
   .pc-content {
