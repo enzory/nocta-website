@@ -39,5 +39,5 @@ Tout texte publié sur le site doit respecter ces faits. En cas de doute, ne pas
 
 ## Clients citables
 - Levi's, The Galion Project, Colombus Consulting, Jus Mundi, AA Conseil, Messika, Originator.
-- Boucheron et Biologique Recherche : citables uniquement dans les articles du Journal, jamais en logo ni sur les autres pages.
+- Boucheron et Biologique Recherche : noms citables uniquement dans les articles du Journal. Seul le logo Biologique Recherche figure dans le bandeau de logos clients ; jamais de logo Boucheron.
 - Ne citer aucun autre client que ceux de cette liste.
