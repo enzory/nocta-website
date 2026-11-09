@@ -6,6 +6,11 @@ const pathname = Astro.url.pathname;
 // en texte noir au lieu de blanc — sinon logo + nav sont invisibles sur cream.
 const { light = false } = Astro.props;
 
+// Sur mobile, le bouton « Demander un devis » reste visible à côté du burger.
+// Sauf sur /contact : la page EST le formulaire, le bouton y renverrait vers
+// elle-même.
+const surContact = pathname === '/contact';
+
 const navLinks = [
   { label: 'Notre Maison', href: '/maison' },
   { label: 'Prestations',  href: '/prestations' },
@@ -34,7 +39,10 @@ const navLinks = [
       })}
     </nav>
 
-    <a href="/contact" class="t-label hidden lg:inline-flex items-center gap-2 border border-current text-inherit px-6 py-3 transition-all duration-300 hover:bg-nocta-black hover:text-nocta-cream hover:border-nocta-black">
+    {/* Un seul bouton pour mobile et desktop. Mobile : version compacte
+        (px-3, 11 px sous 375 px de large pour tenir à côté du logo), poussée
+        contre le burger par ml-auto. Desktop : inchangé (px-6, 12 px). */}
+    <a href="/contact" class:list={["header-devis t-label items-center gap-2 border border-current text-inherit ml-auto mr-1 px-3 py-3 min-h-11 whitespace-nowrap lg:ml-0 lg:mr-0 lg:px-6 transition-all duration-300 hover:bg-nocta-black hover:text-nocta-cream hover:border-nocta-black", surContact ? 'hidden lg:inline-flex' : 'inline-flex']}>
       Demander un devis
     </a>
 
@@ -69,6 +77,18 @@ const navLinks = [
     background-color: currentColor;
     -webkit-mask: url('/images/nocta-logo.svg') no-repeat center / contain;
     mask: url('/images/nocta-logo.svg') no-repeat center / contain;
+  }
+
+  /* Bouton devis du header, sur les petits écrans : le logo (118 px), le
+     bouton et le burger (44 px) doivent tenir dans 375 - 48 = 327 px.
+     À 12 px le bouton mesure ~161 px : il tient à partir de 375 px. En
+     dessous (360, 320), on resserre le corps et le padding plutôt que de
+     le masquer. */
+  @media (max-width: 374px) {
+    .header-devis { font-size: 0.6875rem; letter-spacing: 0.03em; padding-inline: 0.5rem; }
+  }
+  @media (max-width: 339px) {
+    .header-devis { font-size: 0.625rem; letter-spacing: 0; padding-inline: 0.25rem; margin-right: 0; }
   }
 
   /* ── Logo animé — joué une fois par session ────────────────────────────
