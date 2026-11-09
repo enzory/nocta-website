@@ -121,7 +121,11 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
           <h1 id="fiche-titre" class="titre">Fiche de réception</h1>
         </header>
 
-        <form id="fiche-form" novalidate {...(demo ? {} : { action: FORMSPREE, method: "POST" })}>
+        <!-- Pas de novalidate dans le HTML : sans JavaScript, c'est le
+             navigateur qui contrôle les champs obligatoires avant l'envoi
+             classique. Le script le pose lui-même (form.noValidate) pour
+             afficher ses propres messages. -->
+        <form id="fiche-form" {...(demo ? {} : { action: FORMSPREE, method: "POST" })}>
 
           <!-- ───────── I. Votre réception ───────── -->
           <section class="partie" aria-labelledby="partie-1">
@@ -653,6 +657,12 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
   const fiche = document.getElementById('fiche')!;
   const btn = document.getElementById('envoyer') as HTMLButtonElement;
   const resume = document.getElementById('resume')!;
+
+  // La validation est prise en charge ci-dessous (messages sous les champs,
+  // résumé, focus) : on coupe celle du navigateur — uniquement quand ce
+  // script tourne. Sans JavaScript, l'attribut n'existe pas et le navigateur
+  // bloque l'envoi d'une fiche incomplète.
+  form.noValidate = true;
 
   // ── Date du jour : « Paris, le 5 novembre 2026 » (« 1er » le premier du mois)
   const ajd = new Date();
