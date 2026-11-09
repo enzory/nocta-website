@@ -13,7 +13,7 @@ faq:
   - question: "Quel est le minimum pour faire appel à vous ?"
     answer: "Nos prestations démarrent à partir de 500 € HT de commande. Un dîner intime avec chef et service en salle entre donc pleinement dans nos formats."
   - question: "Sous quel délai recevons-nous un devis ?"
-    answer: "Sous 24 heures ouvrées après un premier échange. Le devis est gratuit et détaille le menu, le service et la logistique propres à votre lieu."
+    answer: "Sous 24 heures ouvrées après un premier échange. Le devis détaille le menu, le service et la logistique propres à votre lieu."
   - question: "Proposez-vous un accord mets et vins ?"
     answer: "Oui. Enzo, sommelier formé en restaurant étoilé, compose la sélection de vins en fonction du menu et de vos invités. C’est une ligne directrice, pas une liste."
 ---

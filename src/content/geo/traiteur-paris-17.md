@@ -13,7 +13,7 @@ faq:
   - question: "À partir de quel budget travaillez-vous ?"
     answer: "Nos prestations démarrent à partir de 500 € HT de commande. Cocktail, dîner servi ou buffet : le format se décide avec vous, selon le lieu et l’occasion."
   - question: "Quel délai pour réserver une date ?"
-    answer: "Le plus tôt est le mieux pour les samedis et les fins d’année, mais notre proximité nous permet aussi de répondre à des demandes courtes. Premier échange, puis devis gratuit sous 24 heures ouvrées."
+    answer: "Le plus tôt est le mieux pour les samedis et les fins d’année, mais notre proximité nous permet aussi de répondre à des demandes courtes. Premier échange, puis devis sous 24 heures ouvrées."
   - question: "Le vin est-il compris dans la prestation ?"
     answer: "Il peut l’être. Enzo, sommelier, propose un accord mets et vins construit sur le menu — en option chiffrée dans le devis, jamais imposé."
 ---
