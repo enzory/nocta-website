@@ -361,7 +361,7 @@ export default function BoucheronCommande() {
     const body = buildRecap(orderNum);
     generatePDF(orderNum);
     try {
-      await fetch("https://formspree.io/f/maqpwebj", {
+      const reponse = await fetch("https://formspree.io/f/maqpwebj", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -371,6 +371,9 @@ export default function BoucheronCommande() {
           _cc: email,
         }),
       });
+      // fetch ne rejette que sur une panne réseau : un refus du serveur
+      // (4xx, 5xx) arrivait ici et affichait « commande transmise » à tort.
+      if (!reponse.ok) throw new Error(`Formspree ${reponse.status}`);
       setSubmitted(true);
     } catch {
       alert("Erreur lors de l'envoi. Veuillez réessayer.");
