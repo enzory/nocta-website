@@ -21,6 +21,13 @@ const formattedDate = article.data.date.toLocaleDateString('fr-FR', {
   year: 'numeric',
 });
 
+// Format transmis à la fiche de réception (/contact?projet=…). Seule la
+// catégorie « Corporate » désigne un format sans ambiguïté ; les articles
+// « Guide » et « Expertise » couvrent plusieurs formats et gardent /contact.
+const projetParCategorie: Record<string, string> = { Corporate: 'corporate' };
+const projet = projetParCategorie[article.data.category];
+const lienDevis = projet ? `/contact?projet=${projet}` : '/contact';
+
 // Maillage interne : 3 autres lectures, drafts exclus, triées par date desc
 const allJournal = await getCollection('journal');
 const otherArticles = allJournal
@@ -72,7 +79,7 @@ const otherArticles = allJournal
         <h2 class="t-h2 lg:text-4xl text-nocta-cream mb-8">
           Parlons de votre événement.
         </h2>
-        <a href="/contact" class="t-label inline-flex items-center bg-nocta-cream text-nocta-black px-8 py-3 hover:bg-white transition-all duration-300">
+        <a href={lienDevis} class="t-label inline-flex items-center bg-nocta-cream text-nocta-black px-8 py-3 hover:bg-white transition-all duration-300">
           Demander un devis
         </a>
       </div>
