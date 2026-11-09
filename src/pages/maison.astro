@@ -18,6 +18,11 @@ import notreHistoireSrc from '../assets/images/notre-histoire.webp?url';
     <section class="relative min-h-[70vh] flex flex-col justify-end bg-nocta-black overflow-hidden">
       <div class="absolute inset-0">
         <img
+          {/* sizes : la photo est en object-cover dans un bloc de 70vh. En
+              portrait, c'est la hauteur qui commande : la largeur utile vaut
+              70vh × 0,795 (ratio de la photo), soit ~56vh — plus que 100vw sur
+              un téléphone. Avec 100vw seul, le navigateur prenait une variante
+              18 % trop petite. */}
           src="/images/bougie-bois-maison-1200w.webp"
           srcset="
             /images/bougie-bois-maison-400w.webp   400w,
@@ -25,7 +30,7 @@ import notreHistoireSrc from '../assets/images/notre-histoire.webp?url';
             /images/bougie-bois-maison-1200w.webp 1200w,
             /images/bougie-bois-maison.webp       2400w
           "
-          sizes="100vw"
+          sizes="max(100vw, 58vh)"
           alt="Notre Maison — NOCTA Catering, traiteur gastronomique Paris La Défense"
           width="2400"
           height="3018"
@@ -119,7 +124,7 @@ import notreHistoireSrc from '../assets/images/notre-histoire.webp?url';
               <img
                 src="/images/nocta-corporate-enzo-800w.webp"
                 srcset="/images/nocta-corporate-enzo-400w.webp 400w, /images/nocta-corporate-enzo-800w.webp 800w, /images/nocta-corporate-enzo-1200w.webp 1200w, /images/nocta-corporate-enzo.webp 2054w"
-                sizes="300px"
+                sizes="320px"
                 alt="Enzo Ryon, sommelier et maître d'hôtel — NOCTA chef privé Paris"
                 width="2054"
                 height="2452"
