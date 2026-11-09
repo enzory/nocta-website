@@ -26,7 +26,12 @@ import BoutonDevis from '../../components/BoutonDevis.astro';
             /images/dressage-signature-1200w.webp 1200w,
             /images/dressage-signature.webp       1440w
           "
-          sizes="100vw"
+          {/* sizes : la photo est en object-cover dans un hero de 78svh (100vh
+              à partir de 1024 px). En portrait, c'est la hauteur qui commande :
+              largeur utile = hauteur × ratio de la photo, bien plus que 100vw.
+              Avec sizes="100vw", un téléphone recevait une variante jusqu'à
+              trois fois trop petite. */}
+          sizes="(min-width: 1024px) max(100vw, 80vh), max(100vw, 63vh)"
           alt="Dressage d'assiette à la main — chef privé à domicile Paris NOCTA Private"
           width="1440"
           height="1800"

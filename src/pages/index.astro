@@ -14,7 +14,8 @@ import FormatTitleCascade from '../components/FormatTitleCascade.astro';
   preloadHero={{
     href: "/images/nocta-assiette-hero1-400w.webp",
     srcset: "/images/nocta-assiette-hero1-400w.webp 400w, /images/nocta-assiette-hero1-800w.webp 800w, /images/nocta-assiette-hero1-1200w.webp 1200w, /images/nocta-assiette-hero1.webp 2400w",
-    sizes: "100vw"
+    // Même valeur que le sizes de #hero-lcp-image (HeroPleinCadre.astro).
+    sizes: "(orientation: portrait) and (min-resolution: 3dppx) 40vh, (orientation: portrait) and (min-resolution: 2dppx) 60vh, max(100vw, 134vh)"
   }}
 >
   <Header />

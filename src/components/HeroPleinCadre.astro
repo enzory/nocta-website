@@ -23,6 +23,15 @@
  *     bouton pause/lecture (WCAG 2.2.2) ;
  *   - prefers-reduced-motion : aucune rotation automatique, aucun zoom.
  * Sans JS : la première photo et tout le texte restent affichés.
+ *
+ * Attribut sizes des trois photos : le hero fait 100svh et les photos sont en
+ * object-cover. En portrait, la largeur utile vaut hauteur × ratio de la
+ * photo (134vh pour la première, 75vh pour les deux autres), pas 100vw : avec
+ * sizes="100vw", un téléphone recevait pour la première une variante trois
+ * fois trop petite. Sur les écrans denses (2x, 3x) en portrait, 60vh et 40vh
+ * font choisir la variante 1200 px plutôt que l'original (463 à 755 Ko) : le
+ * poids du hero reste celui d'avant. Le preload de pages/index.astro doit
+ * porter le même sizes que la première photo, sinon elle est chargée deux fois.
  */
 ---
 
@@ -39,7 +48,7 @@
         /images/nocta-assiette-hero1-1200w.webp 1200w,
         /images/nocta-assiette-hero1.webp       2400w
       "
-      sizes="100vw"
+      sizes="(orientation: portrait) and (min-resolution: 3dppx) 40vh, (orientation: portrait) and (min-resolution: 2dppx) 60vh, max(100vw, 134vh)"
       alt="Assiette gastronomique chef privé Paris — dressage NOCTA"
       width="2400"
       height="1800"
@@ -54,7 +63,7 @@
         /images/nocta-pancetta-hero4-1200w.webp 1200w,
         /images/nocta-pancetta-hero4.webp       2400w
       "
-      sizes="100vw"
+      sizes="(orientation: portrait) and (min-resolution: 3dppx) 40vh, (orientation: portrait) and (min-resolution: 2dppx) 60vh, max(100vw, 75vh)"
       alt="Pancetta croustillante dressée par le chef — catering événementiel Paris"
       width="800"
       height="1067"
@@ -68,7 +77,7 @@
         /images/nocta-fleur-courgette-hero3-1200w.webp 1200w,
         /images/nocta-fleur-courgette-hero3.webp       2400w
       "
-      sizes="100vw"
+      sizes="(orientation: portrait) and (min-resolution: 3dppx) 40vh, (orientation: portrait) and (min-resolution: 2dppx) 60vh, max(100vw, 75vh)"
       alt="Fleur de courgette farcie — chef privé traiteur Paris Île-de-France"
       width="800"
       height="1067"
