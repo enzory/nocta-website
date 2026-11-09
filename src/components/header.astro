@@ -46,7 +46,9 @@ const navLinks = [
       Demander un devis
     </a>
 
-    <button id="burger" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menu" aria-expanded="false">
+    {/* Cible tactile de 44 × 44 px (elle faisait 40 × 31). px-2.5 et -mr-0.5 :
+        les trois traits restent exactement où ils étaient. */}
+    <button id="burger" class="lg:hidden flex flex-col justify-center gap-1.5 w-11 h-11 px-2.5 -mr-0.5" aria-label="Menu" aria-expanded="false">
       <span class="block w-6 h-px bg-current transition-all duration-300"></span>
       <span class="block w-6 h-px bg-current transition-all duration-300"></span>
       <span class="block w-4 h-px bg-current transition-all duration-300"></span>
@@ -54,17 +56,19 @@ const navLinks = [
   </div>
 
   <div id="mobile-menu" class="lg:hidden hidden bg-nocta-cream border-t border-nocta-black/10">
-    <nav class="max-w-7xl mx-auto px-6 py-8 flex flex-col gap-6">
+    {/* Chaque lien fait 46 px de haut (py-3.5) : l'écart visuel entre deux
+        liens reste celui de l'ancien gap-6, mais toute la bande est tactile. */}
+    <nav class="max-w-7xl mx-auto px-6 py-5 flex flex-col">
       {navLinks.map(link => (
-        <a href={link.href} class="t-label text-nocta-black">
+        <a href={link.href} class="t-label text-nocta-black py-3.5">
           {link.label}
         </a>
       ))}
-      <a href="/contact" class="t-label border border-nocta-black text-nocta-black px-6 py-3 text-center hover:bg-nocta-black hover:text-nocta-cream transition-all duration-300">
+      <a href="/contact" class="t-label border border-nocta-black text-nocta-black px-6 py-3 mt-3 text-center hover:bg-nocta-black hover:text-nocta-cream transition-all duration-300">
         Demander un devis
       </a>
       {/* Appel direct : même numéro et même écriture que dans le footer. */}
-      <a href="tel:+33650011616" class="t-label text-nocta-black text-center py-3">
+      <a href="tel:+33650011616" class="t-label text-nocta-black text-center py-3.5 mt-2">
         06 50 01 16 16
       </a>
     </nav>
