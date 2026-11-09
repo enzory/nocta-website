@@ -861,12 +861,19 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
     // la réception confirmée, puis le visiteur rejoint la page /merci (qui
     // reste l'étape suivie par GTM / GA4, comme avec l'ancien formulaire).
     fd.delete('_next');
-    fetch(page.dataset.formspree!, { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
+    // Sans réponse au bout de 15 s (réseau coupé en cours de route, serveur
+    // muet), la requête est abandonnée : sinon le bouton restait sur « Envoi
+    // en cours… » sans fin. L'abandon passe par echecEnvoi, comme un refus :
+    // réponses conservées, bouton rendu, message pour réessayer ou écrire.
+    const abandon = new AbortController();
+    const minuteur = setTimeout(() => abandon.abort(), 15000);
+    fetch(page.dataset.formspree!, { method: 'POST', body: fd, headers: { Accept: 'application/json' }, signal: abandon.signal })
       .then((rep) => {
         if (!rep.ok) throw new Error('Formspree ' + rep.status);
         marquerEnvoyee();
         setTimeout(() => { location.href = '/merci'; }, 3000);
       })
-      .catch(echecEnvoi);
+      .catch(echecEnvoi)
+      .finally(() => clearTimeout(minuteur));
   });
 </script>
