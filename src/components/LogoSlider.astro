@@ -41,8 +41,14 @@ const logos = [
 ];
 ---
 
-<section class="bg-nocta-cream border-t border-nocta-black/10 border-b py-16">
-  <p class="t-eyebrow text-nocta-black/40 text-center mb-10">
+{/* Défilement et accessibilité (WCAG 2.2.2 — un contenu qui bouge plus de 5 s
+    doit pouvoir être arrêté) :
+      - à toutes les largeurs : bandeau qui défile (préférence du client),
+        en pause au survol, au toucher (téléphone, tablette) et par un
+        bouton qui n'apparaît qu'à la navigation au clavier ;
+      - prefers-reduced-motion : grille fixe, sans défilement. */}
+<section class="logo-section relative bg-nocta-cream border-t border-nocta-black/10 border-b py-16">
+  <p class="t-eyebrow text-nocta-black/60 text-center mb-10">
     Ils nous font confiance
   </p>
 
@@ -62,6 +68,10 @@ const logos = [
       ))}
     </div>
   </div>
+
+  <button type="button" class="logo-pause t-label" aria-pressed="false">
+    Mettre le défilement en pause
+  </button>
 </section>
 
 <style>
@@ -84,8 +94,28 @@ const logos = [
     will-change: transform;
   }
 
-  .logo-track:hover {
+  .logo-track:hover,
+  .logo-track.is-paused {
     animation-play-state: paused;
+  }
+
+  /* Bouton pause : hors écran tant qu'il n'a pas le focus clavier, puis posé
+     sous les logos. En position absolue : son apparition ne décale rien. */
+  .logo-pause {
+    position: absolute;
+    left: 50%;
+    bottom: 0.75rem;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    background: var(--color-nocta-black);
+    color: var(--color-nocta-cream);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .logo-pause:focus-visible {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .logo-item {
@@ -114,20 +144,45 @@ const logos = [
     opacity: 1;
   }
 
+  /* Mobile : même bandeau qui défile, logos plus rapprochés (écart d'origine). */
   @media (max-width: 768px) {
     .logo-item {
       margin: 0 24px;
     }
   }
 
+  /* Grille fixe sous prefers-reduced-motion. La copie des logos, qui ne sert
+     qu'à boucler le défilement, est masquée — elle s'affichait en double. */
   @media (prefers-reduced-motion: reduce) {
     .logo-track {
       animation: none;
+      will-change: auto;
       flex-wrap: wrap;
       justify-content: center;
       width: 100%;
       gap: 40px;
       padding: 0 24px;
     }
+    .logo-item { margin: 0; }
+    .logo-item[aria-hidden="true"],
+    .logo-pause { display: none; }
   }
 </style>
+
+<script>
+  // Pause du défilement : bouton clavier, et toucher sur téléphone et tablette
+  // (pas de survol au doigt). Plusieurs pages posent le bloc : on les traite tous.
+  document.querySelectorAll<HTMLElement>('.logo-section').forEach((section) => {
+    const piste = section.querySelector<HTMLElement>('.logo-track');
+    const bouton = section.querySelector<HTMLButtonElement>('.logo-pause');
+    if (!piste || !bouton) return;
+
+    function basculer() {
+      const enPause = piste!.classList.toggle('is-paused');
+      bouton!.setAttribute('aria-pressed', String(enPause));
+      bouton!.textContent = enPause ? 'Reprendre le défilement' : 'Mettre le défilement en pause';
+    }
+    bouton.addEventListener('click', basculer);
+    piste.addEventListener('pointerup', (e) => { if (e.pointerType === 'touch') basculer(); });
+  });
+</script>

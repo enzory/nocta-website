@@ -121,7 +121,11 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
           <h1 id="fiche-titre" class="titre">Fiche de réception</h1>
         </header>
 
-        <form id="fiche-form" novalidate {...(demo ? {} : { action: FORMSPREE, method: "POST" })}>
+        <!-- Pas de novalidate dans le HTML : sans JavaScript, c'est le
+             navigateur qui contrôle les champs obligatoires avant l'envoi
+             classique. Le script le pose lui-même (form.noValidate) pour
+             afficher ses propres messages. -->
+        <form id="fiche-form" {...(demo ? {} : { action: FORMSPREE, method: "POST" })}>
 
           <!-- ───────── I. Votre réception ───────── -->
           <section class="partie" aria-labelledby="partie-1">
@@ -156,7 +160,9 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
             <div class="duo">
               <div class="champ">
                 <label for="date">À quelle date&#8239;?</label>
-                <input id="date" name="date" type="date" enterkeyhint="next" />
+                <!-- min = aujourd'hui, posé en JavaScript (une date de build serait périmée) -->
+                <input id="date" name="date" type="date" enterkeyhint="next" aria-describedby="date-err" />
+                <p class="err" id="date-err" hidden></p>
               </div>
               <div class="champ">
                 <label for="convives">Pour combien de convives&#8239;?</label>
@@ -556,6 +562,9 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
   .err { font: 500 14px/1.4 var(--font-sans); color: var(--erreur); margin-top: 4px; }
   .err::before { content: "↑ "; }
   .resume { font: 500 15px/1.5 var(--font-sans); color: var(--erreur); margin-bottom: 16px; }
+  /* Envoi incertain : ce n'est pas une erreur du visiteur, encre neutre. */
+  .resume.incertain { color: var(--encre); }
+  .resume a { color: inherit; text-underline-offset: 3px; white-space: nowrap; }
 
   /* ── Pied de fiche ──────────────────────────────────────────────── */
   .pied { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--filet-fort); }
@@ -571,6 +580,9 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
   .btn:hover { background: #000; }
   .btn:focus-visible { outline: 2px solid var(--encre); outline-offset: 3px; }
   .btn:disabled { opacity: 0.65; cursor: progress; }
+  /* Libellé long (« Renvoyer quand même (risque de doublon) ») : sur deux
+     lignes au téléphone, il garde un interligne lisible et des marges. */
+  .btn { line-height: 1.35; padding-block: 10px; text-wrap: balance; }
   .confirmation { font: 400 15px/1.6 var(--font-sans); color: var(--encre-2); max-width: 30rem; outline: none; }
   .confirmation strong { font-weight: 600; color: var(--encre); }
   .conf-titre { font: 400 1.6rem/1.25 var(--font-serif); color: var(--encre); margin-bottom: 6px; }
@@ -616,6 +628,10 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
     .demo-select select { max-width: 100%; font-size: 13px; }
     .feuille { padding: 26px 20px 32px; }
     :global(.logo) { width: 124px; }
+    /* Sur /contact, le logo du site est déjà affiché 60 px plus haut, dans le
+       header fixe : celui de la fiche est réduit pour ne pas le répéter au
+       même poids. L'aperçu (démo), sans header, garde 124 px. */
+    .page[data-mode="production"] :global(.logo) { width: 96px; }
     .lieu-date { font-size: 14px; padding-top: 2px; }
     .titre { margin-top: 30px; font-size: 2.2rem; }
     .partie { margin-top: 28px; }
@@ -652,6 +668,12 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
   const btn = document.getElementById('envoyer') as HTMLButtonElement;
   const resume = document.getElementById('resume')!;
 
+  // La validation est prise en charge ci-dessous (messages sous les champs,
+  // résumé, focus) : on coupe celle du navigateur — uniquement quand ce
+  // script tourne. Sans JavaScript, l'attribut n'existe pas et le navigateur
+  // bloque l'envoi d'une fiche incomplète.
+  form.noValidate = true;
+
   // ── Date du jour : « Paris, le 5 novembre 2026 » (« 1er » le premier du mois)
   const ajd = new Date();
   const jour = ajd.getDate() === 1 ? '1er' : String(ajd.getDate());
@@ -659,6 +681,13 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
   document.getElementById('lieu-date')!.textContent = `Paris, le ${jour} ${moisAnnee}`;
   document.getElementById('tampon-date')!.textContent =
     ajd.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+
+  // ── Date de la réception : pas avant aujourd'hui (date locale, AAAA-MM-JJ).
+  //    Le sélecteur grise les jours passés ; une date saisie au clavier est
+  //    signalée par la validation plus bas (rangeUnderflow).
+  const champDate = document.getElementById('date') as HTMLInputElement;
+  champDate.min = [ajd.getFullYear(), ajd.getMonth() + 1, ajd.getDate()]
+    .map((n) => String(n).padStart(2, '0')).join('-');
 
   // ── Commandes de démonstration : entrée active
   const cle = new URLSearchParams(location.search).get('projet');
@@ -766,6 +795,7 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
     email: (el) => el.validity.valueMissing ? 'Indiquez votre adresse email.' : 'Cette adresse email semble incomplète.',
     telephone: () => 'Indiquez un numéro de téléphone.',
     convives: () => 'Indiquez au moins 1 convive.',
+    date: () => 'Cette date est déjà passée.',
   };
   const aVerifier = Object.keys(messages).map((id) => document.getElementById(id) as HTMLInputElement);
 
@@ -820,16 +850,54 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
     fiche.dataset.etat = 'envoyee';
     conf.focus({ preventScroll: true });
   }
+  // Refus de validation (HTTP 400 ou 422) : Formspree a lu la demande et l'a
+  // rejetée, elle n'est PAS enregistrée. Le visiteur peut renvoyer tout de suite.
   function echecEnvoi() {
     btn.disabled = false;
     btn.textContent = 'Envoyer ma demande';
+    resume.classList.remove('incertain');
     resume.innerHTML = 'L’envoi n’a pas abouti. Vos réponses sont conservées : réessayez, ou écrivez-nous à <a href="mailto:contact@noctaparis.fr">contact@noctaparis.fr</a>.';
     resume.hidden = false;
     btn.focus();
   }
 
+  // Envoi incertain : on ne sait pas si la demande a été enregistrée.
+  // Cas couverts : pas de réponse en 15 s, connexion coupée, et toute
+  // réponse non ok autre que 400/422 (5xx, 408, 429…) — Formspree ne garantit
+  // pas qu'une erreur serveur signifie « non traité ». Ne jamais dire « non
+  // envoyé » : renvoyer peut créer un doublon. Aucune relance automatique.
+  // Le bouton reste désactivé DELAI_INCERTAIN ms, puis propose « Renvoyer
+  // quand même (risque de doublon) » : le clic vaut confirmation du visiteur.
+  // Ce délai laisse le temps de lire le message et d'appeler ; il ne dit rien
+  // du sort de la première demande et n'écarte pas le risque de doublon.
+  const DELAI_INCERTAIN = 30000;
+  let bloqueJusqua = 0;
+  let deblocage: ReturnType<typeof setTimeout> | undefined;
+  function envoiIncertain() {
+    bloqueJusqua = Date.now() + DELAI_INCERTAIN;
+    btn.disabled = true;
+    btn.textContent = 'Envoi incertain';
+    resume.classList.add('incertain');
+    resume.innerHTML = 'Envoi incertain : nous n’avons pas reçu de confirmation, votre demande est peut-être bien arrivée. La renvoyer peut créer un doublon : vérifiez d’abord auprès de nous au <a href="tel:+33650011616">06 50 01 16 16</a> ou à <a href="mailto:contact@noctaparis.fr">contact@noctaparis.fr</a>. Vos réponses sont conservées.';
+    resume.hidden = false;
+    clearTimeout(deblocage);
+    deblocage = setTimeout(() => {
+      btn.disabled = false;
+      btn.textContent = 'Renvoyer quand même (risque de doublon)';
+    }, DELAI_INCERTAIN);
+  }
+
+  // Seuls ces statuts prouvent que la demande n'a pas été enregistrée.
+  const REFUS_DEFINITIFS = [400, 422];
+  // Marque un refus définitif, pour le distinguer d'un cas incertain dans le catch.
+  class RefusServeur extends Error {}
+
+  let envoiEnCours = false;
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    // Garde-fou contre le double envoi (Entrée dans un champ, double clic) :
+    // rien ne part pendant un envoi, ni pendant le délai d'un envoi incertain.
+    if (envoiEnCours || Date.now() < bloqueJusqua) return;
     const invalides = aVerifier.filter((el) => !verifier(el));
     if (invalides.length) {
       // Les réponses restent en place : rien n'est rechargé ni effacé.
@@ -842,6 +910,7 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
       return;
     }
     resume.hidden = true;
+    resume.classList.remove('incertain');
     btn.disabled = true;
     btn.textContent = 'Envoi en cours…';
     (document.getElementById('f-subject') as HTMLInputElement).value = objetEmail();
@@ -861,12 +930,23 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
     // la réception confirmée, puis le visiteur rejoint la page /merci (qui
     // reste l'étape suivie par GTM / GA4, comme avec l'ancien formulaire).
     fd.delete('_next');
-    fetch(page.dataset.formspree!, { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
+    // Sans réponse au bout de 15 s (réseau coupé en cours de route, serveur
+    // muet), la requête est abandonnée : sinon le bouton restait sur « Envoi
+    // en cours… » sans fin. Deux issues d'échec, distinctes :
+    //   - refus de validation (400, 422) → echecEnvoi : non envoyé ;
+    //   - tout le reste (autre réponse non ok, abandon à 15 s, coupure)
+    //     → envoiIncertain : peut-être reçu.
+    envoiEnCours = true;
+    const abandon = new AbortController();
+    const minuteur = setTimeout(() => abandon.abort(), 15000);
+    fetch(page.dataset.formspree!, { method: 'POST', body: fd, headers: { Accept: 'application/json' }, signal: abandon.signal })
       .then((rep) => {
-        if (!rep.ok) throw new Error('Formspree ' + rep.status);
+        if (REFUS_DEFINITIFS.includes(rep.status)) throw new RefusServeur('Formspree ' + rep.status);
+        if (!rep.ok) throw new Error('Formspree ' + rep.status);   // incertain
         marquerEnvoyee();
         setTimeout(() => { location.href = '/merci'; }, 3000);
       })
-      .catch(echecEnvoi);
+      .catch((err) => { if (err instanceof RefusServeur) echecEnvoi(); else envoiIncertain(); })
+      .finally(() => { clearTimeout(minuteur); envoiEnCours = false; });
   });
 </script>

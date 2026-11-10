@@ -14,7 +14,8 @@ import FormatTitleCascade from '../components/FormatTitleCascade.astro';
   preloadHero={{
     href: "/images/nocta-assiette-hero1-400w.webp",
     srcset: "/images/nocta-assiette-hero1-400w.webp 400w, /images/nocta-assiette-hero1-800w.webp 800w, /images/nocta-assiette-hero1-1200w.webp 1200w, /images/nocta-assiette-hero1.webp 2400w",
-    sizes: "100vw"
+    // Même valeur que le sizes de #hero-lcp-image (HeroPleinCadre.astro).
+    sizes: "(orientation: portrait) and (min-resolution: 3dppx) 40vh, (orientation: portrait) and (min-resolution: 2dppx) 60vh, max(100vw, 134vh)"
   }}
 >
   <Header />
@@ -57,7 +58,7 @@ import FormatTitleCascade from '../components/FormatTitleCascade.astro';
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12 reveal">
           <div>
-            <p class="t-eyebrow text-nocta-cream/40 mb-4">Nos formats</p>
+            <p class="t-eyebrow text-nocta-cream/60 mb-4">Nos formats</p>
             <h2 class="t-h2 text-nocta-cream">
               Trois formats, une seule exigence.
             </h2>
@@ -69,34 +70,34 @@ import FormatTitleCascade from '../components/FormatTitleCascade.astro';
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-px bg-nocta-cream/10" data-fl-cards>
           <a href="/prestations/private" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.1s">
-            <p class="t-eyebrow text-nocta-cream/40 mb-8">01</p>
+            <p class="t-eyebrow text-nocta-cream/60 mb-8">01</p>
             <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Private</h3>
             <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/50 mb-10">
               Dîners à domicile, anniversaires, célébrations familiales. Nous prenons en charge l’intégralité — pour que vous soyez présent à vos invités, pas à votre cuisine.
             </p>
-            <span class="t-label text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
+            <span class="t-label text-nocta-cream/60 group-hover:text-nocta-cream transition-colors flex items-center gap-3">
               Découvrir
               <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
             </span>
           </a>
           <a href="/prestations/corporate" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.2s">
-            <p class="t-eyebrow text-nocta-cream/40 mb-8">02</p>
+            <p class="t-eyebrow text-nocta-cream/60 mb-8">02</p>
             <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Corporate</h3>
             <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/50 mb-10">
               Cocktails de lancement, dîners de gala, comités de direction. Une gastronomie à la hauteur de l’image que vous souhaitez donner.
             </p>
-            <span class="t-label text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
+            <span class="t-label text-nocta-cream/60 group-hover:text-nocta-cream transition-colors flex items-center gap-3">
               Découvrir
               <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
             </span>
           </a>
           <a href="/prestations/signature" class="group block bg-nocta-black p-10 hover:bg-nocta-cream/5 transition-all duration-500 reveal" style="transition-delay: 0.3s">
-            <p class="t-eyebrow text-nocta-cream/40 mb-8">03</p>
+            <p class="t-eyebrow text-nocta-cream/60 mb-8">03</p>
             <h3 class="t-h3 text-3xl text-nocta-cream mb-4 group-hover:text-white transition-colors">NOCTA Signature</h3>
             <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/50 mb-10">
               Un format où cuisine, vins et scénographie composent une expérience cohérente de bout en bout.
             </p>
-            <span class="t-label text-nocta-cream/30 group-hover:text-nocta-cream/60 transition-colors flex items-center gap-3">
+            <span class="t-label text-nocta-cream/60 group-hover:text-nocta-cream transition-colors flex items-center gap-3">
               Découvrir
               <span class="w-6 h-px bg-current inline-block group-hover:w-10 transition-all duration-300"></span>
             </span>
@@ -311,7 +312,7 @@ import FormatTitleCascade from '../components/FormatTitleCascade.astro';
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
 
         <div class="mb-16 reveal">
-          <p class="t-eyebrow text-nocta-cream/40 mb-4">Ce qu’ils en disent</p>
+          <p class="t-eyebrow text-nocta-cream/60 mb-4">Ce qu’ils en disent</p>
           <h2 class="t-h2 text-nocta-cream">
             La parole à nos clients.
           </h2>
@@ -327,7 +328,7 @@ import FormatTitleCascade from '../components/FormatTitleCascade.astro';
             </blockquote>
             <div>
               <p class="font-sans text-sm font-normal text-nocta-cream">Valérie Ader</p>
-              <p class="font-sans text-xs font-normal text-nocta-cream/40 mt-1">Dîner comité de mission — Colombus Consulting</p>
+              <p class="font-sans text-xs font-normal text-nocta-cream/60 mt-1">Dîner comité de mission — Colombus Consulting</p>
             </div>
           </div>
 
@@ -339,7 +340,7 @@ import FormatTitleCascade from '../components/FormatTitleCascade.astro';
             </blockquote>
             <div>
               <p class="font-sans text-sm font-normal text-nocta-cream">Thomas Cussac</p>
-              <p class="font-sans text-xs font-normal text-nocta-cream/40 mt-1">Événement privé</p>
+              <p class="font-sans text-xs font-normal text-nocta-cream/60 mt-1">Événement privé</p>
             </div>
           </div>
 
@@ -351,7 +352,7 @@ import FormatTitleCascade from '../components/FormatTitleCascade.astro';
             </blockquote>
             <div>
               <p class="font-sans text-sm font-normal text-nocta-cream">Clémence Donazzan</p>
-              <p class="font-sans text-xs font-normal text-nocta-cream/40 mt-1">Événement client luxe</p>
+              <p class="font-sans text-xs font-normal text-nocta-cream/60 mt-1">Événement client luxe</p>
             </div>
           </div>
 
@@ -359,7 +360,7 @@ import FormatTitleCascade from '../components/FormatTitleCascade.astro';
 
         <!-- Lien Google Reviews -->
         <div class="mt-16 text-center reveal">
-          <a href="https://g.page/r/CQOWoTg-G7diEBE/review" target="_blank" rel="noopener noreferrer" class="t-label inline-flex items-center gap-3 text-nocta-cream/40 hover:text-nocta-cream transition-colors duration-300">
+          <a href="https://g.page/r/CQOWoTg-G7diEBE/review" target="_blank" rel="noopener noreferrer" class="t-label inline-flex items-center gap-3 text-nocta-cream/60 hover:text-nocta-cream transition-colors duration-300">
             Tous nos avis sur Google — 5/5
             <span class="w-8 h-px bg-current inline-block"></span>
           </a>

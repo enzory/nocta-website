@@ -18,7 +18,19 @@ import notreHistoireSrc from '../assets/images/notre-histoire.webp?url';
     <section class="relative min-h-[70vh] flex flex-col justify-end bg-nocta-black overflow-hidden">
       <div class="absolute inset-0">
         <img
-          src="/images/bougie-bois-maison.webp"
+          {/* sizes : la photo est en object-cover dans un bloc de 70vh. En
+              portrait, c'est la hauteur qui commande : la largeur utile vaut
+              70vh × 0,795 (ratio de la photo), soit ~56vh — plus que 100vw sur
+              un téléphone. Avec 100vw seul, le navigateur prenait une variante
+              18 % trop petite. */}
+          src="/images/bougie-bois-maison-1200w.webp"
+          srcset="
+            /images/bougie-bois-maison-400w.webp   400w,
+            /images/bougie-bois-maison-800w.webp   800w,
+            /images/bougie-bois-maison-1200w.webp 1200w,
+            /images/bougie-bois-maison.webp       2400w
+          "
+          sizes="max(100vw, 58vh)"
           alt="Notre Maison — NOCTA Catering, traiteur gastronomique Paris La Défense"
           width="2400"
           height="3018"
@@ -85,7 +97,9 @@ import notreHistoireSrc from '../assets/images/notre-histoire.webp?url';
           <div class="reveal flex flex-col items-center lg:items-start text-center lg:text-left" style="transition-delay: 0.1s">
             <div class="overflow-hidden w-full max-w-[300px] aspect-[300/380]">
               <img
-                src="/images/hugo-vinatier-chef.webp"
+                src="/images/hugo-vinatier-chef-800w.webp"
+                srcset="/images/hugo-vinatier-chef-400w.webp 400w, /images/hugo-vinatier-chef-800w.webp 800w, /images/hugo-vinatier-chef.webp 1067w"
+                sizes="300px"
                 alt="Hugo Vinatier, chef formé en cuisine étoilée — NOCTA traiteur Paris"
                 width="1067"
                 height="1600"
@@ -99,7 +113,7 @@ import notreHistoireSrc from '../assets/images/notre-histoire.webp?url';
             <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/60 mt-3">
               Formé dans les cuisines étoilées parisiennes — L’Astrance 3 étoiles, Akrame 1 étoile, aux côtés de Thierry Marx. Hugo a construit son exigence entre Paris et la Méditerranée avant de cofonder NOCTA.
             </p>
-            <p class="t-eyebrow text-nocta-cream/30 mt-4">
+            <p class="t-eyebrow text-nocta-cream/60 mt-4">
               L’Astrance, 3 étoiles · Akrame, 1 étoile · Maison Vérot
             </p>
           </div>
@@ -108,7 +122,9 @@ import notreHistoireSrc from '../assets/images/notre-histoire.webp?url';
           <div class="reveal flex flex-col items-center lg:items-start text-center lg:text-left" style="transition-delay: 0.2s">
             <div class="overflow-hidden w-full max-w-[300px] aspect-[300/380]">
               <img
-                src="/images/nocta-corporate-enzo.webp"
+                src="/images/nocta-corporate-enzo-800w.webp"
+                srcset="/images/nocta-corporate-enzo-400w.webp 400w, /images/nocta-corporate-enzo-800w.webp 800w, /images/nocta-corporate-enzo-1200w.webp 1200w, /images/nocta-corporate-enzo.webp 2054w"
+                sizes="320px"
                 alt="Enzo Ryon, sommelier et maître d'hôtel — NOCTA chef privé Paris"
                 width="2054"
                 height="2452"
@@ -122,7 +138,7 @@ import notreHistoireSrc from '../assets/images/notre-histoire.webp?url';
             <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/60 mt-3">
               14 ans dans la haute gastronomie et l’hôtellerie de luxe. Directeur de salle chez Akrame 1 étoile, sommelier au Sur Mesure by Thierry Marx 2 étoiles. Un service rigoureux, sans distance inutile.
             </p>
-            <p class="t-eyebrow text-nocta-cream/30 mt-4">
+            <p class="t-eyebrow text-nocta-cream/60 mt-4">
               Sur Mesure, 2 étoiles · Akrame, 1 étoile · Scène Thélème, 1 étoile
             </p>
           </div>
@@ -137,7 +153,7 @@ import notreHistoireSrc from '../assets/images/notre-histoire.webp?url';
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
 
         <div class="max-w-2xl mb-20 reveal">
-          <p class="t-eyebrow text-nocta-cream/40 mb-4">Ce qui nous définit</p>
+          <p class="t-eyebrow text-nocta-cream/60 mb-4">Ce qui nous définit</p>
           <h2 class="t-h2 text-nocta-cream">
             Ce en quoi nous croyons.
           </h2>

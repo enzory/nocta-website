@@ -1,4 +1,6 @@
 ---
+import BoutonDevis from './BoutonDevis.astro';
+
 interface Props {
   variant?: 'dark' | 'light';
   subtitle?: string;
@@ -43,16 +45,10 @@ const isDark = variant === 'dark';
     ]}>
       {heading}
     </h2>
-    <a
-      href={ctaHref}
-      class:list={[
-        'inline-flex items-center font-sans text-sm font-light tracking-widest uppercase px-8 py-3 transition-all duration-300',
-        isDark
-          ? 'bg-nocta-cream text-nocta-black hover:bg-white'
-          : 'bg-nocta-black text-nocta-cream hover:bg-nocta-black/80',
-      ]}
-    >
-      {ctaLabel}
-    </a>
+    {/* Même bouton que dans les heros et sous les tarifs (BoutonDevis, en
+        .t-label). L'ancien style écrit ici — 14 px, font-light, approche
+        0.1em — différait des autres boutons du site ; font-light était de
+        plus sans effet, Instrument Sans n'ayant pas de graisse sous 400. */}
+    <BoutonDevis href={ctaHref} label={ctaLabel} variant={isDark ? 'cream' : 'noir'} />
   </div>
 </section>

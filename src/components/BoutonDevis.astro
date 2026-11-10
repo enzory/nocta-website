@@ -1,0 +1,41 @@
+---
+/**
+ * Bouton « Demander un devis » — une seule définition pour les boutons posés
+ * dans les pages (hero et bloc tarifs des prestations, bloc CallToAction).
+ *
+ * Même dessin que les boutons du hero de l'accueil : libellé d'interface
+ * (.t-label), aplat cream sur fond sombre ou noir sur fond clair, 48 px de
+ * haut (cible tactile ≥ 44 px).
+ *
+ * `href` porte le format quand la page en a un : /contact?projet=private|
+ * corporate|signature présélectionne le format dans la fiche de réception
+ * (cf. FicheReception.astro).
+ */
+interface Props {
+  href?: string;
+  label?: string;
+  /* cream : sur fond sombre (hero, bloc noir). noir : sur fond cream. */
+  variant?: 'cream' | 'noir';
+  class?: string;
+}
+
+const {
+  href = '/contact',
+  label = 'Demander un devis',
+  variant = 'cream',
+  class: className = '',
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={[
+    't-label inline-flex items-center justify-center min-h-12 px-8 py-3 transition-colors duration-300',
+    variant === 'cream'
+      ? 'bg-nocta-cream text-nocta-black hover:bg-white'
+      : 'bg-nocta-black text-nocta-cream hover:bg-nocta-black/80',
+    className,
+  ]}
+>
+  {label}
+</a>
