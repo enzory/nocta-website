@@ -90,7 +90,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : null
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "CateringService",
+      "@type": "LocalBusiness",
       "@id": "https://www.noctaparis.fr/#organisation",
       "name": "NOCTA Catering",
       "legalName": "SARL H+E Catering",
@@ -114,7 +114,6 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : null
         {"@type": "AdministrativeArea", "name": "La Défense"},
         {"@type": "Country", "name": "France"}
       ],
-      "serviceType": ["Traiteur événementiel", "Chef privé à domicile", "Catering corporate", "Sommellerie événementielle"],
       "priceRange": "€€€",
       "founder": [
         {"@type": "Person", "name": "Hugo Vinatier", "jobTitle": "Chef"},
