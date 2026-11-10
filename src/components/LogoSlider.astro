@@ -43,10 +43,10 @@ const logos = [
 
 {/* Défilement et accessibilité (WCAG 2.2.2 — un contenu qui bouge plus de 5 s
     doit pouvoir être arrêté) :
-      - jusqu'à 768 px : pas de défilement, les sept logos en grille fixe ;
-      - au-delà : défilement, en pause au survol, au toucher (tablette) et
-        par un bouton qui n'apparaît qu'à la navigation au clavier ;
-      - prefers-reduced-motion : grille fixe à toutes les largeurs. */}
+      - à toutes les largeurs : bandeau qui défile (préférence du client),
+        en pause au survol, au toucher (téléphone, tablette) et par un
+        bouton qui n'apparaît qu'à la navigation au clavier ;
+      - prefers-reduced-motion : grille fixe, sans défilement. */}
 <section class="logo-section relative bg-nocta-cream border-t border-nocta-black/10 border-b py-16">
   <p class="t-eyebrow text-nocta-black/60 text-center mb-10">
     Ils nous font confiance
@@ -144,24 +144,15 @@ const logos = [
     opacity: 1;
   }
 
-  /* Grille fixe : mobile (≤ 768 px) et animations réduites. La copie des
-     logos, qui ne sert qu'à boucler le défilement, est masquée — elle
-     s'affichait en double sous prefers-reduced-motion. */
+  /* Mobile : même bandeau qui défile, logos plus rapprochés (écart d'origine). */
   @media (max-width: 768px) {
-    .logo-track {
-      animation: none;
-      will-change: auto;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-      gap: 28px 44px;
-      padding: 0 24px;
+    .logo-item {
+      margin: 0 24px;
     }
-    .logo-item { margin: 0; }
-    .logo-item[aria-hidden="true"],
-    .logo-pause { display: none; }
   }
 
+  /* Grille fixe sous prefers-reduced-motion. La copie des logos, qui ne sert
+     qu'à boucler le défilement, est masquée — elle s'affichait en double. */
   @media (prefers-reduced-motion: reduce) {
     .logo-track {
       animation: none;
@@ -179,8 +170,8 @@ const logos = [
 </style>
 
 <script>
-  // Pause du défilement : bouton clavier, et toucher sur tablette (pas de
-  // survol au doigt). Plusieurs pages posent le bloc : on les traite tous.
+  // Pause du défilement : bouton clavier, et toucher sur téléphone et tablette
+  // (pas de survol au doigt). Plusieurs pages posent le bloc : on les traite tous.
   document.querySelectorAll<HTMLElement>('.logo-section').forEach((section) => {
     const piste = section.querySelector<HTMLElement>('.logo-track');
     const bouton = section.querySelector<HTMLButtonElement>('.logo-pause');
