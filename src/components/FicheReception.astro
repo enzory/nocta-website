@@ -562,6 +562,9 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
   .err { font: 500 14px/1.4 var(--font-sans); color: var(--erreur); margin-top: 4px; }
   .err::before { content: "↑ "; }
   .resume { font: 500 15px/1.5 var(--font-sans); color: var(--erreur); margin-bottom: 16px; }
+  /* Envoi incertain : ce n'est pas une erreur du visiteur, encre neutre. */
+  .resume.incertain { color: var(--encre); }
+  .resume a { color: inherit; text-underline-offset: 3px; white-space: nowrap; }
 
   /* ── Pied de fiche ──────────────────────────────────────────────── */
   .pied { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--filet-fort); }
@@ -844,16 +847,48 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
     fiche.dataset.etat = 'envoyee';
     conf.focus({ preventScroll: true });
   }
+  // Refus net du serveur (réponse HTTP non ok) : la demande n'est PAS partie.
+  // Le visiteur peut renvoyer tout de suite.
   function echecEnvoi() {
     btn.disabled = false;
     btn.textContent = 'Envoyer ma demande';
+    resume.classList.remove('incertain');
     resume.innerHTML = 'L’envoi n’a pas abouti. Vos réponses sont conservées : réessayez, ou écrivez-nous à <a href="mailto:contact@noctaparis.fr">contact@noctaparis.fr</a>.';
     resume.hidden = false;
     btn.focus();
   }
 
+  // Pas de réponse en 15 s, ou connexion coupée : on ne sait pas si la
+  // demande est arrivée. Ne jamais dire « non envoyé » : la renvoyer
+  // créerait un doublon. Aucune relance automatique ; le bouton reste
+  // bloqué DELAI_INCERTAIN ms, puis devient « Renvoyer quand même » —
+  // le clic est alors une confirmation explicite du visiteur.
+  const DELAI_INCERTAIN = 30000;
+  let bloqueJusqua = 0;
+  let deblocage: ReturnType<typeof setTimeout> | undefined;
+  function envoiIncertain() {
+    bloqueJusqua = Date.now() + DELAI_INCERTAIN;
+    btn.disabled = true;
+    btn.textContent = 'Envoi incertain';
+    resume.classList.add('incertain');
+    resume.innerHTML = 'Envoi incertain : la connexion a été interrompue avant notre accusé de réception, votre demande est peut-être bien arrivée. Avant de la renvoyer, vérifiez auprès de nous au <a href="tel:+33650011616">06 50 01 16 16</a> ou à <a href="mailto:contact@noctaparis.fr">contact@noctaparis.fr</a>. Vos réponses sont conservées.';
+    resume.hidden = false;
+    clearTimeout(deblocage);
+    deblocage = setTimeout(() => {
+      btn.disabled = false;
+      btn.textContent = 'Renvoyer quand même';
+    }, DELAI_INCERTAIN);
+  }
+
+  // Marque un refus HTTP, pour le distinguer d'une coupure dans le catch.
+  class RefusServeur extends Error {}
+
+  let envoiEnCours = false;
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+    // Garde-fou contre le double envoi (Entrée dans un champ, double clic) :
+    // rien ne part pendant un envoi, ni pendant le délai d'un envoi incertain.
+    if (envoiEnCours || Date.now() < bloqueJusqua) return;
     const invalides = aVerifier.filter((el) => !verifier(el));
     if (invalides.length) {
       // Les réponses restent en place : rien n'est rechargé ni effacé.
@@ -866,6 +901,7 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
       return;
     }
     resume.hidden = true;
+    resume.classList.remove('incertain');
     btn.disabled = true;
     btn.textContent = 'Envoi en cours…';
     (document.getElementById('f-subject') as HTMLInputElement).value = objetEmail();
@@ -887,17 +923,19 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
     fd.delete('_next');
     // Sans réponse au bout de 15 s (réseau coupé en cours de route, serveur
     // muet), la requête est abandonnée : sinon le bouton restait sur « Envoi
-    // en cours… » sans fin. L'abandon passe par echecEnvoi, comme un refus :
-    // réponses conservées, bouton rendu, message pour réessayer ou écrire.
+    // en cours… » sans fin. Deux issues d'échec, distinctes :
+    //   - refus HTTP net (réponse non ok) → echecEnvoi : non envoyé ;
+    //   - abandon à 15 s ou coupure réseau → envoiIncertain : peut-être reçu.
+    envoiEnCours = true;
     const abandon = new AbortController();
     const minuteur = setTimeout(() => abandon.abort(), 15000);
     fetch(page.dataset.formspree!, { method: 'POST', body: fd, headers: { Accept: 'application/json' }, signal: abandon.signal })
       .then((rep) => {
-        if (!rep.ok) throw new Error('Formspree ' + rep.status);
+        if (!rep.ok) throw new RefusServeur('Formspree ' + rep.status);
         marquerEnvoyee();
         setTimeout(() => { location.href = '/merci'; }, 3000);
       })
-      .catch(echecEnvoi)
-      .finally(() => clearTimeout(minuteur));
+      .catch((err) => { if (err instanceof RefusServeur) echecEnvoi(); else envoiIncertain(); })
+      .finally(() => { clearTimeout(minuteur); envoiEnCours = false; });
   });
 </script>
