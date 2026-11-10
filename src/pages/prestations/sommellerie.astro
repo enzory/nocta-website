@@ -55,7 +55,7 @@ const servicesConseil = [
     '@type': 'Service',
     name: 'Création de carte des vins — NOCTA',
     description: 'Création de carte des vins pour un restaurant, un bar ou un hôtel par Enzo Ryon, sommelier : sélection des vins en fonction de la cuisine et de la clientèle, et construction de la carte. Sur devis.',
-    provider: { '@type': 'Organization', name: 'NOCTA Catering', url: 'https://www.noctaparis.fr' },
+    provider: { '@id': 'https://www.noctaparis.fr/#organisation' },
     areaServed: zonesServies,
     serviceType: 'Création de carte des vins',
   },
@@ -64,7 +64,7 @@ const servicesConseil = [
     '@type': 'Service',
     name: 'Conception de cave — NOCTA',
     description: 'Conception de cave pour un particulier ou une entreprise par Enzo Ryon, sommelier : une cave pensée selon les goûts et le budget, des vins à boire rapidement comme des vins de garde. Sur devis.',
-    provider: { '@type': 'Organization', name: 'NOCTA Catering', url: 'https://www.noctaparis.fr' },
+    provider: { '@id': 'https://www.noctaparis.fr/#organisation' },
     areaServed: zonesServies,
     serviceType: 'Conception de cave',
   },
@@ -277,7 +277,7 @@ const lien = 'underline underline-offset-4 decoration-nocta-black/25 hover:decor
     "@type": "Service",
     "name": "Sommellerie et accords mets-vins — NOCTA",
     "description": "Accords mets-vins sur mesure par Enzo Ryon, sommelier : dîners, galas et cocktails à Paris et La Défense. Service compris, facturé à la bouteille ouverte.",
-    "provider": {"@type": "Organization", "name": "NOCTA Catering", "url": "https://www.noctaparis.fr"},
+    "provider": {"@id": "https://www.noctaparis.fr/#organisation"},
     "areaServed": [{"@type": "City", "name": "Paris"}, {"@type": "AdministrativeArea", "name": "La Défense"}, {"@type": "AdministrativeArea", "name": "Hauts-de-Seine"}],
     "serviceType": "Sommellerie événementielle"
   })} />

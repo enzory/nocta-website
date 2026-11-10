@@ -90,8 +90,11 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : null
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "CateringService",
+      "@type": "LocalBusiness",
+      "@id": "https://www.noctaparis.fr/#organisation",
       "name": "NOCTA Catering",
+      "legalName": "SARL H+E Catering",
+      "iso6523Code": "0009:94336446300019",
       "alternateName": "NOCTA",
       "description": "Traiteur parisien pour entreprises et particuliers exigeants. Chef formé en cuisine étoilée, sommelier pour les accords mets-vins, service en salle pour dîners privés, événements corporate et réceptions en Île-de-France.",
       "url": "https://www.noctaparis.fr",
@@ -111,11 +114,10 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : null
         {"@type": "AdministrativeArea", "name": "La Défense"},
         {"@type": "Country", "name": "France"}
       ],
-      "serviceType": ["Traiteur événementiel", "Chef privé à domicile", "Catering corporate", "Sommellerie événementielle"],
       "priceRange": "€€€",
       "founder": [
-        {"@type": "Person", "name": "Hugo Vinatier", "jobTitle": "Chef — formé à L'Astrance, Akrame, aux côtés de Thierry Marx"},
-        {"@type": "Person", "name": "Enzo Ryon", "jobTitle": "Maître d'hôtel & Sommelier — 14 ans en haute gastronomie étoilée"}
+        {"@type": "Person", "name": "Hugo Vinatier", "jobTitle": "Chef"},
+        {"@type": "Person", "name": "Enzo Ryon", "jobTitle": "Maître d'hôtel et sommelier"}
       ],
       "knowsAbout": ["gastronomie française", "cuisine étoilée", "sommellerie", "service de luxe", "événementiel corporate"],
       "sameAs": [
