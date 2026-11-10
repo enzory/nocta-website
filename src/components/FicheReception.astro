@@ -580,6 +580,9 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
   .btn:hover { background: #000; }
   .btn:focus-visible { outline: 2px solid var(--encre); outline-offset: 3px; }
   .btn:disabled { opacity: 0.65; cursor: progress; }
+  /* Libellé long (« Renvoyer quand même (risque de doublon) ») : sur deux
+     lignes au téléphone, il garde un interligne lisible et des marges. */
+  .btn { line-height: 1.35; padding-block: 10px; text-wrap: balance; }
   .confirmation { font: 400 15px/1.6 var(--font-sans); color: var(--encre-2); max-width: 30rem; outline: none; }
   .confirmation strong { font-weight: 600; color: var(--encre); }
   .conf-titre { font: 400 1.6rem/1.25 var(--font-serif); color: var(--encre); margin-bottom: 6px; }
@@ -847,8 +850,8 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
     fiche.dataset.etat = 'envoyee';
     conf.focus({ preventScroll: true });
   }
-  // Refus net du serveur (réponse HTTP non ok) : la demande n'est PAS partie.
-  // Le visiteur peut renvoyer tout de suite.
+  // Refus de validation (HTTP 400 ou 422) : Formspree a lu la demande et l'a
+  // rejetée, elle n'est PAS enregistrée. Le visiteur peut renvoyer tout de suite.
   function echecEnvoi() {
     btn.disabled = false;
     btn.textContent = 'Envoyer ma demande';
@@ -858,11 +861,15 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
     btn.focus();
   }
 
-  // Pas de réponse en 15 s, ou connexion coupée : on ne sait pas si la
-  // demande est arrivée. Ne jamais dire « non envoyé » : la renvoyer
-  // créerait un doublon. Aucune relance automatique ; le bouton reste
-  // bloqué DELAI_INCERTAIN ms, puis devient « Renvoyer quand même » —
-  // le clic est alors une confirmation explicite du visiteur.
+  // Envoi incertain : on ne sait pas si la demande a été enregistrée.
+  // Cas couverts : pas de réponse en 15 s, connexion coupée, et toute
+  // réponse non ok autre que 400/422 (5xx, 408, 429…) — Formspree ne garantit
+  // pas qu'une erreur serveur signifie « non traité ». Ne jamais dire « non
+  // envoyé » : renvoyer peut créer un doublon. Aucune relance automatique.
+  // Le bouton reste désactivé DELAI_INCERTAIN ms, puis propose « Renvoyer
+  // quand même (risque de doublon) » : le clic vaut confirmation du visiteur.
+  // Ce délai laisse le temps de lire le message et d'appeler ; il ne dit rien
+  // du sort de la première demande et n'écarte pas le risque de doublon.
   const DELAI_INCERTAIN = 30000;
   let bloqueJusqua = 0;
   let deblocage: ReturnType<typeof setTimeout> | undefined;
@@ -871,16 +878,18 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
     btn.disabled = true;
     btn.textContent = 'Envoi incertain';
     resume.classList.add('incertain');
-    resume.innerHTML = 'Envoi incertain : la connexion a été interrompue avant notre accusé de réception, votre demande est peut-être bien arrivée. Avant de la renvoyer, vérifiez auprès de nous au <a href="tel:+33650011616">06 50 01 16 16</a> ou à <a href="mailto:contact@noctaparis.fr">contact@noctaparis.fr</a>. Vos réponses sont conservées.';
+    resume.innerHTML = 'Envoi incertain : nous n’avons pas reçu de confirmation, votre demande est peut-être bien arrivée. La renvoyer peut créer un doublon : vérifiez d’abord auprès de nous au <a href="tel:+33650011616">06 50 01 16 16</a> ou à <a href="mailto:contact@noctaparis.fr">contact@noctaparis.fr</a>. Vos réponses sont conservées.';
     resume.hidden = false;
     clearTimeout(deblocage);
     deblocage = setTimeout(() => {
       btn.disabled = false;
-      btn.textContent = 'Renvoyer quand même';
+      btn.textContent = 'Renvoyer quand même (risque de doublon)';
     }, DELAI_INCERTAIN);
   }
 
-  // Marque un refus HTTP, pour le distinguer d'une coupure dans le catch.
+  // Seuls ces statuts prouvent que la demande n'a pas été enregistrée.
+  const REFUS_DEFINITIFS = [400, 422];
+  // Marque un refus définitif, pour le distinguer d'un cas incertain dans le catch.
   class RefusServeur extends Error {}
 
   let envoiEnCours = false;
@@ -924,14 +933,16 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
     // Sans réponse au bout de 15 s (réseau coupé en cours de route, serveur
     // muet), la requête est abandonnée : sinon le bouton restait sur « Envoi
     // en cours… » sans fin. Deux issues d'échec, distinctes :
-    //   - refus HTTP net (réponse non ok) → echecEnvoi : non envoyé ;
-    //   - abandon à 15 s ou coupure réseau → envoiIncertain : peut-être reçu.
+    //   - refus de validation (400, 422) → echecEnvoi : non envoyé ;
+    //   - tout le reste (autre réponse non ok, abandon à 15 s, coupure)
+    //     → envoiIncertain : peut-être reçu.
     envoiEnCours = true;
     const abandon = new AbortController();
     const minuteur = setTimeout(() => abandon.abort(), 15000);
     fetch(page.dataset.formspree!, { method: 'POST', body: fd, headers: { Accept: 'application/json' }, signal: abandon.signal })
       .then((rep) => {
-        if (!rep.ok) throw new RefusServeur('Formspree ' + rep.status);
+        if (REFUS_DEFINITIFS.includes(rep.status)) throw new RefusServeur('Formspree ' + rep.status);
+        if (!rep.ok) throw new Error('Formspree ' + rep.status);   // incertain
         marquerEnvoyee();
         setTimeout(() => { location.href = '/merci'; }, 3000);
       })
