@@ -5,8 +5,7 @@
 // ============================================================
 // Lit la Content Collection "geo" (src/content/geo/*.md).
 // Rend un layout cream identique au Journal, avec un Schema
-// LocalBusiness ou Service selon le champ `schemaType` du
-// frontmatter.
+// Service rattaché à l'organisation NOCTA (cf. layout.astro).
 // ============================================================
 
 import { getCollection } from 'astro:content';
@@ -149,47 +148,22 @@ const areaServedValue = d.areaServed?.length
   ? d.areaServed.map((name) => ({ '@type': 'Place', name }))
   : { '@type': 'Place', name: d.zone };
 
-const baseAddress = {
-  '@type': 'PostalAddress',
-  addressLocality: 'Courbevoie',
-  addressRegion: 'Île-de-France',
-  addressCountry: 'FR',
-  ...(d.streetAddress ? { streetAddress: d.streetAddress, postalCode: '92400' } : {}),
-};
+// Une seule entreprise sur tout le site : l'organisation NOCTA, déclarée par
+// le layout sous l'identifiant ORGANISATION_ID. Chaque page locale décrit un
+// Service rattaché à elle (provider), jamais une seconde entreprise « NOCTA
+// Catering — [zone] ». Les champs `schemaType` et `streetAddress` du
+// frontmatter ne changent donc plus le balisage.
+const ORGANISATION_ID = `${siteUrl}/#organisation`;
 
-const schema =
-  d.schemaType === 'LocalBusiness'
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'CateringService',
-        name: `NOCTA Catering — ${d.zone}`,
-        description: d.description,
-        url: pageUrl,
-        image: `${siteUrl}/images/og-image.jpeg`,
-        areaServed: areaServedValue,
-        address: baseAddress,
-        priceRange: '€€€',
-        serviceType: 'Traiteur événementiel parisien',
-        servesCuisine: 'Cuisine événementielle française',
-        potentialAction: {
-          '@type': 'ReserveAction',
-          target: `${siteUrl}/contact`,
-          name: 'Demander un devis',
-        },
-      }
-    : {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: d.title,
-        description: d.description,
-        url: pageUrl,
-        provider: {
-          '@type': 'Organization',
-          name: 'NOCTA Catering',
-          url: siteUrl,
-        },
-        areaServed: areaServedValue,
-      };
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: d.title,
+  description: d.description,
+  url: pageUrl,
+  provider: { '@id': ORGANISATION_ID },
+  areaServed: areaServedValue,
+};
 
 // Sprint B — FAQPage si frontmatter `faq` présent (max chances de rich snippet)
 const faqSchema = d.faq?.length
