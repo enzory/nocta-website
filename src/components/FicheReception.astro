@@ -843,6 +843,9 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
   // Fiche figée, tamponnée, confirmation lue par les lecteurs d'écran
   function marquerEnvoyee() {
     form.querySelectorAll('input, select, textarea').forEach((el) => ((el as HTMLInputElement).disabled = true));
+    // Le bouton est masqué avec le pied de fiche ; on le désactive aussi, pour
+    // qu'une soumission forcée par script ne puisse rien renvoyer.
+    btn.disabled = true;
     modifier.hidden = true;
     document.getElementById('pied-ligne')!.hidden = true;
     const conf = document.getElementById('confirmation')!;
@@ -899,6 +902,8 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
     // Garde-fou contre le double envoi (Entrée dans un champ, double clic) :
     // rien ne part pendant un envoi, ni pendant le délai d'un envoi incertain.
     if (envoiEnCours || Date.now() < bloqueJusqua) return;
+    // Fiche déjà envoyée (y compris restaurée après un retour arrière) : rien ne repart.
+    if (fiche.dataset.etat === 'envoyee') return;
     const invalides = aVerifier.filter((el) => !verifier(el));
     if (invalides.length) {
       // Les réponses restent en place : rien n'est rechargé ni effacé.
