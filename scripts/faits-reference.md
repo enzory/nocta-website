@@ -12,7 +12,7 @@ Tout texte publié sur le site doit respecter ces faits. En cas de doute, ne pas
 
 ## Prix
 - Tous les prix affichés sont hors taxes (confirmé par Enzo le 05/11/2026).
-- NOCTA Private : « Comptez entre 70 et 250 € HT par personne, chef et service compris. »
+- NOCTA Private : sur /prestations/private, « À partir de 70 € HT par personne », sans plafond affiché (demande d'Enzo, 16/11/2026, à valider avant fusion). Les autres pages portent encore « entre 70 et 250 € HT par personne, chef et service compris » : à aligner après validation.
 - Cocktail dînatoire : à partir de 54 € HT par personne.
 - Buffet livré : dès 40 € HT par personne.
 - Dîner assis (Corporate) : à partir de 70 € HT par personne ; le prix évolue selon le menu, les envies et les produits travaillés.

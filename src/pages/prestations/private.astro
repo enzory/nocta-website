@@ -5,6 +5,110 @@ import Footer from '../../components/Footer.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import LogoSlider from '../../components/LogoSlider.astro';
 import BoutonDevis from '../../components/BoutonDevis.astro';
+
+// Déroulé d'un dîner : reprend les faits déjà publiés dans le guide
+// /journal/chef-prive-domicile-paris (arrivée, cuisine sur place, rangement).
+const deroule = [
+  {
+    titre: 'Avant le dîner',
+    texte: 'Vous nous décrivez la table : la date, le lieu, le nombre de convives, vos envies, les contraintes alimentaires. Hugo écrit un menu pour ce dîner, Enzo propose les vins. Le tout vous est remis sous forme de devis.',
+  },
+  {
+    titre: 'Le jour même',
+    texte: 'Nous arrivons trois à quatre heures avant le repas, selon le menu. Hugo s’installe dans votre cuisine, Enzo prépare la salle, la table et les vins. Une cuisine fonctionnelle suffit : un four, des plaques, un plan de travail.',
+  },
+  {
+    titre: 'À table',
+    texte: 'L’apéritif accueille vos invités, puis le dîner est servi à l’assiette, plat après plat. Enzo donne le rythme et sert les vins. Vous restez à table, avec eux.',
+  },
+  {
+    titre: 'Après le dessert',
+    texte: 'La cuisine est rangée et rendue propre, la vaisselle faite. Quand vos invités partent, il ne reste rien à faire.',
+  },
+];
+
+// Exemple de menu : une proposition écrite pour un dîner privé d'hiver.
+// Ce n'est ni une formule permanente ni un menu au catalogue : ne pas y
+// attacher de prix, ne pas le présenter comme « notre menu ».
+const menuExemple = [
+  {
+    temps: 'Apéritif',
+    plat: 'Quatre tartelettes par convive',
+    detail: 'Saumon fumé et crème citronnée · foie gras de canard et figue · crémeux d’avocat et œufs de truite · tartare de bœuf et graines de moutarde',
+  },
+  { temps: 'Entrée', plat: 'Œuf parfait, champignons de saison, sabayon au vin jaune' },
+  { temps: 'Plat', plat: 'Quasi de veau rôti, sauce aux morilles et à la crème', detail: 'Purée de pommes de terre, carottes glacées' },
+  { temps: 'Fromages', plat: 'Comté affiné et brillat-savarin' },
+  { temps: 'Dessert', plat: 'Paris-Brest individuel, praliné noisette' },
+];
+
+const compris = [
+  'L’écriture du menu, avec vous.',
+  'Les produits, choisis par Hugo.',
+  'La cuisine, faite chez vous le jour même.',
+  'Le service à table.',
+  'Le rangement de la cuisine en fin de soirée.',
+];
+
+const selonLeDiner = [
+  {
+    titre: 'Les vins',
+    texte: 'Ils sont facturés à la bouteille ouverte. La sélection, la mise en condition et le service sont compris.',
+  },
+  {
+    titre: 'Le mobilier et le matériel',
+    texte: 'Ils ne sont pas inclus par défaut. Si le lieu n’en dispose pas, leur location est chiffrée dans le devis.',
+  },
+  {
+    titre: 'Le déplacement',
+    texte: 'Hors de Paris et de l’Île-de-France, le transport est chiffré dans le devis.',
+  },
+];
+
+// Avis clients : uniquement des textes réels, avec une source vérifiable et un
+// droit de reprise confirmé par Enzo. Tant que la liste est vide, le bloc
+// n'est pas rendu. Ne jamais reconstituer un avis à partir d'un message privé.
+// Format : { texte: '…', auteur: '…', contexte: 'Dîner privé', source: 'Avis Google' }
+const avis: { texte: string; auteur: string; contexte: string; source?: string }[] = [];
+
+// FAQ : une seule liste alimente le texte visible ET le JSON-LD FAQPage
+// (même convention que /prestations/sommellerie).
+const faq = [
+  {
+    q: 'Qui cuisine et qui assure le service ?',
+    a: 'Hugo Vinatier cuisine chez vous. Enzo Ryon, sommelier, conduit le service et s’occupe des vins. Pour les grandes tables, l’équipe est renforcée en fonction du nombre de convives.',
+  },
+  {
+    q: 'Faut-il une cuisine professionnelle ?',
+    a: 'Non. Une cuisine fonctionnelle suffit : un four, des plaques, un plan de travail. Si la cuisine est petite ou si le menu le demande, nous apportons le matériel nécessaire.',
+  },
+  {
+    q: 'Pour combien de convives ?',
+    a: 'À table, de quelques convives à une cinquantaine, selon le lieu et le mobilier disponible. Il n’y a pas de minimum de convives ; le minimum de commande est de 500 € HT.',
+  },
+  {
+    q: 'Comment les vins sont-ils facturés ?',
+    a: 'À la bouteille ouverte. Seules les bouteilles servies sont facturées ; la sélection, la mise en condition et le service sont compris.',
+  },
+  {
+    q: 'Où vous déplacez-vous ?',
+    a: 'À Paris et dans les Hauts-de-Seine : Courbevoie, La Défense, Neuilly-sur-Seine, Levallois-Perret, Puteaux, Boulogne-Billancourt. Ailleurs en Île-de-France et en France, sur demande.',
+  },
+  {
+    q: 'Combien de temps à l’avance faut-il réserver ?',
+    a: 'Nous pouvons intervenir dès 24 heures à l’avance, selon disponibilité. Pour un dîner servi à table, nous conseillons de nous contacter une semaine avant.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((it) => ({
+    '@type': 'Question',
+    name: it.q,
+    acceptedAnswer: { '@type': 'Answer', text: it.a },
+  })),
+};
 ---
 
 <Layout
@@ -96,6 +200,130 @@ import BoutonDevis from '../../components/BoutonDevis.astro';
       </div>
     </section>
 
+    <!-- Qui vous reçoit -->
+    <section class="bg-nocta-black border-t border-nocta-cream/10 py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+        <div class="mb-16 reveal">
+          <p class="t-eyebrow text-nocta-cream/60 mb-4">Qui vous reçoit</p>
+          <h2 class="t-h2 text-nocta-cream">
+            Un chef en cuisine,<br/>
+            <em>un sommelier en salle.</em>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-4xl items-start">
+
+          <div class="reveal" style="transition-delay: 0.1s">
+            <div class="overflow-hidden w-full max-w-[300px] aspect-[300/380]">
+              <img
+                src="/images/hugo-vinatier-chef-800w.webp"
+                srcset="/images/hugo-vinatier-chef-400w.webp 400w, /images/hugo-vinatier-chef-800w.webp 800w, /images/hugo-vinatier-chef.webp 1067w"
+                sizes="300px"
+                alt="Hugo Vinatier, chef de NOCTA, en cuisine"
+                width="1067"
+                height="1600"
+                loading="lazy"
+                class="w-full h-full object-cover"
+                style="object-position: center 30%;"
+              />
+            </div>
+            <p class="t-eyebrow text-nocta-cream/60 mt-6">En cuisine</p>
+            <h3 class="t-h3-lg text-nocta-cream mt-2">Hugo Vinatier</h3>
+            <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/60 mt-4">
+              Hugo est passé par L’Astrance, qui comptait alors trois étoiles au guide Michelin, par Le Servan et par Maison Vérot. Il a ensuite été second de cuisine chez Akrame. Chez vous, c’est lui qui écrit le menu, choisit les produits et cuisine sur place.
+            </p>
+          </div>
+
+          <div class="reveal" style="transition-delay: 0.2s">
+            <div class="overflow-hidden w-full max-w-[300px] aspect-[300/380]">
+              <img
+                src="/images/nocta-corporate-enzo-800w.webp"
+                srcset="/images/nocta-corporate-enzo-400w.webp 400w, /images/nocta-corporate-enzo-800w.webp 800w, /images/nocta-corporate-enzo-1200w.webp 1200w, /images/nocta-corporate-enzo.webp 2054w"
+                sizes="300px"
+                alt="Enzo Ryon, sommelier de NOCTA, au service"
+                width="2054"
+                height="2452"
+                loading="lazy"
+                class="w-full h-full object-cover"
+                style="object-position: center 12%;"
+              />
+            </div>
+            <p class="t-eyebrow text-nocta-cream/60 mt-6">Au service et aux vins</p>
+            <h3 class="t-h3-lg text-nocta-cream mt-2">Enzo Ryon</h3>
+            <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/60 mt-4">
+              Sommelier de profession, Enzo a exercé au Sur Mesure, au Mandarin Oriental, puis chez Akrame, où il a été adjoint du chef sommelier et directeur. Il prépare la table, conduit le service et choisit les vins avec vous.
+            </p>
+          </div>
+
+        </div>
+
+        <p class="font-serif text-xl lg:text-2xl font-light italic text-nocta-cream/80 leading-relaxed max-w-2xl mt-16 reveal">
+          Nous nous sommes rencontrés chez Akrame. L’idée de ces dîners privés est née là.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Déroulé -->
+    <section class="bg-nocta-cream py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+        <div class="mb-16 reveal">
+          <p class="t-eyebrow text-nocta-grey mb-4">Le déroulé</p>
+          <h2 class="t-h2 text-nocta-black">Comment se passe le dîner.</h2>
+        </div>
+
+        <div>
+          {deroule.map((etape, i) => (
+            <div
+              class:list={['border-t border-nocta-black/10 py-7 flex items-start gap-8 reveal', { 'border-b': i === deroule.length - 1 }]}
+              style={`transition-delay: ${(i + 1) * 5 / 100}s`}
+            >
+              <span class="t-eyebrow text-nocta-grey w-8 shrink-0 pt-2">{String(i + 1).padStart(2, '0')}</span>
+              <div>
+                <h3 class="t-h3-lg text-nocta-black">{etape.titre}</h3>
+                <p class="font-sans text-sm font-normal leading-relaxed text-nocta-grey mt-2 max-w-2xl">{etape.texte}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Exemple de menu -->
+    <section class="bg-nocta-black py-24 lg:py-36">
+      <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+
+        <div class="reveal">
+          <p class="t-eyebrow text-nocta-cream/60 mb-4">Un exemple de menu</p>
+          <h2 class="t-h2 text-nocta-cream">Un dîner d’hiver.</h2>
+          <div class="w-12 h-px bg-nocta-cream/20 mx-auto mt-10"></div>
+        </div>
+
+        <div class="mt-4">
+          {menuExemple.map((m, i) => (
+            <div class="pt-10 reveal" style={`transition-delay: ${(i + 1) * 5 / 100}s`}>
+              <p class="t-eyebrow text-nocta-cream/60 mb-3">{m.temps}</p>
+              <p class="font-serif text-xl lg:text-2xl font-light text-nocta-cream leading-snug">{m.plat}</p>
+              {m.detail && (
+                <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/60 mt-3">{m.detail}</p>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div class="reveal">
+          <div class="w-12 h-px bg-nocta-cream/20 mx-auto mt-12 mb-8"></div>
+          <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/60 max-w-xl mx-auto">
+            Ce menu a été écrit pour une table, un soir d’hiver. Il n’est pas à la carte : le vôtre sera composé pour vous, selon la saison et vos envies.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Formats -->
     <section class="bg-nocta-cream py-24 lg:py-36">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
@@ -144,20 +372,49 @@ import BoutonDevis from '../../components/BoutonDevis.astro';
     <!-- Tarifs -->
     <section class="bg-nocta-cream pb-24 lg:pb-36">
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
-        <div class="border-t border-nocta-black/10 pt-16 reveal">
-          <p class="t-eyebrow text-nocta-grey mb-4">Tarifs indicatifs</p>
-          <p class="font-serif text-2xl md:text-3xl font-light text-nocta-black leading-snug mb-6">
-            Entre 70 et 250 € HT par personne.
+        <div class="border-t border-nocta-black/10 pt-16">
+
+          <div class="reveal">
+            <p class="t-eyebrow text-nocta-grey mb-4">Tarif</p>
+            <p class="font-serif text-2xl md:text-3xl font-light text-nocta-black leading-snug mb-6">
+              À partir de 70 € HT par personne.
+            </p>
+            <p class="font-sans text-sm font-normal text-nocta-grey leading-relaxed max-w-2xl">
+              Chef et service compris. Minimum de commande : 500 € HT. Le prix évolue avec le menu, les produits choisis et le nombre de convives. Les prix sont indiqués hors taxes ; le devis précise le montant toutes taxes comprises, poste par poste.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mt-16">
+
+            <div class="reveal">
+              <h3 class="t-h3-lg text-nocta-black mb-6">Ce qui est compris</h3>
+              <ul>
+                {compris.map((ligne) => (
+                  <li class="border-t border-nocta-black/10 py-4 font-sans text-sm font-normal text-nocta-grey leading-relaxed">{ligne}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="reveal" style="transition-delay: 0.1s">
+              <h3 class="t-h3-lg text-nocta-black mb-6">Ce qui dépend du dîner</h3>
+              <ul>
+                {selonLeDiner.map((poste) => (
+                  <li class="border-t border-nocta-black/10 py-4 font-sans text-sm font-normal text-nocta-grey leading-relaxed">
+                    <span class="text-nocta-black">{poste.titre}.</span> {poste.texte}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+
+          <p class="font-sans text-sm font-normal text-nocta-grey leading-relaxed max-w-2xl mt-12 reveal">
+            Pour le détail des accords mets-vins, voir notre <a href="/prestations/sommellerie" class="underline underline-offset-4 decoration-nocta-black/25 hover:decoration-nocta-black text-nocta-black transition-colors">prestation de sommellerie</a>.
           </p>
-          <p class="font-sans text-sm font-normal text-nocta-grey leading-relaxed max-w-2xl">
-            Chef et service compris. Minimum de commande : 500 € HT. Chaque menu est conçu avec vous — le tarif exact dépend du nombre de convives, du menu et des produits choisis.
-          </p>
-          <p class="font-sans text-sm font-normal text-nocta-grey leading-relaxed max-w-2xl mt-4">
-            Pour accompagner le dîner, Enzo Ryon compose l’accord mets-vins et assure le service : découvrez notre <a href="/prestations/sommellerie" class="underline underline-offset-4 decoration-nocta-black/25 hover:decoration-nocta-black text-nocta-black transition-colors">prestation de sommellerie</a>.
-          </p>
-          <div class="mt-10">
+          <div class="mt-10 reveal">
             <BoutonDevis variant="noir" href="/contact?projet=private" />
           </div>
+
         </div>
       </div>
     </section>
@@ -165,14 +422,49 @@ import BoutonDevis from '../../components/BoutonDevis.astro';
     <!-- Preuve sociale : logos clients -->
     <LogoSlider />
 
-    {/*
-      TODO Enzo : ajouter ici un témoignage client réel pour /prestations/private (1 par page).
-      Format suggéré :
-        "Citation courte (1-2 phrases concrètes)."
-        — Prénom Nom, Poste (ou contexte sobre)
-      Candidat évident : Thomas Cussac (déjà cité sur la home, évènement privé).
-      Ne PAS inventer de poste/employeur — la home utilise simplement "Événement privé".
-    */}
+    <!-- Avis clients : rendu seulement si la liste `avis` contient un texte validé -->
+    {avis.length > 0 && (
+      <section class="bg-nocta-cream py-24 lg:py-32 border-t border-nocta-black/10">
+        <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+          {avis.map((a, i) => (
+            <figure class:list={['reveal', { 'mt-20': i > 0 }]}>
+              <div class="w-12 h-px bg-nocta-black/20 mx-auto mb-10"></div>
+              <blockquote class="font-serif text-xl lg:text-2xl font-light italic text-nocta-black/80 leading-relaxed">
+                « {a.texte} »
+              </blockquote>
+              <div class="w-12 h-px bg-nocta-black/20 mx-auto mt-10 mb-8"></div>
+              <figcaption>
+                <p class="font-sans text-sm font-medium text-nocta-black">{a.auteur}</p>
+                <p class="font-sans text-xs font-normal text-nocta-grey mt-1">{a.contexte}{a.source && ` · ${a.source}`}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- FAQ -->
+    <section class="bg-nocta-cream border-t border-nocta-black/10 py-24 lg:py-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+        <div class="mb-16 reveal">
+          <h2 class="t-h2 text-nocta-black">Questions fréquentes</h2>
+        </div>
+
+        <div class="max-w-3xl">
+          {faq.map((it, i) => (
+            <div
+              class:list={['border-t border-nocta-black/10 py-8 reveal', { 'border-b': i === faq.length - 1 }]}
+              style={`transition-delay: ${(i + 1) * 5 / 100}s`}
+            >
+              <h3 class="t-h3 text-xl lg:text-2xl text-nocta-black mb-4">{it.q}</h3>
+              <p class="font-sans text-sm font-normal leading-relaxed text-nocta-grey">{it.a}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
 
     <!-- Journal -->
     <section class="bg-nocta-black py-24 lg:py-32">
@@ -203,12 +495,14 @@ import BoutonDevis from '../../components/BoutonDevis.astro';
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "NOCTA Private — Chef privé à domicile à Paris",
-    "description": "Dîners privés à domicile, anniversaires et célébrations avec un chef formé en cuisine étoilée et un sommelier. Paris et Île-de-France.",
+    "description": "Dîners privés à domicile, anniversaires et célébrations : Hugo Vinatier en cuisine, Enzo Ryon, sommelier, au service et aux vins. Paris et Île-de-France.",
     "provider": {"@id": "https://www.noctaparis.fr/#organisation"},
     "areaServed": [{"@type": "City", "name": "Paris"}, {"@type": "AdministrativeArea", "name": "Île-de-France"}],
     "serviceType": "Chef privé à domicile",
-    "offers": {"@type": "Offer", "priceCurrency": "EUR", "price": "70", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": "70", "maxPrice": "250", "priceCurrency": "EUR", "unitText": "par personne", "description": "Entre 70 et 250 € HT par personne, chef et service compris. Minimum de commande : 500 € HT."}}
+    "offers": {"@type": "Offer", "priceCurrency": "EUR", "price": "70", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": "70", "priceCurrency": "EUR", "valueAddedTaxIncluded": false, "unitText": "par personne", "description": "À partir de 70 € HT par personne, chef et service compris. Minimum de commande : 500 € HT."}}
   })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
