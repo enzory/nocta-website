@@ -296,6 +296,7 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
                      En situation réelle, Hugo ou Enzo vous rappellerait sous 24 heures ouvrées.</p>
                 : <p>Merci. Hugo ou Enzo lit votre demande personnellement et vous répond
                      <strong>sous 24 heures ouvrées</strong>.</p>}
+              {!demo && <p id="nouvelle-demande-bloc" hidden><button type="button" id="nouvelle-demande" class="btn">Faire une nouvelle demande</button></p>}
             </div>
           </footer>
         </form>
@@ -842,6 +843,9 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
   // Fiche figée, tamponnée, confirmation lue par les lecteurs d'écran
   function marquerEnvoyee() {
     form.querySelectorAll('input, select, textarea').forEach((el) => ((el as HTMLInputElement).disabled = true));
+    // Le bouton est masqué avec le pied de fiche ; on le désactive aussi, pour
+    // qu'une soumission forcée par script ne puisse rien renvoyer.
+    btn.disabled = true;
     modifier.hidden = true;
     document.getElementById('pied-ligne')!.hidden = true;
     const conf = document.getElementById('confirmation')!;
@@ -898,6 +902,8 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
     // Garde-fou contre le double envoi (Entrée dans un champ, double clic) :
     // rien ne part pendant un envoi, ni pendant le délai d'un envoi incertain.
     if (envoiEnCours || Date.now() < bloqueJusqua) return;
+    // Fiche déjà envoyée (y compris restaurée après un retour arrière) : rien ne repart.
+    if (fiche.dataset.etat === 'envoyee') return;
     const invalides = aVerifier.filter((el) => !verifier(el));
     if (invalides.length) {
       // Les réponses restent en place : rien n'est rechargé ni effacé.
@@ -944,9 +950,39 @@ const FORMSPREE = 'https://formspree.io/f/maqpwebj';
         if (REFUS_DEFINITIFS.includes(rep.status)) throw new RefusServeur('Formspree ' + rep.status);
         if (!rep.ok) throw new Error('Formspree ' + rep.status);   // incertain
         marquerEnvoyee();
+        try { sessionStorage.setItem('nocta-fiche-envoyee', String(Date.now())); } catch {}
+        document.getElementById('nouvelle-demande-bloc')!.hidden = false;
+        // Mesure : succès confirmé par Formspree uniquement, sans donnée du
+        // visiteur. Un seul push par envoi réussi : la fiche est figée ensuite
+        // (champs désactivés, envoiEnCours) et une page restaurée par le
+        // navigateur (retour arrière) ne relance pas ce script.
+        const w = window as unknown as { dataLayer?: unknown[] };
+        (w.dataLayer = w.dataLayer || []).push({ event: 'demande_envoyee', formulaire: 'fiche_devis' });
         setTimeout(() => { location.href = '/merci'; }, 3000);
       })
       .catch((err) => { if (err instanceof RefusServeur) echecEnvoi(); else envoiIncertain(); })
       .finally(() => { clearTimeout(minuteur); envoiEnCours = false; });
   });
+
+  // Retour arrière après un envoi réussi, sans restauration complète de la page :
+  // le navigateur remet les champs remplis et la fiche redevient active, ce qui
+  // invite à renvoyer la même demande. On rend alors la fiche figée, avec un
+  // bouton explicite pour une nouvelle demande volontaire. Toute autre arrivée
+  // sur /contact (lien, saisie d'adresse, rechargement) repart d'une fiche vierge
+  // et efface le marqueur.
+  if (!DEMO) {
+    let marque: string | null = null;
+    try { marque = sessionStorage.getItem('nocta-fiche-envoyee'); } catch {}
+    const nav = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;
+    if (marque && nav && nav.type === 'back_forward') {
+      marquerEnvoyee();
+      document.getElementById('nouvelle-demande-bloc')!.hidden = false;
+    } else if (marque) {
+      try { sessionStorage.removeItem('nocta-fiche-envoyee'); } catch {}
+    }
+    document.getElementById('nouvelle-demande')!.addEventListener('click', () => {
+      try { sessionStorage.removeItem('nocta-fiche-envoyee'); } catch {}
+      location.href = '/contact';
+    });
+  }
 </script>
