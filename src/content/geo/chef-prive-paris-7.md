@@ -52,4 +52,4 @@ NOCTA compte parmi ses clients des clients comme Messika, Levi’s ou The Galion
 
 ## Demande de devis
 
-Pour organiser un dîner privé dans le 7e arrondissement, contactez-nous via notre [formulaire de demande de devis](/contact). Précisez la date souhaitée, le nombre approximatif de convives et le cadre de la réception : nous revenons vers vous sous 24 heures ouvrées avec une première proposition.
+Pour organiser un dîner privé dans le 7e arrondissement, contactez-nous via notre [formulaire de demande de devis](/contact). Précisez la date souhaitée, le nombre approximatif de convives et le cadre de la réception : nous revenons vers vous sous 24 à 48 heures avec une première proposition.

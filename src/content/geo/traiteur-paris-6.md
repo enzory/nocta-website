@@ -11,7 +11,7 @@ faq:
   - question: "Proposez-vous des dîners à domicile dans le 6e arrondissement ?"
     answer: "Oui, c’est le cœur de NOCTA Private : un chef formé en cuisine étoilée dans votre cuisine, un service en salle si vous le souhaitez, et une sélection de vins composée par notre sommelier. Vous êtes présent à vos invités, pas à vos fourneaux."
   - question: "Combien coûte un dîner privé ?"
-    answer: "Nos prestations démarrent à partir de 500 € HT de commande. Le tarif dépend ensuite du menu, du service et du nombre de convives — le devis est remis sous 24 heures ouvrées."
+    answer: "Nos prestations démarrent à partir de 500 € HT de commande. Le tarif dépend ensuite du menu, du service et du nombre de convives — le devis est remis sous 24 à 48 heures."
   - question: "Pouvez-vous cuisiner dans un appartement haussmannien classique ?"
     answer: "Oui. Nos menus sont pensés pour être finalisés sur place dans une cuisine domestique, sans matériel lourd. Un repérage ou un échange préalable suffit à valider la faisabilité."
   - question: "Gérez-vous les régimes et allergies ?"
@@ -28,7 +28,7 @@ La clientèle du 6e arrondissement que nous accompagnons est typiquement constit
 
 ## Les formats NOCTA adaptés au 6e arrondissement
 
-**NOCTA Private** est le format le plus sollicité dans cet arrondissement. Il s’adresse aux particuliers qui reçoivent chez eux — appartements haussmanniens, duplex, lofts d’artistes reconvertis — et souhaitent confier l’intégralité du service à une équipe extérieure. La prestation couvre la conception du menu, l’approvisionnement, la mise en place, le service à table et le nettoyage en fin de soirée. Comptez entre 70 et 250 € HT par personne, chef et service compris. À table, de quelques convives à une cinquantaine, selon le lieu et le mobilier disponible. Si besoin, la location de matériel est chiffrée dans le devis. Selon la cuisine existante, la production se fait sur place ou en semi-différé.
+**NOCTA Private** est le format le plus sollicité dans cet arrondissement. Il s’adresse aux particuliers qui reçoivent chez eux — appartements haussmanniens, duplex, lofts d’artistes reconvertis — et souhaitent confier l’intégralité du service à une équipe extérieure. La prestation couvre la conception du menu, l’approvisionnement, la mise en place, le service à table et le nettoyage en fin de soirée. Comptez à partir de 70 € HT par personne, chef et service compris, selon le menu défini avec vous. À table, de quelques convives à une cinquantaine, selon le lieu et le mobilier disponible. Si besoin, la location de matériel est chiffrée dans le devis. Selon la cuisine existante, la production se fait sur place ou en semi-différé.
 
 **NOCTA Corporate** répond aux besoins des structures présentes dans le 6e : agences, cabinets, galeries, fondations. Le format couvre les cocktails debout après vernissage, les déjeuners de direction et les comités restreints. Le buffet livré démarre à 40 € HT par personne. Le cocktail dînatoire démarre à 54 € HT par personne. Pour une galerie organisant un événement d’inauguration ou de clôture d’exposition, NOCTA Corporate permet de proposer une restauration cohérente avec le positionnement du lieu, sans dénaturer l’espace ni alourdir la logistique.
 
@@ -52,4 +52,4 @@ Nous ne sous-traitons pas la cuisine, ne travaillons pas avec des équipes varia
 
 ## Demande de devis
 
-Pour une intervention dans le 6e arrondissement — dîner privé, cocktail de vernissage ou réception personnalisée — prenez contact via notre [formulaire de demande de devis](/contact). Indiquez la date, le nombre d’invités et le type de lieu : nous revenons vers vous sous 24 heures ouvrées avec une première proposition adaptée.
+Pour une intervention dans le 6e arrondissement — dîner privé, cocktail de vernissage ou réception personnalisée — prenez contact via notre [formulaire de demande de devis](/contact). Indiquez la date, le nombre d’invités et le type de lieu : nous revenons vers vous sous 24 à 48 heures avec une première proposition adaptée.

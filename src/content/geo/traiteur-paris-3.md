@@ -23,7 +23,7 @@ La clientèle du 3e est souvent exigeante sur l’esthétique du dressage et la 
 
 **NOCTA Signature** s’adresse aux marques ou aux clients qui souhaitent faire de la table un élément central de leur événement. Dans un showroom du Marais, cela peut signifier un menu en accord avec une collection, une sélection de vins naturels discutée avec Enzo Ryon, ou un format de dégustation commentée en fin de soirée. Ce format est établi sur devis, après échange direct avec l’équipe.
 
-**NOCTA Private** reste disponible pour des dîners à domicile dans le 3e, entre 70 et 250 € HT par personne, chef et service compris — pour des résidents qui souhaitent recevoir chez eux avec un niveau de service comparable à celui d’un restaurant gastronomique, sans en gérer la logistique.
+**NOCTA Private** reste disponible pour des dîners à domicile dans le 3e, à partir de 70 € HT par personne, chef et service compris, selon le menu défini avec vous — pour des résidents qui souhaitent recevoir chez eux avec un niveau de service comparable à celui d’un restaurant gastronomique, sans en gérer la logistique.
 
 ## Logistique et contraintes spécifiques au 3e arrondissement
 
@@ -45,6 +45,6 @@ Parmi les marques avec lesquelles nous travaillons figurent Messika et Levi’s 
 
 ## Demande de devis
 
-Vous organisez un événement dans le 3e arrondissement — cocktail de lancement, dîner professionnel ou réception privée ? Transmettez-nous les grandes lignes via notre formulaire de contact : lieu, format souhaité, nombre de convives et date. Nous revenons vers vous sous 24 heures ouvrées avec une première proposition.
+Vous organisez un événement dans le 3e arrondissement — cocktail de lancement, dîner professionnel ou réception privée ? Transmettez-nous les grandes lignes via notre formulaire de contact : lieu, format souhaité, nombre de convives et date. Nous revenons vers vous sous 24 à 48 heures avec une première proposition.
 
 [Faire une demande de devis <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

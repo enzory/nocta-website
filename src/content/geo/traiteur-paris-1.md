@@ -13,7 +13,7 @@ faq:
   - question: "Quels types d’événements organisez-vous dans le 1er ?"
     answer: "Dîners privés en appartement, cocktails d’entreprise, réceptions dans des lieux événementiels du quartier. Nos prestations démarrent à partir de 500 € HT de commande."
   - question: "Le service en salle est-il inclus ?"
-    answer: "Selon le format. Pour un dîner servi, un chef de salle assure le service ; pour un cocktail, l’équipe est dimensionnée au nombre d’invités. Tout est précisé dans le devis, remis sous 24 heures ouvrées."
+    answer: "Selon le format. Pour un dîner servi, un chef de salle assure le service ; pour un cocktail, l’équipe est dimensionnée au nombre d’invités. Tout est précisé dans le devis, remis sous 24 à 48 heures."
   - question: "Travaillez-vous avec des produits de saison ?"
     answer: "Oui. Les menus changent avec le marché. Chaque produit est sélectionné pour ce qu’il est, pas pour ce qu’il représente."
 ---
@@ -32,7 +32,7 @@ Enzo Ryon prend en charge la sommellerie et la relation client en amont : choix 
 
 **NOCTA Corporate** couvre les besoins des maisons et entreprises implantées dans l’arrondissement : cocktails de lancement, dîners de direction, réceptions après vernissage ou présentation de collection. Le format s’adapte à la jauge — de vingt convives à plusieurs centaines — et au rythme de la soirée, avec service en gants blancs ou passage en buffet structuré selon la configuration du lieu. Le buffet livré démarre à 40 € HT par personne, le cocktail dînatoire à 54 € HT et le dîner assis à 70 € HT, selon le niveau de prestation retenu.
 
-**NOCTA Private** s’adresse aux résidents du 1er ou à leurs hôtes de passage qui souhaitent recevoir dans un appartement ou un pied-à-terre sans mobiliser un restaurant. Le chef intervient sur place, monte sa brigade selon le nombre de couverts, et restitue la cuisine à l’envoi avec dressage en salle si l’espace le permet. Comptez entre 70 et 250 € HT par personne, chef et service compris. Ce format convient aussi aux agences et attachés de presse qui organisent des dîners de presse restreints dans des espaces loués à la soirée.
+**NOCTA Private** s’adresse aux résidents du 1er ou à leurs hôtes de passage qui souhaitent recevoir dans un appartement ou un pied-à-terre sans mobiliser un restaurant. Le chef intervient sur place, monte sa brigade selon le nombre de couverts, et restitue la cuisine à l’envoi avec dressage en salle si l’espace le permet. Comptez à partir de 70 € HT par personne, chef et service compris, selon le menu défini avec vous. Ce format convient aussi aux agences et attachés de presse qui organisent des dîners de presse restreints dans des espaces loués à la soirée.
 
 **NOCTA Signature** est conçu pour les demandes qui sortent des formats standards : dîner immersif dans un espace patrimonial, soirée sur plusieurs séquences avec changement de registre culinaire, prestation intégrant un protocole de service spécifique imposé par le client. Ce format se construit sur devis, après un échange avec Enzo Ryon pour cadrer le périmètre exact.
 
@@ -60,6 +60,6 @@ Les menus sont construits autour de produits de saison, sourcés auprès de four
 
 ## Demande de devis
 
-Pour une intervention dans le 1er arrondissement — qu’il s’agisse d’un dîner privé, d’un cocktail corporate ou d’un format plus spécifique — contactez NOCTA via la page dédiée. Un premier échange permet de cadrer le format, le lieu et le budget en moins de 24 heures ouvrées.
+Pour une intervention dans le 1er arrondissement — qu’il s’agisse d’un dîner privé, d’un cocktail corporate ou d’un format plus spécifique — contactez NOCTA via la page dédiée. Un premier échange permet de cadrer le format, le lieu et le budget en 24 à 48 heures.
 
 [Prendre contact avec NOCTA <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

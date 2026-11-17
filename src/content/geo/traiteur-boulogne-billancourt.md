@@ -13,7 +13,7 @@ faq:
   - question: "Quel est le minimum pour faire appel à vous ?"
     answer: "Nos prestations démarrent à partir de 500 € HT de commande. Un dîner intime avec chef et service en salle entre donc pleinement dans nos formats."
   - question: "Sous quel délai recevons-nous un devis ?"
-    answer: "Sous 24 heures ouvrées après un premier échange. Le devis détaille le menu, le service et la logistique propres à votre lieu."
+    answer: "Sous 24 à 48 heures après un premier échange. Le devis détaille le menu, le service et la logistique propres à votre lieu."
   - question: "Proposez-vous un accord mets et vins ?"
     answer: "Oui. Enzo, sommelier formé en restaurant étoilé, compose la sélection de vins en fonction du menu et de vos invités. C’est une ligne directrice, pas une liste."
 ---
@@ -28,7 +28,7 @@ Notre base est à Courbevoie. Boulogne-Billancourt est l’une de nos zones d’
 
 **NOCTA Corporate** est le format le plus sollicité sur cette zone. Il couvre les cocktails dînatoires, les galas d’entreprise et les comités de direction. Le buffet livré démarre à 40 € HT par personne. Le cocktail dînatoire démarre à 54 € HT par personne. Pour un lancement de produit dans un showroom de la rue du Parc-de-Clagny ou un board dinner dans une salle privatisée d’un immeuble de bureaux, l’équipe apporte le matériel nécessaire, gère le dressage à l’envoi et assure le service en salle. La sommellerie est assurée par Enzo Ryon, qui sélectionne les vins en fonction du menu et du budget défini en amont.
 
-**NOCTA Private** s’adresse aux résidents de Boulogne-Billancourt qui souhaitent tenir un dîner à domicile — anniversaire, réunion de famille restreinte, dîner entre associés — sans déléguer l’organisation à un prestataire généraliste. Hugo Vinatier, formé en cuisine étoilée, conçoit le menu autour de votre table, du nombre de convives et des contraintes de votre cuisine. Comptez entre 70 et 250 € HT par personne, chef et service compris. L’équipe arrive en amont, installe le poste de travail, dresse et assure le service complet, puis repart en laissant les lieux nets.
+**NOCTA Private** s’adresse aux résidents de Boulogne-Billancourt qui souhaitent tenir un dîner à domicile — anniversaire, réunion de famille restreinte, dîner entre associés — sans déléguer l’organisation à un prestataire généraliste. Hugo Vinatier, formé en cuisine étoilée, conçoit le menu autour de votre table, du nombre de convives et des contraintes de votre cuisine. Comptez à partir de 70 € HT par personne, chef et service compris, selon le menu défini avec vous. L’équipe arrive en amont, installe le poste de travail, dresse et assure le service complet, puis repart en laissant les lieux nets.
 
 **NOCTA Signature** est mobilisé pour les événements qui nécessitent une construction plus profonde : format de restauration intégré à un événement de communication, dîner de soirée de gala avec découpe en salle, prestation pour un studio cherchant à marquer la fin d’un tournage ou d’une saison. Ce format est établi sur devis, après un échange avec l’équipe pour cerner le cadre précis, les contraintes du lieu et les attendus.
 
@@ -52,4 +52,4 @@ Nous n’avons pas vocation à proposer de la décoration florale, du mobilier �
 
 ## Demande de devis
 
-Pour un événement à Boulogne-Billancourt — qu’il s’agisse d’un cocktail d’entreprise, d’un dîner privé ou d’une prestation intégrée à un événement de communication — vous pouvez nous adresser votre demande depuis la page contact. Précisez le format, la date, le nombre de convives et les contraintes du lieu : nous revenons vers vous sous 24 heures ouvrées avec une proposition adaptée.
+Pour un événement à Boulogne-Billancourt — qu’il s’agisse d’un cocktail d’entreprise, d’un dîner privé ou d’une prestation intégrée à un événement de communication — vous pouvez nous adresser votre demande depuis la page contact. Précisez le format, la date, le nombre de convives et les contraintes du lieu : nous revenons vers vous sous 24 à 48 heures avec une proposition adaptée.

@@ -12,7 +12,8 @@ Tout texte publié sur le site doit respecter ces faits. En cas de doute, ne pas
 
 ## Prix
 - Tous les prix affichés sont hors taxes (confirmé par Enzo le 05/11/2026).
-- NOCTA Private : sur /prestations/private, « À partir de 70 € HT par personne », sans plafond affiché (demande d'Enzo, 16/11/2026, à valider avant fusion). Les autres pages portent encore « entre 70 et 250 € HT par personne, chef et service compris » : à aligner après validation.
+- NOCTA Private : « À partir de 70 € HT par personne, chef et service compris, selon le menu défini avec vous. » Aucun plafond affiché (validé par Enzo le 17/11/2026). Ne plus écrire « 70 à 250 € ».
+- Les prix sont présentés hors taxes uniquement ; le devis précise le montant HT, poste par poste (Enzo, 17/11/2026).
 - Cocktail dînatoire : à partir de 54 € HT par personne.
 - Buffet livré : dès 40 € HT par personne.
 - Dîner assis (Corporate) : à partir de 70 € HT par personne ; le prix évolue selon le menu, les envies et les produits travaillés.
@@ -29,7 +30,7 @@ Tout texte publié sur le site doit respecter ces faits. En cas de doute, ne pas
 
 ## Délais
 - Réservation : « Nous pouvons intervenir dès 24 heures à l'avance, selon disponibilité. Pour les dîners servis et les événements de plus de 50 personnes, nous conseillons de nous contacter une semaine avant. »
-- Devis : « Réponse à toute demande de devis sous 24 heures ouvrées. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16. »
+- Devis : « Réponse à toute demande de devis sous 24 à 48 heures. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16. » Forme courte : « Devis sous 24 à 48 h » (validé par Enzo le 17/11/2026 ; remplace « 24 heures ouvrées »).
 
 ## Sommellerie
 - Accord mets-vins composé à partir du menu retenu ou des goûts du client.

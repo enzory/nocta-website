@@ -6,7 +6,7 @@ même offre a moins de raisons de recommander NOCTA. Ce script cherche, dans les
 pages construites, les formulations qui contredisent les faits de référence.
 
 Faits de référence (validés par Enzo le 06/10/2026, complétés le 07/10/2026) :
-  - NOCTA Private : entre 70 et 250 € par personne, chef et service compris
+  - NOCTA Private : à partir de 70 € HT par personne, chef et service compris, sans plafond (17/11/2026)
   - NOCTA Private, convives : à table, de quelques convives à une cinquantaine,
     selon le lieu et le mobilier disponible (location de matériel chiffrée dans le devis)
   - Cocktail : à partir de 54 € HT par personne
@@ -14,7 +14,7 @@ Faits de référence (validés par Enzo le 06/10/2026, complétés le 07/10/2026
   - Minimum de commande : 500 € HT, hors livraison (jamais TTC)
   - Réservation : possible dès 24 heures à l'avance, selon disponibilité
     (une semaine conseillée pour les dîners servis et les événements de plus de 50 personnes)
-  - Réponse aux demandes de devis : sous 24 heures ouvrées (urgences : par téléphone)
+  - Réponse aux demandes de devis : sous 24 à 48 h (urgences : par téléphone) (17/11/2026)
   - Règle éditoriale : jamais « chef étoilé » (toujours « formé en cuisine étoilée »)
 
 Usage :
@@ -33,7 +33,7 @@ from bs4 import BeautifulSoup
 FORBIDDEN = [
     # « à partir de / dès / démarre à 55 € » = ancien prix d'entrée Private.
     # (« 55 € HT » pour un buffet reste légitime.)
-    (r"(?:à partir de|dès|démarre à)\s+55\s?(?:€|euros)", "prix Private obsolète (référence : 70 à 250 € par personne)"),
+    (r"(?:à partir de|dès|démarre à)\s+55\s?(?:€|euros)", "prix Private obsolète (référence : à partir de 70 € HT par personne)"),
     # Délais de réservation qui imposent PLUS que 24 heures comme minimum
     # (une recommandation formulée comme un conseil reste autorisée).
     (r"(?:3|trois)\s+jours\s+minimum|minimum\s+(?:de\s+)?(?:3|trois)\s+jours|72\s?(?:h\b|heures)\s+minimum"
@@ -41,13 +41,19 @@ FORBIDDEN = [
      r"|délai de réservation minimum|au\s+minimum\s+(?:\d+|deux|trois)\s+(?:à\s+\d+\s+)?(?:jours|semaines)"
      r"|jours\s+ouvrés\s+(?:est|sont)\s+nécessaires?",
      "ancien délai minimum de réservation (référence : dès 24 heures, selon disponibilité)"),
-    # Anciennes fourchettes : 24 à 36 h, 36 h, 24 à 48 h.
-    (r"\b24\s?(?:h|heures)?\s?à\s?(?:36|48)\s?(?:h\b|heures)|\b36\s?(?:h\b|heures\b)",
-     "ancienne fourchette de délai (référence : réservation dès 24 h, devis sous 24 h ouvrées)"),
-    # Le délai de devis s'écrit « sous 24 heures ouvrées » (ou « 24 h ouvrées »).
-    (r"(?:devis|proposition)[^.]{0,40}\b24\s?(?:h\b|heures)(?!\s?ouvrées)"
-     r"|\b24\s?(?:h\b|heures)(?!\s?ouvrées)[^.]{0,40}(?:devis|proposition)",
-     "délai de devis sans « ouvrées » (référence : sous 24 heures ouvrées)"),
+    # Anciennes fourchettes : 24 à 36 h, 36 h.
+    (r"\b24\s?(?:h|heures)?\s?à\s?36\s?(?:h\b|heures)|\b36\s?(?:h\b|heures\b)",
+     "ancienne fourchette de délai (référence : réservation dès 24 h, devis sous 24 à 48 h)"),
+    # Ancien délai de devis « 24 heures ouvrées » (remplacé le 17/11/2026).
+    (r"\b24\s?(?:h\b|heures)\s?ouvrées",
+     "ancien délai de devis (référence : sous 24 à 48 h)"),
+    # Le délai de devis s'écrit « sous 24 à 48 h » : un « 24 h » seul près de « devis » est un reste.
+    (r"(?:devis|proposition)[^.]{0,40}\b24\s?(?:h\b|heures)(?!\s?à\s?48)"
+     r"|(?<!dès )\b24\s?(?:h\b|heures)(?!\s?à\s?48)(?! à l)[^.]{0,40}(?:devis|proposition)",
+     "délai de devis incomplet (référence : sous 24 à 48 h)"),
+    # Ancienne fourchette Private plafonnée (remplacée le 17/11/2026).
+    (r"\b70\s?(?:€\s?)?(?:et|à|-|–)\s?250\s?(?:€|euros)",
+     "fourchette Private plafonnée (référence : à partir de 70 € HT par personne, sans plafond)"),
     (r"500\s?€\s?TTC", "minimum de commande en TTC (référence : 500 € HT, hors livraison)"),
     (r"chef\s+étoilé", "règle éditoriale : écrire « formé en cuisine étoilée »"),
     # Plateaux-repas : proposables sur demande depuis le 02/11/2026 — la mention
