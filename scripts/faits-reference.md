@@ -19,7 +19,7 @@ Tout texte publié sur le site doit respecter ces faits. En cas de doute, ne pas
 - Dîner assis (Corporate) : à partir de 70 € HT par personne ; le prix évolue selon le menu, les envies et les produits travaillés.
 - Corporate : buffet livré dès 40 € HT et cocktail dînatoire dès 54 € HT par personne. Ne jamais attacher le prix du buffet (40 €) à un cocktail.
 - Minimum de commande : 500 € HT, hors livraison. Pas de minimum de convives.
-- Vin : facturé à la bouteille ouverte ; sélection, mise en condition et service compris.
+- Vin : facturé selon la sélection retenue, détaillé dans le devis ; sélection, mise en condition et service compris. Ne jamais écrire « facturé à la bouteille ouverte » ni « seules les bouteilles servies » (correction d'Enzo, 17/11/2026).
 
 ## Ce que NOCTA ne propose pas
 - Plateaux-repas : proposables sur demande (décision d'Enzo, 02/11/2026). Pas d'offre détaillée ni de prix publiés : ne jamais inventer de tarif ou de contenu.

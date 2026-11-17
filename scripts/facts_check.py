@@ -54,6 +54,9 @@ FORBIDDEN = [
     # Ancienne fourchette Private plafonnée (remplacée le 17/11/2026).
     (r"\b70\s?(?:€\s?)?(?:et|à|-|–)\s?250\s?(?:€|euros)",
      "fourchette Private plafonnée (référence : à partir de 70 € HT par personne, sans plafond)"),
+    # Le vin n'est pas facturé à la bouteille ouverte (correction d'Enzo, 17/11/2026).
+    (r"bouteilles?\s+ouvertes?|bouteilles\s+servies",
+     "facturation du vin erronée (référence : vins facturés selon la sélection retenue, détaillés dans le devis)"),
     (r"500\s?€\s?TTC", "minimum de commande en TTC (référence : 500 € HT, hors livraison)"),
     (r"chef\s+étoilé", "règle éditoriale : écrire « formé en cuisine étoilée »"),
     # Plateaux-repas : proposables sur demande depuis le 02/11/2026 — la mention
