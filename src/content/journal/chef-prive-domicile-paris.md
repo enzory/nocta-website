@@ -1,19 +1,19 @@
 ---
 title: "Chef privé à domicile à Paris : comment ça marche ?"
-description: "Un chef formé en cuisine étoilée cuisine chez vous à Paris : réservation, menu, déroulé de la soirée, prix et ce qu’il faut prévoir. Devis sous 24 h ouvrées."
+description: "Un chef formé en cuisine étoilée cuisine chez vous à Paris : réservation, menu, déroulé de la soirée, prix et ce qu’il faut prévoir. Devis sous 24 à 48 h."
 date: 2026-03-30
 author: "Enzo Ryon"
 category: "Guide"
 readTime: 7
 ---
 
-Un chef privé à domicile à Paris, c’est un chef qui vient cuisiner chez vous, avec ses produits, son équipe et son matériel si nécessaire. Chez NOCTA, le chef Hugo Vinatier — formé à L’Astrance (3 étoiles) et aux côtés de Thierry Marx — se déplace avec un maître d’hôtel sommelier et une équipe adaptée au nombre de convives. Le dîner est préparé sur place, servi à table, et la cuisine est rendue propre en fin de soirée. Comptez entre 70 et 250 € HT par personne selon le menu, chef et service compris, avec un minimum de commande de 500 € HT. NOCTA peut intervenir dès 24 heures à l’avance, selon disponibilité.
+Un chef privé à domicile à Paris, c’est un chef qui vient cuisiner chez vous, avec ses produits, son équipe et son matériel si nécessaire. Chez NOCTA, le chef Hugo Vinatier — formé à L’Astrance (3 étoiles) et aux côtés de Thierry Marx — se déplace avec un maître d’hôtel sommelier et une équipe adaptée au nombre de convives. Le dîner est préparé sur place, servi à table, et la cuisine est rendue propre en fin de soirée. Comptez à partir de 70 € HT par personne selon le menu, chef et service compris, avec un minimum de commande de 500 € HT. NOCTA peut intervenir dès 24 heures à l’avance, selon disponibilité.
 
 Voici le déroulé concret d’un dîner privé à domicile avec NOCTA, de la prise de contact au dernier coup d’éponge.
 
 ## La prise de contact et la construction du menu
 
-Tout commence par un échange — par téléphone, email ou via le formulaire du site. Vous décrivez votre projet : le nombre de convives, la date, le lieu, vos envies, vos contraintes alimentaires éventuelles. NOCTA répond sous 24 heures ouvrées avec une proposition détaillée.
+Tout commence par un échange — par téléphone, email ou via le formulaire du site. Vous décrivez votre projet : le nombre de convives, la date, le lieu, vos envies, vos contraintes alimentaires éventuelles. NOCTA répond sous 24 à 48 heures avec une proposition détaillée.
 
 Le menu est construit sur-mesure. Hugo ne travaille pas avec des formules figées. Il compose chaque menu en fonction de la saison, de vos goûts et de l’occasion. Un anniversaire intime à 8 ne ressemble pas à un dîner de famille à 20 — le menu non plus.
 
@@ -39,9 +39,9 @@ Le rangement et le nettoyage sont faits dans la foulée. La cuisine est rendue p
 
 ## Combien coûte un chef privé à domicile à Paris
 
-Le prix d’un chef privé à domicile chez NOCTA varie entre 70 et 250 € HT par personne. Ce tarif inclut tout : la conception du menu, les courses et produits, la préparation sur place, le service à table avec sommelier, et le nettoyage complet.
+Le prix d’un chef privé à domicile chez NOCTA commence à 70 € HT par personne, sans plafond : il dépend du menu défini avec vous. Ce tarif inclut tout : la conception du menu, les courses et produits, la préparation sur place, le service à table avec sommelier, et le nettoyage complet.
 
-Un dîner en 3 temps avec des produits de saison se situe autour de 70 à 80 € par personne. Un menu en 5 temps avec des produits d’exception — Saint-Jacques, ris de veau, truffe selon la saison — monte entre 150 et 250 € par personne.
+Un dîner en 3 temps avec des produits de saison se situe autour de 70 à 80 € par personne. Un menu en 5 temps avec des produits d’exception — Saint-Jacques, ris de veau, truffe selon la saison — dépasse 150 € par personne.
 
 Le minimum de commande est de 500 € HT, sans minimum de convives. Un dîner pour 6 personnes à 85 € par personne est tout à fait réalisable.
 
@@ -61,6 +61,6 @@ Nous intervenons aussi pour des séjours en villa — Saint-Tropez, Côte d’Az
 
 ## Comment réserver
 
-Contactez-nous directement par email à contact@noctaparis.fr, par téléphone au 06 50 01 16 16, ou via le formulaire de contact sur notre site. Décrivez votre projet — date, nombre de convives, envies — et vous recevrez une proposition détaillée sous 24 heures ouvrées.
+Contactez-nous directement par email à contact@noctaparis.fr, par téléphone au 06 50 01 16 16, ou via le formulaire de contact sur notre site. Décrivez votre projet — date, nombre de convives, envies — et vous recevrez une proposition détaillée sous 24 à 48 heures.
 
 NOCTA Catering est un service de traiteur et chef privé haut de gamme basé à Paris, fondé par Hugo Vinatier (chef formé à L’Astrance 3 étoiles, Akrame, aux côtés de Thierry Marx) et Enzo Ryon (maître d’hôtel et sommelier, 14 ans en haute gastronomie étoilée). Plus de 50 événements réalisés à Paris et en Île-de-France pour des particuliers et des entreprises comme Levi’s, The Galion Project, Jus Mundi et Colombus Consulting.

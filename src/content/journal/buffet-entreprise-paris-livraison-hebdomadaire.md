@@ -1,6 +1,6 @@
 ---
 title: "Buffet d’entreprise à Paris : six mois de livraisons"
-description: "Six mois de buffets d’entreprise livrés chaque semaine à Paris : produits frais, dressage soigné, même qualité à chaque fois. Devis sous 24 h ouvrées."
+description: "Six mois de buffets d’entreprise livrés chaque semaine à Paris : produits frais, dressage soigné, même qualité à chaque fois. Devis sous 24 à 48 h."
 date: 2026-03-24
 category: "Corporate"
 readTime: 4

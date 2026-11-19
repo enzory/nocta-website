@@ -1,6 +1,6 @@
 ---
 title: "Chef à domicile Neuilly-sur-Seine — Dîner privé 92"
-description: "NOCTA propose un chef à domicile à Neuilly-sur-Seine : dîner privé, menu construit selon votre table, sommellerie incluse. Devis sous 24 h ouvrées."
+description: "NOCTA propose un chef à domicile à Neuilly-sur-Seine : dîner privé, menu construit selon votre table, sommellerie incluse. Devis sous 24 à 48 h."
 zone: "Neuilly-sur-Seine"
 type: "chef-prive"
 ctaType: "private"
@@ -19,7 +19,7 @@ Le positionnement de NOCTA n’est pas celui d’un traiteur livrant des plateau
 
 ## Formats NOCTA adaptés à Neuilly-sur-Seine
 
-**NOCTA Private** est le format conçu pour ce type de prestation. Il couvre les dîners intimistes, les célébrations en petit comité et les tablées familiales où la qualité du menu prime. Comptez entre 70 et 250 € HT par personne, chef et service compris. Le menu est adapté à votre table : nombre de convives, contraintes alimentaires, tonalité souhaitée (déjeuner décontracté ou dîner structuré en cinq services). Hugo Vinatier propose systématiquement un échange préalable pour caler le menu — aucun format figé ne s’applique sans discussion.
+**NOCTA Private** est le format conçu pour ce type de prestation. Il couvre les dîners intimistes, les célébrations en petit comité et les tablées familiales où la qualité du menu prime. Comptez à partir de 70 € HT par personne, chef et service compris, selon le menu défini avec vous. Le menu est adapté à votre table : nombre de convives, contraintes alimentaires, tonalité souhaitée (déjeuner décontracté ou dîner structuré en cinq services). Hugo Vinatier propose systématiquement un échange préalable pour caler le menu — aucun format figé ne s’applique sans discussion.
 
 **NOCTA Signature** répond aux demandes qui dépassent le cadre du dîner standard : réception pour un anniversaire marquant, célébration intime sur plusieurs jours, format immersif autour d’un thème ou d’un producteur. Ce format est conçu autour du lieu et des attentes spécifiques de l’hôte, sur devis, sans grille tarifaire prédéfinie.
 
@@ -41,8 +41,8 @@ NOCTA a été fondée en avril 2025 par deux associés dont les parcours couvren
 
 Parmi les clients que NOCTA accompagne figurent Levi’s, Messika, The Galion Project, Colombus Consulting et Jus Mundi — des structures habituées à un niveau d’exigence précis et à des interlocuteurs qui anticipent plutôt qu’ils ne s’excusent. Ce même niveau d’attention s’applique aux réceptions privées : réactivité sur le devis, menu soumis pour validation, respect des délais, discrétion sur le lieu et les convives.
 
-Pour un dîner à Neuilly-sur-Seine, NOCTA intervient en zone 92 sans frais de déplacement supplémentaires. La tarification est transparente : un devis détaillé est transmis sous 24 heures ouvrées après échange sur le format, le nombre de convives et les attentes du menu.
+Pour un dîner à Neuilly-sur-Seine, NOCTA intervient en zone 92 sans frais de déplacement supplémentaires. La tarification est transparente : un devis détaillé est transmis sous 24 à 48 heures après échange sur le format, le nombre de convives et les attentes du menu.
 
 ## Demande de devis
 
-Vous organisez un dîner privé à Neuilly-sur-Seine et souhaitez un menu construit selon votre table ? Transmettez-nous la date, le nombre de convives et le format souhaité via la page [contact](/contact). Nous revenons vers vous sous 24 heures ouvrées avec une proposition chiffrée.
+Vous organisez un dîner privé à Neuilly-sur-Seine et souhaitez un menu construit selon votre table ? Transmettez-nous la date, le nombre de convives et le format souhaité via la page [contact](/contact). Nous revenons vers vous sous 24 à 48 heures avec une proposition chiffrée.

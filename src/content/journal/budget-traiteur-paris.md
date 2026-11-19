@@ -1,21 +1,21 @@
 ---
 title: "Quel budget pour un traiteur à Paris en 2026 ?"
-description: "De 54 € HT le cocktail à 250 € le dîner gastronomique avec chef et sommelier : les vrais prix d’un traiteur à Paris en 2026, détaillés par format."
+description: "Dès 54 € HT le cocktail, dès 70 € HT le dîner avec chef et service : les vrais prix d’un traiteur à Paris en 2026, détaillés par format."
 date: 2026-03-26
 author: "Enzo Ryon"
 category: "Guide"
 readTime: 8
 ---
 
-Un traiteur haut de gamme à Paris coûte entre 54 € et 250 € par personne selon le format choisi. Pour un dîner privé avec chef et service, comptez 70 à 250 € HT par personne. Un cocktail est à partir de 54 € HT par personne, sur une base de 12 pièces. Chez NOCTA, le minimum de commande est de 500 € HT, sans minimum de convives — ce qui rend la prestation accessible dès 6-7 personnes pour un dîner.
+Un traiteur haut de gamme à Paris coûte à partir de 54 € HT par personne, selon le format choisi. Pour un dîner privé avec chef et service, comptez à partir de 70 € HT par personne, selon le menu défini avec vous. Un cocktail est à partir de 54 € HT par personne, sur une base de 12 pièces. Chez NOCTA, le minimum de commande est de 500 € HT, sans minimum de convives — ce qui rend la prestation accessible dès 6-7 personnes pour un dîner.
 
 Ces chiffres viennent de notre expérience sur plus de 50 événements réalisés à Paris et en Île-de-France, pour des particuliers comme pour des entreprises (Levi’s, The Galion Project, Jus Mundi, Colombus Consulting, entre autres). Voici le détail par format.
 
-## Dîner privé avec chef à domicile : 70 à 250 € HT par personne
+## Dîner privé avec chef à domicile : à partir de 70 € HT par personne
 
 C’est le format le plus demandé chez [NOCTA Private](/prestations/private). Le chef cuisine chez vous, le service est assuré sur place, et le rangement est inclus. Le prix par personne dépend de trois facteurs : la complexité du menu, le nombre de convives, et les produits choisis.
 
-Un dîner en 3 temps avec des produits de saison se situe autour de 70 à 80 € par personne, chef et service compris. Un menu en 5 temps avec des produits d’exception (Saint-Jacques, ris de veau, truffe selon la saison) monte entre 150 et 250 € par personne.
+Un dîner en 3 temps avec des produits de saison se situe autour de 70 à 80 € par personne, chef et service compris. Un menu en 5 temps avec des produits d’exception (Saint-Jacques, ris de veau, truffe selon la saison) dépasse 150 € par personne.
 
 Ce prix inclut systématiquement : la conception du menu sur-mesure, les courses et produits, la préparation sur place, le service à table, et le nettoyage complet de la cuisine en fin de soirée. Il n’y a pas de frais cachés.
 
@@ -29,7 +29,7 @@ Le cocktail est plus difficile à chiffrer au convive parce que tout dépend du 
 
 Pour un cocktail plus léger (6-8 pièces, en apéritif avant un dîner assis par exemple), le budget descend mécaniquement. C’est un format très adapté aux lancements de produit, aux afterworks d’entreprise, ou aux vernissages.
 
-## Dîner corporate : 70 à 250 € HT par personne
+## Dîner corporate : à partir de 70 € HT par personne
 
 Les tarifs sont similaires au dîner privé. La différence se joue sur la logistique : en entreprise, la location de matériel (assiettes, verres, mobilier) n’est généralement pas incluse et dépend du lieu. Certains espaces corporate disposent de leur propre matériel, d’autres non.
 
@@ -57,6 +57,6 @@ Le quatrième est le niveau de service : service à table avec sommelier, simple
 
 Chaque événement NOCTA est sur-mesure. Les fourchettes ci-dessus donnent un ordre de grandeur réaliste, mais le seul moyen d’avoir un prix exact est de nous décrire votre projet.
 
-Vous pouvez nous contacter directement pour un devis. Nous répondons sous 24 heures ouvrées avec une proposition détaillée — menu, budget, déroulé complet.
+Vous pouvez nous contacter directement pour un devis. Nous répondons sous 24 à 48 heures avec une proposition détaillée — menu, budget, déroulé complet.
 
 NOCTA est un service de traiteur et chef privé haut de gamme basé à Paris, fondé par Hugo Vinatier (chef formé à L’Astrance 3 étoiles, Akrame, aux côtés de Thierry Marx) et Enzo Ryon (maître d’hôtel et sommelier, 14 ans en haute gastronomie étoilée). Nous intervenons à Paris, en Île-de-France, et partout en France pour des dîners privés, événements corporate et expériences culinaires sur-mesure.

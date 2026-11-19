@@ -1,6 +1,6 @@
 ---
 title: "Inauguration boutique et lancement produit à Paris"
-description: "NOCTA organise vos cocktails d’inauguration, lancements produit et openings à Paris. Formats Corporate et Signature, devis sous 24 h ouvrées."
+description: "NOCTA organise vos cocktails d’inauguration, lancements produit et openings à Paris. Formats Corporate et Signature, devis sous 24 à 48 h."
 zone: "Paris"
 type: "occasion"
 ctaType: "corporate"
@@ -25,7 +25,7 @@ La restauration n’est pas un poste secondaire à caler en dernier. Sur une ina
 
 **NOCTA Signature** s’adresse aux événements où la restauration devient elle-même un élément de communication : lancement d’une maison, opening d’une adresse positionnée, présentation à un cercle d’acheteurs internationaux. Le format est construit sur devis, autour d’un brief précis — identité de la marque, univers produit, contraintes du lieu, profil des convives. Hugo Vinatier, formé en cuisine étoilée, développe un menu et une mise en scène culinaire cohérents avec le propos de la soirée. Enzo Ryon prend en charge la sélection des vins et spiritueux, et peut assurer une présentation en salle si le format s’y prête.
 
-**NOCTA Private** reste disponible pour les formats plus intimistes : dîner de présentation à dix personnes, table de directeurs artistiques, déjeuner de remerciement après une ouverture. Ce format est adapté aux espaces de petite capacité — appartement, salle de réunion transformée, studio privé. Comptez entre 70 et 250 € HT par personne, chef et service compris.
+**NOCTA Private** reste disponible pour les formats plus intimistes : dîner de présentation à dix personnes, table de directeurs artistiques, déjeuner de remerciement après une ouverture. Ce format est adapté aux espaces de petite capacité — appartement, salle de réunion transformée, studio privé. Comptez à partir de 70 € HT par personne, chef et service compris, selon le menu défini avec vous.
 
 ---
 
@@ -51,12 +51,12 @@ NOCTA a été fondé par deux professionnels dont les parcours se complètent di
 
 Parmi nos clients figurent des marques comme Messika et Levi’s — des structures habituées à un niveau d’exigence élevé sur leurs événements de marque. Nous ne faisons pas de décoration florale, pas de gestion de prestataires son et lumière, pas de coordination générale de l’événement : notre périmètre est la restauration, le service et la sommellerie. Sur ce périmètre, nous nous engageons sur un niveau de détail et de fiabilité que vous pouvez vérifier dès le premier échange.
 
-Le devis est établi sous 24 heures ouvrées à partir d’un brief précis : lieu, date, jauge, format souhaité, budget indicatif. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.
+Le devis est établi sous 24 à 48 heures à partir d’un brief précis : lieu, date, jauge, format souhaité, budget indicatif. Pour un événement dans les 48 heures, appelez-nous directement au 06 50 01 16 16.
 
 ---
 
 ## Demande de devis
 
-Vous préparez une inauguration ou un lancement produit à Paris et souhaitez cadrer la partie restauration ? Transmettez-nous les éléments de base via le formulaire de contact — lieu, date, jauge estimée — et nous vous soumettons une proposition dans les 24 heures ouvrées.
+Vous préparez une inauguration ou un lancement produit à Paris et souhaitez cadrer la partie restauration ? Transmettez-nous les éléments de base via le formulaire de contact — lieu, date, jauge estimée — et nous vous soumettons une proposition sous 24 à 48 heures.
 
 [Faire une demande de devis <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)

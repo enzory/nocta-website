@@ -21,7 +21,7 @@ NOCTA travaille principalement avec des particuliers exigeants et des entreprise
 
 ## Les formats NOCTA adaptés à un anniversaire parisien
 
-**NOCTA Private** est le format conçu pour ce type d’occasion. Il couvre un menu en plusieurs actes — entrée froide, entrée chaude, plat, fromage ou pré-dessert, dessert — élaboré selon la saison, vos contraintes alimentaires et l’ambiance souhaitée. Comptez entre 70 et 250 € HT par personne, chef et service compris. Le menu est discuté en amont lors d’un échange avec Hugo et Enzo ; aucun modèle standard n’est imposé. Les produits sont sourcés selon la saison et le marché : poisson de ligne, viandes maturées, légumes de producteurs identifiés. Le tarif final dépend du nombre de couverts, du nombre de services et des choix de produits.
+**NOCTA Private** est le format conçu pour ce type d’occasion. Il couvre un menu en plusieurs actes — entrée froide, entrée chaude, plat, fromage ou pré-dessert, dessert — élaboré selon la saison, vos contraintes alimentaires et l’ambiance souhaitée. Comptez à partir de 70 € HT par personne, chef et service compris, selon le menu défini avec vous. Le menu est discuté en amont lors d’un échange avec Hugo et Enzo ; aucun modèle standard n’est imposé. Les produits sont sourcés selon la saison et le marché : poisson de ligne, viandes maturées, légumes de producteurs identifiés. Le tarif final dépend du nombre de couverts, du nombre de services et des choix de produits.
 
 **NOCTA Signature** s’adresse aux anniversaires qui appellent un format plus structuré : soirée en plusieurs temps, plateau d’amuse-bouches à l’apéritif suivi d’un dîner assis, service de sommellerie au verre sur toute la durée, ou encore découpe en salle pour une pièce de caractère. Ce format est construit autour du lieu et de vos envies spécifiques ; il fait l’objet d’un devis dédié. Il convient notamment lorsque l’appartement ou la maison permet de distinguer un espace cocktail d’un espace dîner.
 
@@ -53,6 +53,6 @@ Pour un anniversaire privé à Paris, ce que vous obtenez concrètement : un men
 
 ## Demande de devis
 
-Vous souhaitez organiser un anniversaire privé à Paris et obtenir une proposition chiffrée ? Décrivez-nous votre table — date, nombre de convives, lieu, envies — via notre formulaire de contact. Enzo ou Hugo vous répond sous 24 heures ouvrées.
+Vous souhaitez organiser un anniversaire privé à Paris et obtenir une proposition chiffrée ? Décrivez-nous votre table — date, nombre de convives, lieu, envies — via notre formulaire de contact. Enzo ou Hugo vous répond sous 24 à 48 heures.
 
 [Demander un devis <svg class="arrow-right" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>](/contact)
