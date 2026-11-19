@@ -27,19 +27,42 @@ const deroule = [
   },
 ];
 
-// Exemple de menu : une proposition écrite pour un dîner privé d'hiver.
-// Ce n'est ni une formule permanente ni un menu au catalogue : ne pas y
-// attacher de prix, ne pas le présenter comme « notre menu ».
-const menuExemple = [
+// Exemples de menus : des menus écrits pour une table précise.
+// Ce ne sont ni des formules permanentes ni des menus au catalogue : ne pas y
+// attacher de prix, ne pas les présenter comme « notre menu », ne nommer
+// aucun client.
+type Temps = { temps: string; plat: string; detail?: string };
+const menusExemple: { titre: string; note: string; temps: Temps[] }[] = [
   {
-    temps: 'Apéritif',
-    plat: 'Quatre tartelettes par convive',
-    detail: 'Saumon fumé et crème citronnée · foie gras de canard et figue · crémeux d’avocat et œufs de truite · tartare de bœuf et graines de moutarde',
+    // Proposition écrite pour un dîner privé d'hiver (validée par Enzo, 16/11/2026).
+    titre: 'Un dîner d’hiver',
+    note: 'Une proposition écrite pour une table, un soir d’hiver.',
+    temps: [
+      {
+        temps: 'Apéritif',
+        plat: 'Quatre tartelettes par convive',
+        detail: 'Saumon fumé et crème citronnée · foie gras de canard et figue · crémeux d’avocat et œufs de truite · tartare de bœuf et graines de moutarde',
+      },
+      { temps: 'Entrée', plat: 'Œuf parfait, champignons de saison, sabayon au vin jaune' },
+      { temps: 'Plat', plat: 'Quasi de veau rôti, sauce aux morilles et à la crème', detail: 'Purée de pommes de terre, carottes glacées' },
+      { temps: 'Fromages', plat: 'Comté affiné et brillat-savarin' },
+      { temps: 'Dessert', plat: 'Paris-Brest individuel, praliné noisette' },
+    ],
   },
-  { temps: 'Entrée', plat: 'Œuf parfait, champignons de saison, sabayon au vin jaune' },
-  { temps: 'Plat', plat: 'Quasi de veau rôti, sauce aux morilles et à la crème', detail: 'Purée de pommes de terre, carottes glacées' },
-  { temps: 'Fromages', plat: 'Comté affiné et brillat-savarin' },
-  { temps: 'Dessert', plat: 'Paris-Brest individuel, praliné noisette' },
+  {
+    // Menu d'une prestation passée, fourni par Enzo le 19/11/2026, sans client ni prix.
+    titre: 'Un dîner servi à domicile',
+    note: 'Le menu d’un dîner privé que nous avons servi chez des clients.',
+    temps: [
+      {
+        temps: 'Apéritif',
+        plat: 'Bouchées',
+        detail: 'Tataki de bœuf · blini au saumon fumé · tartelette à l’avocat · gougère au vieux comté · tartare de bar exotique',
+      },
+      { temps: 'Entrée', plat: 'Gambas rôties, déclinaison de carottes, vinaigrette aux agrumes' },
+      { temps: 'Plat', plat: 'Volaille de Bresse et son jus', detail: 'Poireaux fondants, potiron rôti, tomates cerises confites' },
+    ],
+  },
 ];
 
 const compris = [
@@ -68,8 +91,14 @@ const selonLeDiner = [
 // Avis clients : uniquement des textes réels, avec une source vérifiable et un
 // droit de reprise confirmé par Enzo. Tant que la liste est vide, le bloc
 // n'est pas rendu. Ne jamais reconstituer un avis à partir d'un message privé.
-// Format : { texte: '…', auteur: '…', contexte: 'Dîner privé', source: 'Avis Google' }
-const avis: { texte: string; auteur: string; contexte: string; source?: string }[] = [];
+// Format : { texte: '…', auteur?: '…', contexte: 'Dîner privé', source?: 'Avis Google' }
+// Les deux extraits ci-dessous : textes réels, publiés anonymement avec l'accord
+// de reprise confirmé par Enzo le 19/11/2026. Pas de balisage Review en JSON-LD
+// (avis anonymes, recueillis par NOCTA elle-même).
+const avis: { texte: string; auteur?: string; contexte: string; source?: string }[] = [
+  { texte: 'C’était vraiment top : cuisine et service, un très bon duo !!!', contexte: 'Après un dîner privé' },
+  { texte: 'On a passé un très bon moment et on s’est vraiment régalées.', contexte: 'Après un dîner privé' },
+];
 
 // FAQ : une seule liste alimente le texte visible ET le JSON-LD FAQPage
 // (même convention que /prestations/sommellerie).
@@ -297,27 +326,35 @@ const faqSchema = {
       <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center">
 
         <div class="reveal">
-          <p class="t-eyebrow text-nocta-cream/60 mb-4">Un exemple de menu</p>
-          <h2 class="t-h2 text-nocta-cream">Un dîner d’hiver.</h2>
-          <div class="w-12 h-px bg-nocta-cream/20 mx-auto mt-10"></div>
+          <p class="t-eyebrow text-nocta-cream/60 mb-4">Exemples de menus</p>
+          <h2 class="t-h2 text-nocta-cream">Chaque table a son menu.</h2>
         </div>
 
-        <div class="mt-4">
-          {menuExemple.map((m, i) => (
-            <div class="pt-10 reveal" style={`transition-delay: ${(i + 1) * 5 / 100}s`}>
-              <p class="t-eyebrow text-nocta-cream/60 mb-3">{m.temps}</p>
-              <p class="font-serif text-xl lg:text-2xl font-light text-nocta-cream leading-snug">{m.plat}</p>
-              {m.detail && (
-                <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/60 mt-3">{m.detail}</p>
-              )}
+        {menusExemple.map((menu, k) => (
+          <div class:list={[{ 'mt-24 lg:mt-32': k > 0 }]}>
+            <div class="reveal">
+              <div class="w-12 h-px bg-nocta-cream/20 mx-auto mt-10 mb-10"></div>
+              <h3 class="font-serif text-2xl lg:text-3xl font-light italic text-nocta-cream">{menu.titre}</h3>
+              <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/60 mt-3">{menu.note}</p>
             </div>
-          ))}
-        </div>
+            <div class="mt-2">
+              {menu.temps.map((m, i) => (
+                <div class="pt-10 reveal" style={`transition-delay: ${(i + 1) * 5 / 100}s`}>
+                  <p class="t-eyebrow text-nocta-cream/60 mb-3">{m.temps}</p>
+                  <p class="font-serif text-xl lg:text-2xl font-light text-nocta-cream leading-snug">{m.plat}</p>
+                  {m.detail && (
+                    <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/60 mt-3">{m.detail}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
 
         <div class="reveal">
-          <div class="w-12 h-px bg-nocta-cream/20 mx-auto mt-12 mb-8"></div>
+          <div class="w-12 h-px bg-nocta-cream/20 mx-auto mt-16 mb-8"></div>
           <p class="font-sans text-sm font-normal leading-relaxed text-nocta-cream/60 max-w-xl mx-auto">
-            Ce menu a été écrit pour une table, un soir d’hiver. Il n’est pas à la carte : le vôtre sera composé pour vous, selon la saison et vos envies.
+            Aucun de ces menus n’est à la carte : le vôtre sera composé pour vous, selon la saison et vos envies.
           </p>
         </div>
 
@@ -434,8 +471,8 @@ const faqSchema = {
               </blockquote>
               <div class="w-12 h-px bg-nocta-black/20 mx-auto mt-10 mb-8"></div>
               <figcaption>
-                <p class="font-sans text-sm font-medium text-nocta-black">{a.auteur}</p>
-                <p class="font-sans text-xs font-normal text-nocta-grey mt-1">{a.contexte}{a.source && ` · ${a.source}`}</p>
+                {a.auteur && <p class="font-sans text-sm font-medium text-nocta-black mb-1">{a.auteur}</p>}
+                <p class="font-sans text-xs font-normal text-nocta-grey">{a.contexte}{a.source && ` · ${a.source}`}</p>
               </figcaption>
             </figure>
           ))}
